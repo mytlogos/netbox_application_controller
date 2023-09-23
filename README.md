@@ -1,6 +1,6 @@
 # Iris MVC Application Template
 
-[![build status](https://img.shields.io/github/actions/workflow/status/iris-contrib/mvc-template/ci.yml?branch=main&style=for-the-badge)](https://github.com/iris-contrib/mvc-template/actions) [![report card](https://img.shields.io/badge/report%20card-a%2B-ff3333.svg?style=for-the-badge)](https://goreportcard.com/report/github.com/iris-contrib/mvc-template)
+[![build status](https://img.shields.io/github/actions/workflow/status/mytlogos/netbox_application_controller/ci.yml?branch=main&style=for-the-badge)](https://github.com/mytlogos/netbox_application_controller/actions) [![report card](https://img.shields.io/badge/report%20card-a%2B-ff3333.svg?style=for-the-badge)](https://goreportcard.com/report/github.com/mytlogos/netbox_application_controller)
 
 This is a project template for [Iris](https://iris-go.com) MVC apps.
 
