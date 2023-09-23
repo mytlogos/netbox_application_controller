@@ -24,10 +24,7 @@ type NestedDataFile struct {
 	Display string `json:"display"`
 	// File path relative to the data source's root
 	Path string `json:"path"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedDataFile NestedDataFile
 
 // NewNestedDataFile instantiates a new NestedDataFile object
 // This constructor will assign default values to properties that have it defined,
@@ -156,36 +153,11 @@ func (o NestedDataFile) MarshalJSON() ([]byte, error) {
 
 func (o NestedDataFile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: path is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["path"] = o.Path
 	return toSerialize, nil
-}
-
-func (o *NestedDataFile) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedDataFile := _NestedDataFile{}
-
-	if err = json.Unmarshal(bytes, &varNestedDataFile); err == nil {
-		*o = NestedDataFile(varNestedDataFile)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "path")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedDataFile struct {

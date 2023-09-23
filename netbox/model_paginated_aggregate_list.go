@@ -23,10 +23,7 @@ type PaginatedAggregateList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []Aggregate `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedAggregateList PaginatedAggregateList
 
 // NewPaginatedAggregateList instantiates a new PaginatedAggregateList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedAggregateList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedAggregateList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedAggregateList := _PaginatedAggregateList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedAggregateList); err == nil {
-		*o = PaginatedAggregateList(varPaginatedAggregateList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedAggregateList struct {

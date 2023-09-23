@@ -33,10 +33,7 @@ type PatchedCustomLinkRequest struct {
 	ButtonClass *string `json:"button_class,omitempty"`
 	// Force link to open in a new window
 	NewWindow *bool `json:"new_window,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedCustomLinkRequest PatchedCustomLinkRequest
 
 // NewPatchedCustomLinkRequest instantiates a new PatchedCustomLinkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -380,37 +377,7 @@ func (o PatchedCustomLinkRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NewWindow) {
 		toSerialize["new_window"] = o.NewWindow
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedCustomLinkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedCustomLinkRequest := _PatchedCustomLinkRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedCustomLinkRequest); err == nil {
-		*o = PatchedCustomLinkRequest(varPatchedCustomLinkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "link_text")
-		delete(additionalProperties, "link_url")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "group_name")
-		delete(additionalProperties, "button_class")
-		delete(additionalProperties, "new_window")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedCustomLinkRequest struct {

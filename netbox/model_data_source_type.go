@@ -22,10 +22,7 @@ type DataSourceType struct {
 	// * `local` - Local * `git` - Git * `amazon-s3` - Amazon S3
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DataSourceType DataSourceType
 
 // NewDataSourceType instantiates a new DataSourceType object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o DataSourceType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *DataSourceType) UnmarshalJSON(bytes []byte) (err error) {
-	varDataSourceType := _DataSourceType{}
-
-	if err = json.Unmarshal(bytes, &varDataSourceType); err == nil {
-		*o = DataSourceType(varDataSourceType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDataSourceType struct {

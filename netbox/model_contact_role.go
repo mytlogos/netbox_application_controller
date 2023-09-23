@@ -30,10 +30,7 @@ type ContactRole struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ContactRole ContactRole
 
 // NewContactRole instantiates a new ContactRole object
 // This constructor will assign default values to properties that have it defined,
@@ -337,9 +334,9 @@ func (o ContactRole) MarshalJSON() ([]byte, error) {
 
 func (o ContactRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
@@ -353,38 +350,7 @@ func (o ContactRole) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ContactRole) UnmarshalJSON(bytes []byte) (err error) {
-	varContactRole := _ContactRole{}
-
-	if err = json.Unmarshal(bytes, &varContactRole); err == nil {
-		*o = ContactRole(varContactRole)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableContactRole struct {

@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedVLANGroupRequest{}
 type NestedVLANGroupRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVLANGroupRequest NestedVLANGroupRequest
 
 // NewNestedVLANGroupRequest instantiates a new NestedVLANGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedVLANGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVLANGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVLANGroupRequest := _NestedVLANGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedVLANGroupRequest); err == nil {
-		*o = NestedVLANGroupRequest(varNestedVLANGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVLANGroupRequest struct {

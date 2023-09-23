@@ -29,10 +29,7 @@ type ObjectPermissionRequest struct {
 	Actions []string `json:"actions"`
 	// Queryset filter matching the applicable objects of the selected type(s)
 	Constraints map[string]interface{} `json:"constraints,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ObjectPermissionRequest ObjectPermissionRequest
 
 // NewObjectPermissionRequest instantiates a new ObjectPermissionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -315,36 +312,7 @@ func (o ObjectPermissionRequest) ToMap() (map[string]interface{}, error) {
 	if o.Constraints != nil {
 		toSerialize["constraints"] = o.Constraints
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ObjectPermissionRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varObjectPermissionRequest := _ObjectPermissionRequest{}
-
-	if err = json.Unmarshal(bytes, &varObjectPermissionRequest); err == nil {
-		*o = ObjectPermissionRequest(varObjectPermissionRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "object_types")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "users")
-		delete(additionalProperties, "actions")
-		delete(additionalProperties, "constraints")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableObjectPermissionRequest struct {

@@ -22,10 +22,7 @@ type InterfacePoeMode struct {
 	// * `pd` - PD * `pse` - PSE
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfacePoeMode InterfacePoeMode
 
 // NewInterfacePoeMode instantiates a new InterfacePoeMode object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o InterfacePoeMode) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfacePoeMode) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfacePoeMode := _InterfacePoeMode{}
-
-	if err = json.Unmarshal(bytes, &varInterfacePoeMode); err == nil {
-		*o = InterfacePoeMode(varInterfacePoeMode)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfacePoeMode struct {

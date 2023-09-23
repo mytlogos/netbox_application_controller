@@ -28,10 +28,7 @@ type Bookmark struct {
 	Object map[string]interface{} `json:"object"`
 	User NestedUser `json:"user"`
 	Created time.Time `json:"created"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Bookmark Bookmark
 
 // NewBookmark instantiates a new Bookmark object
 // This constructor will assign default values to properties that have it defined,
@@ -262,46 +259,17 @@ func (o Bookmark) MarshalJSON() ([]byte, error) {
 
 func (o Bookmark) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["object_type"] = o.ObjectType
 	toSerialize["object_id"] = o.ObjectId
 	if o.Object != nil {
 		toSerialize["object"] = o.Object
 	}
 	toSerialize["user"] = o.User
-	// skip: created is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["created"] = o.Created
 	return toSerialize, nil
-}
-
-func (o *Bookmark) UnmarshalJSON(bytes []byte) (err error) {
-	varBookmark := _Bookmark{}
-
-	if err = json.Unmarshal(bytes, &varBookmark); err == nil {
-		*o = Bookmark(varBookmark)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "object")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "created")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableBookmark struct {

@@ -23,10 +23,7 @@ type PaginatedPowerOutletList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []PowerOutlet `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedPowerOutletList PaginatedPowerOutletList
 
 // NewPaginatedPowerOutletList instantiates a new PaginatedPowerOutletList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedPowerOutletList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedPowerOutletList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedPowerOutletList := _PaginatedPowerOutletList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedPowerOutletList); err == nil {
-		*o = PaginatedPowerOutletList(varPaginatedPowerOutletList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedPowerOutletList struct {

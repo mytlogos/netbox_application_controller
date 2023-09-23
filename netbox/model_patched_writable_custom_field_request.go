@@ -51,10 +51,7 @@ type PatchedWritableCustomFieldRequest struct {
 	// Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, <code>^[A-Z]{3}$</code> will limit values to exactly three uppercase letters.
 	ValidationRegex *string `json:"validation_regex,omitempty"`
 	ChoiceSet NullableInt32 `json:"choice_set,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableCustomFieldRequest PatchedWritableCustomFieldRequest
 
 // NewPatchedWritableCustomFieldRequest instantiates a new PatchedWritableCustomFieldRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -744,46 +741,7 @@ func (o PatchedWritableCustomFieldRequest) ToMap() (map[string]interface{}, erro
 	if o.ChoiceSet.IsSet() {
 		toSerialize["choice_set"] = o.ChoiceSet.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableCustomFieldRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableCustomFieldRequest := _PatchedWritableCustomFieldRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableCustomFieldRequest); err == nil {
-		*o = PatchedWritableCustomFieldRequest(varPatchedWritableCustomFieldRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "group_name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "search_weight")
-		delete(additionalProperties, "filter_logic")
-		delete(additionalProperties, "ui_visibility")
-		delete(additionalProperties, "is_cloneable")
-		delete(additionalProperties, "default")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "validation_minimum")
-		delete(additionalProperties, "validation_maximum")
-		delete(additionalProperties, "validation_regex")
-		delete(additionalProperties, "choice_set")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableCustomFieldRequest struct {

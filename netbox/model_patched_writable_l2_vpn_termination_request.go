@@ -24,10 +24,7 @@ type PatchedWritableL2VPNTerminationRequest struct {
 	AssignedObjectId *int64 `json:"assigned_object_id,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableL2VPNTerminationRequest PatchedWritableL2VPNTerminationRequest
 
 // NewPatchedWritableL2VPNTerminationRequest instantiates a new PatchedWritableL2VPNTerminationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -231,33 +228,7 @@ func (o PatchedWritableL2VPNTerminationRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableL2VPNTerminationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableL2VPNTerminationRequest := _PatchedWritableL2VPNTerminationRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableL2VPNTerminationRequest); err == nil {
-		*o = PatchedWritableL2VPNTerminationRequest(varPatchedWritableL2VPNTerminationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "l2vpn")
-		delete(additionalProperties, "assigned_object_type")
-		delete(additionalProperties, "assigned_object_id")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableL2VPNTerminationRequest struct {

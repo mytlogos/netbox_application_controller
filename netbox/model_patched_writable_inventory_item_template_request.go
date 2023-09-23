@@ -32,10 +32,7 @@ type PatchedWritableInventoryItemTemplateRequest struct {
 	Description *string `json:"description,omitempty"`
 	ComponentType NullableString `json:"component_type,omitempty"`
 	ComponentId NullableInt64 `json:"component_id,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableInventoryItemTemplateRequest PatchedWritableInventoryItemTemplateRequest
 
 // NewPatchedWritableInventoryItemTemplateRequest instantiates a new PatchedWritableInventoryItemTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -464,38 +461,7 @@ func (o PatchedWritableInventoryItemTemplateRequest) ToMap() (map[string]interfa
 	if o.ComponentId.IsSet() {
 		toSerialize["component_id"] = o.ComponentId.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableInventoryItemTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableInventoryItemTemplateRequest := _PatchedWritableInventoryItemTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableInventoryItemTemplateRequest); err == nil {
-		*o = PatchedWritableInventoryItemTemplateRequest(varPatchedWritableInventoryItemTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "part_id")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "component_type")
-		delete(additionalProperties, "component_id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableInventoryItemTemplateRequest struct {

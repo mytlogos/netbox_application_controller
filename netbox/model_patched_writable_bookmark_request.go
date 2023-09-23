@@ -22,10 +22,7 @@ type PatchedWritableBookmarkRequest struct {
 	ObjectType *string `json:"object_type,omitempty"`
 	ObjectId *int64 `json:"object_id,omitempty"`
 	User *int32 `json:"user,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableBookmarkRequest PatchedWritableBookmarkRequest
 
 // NewPatchedWritableBookmarkRequest instantiates a new PatchedWritableBookmarkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -159,31 +156,7 @@ func (o PatchedWritableBookmarkRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableBookmarkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableBookmarkRequest := _PatchedWritableBookmarkRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableBookmarkRequest); err == nil {
-		*o = PatchedWritableBookmarkRequest(varPatchedWritableBookmarkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "user")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableBookmarkRequest struct {

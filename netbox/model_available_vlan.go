@@ -21,10 +21,7 @@ var _ MappedNullable = &AvailableVLAN{}
 type AvailableVLAN struct {
 	Vid int32 `json:"vid"`
 	Group NestedVLANGroup `json:"group"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _AvailableVLAN AvailableVLAN
 
 // NewAvailableVLAN instantiates a new AvailableVLAN object
 // This constructor will assign default values to properties that have it defined,
@@ -103,32 +100,9 @@ func (o AvailableVLAN) MarshalJSON() ([]byte, error) {
 
 func (o AvailableVLAN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: vid is readOnly
-	// skip: group is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["vid"] = o.Vid
+	toSerialize["group"] = o.Group
 	return toSerialize, nil
-}
-
-func (o *AvailableVLAN) UnmarshalJSON(bytes []byte) (err error) {
-	varAvailableVLAN := _AvailableVLAN{}
-
-	if err = json.Unmarshal(bytes, &varAvailableVLAN); err == nil {
-		*o = AvailableVLAN(varAvailableVLAN)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "vid")
-		delete(additionalProperties, "group")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAvailableVLAN struct {

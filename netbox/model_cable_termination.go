@@ -31,10 +31,7 @@ type CableTermination struct {
 	Termination map[string]interface{} `json:"termination"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CableTermination CableTermination
 
 // NewCableTermination instantiates a new CableTermination object
 // This constructor will assign default values to properties that have it defined,
@@ -319,9 +316,9 @@ func (o CableTermination) MarshalJSON() ([]byte, error) {
 
 func (o CableTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["cable"] = o.Cable
 	toSerialize["cable_end"] = o.CableEnd
 	toSerialize["termination_type"] = o.TerminationType
@@ -331,38 +328,7 @@ func (o CableTermination) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CableTermination) UnmarshalJSON(bytes []byte) (err error) {
-	varCableTermination := _CableTermination{}
-
-	if err = json.Unmarshal(bytes, &varCableTermination); err == nil {
-		*o = CableTermination(varCableTermination)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "cable_end")
-		delete(additionalProperties, "termination_type")
-		delete(additionalProperties, "termination_id")
-		delete(additionalProperties, "termination")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCableTermination struct {

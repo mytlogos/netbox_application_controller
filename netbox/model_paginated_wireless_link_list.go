@@ -23,10 +23,7 @@ type PaginatedWirelessLinkList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []WirelessLink `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedWirelessLinkList PaginatedWirelessLinkList
 
 // NewPaginatedWirelessLinkList instantiates a new PaginatedWirelessLinkList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedWirelessLinkList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedWirelessLinkList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedWirelessLinkList := _PaginatedWirelessLinkList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedWirelessLinkList); err == nil {
-		*o = PaginatedWirelessLinkList(varPaginatedWirelessLinkList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedWirelessLinkList struct {

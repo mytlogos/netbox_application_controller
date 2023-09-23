@@ -34,10 +34,7 @@ type WritableWirelessLinkRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableWirelessLinkRequest WritableWirelessLinkRequest
 
 // NewWritableWirelessLinkRequest instantiates a new WritableWirelessLinkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -478,40 +475,7 @@ func (o WritableWirelessLinkRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableWirelessLinkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableWirelessLinkRequest := _WritableWirelessLinkRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableWirelessLinkRequest); err == nil {
-		*o = WritableWirelessLinkRequest(varWritableWirelessLinkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "interface_a")
-		delete(additionalProperties, "interface_b")
-		delete(additionalProperties, "ssid")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "auth_type")
-		delete(additionalProperties, "auth_cipher")
-		delete(additionalProperties, "auth_psk")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableWirelessLinkRequest struct {

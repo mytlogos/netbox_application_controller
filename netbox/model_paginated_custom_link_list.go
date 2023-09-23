@@ -23,10 +23,7 @@ type PaginatedCustomLinkList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []CustomLink `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedCustomLinkList PaginatedCustomLinkList
 
 // NewPaginatedCustomLinkList instantiates a new PaginatedCustomLinkList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedCustomLinkList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedCustomLinkList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedCustomLinkList := _PaginatedCustomLinkList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedCustomLinkList); err == nil {
-		*o = PaginatedCustomLinkList(varPaginatedCustomLinkList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedCustomLinkList struct {

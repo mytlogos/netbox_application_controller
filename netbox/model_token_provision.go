@@ -31,10 +31,7 @@ type TokenProvision struct {
 	// Permit create/update/delete operations using this key
 	WriteEnabled *bool `json:"write_enabled,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _TokenProvision TokenProvision
 
 // NewTokenProvision instantiates a new TokenProvision object
 // This constructor will assign default values to properties that have it defined,
@@ -344,54 +341,23 @@ func (o TokenProvision) MarshalJSON() ([]byte, error) {
 
 func (o TokenProvision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: user is readOnly
-	// skip: created is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["user"] = o.User
+	toSerialize["created"] = o.Created
 	if o.Expires.IsSet() {
 		toSerialize["expires"] = o.Expires.Get()
 	}
-	// skip: last_used is readOnly
-	// skip: key is readOnly
+	toSerialize["last_used"] = o.LastUsed
+	toSerialize["key"] = o.Key
 	if !IsNil(o.WriteEnabled) {
 		toSerialize["write_enabled"] = o.WriteEnabled
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *TokenProvision) UnmarshalJSON(bytes []byte) (err error) {
-	varTokenProvision := _TokenProvision{}
-
-	if err = json.Unmarshal(bytes, &varTokenProvision); err == nil {
-		*o = TokenProvision(varTokenProvision)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "expires")
-		delete(additionalProperties, "last_used")
-		delete(additionalProperties, "key")
-		delete(additionalProperties, "write_enabled")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTokenProvision struct {

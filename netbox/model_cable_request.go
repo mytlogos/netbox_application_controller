@@ -35,10 +35,7 @@ type CableRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CableRequest CableRequest
 
 // NewCableRequest instantiates a new CableRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -552,41 +549,7 @@ func (o CableRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CableRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varCableRequest := _CableRequest{}
-
-	if err = json.Unmarshal(bytes, &varCableRequest); err == nil {
-		*o = CableRequest(varCableRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "a_terminations")
-		delete(additionalProperties, "b_terminations")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "length")
-		delete(additionalProperties, "length_unit")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCableRequest struct {

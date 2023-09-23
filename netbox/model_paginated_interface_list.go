@@ -23,10 +23,7 @@ type PaginatedInterfaceList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []Interface `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedInterfaceList PaginatedInterfaceList
 
 // NewPaginatedInterfaceList instantiates a new PaginatedInterfaceList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedInterfaceList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedInterfaceList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedInterfaceList := _PaginatedInterfaceList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedInterfaceList); err == nil {
-		*o = PaginatedInterfaceList(varPaginatedInterfaceList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedInterfaceList struct {

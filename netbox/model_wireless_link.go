@@ -37,10 +37,7 @@ type WirelessLink struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WirelessLink WirelessLink
 
 // NewWirelessLink instantiates a new WirelessLink object
 // This constructor will assign default values to properties that have it defined,
@@ -578,9 +575,9 @@ func (o WirelessLink) MarshalJSON() ([]byte, error) {
 
 func (o WirelessLink) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["interface_a"] = o.InterfaceA
 	toSerialize["interface_b"] = o.InterfaceB
 	if !IsNil(o.Ssid) {
@@ -615,45 +612,7 @@ func (o WirelessLink) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WirelessLink) UnmarshalJSON(bytes []byte) (err error) {
-	varWirelessLink := _WirelessLink{}
-
-	if err = json.Unmarshal(bytes, &varWirelessLink); err == nil {
-		*o = WirelessLink(varWirelessLink)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "interface_a")
-		delete(additionalProperties, "interface_b")
-		delete(additionalProperties, "ssid")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "auth_type")
-		delete(additionalProperties, "auth_cipher")
-		delete(additionalProperties, "auth_psk")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWirelessLink struct {

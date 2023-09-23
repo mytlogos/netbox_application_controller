@@ -22,12 +22,12 @@ import (
 )
 
 
-// TenancyApiService TenancyApi service
-type TenancyApiService service
+// TenancyAPIService TenancyAPI service
+type TenancyAPIService service
 
 type ApiTenancyContactAssignmentsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactAssignmentRequest *[]ContactAssignmentRequest
 }
 
@@ -48,7 +48,7 @@ Delete a list of contact assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactAssignmentsBulkDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsBulkDestroy(ctx context.Context) ApiTenancyContactAssignmentsBulkDestroyRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsBulkDestroy(ctx context.Context) ApiTenancyContactAssignmentsBulkDestroyRequest {
 	return ApiTenancyContactAssignmentsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,14 +56,14 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkDestroy(ctx context.Con
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactAssignmentsBulkDestroyExecute(r ApiTenancyContactAssignmentsBulkDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsBulkDestroyExecute(r ApiTenancyContactAssignmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkDestroyExecute(r ApiTen
 
 type ApiTenancyContactAssignmentsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactAssignmentRequest *[]ContactAssignmentRequest
 }
 
@@ -161,7 +161,7 @@ Patch a list of contact assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactAssignmentsBulkPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsBulkPartialUpdate(ctx context.Context) ApiTenancyContactAssignmentsBulkPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsBulkPartialUpdate(ctx context.Context) ApiTenancyContactAssignmentsBulkPartialUpdateRequest {
 	return ApiTenancyContactAssignmentsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -170,7 +170,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkPartialUpdate(ctx conte
 
 // Execute executes the request
 //  @return []ContactAssignment
-func (a *TenancyApiService) TenancyContactAssignmentsBulkPartialUpdateExecute(r ApiTenancyContactAssignmentsBulkPartialUpdateRequest) ([]ContactAssignment, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsBulkPartialUpdateExecute(r ApiTenancyContactAssignmentsBulkPartialUpdateRequest) ([]ContactAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkPartialUpdateExecute(r 
 		localVarReturnValue  []ContactAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,7 +264,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkPartialUpdateExecute(r 
 
 type ApiTenancyContactAssignmentsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactAssignmentRequest *[]ContactAssignmentRequest
 }
 
@@ -285,7 +285,7 @@ Put a list of contact assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactAssignmentsBulkUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsBulkUpdate(ctx context.Context) ApiTenancyContactAssignmentsBulkUpdateRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsBulkUpdate(ctx context.Context) ApiTenancyContactAssignmentsBulkUpdateRequest {
 	return ApiTenancyContactAssignmentsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -294,7 +294,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkUpdate(ctx context.Cont
 
 // Execute executes the request
 //  @return []ContactAssignment
-func (a *TenancyApiService) TenancyContactAssignmentsBulkUpdateExecute(r ApiTenancyContactAssignmentsBulkUpdateRequest) ([]ContactAssignment, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsBulkUpdateExecute(r ApiTenancyContactAssignmentsBulkUpdateRequest) ([]ContactAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -302,7 +302,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkUpdateExecute(r ApiTena
 		localVarReturnValue  []ContactAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsBulkUpdateExecute(r ApiTena
 
 type ApiTenancyContactAssignmentsCreateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	writableContactAssignmentRequest *WritableContactAssignmentRequest
 }
 
@@ -409,7 +409,7 @@ Post a list of contact assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactAssignmentsCreateRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsCreate(ctx context.Context) ApiTenancyContactAssignmentsCreateRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsCreate(ctx context.Context) ApiTenancyContactAssignmentsCreateRequest {
 	return ApiTenancyContactAssignmentsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -418,7 +418,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsCreate(ctx context.Context)
 
 // Execute executes the request
 //  @return ContactAssignment
-func (a *TenancyApiService) TenancyContactAssignmentsCreateExecute(r ApiTenancyContactAssignmentsCreateRequest) (*ContactAssignment, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsCreateExecute(r ApiTenancyContactAssignmentsCreateRequest) (*ContactAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -426,7 +426,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsCreateExecute(r ApiTenancyC
 		localVarReturnValue  *ContactAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,7 +512,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsCreateExecute(r ApiTenancyC
 
 type ApiTenancyContactAssignmentsDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -529,7 +529,7 @@ Delete a contact assignment object.
  @param id A unique integer value identifying this contact assignment.
  @return ApiTenancyContactAssignmentsDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsDestroy(ctx context.Context, id int32) ApiTenancyContactAssignmentsDestroyRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsDestroy(ctx context.Context, id int32) ApiTenancyContactAssignmentsDestroyRequest {
 	return ApiTenancyContactAssignmentsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -538,14 +538,14 @@ func (a *TenancyApiService) TenancyContactAssignmentsDestroy(ctx context.Context
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactAssignmentsDestroyExecute(r ApiTenancyContactAssignmentsDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsDestroyExecute(r ApiTenancyContactAssignmentsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -618,7 +618,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsDestroyExecute(r ApiTenancy
 
 type ApiTenancyContactAssignmentsListRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactId *[]int32
 	contactIdN *[]int32
 	contentType *string
@@ -937,7 +937,7 @@ Get a list of contact assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactAssignmentsListRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsList(ctx context.Context) ApiTenancyContactAssignmentsListRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsList(ctx context.Context) ApiTenancyContactAssignmentsListRequest {
 	return ApiTenancyContactAssignmentsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -946,7 +946,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsList(ctx context.Context) A
 
 // Execute executes the request
 //  @return PaginatedContactAssignmentList
-func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyContactAssignmentsListRequest) (*PaginatedContactAssignmentList, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsListExecute(r ApiTenancyContactAssignmentsListRequest) (*PaginatedContactAssignmentList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -954,7 +954,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		localVarReturnValue  *PaginatedContactAssignmentList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -970,7 +970,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_id", t, "multi")
@@ -981,7 +981,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_id__n", t, "multi")
@@ -1004,7 +1004,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -1015,7 +1015,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -1026,7 +1026,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -1037,7 +1037,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -1048,7 +1048,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -1059,7 +1059,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -1070,7 +1070,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -1084,7 +1084,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -1098,7 +1098,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -1109,7 +1109,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -1120,7 +1120,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -1131,7 +1131,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -1142,7 +1142,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -1153,7 +1153,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -1164,7 +1164,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -1175,7 +1175,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -1186,7 +1186,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -1197,7 +1197,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -1208,7 +1208,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -1219,7 +1219,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -1236,7 +1236,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "multi")
@@ -1250,7 +1250,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "multi")
@@ -1261,7 +1261,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "multi")
@@ -1272,7 +1272,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "multi")
@@ -1283,7 +1283,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "multi")
@@ -1294,7 +1294,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "multi")
@@ -1320,7 +1320,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -1331,7 +1331,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -1342,7 +1342,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", t, "multi")
@@ -1353,7 +1353,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", t, "multi")
@@ -1364,7 +1364,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -1375,7 +1375,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -1454,7 +1454,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 
 type ApiTenancyContactAssignmentsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	patchedWritableContactAssignmentRequest *PatchedWritableContactAssignmentRequest
 }
@@ -1477,7 +1477,7 @@ Patch a contact assignment object.
  @param id A unique integer value identifying this contact assignment.
  @return ApiTenancyContactAssignmentsPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactAssignmentsPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactAssignmentsPartialUpdateRequest {
 	return ApiTenancyContactAssignmentsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1487,7 +1487,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsPartialUpdate(ctx context.C
 
 // Execute executes the request
 //  @return ContactAssignment
-func (a *TenancyApiService) TenancyContactAssignmentsPartialUpdateExecute(r ApiTenancyContactAssignmentsPartialUpdateRequest) (*ContactAssignment, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsPartialUpdateExecute(r ApiTenancyContactAssignmentsPartialUpdateRequest) (*ContactAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1495,7 +1495,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsPartialUpdateExecute(r ApiT
 		localVarReturnValue  *ContactAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1579,7 +1579,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsPartialUpdateExecute(r ApiT
 
 type ApiTenancyContactAssignmentsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -1596,7 +1596,7 @@ Get a contact assignment object.
  @param id A unique integer value identifying this contact assignment.
  @return ApiTenancyContactAssignmentsRetrieveRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsRetrieve(ctx context.Context, id int32) ApiTenancyContactAssignmentsRetrieveRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsRetrieve(ctx context.Context, id int32) ApiTenancyContactAssignmentsRetrieveRequest {
 	return ApiTenancyContactAssignmentsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1606,7 +1606,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsRetrieve(ctx context.Contex
 
 // Execute executes the request
 //  @return ContactAssignment
-func (a *TenancyApiService) TenancyContactAssignmentsRetrieveExecute(r ApiTenancyContactAssignmentsRetrieveRequest) (*ContactAssignment, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsRetrieveExecute(r ApiTenancyContactAssignmentsRetrieveRequest) (*ContactAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1614,7 +1614,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsRetrieveExecute(r ApiTenanc
 		localVarReturnValue  *ContactAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1696,7 +1696,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsRetrieveExecute(r ApiTenanc
 
 type ApiTenancyContactAssignmentsUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	writableContactAssignmentRequest *WritableContactAssignmentRequest
 }
@@ -1719,7 +1719,7 @@ Put a contact assignment object.
  @param id A unique integer value identifying this contact assignment.
  @return ApiTenancyContactAssignmentsUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactAssignmentsUpdate(ctx context.Context, id int32) ApiTenancyContactAssignmentsUpdateRequest {
+func (a *TenancyAPIService) TenancyContactAssignmentsUpdate(ctx context.Context, id int32) ApiTenancyContactAssignmentsUpdateRequest {
 	return ApiTenancyContactAssignmentsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1729,7 +1729,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsUpdate(ctx context.Context,
 
 // Execute executes the request
 //  @return ContactAssignment
-func (a *TenancyApiService) TenancyContactAssignmentsUpdateExecute(r ApiTenancyContactAssignmentsUpdateRequest) (*ContactAssignment, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactAssignmentsUpdateExecute(r ApiTenancyContactAssignmentsUpdateRequest) (*ContactAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1737,7 +1737,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsUpdateExecute(r ApiTenancyC
 		localVarReturnValue  *ContactAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactAssignmentsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1824,7 +1824,7 @@ func (a *TenancyApiService) TenancyContactAssignmentsUpdateExecute(r ApiTenancyC
 
 type ApiTenancyContactGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactGroupRequest *[]ContactGroupRequest
 }
 
@@ -1845,7 +1845,7 @@ Delete a list of contact group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactGroupsBulkDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsBulkDestroy(ctx context.Context) ApiTenancyContactGroupsBulkDestroyRequest {
+func (a *TenancyAPIService) TenancyContactGroupsBulkDestroy(ctx context.Context) ApiTenancyContactGroupsBulkDestroyRequest {
 	return ApiTenancyContactGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1853,14 +1853,14 @@ func (a *TenancyApiService) TenancyContactGroupsBulkDestroy(ctx context.Context)
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactGroupsBulkDestroyExecute(r ApiTenancyContactGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsBulkDestroyExecute(r ApiTenancyContactGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1937,7 +1937,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkDestroyExecute(r ApiTenancyC
 
 type ApiTenancyContactGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactGroupRequest *[]ContactGroupRequest
 }
 
@@ -1958,7 +1958,7 @@ Patch a list of contact group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactGroupsBulkPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsBulkPartialUpdate(ctx context.Context) ApiTenancyContactGroupsBulkPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactGroupsBulkPartialUpdate(ctx context.Context) ApiTenancyContactGroupsBulkPartialUpdateRequest {
 	return ApiTenancyContactGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1967,7 +1967,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkPartialUpdate(ctx context.Co
 
 // Execute executes the request
 //  @return []ContactGroup
-func (a *TenancyApiService) TenancyContactGroupsBulkPartialUpdateExecute(r ApiTenancyContactGroupsBulkPartialUpdateRequest) ([]ContactGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsBulkPartialUpdateExecute(r ApiTenancyContactGroupsBulkPartialUpdateRequest) ([]ContactGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1975,7 +1975,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkPartialUpdateExecute(r ApiTe
 		localVarReturnValue  []ContactGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2061,7 +2061,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkPartialUpdateExecute(r ApiTe
 
 type ApiTenancyContactGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactGroupRequest *[]ContactGroupRequest
 }
 
@@ -2082,7 +2082,7 @@ Put a list of contact group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactGroupsBulkUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsBulkUpdate(ctx context.Context) ApiTenancyContactGroupsBulkUpdateRequest {
+func (a *TenancyAPIService) TenancyContactGroupsBulkUpdate(ctx context.Context) ApiTenancyContactGroupsBulkUpdateRequest {
 	return ApiTenancyContactGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2091,7 +2091,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkUpdate(ctx context.Context) 
 
 // Execute executes the request
 //  @return []ContactGroup
-func (a *TenancyApiService) TenancyContactGroupsBulkUpdateExecute(r ApiTenancyContactGroupsBulkUpdateRequest) ([]ContactGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsBulkUpdateExecute(r ApiTenancyContactGroupsBulkUpdateRequest) ([]ContactGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2099,7 +2099,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkUpdateExecute(r ApiTenancyCo
 		localVarReturnValue  []ContactGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2185,7 +2185,7 @@ func (a *TenancyApiService) TenancyContactGroupsBulkUpdateExecute(r ApiTenancyCo
 
 type ApiTenancyContactGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	writableContactGroupRequest *WritableContactGroupRequest
 }
 
@@ -2206,7 +2206,7 @@ Post a list of contact group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactGroupsCreateRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsCreate(ctx context.Context) ApiTenancyContactGroupsCreateRequest {
+func (a *TenancyAPIService) TenancyContactGroupsCreate(ctx context.Context) ApiTenancyContactGroupsCreateRequest {
 	return ApiTenancyContactGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2215,7 +2215,7 @@ func (a *TenancyApiService) TenancyContactGroupsCreate(ctx context.Context) ApiT
 
 // Execute executes the request
 //  @return ContactGroup
-func (a *TenancyApiService) TenancyContactGroupsCreateExecute(r ApiTenancyContactGroupsCreateRequest) (*ContactGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsCreateExecute(r ApiTenancyContactGroupsCreateRequest) (*ContactGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2223,7 +2223,7 @@ func (a *TenancyApiService) TenancyContactGroupsCreateExecute(r ApiTenancyContac
 		localVarReturnValue  *ContactGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2309,7 +2309,7 @@ func (a *TenancyApiService) TenancyContactGroupsCreateExecute(r ApiTenancyContac
 
 type ApiTenancyContactGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -2326,7 +2326,7 @@ Delete a contact group object.
  @param id A unique integer value identifying this contact group.
  @return ApiTenancyContactGroupsDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsDestroy(ctx context.Context, id int32) ApiTenancyContactGroupsDestroyRequest {
+func (a *TenancyAPIService) TenancyContactGroupsDestroy(ctx context.Context, id int32) ApiTenancyContactGroupsDestroyRequest {
 	return ApiTenancyContactGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2335,14 +2335,14 @@ func (a *TenancyApiService) TenancyContactGroupsDestroy(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactGroupsDestroyExecute(r ApiTenancyContactGroupsDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsDestroyExecute(r ApiTenancyContactGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2415,7 +2415,7 @@ func (a *TenancyApiService) TenancyContactGroupsDestroyExecute(r ApiTenancyConta
 
 type ApiTenancyContactGroupsListRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -2840,7 +2840,7 @@ Get a list of contact group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactGroupsListRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsList(ctx context.Context) ApiTenancyContactGroupsListRequest {
+func (a *TenancyAPIService) TenancyContactGroupsList(ctx context.Context) ApiTenancyContactGroupsListRequest {
 	return ApiTenancyContactGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2849,7 +2849,7 @@ func (a *TenancyApiService) TenancyContactGroupsList(ctx context.Context) ApiTen
 
 // Execute executes the request
 //  @return PaginatedContactGroupList
-func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactGroupsListRequest) (*PaginatedContactGroupList, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsListExecute(r ApiTenancyContactGroupsListRequest) (*PaginatedContactGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2857,7 +2857,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		localVarReturnValue  *PaginatedContactGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2873,7 +2873,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -2884,7 +2884,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -2895,7 +2895,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -2906,7 +2906,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -2917,7 +2917,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -2928,7 +2928,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -2939,7 +2939,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -2953,7 +2953,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -2967,7 +2967,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -2978,7 +2978,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -2989,7 +2989,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -3000,7 +3000,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -3011,7 +3011,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -3022,7 +3022,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -3033,7 +3033,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -3044,7 +3044,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -3055,7 +3055,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -3066,7 +3066,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -3080,7 +3080,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -3091,7 +3091,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -3102,7 +3102,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -3113,7 +3113,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -3124,7 +3124,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -3135,7 +3135,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -3146,7 +3146,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -3157,7 +3157,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -3168,7 +3168,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -3179,7 +3179,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -3190,7 +3190,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -3201,7 +3201,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -3218,7 +3218,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -3232,7 +3232,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -3243,7 +3243,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -3254,7 +3254,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -3265,7 +3265,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -3276,7 +3276,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -3287,7 +3287,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -3298,7 +3298,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -3309,7 +3309,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -3320,7 +3320,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -3337,7 +3337,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent", t, "multi")
@@ -3348,7 +3348,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", t, "multi")
@@ -3359,7 +3359,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", t, "multi")
@@ -3370,7 +3370,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", t, "multi")
@@ -3384,7 +3384,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -3398,7 +3398,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -3409,7 +3409,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -3420,7 +3420,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -3431,7 +3431,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -3442,7 +3442,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -3453,7 +3453,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -3464,7 +3464,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -3475,7 +3475,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -3486,7 +3486,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -3497,7 +3497,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -3508,7 +3508,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -3587,7 +3587,7 @@ func (a *TenancyApiService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 
 type ApiTenancyContactGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	patchedWritableContactGroupRequest *PatchedWritableContactGroupRequest
 }
@@ -3610,7 +3610,7 @@ Patch a contact group object.
  @param id A unique integer value identifying this contact group.
  @return ApiTenancyContactGroupsPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactGroupsPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactGroupsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactGroupsPartialUpdateRequest {
 	return ApiTenancyContactGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3620,7 +3620,7 @@ func (a *TenancyApiService) TenancyContactGroupsPartialUpdate(ctx context.Contex
 
 // Execute executes the request
 //  @return ContactGroup
-func (a *TenancyApiService) TenancyContactGroupsPartialUpdateExecute(r ApiTenancyContactGroupsPartialUpdateRequest) (*ContactGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsPartialUpdateExecute(r ApiTenancyContactGroupsPartialUpdateRequest) (*ContactGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3628,7 +3628,7 @@ func (a *TenancyApiService) TenancyContactGroupsPartialUpdateExecute(r ApiTenanc
 		localVarReturnValue  *ContactGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3712,7 +3712,7 @@ func (a *TenancyApiService) TenancyContactGroupsPartialUpdateExecute(r ApiTenanc
 
 type ApiTenancyContactGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -3729,7 +3729,7 @@ Get a contact group object.
  @param id A unique integer value identifying this contact group.
  @return ApiTenancyContactGroupsRetrieveRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsRetrieve(ctx context.Context, id int32) ApiTenancyContactGroupsRetrieveRequest {
+func (a *TenancyAPIService) TenancyContactGroupsRetrieve(ctx context.Context, id int32) ApiTenancyContactGroupsRetrieveRequest {
 	return ApiTenancyContactGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3739,7 +3739,7 @@ func (a *TenancyApiService) TenancyContactGroupsRetrieve(ctx context.Context, id
 
 // Execute executes the request
 //  @return ContactGroup
-func (a *TenancyApiService) TenancyContactGroupsRetrieveExecute(r ApiTenancyContactGroupsRetrieveRequest) (*ContactGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsRetrieveExecute(r ApiTenancyContactGroupsRetrieveRequest) (*ContactGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3747,7 +3747,7 @@ func (a *TenancyApiService) TenancyContactGroupsRetrieveExecute(r ApiTenancyCont
 		localVarReturnValue  *ContactGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3829,7 +3829,7 @@ func (a *TenancyApiService) TenancyContactGroupsRetrieveExecute(r ApiTenancyCont
 
 type ApiTenancyContactGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	writableContactGroupRequest *WritableContactGroupRequest
 }
@@ -3852,7 +3852,7 @@ Put a contact group object.
  @param id A unique integer value identifying this contact group.
  @return ApiTenancyContactGroupsUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactGroupsUpdate(ctx context.Context, id int32) ApiTenancyContactGroupsUpdateRequest {
+func (a *TenancyAPIService) TenancyContactGroupsUpdate(ctx context.Context, id int32) ApiTenancyContactGroupsUpdateRequest {
 	return ApiTenancyContactGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3862,7 +3862,7 @@ func (a *TenancyApiService) TenancyContactGroupsUpdate(ctx context.Context, id i
 
 // Execute executes the request
 //  @return ContactGroup
-func (a *TenancyApiService) TenancyContactGroupsUpdateExecute(r ApiTenancyContactGroupsUpdateRequest) (*ContactGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactGroupsUpdateExecute(r ApiTenancyContactGroupsUpdateRequest) (*ContactGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3870,7 +3870,7 @@ func (a *TenancyApiService) TenancyContactGroupsUpdateExecute(r ApiTenancyContac
 		localVarReturnValue  *ContactGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3957,7 +3957,7 @@ func (a *TenancyApiService) TenancyContactGroupsUpdateExecute(r ApiTenancyContac
 
 type ApiTenancyContactRolesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRoleRequest *[]ContactRoleRequest
 }
 
@@ -3978,7 +3978,7 @@ Delete a list of contact role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactRolesBulkDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactRolesBulkDestroy(ctx context.Context) ApiTenancyContactRolesBulkDestroyRequest {
+func (a *TenancyAPIService) TenancyContactRolesBulkDestroy(ctx context.Context) ApiTenancyContactRolesBulkDestroyRequest {
 	return ApiTenancyContactRolesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3986,14 +3986,14 @@ func (a *TenancyApiService) TenancyContactRolesBulkDestroy(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactRolesBulkDestroyExecute(r ApiTenancyContactRolesBulkDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesBulkDestroyExecute(r ApiTenancyContactRolesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4070,7 +4070,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkDestroyExecute(r ApiTenancyCo
 
 type ApiTenancyContactRolesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRoleRequest *[]ContactRoleRequest
 }
 
@@ -4091,7 +4091,7 @@ Patch a list of contact role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactRolesBulkPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactRolesBulkPartialUpdate(ctx context.Context) ApiTenancyContactRolesBulkPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactRolesBulkPartialUpdate(ctx context.Context) ApiTenancyContactRolesBulkPartialUpdateRequest {
 	return ApiTenancyContactRolesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4100,7 +4100,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkPartialUpdate(ctx context.Con
 
 // Execute executes the request
 //  @return []ContactRole
-func (a *TenancyApiService) TenancyContactRolesBulkPartialUpdateExecute(r ApiTenancyContactRolesBulkPartialUpdateRequest) ([]ContactRole, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesBulkPartialUpdateExecute(r ApiTenancyContactRolesBulkPartialUpdateRequest) ([]ContactRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4108,7 +4108,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkPartialUpdateExecute(r ApiTen
 		localVarReturnValue  []ContactRole
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4194,7 +4194,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkPartialUpdateExecute(r ApiTen
 
 type ApiTenancyContactRolesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRoleRequest *[]ContactRoleRequest
 }
 
@@ -4215,7 +4215,7 @@ Put a list of contact role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactRolesBulkUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactRolesBulkUpdate(ctx context.Context) ApiTenancyContactRolesBulkUpdateRequest {
+func (a *TenancyAPIService) TenancyContactRolesBulkUpdate(ctx context.Context) ApiTenancyContactRolesBulkUpdateRequest {
 	return ApiTenancyContactRolesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4224,7 +4224,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkUpdate(ctx context.Context) A
 
 // Execute executes the request
 //  @return []ContactRole
-func (a *TenancyApiService) TenancyContactRolesBulkUpdateExecute(r ApiTenancyContactRolesBulkUpdateRequest) ([]ContactRole, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesBulkUpdateExecute(r ApiTenancyContactRolesBulkUpdateRequest) ([]ContactRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4232,7 +4232,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkUpdateExecute(r ApiTenancyCon
 		localVarReturnValue  []ContactRole
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4318,7 +4318,7 @@ func (a *TenancyApiService) TenancyContactRolesBulkUpdateExecute(r ApiTenancyCon
 
 type ApiTenancyContactRolesCreateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRoleRequest *ContactRoleRequest
 }
 
@@ -4339,7 +4339,7 @@ Post a list of contact role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactRolesCreateRequest
 */
-func (a *TenancyApiService) TenancyContactRolesCreate(ctx context.Context) ApiTenancyContactRolesCreateRequest {
+func (a *TenancyAPIService) TenancyContactRolesCreate(ctx context.Context) ApiTenancyContactRolesCreateRequest {
 	return ApiTenancyContactRolesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4348,7 +4348,7 @@ func (a *TenancyApiService) TenancyContactRolesCreate(ctx context.Context) ApiTe
 
 // Execute executes the request
 //  @return ContactRole
-func (a *TenancyApiService) TenancyContactRolesCreateExecute(r ApiTenancyContactRolesCreateRequest) (*ContactRole, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesCreateExecute(r ApiTenancyContactRolesCreateRequest) (*ContactRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4356,7 +4356,7 @@ func (a *TenancyApiService) TenancyContactRolesCreateExecute(r ApiTenancyContact
 		localVarReturnValue  *ContactRole
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4442,7 +4442,7 @@ func (a *TenancyApiService) TenancyContactRolesCreateExecute(r ApiTenancyContact
 
 type ApiTenancyContactRolesDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -4459,7 +4459,7 @@ Delete a contact role object.
  @param id A unique integer value identifying this contact role.
  @return ApiTenancyContactRolesDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactRolesDestroy(ctx context.Context, id int32) ApiTenancyContactRolesDestroyRequest {
+func (a *TenancyAPIService) TenancyContactRolesDestroy(ctx context.Context, id int32) ApiTenancyContactRolesDestroyRequest {
 	return ApiTenancyContactRolesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4468,14 +4468,14 @@ func (a *TenancyApiService) TenancyContactRolesDestroy(ctx context.Context, id i
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactRolesDestroyExecute(r ApiTenancyContactRolesDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesDestroyExecute(r ApiTenancyContactRolesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4548,7 +4548,7 @@ func (a *TenancyApiService) TenancyContactRolesDestroyExecute(r ApiTenancyContac
 
 type ApiTenancyContactRolesListRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -4945,7 +4945,7 @@ Get a list of contact role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactRolesListRequest
 */
-func (a *TenancyApiService) TenancyContactRolesList(ctx context.Context) ApiTenancyContactRolesListRequest {
+func (a *TenancyAPIService) TenancyContactRolesList(ctx context.Context) ApiTenancyContactRolesListRequest {
 	return ApiTenancyContactRolesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4954,7 +4954,7 @@ func (a *TenancyApiService) TenancyContactRolesList(ctx context.Context) ApiTena
 
 // Execute executes the request
 //  @return PaginatedContactRoleList
-func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRolesListRequest) (*PaginatedContactRoleList, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesListExecute(r ApiTenancyContactRolesListRequest) (*PaginatedContactRoleList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4962,7 +4962,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		localVarReturnValue  *PaginatedContactRoleList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4978,7 +4978,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -4989,7 +4989,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -5000,7 +5000,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -5011,7 +5011,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -5022,7 +5022,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -5033,7 +5033,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -5044,7 +5044,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -5058,7 +5058,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -5072,7 +5072,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -5083,7 +5083,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -5094,7 +5094,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -5105,7 +5105,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -5116,7 +5116,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -5127,7 +5127,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -5138,7 +5138,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -5149,7 +5149,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -5160,7 +5160,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -5171,7 +5171,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -5185,7 +5185,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -5196,7 +5196,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -5207,7 +5207,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -5218,7 +5218,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -5229,7 +5229,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -5240,7 +5240,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -5251,7 +5251,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -5262,7 +5262,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -5273,7 +5273,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -5284,7 +5284,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -5295,7 +5295,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -5306,7 +5306,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -5323,7 +5323,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -5337,7 +5337,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -5348,7 +5348,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -5359,7 +5359,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -5370,7 +5370,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -5381,7 +5381,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -5392,7 +5392,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -5403,7 +5403,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -5414,7 +5414,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -5425,7 +5425,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -5445,7 +5445,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -5459,7 +5459,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -5470,7 +5470,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -5481,7 +5481,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -5492,7 +5492,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -5503,7 +5503,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -5514,7 +5514,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -5525,7 +5525,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -5536,7 +5536,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -5547,7 +5547,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -5558,7 +5558,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -5569,7 +5569,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -5648,7 +5648,7 @@ func (a *TenancyApiService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 
 type ApiTenancyContactRolesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	patchedContactRoleRequest *PatchedContactRoleRequest
 }
@@ -5671,7 +5671,7 @@ Patch a contact role object.
  @param id A unique integer value identifying this contact role.
  @return ApiTenancyContactRolesPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactRolesPartialUpdate(ctx context.Context, id int32) ApiTenancyContactRolesPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactRolesPartialUpdate(ctx context.Context, id int32) ApiTenancyContactRolesPartialUpdateRequest {
 	return ApiTenancyContactRolesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5681,7 +5681,7 @@ func (a *TenancyApiService) TenancyContactRolesPartialUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return ContactRole
-func (a *TenancyApiService) TenancyContactRolesPartialUpdateExecute(r ApiTenancyContactRolesPartialUpdateRequest) (*ContactRole, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesPartialUpdateExecute(r ApiTenancyContactRolesPartialUpdateRequest) (*ContactRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -5689,7 +5689,7 @@ func (a *TenancyApiService) TenancyContactRolesPartialUpdateExecute(r ApiTenancy
 		localVarReturnValue  *ContactRole
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5773,7 +5773,7 @@ func (a *TenancyApiService) TenancyContactRolesPartialUpdateExecute(r ApiTenancy
 
 type ApiTenancyContactRolesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -5790,7 +5790,7 @@ Get a contact role object.
  @param id A unique integer value identifying this contact role.
  @return ApiTenancyContactRolesRetrieveRequest
 */
-func (a *TenancyApiService) TenancyContactRolesRetrieve(ctx context.Context, id int32) ApiTenancyContactRolesRetrieveRequest {
+func (a *TenancyAPIService) TenancyContactRolesRetrieve(ctx context.Context, id int32) ApiTenancyContactRolesRetrieveRequest {
 	return ApiTenancyContactRolesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5800,7 +5800,7 @@ func (a *TenancyApiService) TenancyContactRolesRetrieve(ctx context.Context, id 
 
 // Execute executes the request
 //  @return ContactRole
-func (a *TenancyApiService) TenancyContactRolesRetrieveExecute(r ApiTenancyContactRolesRetrieveRequest) (*ContactRole, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesRetrieveExecute(r ApiTenancyContactRolesRetrieveRequest) (*ContactRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5808,7 +5808,7 @@ func (a *TenancyApiService) TenancyContactRolesRetrieveExecute(r ApiTenancyConta
 		localVarReturnValue  *ContactRole
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5890,7 +5890,7 @@ func (a *TenancyApiService) TenancyContactRolesRetrieveExecute(r ApiTenancyConta
 
 type ApiTenancyContactRolesUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	contactRoleRequest *ContactRoleRequest
 }
@@ -5913,7 +5913,7 @@ Put a contact role object.
  @param id A unique integer value identifying this contact role.
  @return ApiTenancyContactRolesUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactRolesUpdate(ctx context.Context, id int32) ApiTenancyContactRolesUpdateRequest {
+func (a *TenancyAPIService) TenancyContactRolesUpdate(ctx context.Context, id int32) ApiTenancyContactRolesUpdateRequest {
 	return ApiTenancyContactRolesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5923,7 +5923,7 @@ func (a *TenancyApiService) TenancyContactRolesUpdate(ctx context.Context, id in
 
 // Execute executes the request
 //  @return ContactRole
-func (a *TenancyApiService) TenancyContactRolesUpdateExecute(r ApiTenancyContactRolesUpdateRequest) (*ContactRole, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactRolesUpdateExecute(r ApiTenancyContactRolesUpdateRequest) (*ContactRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -5931,7 +5931,7 @@ func (a *TenancyApiService) TenancyContactRolesUpdateExecute(r ApiTenancyContact
 		localVarReturnValue  *ContactRole
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactRolesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6018,7 +6018,7 @@ func (a *TenancyApiService) TenancyContactRolesUpdateExecute(r ApiTenancyContact
 
 type ApiTenancyContactsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRequest *[]ContactRequest
 }
 
@@ -6039,7 +6039,7 @@ Delete a list of contact objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactsBulkDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactsBulkDestroy(ctx context.Context) ApiTenancyContactsBulkDestroyRequest {
+func (a *TenancyAPIService) TenancyContactsBulkDestroy(ctx context.Context) ApiTenancyContactsBulkDestroyRequest {
 	return ApiTenancyContactsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6047,14 +6047,14 @@ func (a *TenancyApiService) TenancyContactsBulkDestroy(ctx context.Context) ApiT
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactsBulkDestroyExecute(r ApiTenancyContactsBulkDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsBulkDestroyExecute(r ApiTenancyContactsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6131,7 +6131,7 @@ func (a *TenancyApiService) TenancyContactsBulkDestroyExecute(r ApiTenancyContac
 
 type ApiTenancyContactsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRequest *[]ContactRequest
 }
 
@@ -6152,7 +6152,7 @@ Patch a list of contact objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactsBulkPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactsBulkPartialUpdate(ctx context.Context) ApiTenancyContactsBulkPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactsBulkPartialUpdate(ctx context.Context) ApiTenancyContactsBulkPartialUpdateRequest {
 	return ApiTenancyContactsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6161,7 +6161,7 @@ func (a *TenancyApiService) TenancyContactsBulkPartialUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return []Contact
-func (a *TenancyApiService) TenancyContactsBulkPartialUpdateExecute(r ApiTenancyContactsBulkPartialUpdateRequest) ([]Contact, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsBulkPartialUpdateExecute(r ApiTenancyContactsBulkPartialUpdateRequest) ([]Contact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6169,7 +6169,7 @@ func (a *TenancyApiService) TenancyContactsBulkPartialUpdateExecute(r ApiTenancy
 		localVarReturnValue  []Contact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6255,7 +6255,7 @@ func (a *TenancyApiService) TenancyContactsBulkPartialUpdateExecute(r ApiTenancy
 
 type ApiTenancyContactsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contactRequest *[]ContactRequest
 }
 
@@ -6276,7 +6276,7 @@ Put a list of contact objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactsBulkUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactsBulkUpdate(ctx context.Context) ApiTenancyContactsBulkUpdateRequest {
+func (a *TenancyAPIService) TenancyContactsBulkUpdate(ctx context.Context) ApiTenancyContactsBulkUpdateRequest {
 	return ApiTenancyContactsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6285,7 +6285,7 @@ func (a *TenancyApiService) TenancyContactsBulkUpdate(ctx context.Context) ApiTe
 
 // Execute executes the request
 //  @return []Contact
-func (a *TenancyApiService) TenancyContactsBulkUpdateExecute(r ApiTenancyContactsBulkUpdateRequest) ([]Contact, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsBulkUpdateExecute(r ApiTenancyContactsBulkUpdateRequest) ([]Contact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -6293,7 +6293,7 @@ func (a *TenancyApiService) TenancyContactsBulkUpdateExecute(r ApiTenancyContact
 		localVarReturnValue  []Contact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6379,7 +6379,7 @@ func (a *TenancyApiService) TenancyContactsBulkUpdateExecute(r ApiTenancyContact
 
 type ApiTenancyContactsCreateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	writableContactRequest *WritableContactRequest
 }
 
@@ -6400,7 +6400,7 @@ Post a list of contact objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactsCreateRequest
 */
-func (a *TenancyApiService) TenancyContactsCreate(ctx context.Context) ApiTenancyContactsCreateRequest {
+func (a *TenancyAPIService) TenancyContactsCreate(ctx context.Context) ApiTenancyContactsCreateRequest {
 	return ApiTenancyContactsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6409,7 +6409,7 @@ func (a *TenancyApiService) TenancyContactsCreate(ctx context.Context) ApiTenanc
 
 // Execute executes the request
 //  @return Contact
-func (a *TenancyApiService) TenancyContactsCreateExecute(r ApiTenancyContactsCreateRequest) (*Contact, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsCreateExecute(r ApiTenancyContactsCreateRequest) (*Contact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6417,7 +6417,7 @@ func (a *TenancyApiService) TenancyContactsCreateExecute(r ApiTenancyContactsCre
 		localVarReturnValue  *Contact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6503,7 +6503,7 @@ func (a *TenancyApiService) TenancyContactsCreateExecute(r ApiTenancyContactsCre
 
 type ApiTenancyContactsDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -6520,7 +6520,7 @@ Delete a contact object.
  @param id A unique integer value identifying this contact.
  @return ApiTenancyContactsDestroyRequest
 */
-func (a *TenancyApiService) TenancyContactsDestroy(ctx context.Context, id int32) ApiTenancyContactsDestroyRequest {
+func (a *TenancyAPIService) TenancyContactsDestroy(ctx context.Context, id int32) ApiTenancyContactsDestroyRequest {
 	return ApiTenancyContactsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6529,14 +6529,14 @@ func (a *TenancyApiService) TenancyContactsDestroy(ctx context.Context, id int32
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyContactsDestroyExecute(r ApiTenancyContactsDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsDestroyExecute(r ApiTenancyContactsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6609,7 +6609,7 @@ func (a *TenancyApiService) TenancyContactsDestroyExecute(r ApiTenancyContactsDe
 
 type ApiTenancyContactsListRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	address *[]string
 	addressEmpty *bool
 	addressIc *[]string
@@ -7232,7 +7232,7 @@ Get a list of contact objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyContactsListRequest
 */
-func (a *TenancyApiService) TenancyContactsList(ctx context.Context) ApiTenancyContactsListRequest {
+func (a *TenancyAPIService) TenancyContactsList(ctx context.Context) ApiTenancyContactsListRequest {
 	return ApiTenancyContactsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7241,7 +7241,7 @@ func (a *TenancyApiService) TenancyContactsList(ctx context.Context) ApiTenancyC
 
 // Execute executes the request
 //  @return PaginatedContactList
-func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListRequest) (*PaginatedContactList, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsListExecute(r ApiTenancyContactsListRequest) (*PaginatedContactList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7249,7 +7249,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		localVarReturnValue  *PaginatedContactList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7265,7 +7265,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address", t, "multi")
@@ -7279,7 +7279,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__ic", t, "multi")
@@ -7290,7 +7290,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__ie", t, "multi")
@@ -7301,7 +7301,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__iew", t, "multi")
@@ -7312,7 +7312,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__isw", t, "multi")
@@ -7323,7 +7323,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__n", t, "multi")
@@ -7334,7 +7334,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__nic", t, "multi")
@@ -7345,7 +7345,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__nie", t, "multi")
@@ -7356,7 +7356,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__niew", t, "multi")
@@ -7367,7 +7367,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address__nisw", t, "multi")
@@ -7378,7 +7378,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -7389,7 +7389,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -7400,7 +7400,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -7411,7 +7411,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -7422,7 +7422,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -7433,7 +7433,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -7444,7 +7444,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -7458,7 +7458,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email", t, "multi")
@@ -7472,7 +7472,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__ic", t, "multi")
@@ -7483,7 +7483,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__ie", t, "multi")
@@ -7494,7 +7494,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__iew", t, "multi")
@@ -7505,7 +7505,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__isw", t, "multi")
@@ -7516,7 +7516,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__n", t, "multi")
@@ -7527,7 +7527,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__nic", t, "multi")
@@ -7538,7 +7538,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__nie", t, "multi")
@@ -7549,7 +7549,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__niew", t, "multi")
@@ -7560,7 +7560,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__nisw", t, "multi")
@@ -7571,7 +7571,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -7582,7 +7582,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -7593,7 +7593,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -7604,7 +7604,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -7615,7 +7615,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -7629,7 +7629,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -7640,7 +7640,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -7651,7 +7651,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -7662,7 +7662,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -7673,7 +7673,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -7684,7 +7684,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -7695,7 +7695,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -7706,7 +7706,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -7717,7 +7717,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -7728,7 +7728,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -7739,7 +7739,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -7750,7 +7750,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -7764,7 +7764,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link", t, "multi")
@@ -7778,7 +7778,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__ic", t, "multi")
@@ -7789,7 +7789,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__ie", t, "multi")
@@ -7800,7 +7800,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__iew", t, "multi")
@@ -7811,7 +7811,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__isw", t, "multi")
@@ -7822,7 +7822,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__n", t, "multi")
@@ -7833,7 +7833,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__nic", t, "multi")
@@ -7844,7 +7844,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__nie", t, "multi")
@@ -7855,7 +7855,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__niew", t, "multi")
@@ -7866,7 +7866,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "link__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "link__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "link__nisw", t, "multi")
@@ -7880,7 +7880,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -7894,7 +7894,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -7905,7 +7905,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -7916,7 +7916,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -7927,7 +7927,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -7938,7 +7938,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -7949,7 +7949,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -7960,7 +7960,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -7971,7 +7971,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -7982,7 +7982,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -7999,7 +7999,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone", t, "multi")
@@ -8013,7 +8013,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__ic", t, "multi")
@@ -8024,7 +8024,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__ie", t, "multi")
@@ -8035,7 +8035,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__iew", t, "multi")
@@ -8046,7 +8046,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__isw", t, "multi")
@@ -8057,7 +8057,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__n", t, "multi")
@@ -8068,7 +8068,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nic", t, "multi")
@@ -8079,7 +8079,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nie", t, "multi")
@@ -8090,7 +8090,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__niew", t, "multi")
@@ -8101,7 +8101,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "phone__nisw", t, "multi")
@@ -8115,7 +8115,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -8126,7 +8126,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -8137,7 +8137,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title", t, "multi")
@@ -8151,7 +8151,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__ic", t, "multi")
@@ -8162,7 +8162,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__ie", t, "multi")
@@ -8173,7 +8173,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__iew", t, "multi")
@@ -8184,7 +8184,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__isw", t, "multi")
@@ -8195,7 +8195,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__n", t, "multi")
@@ -8206,7 +8206,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__nic", t, "multi")
@@ -8217,7 +8217,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__nie", t, "multi")
@@ -8228,7 +8228,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__niew", t, "multi")
@@ -8239,7 +8239,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "title__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "title__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "title__nisw", t, "multi")
@@ -8318,7 +8318,7 @@ func (a *TenancyApiService) TenancyContactsListExecute(r ApiTenancyContactsListR
 
 type ApiTenancyContactsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	patchedWritableContactRequest *PatchedWritableContactRequest
 }
@@ -8341,7 +8341,7 @@ Patch a contact object.
  @param id A unique integer value identifying this contact.
  @return ApiTenancyContactsPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactsPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyContactsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactsPartialUpdateRequest {
 	return ApiTenancyContactsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8351,7 +8351,7 @@ func (a *TenancyApiService) TenancyContactsPartialUpdate(ctx context.Context, id
 
 // Execute executes the request
 //  @return Contact
-func (a *TenancyApiService) TenancyContactsPartialUpdateExecute(r ApiTenancyContactsPartialUpdateRequest) (*Contact, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsPartialUpdateExecute(r ApiTenancyContactsPartialUpdateRequest) (*Contact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8359,7 +8359,7 @@ func (a *TenancyApiService) TenancyContactsPartialUpdateExecute(r ApiTenancyCont
 		localVarReturnValue  *Contact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8443,7 +8443,7 @@ func (a *TenancyApiService) TenancyContactsPartialUpdateExecute(r ApiTenancyCont
 
 type ApiTenancyContactsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -8460,7 +8460,7 @@ Get a contact object.
  @param id A unique integer value identifying this contact.
  @return ApiTenancyContactsRetrieveRequest
 */
-func (a *TenancyApiService) TenancyContactsRetrieve(ctx context.Context, id int32) ApiTenancyContactsRetrieveRequest {
+func (a *TenancyAPIService) TenancyContactsRetrieve(ctx context.Context, id int32) ApiTenancyContactsRetrieveRequest {
 	return ApiTenancyContactsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8470,7 +8470,7 @@ func (a *TenancyApiService) TenancyContactsRetrieve(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return Contact
-func (a *TenancyApiService) TenancyContactsRetrieveExecute(r ApiTenancyContactsRetrieveRequest) (*Contact, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsRetrieveExecute(r ApiTenancyContactsRetrieveRequest) (*Contact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8478,7 +8478,7 @@ func (a *TenancyApiService) TenancyContactsRetrieveExecute(r ApiTenancyContactsR
 		localVarReturnValue  *Contact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8560,7 +8560,7 @@ func (a *TenancyApiService) TenancyContactsRetrieveExecute(r ApiTenancyContactsR
 
 type ApiTenancyContactsUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	writableContactRequest *WritableContactRequest
 }
@@ -8583,7 +8583,7 @@ Put a contact object.
  @param id A unique integer value identifying this contact.
  @return ApiTenancyContactsUpdateRequest
 */
-func (a *TenancyApiService) TenancyContactsUpdate(ctx context.Context, id int32) ApiTenancyContactsUpdateRequest {
+func (a *TenancyAPIService) TenancyContactsUpdate(ctx context.Context, id int32) ApiTenancyContactsUpdateRequest {
 	return ApiTenancyContactsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8593,7 +8593,7 @@ func (a *TenancyApiService) TenancyContactsUpdate(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return Contact
-func (a *TenancyApiService) TenancyContactsUpdateExecute(r ApiTenancyContactsUpdateRequest) (*Contact, *http.Response, error) {
+func (a *TenancyAPIService) TenancyContactsUpdateExecute(r ApiTenancyContactsUpdateRequest) (*Contact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8601,7 +8601,7 @@ func (a *TenancyApiService) TenancyContactsUpdateExecute(r ApiTenancyContactsUpd
 		localVarReturnValue  *Contact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyContactsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8688,7 +8688,7 @@ func (a *TenancyApiService) TenancyContactsUpdateExecute(r ApiTenancyContactsUpd
 
 type ApiTenancyTenantGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	tenantGroupRequest *[]TenantGroupRequest
 }
 
@@ -8709,7 +8709,7 @@ Delete a list of tenant group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantGroupsBulkDestroyRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsBulkDestroy(ctx context.Context) ApiTenancyTenantGroupsBulkDestroyRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsBulkDestroy(ctx context.Context) ApiTenancyTenantGroupsBulkDestroyRequest {
 	return ApiTenancyTenantGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8717,14 +8717,14 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkDestroy(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyTenantGroupsBulkDestroyExecute(r ApiTenancyTenantGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsBulkDestroyExecute(r ApiTenancyTenantGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8801,7 +8801,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkDestroyExecute(r ApiTenancyTe
 
 type ApiTenancyTenantGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	tenantGroupRequest *[]TenantGroupRequest
 }
 
@@ -8822,7 +8822,7 @@ Patch a list of tenant group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantGroupsBulkPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsBulkPartialUpdate(ctx context.Context) ApiTenancyTenantGroupsBulkPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsBulkPartialUpdate(ctx context.Context) ApiTenancyTenantGroupsBulkPartialUpdateRequest {
 	return ApiTenancyTenantGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8831,7 +8831,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkPartialUpdate(ctx context.Con
 
 // Execute executes the request
 //  @return []TenantGroup
-func (a *TenancyApiService) TenancyTenantGroupsBulkPartialUpdateExecute(r ApiTenancyTenantGroupsBulkPartialUpdateRequest) ([]TenantGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsBulkPartialUpdateExecute(r ApiTenancyTenantGroupsBulkPartialUpdateRequest) ([]TenantGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8839,7 +8839,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkPartialUpdateExecute(r ApiTen
 		localVarReturnValue  []TenantGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8925,7 +8925,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkPartialUpdateExecute(r ApiTen
 
 type ApiTenancyTenantGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	tenantGroupRequest *[]TenantGroupRequest
 }
 
@@ -8946,7 +8946,7 @@ Put a list of tenant group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantGroupsBulkUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsBulkUpdate(ctx context.Context) ApiTenancyTenantGroupsBulkUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsBulkUpdate(ctx context.Context) ApiTenancyTenantGroupsBulkUpdateRequest {
 	return ApiTenancyTenantGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8955,7 +8955,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkUpdate(ctx context.Context) A
 
 // Execute executes the request
 //  @return []TenantGroup
-func (a *TenancyApiService) TenancyTenantGroupsBulkUpdateExecute(r ApiTenancyTenantGroupsBulkUpdateRequest) ([]TenantGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsBulkUpdateExecute(r ApiTenancyTenantGroupsBulkUpdateRequest) ([]TenantGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8963,7 +8963,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkUpdateExecute(r ApiTenancyTen
 		localVarReturnValue  []TenantGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9049,7 +9049,7 @@ func (a *TenancyApiService) TenancyTenantGroupsBulkUpdateExecute(r ApiTenancyTen
 
 type ApiTenancyTenantGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	writableTenantGroupRequest *WritableTenantGroupRequest
 }
 
@@ -9070,7 +9070,7 @@ Post a list of tenant group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantGroupsCreateRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsCreate(ctx context.Context) ApiTenancyTenantGroupsCreateRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsCreate(ctx context.Context) ApiTenancyTenantGroupsCreateRequest {
 	return ApiTenancyTenantGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9079,7 +9079,7 @@ func (a *TenancyApiService) TenancyTenantGroupsCreate(ctx context.Context) ApiTe
 
 // Execute executes the request
 //  @return TenantGroup
-func (a *TenancyApiService) TenancyTenantGroupsCreateExecute(r ApiTenancyTenantGroupsCreateRequest) (*TenantGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsCreateExecute(r ApiTenancyTenantGroupsCreateRequest) (*TenantGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -9087,7 +9087,7 @@ func (a *TenancyApiService) TenancyTenantGroupsCreateExecute(r ApiTenancyTenantG
 		localVarReturnValue  *TenantGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9173,7 +9173,7 @@ func (a *TenancyApiService) TenancyTenantGroupsCreateExecute(r ApiTenancyTenantG
 
 type ApiTenancyTenantGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -9190,7 +9190,7 @@ Delete a tenant group object.
  @param id A unique integer value identifying this tenant group.
  @return ApiTenancyTenantGroupsDestroyRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsDestroy(ctx context.Context, id int32) ApiTenancyTenantGroupsDestroyRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsDestroy(ctx context.Context, id int32) ApiTenancyTenantGroupsDestroyRequest {
 	return ApiTenancyTenantGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9199,14 +9199,14 @@ func (a *TenancyApiService) TenancyTenantGroupsDestroy(ctx context.Context, id i
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyTenantGroupsDestroyExecute(r ApiTenancyTenantGroupsDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsDestroyExecute(r ApiTenancyTenantGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9279,7 +9279,7 @@ func (a *TenancyApiService) TenancyTenantGroupsDestroyExecute(r ApiTenancyTenant
 
 type ApiTenancyTenantGroupsListRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -9704,7 +9704,7 @@ Get a list of tenant group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantGroupsListRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsList(ctx context.Context) ApiTenancyTenantGroupsListRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsList(ctx context.Context) ApiTenancyTenantGroupsListRequest {
 	return ApiTenancyTenantGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9713,7 +9713,7 @@ func (a *TenancyApiService) TenancyTenantGroupsList(ctx context.Context) ApiTena
 
 // Execute executes the request
 //  @return PaginatedTenantGroupList
-func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGroupsListRequest) (*PaginatedTenantGroupList, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGroupsListRequest) (*PaginatedTenantGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9721,7 +9721,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		localVarReturnValue  *PaginatedTenantGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9737,7 +9737,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -9748,7 +9748,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -9759,7 +9759,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -9770,7 +9770,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -9781,7 +9781,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -9792,7 +9792,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -9803,7 +9803,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -9817,7 +9817,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -9831,7 +9831,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -9842,7 +9842,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -9853,7 +9853,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -9864,7 +9864,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -9875,7 +9875,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -9886,7 +9886,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -9897,7 +9897,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -9908,7 +9908,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -9919,7 +9919,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -9930,7 +9930,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -9944,7 +9944,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -9955,7 +9955,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -9966,7 +9966,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -9977,7 +9977,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -9988,7 +9988,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -9999,7 +9999,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -10010,7 +10010,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -10021,7 +10021,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -10032,7 +10032,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -10043,7 +10043,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -10054,7 +10054,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -10065,7 +10065,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -10082,7 +10082,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -10096,7 +10096,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -10107,7 +10107,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -10118,7 +10118,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -10129,7 +10129,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -10140,7 +10140,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -10151,7 +10151,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -10162,7 +10162,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -10173,7 +10173,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -10184,7 +10184,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -10201,7 +10201,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent", t, "multi")
@@ -10212,7 +10212,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", t, "multi")
@@ -10223,7 +10223,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", t, "multi")
@@ -10234,7 +10234,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", t, "multi")
@@ -10248,7 +10248,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -10262,7 +10262,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -10273,7 +10273,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -10284,7 +10284,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -10295,7 +10295,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -10306,7 +10306,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -10317,7 +10317,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -10328,7 +10328,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -10339,7 +10339,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -10350,7 +10350,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -10361,7 +10361,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -10372,7 +10372,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -10451,7 +10451,7 @@ func (a *TenancyApiService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 
 type ApiTenancyTenantGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	patchedWritableTenantGroupRequest *PatchedWritableTenantGroupRequest
 }
@@ -10474,7 +10474,7 @@ Patch a tenant group object.
  @param id A unique integer value identifying this tenant group.
  @return ApiTenancyTenantGroupsPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsPartialUpdate(ctx context.Context, id int32) ApiTenancyTenantGroupsPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsPartialUpdate(ctx context.Context, id int32) ApiTenancyTenantGroupsPartialUpdateRequest {
 	return ApiTenancyTenantGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10484,7 +10484,7 @@ func (a *TenancyApiService) TenancyTenantGroupsPartialUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return TenantGroup
-func (a *TenancyApiService) TenancyTenantGroupsPartialUpdateExecute(r ApiTenancyTenantGroupsPartialUpdateRequest) (*TenantGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsPartialUpdateExecute(r ApiTenancyTenantGroupsPartialUpdateRequest) (*TenantGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -10492,7 +10492,7 @@ func (a *TenancyApiService) TenancyTenantGroupsPartialUpdateExecute(r ApiTenancy
 		localVarReturnValue  *TenantGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10576,7 +10576,7 @@ func (a *TenancyApiService) TenancyTenantGroupsPartialUpdateExecute(r ApiTenancy
 
 type ApiTenancyTenantGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -10593,7 +10593,7 @@ Get a tenant group object.
  @param id A unique integer value identifying this tenant group.
  @return ApiTenancyTenantGroupsRetrieveRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsRetrieve(ctx context.Context, id int32) ApiTenancyTenantGroupsRetrieveRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsRetrieve(ctx context.Context, id int32) ApiTenancyTenantGroupsRetrieveRequest {
 	return ApiTenancyTenantGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10603,7 +10603,7 @@ func (a *TenancyApiService) TenancyTenantGroupsRetrieve(ctx context.Context, id 
 
 // Execute executes the request
 //  @return TenantGroup
-func (a *TenancyApiService) TenancyTenantGroupsRetrieveExecute(r ApiTenancyTenantGroupsRetrieveRequest) (*TenantGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsRetrieveExecute(r ApiTenancyTenantGroupsRetrieveRequest) (*TenantGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10611,7 +10611,7 @@ func (a *TenancyApiService) TenancyTenantGroupsRetrieveExecute(r ApiTenancyTenan
 		localVarReturnValue  *TenantGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10693,7 +10693,7 @@ func (a *TenancyApiService) TenancyTenantGroupsRetrieveExecute(r ApiTenancyTenan
 
 type ApiTenancyTenantGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	writableTenantGroupRequest *WritableTenantGroupRequest
 }
@@ -10716,7 +10716,7 @@ Put a tenant group object.
  @param id A unique integer value identifying this tenant group.
  @return ApiTenancyTenantGroupsUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantGroupsUpdate(ctx context.Context, id int32) ApiTenancyTenantGroupsUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantGroupsUpdate(ctx context.Context, id int32) ApiTenancyTenantGroupsUpdateRequest {
 	return ApiTenancyTenantGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10726,7 +10726,7 @@ func (a *TenancyApiService) TenancyTenantGroupsUpdate(ctx context.Context, id in
 
 // Execute executes the request
 //  @return TenantGroup
-func (a *TenancyApiService) TenancyTenantGroupsUpdateExecute(r ApiTenancyTenantGroupsUpdateRequest) (*TenantGroup, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantGroupsUpdateExecute(r ApiTenancyTenantGroupsUpdateRequest) (*TenantGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10734,7 +10734,7 @@ func (a *TenancyApiService) TenancyTenantGroupsUpdateExecute(r ApiTenancyTenantG
 		localVarReturnValue  *TenantGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10821,7 +10821,7 @@ func (a *TenancyApiService) TenancyTenantGroupsUpdateExecute(r ApiTenancyTenantG
 
 type ApiTenancyTenantsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	tenantRequest *[]TenantRequest
 }
 
@@ -10842,7 +10842,7 @@ Delete a list of tenant objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantsBulkDestroyRequest
 */
-func (a *TenancyApiService) TenancyTenantsBulkDestroy(ctx context.Context) ApiTenancyTenantsBulkDestroyRequest {
+func (a *TenancyAPIService) TenancyTenantsBulkDestroy(ctx context.Context) ApiTenancyTenantsBulkDestroyRequest {
 	return ApiTenancyTenantsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10850,14 +10850,14 @@ func (a *TenancyApiService) TenancyTenantsBulkDestroy(ctx context.Context) ApiTe
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyTenantsBulkDestroyExecute(r ApiTenancyTenantsBulkDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsBulkDestroyExecute(r ApiTenancyTenantsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10934,7 +10934,7 @@ func (a *TenancyApiService) TenancyTenantsBulkDestroyExecute(r ApiTenancyTenants
 
 type ApiTenancyTenantsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	tenantRequest *[]TenantRequest
 }
 
@@ -10955,7 +10955,7 @@ Patch a list of tenant objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantsBulkPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantsBulkPartialUpdate(ctx context.Context) ApiTenancyTenantsBulkPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantsBulkPartialUpdate(ctx context.Context) ApiTenancyTenantsBulkPartialUpdateRequest {
 	return ApiTenancyTenantsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10964,7 +10964,7 @@ func (a *TenancyApiService) TenancyTenantsBulkPartialUpdate(ctx context.Context)
 
 // Execute executes the request
 //  @return []Tenant
-func (a *TenancyApiService) TenancyTenantsBulkPartialUpdateExecute(r ApiTenancyTenantsBulkPartialUpdateRequest) ([]Tenant, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsBulkPartialUpdateExecute(r ApiTenancyTenantsBulkPartialUpdateRequest) ([]Tenant, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -10972,7 +10972,7 @@ func (a *TenancyApiService) TenancyTenantsBulkPartialUpdateExecute(r ApiTenancyT
 		localVarReturnValue  []Tenant
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11058,7 +11058,7 @@ func (a *TenancyApiService) TenancyTenantsBulkPartialUpdateExecute(r ApiTenancyT
 
 type ApiTenancyTenantsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	tenantRequest *[]TenantRequest
 }
 
@@ -11079,7 +11079,7 @@ Put a list of tenant objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantsBulkUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantsBulkUpdate(ctx context.Context) ApiTenancyTenantsBulkUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantsBulkUpdate(ctx context.Context) ApiTenancyTenantsBulkUpdateRequest {
 	return ApiTenancyTenantsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11088,7 +11088,7 @@ func (a *TenancyApiService) TenancyTenantsBulkUpdate(ctx context.Context) ApiTen
 
 // Execute executes the request
 //  @return []Tenant
-func (a *TenancyApiService) TenancyTenantsBulkUpdateExecute(r ApiTenancyTenantsBulkUpdateRequest) ([]Tenant, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsBulkUpdateExecute(r ApiTenancyTenantsBulkUpdateRequest) ([]Tenant, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11096,7 +11096,7 @@ func (a *TenancyApiService) TenancyTenantsBulkUpdateExecute(r ApiTenancyTenantsB
 		localVarReturnValue  []Tenant
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11182,7 +11182,7 @@ func (a *TenancyApiService) TenancyTenantsBulkUpdateExecute(r ApiTenancyTenantsB
 
 type ApiTenancyTenantsCreateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	writableTenantRequest *WritableTenantRequest
 }
 
@@ -11203,7 +11203,7 @@ Post a list of tenant objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantsCreateRequest
 */
-func (a *TenancyApiService) TenancyTenantsCreate(ctx context.Context) ApiTenancyTenantsCreateRequest {
+func (a *TenancyAPIService) TenancyTenantsCreate(ctx context.Context) ApiTenancyTenantsCreateRequest {
 	return ApiTenancyTenantsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11212,7 +11212,7 @@ func (a *TenancyApiService) TenancyTenantsCreate(ctx context.Context) ApiTenancy
 
 // Execute executes the request
 //  @return Tenant
-func (a *TenancyApiService) TenancyTenantsCreateExecute(r ApiTenancyTenantsCreateRequest) (*Tenant, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsCreateExecute(r ApiTenancyTenantsCreateRequest) (*Tenant, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -11220,7 +11220,7 @@ func (a *TenancyApiService) TenancyTenantsCreateExecute(r ApiTenancyTenantsCreat
 		localVarReturnValue  *Tenant
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11306,7 +11306,7 @@ func (a *TenancyApiService) TenancyTenantsCreateExecute(r ApiTenancyTenantsCreat
 
 type ApiTenancyTenantsDestroyRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -11323,7 +11323,7 @@ Delete a tenant object.
  @param id A unique integer value identifying this tenant.
  @return ApiTenancyTenantsDestroyRequest
 */
-func (a *TenancyApiService) TenancyTenantsDestroy(ctx context.Context, id int32) ApiTenancyTenantsDestroyRequest {
+func (a *TenancyAPIService) TenancyTenantsDestroy(ctx context.Context, id int32) ApiTenancyTenantsDestroyRequest {
 	return ApiTenancyTenantsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11332,14 +11332,14 @@ func (a *TenancyApiService) TenancyTenantsDestroy(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *TenancyApiService) TenancyTenantsDestroyExecute(r ApiTenancyTenantsDestroyRequest) (*http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsDestroyExecute(r ApiTenancyTenantsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11412,7 +11412,7 @@ func (a *TenancyApiService) TenancyTenantsDestroyExecute(r ApiTenancyTenantsDest
 
 type ApiTenancyTenantsListRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	contact *[]int32
 	contactN *[]int32
 	contactGroup *[]int32
@@ -11879,7 +11879,7 @@ Get a list of tenant objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiTenancyTenantsListRequest
 */
-func (a *TenancyApiService) TenancyTenantsList(ctx context.Context) ApiTenancyTenantsListRequest {
+func (a *TenancyAPIService) TenancyTenantsList(ctx context.Context) ApiTenancyTenantsListRequest {
 	return ApiTenancyTenantsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11888,7 +11888,7 @@ func (a *TenancyApiService) TenancyTenantsList(ctx context.Context) ApiTenancyTe
 
 // Execute executes the request
 //  @return PaginatedTenantList
-func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListRequest) (*PaginatedTenantList, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsListExecute(r ApiTenancyTenantsListRequest) (*PaginatedTenantList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11896,7 +11896,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		localVarReturnValue  *PaginatedTenantList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11912,7 +11912,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "multi")
@@ -11923,7 +11923,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "multi")
@@ -11934,7 +11934,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "multi")
@@ -11945,7 +11945,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "multi")
@@ -11956,7 +11956,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "multi")
@@ -11967,7 +11967,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "multi")
@@ -11978,7 +11978,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -11989,7 +11989,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -12000,7 +12000,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -12011,7 +12011,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -12022,7 +12022,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -12033,7 +12033,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -12044,7 +12044,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -12058,7 +12058,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -12072,7 +12072,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -12083,7 +12083,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -12094,7 +12094,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -12105,7 +12105,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -12116,7 +12116,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -12127,7 +12127,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -12138,7 +12138,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -12149,7 +12149,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -12160,7 +12160,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -12171,7 +12171,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -12182,7 +12182,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -12193,7 +12193,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -12204,7 +12204,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -12215,7 +12215,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -12229,7 +12229,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -12240,7 +12240,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -12251,7 +12251,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -12262,7 +12262,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -12273,7 +12273,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -12284,7 +12284,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -12295,7 +12295,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -12306,7 +12306,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -12317,7 +12317,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -12328,7 +12328,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -12339,7 +12339,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -12350,7 +12350,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -12367,7 +12367,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -12381,7 +12381,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -12392,7 +12392,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -12403,7 +12403,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -12414,7 +12414,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -12425,7 +12425,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -12436,7 +12436,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -12447,7 +12447,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -12458,7 +12458,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -12469,7 +12469,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -12489,7 +12489,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -12503,7 +12503,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -12514,7 +12514,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -12525,7 +12525,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -12536,7 +12536,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -12547,7 +12547,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -12558,7 +12558,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -12569,7 +12569,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -12580,7 +12580,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -12591,7 +12591,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -12602,7 +12602,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -12613,7 +12613,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -12692,7 +12692,7 @@ func (a *TenancyApiService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 
 type ApiTenancyTenantsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	patchedWritableTenantRequest *PatchedWritableTenantRequest
 }
@@ -12715,7 +12715,7 @@ Patch a tenant object.
  @param id A unique integer value identifying this tenant.
  @return ApiTenancyTenantsPartialUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantsPartialUpdate(ctx context.Context, id int32) ApiTenancyTenantsPartialUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantsPartialUpdate(ctx context.Context, id int32) ApiTenancyTenantsPartialUpdateRequest {
 	return ApiTenancyTenantsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12725,7 +12725,7 @@ func (a *TenancyApiService) TenancyTenantsPartialUpdate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return Tenant
-func (a *TenancyApiService) TenancyTenantsPartialUpdateExecute(r ApiTenancyTenantsPartialUpdateRequest) (*Tenant, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsPartialUpdateExecute(r ApiTenancyTenantsPartialUpdateRequest) (*Tenant, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -12733,7 +12733,7 @@ func (a *TenancyApiService) TenancyTenantsPartialUpdateExecute(r ApiTenancyTenan
 		localVarReturnValue  *Tenant
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12817,7 +12817,7 @@ func (a *TenancyApiService) TenancyTenantsPartialUpdateExecute(r ApiTenancyTenan
 
 type ApiTenancyTenantsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 }
 
@@ -12834,7 +12834,7 @@ Get a tenant object.
  @param id A unique integer value identifying this tenant.
  @return ApiTenancyTenantsRetrieveRequest
 */
-func (a *TenancyApiService) TenancyTenantsRetrieve(ctx context.Context, id int32) ApiTenancyTenantsRetrieveRequest {
+func (a *TenancyAPIService) TenancyTenantsRetrieve(ctx context.Context, id int32) ApiTenancyTenantsRetrieveRequest {
 	return ApiTenancyTenantsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12844,7 +12844,7 @@ func (a *TenancyApiService) TenancyTenantsRetrieve(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Tenant
-func (a *TenancyApiService) TenancyTenantsRetrieveExecute(r ApiTenancyTenantsRetrieveRequest) (*Tenant, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsRetrieveExecute(r ApiTenancyTenantsRetrieveRequest) (*Tenant, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12852,7 +12852,7 @@ func (a *TenancyApiService) TenancyTenantsRetrieveExecute(r ApiTenancyTenantsRet
 		localVarReturnValue  *Tenant
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12934,7 +12934,7 @@ func (a *TenancyApiService) TenancyTenantsRetrieveExecute(r ApiTenancyTenantsRet
 
 type ApiTenancyTenantsUpdateRequest struct {
 	ctx context.Context
-	ApiService *TenancyApiService
+	ApiService *TenancyAPIService
 	id int32
 	writableTenantRequest *WritableTenantRequest
 }
@@ -12957,7 +12957,7 @@ Put a tenant object.
  @param id A unique integer value identifying this tenant.
  @return ApiTenancyTenantsUpdateRequest
 */
-func (a *TenancyApiService) TenancyTenantsUpdate(ctx context.Context, id int32) ApiTenancyTenantsUpdateRequest {
+func (a *TenancyAPIService) TenancyTenantsUpdate(ctx context.Context, id int32) ApiTenancyTenantsUpdateRequest {
 	return ApiTenancyTenantsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12967,7 +12967,7 @@ func (a *TenancyApiService) TenancyTenantsUpdate(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return Tenant
-func (a *TenancyApiService) TenancyTenantsUpdateExecute(r ApiTenancyTenantsUpdateRequest) (*Tenant, *http.Response, error) {
+func (a *TenancyAPIService) TenancyTenantsUpdateExecute(r ApiTenancyTenantsUpdateRequest) (*Tenant, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12975,7 +12975,7 @@ func (a *TenancyApiService) TenancyTenantsUpdateExecute(r ApiTenancyTenantsUpdat
 		localVarReturnValue  *Tenant
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyApiService.TenancyTenantsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

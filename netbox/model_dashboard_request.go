@@ -21,10 +21,7 @@ var _ MappedNullable = &DashboardRequest{}
 type DashboardRequest struct {
 	Layout map[string]interface{} `json:"layout,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DashboardRequest DashboardRequest
 
 // NewDashboardRequest instantiates a new DashboardRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -123,30 +120,7 @@ func (o DashboardRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *DashboardRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varDashboardRequest := _DashboardRequest{}
-
-	if err = json.Unmarshal(bytes, &varDashboardRequest); err == nil {
-		*o = DashboardRequest(varDashboardRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDashboardRequest struct {

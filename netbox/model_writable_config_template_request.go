@@ -28,10 +28,7 @@ type WritableConfigTemplateRequest struct {
 	// Remote data source
 	DataSource NullableInt32 `json:"data_source,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableConfigTemplateRequest WritableConfigTemplateRequest
 
 // NewWritableConfigTemplateRequest instantiates a new WritableConfigTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -263,34 +260,7 @@ func (o WritableConfigTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableConfigTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableConfigTemplateRequest := _WritableConfigTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableConfigTemplateRequest); err == nil {
-		*o = WritableConfigTemplateRequest(varWritableConfigTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "environment_params")
-		delete(additionalProperties, "template_code")
-		delete(additionalProperties, "data_source")
-		delete(additionalProperties, "tags")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableConfigTemplateRequest struct {

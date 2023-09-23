@@ -35,10 +35,7 @@ type PatchedWritableFrontPortRequest struct {
 	MarkConnected *bool `json:"mark_connected,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableFrontPortRequest PatchedWritableFrontPortRequest
 
 // NewPatchedWritableFrontPortRequest instantiates a new PatchedWritableFrontPortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -497,40 +494,7 @@ func (o PatchedWritableFrontPortRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableFrontPortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableFrontPortRequest := _PatchedWritableFrontPortRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableFrontPortRequest); err == nil {
-		*o = PatchedWritableFrontPortRequest(varPatchedWritableFrontPortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "rear_port")
-		delete(additionalProperties, "rear_port_position")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableFrontPortRequest struct {

@@ -22,10 +22,7 @@ type NestedFHRPGroupRequest struct {
 	// * `vrrp2` - VRRPv2 * `vrrp3` - VRRPv3 * `carp` - CARP * `clusterxl` - ClusterXL * `hsrp` - HSRP * `glbp` - GLBP * `other` - Other
 	Protocol string `json:"protocol"`
 	GroupId int32 `json:"group_id"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedFHRPGroupRequest NestedFHRPGroupRequest
 
 // NewNestedFHRPGroupRequest instantiates a new NestedFHRPGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -106,30 +103,7 @@ func (o NestedFHRPGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["group_id"] = o.GroupId
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedFHRPGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedFHRPGroupRequest := _NestedFHRPGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedFHRPGroupRequest); err == nil {
-		*o = NestedFHRPGroupRequest(varNestedFHRPGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "group_id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedFHRPGroupRequest struct {

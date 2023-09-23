@@ -28,10 +28,7 @@ type PatchedWritableConfigTemplateRequest struct {
 	// Remote data source
 	DataSource NullableInt32 `json:"data_source,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableConfigTemplateRequest PatchedWritableConfigTemplateRequest
 
 // NewPatchedWritableConfigTemplateRequest instantiates a new PatchedWritableConfigTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -281,34 +278,7 @@ func (o PatchedWritableConfigTemplateRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableConfigTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableConfigTemplateRequest := _PatchedWritableConfigTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableConfigTemplateRequest); err == nil {
-		*o = PatchedWritableConfigTemplateRequest(varPatchedWritableConfigTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "environment_params")
-		delete(additionalProperties, "template_code")
-		delete(additionalProperties, "data_source")
-		delete(additionalProperties, "tags")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableConfigTemplateRequest struct {

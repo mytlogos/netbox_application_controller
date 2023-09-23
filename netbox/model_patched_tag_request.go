@@ -24,10 +24,7 @@ type PatchedTagRequest struct {
 	Color *string `json:"color,omitempty"`
 	Description *string `json:"description,omitempty"`
 	ObjectTypes []string `json:"object_types,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedTagRequest PatchedTagRequest
 
 // NewPatchedTagRequest instantiates a new PatchedTagRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -231,33 +228,7 @@ func (o PatchedTagRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ObjectTypes) {
 		toSerialize["object_types"] = o.ObjectTypes
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedTagRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedTagRequest := _PatchedTagRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedTagRequest); err == nil {
-		*o = PatchedTagRequest(varPatchedTagRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "object_types")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedTagRequest struct {

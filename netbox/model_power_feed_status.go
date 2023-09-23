@@ -22,10 +22,7 @@ type PowerFeedStatus struct {
 	// * `offline` - Offline * `active` - Active * `planned` - Planned * `failed` - Failed
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerFeedStatus PowerFeedStatus
 
 // NewPowerFeedStatus instantiates a new PowerFeedStatus object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o PowerFeedStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerFeedStatus) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerFeedStatus := _PowerFeedStatus{}
-
-	if err = json.Unmarshal(bytes, &varPowerFeedStatus); err == nil {
-		*o = PowerFeedStatus(varPowerFeedStatus)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerFeedStatus struct {

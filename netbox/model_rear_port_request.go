@@ -34,10 +34,7 @@ type RearPortRequest struct {
 	MarkConnected *bool `json:"mark_connected,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RearPortRequest RearPortRequest
 
 // NewRearPortRequest instantiates a new RearPortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -434,39 +431,7 @@ func (o RearPortRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *RearPortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varRearPortRequest := _RearPortRequest{}
-
-	if err = json.Unmarshal(bytes, &varRearPortRequest); err == nil {
-		*o = RearPortRequest(varRearPortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "positions")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRearPortRequest struct {

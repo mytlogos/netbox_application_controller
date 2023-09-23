@@ -24,10 +24,7 @@ type Group struct {
 	Display string `json:"display"`
 	Name string `json:"name"`
 	UserCount int32 `json:"user_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Group Group
 
 // NewGroup instantiates a new Group object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o Group) MarshalJSON() ([]byte, error) {
 
 func (o Group) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
-	// skip: user_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["user_count"] = o.UserCount
 	return toSerialize, nil
-}
-
-func (o *Group) UnmarshalJSON(bytes []byte) (err error) {
-	varGroup := _Group{}
-
-	if err = json.Unmarshal(bytes, &varGroup); err == nil {
-		*o = Group(varGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "user_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableGroup struct {

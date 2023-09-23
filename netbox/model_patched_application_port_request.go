@@ -23,10 +23,12 @@ type PatchedApplicationPortRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ipaddresses []int32 `json:"ipaddresses,omitempty"`
+	ApplicationProtocols []int32 `json:"application_protocols,omitempty"`
+	Application *int32 `json:"application,omitempty"`
+	// * `none` - None * `udp` - SSL * `quic` - Starttls
+	TransportSecurity *string `json:"transport_security,omitempty"`
 }
-
-type _PatchedApplicationPortRequest PatchedApplicationPortRequest
 
 // NewPatchedApplicationPortRequest instantiates a new PatchedApplicationPortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -173,6 +175,134 @@ func (o *PatchedApplicationPortRequest) SetCustomFields(v map[string]interface{}
 	o.CustomFields = v
 }
 
+// GetIpaddresses returns the Ipaddresses field value if set, zero value otherwise.
+func (o *PatchedApplicationPortRequest) GetIpaddresses() []int32 {
+	if o == nil || IsNil(o.Ipaddresses) {
+		var ret []int32
+		return ret
+	}
+	return o.Ipaddresses
+}
+
+// GetIpaddressesOk returns a tuple with the Ipaddresses field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PatchedApplicationPortRequest) GetIpaddressesOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Ipaddresses) {
+		return nil, false
+	}
+	return o.Ipaddresses, true
+}
+
+// HasIpaddresses returns a boolean if a field has been set.
+func (o *PatchedApplicationPortRequest) HasIpaddresses() bool {
+	if o != nil && !IsNil(o.Ipaddresses) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpaddresses gets a reference to the given []int32 and assigns it to the Ipaddresses field.
+func (o *PatchedApplicationPortRequest) SetIpaddresses(v []int32) {
+	o.Ipaddresses = v
+}
+
+// GetApplicationProtocols returns the ApplicationProtocols field value if set, zero value otherwise.
+func (o *PatchedApplicationPortRequest) GetApplicationProtocols() []int32 {
+	if o == nil || IsNil(o.ApplicationProtocols) {
+		var ret []int32
+		return ret
+	}
+	return o.ApplicationProtocols
+}
+
+// GetApplicationProtocolsOk returns a tuple with the ApplicationProtocols field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PatchedApplicationPortRequest) GetApplicationProtocolsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.ApplicationProtocols) {
+		return nil, false
+	}
+	return o.ApplicationProtocols, true
+}
+
+// HasApplicationProtocols returns a boolean if a field has been set.
+func (o *PatchedApplicationPortRequest) HasApplicationProtocols() bool {
+	if o != nil && !IsNil(o.ApplicationProtocols) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationProtocols gets a reference to the given []int32 and assigns it to the ApplicationProtocols field.
+func (o *PatchedApplicationPortRequest) SetApplicationProtocols(v []int32) {
+	o.ApplicationProtocols = v
+}
+
+// GetApplication returns the Application field value if set, zero value otherwise.
+func (o *PatchedApplicationPortRequest) GetApplication() int32 {
+	if o == nil || IsNil(o.Application) {
+		var ret int32
+		return ret
+	}
+	return *o.Application
+}
+
+// GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PatchedApplicationPortRequest) GetApplicationOk() (*int32, bool) {
+	if o == nil || IsNil(o.Application) {
+		return nil, false
+	}
+	return o.Application, true
+}
+
+// HasApplication returns a boolean if a field has been set.
+func (o *PatchedApplicationPortRequest) HasApplication() bool {
+	if o != nil && !IsNil(o.Application) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplication gets a reference to the given int32 and assigns it to the Application field.
+func (o *PatchedApplicationPortRequest) SetApplication(v int32) {
+	o.Application = &v
+}
+
+// GetTransportSecurity returns the TransportSecurity field value if set, zero value otherwise.
+func (o *PatchedApplicationPortRequest) GetTransportSecurity() string {
+	if o == nil || IsNil(o.TransportSecurity) {
+		var ret string
+		return ret
+	}
+	return *o.TransportSecurity
+}
+
+// GetTransportSecurityOk returns a tuple with the TransportSecurity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PatchedApplicationPortRequest) GetTransportSecurityOk() (*string, bool) {
+	if o == nil || IsNil(o.TransportSecurity) {
+		return nil, false
+	}
+	return o.TransportSecurity, true
+}
+
+// HasTransportSecurity returns a boolean if a field has been set.
+func (o *PatchedApplicationPortRequest) HasTransportSecurity() bool {
+	if o != nil && !IsNil(o.TransportSecurity) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransportSecurity gets a reference to the given string and assigns it to the TransportSecurity field.
+func (o *PatchedApplicationPortRequest) SetTransportSecurity(v string) {
+	o.TransportSecurity = &v
+}
+
 func (o PatchedApplicationPortRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,32 +325,19 @@ func (o PatchedApplicationPortRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	if !IsNil(o.Ipaddresses) {
+		toSerialize["ipaddresses"] = o.Ipaddresses
 	}
-
+	if !IsNil(o.ApplicationProtocols) {
+		toSerialize["application_protocols"] = o.ApplicationProtocols
+	}
+	if !IsNil(o.Application) {
+		toSerialize["application"] = o.Application
+	}
+	if !IsNil(o.TransportSecurity) {
+		toSerialize["transport_security"] = o.TransportSecurity
+	}
 	return toSerialize, nil
-}
-
-func (o *PatchedApplicationPortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedApplicationPortRequest := _PatchedApplicationPortRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedApplicationPortRequest); err == nil {
-		*o = PatchedApplicationPortRequest(varPatchedApplicationPortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedApplicationPortRequest struct {

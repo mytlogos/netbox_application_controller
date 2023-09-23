@@ -23,10 +23,7 @@ type PaginatedPrefixList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []Prefix `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedPrefixList PaginatedPrefixList
 
 // NewPaginatedPrefixList instantiates a new PaginatedPrefixList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedPrefixList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedPrefixList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedPrefixList := _PaginatedPrefixList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedPrefixList); err == nil {
-		*o = PaginatedPrefixList(varPaginatedPrefixList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedPrefixList struct {

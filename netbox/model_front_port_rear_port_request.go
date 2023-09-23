@@ -23,10 +23,7 @@ type FrontPortRearPortRequest struct {
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _FrontPortRearPortRequest FrontPortRearPortRequest
 
 // NewFrontPortRearPortRequest instantiates a new FrontPortRearPortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -151,31 +148,7 @@ func (o FrontPortRearPortRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *FrontPortRearPortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varFrontPortRearPortRequest := _FrontPortRearPortRequest{}
-
-	if err = json.Unmarshal(bytes, &varFrontPortRearPortRequest); err == nil {
-		*o = FrontPortRearPortRequest(varFrontPortRearPortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableFrontPortRearPortRequest struct {

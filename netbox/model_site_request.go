@@ -43,10 +43,7 @@ type SiteRequest struct {
 	Asns []int32 `json:"asns,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _SiteRequest SiteRequest
 
 // NewSiteRequest instantiates a new SiteRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -712,45 +709,7 @@ func (o SiteRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *SiteRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varSiteRequest := _SiteRequest{}
-
-	if err = json.Unmarshal(bytes, &varSiteRequest); err == nil {
-		*o = SiteRequest(varSiteRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "region")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "facility")
-		delete(additionalProperties, "time_zone")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "physical_address")
-		delete(additionalProperties, "shipping_address")
-		delete(additionalProperties, "latitude")
-		delete(additionalProperties, "longitude")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "asns")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableSiteRequest struct {

@@ -22,10 +22,7 @@ type L2VPNType struct {
 	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _L2VPNType L2VPNType
 
 // NewL2VPNType instantiates a new L2VPNType object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o L2VPNType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *L2VPNType) UnmarshalJSON(bytes []byte) (err error) {
-	varL2VPNType := _L2VPNType{}
-
-	if err = json.Unmarshal(bytes, &varL2VPNType); err == nil {
-		*o = L2VPNType(varL2VPNType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableL2VPNType struct {

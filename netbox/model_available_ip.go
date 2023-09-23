@@ -23,10 +23,7 @@ type AvailableIP struct {
 	Address string `json:"address"`
 	Vrf NestedVRF `json:"vrf"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _AvailableIP AvailableIP
 
 // NewAvailableIP instantiates a new AvailableIP object
 // This constructor will assign default values to properties that have it defined,
@@ -162,38 +159,13 @@ func (o AvailableIP) MarshalJSON() ([]byte, error) {
 
 func (o AvailableIP) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: family is readOnly
-	// skip: address is readOnly
-	// skip: vrf is readOnly
+	toSerialize["family"] = o.Family
+	toSerialize["address"] = o.Address
+	toSerialize["vrf"] = o.Vrf
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *AvailableIP) UnmarshalJSON(bytes []byte) (err error) {
-	varAvailableIP := _AvailableIP{}
-
-	if err = json.Unmarshal(bytes, &varAvailableIP); err == nil {
-		*o = AvailableIP(varAvailableIP)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "address")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAvailableIP struct {

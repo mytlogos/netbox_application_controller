@@ -33,10 +33,7 @@ type ConsolePortRequest struct {
 	MarkConnected *bool `json:"mark_connected,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConsolePortRequest ConsolePortRequest
 
 // NewConsolePortRequest instantiates a new ConsolePortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -417,38 +414,7 @@ func (o ConsolePortRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConsolePortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varConsolePortRequest := _ConsolePortRequest{}
-
-	if err = json.Unmarshal(bytes, &varConsolePortRequest); err == nil {
-		*o = ConsolePortRequest(varConsolePortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "speed")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConsolePortRequest struct {

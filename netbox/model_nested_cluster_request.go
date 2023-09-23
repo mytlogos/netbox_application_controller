@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedClusterRequest{}
 // NestedClusterRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedClusterRequest struct {
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedClusterRequest NestedClusterRequest
 
 // NewNestedClusterRequest instantiates a new NestedClusterRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -78,29 +75,7 @@ func (o NestedClusterRequest) MarshalJSON() ([]byte, error) {
 func (o NestedClusterRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedClusterRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedClusterRequest := _NestedClusterRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedClusterRequest); err == nil {
-		*o = NestedClusterRequest(varNestedClusterRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedClusterRequest struct {

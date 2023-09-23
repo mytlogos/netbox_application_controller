@@ -22,10 +22,7 @@ type RackStatus struct {
 	// * `reserved` - Reserved * `available` - Available * `planned` - Planned * `active` - Active * `deprecated` - Deprecated
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RackStatus RackStatus
 
 // NewRackStatus instantiates a new RackStatus object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o RackStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *RackStatus) UnmarshalJSON(bytes []byte) (err error) {
-	varRackStatus := _RackStatus{}
-
-	if err = json.Unmarshal(bytes, &varRackStatus); err == nil {
-		*o = RackStatus(varRackStatus)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRackStatus struct {

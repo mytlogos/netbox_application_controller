@@ -26,10 +26,7 @@ type WritableVirtualChassisRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableVirtualChassisRequest WritableVirtualChassisRequest
 
 // NewWritableVirtualChassisRequest instantiates a new WritableVirtualChassisRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -304,35 +301,7 @@ func (o WritableVirtualChassisRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableVirtualChassisRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableVirtualChassisRequest := _WritableVirtualChassisRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableVirtualChassisRequest); err == nil {
-		*o = WritableVirtualChassisRequest(varWritableVirtualChassisRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "domain")
-		delete(additionalProperties, "master")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableVirtualChassisRequest struct {

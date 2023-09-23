@@ -22,10 +22,7 @@ type PowerFeedType struct {
 	// * `primary` - Primary * `redundant` - Redundant
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerFeedType PowerFeedType
 
 // NewPowerFeedType instantiates a new PowerFeedType object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o PowerFeedType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerFeedType) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerFeedType := _PowerFeedType{}
-
-	if err = json.Unmarshal(bytes, &varPowerFeedType); err == nil {
-		*o = PowerFeedType(varPowerFeedType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerFeedType struct {

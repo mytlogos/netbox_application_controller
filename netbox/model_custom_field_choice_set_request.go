@@ -26,10 +26,7 @@ type CustomFieldChoiceSetRequest struct {
 	ExtraChoices [][]string `json:"extra_choices,omitempty"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically *bool `json:"order_alphabetically,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomFieldChoiceSetRequest CustomFieldChoiceSetRequest
 
 // NewCustomFieldChoiceSetRequest instantiates a new CustomFieldChoiceSetRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -225,33 +222,7 @@ func (o CustomFieldChoiceSetRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OrderAlphabetically) {
 		toSerialize["order_alphabetically"] = o.OrderAlphabetically
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomFieldChoiceSetRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomFieldChoiceSetRequest := _CustomFieldChoiceSetRequest{}
-
-	if err = json.Unmarshal(bytes, &varCustomFieldChoiceSetRequest); err == nil {
-		*o = CustomFieldChoiceSetRequest(varCustomFieldChoiceSetRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "base_choices")
-		delete(additionalProperties, "extra_choices")
-		delete(additionalProperties, "order_alphabetically")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomFieldChoiceSetRequest struct {

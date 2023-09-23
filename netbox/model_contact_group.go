@@ -33,10 +33,7 @@ type ContactGroup struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	ContactCount int32 `json:"contact_count"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ContactGroup ContactGroup
 
 // NewContactGroup instantiates a new ContactGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -432,9 +429,9 @@ func (o ContactGroup) MarshalJSON() ([]byte, error) {
 
 func (o ContactGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Parent.IsSet() {
@@ -451,43 +448,9 @@ func (o ContactGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: contact_count is readOnly
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["contact_count"] = o.ContactCount
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *ContactGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varContactGroup := _ContactGroup{}
-
-	if err = json.Unmarshal(bytes, &varContactGroup); err == nil {
-		*o = ContactGroup(varContactGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "contact_count")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableContactGroup struct {

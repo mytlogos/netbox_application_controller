@@ -23,10 +23,7 @@ type PaginatedL2VPNList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []L2VPN `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedL2VPNList PaginatedL2VPNList
 
 // NewPaginatedL2VPNList instantiates a new PaginatedL2VPNList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedL2VPNList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedL2VPNList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedL2VPNList := _PaginatedL2VPNList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedL2VPNList); err == nil {
-		*o = PaginatedL2VPNList(varPaginatedL2VPNList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedL2VPNList struct {

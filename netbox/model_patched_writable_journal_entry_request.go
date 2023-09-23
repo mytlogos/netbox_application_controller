@@ -27,10 +27,7 @@ type PatchedWritableJournalEntryRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableJournalEntryRequest PatchedWritableJournalEntryRequest
 
 // NewPatchedWritableJournalEntryRequest instantiates a new PatchedWritableJournalEntryRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -314,35 +311,7 @@ func (o PatchedWritableJournalEntryRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableJournalEntryRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableJournalEntryRequest := _PatchedWritableJournalEntryRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableJournalEntryRequest); err == nil {
-		*o = PatchedWritableJournalEntryRequest(varPatchedWritableJournalEntryRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "assigned_object_type")
-		delete(additionalProperties, "assigned_object_id")
-		delete(additionalProperties, "created_by")
-		delete(additionalProperties, "kind")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableJournalEntryRequest struct {

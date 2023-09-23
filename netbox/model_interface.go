@@ -75,10 +75,7 @@ type Interface struct {
 	CountIpaddresses int32 `json:"count_ipaddresses"`
 	CountFhrpGroups int32 `json:"count_fhrp_groups"`
 	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Interface Interface
 
 // NewInterface instantiates a new Interface object
 // This constructor will assign default values to properties that have it defined,
@@ -1685,9 +1682,9 @@ func (o Interface) MarshalJSON() ([]byte, error) {
 
 func (o Interface) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["device"] = o.Device
 	if !IsNil(o.Vdcs) {
 		toSerialize["vdcs"] = o.Vdcs
@@ -1767,10 +1764,10 @@ func (o Interface) ToMap() (map[string]interface{}, error) {
 		toSerialize["mark_connected"] = o.MarkConnected
 	}
 	toSerialize["cable"] = o.Cable.Get()
-	// skip: cable_end is readOnly
+	toSerialize["cable_end"] = o.CableEnd
 	toSerialize["wireless_link"] = o.WirelessLink.Get()
-	// skip: link_peers is readOnly
-	// skip: link_peers_type is readOnly
+	toSerialize["link_peers"] = o.LinkPeers
+	toSerialize["link_peers_type"] = o.LinkPeersType
 	if !IsNil(o.WirelessLans) {
 		toSerialize["wireless_lans"] = o.WirelessLans
 	}
@@ -1778,9 +1775,9 @@ func (o Interface) ToMap() (map[string]interface{}, error) {
 		toSerialize["vrf"] = o.Vrf.Get()
 	}
 	toSerialize["l2vpn_termination"] = o.L2vpnTermination.Get()
-	// skip: connected_endpoints is readOnly
-	// skip: connected_endpoints_type is readOnly
-	// skip: connected_endpoints_reachable is readOnly
+	toSerialize["connected_endpoints"] = o.ConnectedEndpoints
+	toSerialize["connected_endpoints_type"] = o.ConnectedEndpointsType
+	toSerialize["connected_endpoints_reachable"] = o.ConnectedEndpointsReachable
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
@@ -1789,80 +1786,10 @@ func (o Interface) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: count_ipaddresses is readOnly
-	// skip: count_fhrp_groups is readOnly
-	// skip: _occupied is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["count_ipaddresses"] = o.CountIpaddresses
+	toSerialize["count_fhrp_groups"] = o.CountFhrpGroups
+	toSerialize["_occupied"] = o.Occupied
 	return toSerialize, nil
-}
-
-func (o *Interface) UnmarshalJSON(bytes []byte) (err error) {
-	varInterface := _Interface{}
-
-	if err = json.Unmarshal(bytes, &varInterface); err == nil {
-		*o = Interface(varInterface)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "vdcs")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "lag")
-		delete(additionalProperties, "mtu")
-		delete(additionalProperties, "mac_address")
-		delete(additionalProperties, "speed")
-		delete(additionalProperties, "duplex")
-		delete(additionalProperties, "wwn")
-		delete(additionalProperties, "mgmt_only")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "rf_role")
-		delete(additionalProperties, "rf_channel")
-		delete(additionalProperties, "poe_mode")
-		delete(additionalProperties, "poe_type")
-		delete(additionalProperties, "rf_channel_frequency")
-		delete(additionalProperties, "rf_channel_width")
-		delete(additionalProperties, "tx_power")
-		delete(additionalProperties, "untagged_vlan")
-		delete(additionalProperties, "tagged_vlans")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "cable_end")
-		delete(additionalProperties, "wireless_link")
-		delete(additionalProperties, "link_peers")
-		delete(additionalProperties, "link_peers_type")
-		delete(additionalProperties, "wireless_lans")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "l2vpn_termination")
-		delete(additionalProperties, "connected_endpoints")
-		delete(additionalProperties, "connected_endpoints_type")
-		delete(additionalProperties, "connected_endpoints_reachable")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "count_ipaddresses")
-		delete(additionalProperties, "count_fhrp_groups")
-		delete(additionalProperties, "_occupied")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterface struct {

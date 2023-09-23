@@ -24,10 +24,7 @@ type NestedClusterGroup struct {
 	Display string `json:"display"`
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedClusterGroup NestedClusterGroup
 
 // NewNestedClusterGroup instantiates a new NestedClusterGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o NestedClusterGroup) MarshalJSON() ([]byte, error) {
 
 func (o NestedClusterGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedClusterGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedClusterGroup := _NestedClusterGroup{}
-
-	if err = json.Unmarshal(bytes, &varNestedClusterGroup); err == nil {
-		*o = NestedClusterGroup(varNestedClusterGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedClusterGroup struct {

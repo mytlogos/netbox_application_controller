@@ -36,10 +36,7 @@ type DataSource struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	FileCount int32 `json:"file_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DataSource DataSource
 
 // NewDataSource instantiates a new DataSource object
 // This constructor will assign default values to properties that have it defined,
@@ -483,9 +480,9 @@ func (o DataSource) MarshalJSON() ([]byte, error) {
 
 func (o DataSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["type"] = o.Type
 	toSerialize["source_url"] = o.SourceUrl
@@ -507,44 +504,8 @@ func (o DataSource) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: file_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["file_count"] = o.FileCount
 	return toSerialize, nil
-}
-
-func (o *DataSource) UnmarshalJSON(bytes []byte) (err error) {
-	varDataSource := _DataSource{}
-
-	if err = json.Unmarshal(bytes, &varDataSource); err == nil {
-		*o = DataSource(varDataSource)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "source_url")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "parameters")
-		delete(additionalProperties, "ignore_rules")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "file_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDataSource struct {

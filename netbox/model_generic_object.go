@@ -22,10 +22,7 @@ type GenericObject struct {
 	ObjectType string `json:"object_type"`
 	ObjectId int32 `json:"object_id"`
 	Object map[string]interface{} `json:"object"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _GenericObject GenericObject
 
 // NewGenericObject instantiates a new GenericObject object
 // This constructor will assign default values to properties that have it defined,
@@ -136,31 +133,7 @@ func (o GenericObject) ToMap() (map[string]interface{}, error) {
 	if o.Object != nil {
 		toSerialize["object"] = o.Object
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *GenericObject) UnmarshalJSON(bytes []byte) (err error) {
-	varGenericObject := _GenericObject{}
-
-	if err = json.Unmarshal(bytes, &varGenericObject); err == nil {
-		*o = GenericObject(varGenericObject)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "object")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableGenericObject struct {

@@ -32,10 +32,7 @@ type RouteTarget struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RouteTarget RouteTarget
 
 // NewRouteTarget instantiates a new RouteTarget object
 // This constructor will assign default values to properties that have it defined,
@@ -388,9 +385,9 @@ func (o RouteTarget) MarshalJSON() ([]byte, error) {
 
 func (o RouteTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if o.Tenant.IsSet() {
 		toSerialize["tenant"] = o.Tenant.Get()
@@ -409,39 +406,7 @@ func (o RouteTarget) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *RouteTarget) UnmarshalJSON(bytes []byte) (err error) {
-	varRouteTarget := _RouteTarget{}
-
-	if err = json.Unmarshal(bytes, &varRouteTarget); err == nil {
-		*o = RouteTarget(varRouteTarget)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRouteTarget struct {

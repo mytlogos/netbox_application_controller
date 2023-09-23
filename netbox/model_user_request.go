@@ -32,10 +32,7 @@ type UserRequest struct {
 	IsActive *bool `json:"is_active,omitempty"`
 	DateJoined *time.Time `json:"date_joined,omitempty"`
 	Groups []int32 `json:"groups,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _UserRequest UserRequest
 
 // NewUserRequest instantiates a new UserRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -361,37 +358,7 @@ func (o UserRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *UserRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varUserRequest := _UserRequest{}
-
-	if err = json.Unmarshal(bytes, &varUserRequest); err == nil {
-		*o = UserRequest(varUserRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "first_name")
-		delete(additionalProperties, "last_name")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "is_staff")
-		delete(additionalProperties, "is_active")
-		delete(additionalProperties, "date_joined")
-		delete(additionalProperties, "groups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableUserRequest struct {

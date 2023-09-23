@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedInterfaceTemplateRequest{}
 type NestedInterfaceTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedInterfaceTemplateRequest NestedInterfaceTemplateRequest
 
 // NewNestedInterfaceTemplateRequest instantiates a new NestedInterfaceTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -79,29 +76,7 @@ func (o NestedInterfaceTemplateRequest) MarshalJSON() ([]byte, error) {
 func (o NestedInterfaceTemplateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedInterfaceTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedInterfaceTemplateRequest := _NestedInterfaceTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedInterfaceTemplateRequest); err == nil {
-		*o = NestedInterfaceTemplateRequest(varNestedInterfaceTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedInterfaceTemplateRequest struct {

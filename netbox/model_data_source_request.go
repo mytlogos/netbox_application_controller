@@ -29,10 +29,7 @@ type DataSourceRequest struct {
 	Parameters map[string]interface{} `json:"parameters,omitempty"`
 	// Patterns (one per line) matching files to ignore when syncing
 	IgnoreRules *string `json:"ignore_rules,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DataSourceRequest DataSourceRequest
 
 // NewDataSourceRequest instantiates a new DataSourceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -315,36 +312,7 @@ func (o DataSourceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IgnoreRules) {
 		toSerialize["ignore_rules"] = o.IgnoreRules
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *DataSourceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varDataSourceRequest := _DataSourceRequest{}
-
-	if err = json.Unmarshal(bytes, &varDataSourceRequest); err == nil {
-		*o = DataSourceRequest(varDataSourceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "source_url")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "parameters")
-		delete(additionalProperties, "ignore_rules")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDataSourceRequest struct {

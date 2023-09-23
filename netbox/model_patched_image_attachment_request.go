@@ -26,10 +26,7 @@ type PatchedImageAttachmentRequest struct {
 	Image **os.File `json:"image,omitempty"`
 	ImageHeight *int32 `json:"image_height,omitempty"`
 	ImageWidth *int32 `json:"image_width,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedImageAttachmentRequest PatchedImageAttachmentRequest
 
 // NewPatchedImageAttachmentRequest instantiates a new PatchedImageAttachmentRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -268,34 +265,7 @@ func (o PatchedImageAttachmentRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ImageWidth) {
 		toSerialize["image_width"] = o.ImageWidth
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedImageAttachmentRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedImageAttachmentRequest := _PatchedImageAttachmentRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedImageAttachmentRequest); err == nil {
-		*o = PatchedImageAttachmentRequest(varPatchedImageAttachmentRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "image_height")
-		delete(additionalProperties, "image_width")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedImageAttachmentRequest struct {

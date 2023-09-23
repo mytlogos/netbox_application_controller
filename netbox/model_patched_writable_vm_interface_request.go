@@ -34,10 +34,7 @@ type PatchedWritableVMInterfaceRequest struct {
 	Vrf NullableInt32 `json:"vrf,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableVMInterfaceRequest PatchedWritableVMInterfaceRequest
 
 // NewPatchedWritableVMInterfaceRequest instantiates a new PatchedWritableVMInterfaceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -616,42 +613,7 @@ func (o PatchedWritableVMInterfaceRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableVMInterfaceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableVMInterfaceRequest := _PatchedWritableVMInterfaceRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableVMInterfaceRequest); err == nil {
-		*o = PatchedWritableVMInterfaceRequest(varPatchedWritableVMInterfaceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "virtual_machine")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "mtu")
-		delete(additionalProperties, "mac_address")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "untagged_vlan")
-		delete(additionalProperties, "tagged_vlans")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableVMInterfaceRequest struct {

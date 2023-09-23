@@ -28,10 +28,7 @@ type PatchedSavedFilterRequest struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Shared *bool `json:"shared,omitempty"`
 	Parameters map[string]interface{} `json:"parameters,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedSavedFilterRequest PatchedSavedFilterRequest
 
 // NewPatchedSavedFilterRequest instantiates a new PatchedSavedFilterRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -385,37 +382,7 @@ func (o PatchedSavedFilterRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Parameters) {
 		toSerialize["parameters"] = o.Parameters
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedSavedFilterRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedSavedFilterRequest := _PatchedSavedFilterRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedSavedFilterRequest); err == nil {
-		*o = PatchedSavedFilterRequest(varPatchedSavedFilterRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "shared")
-		delete(additionalProperties, "parameters")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedSavedFilterRequest struct {

@@ -31,10 +31,7 @@ type WritableL2VPNRequest struct {
 	Tenant NullableInt32 `json:"tenant,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableL2VPNRequest WritableL2VPNRequest
 
 // NewWritableL2VPNRequest instantiates a new WritableL2VPNRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -441,39 +438,7 @@ func (o WritableL2VPNRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableL2VPNRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableL2VPNRequest := _WritableL2VPNRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableL2VPNRequest); err == nil {
-		*o = WritableL2VPNRequest(varWritableL2VPNRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "identifier")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "import_targets")
-		delete(additionalProperties, "export_targets")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableL2VPNRequest struct {

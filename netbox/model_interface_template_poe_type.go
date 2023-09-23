@@ -22,10 +22,7 @@ type InterfaceTemplatePoeType struct {
 	// * `type1-ieee802.3af` - 802.3af (Type 1) * `type2-ieee802.3at` - 802.3at (Type 2) * `type3-ieee802.3bt` - 802.3bt (Type 3) * `type4-ieee802.3bt` - 802.3bt (Type 4) * `passive-24v-2pair` - Passive 24V (2-pair) * `passive-24v-4pair` - Passive 24V (4-pair) * `passive-48v-2pair` - Passive 48V (2-pair) * `passive-48v-4pair` - Passive 48V (4-pair)
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfaceTemplatePoeType InterfaceTemplatePoeType
 
 // NewInterfaceTemplatePoeType instantiates a new InterfaceTemplatePoeType object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o InterfaceTemplatePoeType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfaceTemplatePoeType) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfaceTemplatePoeType := _InterfaceTemplatePoeType{}
-
-	if err = json.Unmarshal(bytes, &varInterfaceTemplatePoeType); err == nil {
-		*o = InterfaceTemplatePoeType(varInterfaceTemplatePoeType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfaceTemplatePoeType struct {

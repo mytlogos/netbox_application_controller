@@ -25,10 +25,7 @@ type NestedLocation struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedLocation NestedLocation
 
 // NewNestedLocation instantiates a new NestedLocation object
 // This constructor will assign default values to properties that have it defined,
@@ -207,40 +204,13 @@ func (o NestedLocation) MarshalJSON() ([]byte, error) {
 
 func (o NestedLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *NestedLocation) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedLocation := _NestedLocation{}
-
-	if err = json.Unmarshal(bytes, &varNestedLocation); err == nil {
-		*o = NestedLocation(varNestedLocation)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedLocation struct {

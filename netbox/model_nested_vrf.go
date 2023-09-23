@@ -25,10 +25,7 @@ type NestedVRF struct {
 	Name string `json:"name"`
 	// Unique route distinguisher (as defined in RFC 4364)
 	Rd NullableString `json:"rd,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVRF NestedVRF
 
 // NewNestedVRF instantiates a new NestedVRF object
 // This constructor will assign default values to properties that have it defined,
@@ -199,40 +196,14 @@ func (o NestedVRF) MarshalJSON() ([]byte, error) {
 
 func (o NestedVRF) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if o.Rd.IsSet() {
 		toSerialize["rd"] = o.Rd.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVRF) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVRF := _NestedVRF{}
-
-	if err = json.Unmarshal(bytes, &varNestedVRF); err == nil {
-		*o = NestedVRF(varNestedVRF)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rd")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVRF struct {

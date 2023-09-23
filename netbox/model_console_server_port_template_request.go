@@ -28,10 +28,7 @@ type ConsoleServerPortTemplateRequest struct {
 	// * `de-9` - DE-9 * `db-25` - DB-25 * `rj-11` - RJ-11 * `rj-12` - RJ-12 * `rj-45` - RJ-45 * `mini-din-8` - Mini-DIN 8 * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
 	Type *string `json:"type,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConsoleServerPortTemplateRequest ConsoleServerPortTemplateRequest
 
 // NewConsoleServerPortTemplateRequest instantiates a new ConsoleServerPortTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -281,34 +278,7 @@ func (o ConsoleServerPortTemplateRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConsoleServerPortTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varConsoleServerPortTemplateRequest := _ConsoleServerPortTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varConsoleServerPortTemplateRequest); err == nil {
-		*o = ConsoleServerPortTemplateRequest(varConsoleServerPortTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConsoleServerPortTemplateRequest struct {

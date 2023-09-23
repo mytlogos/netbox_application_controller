@@ -36,10 +36,7 @@ type Module struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Module Module
 
 // NewModule instantiates a new Module object
 // This constructor will assign default values to properties that have it defined,
@@ -506,9 +503,9 @@ func (o Module) MarshalJSON() ([]byte, error) {
 
 func (o Module) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["device"] = o.Device
 	toSerialize["module_bay"] = o.ModuleBay
 	toSerialize["module_type"] = o.ModuleType
@@ -535,43 +532,7 @@ func (o Module) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Module) UnmarshalJSON(bytes []byte) (err error) {
-	varModule := _Module{}
-
-	if err = json.Unmarshal(bytes, &varModule); err == nil {
-		*o = Module(varModule)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module_bay")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableModule struct {

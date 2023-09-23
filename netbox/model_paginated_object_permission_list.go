@@ -23,10 +23,7 @@ type PaginatedObjectPermissionList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ObjectPermission `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedObjectPermissionList PaginatedObjectPermissionList
 
 // NewPaginatedObjectPermissionList instantiates a new PaginatedObjectPermissionList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedObjectPermissionList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedObjectPermissionList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedObjectPermissionList := _PaginatedObjectPermissionList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedObjectPermissionList); err == nil {
-		*o = PaginatedObjectPermissionList(varPaginatedObjectPermissionList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedObjectPermissionList struct {

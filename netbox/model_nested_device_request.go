@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedDeviceRequest{}
 // NestedDeviceRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedDeviceRequest struct {
 	Name NullableString `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedDeviceRequest NestedDeviceRequest
 
 // NewNestedDeviceRequest instantiates a new NestedDeviceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -97,29 +94,7 @@ func (o NestedDeviceRequest) ToMap() (map[string]interface{}, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedDeviceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedDeviceRequest := _NestedDeviceRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedDeviceRequest); err == nil {
-		*o = NestedDeviceRequest(varNestedDeviceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedDeviceRequest struct {

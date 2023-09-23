@@ -27,10 +27,7 @@ type ServiceTemplateRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ServiceTemplateRequest ServiceTemplateRequest
 
 // NewServiceTemplateRequest instantiates a new ServiceTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -286,35 +283,7 @@ func (o ServiceTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ServiceTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varServiceTemplateRequest := _ServiceTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varServiceTemplateRequest); err == nil {
-		*o = ServiceTemplateRequest(varServiceTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableServiceTemplateRequest struct {

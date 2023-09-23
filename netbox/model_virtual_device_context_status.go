@@ -22,10 +22,7 @@ type VirtualDeviceContextStatus struct {
 	// * `active` - Active * `planned` - Planned * `offline` - Offline
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VirtualDeviceContextStatus VirtualDeviceContextStatus
 
 // NewVirtualDeviceContextStatus instantiates a new VirtualDeviceContextStatus object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o VirtualDeviceContextStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *VirtualDeviceContextStatus) UnmarshalJSON(bytes []byte) (err error) {
-	varVirtualDeviceContextStatus := _VirtualDeviceContextStatus{}
-
-	if err = json.Unmarshal(bytes, &varVirtualDeviceContextStatus); err == nil {
-		*o = VirtualDeviceContextStatus(varVirtualDeviceContextStatus)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVirtualDeviceContextStatus struct {

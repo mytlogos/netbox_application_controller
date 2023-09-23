@@ -42,10 +42,7 @@ type Circuit struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Circuit Circuit
 
 // NewCircuit instantiates a new Circuit object
 // This constructor will assign default values to properties that have it defined,
@@ -702,9 +699,9 @@ func (o Circuit) MarshalJSON() ([]byte, error) {
 
 func (o Circuit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["cid"] = o.Cid
 	toSerialize["provider"] = o.Provider
 	if o.ProviderAccount.IsSet() {
@@ -742,48 +739,7 @@ func (o Circuit) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Circuit) UnmarshalJSON(bytes []byte) (err error) {
-	varCircuit := _Circuit{}
-
-	if err = json.Unmarshal(bytes, &varCircuit); err == nil {
-		*o = Circuit(varCircuit)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "cid")
-		delete(additionalProperties, "provider")
-		delete(additionalProperties, "provider_account")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "install_date")
-		delete(additionalProperties, "termination_date")
-		delete(additionalProperties, "commit_rate")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "termination_a")
-		delete(additionalProperties, "termination_z")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCircuit struct {

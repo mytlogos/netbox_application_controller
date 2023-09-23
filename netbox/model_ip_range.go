@@ -39,10 +39,7 @@ type IPRange struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	// Treat as 100% utilized
 	MarkUtilized *bool `json:"mark_utilized,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _IPRange IPRange
 
 // NewIPRange instantiates a new IPRange object
 // This constructor will assign default values to properties that have it defined,
@@ -618,13 +615,13 @@ func (o IPRange) MarshalJSON() ([]byte, error) {
 
 func (o IPRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["family"] = o.Family
 	toSerialize["start_address"] = o.StartAddress
 	toSerialize["end_address"] = o.EndAddress
-	// skip: size is readOnly
+	toSerialize["size"] = o.Size
 	if o.Vrf.IsSet() {
 		toSerialize["vrf"] = o.Vrf.Get()
 	}
@@ -654,46 +651,7 @@ func (o IPRange) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MarkUtilized) {
 		toSerialize["mark_utilized"] = o.MarkUtilized
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *IPRange) UnmarshalJSON(bytes []byte) (err error) {
-	varIPRange := _IPRange{}
-
-	if err = json.Unmarshal(bytes, &varIPRange); err == nil {
-		*o = IPRange(varIPRange)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "start_address")
-		delete(additionalProperties, "end_address")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "mark_utilized")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableIPRange struct {

@@ -32,10 +32,7 @@ type CustomFieldChoiceSet struct {
 	ChoicesCount string `json:"choices_count"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomFieldChoiceSet CustomFieldChoiceSet
 
 // NewCustomFieldChoiceSet instantiates a new CustomFieldChoiceSet object
 // This constructor will assign default values to properties that have it defined,
@@ -372,9 +369,9 @@ func (o CustomFieldChoiceSet) MarshalJSON() ([]byte, error) {
 
 func (o CustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -388,42 +385,10 @@ func (o CustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OrderAlphabetically) {
 		toSerialize["order_alphabetically"] = o.OrderAlphabetically
 	}
-	// skip: choices_count is readOnly
+	toSerialize["choices_count"] = o.ChoicesCount
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomFieldChoiceSet) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomFieldChoiceSet := _CustomFieldChoiceSet{}
-
-	if err = json.Unmarshal(bytes, &varCustomFieldChoiceSet); err == nil {
-		*o = CustomFieldChoiceSet(varCustomFieldChoiceSet)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "base_choices")
-		delete(additionalProperties, "extra_choices")
-		delete(additionalProperties, "order_alphabetically")
-		delete(additionalProperties, "choices_count")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomFieldChoiceSet struct {

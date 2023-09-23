@@ -22,10 +22,7 @@ type ConsolePortType struct {
 	// * `de-9` - DE-9 * `db-25` - DB-25 * `rj-11` - RJ-11 * `rj-12` - RJ-12 * `rj-45` - RJ-45 * `mini-din-8` - Mini-DIN 8 * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConsolePortType ConsolePortType
 
 // NewConsolePortType instantiates a new ConsolePortType object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o ConsolePortType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConsolePortType) UnmarshalJSON(bytes []byte) (err error) {
-	varConsolePortType := _ConsolePortType{}
-
-	if err = json.Unmarshal(bytes, &varConsolePortType); err == nil {
-		*o = ConsolePortType(varConsolePortType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConsolePortType struct {

@@ -24,10 +24,7 @@ type NestedCircuit struct {
 	Display string `json:"display"`
 	// Unique circuit ID
 	Cid string `json:"cid"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedCircuit NestedCircuit
 
 // NewNestedCircuit instantiates a new NestedCircuit object
 // This constructor will assign default values to properties that have it defined,
@@ -156,36 +153,11 @@ func (o NestedCircuit) MarshalJSON() ([]byte, error) {
 
 func (o NestedCircuit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["cid"] = o.Cid
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedCircuit) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedCircuit := _NestedCircuit{}
-
-	if err = json.Unmarshal(bytes, &varNestedCircuit); err == nil {
-		*o = NestedCircuit(varNestedCircuit)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "cid")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedCircuit struct {

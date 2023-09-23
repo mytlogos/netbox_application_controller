@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedInventoryItemRoleRequest{}
 type NestedInventoryItemRoleRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedInventoryItemRoleRequest NestedInventoryItemRoleRequest
 
 // NewNestedInventoryItemRoleRequest instantiates a new NestedInventoryItemRoleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedInventoryItemRoleRequest) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedInventoryItemRoleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedInventoryItemRoleRequest := _NestedInventoryItemRoleRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedInventoryItemRoleRequest); err == nil {
-		*o = NestedInventoryItemRoleRequest(varNestedInventoryItemRoleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedInventoryItemRoleRequest struct {

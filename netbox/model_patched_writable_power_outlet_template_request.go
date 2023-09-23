@@ -31,10 +31,7 @@ type PatchedWritablePowerOutletTemplateRequest struct {
 	// Phase (for three-phase feeds)  * `A` - A * `B` - B * `C` - C
 	FeedLeg *string `json:"feed_leg,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritablePowerOutletTemplateRequest PatchedWritablePowerOutletTemplateRequest
 
 // NewPatchedWritablePowerOutletTemplateRequest instantiates a new PatchedWritablePowerOutletTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -373,36 +370,7 @@ func (o PatchedWritablePowerOutletTemplateRequest) ToMap() (map[string]interface
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritablePowerOutletTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritablePowerOutletTemplateRequest := _PatchedWritablePowerOutletTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritablePowerOutletTemplateRequest); err == nil {
-		*o = PatchedWritablePowerOutletTemplateRequest(varPatchedWritablePowerOutletTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "power_port")
-		delete(additionalProperties, "feed_leg")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritablePowerOutletTemplateRequest struct {

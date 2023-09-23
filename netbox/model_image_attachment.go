@@ -32,10 +32,7 @@ type ImageAttachment struct {
 	ImageWidth int32 `json:"image_width"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ImageAttachment ImageAttachment
 
 // NewImageAttachment instantiates a new ImageAttachment object
 // This constructor will assign default values to properties that have it defined,
@@ -377,9 +374,9 @@ func (o ImageAttachment) MarshalJSON() ([]byte, error) {
 
 func (o ImageAttachment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["content_type"] = o.ContentType
 	toSerialize["object_id"] = o.ObjectId
 	if o.Parent != nil {
@@ -393,40 +390,7 @@ func (o ImageAttachment) ToMap() (map[string]interface{}, error) {
 	toSerialize["image_width"] = o.ImageWidth
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ImageAttachment) UnmarshalJSON(bytes []byte) (err error) {
-	varImageAttachment := _ImageAttachment{}
-
-	if err = json.Unmarshal(bytes, &varImageAttachment); err == nil {
-		*o = ImageAttachment(varImageAttachment)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "content_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "image_height")
-		delete(additionalProperties, "image_width")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableImageAttachment struct {

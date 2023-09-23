@@ -22,10 +22,7 @@ type BookmarkRequest struct {
 	ObjectType string `json:"object_type"`
 	ObjectId int64 `json:"object_id"`
 	User NestedUserRequest `json:"user"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _BookmarkRequest BookmarkRequest
 
 // NewBookmarkRequest instantiates a new BookmarkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -132,31 +129,7 @@ func (o BookmarkRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["object_type"] = o.ObjectType
 	toSerialize["object_id"] = o.ObjectId
 	toSerialize["user"] = o.User
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *BookmarkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varBookmarkRequest := _BookmarkRequest{}
-
-	if err = json.Unmarshal(bytes, &varBookmarkRequest); err == nil {
-		*o = BookmarkRequest(varBookmarkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "user")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableBookmarkRequest struct {

@@ -25,10 +25,7 @@ type ApplicationLinkRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ApplicationLinkRequest ApplicationLinkRequest
 
 // NewApplicationLinkRequest instantiates a new ApplicationLinkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -240,34 +237,7 @@ func (o ApplicationLinkRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ApplicationLinkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationLinkRequest := _ApplicationLinkRequest{}
-
-	if err = json.Unmarshal(bytes, &varApplicationLinkRequest); err == nil {
-		*o = ApplicationLinkRequest(varApplicationLinkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "link")
-		delete(additionalProperties, "application")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationLinkRequest struct {

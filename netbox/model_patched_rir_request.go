@@ -26,10 +26,7 @@ type PatchedRIRRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedRIRRequest PatchedRIRRequest
 
 // NewPatchedRIRRequest instantiates a new PatchedRIRRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -268,34 +265,7 @@ func (o PatchedRIRRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedRIRRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedRIRRequest := _PatchedRIRRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedRIRRequest); err == nil {
-		*o = PatchedRIRRequest(varPatchedRIRRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "is_private")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedRIRRequest struct {

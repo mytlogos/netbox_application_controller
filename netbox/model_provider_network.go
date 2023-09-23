@@ -32,10 +32,7 @@ type ProviderNetwork struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ProviderNetwork ProviderNetwork
 
 // NewProviderNetwork instantiates a new ProviderNetwork object
 // This constructor will assign default values to properties that have it defined,
@@ -403,9 +400,9 @@ func (o ProviderNetwork) MarshalJSON() ([]byte, error) {
 
 func (o ProviderNetwork) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["provider"] = o.Provider
 	toSerialize["name"] = o.Name
 	if !IsNil(o.ServiceId) {
@@ -425,40 +422,7 @@ func (o ProviderNetwork) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProviderNetwork) UnmarshalJSON(bytes []byte) (err error) {
-	varProviderNetwork := _ProviderNetwork{}
-
-	if err = json.Unmarshal(bytes, &varProviderNetwork); err == nil {
-		*o = ProviderNetwork(varProviderNetwork)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "provider")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "service_id")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableProviderNetwork struct {

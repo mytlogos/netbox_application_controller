@@ -22,10 +22,7 @@ type PowerFeedSupply struct {
 	// * `ac` - AC * `dc` - DC
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerFeedSupply PowerFeedSupply
 
 // NewPowerFeedSupply instantiates a new PowerFeedSupply object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o PowerFeedSupply) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerFeedSupply) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerFeedSupply := _PowerFeedSupply{}
-
-	if err = json.Unmarshal(bytes, &varPowerFeedSupply); err == nil {
-		*o = PowerFeedSupply(varPowerFeedSupply)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerFeedSupply struct {

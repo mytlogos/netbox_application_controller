@@ -31,10 +31,7 @@ type L2VPNTermination struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _L2VPNTermination L2VPNTermination
 
 // NewL2VPNTermination instantiates a new L2VPNTermination object
 // This constructor will assign default values to properties that have it defined,
@@ -358,9 +355,9 @@ func (o L2VPNTermination) MarshalJSON() ([]byte, error) {
 
 func (o L2VPNTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["l2vpn"] = o.L2vpn
 	toSerialize["assigned_object_type"] = o.AssignedObjectType
 	toSerialize["assigned_object_id"] = o.AssignedObjectId
@@ -375,39 +372,7 @@ func (o L2VPNTermination) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *L2VPNTermination) UnmarshalJSON(bytes []byte) (err error) {
-	varL2VPNTermination := _L2VPNTermination{}
-
-	if err = json.Unmarshal(bytes, &varL2VPNTermination); err == nil {
-		*o = L2VPNTermination(varL2VPNTermination)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "l2vpn")
-		delete(additionalProperties, "assigned_object_type")
-		delete(additionalProperties, "assigned_object_id")
-		delete(additionalProperties, "assigned_object")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableL2VPNTermination struct {

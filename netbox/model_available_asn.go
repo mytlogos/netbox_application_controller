@@ -21,10 +21,7 @@ var _ MappedNullable = &AvailableASN{}
 type AvailableASN struct {
 	Asn int32 `json:"asn"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _AvailableASN AvailableASN
 
 // NewAvailableASN instantiates a new AvailableASN object
 // This constructor will assign default values to properties that have it defined,
@@ -110,34 +107,11 @@ func (o AvailableASN) MarshalJSON() ([]byte, error) {
 
 func (o AvailableASN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: asn is readOnly
+	toSerialize["asn"] = o.Asn
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *AvailableASN) UnmarshalJSON(bytes []byte) (err error) {
-	varAvailableASN := _AvailableASN{}
-
-	if err = json.Unmarshal(bytes, &varAvailableASN); err == nil {
-		*o = AvailableASN(varAvailableASN)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "asn")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAvailableASN struct {

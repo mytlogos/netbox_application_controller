@@ -22,10 +22,7 @@ type CustomFieldFilterLogic struct {
 	// * `disabled` - Disabled * `loose` - Loose * `exact` - Exact
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomFieldFilterLogic CustomFieldFilterLogic
 
 // NewCustomFieldFilterLogic instantiates a new CustomFieldFilterLogic object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o CustomFieldFilterLogic) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomFieldFilterLogic) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomFieldFilterLogic := _CustomFieldFilterLogic{}
-
-	if err = json.Unmarshal(bytes, &varCustomFieldFilterLogic); err == nil {
-		*o = CustomFieldFilterLogic(varCustomFieldFilterLogic)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomFieldFilterLogic struct {

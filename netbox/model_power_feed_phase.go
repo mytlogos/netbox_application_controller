@@ -22,10 +22,7 @@ type PowerFeedPhase struct {
 	// * `single-phase` - Single phase * `three-phase` - Three-phase
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerFeedPhase PowerFeedPhase
 
 // NewPowerFeedPhase instantiates a new PowerFeedPhase object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o PowerFeedPhase) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerFeedPhase) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerFeedPhase := _PowerFeedPhase{}
-
-	if err = json.Unmarshal(bytes, &varPowerFeedPhase); err == nil {
-		*o = PowerFeedPhase(varPowerFeedPhase)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerFeedPhase struct {

@@ -22,10 +22,7 @@ type ServiceProtocol struct {
 	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ServiceProtocol ServiceProtocol
 
 // NewServiceProtocol instantiates a new ServiceProtocol object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o ServiceProtocol) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ServiceProtocol) UnmarshalJSON(bytes []byte) (err error) {
-	varServiceProtocol := _ServiceProtocol{}
-
-	if err = json.Unmarshal(bytes, &varServiceProtocol); err == nil {
-		*o = ServiceProtocol(varServiceProtocol)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableServiceProtocol struct {

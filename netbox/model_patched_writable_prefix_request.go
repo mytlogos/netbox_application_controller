@@ -36,10 +36,7 @@ type PatchedWritablePrefixRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritablePrefixRequest PatchedWritablePrefixRequest
 
 // NewPatchedWritablePrefixRequest instantiates a new PatchedWritablePrefixRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -573,41 +570,7 @@ func (o PatchedWritablePrefixRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritablePrefixRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritablePrefixRequest := _PatchedWritablePrefixRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritablePrefixRequest); err == nil {
-		*o = PatchedWritablePrefixRequest(varPatchedWritablePrefixRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "vlan")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "is_pool")
-		delete(additionalProperties, "mark_utilized")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritablePrefixRequest struct {

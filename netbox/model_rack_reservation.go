@@ -33,10 +33,7 @@ type RackReservation struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RackReservation RackReservation
 
 // NewRackReservation instantiates a new RackReservation object
 // This constructor will assign default values to properties that have it defined,
@@ -432,9 +429,9 @@ func (o RackReservation) MarshalJSON() ([]byte, error) {
 
 func (o RackReservation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["rack"] = o.Rack
 	toSerialize["units"] = o.Units
 	toSerialize["created"] = o.Created.Get()
@@ -453,41 +450,7 @@ func (o RackReservation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *RackReservation) UnmarshalJSON(bytes []byte) (err error) {
-	varRackReservation := _RackReservation{}
-
-	if err = json.Unmarshal(bytes, &varRackReservation); err == nil {
-		*o = RackReservation(varRackReservation)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "rack")
-		delete(additionalProperties, "units")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRackReservation struct {

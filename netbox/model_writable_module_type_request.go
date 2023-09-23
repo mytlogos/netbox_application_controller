@@ -30,10 +30,7 @@ type WritableModuleTypeRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableModuleTypeRequest WritableModuleTypeRequest
 
 // NewWritableModuleTypeRequest instantiates a new WritableModuleTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -369,37 +366,7 @@ func (o WritableModuleTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableModuleTypeRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableModuleTypeRequest := _WritableModuleTypeRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableModuleTypeRequest); err == nil {
-		*o = WritableModuleTypeRequest(varWritableModuleTypeRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "model")
-		delete(additionalProperties, "part_number")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "weight_unit")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableModuleTypeRequest struct {

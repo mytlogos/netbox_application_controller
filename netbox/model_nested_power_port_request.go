@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedPowerPortRequest{}
 type NestedPowerPortRequest struct {
 	Name string `json:"name"`
 	Cable NullableInt32 `json:"cable,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedPowerPortRequest NestedPowerPortRequest
 
 // NewNestedPowerPortRequest instantiates a new NestedPowerPortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o NestedPowerPortRequest) ToMap() (map[string]interface{}, error) {
 	if o.Cable.IsSet() {
 		toSerialize["cable"] = o.Cable.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedPowerPortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedPowerPortRequest := _NestedPowerPortRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedPowerPortRequest); err == nil {
-		*o = NestedPowerPortRequest(varNestedPowerPortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "cable")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedPowerPortRequest struct {

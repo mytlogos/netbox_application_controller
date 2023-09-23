@@ -27,10 +27,7 @@ type PatchedWritableRackReservationRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableRackReservationRequest PatchedWritableRackReservationRequest
 
 // NewPatchedWritableRackReservationRequest instantiates a new PatchedWritableRackReservationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -349,36 +346,7 @@ func (o PatchedWritableRackReservationRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableRackReservationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableRackReservationRequest := _PatchedWritableRackReservationRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableRackReservationRequest); err == nil {
-		*o = PatchedWritableRackReservationRequest(varPatchedWritableRackReservationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "rack")
-		delete(additionalProperties, "units")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableRackReservationRequest struct {

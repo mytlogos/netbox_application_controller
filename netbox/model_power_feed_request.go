@@ -41,10 +41,7 @@ type PowerFeedRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerFeedRequest PowerFeedRequest
 
 // NewPowerFeedRequest instantiates a new PowerFeedRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -635,44 +632,7 @@ func (o PowerFeedRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerFeedRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerFeedRequest := _PowerFeedRequest{}
-
-	if err = json.Unmarshal(bytes, &varPowerFeedRequest); err == nil {
-		*o = PowerFeedRequest(varPowerFeedRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "power_panel")
-		delete(additionalProperties, "rack")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "supply")
-		delete(additionalProperties, "phase")
-		delete(additionalProperties, "voltage")
-		delete(additionalProperties, "amperage")
-		delete(additionalProperties, "max_utilization")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerFeedRequest struct {

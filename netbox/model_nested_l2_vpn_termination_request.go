@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedL2VPNTerminationRequest{}
 // NestedL2VPNTerminationRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedL2VPNTerminationRequest struct {
 	L2vpn NestedL2VPNRequest `json:"l2vpn"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedL2VPNTerminationRequest NestedL2VPNTerminationRequest
 
 // NewNestedL2VPNTerminationRequest instantiates a new NestedL2VPNTerminationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -78,29 +75,7 @@ func (o NestedL2VPNTerminationRequest) MarshalJSON() ([]byte, error) {
 func (o NestedL2VPNTerminationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["l2vpn"] = o.L2vpn
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedL2VPNTerminationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedL2VPNTerminationRequest := _NestedL2VPNTerminationRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedL2VPNTerminationRequest); err == nil {
-		*o = NestedL2VPNTerminationRequest(varNestedL2VPNTerminationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "l2vpn")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedL2VPNTerminationRequest struct {

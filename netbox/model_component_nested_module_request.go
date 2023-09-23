@@ -20,10 +20,7 @@ var _ MappedNullable = &ComponentNestedModuleRequest{}
 // ComponentNestedModuleRequest Used by device component serializers.
 type ComponentNestedModuleRequest struct {
 	Device int32 `json:"device"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ComponentNestedModuleRequest ComponentNestedModuleRequest
 
 // NewComponentNestedModuleRequest instantiates a new ComponentNestedModuleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -78,29 +75,7 @@ func (o ComponentNestedModuleRequest) MarshalJSON() ([]byte, error) {
 func (o ComponentNestedModuleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["device"] = o.Device
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ComponentNestedModuleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varComponentNestedModuleRequest := _ComponentNestedModuleRequest{}
-
-	if err = json.Unmarshal(bytes, &varComponentNestedModuleRequest); err == nil {
-		*o = ComponentNestedModuleRequest(varComponentNestedModuleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableComponentNestedModuleRequest struct {

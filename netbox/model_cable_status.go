@@ -22,10 +22,7 @@ type CableStatus struct {
 	// * `connected` - Connected * `planned` - Planned * `decommissioning` - Decommissioning
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CableStatus CableStatus
 
 // NewCableStatus instantiates a new CableStatus object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o CableStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CableStatus) UnmarshalJSON(bytes []byte) (err error) {
-	varCableStatus := _CableStatus{}
-
-	if err = json.Unmarshal(bytes, &varCableStatus); err == nil {
-		*o = CableStatus(varCableStatus)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCableStatus struct {

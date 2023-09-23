@@ -24,10 +24,7 @@ type ClusterTypeRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ClusterTypeRequest ClusterTypeRequest
 
 // NewClusterTypeRequest instantiates a new ClusterTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -213,33 +210,7 @@ func (o ClusterTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ClusterTypeRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varClusterTypeRequest := _ClusterTypeRequest{}
-
-	if err = json.Unmarshal(bytes, &varClusterTypeRequest); err == nil {
-		*o = ClusterTypeRequest(varClusterTypeRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableClusterTypeRequest struct {

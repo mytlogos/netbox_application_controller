@@ -32,10 +32,7 @@ type ContactAssignment struct {
 	Tags []NestedTag `json:"tags,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ContactAssignment ContactAssignment
 
 // NewContactAssignment instantiates a new ContactAssignment object
 // This constructor will assign default values to properties that have it defined,
@@ -399,12 +396,12 @@ func (o ContactAssignment) MarshalJSON() ([]byte, error) {
 
 func (o ContactAssignment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["content_type"] = o.ContentType
 	toSerialize["object_id"] = o.ObjectId
-	// skip: object is readOnly
+	toSerialize["object"] = o.Object
 	toSerialize["contact"] = o.Contact
 	if o.Role.IsSet() {
 		toSerialize["role"] = o.Role.Get()
@@ -417,40 +414,7 @@ func (o ContactAssignment) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ContactAssignment) UnmarshalJSON(bytes []byte) (err error) {
-	varContactAssignment := _ContactAssignment{}
-
-	if err = json.Unmarshal(bytes, &varContactAssignment); err == nil {
-		*o = ContactAssignment(varContactAssignment)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "content_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "object")
-		delete(additionalProperties, "contact")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableContactAssignment struct {

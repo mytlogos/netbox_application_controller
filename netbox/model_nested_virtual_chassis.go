@@ -24,10 +24,7 @@ type NestedVirtualChassis struct {
 	Display string `json:"display"`
 	Name string `json:"name"`
 	Master NestedDevice `json:"master"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVirtualChassis NestedVirtualChassis
 
 // NewNestedVirtualChassis instantiates a new NestedVirtualChassis object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o NestedVirtualChassis) MarshalJSON() ([]byte, error) {
 
 func (o NestedVirtualChassis) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["master"] = o.Master
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVirtualChassis) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVirtualChassis := _NestedVirtualChassis{}
-
-	if err = json.Unmarshal(bytes, &varNestedVirtualChassis); err == nil {
-		*o = NestedVirtualChassis(varNestedVirtualChassis)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "master")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVirtualChassis struct {

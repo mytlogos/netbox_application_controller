@@ -31,10 +31,7 @@ type PatchedWritableFrontPortTemplateRequest struct {
 	RearPort *int32 `json:"rear_port,omitempty"`
 	RearPortPosition *int32 `json:"rear_port_position,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableFrontPortTemplateRequest PatchedWritableFrontPortTemplateRequest
 
 // NewPatchedWritableFrontPortTemplateRequest instantiates a new PatchedWritableFrontPortTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -398,37 +395,7 @@ func (o PatchedWritableFrontPortTemplateRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableFrontPortTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableFrontPortTemplateRequest := _PatchedWritableFrontPortTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableFrontPortTemplateRequest); err == nil {
-		*o = PatchedWritableFrontPortTemplateRequest(varPatchedWritableFrontPortTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "rear_port")
-		delete(additionalProperties, "rear_port_position")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableFrontPortTemplateRequest struct {

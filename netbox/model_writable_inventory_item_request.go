@@ -38,10 +38,7 @@ type WritableInventoryItemRequest struct {
 	ComponentId NullableInt64 `json:"component_id,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableInventoryItemRequest WritableInventoryItemRequest
 
 // NewWritableInventoryItemRequest instantiates a new WritableInventoryItemRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -637,43 +634,7 @@ func (o WritableInventoryItemRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableInventoryItemRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableInventoryItemRequest := _WritableInventoryItemRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableInventoryItemRequest); err == nil {
-		*o = WritableInventoryItemRequest(varWritableInventoryItemRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "part_id")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "discovered")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "component_type")
-		delete(additionalProperties, "component_id")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableInventoryItemRequest struct {

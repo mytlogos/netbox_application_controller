@@ -23,10 +23,7 @@ type PaginatedTenantGroupList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []TenantGroup `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedTenantGroupList PaginatedTenantGroupList
 
 // NewPaginatedTenantGroupList instantiates a new PaginatedTenantGroupList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedTenantGroupList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedTenantGroupList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedTenantGroupList := _PaginatedTenantGroupList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedTenantGroupList); err == nil {
-		*o = PaginatedTenantGroupList(varPaginatedTenantGroupList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedTenantGroupList struct {

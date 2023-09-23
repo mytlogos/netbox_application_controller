@@ -33,10 +33,7 @@ type WirelessLANGroup struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	WirelesslanCount int32 `json:"wirelesslan_count"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WirelessLANGroup WirelessLANGroup
 
 // NewWirelessLANGroup instantiates a new WirelessLANGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -432,9 +429,9 @@ func (o WirelessLANGroup) MarshalJSON() ([]byte, error) {
 
 func (o WirelessLANGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Parent.IsSet() {
@@ -451,43 +448,9 @@ func (o WirelessLANGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: wirelesslan_count is readOnly
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["wirelesslan_count"] = o.WirelesslanCount
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *WirelessLANGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varWirelessLANGroup := _WirelessLANGroup{}
-
-	if err = json.Unmarshal(bytes, &varWirelessLANGroup); err == nil {
-		*o = WirelessLANGroup(varWirelessLANGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "wirelesslan_count")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWirelessLANGroup struct {

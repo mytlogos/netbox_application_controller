@@ -32,10 +32,7 @@ type ServiceTemplate struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ServiceTemplate ServiceTemplate
 
 // NewServiceTemplate instantiates a new ServiceTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -403,9 +400,9 @@ func (o ServiceTemplate) MarshalJSON() ([]byte, error) {
 
 func (o ServiceTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["ports"] = o.Ports
 	if !IsNil(o.Protocol) {
@@ -425,40 +422,7 @@ func (o ServiceTemplate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ServiceTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varServiceTemplate := _ServiceTemplate{}
-
-	if err = json.Unmarshal(bytes, &varServiceTemplate); err == nil {
-		*o = ServiceTemplate(varServiceTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableServiceTemplate struct {

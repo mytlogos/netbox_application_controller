@@ -22,10 +22,7 @@ type AvailablePrefix struct {
 	Family int32 `json:"family"`
 	Prefix string `json:"prefix"`
 	Vrf NestedVRF `json:"vrf"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _AvailablePrefix AvailablePrefix
 
 // NewAvailablePrefix instantiates a new AvailablePrefix object
 // This constructor will assign default values to properties that have it defined,
@@ -129,34 +126,10 @@ func (o AvailablePrefix) MarshalJSON() ([]byte, error) {
 
 func (o AvailablePrefix) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: family is readOnly
-	// skip: prefix is readOnly
-	// skip: vrf is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["family"] = o.Family
+	toSerialize["prefix"] = o.Prefix
+	toSerialize["vrf"] = o.Vrf
 	return toSerialize, nil
-}
-
-func (o *AvailablePrefix) UnmarshalJSON(bytes []byte) (err error) {
-	varAvailablePrefix := _AvailablePrefix{}
-
-	if err = json.Unmarshal(bytes, &varAvailablePrefix); err == nil {
-		*o = AvailablePrefix(varAvailablePrefix)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "vrf")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAvailablePrefix struct {

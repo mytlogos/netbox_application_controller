@@ -57,10 +57,7 @@ type DeviceWithConfigContextRequest struct {
 	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DeviceWithConfigContextRequest DeviceWithConfigContextRequest
 
 // NewDeviceWithConfigContextRequest instantiates a new DeviceWithConfigContextRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -1248,57 +1245,7 @@ func (o DeviceWithConfigContextRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *DeviceWithConfigContextRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varDeviceWithConfigContextRequest := _DeviceWithConfigContextRequest{}
-
-	if err = json.Unmarshal(bytes, &varDeviceWithConfigContextRequest); err == nil {
-		*o = DeviceWithConfigContextRequest(varDeviceWithConfigContextRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "rack")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "face")
-		delete(additionalProperties, "latitude")
-		delete(additionalProperties, "longitude")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "airflow")
-		delete(additionalProperties, "primary_ip4")
-		delete(additionalProperties, "primary_ip6")
-		delete(additionalProperties, "oob_ip")
-		delete(additionalProperties, "cluster")
-		delete(additionalProperties, "virtual_chassis")
-		delete(additionalProperties, "vc_position")
-		delete(additionalProperties, "vc_priority")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "config_template")
-		delete(additionalProperties, "local_context_data")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDeviceWithConfigContextRequest struct {

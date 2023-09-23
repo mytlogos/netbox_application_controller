@@ -35,10 +35,7 @@ type RearPortTemplate struct {
 	Description *string `json:"description,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RearPortTemplate RearPortTemplate
 
 // NewRearPortTemplate instantiates a new RearPortTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -458,9 +455,9 @@ func (o RearPortTemplate) MarshalJSON() ([]byte, error) {
 
 func (o RearPortTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.DeviceType.IsSet() {
 		toSerialize["device_type"] = o.DeviceType.Get()
 	}
@@ -483,41 +480,7 @@ func (o RearPortTemplate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *RearPortTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varRearPortTemplate := _RearPortTemplate{}
-
-	if err = json.Unmarshal(bytes, &varRearPortTemplate); err == nil {
-		*o = RearPortTemplate(varRearPortTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "positions")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRearPortTemplate struct {

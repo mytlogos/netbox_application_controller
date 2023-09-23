@@ -29,10 +29,7 @@ type LocationRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _LocationRequest LocationRequest
 
 // NewLocationRequest instantiates a new LocationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -369,37 +366,7 @@ func (o LocationRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *LocationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varLocationRequest := _LocationRequest{}
-
-	if err = json.Unmarshal(bytes, &varLocationRequest); err == nil {
-		*o = LocationRequest(varLocationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableLocationRequest struct {

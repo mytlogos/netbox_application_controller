@@ -37,10 +37,7 @@ type PatchedWritableInterfaceTemplateRequest struct {
 	PoeType *string `json:"poe_type,omitempty"`
 	// * `ap` - Access point * `station` - Station
 	RfRole *string `json:"rf_role,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableInterfaceTemplateRequest PatchedWritableInterfaceTemplateRequest
 
 // NewPatchedWritableInterfaceTemplateRequest instantiates a new PatchedWritableInterfaceTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -519,40 +516,7 @@ func (o PatchedWritableInterfaceTemplateRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.RfRole) {
 		toSerialize["rf_role"] = o.RfRole
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableInterfaceTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableInterfaceTemplateRequest := _PatchedWritableInterfaceTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableInterfaceTemplateRequest); err == nil {
-		*o = PatchedWritableInterfaceTemplateRequest(varPatchedWritableInterfaceTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "mgmt_only")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "poe_mode")
-		delete(additionalProperties, "poe_type")
-		delete(additionalProperties, "rf_role")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableInterfaceTemplateRequest struct {

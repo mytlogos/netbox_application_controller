@@ -39,10 +39,7 @@ type Cable struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Cable Cable
 
 // NewCable instantiates a new Cable object
 // This constructor will assign default values to properties that have it defined,
@@ -646,9 +643,9 @@ func (o Cable) MarshalJSON() ([]byte, error) {
 
 func (o Cable) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
@@ -690,46 +687,7 @@ func (o Cable) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Cable) UnmarshalJSON(bytes []byte) (err error) {
-	varCable := _Cable{}
-
-	if err = json.Unmarshal(bytes, &varCable); err == nil {
-		*o = Cable(varCable)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "a_terminations")
-		delete(additionalProperties, "b_terminations")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "length")
-		delete(additionalProperties, "length_unit")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCable struct {

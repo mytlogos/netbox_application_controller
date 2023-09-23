@@ -39,10 +39,7 @@ type VRF struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	IpaddressCount int32 `json:"ipaddress_count"`
 	PrefixCount int32 `json:"prefix_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VRF VRF
 
 // NewVRF instantiates a new VRF object
 // This constructor will assign default values to properties that have it defined,
@@ -583,9 +580,9 @@ func (o VRF) MarshalJSON() ([]byte, error) {
 
 func (o VRF) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if o.Rd.IsSet() {
 		toSerialize["rd"] = o.Rd.Get()
@@ -616,47 +613,9 @@ func (o VRF) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: ipaddress_count is readOnly
-	// skip: prefix_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["ipaddress_count"] = o.IpaddressCount
+	toSerialize["prefix_count"] = o.PrefixCount
 	return toSerialize, nil
-}
-
-func (o *VRF) UnmarshalJSON(bytes []byte) (err error) {
-	varVRF := _VRF{}
-
-	if err = json.Unmarshal(bytes, &varVRF); err == nil {
-		*o = VRF(varVRF)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rd")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "enforce_unique")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "import_targets")
-		delete(additionalProperties, "export_targets")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "ipaddress_count")
-		delete(additionalProperties, "prefix_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVRF struct {

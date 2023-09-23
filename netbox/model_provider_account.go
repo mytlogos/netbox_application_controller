@@ -32,10 +32,7 @@ type ProviderAccount struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ProviderAccount ProviderAccount
 
 // NewProviderAccount instantiates a new ProviderAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -403,9 +400,9 @@ func (o ProviderAccount) MarshalJSON() ([]byte, error) {
 
 func (o ProviderAccount) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["provider"] = o.Provider
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -425,40 +422,7 @@ func (o ProviderAccount) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ProviderAccount) UnmarshalJSON(bytes []byte) (err error) {
-	varProviderAccount := _ProviderAccount{}
-
-	if err = json.Unmarshal(bytes, &varProviderAccount); err == nil {
-		*o = ProviderAccount(varProviderAccount)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "provider")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableProviderAccount struct {

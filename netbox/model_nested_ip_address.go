@@ -24,10 +24,7 @@ type NestedIPAddress struct {
 	Display string `json:"display"`
 	Family int32 `json:"family"`
 	Address string `json:"address"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedIPAddress NestedIPAddress
 
 // NewNestedIPAddress instantiates a new NestedIPAddress object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o NestedIPAddress) MarshalJSON() ([]byte, error) {
 
 func (o NestedIPAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: family is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["family"] = o.Family
 	toSerialize["address"] = o.Address
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedIPAddress) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedIPAddress := _NestedIPAddress{}
-
-	if err = json.Unmarshal(bytes, &varNestedIPAddress); err == nil {
-		*o = NestedIPAddress(varNestedIPAddress)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "address")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedIPAddress struct {

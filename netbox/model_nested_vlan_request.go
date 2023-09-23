@@ -22,10 +22,7 @@ type NestedVLANRequest struct {
 	// Numeric VLAN ID (1-4094)
 	Vid int32 `json:"vid"`
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVLANRequest NestedVLANRequest
 
 // NewNestedVLANRequest instantiates a new NestedVLANRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -106,30 +103,7 @@ func (o NestedVLANRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["vid"] = o.Vid
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVLANRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVLANRequest := _NestedVLANRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedVLANRequest); err == nil {
-		*o = NestedVLANRequest(varNestedVLANRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "vid")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVLANRequest struct {

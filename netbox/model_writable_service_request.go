@@ -31,10 +31,7 @@ type WritableServiceRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableServiceRequest WritableServiceRequest
 
 // NewWritableServiceRequest instantiates a new WritableServiceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -406,38 +403,7 @@ func (o WritableServiceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableServiceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableServiceRequest := _WritableServiceRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableServiceRequest); err == nil {
-		*o = WritableServiceRequest(varWritableServiceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "virtual_machine")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "ipaddresses")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableServiceRequest struct {

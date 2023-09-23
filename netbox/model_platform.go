@@ -34,10 +34,7 @@ type Platform struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	DeviceCount int32 `json:"device_count"`
 	VirtualmachineCount int32 `json:"virtualmachine_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Platform Platform
 
 // NewPlatform instantiates a new Platform object
 // This constructor will assign default values to properties that have it defined,
@@ -475,9 +472,9 @@ func (o Platform) MarshalJSON() ([]byte, error) {
 
 func (o Platform) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Manufacturer.IsSet() {
@@ -497,44 +494,9 @@ func (o Platform) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: device_count is readOnly
-	// skip: virtualmachine_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["device_count"] = o.DeviceCount
+	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	return toSerialize, nil
-}
-
-func (o *Platform) UnmarshalJSON(bytes []byte) (err error) {
-	varPlatform := _Platform{}
-
-	if err = json.Unmarshal(bytes, &varPlatform); err == nil {
-		*o = Platform(varPlatform)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "config_template")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "device_count")
-		delete(additionalProperties, "virtualmachine_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePlatform struct {

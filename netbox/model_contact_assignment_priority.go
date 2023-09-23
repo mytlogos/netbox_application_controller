@@ -22,10 +22,7 @@ type ContactAssignmentPriority struct {
 	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ContactAssignmentPriority ContactAssignmentPriority
 
 // NewContactAssignmentPriority instantiates a new ContactAssignmentPriority object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o ContactAssignmentPriority) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ContactAssignmentPriority) UnmarshalJSON(bytes []byte) (err error) {
-	varContactAssignmentPriority := _ContactAssignmentPriority{}
-
-	if err = json.Unmarshal(bytes, &varContactAssignmentPriority); err == nil {
-		*o = ContactAssignmentPriority(varContactAssignmentPriority)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableContactAssignmentPriority struct {

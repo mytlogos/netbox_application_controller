@@ -32,10 +32,7 @@ type PatchedWritableVirtualDeviceContextRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableVirtualDeviceContextRequest PatchedWritableVirtualDeviceContextRequest
 
 // NewPatchedWritableVirtualDeviceContextRequest instantiates a new PatchedWritableVirtualDeviceContextRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -499,39 +496,7 @@ func (o PatchedWritableVirtualDeviceContextRequest) ToMap() (map[string]interfac
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableVirtualDeviceContextRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableVirtualDeviceContextRequest := _PatchedWritableVirtualDeviceContextRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableVirtualDeviceContextRequest); err == nil {
-		*o = PatchedWritableVirtualDeviceContextRequest(varPatchedWritableVirtualDeviceContextRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "identifier")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "primary_ip4")
-		delete(additionalProperties, "primary_ip6")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableVirtualDeviceContextRequest struct {

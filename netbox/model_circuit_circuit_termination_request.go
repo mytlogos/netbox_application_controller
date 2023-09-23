@@ -28,10 +28,7 @@ type CircuitCircuitTerminationRequest struct {
 	// ID of the local cross-connect
 	XconnectId *string `json:"xconnect_id,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CircuitCircuitTerminationRequest CircuitCircuitTerminationRequest
 
 // NewCircuitCircuitTerminationRequest instantiates a new CircuitCircuitTerminationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -276,34 +273,7 @@ func (o CircuitCircuitTerminationRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CircuitCircuitTerminationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varCircuitCircuitTerminationRequest := _CircuitCircuitTerminationRequest{}
-
-	if err = json.Unmarshal(bytes, &varCircuitCircuitTerminationRequest); err == nil {
-		*o = CircuitCircuitTerminationRequest(varCircuitCircuitTerminationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "provider_network")
-		delete(additionalProperties, "port_speed")
-		delete(additionalProperties, "upstream_speed")
-		delete(additionalProperties, "xconnect_id")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCircuitCircuitTerminationRequest struct {

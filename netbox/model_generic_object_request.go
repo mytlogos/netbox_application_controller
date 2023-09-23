@@ -21,10 +21,7 @@ var _ MappedNullable = &GenericObjectRequest{}
 type GenericObjectRequest struct {
 	ObjectType string `json:"object_type"`
 	ObjectId int32 `json:"object_id"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _GenericObjectRequest GenericObjectRequest
 
 // NewGenericObjectRequest instantiates a new GenericObjectRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o GenericObjectRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["object_type"] = o.ObjectType
 	toSerialize["object_id"] = o.ObjectId
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *GenericObjectRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varGenericObjectRequest := _GenericObjectRequest{}
-
-	if err = json.Unmarshal(bytes, &varGenericObjectRequest); err == nil {
-		*o = GenericObjectRequest(varGenericObjectRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "object_id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableGenericObjectRequest struct {

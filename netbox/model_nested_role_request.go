@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedRoleRequest{}
 type NestedRoleRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedRoleRequest NestedRoleRequest
 
 // NewNestedRoleRequest instantiates a new NestedRoleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedRoleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedRoleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedRoleRequest := _NestedRoleRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedRoleRequest); err == nil {
-		*o = NestedRoleRequest(varNestedRoleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedRoleRequest struct {

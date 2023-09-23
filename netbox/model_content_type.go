@@ -24,10 +24,7 @@ type ContentType struct {
 	Display string `json:"display"`
 	AppLabel string `json:"app_label"`
 	Model string `json:"model"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ContentType ContentType
 
 // NewContentType instantiates a new ContentType object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o ContentType) MarshalJSON() ([]byte, error) {
 
 func (o ContentType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["app_label"] = o.AppLabel
 	toSerialize["model"] = o.Model
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ContentType) UnmarshalJSON(bytes []byte) (err error) {
-	varContentType := _ContentType{}
-
-	if err = json.Unmarshal(bytes, &varContentType); err == nil {
-		*o = ContentType(varContentType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "app_label")
-		delete(additionalProperties, "model")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableContentType struct {

@@ -23,10 +23,7 @@ type PaginatedVLANGroupList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []VLANGroup `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedVLANGroupList PaginatedVLANGroupList
 
 // NewPaginatedVLANGroupList instantiates a new PaginatedVLANGroupList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedVLANGroupList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedVLANGroupList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedVLANGroupList := _PaginatedVLANGroupList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedVLANGroupList); err == nil {
-		*o = PaginatedVLANGroupList(varPaginatedVLANGroupList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedVLANGroupList struct {

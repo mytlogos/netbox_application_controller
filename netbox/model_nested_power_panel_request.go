@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedPowerPanelRequest{}
 // NestedPowerPanelRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedPowerPanelRequest struct {
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedPowerPanelRequest NestedPowerPanelRequest
 
 // NewNestedPowerPanelRequest instantiates a new NestedPowerPanelRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -78,29 +75,7 @@ func (o NestedPowerPanelRequest) MarshalJSON() ([]byte, error) {
 func (o NestedPowerPanelRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedPowerPanelRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedPowerPanelRequest := _NestedPowerPanelRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedPowerPanelRequest); err == nil {
-		*o = NestedPowerPanelRequest(varNestedPowerPanelRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedPowerPanelRequest struct {

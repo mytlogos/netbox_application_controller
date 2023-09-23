@@ -20,10 +20,7 @@ var _ MappedNullable = &ModuleBayNestedModuleRequest{}
 // ModuleBayNestedModuleRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type ModuleBayNestedModuleRequest struct {
 	Serial *string `json:"serial,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ModuleBayNestedModuleRequest ModuleBayNestedModuleRequest
 
 // NewModuleBayNestedModuleRequest instantiates a new ModuleBayNestedModuleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -87,29 +84,7 @@ func (o ModuleBayNestedModuleRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Serial) {
 		toSerialize["serial"] = o.Serial
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ModuleBayNestedModuleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varModuleBayNestedModuleRequest := _ModuleBayNestedModuleRequest{}
-
-	if err = json.Unmarshal(bytes, &varModuleBayNestedModuleRequest); err == nil {
-		*o = ModuleBayNestedModuleRequest(varModuleBayNestedModuleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "serial")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableModuleBayNestedModuleRequest struct {

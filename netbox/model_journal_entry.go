@@ -33,10 +33,7 @@ type JournalEntry struct {
 	Tags []NestedTag `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _JournalEntry JournalEntry
 
 // NewJournalEntry instantiates a new JournalEntry object
 // This constructor will assign default values to properties that have it defined,
@@ -434,9 +431,9 @@ func (o JournalEntry) MarshalJSON() ([]byte, error) {
 
 func (o JournalEntry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["assigned_object_type"] = o.AssignedObjectType
 	toSerialize["assigned_object_id"] = o.AssignedObjectId
 	if o.AssignedObject != nil {
@@ -457,41 +454,7 @@ func (o JournalEntry) ToMap() (map[string]interface{}, error) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *JournalEntry) UnmarshalJSON(bytes []byte) (err error) {
-	varJournalEntry := _JournalEntry{}
-
-	if err = json.Unmarshal(bytes, &varJournalEntry); err == nil {
-		*o = JournalEntry(varJournalEntry)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "assigned_object_type")
-		delete(additionalProperties, "assigned_object_id")
-		delete(additionalProperties, "assigned_object")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "created_by")
-		delete(additionalProperties, "kind")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableJournalEntry struct {

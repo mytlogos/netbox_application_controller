@@ -24,10 +24,7 @@ type NestedRearPortTemplate struct {
 	Display string `json:"display"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedRearPortTemplate NestedRearPortTemplate
 
 // NewNestedRearPortTemplate instantiates a new NestedRearPortTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -156,36 +153,11 @@ func (o NestedRearPortTemplate) MarshalJSON() ([]byte, error) {
 
 func (o NestedRearPortTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedRearPortTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedRearPortTemplate := _NestedRearPortTemplate{}
-
-	if err = json.Unmarshal(bytes, &varNestedRearPortTemplate); err == nil {
-		*o = NestedRearPortTemplate(varNestedRearPortTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedRearPortTemplate struct {

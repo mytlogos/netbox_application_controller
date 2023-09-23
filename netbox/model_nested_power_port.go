@@ -26,10 +26,7 @@ type NestedPowerPort struct {
 	Name string `json:"name"`
 	Cable NullableInt32 `json:"cable,omitempty"`
 	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedPowerPort NestedPowerPort
 
 // NewNestedPowerPort instantiates a new NestedPowerPort object
 // This constructor will assign default values to properties that have it defined,
@@ -250,44 +247,16 @@ func (o NestedPowerPort) MarshalJSON() ([]byte, error) {
 
 func (o NestedPowerPort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: device is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["device"] = o.Device
 	toSerialize["name"] = o.Name
 	if o.Cable.IsSet() {
 		toSerialize["cable"] = o.Cable.Get()
 	}
-	// skip: _occupied is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_occupied"] = o.Occupied
 	return toSerialize, nil
-}
-
-func (o *NestedPowerPort) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedPowerPort := _NestedPowerPort{}
-
-	if err = json.Unmarshal(bytes, &varNestedPowerPort); err == nil {
-		*o = NestedPowerPort(varNestedPowerPort)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "_occupied")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedPowerPort struct {

@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedProviderAccountRequest{}
 type NestedProviderAccountRequest struct {
 	Name *string `json:"name,omitempty"`
 	Account string `json:"account"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedProviderAccountRequest NestedProviderAccountRequest
 
 // NewNestedProviderAccountRequest instantiates a new NestedProviderAccountRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -114,30 +111,7 @@ func (o NestedProviderAccountRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["account"] = o.Account
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedProviderAccountRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedProviderAccountRequest := _NestedProviderAccountRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedProviderAccountRequest); err == nil {
-		*o = NestedProviderAccountRequest(varNestedProviderAccountRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedProviderAccountRequest struct {

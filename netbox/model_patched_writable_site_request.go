@@ -43,10 +43,7 @@ type PatchedWritableSiteRequest struct {
 	Asns []int32 `json:"asns,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableSiteRequest PatchedWritableSiteRequest
 
 // NewPatchedWritableSiteRequest instantiates a new PatchedWritableSiteRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -730,45 +727,7 @@ func (o PatchedWritableSiteRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableSiteRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableSiteRequest := _PatchedWritableSiteRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableSiteRequest); err == nil {
-		*o = PatchedWritableSiteRequest(varPatchedWritableSiteRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "region")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "facility")
-		delete(additionalProperties, "time_zone")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "physical_address")
-		delete(additionalProperties, "shipping_address")
-		delete(additionalProperties, "latitude")
-		delete(additionalProperties, "longitude")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "asns")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableSiteRequest struct {

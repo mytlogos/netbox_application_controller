@@ -25,10 +25,7 @@ type NestedRegion struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedRegion NestedRegion
 
 // NewNestedRegion instantiates a new NestedRegion object
 // This constructor will assign default values to properties that have it defined,
@@ -207,40 +204,13 @@ func (o NestedRegion) MarshalJSON() ([]byte, error) {
 
 func (o NestedRegion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *NestedRegion) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedRegion := _NestedRegion{}
-
-	if err = json.Unmarshal(bytes, &varNestedRegion); err == nil {
-		*o = NestedRegion(varNestedRegion)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedRegion struct {

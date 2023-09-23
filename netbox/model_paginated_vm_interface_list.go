@@ -23,10 +23,7 @@ type PaginatedVMInterfaceList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []VMInterface `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedVMInterfaceList PaginatedVMInterfaceList
 
 // NewPaginatedVMInterfaceList instantiates a new PaginatedVMInterfaceList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedVMInterfaceList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedVMInterfaceList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedVMInterfaceList := _PaginatedVMInterfaceList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedVMInterfaceList); err == nil {
-		*o = PaginatedVMInterfaceList(varPaginatedVMInterfaceList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedVMInterfaceList struct {

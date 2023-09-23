@@ -34,10 +34,7 @@ type PatchedWritableWirelessLANRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableWirelessLANRequest PatchedWritableWirelessLANRequest
 
 // NewPatchedWritableWirelessLANRequest instantiates a new PatchedWritableWirelessLANRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -516,40 +513,7 @@ func (o PatchedWritableWirelessLANRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableWirelessLANRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableWirelessLANRequest := _PatchedWritableWirelessLANRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableWirelessLANRequest); err == nil {
-		*o = PatchedWritableWirelessLANRequest(varPatchedWritableWirelessLANRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "ssid")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "vlan")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "auth_type")
-		delete(additionalProperties, "auth_cipher")
-		delete(additionalProperties, "auth_psk")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableWirelessLANRequest struct {

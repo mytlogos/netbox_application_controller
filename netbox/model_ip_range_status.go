@@ -22,10 +22,7 @@ type IPRangeStatus struct {
 	// * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _IPRangeStatus IPRangeStatus
 
 // NewIPRangeStatus instantiates a new IPRangeStatus object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o IPRangeStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *IPRangeStatus) UnmarshalJSON(bytes []byte) (err error) {
-	varIPRangeStatus := _IPRangeStatus{}
-
-	if err = json.Unmarshal(bytes, &varIPRangeStatus); err == nil {
-		*o = IPRangeStatus(varIPRangeStatus)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableIPRangeStatus struct {

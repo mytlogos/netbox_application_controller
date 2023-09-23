@@ -31,10 +31,7 @@ type ClusterGroup struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	ClusterCount int32 `json:"cluster_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ClusterGroup ClusterGroup
 
 // NewClusterGroup instantiates a new ClusterGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -363,9 +360,9 @@ func (o ClusterGroup) MarshalJSON() ([]byte, error) {
 
 func (o ClusterGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
@@ -379,40 +376,8 @@ func (o ClusterGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: cluster_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["cluster_count"] = o.ClusterCount
 	return toSerialize, nil
-}
-
-func (o *ClusterGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varClusterGroup := _ClusterGroup{}
-
-	if err = json.Unmarshal(bytes, &varClusterGroup); err == nil {
-		*o = ClusterGroup(varClusterGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "cluster_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableClusterGroup struct {

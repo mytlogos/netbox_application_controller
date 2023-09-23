@@ -23,10 +23,7 @@ type NestedL2VPNTermination struct {
 	Url string `json:"url"`
 	Display string `json:"display"`
 	L2vpn NestedL2VPN `json:"l2vpn"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedL2VPNTermination NestedL2VPNTermination
 
 // NewNestedL2VPNTermination instantiates a new NestedL2VPNTermination object
 // This constructor will assign default values to properties that have it defined,
@@ -155,36 +152,11 @@ func (o NestedL2VPNTermination) MarshalJSON() ([]byte, error) {
 
 func (o NestedL2VPNTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["l2vpn"] = o.L2vpn
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedL2VPNTermination) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedL2VPNTermination := _NestedL2VPNTermination{}
-
-	if err = json.Unmarshal(bytes, &varNestedL2VPNTermination); err == nil {
-		*o = NestedL2VPNTermination(varNestedL2VPNTermination)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "l2vpn")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedL2VPNTermination struct {

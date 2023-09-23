@@ -23,10 +23,7 @@ type PatchedWritableFHRPGroupAssignmentRequest struct {
 	InterfaceType *string `json:"interface_type,omitempty"`
 	InterfaceId *int64 `json:"interface_id,omitempty"`
 	Priority *int32 `json:"priority,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableFHRPGroupAssignmentRequest PatchedWritableFHRPGroupAssignmentRequest
 
 // NewPatchedWritableFHRPGroupAssignmentRequest instantiates a new PatchedWritableFHRPGroupAssignmentRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -195,32 +192,7 @@ func (o PatchedWritableFHRPGroupAssignmentRequest) ToMap() (map[string]interface
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableFHRPGroupAssignmentRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableFHRPGroupAssignmentRequest := _PatchedWritableFHRPGroupAssignmentRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableFHRPGroupAssignmentRequest); err == nil {
-		*o = PatchedWritableFHRPGroupAssignmentRequest(varPatchedWritableFHRPGroupAssignmentRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "interface_type")
-		delete(additionalProperties, "interface_id")
-		delete(additionalProperties, "priority")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableFHRPGroupAssignmentRequest struct {

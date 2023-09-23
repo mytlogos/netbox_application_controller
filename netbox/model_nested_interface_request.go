@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedInterfaceRequest{}
 type NestedInterfaceRequest struct {
 	Name string `json:"name"`
 	Cable NullableInt32 `json:"cable,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedInterfaceRequest NestedInterfaceRequest
 
 // NewNestedInterfaceRequest instantiates a new NestedInterfaceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o NestedInterfaceRequest) ToMap() (map[string]interface{}, error) {
 	if o.Cable.IsSet() {
 		toSerialize["cable"] = o.Cable.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedInterfaceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedInterfaceRequest := _NestedInterfaceRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedInterfaceRequest); err == nil {
-		*o = NestedInterfaceRequest(varNestedInterfaceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "cable")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedInterfaceRequest struct {

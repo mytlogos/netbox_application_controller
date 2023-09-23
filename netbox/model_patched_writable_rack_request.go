@@ -58,10 +58,7 @@ type PatchedWritableRackRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableRackRequest PatchedWritableRackRequest
 
 // NewPatchedWritableRackRequest instantiates a new PatchedWritableRackRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -1065,53 +1062,7 @@ func (o PatchedWritableRackRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableRackRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableRackRequest := _PatchedWritableRackRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableRackRequest); err == nil {
-		*o = PatchedWritableRackRequest(varPatchedWritableRackRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "facility_id")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "width")
-		delete(additionalProperties, "u_height")
-		delete(additionalProperties, "starting_unit")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "max_weight")
-		delete(additionalProperties, "weight_unit")
-		delete(additionalProperties, "desc_units")
-		delete(additionalProperties, "outer_width")
-		delete(additionalProperties, "outer_depth")
-		delete(additionalProperties, "outer_unit")
-		delete(additionalProperties, "mounting_depth")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableRackRequest struct {

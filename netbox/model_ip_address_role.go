@@ -22,10 +22,7 @@ type IPAddressRole struct {
 	// * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _IPAddressRole IPAddressRole
 
 // NewIPAddressRole instantiates a new IPAddressRole object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o IPAddressRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *IPAddressRole) UnmarshalJSON(bytes []byte) (err error) {
-	varIPAddressRole := _IPAddressRole{}
-
-	if err = json.Unmarshal(bytes, &varIPAddressRole); err == nil {
-		*o = IPAddressRole(varIPAddressRole)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableIPAddressRole struct {

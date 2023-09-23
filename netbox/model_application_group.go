@@ -30,10 +30,7 @@ type ApplicationGroup struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	Url string `json:"url"`
 	ApplicationCount int32 `json:"application_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ApplicationGroup ApplicationGroup
 
 // NewApplicationGroup instantiates a new ApplicationGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -337,8 +334,8 @@ func (o ApplicationGroup) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
@@ -351,40 +348,9 @@ func (o ApplicationGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: url is readOnly
-	// skip: application_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["url"] = o.Url
+	toSerialize["application_count"] = o.ApplicationCount
 	return toSerialize, nil
-}
-
-func (o *ApplicationGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationGroup := _ApplicationGroup{}
-
-	if err = json.Unmarshal(bytes, &varApplicationGroup); err == nil {
-		*o = ApplicationGroup(varApplicationGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "application_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationGroup struct {

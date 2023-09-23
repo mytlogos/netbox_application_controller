@@ -30,10 +30,7 @@ type PatchedWritableContactRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableContactRequest PatchedWritableContactRequest
 
 // NewPatchedWritableContactRequest instantiates a new PatchedWritableContactRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -457,39 +454,7 @@ func (o PatchedWritableContactRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableContactRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableContactRequest := _PatchedWritableContactRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableContactRequest); err == nil {
-		*o = PatchedWritableContactRequest(varPatchedWritableContactRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "phone")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "address")
-		delete(additionalProperties, "link")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableContactRequest struct {

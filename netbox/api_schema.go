@@ -19,12 +19,12 @@ import (
 )
 
 
-// SchemaApiService SchemaApi service
-type SchemaApiService service
+// SchemaAPIService SchemaAPI service
+type SchemaAPIService service
 
 type ApiSchemaRetrieveRequest struct {
 	ctx context.Context
-	ApiService *SchemaApiService
+	ApiService *SchemaAPIService
 	format *string
 }
 
@@ -48,7 +48,7 @@ OpenApi3 schema for this API. Format can be selected via content negotiation.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiSchemaRetrieveRequest
 */
-func (a *SchemaApiService) SchemaRetrieve(ctx context.Context) ApiSchemaRetrieveRequest {
+func (a *SchemaAPIService) SchemaRetrieve(ctx context.Context) ApiSchemaRetrieveRequest {
 	return ApiSchemaRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,7 +57,7 @@ func (a *SchemaApiService) SchemaRetrieve(ctx context.Context) ApiSchemaRetrieve
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SchemaApiService) SchemaRetrieveExecute(r ApiSchemaRetrieveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SchemaAPIService) SchemaRetrieveExecute(r ApiSchemaRetrieveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *SchemaApiService) SchemaRetrieveExecute(r ApiSchemaRetrieveRequest) (ma
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchemaApiService.SchemaRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchemaAPIService.SchemaRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

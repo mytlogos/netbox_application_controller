@@ -39,10 +39,7 @@ type CustomLink struct {
 	NewWindow *bool `json:"new_window,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomLink CustomLink
 
 // NewCustomLink instantiates a new CustomLink object
 // This constructor will assign default values to properties that have it defined,
@@ -460,9 +457,9 @@ func (o CustomLink) MarshalJSON() ([]byte, error) {
 
 func (o CustomLink) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["content_types"] = o.ContentTypes
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Enabled) {
@@ -484,42 +481,7 @@ func (o CustomLink) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomLink) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomLink := _CustomLink{}
-
-	if err = json.Unmarshal(bytes, &varCustomLink); err == nil {
-		*o = CustomLink(varCustomLink)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "link_text")
-		delete(additionalProperties, "link_url")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "group_name")
-		delete(additionalProperties, "button_class")
-		delete(additionalProperties, "new_window")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomLink struct {

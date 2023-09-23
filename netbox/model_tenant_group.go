@@ -33,10 +33,7 @@ type TenantGroup struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	TenantCount int32 `json:"tenant_count"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _TenantGroup TenantGroup
 
 // NewTenantGroup instantiates a new TenantGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -432,9 +429,9 @@ func (o TenantGroup) MarshalJSON() ([]byte, error) {
 
 func (o TenantGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Parent.IsSet() {
@@ -451,43 +448,9 @@ func (o TenantGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: tenant_count is readOnly
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["tenant_count"] = o.TenantCount
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *TenantGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varTenantGroup := _TenantGroup{}
-
-	if err = json.Unmarshal(bytes, &varTenantGroup); err == nil {
-		*o = TenantGroup(varTenantGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "tenant_count")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTenantGroup struct {

@@ -37,10 +37,7 @@ type ConfigTemplate struct {
 	Tags []NestedTag `json:"tags,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConfigTemplate ConfigTemplate
 
 // NewConfigTemplate instantiates a new ConfigTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -454,9 +451,9 @@ func (o ConfigTemplate) MarshalJSON() ([]byte, error) {
 
 func (o ConfigTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -468,50 +465,15 @@ func (o ConfigTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DataSource) {
 		toSerialize["data_source"] = o.DataSource
 	}
-	// skip: data_path is readOnly
-	// skip: data_file is readOnly
+	toSerialize["data_path"] = o.DataPath
+	toSerialize["data_file"] = o.DataFile
 	toSerialize["data_synced"] = o.DataSynced.Get()
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConfigTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varConfigTemplate := _ConfigTemplate{}
-
-	if err = json.Unmarshal(bytes, &varConfigTemplate); err == nil {
-		*o = ConfigTemplate(varConfigTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "environment_params")
-		delete(additionalProperties, "template_code")
-		delete(additionalProperties, "data_source")
-		delete(additionalProperties, "data_path")
-		delete(additionalProperties, "data_file")
-		delete(additionalProperties, "data_synced")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConfigTemplate struct {

@@ -25,10 +25,7 @@ type PatchedInventoryItemRoleRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedInventoryItemRoleRequest PatchedInventoryItemRoleRequest
 
 // NewPatchedInventoryItemRoleRequest instantiates a new PatchedInventoryItemRoleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -267,34 +264,7 @@ func (o PatchedInventoryItemRoleRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedInventoryItemRoleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedInventoryItemRoleRequest := _PatchedInventoryItemRoleRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedInventoryItemRoleRequest); err == nil {
-		*o = PatchedInventoryItemRoleRequest(varPatchedInventoryItemRoleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedInventoryItemRoleRequest struct {

@@ -25,10 +25,7 @@ type DeviceBayTemplateRequest struct {
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DeviceBayTemplateRequest DeviceBayTemplateRequest
 
 // NewDeviceBayTemplateRequest instantiates a new DeviceBayTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -179,32 +176,7 @@ func (o DeviceBayTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *DeviceBayTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varDeviceBayTemplateRequest := _DeviceBayTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varDeviceBayTemplateRequest); err == nil {
-		*o = DeviceBayTemplateRequest(varDeviceBayTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDeviceBayTemplateRequest struct {

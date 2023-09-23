@@ -23,10 +23,7 @@ type PaginatedServiceTemplateList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ServiceTemplate `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedServiceTemplateList PaginatedServiceTemplateList
 
 // NewPaginatedServiceTemplateList instantiates a new PaginatedServiceTemplateList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedServiceTemplateList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedServiceTemplateList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedServiceTemplateList := _PaginatedServiceTemplateList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedServiceTemplateList); err == nil {
-		*o = PaginatedServiceTemplateList(varPaginatedServiceTemplateList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedServiceTemplateList struct {

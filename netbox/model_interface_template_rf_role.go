@@ -22,10 +22,7 @@ type InterfaceTemplateRfRole struct {
 	// * `ap` - Access point * `station` - Station
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfaceTemplateRfRole InterfaceTemplateRfRole
 
 // NewInterfaceTemplateRfRole instantiates a new InterfaceTemplateRfRole object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o InterfaceTemplateRfRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfaceTemplateRfRole) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfaceTemplateRfRole := _InterfaceTemplateRfRole{}
-
-	if err = json.Unmarshal(bytes, &varInterfaceTemplateRfRole); err == nil {
-		*o = InterfaceTemplateRfRole(varInterfaceTemplateRfRole)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfaceTemplateRfRole struct {

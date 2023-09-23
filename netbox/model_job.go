@@ -36,10 +36,7 @@ type Job struct {
 	User NestedUser `json:"user"`
 	Data map[string]interface{} `json:"data,omitempty"`
 	JobId string `json:"job_id"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Job Job
 
 // NewJob instantiates a new Job object
 // This constructor will assign default values to properties that have it defined,
@@ -536,16 +533,16 @@ func (o Job) MarshalJSON() ([]byte, error) {
 
 func (o Job) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: object_type is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["object_type"] = o.ObjectType
 	if o.ObjectId.IsSet() {
 		toSerialize["object_id"] = o.ObjectId.Get()
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["status"] = o.Status
-	// skip: created is readOnly
+	toSerialize["created"] = o.Created
 	if o.Scheduled.IsSet() {
 		toSerialize["scheduled"] = o.Scheduled.Get()
 	}
@@ -558,48 +555,12 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	if o.Completed.IsSet() {
 		toSerialize["completed"] = o.Completed.Get()
 	}
-	// skip: user is readOnly
+	toSerialize["user"] = o.User
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	toSerialize["job_id"] = o.JobId
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Job) UnmarshalJSON(bytes []byte) (err error) {
-	varJob := _Job{}
-
-	if err = json.Unmarshal(bytes, &varJob); err == nil {
-		*o = Job(varJob)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "scheduled")
-		delete(additionalProperties, "interval")
-		delete(additionalProperties, "started")
-		delete(additionalProperties, "completed")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "job_id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableJob struct {

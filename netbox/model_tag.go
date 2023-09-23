@@ -31,10 +31,7 @@ type Tag struct {
 	TaggedItems int32 `json:"tagged_items"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Tag Tag
 
 // NewTag instantiates a new Tag object
 // This constructor will assign default values to properties that have it defined,
@@ -363,9 +360,9 @@ func (o Tag) MarshalJSON() ([]byte, error) {
 
 func (o Tag) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Color) {
@@ -377,42 +374,10 @@ func (o Tag) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ObjectTypes) {
 		toSerialize["object_types"] = o.ObjectTypes
 	}
-	// skip: tagged_items is readOnly
+	toSerialize["tagged_items"] = o.TaggedItems
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Tag) UnmarshalJSON(bytes []byte) (err error) {
-	varTag := _Tag{}
-
-	if err = json.Unmarshal(bytes, &varTag); err == nil {
-		*o = Tag(varTag)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "object_types")
-		delete(additionalProperties, "tagged_items")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTag struct {

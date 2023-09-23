@@ -13,6 +13,6 @@ globalProperty:
   modelTests: false
 
 additionalProperties:
-  disallowAdditionalPropertiesIfNotPresent: "false"
+  disallowAdditionalPropertiesIfNotPresent: "true"
   packageVersion: "3"
 

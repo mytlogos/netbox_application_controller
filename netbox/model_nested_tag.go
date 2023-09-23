@@ -25,10 +25,7 @@ type NestedTag struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
 	Color *string `json:"color,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedTag NestedTag
 
 // NewNestedTag instantiates a new NestedTag object
 // This constructor will assign default values to properties that have it defined,
@@ -214,42 +211,15 @@ func (o NestedTag) MarshalJSON() ([]byte, error) {
 
 func (o NestedTag) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Color) {
 		toSerialize["color"] = o.Color
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedTag) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedTag := _NestedTag{}
-
-	if err = json.Unmarshal(bytes, &varNestedTag); err == nil {
-		*o = NestedTag(varNestedTag)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedTag struct {

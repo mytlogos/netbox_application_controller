@@ -22,12 +22,12 @@ import (
 )
 
 
-// ExtrasApiService ExtrasApi service
-type ExtrasApiService service
+// ExtrasAPIService ExtrasAPI service
+type ExtrasAPIService service
 
 type ApiExtrasBookmarksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -48,7 +48,7 @@ Delete a list of bookmark objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasBookmarksBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksBulkDestroy(ctx context.Context) ApiExtrasBookmarksBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksBulkDestroy(ctx context.Context) ApiExtrasBookmarksBulkDestroyRequest {
 	return ApiExtrasBookmarksBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,14 +56,14 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkDestroy(ctx context.Context) ApiEx
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmarksBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmarksBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmark
 
 type ApiExtrasBookmarksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -161,7 +161,7 @@ Patch a list of bookmark objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasBookmarksBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksBulkPartialUpdate(ctx context.Context) ApiExtrasBookmarksBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksBulkPartialUpdate(ctx context.Context) ApiExtrasBookmarksBulkPartialUpdateRequest {
 	return ApiExtrasBookmarksBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -170,7 +170,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkPartialUpdate(ctx context.Context)
 
 // Execute executes the request
 //  @return []Bookmark
-func (a *ExtrasApiService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBookmarksBulkPartialUpdateRequest) ([]Bookmark, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBookmarksBulkPartialUpdateRequest) ([]Bookmark, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBo
 		localVarReturnValue  []Bookmark
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,7 +264,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBo
 
 type ApiExtrasBookmarksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -285,7 +285,7 @@ Put a list of bookmark objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasBookmarksBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksBulkUpdate(ctx context.Context) ApiExtrasBookmarksBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksBulkUpdate(ctx context.Context) ApiExtrasBookmarksBulkUpdateRequest {
 	return ApiExtrasBookmarksBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -294,7 +294,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkUpdate(ctx context.Context) ApiExt
 
 // Execute executes the request
 //  @return []Bookmark
-func (a *ExtrasApiService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarksBulkUpdateRequest) ([]Bookmark, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarksBulkUpdateRequest) ([]Bookmark, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -302,7 +302,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarks
 		localVarReturnValue  []Bookmark
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *ExtrasApiService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarks
 
 type ApiExtrasBookmarksCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableBookmarkRequest *WritableBookmarkRequest
 }
 
@@ -409,7 +409,7 @@ Post a list of bookmark objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasBookmarksCreateRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksCreate(ctx context.Context) ApiExtrasBookmarksCreateRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksCreate(ctx context.Context) ApiExtrasBookmarksCreateRequest {
 	return ApiExtrasBookmarksCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -418,7 +418,7 @@ func (a *ExtrasApiService) ExtrasBookmarksCreate(ctx context.Context) ApiExtrasB
 
 // Execute executes the request
 //  @return Bookmark
-func (a *ExtrasApiService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCreateRequest) (*Bookmark, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCreateRequest) (*Bookmark, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -426,7 +426,7 @@ func (a *ExtrasApiService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCrea
 		localVarReturnValue  *Bookmark
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,7 +512,7 @@ func (a *ExtrasApiService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCrea
 
 type ApiExtrasBookmarksDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -529,7 +529,7 @@ Delete a bookmark object.
  @param id A unique integer value identifying this bookmark.
  @return ApiExtrasBookmarksDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksDestroy(ctx context.Context, id int32) ApiExtrasBookmarksDestroyRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksDestroy(ctx context.Context, id int32) ApiExtrasBookmarksDestroyRequest {
 	return ApiExtrasBookmarksDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -538,14 +538,14 @@ func (a *ExtrasApiService) ExtrasBookmarksDestroy(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -618,7 +618,7 @@ func (a *ExtrasApiService) ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDes
 
 type ApiExtrasBookmarksListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	created *time.Time
 	id *[]int32
 	idEmpty *bool
@@ -826,7 +826,7 @@ Get a list of bookmark objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasBookmarksListRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksList(ctx context.Context) ApiExtrasBookmarksListRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksList(ctx context.Context) ApiExtrasBookmarksListRequest {
 	return ApiExtrasBookmarksListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -835,7 +835,7 @@ func (a *ExtrasApiService) ExtrasBookmarksList(ctx context.Context) ApiExtrasBoo
 
 // Execute executes the request
 //  @return PaginatedBookmarkList
-func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRequest) (*PaginatedBookmarkList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRequest) (*PaginatedBookmarkList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -843,7 +843,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		localVarReturnValue  *PaginatedBookmarkList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -862,7 +862,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -876,7 +876,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -887,7 +887,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -898,7 +898,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -909,7 +909,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -920,7 +920,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -934,7 +934,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "multi")
@@ -948,7 +948,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "multi")
@@ -959,7 +959,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "multi")
@@ -970,7 +970,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "multi")
@@ -981,7 +981,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "multi")
@@ -992,7 +992,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "multi")
@@ -1009,7 +1009,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "multi")
@@ -1020,7 +1020,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__empty", t, "multi")
@@ -1031,7 +1031,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gt", t, "multi")
@@ -1042,7 +1042,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__gte", t, "multi")
@@ -1053,7 +1053,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lt", t, "multi")
@@ -1064,7 +1064,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__lte", t, "multi")
@@ -1075,7 +1075,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "multi")
@@ -1092,7 +1092,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
@@ -1103,7 +1103,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
@@ -1114,7 +1114,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
@@ -1125,7 +1125,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
@@ -1201,7 +1201,7 @@ func (a *ExtrasApiService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 
 type ApiExtrasBookmarksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableBookmarkRequest *PatchedWritableBookmarkRequest
 }
@@ -1224,7 +1224,7 @@ Patch a bookmark object.
  @param id A unique integer value identifying this bookmark.
  @return ApiExtrasBookmarksPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksPartialUpdate(ctx context.Context, id int32) ApiExtrasBookmarksPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksPartialUpdate(ctx context.Context, id int32) ApiExtrasBookmarksPartialUpdateRequest {
 	return ApiExtrasBookmarksPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1234,7 +1234,7 @@ func (a *ExtrasApiService) ExtrasBookmarksPartialUpdate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return Bookmark
-func (a *ExtrasApiService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookmarksPartialUpdateRequest) (*Bookmark, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookmarksPartialUpdateRequest) (*Bookmark, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1242,7 +1242,7 @@ func (a *ExtrasApiService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookma
 		localVarReturnValue  *Bookmark
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1326,7 +1326,7 @@ func (a *ExtrasApiService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookma
 
 type ApiExtrasBookmarksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -1343,7 +1343,7 @@ Get a bookmark object.
  @param id A unique integer value identifying this bookmark.
  @return ApiExtrasBookmarksRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksRetrieve(ctx context.Context, id int32) ApiExtrasBookmarksRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksRetrieve(ctx context.Context, id int32) ApiExtrasBookmarksRetrieveRequest {
 	return ApiExtrasBookmarksRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1353,7 +1353,7 @@ func (a *ExtrasApiService) ExtrasBookmarksRetrieve(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Bookmark
-func (a *ExtrasApiService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRetrieveRequest) (*Bookmark, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRetrieveRequest) (*Bookmark, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1361,7 +1361,7 @@ func (a *ExtrasApiService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRe
 		localVarReturnValue  *Bookmark
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1443,7 +1443,7 @@ func (a *ExtrasApiService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRe
 
 type ApiExtrasBookmarksUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableBookmarkRequest *WritableBookmarkRequest
 }
@@ -1466,7 +1466,7 @@ Put a bookmark object.
  @param id A unique integer value identifying this bookmark.
  @return ApiExtrasBookmarksUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasBookmarksUpdate(ctx context.Context, id int32) ApiExtrasBookmarksUpdateRequest {
+func (a *ExtrasAPIService) ExtrasBookmarksUpdate(ctx context.Context, id int32) ApiExtrasBookmarksUpdateRequest {
 	return ApiExtrasBookmarksUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1476,7 +1476,7 @@ func (a *ExtrasApiService) ExtrasBookmarksUpdate(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return Bookmark
-func (a *ExtrasApiService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpdateRequest) (*Bookmark, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpdateRequest) (*Bookmark, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1484,7 +1484,7 @@ func (a *ExtrasApiService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpda
 		localVarReturnValue  *Bookmark
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasBookmarksUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasBookmarksUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1571,7 +1571,7 @@ func (a *ExtrasApiService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpda
 
 type ApiExtrasConfigContextsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1592,7 +1592,7 @@ Delete a list of config context objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigContextsBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsBulkDestroy(ctx context.Context) ApiExtrasConfigContextsBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsBulkDestroy(ctx context.Context) ApiExtrasConfigContextsBulkDestroyRequest {
 	return ApiExtrasConfigContextsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1600,14 +1600,14 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkDestroy(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasConfigContextsBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasConfigContextsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1684,7 +1684,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasCon
 
 type ApiExtrasConfigContextsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1705,7 +1705,7 @@ Patch a list of config context objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigContextsBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsBulkPartialUpdate(ctx context.Context) ApiExtrasConfigContextsBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsBulkPartialUpdate(ctx context.Context) ApiExtrasConfigContextsBulkPartialUpdateRequest {
 	return ApiExtrasConfigContextsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1714,7 +1714,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkPartialUpdate(ctx context.Con
 
 // Execute executes the request
 //  @return []ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExtrasConfigContextsBulkPartialUpdateRequest) ([]ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExtrasConfigContextsBulkPartialUpdateRequest) ([]ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1722,7 +1722,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExt
 		localVarReturnValue  []ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1808,7 +1808,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExt
 
 type ApiExtrasConfigContextsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1829,7 +1829,7 @@ Put a list of config context objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigContextsBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsBulkUpdate(ctx context.Context) ApiExtrasConfigContextsBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsBulkUpdate(ctx context.Context) ApiExtrasConfigContextsBulkUpdateRequest {
 	return ApiExtrasConfigContextsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1838,7 +1838,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkUpdate(ctx context.Context) A
 
 // Execute executes the request
 //  @return []ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConfigContextsBulkUpdateRequest) ([]ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConfigContextsBulkUpdateRequest) ([]ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1846,7 +1846,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConf
 		localVarReturnValue  []ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1932,7 +1932,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConf
 
 type ApiExtrasConfigContextsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableConfigContextRequest *WritableConfigContextRequest
 }
 
@@ -1953,7 +1953,7 @@ Post a list of config context objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigContextsCreateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsCreate(ctx context.Context) ApiExtrasConfigContextsCreateRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsCreate(ctx context.Context) ApiExtrasConfigContextsCreateRequest {
 	return ApiExtrasConfigContextsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1962,7 +1962,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsCreate(ctx context.Context) ApiEx
 
 // Execute executes the request
 //  @return ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigContextsCreateRequest) (*ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigContextsCreateRequest) (*ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1970,7 +1970,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigCo
 		localVarReturnValue  *ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2056,7 +2056,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigCo
 
 type ApiExtrasConfigContextsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -2073,7 +2073,7 @@ Delete a config context object.
  @param id A unique integer value identifying this config context.
  @return ApiExtrasConfigContextsDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsDestroy(ctx context.Context, id int32) ApiExtrasConfigContextsDestroyRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsDestroy(ctx context.Context, id int32) ApiExtrasConfigContextsDestroyRequest {
 	return ApiExtrasConfigContextsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2082,14 +2082,14 @@ func (a *ExtrasApiService) ExtrasConfigContextsDestroy(ctx context.Context, id i
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigContextsDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigContextsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2162,7 +2162,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigC
 
 type ApiExtrasConfigContextsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	clusterGroup *[]string
 	clusterGroupN *[]string
 	clusterGroupId *[]int32
@@ -2827,7 +2827,7 @@ Get a list of config context objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigContextsListRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsList(ctx context.Context) ApiExtrasConfigContextsListRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsList(ctx context.Context) ApiExtrasConfigContextsListRequest {
 	return ApiExtrasConfigContextsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2836,7 +2836,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsList(ctx context.Context) ApiExtr
 
 // Execute executes the request
 //  @return PaginatedConfigContextList
-func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigContextsListRequest) (*PaginatedConfigContextList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigContextsListRequest) (*PaginatedConfigContextList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2844,7 +2844,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		localVarReturnValue  *PaginatedConfigContextList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2860,7 +2860,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", t, "multi")
@@ -2871,7 +2871,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", t, "multi")
@@ -2882,7 +2882,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", t, "multi")
@@ -2893,7 +2893,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", t, "multi")
@@ -2904,7 +2904,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", t, "multi")
@@ -2915,7 +2915,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", t, "multi")
@@ -2926,7 +2926,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", t, "multi")
@@ -2937,7 +2937,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", t, "multi")
@@ -2948,7 +2948,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", t, "multi")
@@ -2959,7 +2959,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", t, "multi")
@@ -2970,7 +2970,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -2981,7 +2981,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -2992,7 +2992,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -3003,7 +3003,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -3014,7 +3014,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -3025,7 +3025,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -3036,7 +3036,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -3050,7 +3050,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "multi")
@@ -3061,7 +3061,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "multi")
@@ -3072,7 +3072,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "multi")
@@ -3083,7 +3083,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "multi")
@@ -3094,7 +3094,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "multi")
@@ -3108,7 +3108,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "multi")
@@ -3119,7 +3119,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "multi")
@@ -3130,7 +3130,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "multi")
@@ -3141,7 +3141,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "multi")
@@ -3152,7 +3152,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "multi")
@@ -3163,7 +3163,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id", t, "multi")
@@ -3174,7 +3174,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_type_id__n", t, "multi")
@@ -3185,7 +3185,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -3199,7 +3199,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -3210,7 +3210,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -3221,7 +3221,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -3232,7 +3232,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -3243,7 +3243,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -3257,7 +3257,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -3268,7 +3268,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -3279,7 +3279,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -3290,7 +3290,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -3301,7 +3301,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -3312,7 +3312,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -3323,7 +3323,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -3337,7 +3337,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "location", t, "multi")
@@ -3348,7 +3348,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "location__n", t, "multi")
@@ -3359,7 +3359,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "location_id", t, "multi")
@@ -3370,7 +3370,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "location_id__n", t, "multi")
@@ -3384,7 +3384,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -3398,7 +3398,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -3409,7 +3409,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -3420,7 +3420,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -3431,7 +3431,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -3442,7 +3442,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -3453,7 +3453,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -3464,7 +3464,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -3475,7 +3475,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -3486,7 +3486,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -3503,7 +3503,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform", t, "multi")
@@ -3514,7 +3514,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", t, "multi")
@@ -3525,7 +3525,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", t, "multi")
@@ -3536,7 +3536,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", t, "multi")
@@ -3550,7 +3550,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
@@ -3561,7 +3561,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
@@ -3572,7 +3572,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
@@ -3583,7 +3583,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
@@ -3594,7 +3594,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -3605,7 +3605,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -3616,7 +3616,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", t, "multi")
@@ -3627,7 +3627,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", t, "multi")
@@ -3638,7 +3638,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -3649,7 +3649,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
@@ -3660,7 +3660,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
@@ -3671,7 +3671,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
@@ -3682,7 +3682,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
@@ -3693,7 +3693,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
@@ -3704,7 +3704,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -3715,7 +3715,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
@@ -3726,7 +3726,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -3737,7 +3737,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -3748,7 +3748,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", t, "multi")
@@ -3759,7 +3759,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", t, "multi")
@@ -3770,7 +3770,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -3781,7 +3781,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -3792,7 +3792,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -3803,7 +3803,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -3814,7 +3814,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -3825,7 +3825,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -3836,7 +3836,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -3847,7 +3847,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -3926,7 +3926,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 
 type ApiExtrasConfigContextsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableConfigContextRequest *PatchedWritableConfigContextRequest
 }
@@ -3949,7 +3949,7 @@ Patch a config context object.
  @param id A unique integer value identifying this config context.
  @return ApiExtrasConfigContextsPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsPartialUpdate(ctx context.Context, id int32) ApiExtrasConfigContextsPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsPartialUpdate(ctx context.Context, id int32) ApiExtrasConfigContextsPartialUpdateRequest {
 	return ApiExtrasConfigContextsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3959,7 +3959,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsPartialUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasConfigContextsPartialUpdateRequest) (*ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasConfigContextsPartialUpdateRequest) (*ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3967,7 +3967,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasC
 		localVarReturnValue  *ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4051,7 +4051,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasC
 
 type ApiExtrasConfigContextsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -4068,7 +4068,7 @@ Get a config context object.
  @param id A unique integer value identifying this config context.
  @return ApiExtrasConfigContextsRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsRetrieve(ctx context.Context, id int32) ApiExtrasConfigContextsRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsRetrieve(ctx context.Context, id int32) ApiExtrasConfigContextsRetrieveRequest {
 	return ApiExtrasConfigContextsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4078,7 +4078,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsRetrieve(ctx context.Context, id 
 
 // Execute executes the request
 //  @return ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfigContextsRetrieveRequest) (*ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfigContextsRetrieveRequest) (*ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4086,7 +4086,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfig
 		localVarReturnValue  *ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4168,7 +4168,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfig
 
 type ApiExtrasConfigContextsSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableConfigContextRequest *WritableConfigContextRequest
 }
@@ -4191,7 +4191,7 @@ Provide a /sync API endpoint to synchronize an object's data from its associated
  @param id A unique integer value identifying this config context.
  @return ApiExtrasConfigContextsSyncCreateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsSyncCreate(ctx context.Context, id int32) ApiExtrasConfigContextsSyncCreateRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsSyncCreate(ctx context.Context, id int32) ApiExtrasConfigContextsSyncCreateRequest {
 	return ApiExtrasConfigContextsSyncCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4201,7 +4201,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsSyncCreate(ctx context.Context, i
 
 // Execute executes the request
 //  @return ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConfigContextsSyncCreateRequest) (*ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConfigContextsSyncCreateRequest) (*ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4209,7 +4209,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConf
 		localVarReturnValue  *ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsSyncCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsSyncCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4296,7 +4296,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConf
 
 type ApiExtrasConfigContextsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableConfigContextRequest *WritableConfigContextRequest
 }
@@ -4319,7 +4319,7 @@ Put a config context object.
  @param id A unique integer value identifying this config context.
  @return ApiExtrasConfigContextsUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigContextsUpdate(ctx context.Context, id int32) ApiExtrasConfigContextsUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigContextsUpdate(ctx context.Context, id int32) ApiExtrasConfigContextsUpdateRequest {
 	return ApiExtrasConfigContextsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4329,7 +4329,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsUpdate(ctx context.Context, id in
 
 // Execute executes the request
 //  @return ConfigContext
-func (a *ExtrasApiService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigContextsUpdateRequest) (*ConfigContext, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigContextsUpdateRequest) (*ConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4337,7 +4337,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigCo
 		localVarReturnValue  *ConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigContextsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigContextsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4424,7 +4424,7 @@ func (a *ExtrasApiService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigCo
 
 type ApiExtrasConfigTemplatesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4445,7 +4445,7 @@ Delete a list of config template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigTemplatesBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesBulkDestroy(ctx context.Context) ApiExtrasConfigTemplatesBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkDestroy(ctx context.Context) ApiExtrasConfigTemplatesBulkDestroyRequest {
 	return ApiExtrasConfigTemplatesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4453,14 +4453,14 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkDestroy(ctx context.Context)
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasConfigTemplatesBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasConfigTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4537,7 +4537,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasCo
 
 type ApiExtrasConfigTemplatesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4558,7 +4558,7 @@ Patch a list of config template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigTemplatesBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkPartialUpdateRequest {
 	return ApiExtrasConfigTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4567,7 +4567,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkPartialUpdate(ctx context.Co
 
 // Execute executes the request
 //  @return []ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiExtrasConfigTemplatesBulkPartialUpdateRequest) ([]ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiExtrasConfigTemplatesBulkPartialUpdateRequest) ([]ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4575,7 +4575,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiEx
 		localVarReturnValue  []ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4661,7 +4661,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiEx
 
 type ApiExtrasConfigTemplatesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4682,7 +4682,7 @@ Put a list of config template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigTemplatesBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesBulkUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkUpdateRequest {
 	return ApiExtrasConfigTemplatesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4691,7 +4691,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkUpdate(ctx context.Context) 
 
 // Execute executes the request
 //  @return []ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasConfigTemplatesBulkUpdateRequest) ([]ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasConfigTemplatesBulkUpdateRequest) ([]ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4699,7 +4699,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasCon
 		localVarReturnValue  []ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4785,7 +4785,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasCon
 
 type ApiExtrasConfigTemplatesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableConfigTemplateRequest *WritableConfigTemplateRequest
 }
 
@@ -4806,7 +4806,7 @@ Post a list of config template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigTemplatesCreateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesCreate(ctx context.Context) ApiExtrasConfigTemplatesCreateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesCreate(ctx context.Context) ApiExtrasConfigTemplatesCreateRequest {
 	return ApiExtrasConfigTemplatesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4815,7 +4815,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesCreate(ctx context.Context) ApiE
 
 // Execute executes the request
 //  @return ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigTemplatesCreateRequest) (*ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigTemplatesCreateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4823,7 +4823,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigT
 		localVarReturnValue  *ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4909,7 +4909,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigT
 
 type ApiExtrasConfigTemplatesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -4926,7 +4926,7 @@ Delete a config template object.
  @param id A unique integer value identifying this config template.
  @return ApiExtrasConfigTemplatesDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesDestroy(ctx context.Context, id int32) ApiExtrasConfigTemplatesDestroyRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesDestroy(ctx context.Context, id int32) ApiExtrasConfigTemplatesDestroyRequest {
 	return ApiExtrasConfigTemplatesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4935,14 +4935,14 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesDestroy(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfigTemplatesDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfigTemplatesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5015,7 +5015,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfig
 
 type ApiExtrasConfigTemplatesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	dataFileId *[]*int32
 	dataFileIdN *[]*int32
 	dataSourceId *[]*int32
@@ -5314,7 +5314,7 @@ Get a list of config template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasConfigTemplatesListRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesList(ctx context.Context) ApiExtrasConfigTemplatesListRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesList(ctx context.Context) ApiExtrasConfigTemplatesListRequest {
 	return ApiExtrasConfigTemplatesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5323,7 +5323,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesList(ctx context.Context) ApiExt
 
 // Execute executes the request
 //  @return PaginatedConfigTemplateList
-func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTemplatesListRequest) (*PaginatedConfigTemplateList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTemplatesListRequest) (*PaginatedConfigTemplateList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5331,7 +5331,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		localVarReturnValue  *PaginatedConfigTemplateList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5347,7 +5347,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "multi")
@@ -5358,7 +5358,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "multi")
@@ -5369,7 +5369,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "multi")
@@ -5380,7 +5380,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "multi")
@@ -5391,7 +5391,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "multi")
@@ -5405,7 +5405,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "multi")
@@ -5416,7 +5416,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "multi")
@@ -5427,7 +5427,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "multi")
@@ -5438,7 +5438,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "multi")
@@ -5449,7 +5449,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "multi")
@@ -5460,7 +5460,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -5474,7 +5474,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -5485,7 +5485,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -5496,7 +5496,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -5507,7 +5507,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -5518,7 +5518,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -5529,7 +5529,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -5540,7 +5540,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -5551,7 +5551,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -5562,7 +5562,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -5573,7 +5573,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -5587,7 +5587,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -5598,7 +5598,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -5609,7 +5609,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -5620,7 +5620,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -5631,7 +5631,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -5645,7 +5645,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -5659,7 +5659,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -5670,7 +5670,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -5681,7 +5681,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -5692,7 +5692,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -5703,7 +5703,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -5714,7 +5714,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -5725,7 +5725,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -5736,7 +5736,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -5747,7 +5747,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -5767,7 +5767,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -5778,7 +5778,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -5854,7 +5854,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 
 type ApiExtrasConfigTemplatesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableConfigTemplateRequest *PatchedWritableConfigTemplateRequest
 }
@@ -5877,7 +5877,7 @@ Patch a config template object.
  @param id A unique integer value identifying this config template.
  @return ApiExtrasConfigTemplatesPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesPartialUpdate(ctx context.Context, id int32) ApiExtrasConfigTemplatesPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesPartialUpdate(ctx context.Context, id int32) ApiExtrasConfigTemplatesPartialUpdateRequest {
 	return ApiExtrasConfigTemplatesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5887,7 +5887,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesPartialUpdate(ctx context.Contex
 
 // Execute executes the request
 //  @return ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtrasConfigTemplatesPartialUpdateRequest) (*ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtrasConfigTemplatesPartialUpdateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -5895,7 +5895,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtras
 		localVarReturnValue  *ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5979,7 +5979,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtras
 
 type ApiExtrasConfigTemplatesRenderCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableConfigTemplateRequest *WritableConfigTemplateRequest
 	format *string
@@ -6009,7 +6009,7 @@ return the raw rendered content, rather than serialized JSON.
  @param id A unique integer value identifying this config template.
  @return ApiExtrasConfigTemplatesRenderCreateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesRenderCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesRenderCreateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesRenderCreateRequest {
 	return ApiExtrasConfigTemplatesRenderCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6019,7 +6019,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesRenderCreate(ctx context.Context
 
 // Execute executes the request
 //  @return ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasConfigTemplatesRenderCreateRequest) (*ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasConfigTemplatesRenderCreateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6027,7 +6027,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasC
 		localVarReturnValue  *ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesRenderCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesRenderCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6117,7 +6117,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasC
 
 type ApiExtrasConfigTemplatesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -6134,7 +6134,7 @@ Get a config template object.
  @param id A unique integer value identifying this config template.
  @return ApiExtrasConfigTemplatesRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesRetrieve(ctx context.Context, id int32) ApiExtrasConfigTemplatesRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesRetrieve(ctx context.Context, id int32) ApiExtrasConfigTemplatesRetrieveRequest {
 	return ApiExtrasConfigTemplatesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6144,7 +6144,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesRetrieve(ctx context.Context, id
 
 // Execute executes the request
 //  @return ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfigTemplatesRetrieveRequest) (*ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfigTemplatesRetrieveRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6152,7 +6152,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfi
 		localVarReturnValue  *ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6234,7 +6234,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfi
 
 type ApiExtrasConfigTemplatesSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableConfigTemplateRequest *WritableConfigTemplateRequest
 }
@@ -6257,7 +6257,7 @@ Provide a /sync API endpoint to synchronize an object's data from its associated
  @param id A unique integer value identifying this config template.
  @return ApiExtrasConfigTemplatesSyncCreateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesSyncCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesSyncCreateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesSyncCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesSyncCreateRequest {
 	return ApiExtrasConfigTemplatesSyncCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6267,7 +6267,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesSyncCreate(ctx context.Context, 
 
 // Execute executes the request
 //  @return ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasConfigTemplatesSyncCreateRequest) (*ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasConfigTemplatesSyncCreateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -6275,7 +6275,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasCon
 		localVarReturnValue  *ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesSyncCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesSyncCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6362,7 +6362,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasCon
 
 type ApiExtrasConfigTemplatesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableConfigTemplateRequest *WritableConfigTemplateRequest
 }
@@ -6385,7 +6385,7 @@ Put a config template object.
  @param id A unique integer value identifying this config template.
  @return ApiExtrasConfigTemplatesUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasConfigTemplatesUpdate(ctx context.Context, id int32) ApiExtrasConfigTemplatesUpdateRequest {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesUpdate(ctx context.Context, id int32) ApiExtrasConfigTemplatesUpdateRequest {
 	return ApiExtrasConfigTemplatesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6395,7 +6395,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesUpdate(ctx context.Context, id i
 
 // Execute executes the request
 //  @return ConfigTemplate
-func (a *ExtrasApiService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigTemplatesUpdateRequest) (*ConfigTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigTemplatesUpdateRequest) (*ConfigTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -6403,7 +6403,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigT
 		localVarReturnValue  *ConfigTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasConfigTemplatesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasConfigTemplatesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6490,7 +6490,7 @@ func (a *ExtrasApiService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigT
 
 type ApiExtrasContentTypesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	appLabel *string
 	id *int32
 	limit *int32
@@ -6551,7 +6551,7 @@ Read-only list of ContentTypes. Limit results to ContentTypes pertinent to NetBo
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasContentTypesListRequest
 */
-func (a *ExtrasApiService) ExtrasContentTypesList(ctx context.Context) ApiExtrasContentTypesListRequest {
+func (a *ExtrasAPIService) ExtrasContentTypesList(ctx context.Context) ApiExtrasContentTypesListRequest {
 	return ApiExtrasContentTypesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6560,7 +6560,7 @@ func (a *ExtrasApiService) ExtrasContentTypesList(ctx context.Context) ApiExtras
 
 // Execute executes the request
 //  @return PaginatedContentTypeList
-func (a *ExtrasApiService) ExtrasContentTypesListExecute(r ApiExtrasContentTypesListRequest) (*PaginatedContentTypeList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasContentTypesListExecute(r ApiExtrasContentTypesListRequest) (*PaginatedContentTypeList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6568,7 +6568,7 @@ func (a *ExtrasApiService) ExtrasContentTypesListExecute(r ApiExtrasContentTypes
 		localVarReturnValue  *PaginatedContentTypeList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasContentTypesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasContentTypesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6670,7 +6670,7 @@ func (a *ExtrasApiService) ExtrasContentTypesListExecute(r ApiExtrasContentTypes
 
 type ApiExtrasContentTypesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -6687,7 +6687,7 @@ Read-only list of ContentTypes. Limit results to ContentTypes pertinent to NetBo
  @param id A unique integer value identifying this content type.
  @return ApiExtrasContentTypesRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasContentTypesRetrieve(ctx context.Context, id int32) ApiExtrasContentTypesRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasContentTypesRetrieve(ctx context.Context, id int32) ApiExtrasContentTypesRetrieveRequest {
 	return ApiExtrasContentTypesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6697,7 +6697,7 @@ func (a *ExtrasApiService) ExtrasContentTypesRetrieve(ctx context.Context, id in
 
 // Execute executes the request
 //  @return ContentType
-func (a *ExtrasApiService) ExtrasContentTypesRetrieveExecute(r ApiExtrasContentTypesRetrieveRequest) (*ContentType, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasContentTypesRetrieveExecute(r ApiExtrasContentTypesRetrieveRequest) (*ContentType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6705,7 +6705,7 @@ func (a *ExtrasApiService) ExtrasContentTypesRetrieveExecute(r ApiExtrasContentT
 		localVarReturnValue  *ContentType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasContentTypesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasContentTypesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6787,7 +6787,7 @@ func (a *ExtrasApiService) ExtrasContentTypesRetrieveExecute(r ApiExtrasContentT
 
 type ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -6808,7 +6808,7 @@ Delete a list of custom field choice set objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest {
 	return ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6816,14 +6816,14 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkDestroy(ctx context.Co
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6900,7 +6900,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiEx
 
 type ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -6921,7 +6921,7 @@ Patch a list of custom field choice set objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6930,7 +6930,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkPartialUpdate(ctx cont
 
 // Execute executes the request
 //  @return []CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6938,7 +6938,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r
 		localVarReturnValue  []CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7024,7 +7024,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r
 
 type ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7045,7 +7045,7 @@ Put a list of custom field choice set objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7054,7 +7054,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkUpdate(ctx context.Con
 
 // Execute executes the request
 //  @return []CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -7062,7 +7062,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExt
 		localVarReturnValue  []CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7148,7 +7148,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExt
 
 type ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -7165,7 +7165,7 @@ Provides an endpoint to iterate through each choice in a set.
  @param id A unique integer value identifying this custom field choice set.
  @return ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsChoicesRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsChoicesRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest {
 	return ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7175,7 +7175,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsChoicesRetrieve(ctx contex
 
 // Execute executes the request
 //  @return CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7183,7 +7183,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r A
 		localVarReturnValue  *CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsChoicesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsChoicesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7265,7 +7265,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r A
 
 type ApiExtrasCustomFieldChoiceSetsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableCustomFieldChoiceSetRequest *WritableCustomFieldChoiceSetRequest
 }
 
@@ -7286,7 +7286,7 @@ Post a list of custom field choice set objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldChoiceSetsCreateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsCreate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsCreateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsCreate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsCreateRequest {
 	return ApiExtrasCustomFieldChoiceSetsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7295,7 +7295,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsCreate(ctx context.Context
 
 // Execute executes the request
 //  @return CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasCustomFieldChoiceSetsCreateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasCustomFieldChoiceSetsCreateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7303,7 +7303,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasC
 		localVarReturnValue  *CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7389,7 +7389,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasC
 
 type ApiExtrasCustomFieldChoiceSetsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -7406,7 +7406,7 @@ Delete a custom field choice set object.
  @param id A unique integer value identifying this custom field choice set.
  @return ApiExtrasCustomFieldChoiceSetsDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsDestroy(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsDestroyRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroy(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsDestroyRequest {
 	return ApiExtrasCustomFieldChoiceSetsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7415,14 +7415,14 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsDestroy(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtrasCustomFieldChoiceSetsDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtrasCustomFieldChoiceSetsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7495,7 +7495,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtras
 
 type ApiExtrasCustomFieldChoiceSetsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	baseChoices *string
 	baseChoicesN *string
 	choice *[]string
@@ -7738,7 +7738,7 @@ Get a list of custom field choice set objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldChoiceSetsListRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsList(ctx context.Context) ApiExtrasCustomFieldChoiceSetsListRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsList(ctx context.Context) ApiExtrasCustomFieldChoiceSetsListRequest {
 	return ApiExtrasCustomFieldChoiceSetsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7747,7 +7747,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsList(ctx context.Context) 
 
 // Execute executes the request
 //  @return PaginatedCustomFieldChoiceSetList
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCustomFieldChoiceSetsListRequest) (*PaginatedCustomFieldChoiceSetList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCustomFieldChoiceSetsListRequest) (*PaginatedCustomFieldChoiceSetList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7755,7 +7755,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		localVarReturnValue  *PaginatedCustomFieldChoiceSetList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7777,7 +7777,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "choice", t, "multi")
@@ -7788,7 +7788,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -7802,7 +7802,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -7813,7 +7813,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -7824,7 +7824,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -7835,7 +7835,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -7846,7 +7846,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -7857,7 +7857,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -7868,7 +7868,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -7879,7 +7879,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -7890,7 +7890,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -7901,7 +7901,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -7915,7 +7915,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -7926,7 +7926,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -7937,7 +7937,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -7948,7 +7948,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -7959,7 +7959,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -7973,7 +7973,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -7987,7 +7987,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -7998,7 +7998,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -8009,7 +8009,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -8020,7 +8020,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -8031,7 +8031,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -8042,7 +8042,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -8053,7 +8053,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -8064,7 +8064,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -8075,7 +8075,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -8163,7 +8163,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 
 type ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableCustomFieldChoiceSetRequest *PatchedWritableCustomFieldChoiceSetRequest
 }
@@ -8186,7 +8186,7 @@ Patch a custom field choice set object.
  @param id A unique integer value identifying this custom field choice set.
  @return ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8196,7 +8196,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsPartialUpdate(ctx context.
 
 // Execute executes the request
 //  @return CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8204,7 +8204,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r Api
 		localVarReturnValue  *CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8288,7 +8288,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r Api
 
 type ApiExtrasCustomFieldChoiceSetsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -8305,7 +8305,7 @@ Get a custom field choice set object.
  @param id A unique integer value identifying this custom field choice set.
  @return ApiExtrasCustomFieldChoiceSetsRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsRetrieveRequest {
 	return ApiExtrasCustomFieldChoiceSetsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8315,7 +8315,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsRetrieve(ctx context.Conte
 
 // Execute executes the request
 //  @return CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8323,7 +8323,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtra
 		localVarReturnValue  *CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8405,7 +8405,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtra
 
 type ApiExtrasCustomFieldChoiceSetsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableCustomFieldChoiceSetRequest *WritableCustomFieldChoiceSetRequest
 }
@@ -8428,7 +8428,7 @@ Put a custom field choice set object.
  @param id A unique integer value identifying this custom field choice set.
  @return ApiExtrasCustomFieldChoiceSetsUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldChoiceSetsUpdateRequest {
 	return ApiExtrasCustomFieldChoiceSetsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8438,7 +8438,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return CustomFieldChoiceSet
-func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasCustomFieldChoiceSetsUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasCustomFieldChoiceSetsUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8446,7 +8446,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasC
 		localVarReturnValue  *CustomFieldChoiceSet
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldChoiceSetsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldChoiceSetsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8533,7 +8533,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasC
 
 type ApiExtrasCustomFieldsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -8554,7 +8554,7 @@ Delete a list of custom field objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldsBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldsBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldsBulkDestroyRequest {
 	return ApiExtrasCustomFieldsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8562,14 +8562,14 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkDestroy(ctx context.Context) Ap
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCustomFieldsBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCustomFieldsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8646,7 +8646,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCusto
 
 type ApiExtrasCustomFieldsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -8667,7 +8667,7 @@ Patch a list of custom field objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldsBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkPartialUpdateRequest {
 	return ApiExtrasCustomFieldsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8676,7 +8676,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkPartialUpdate(ctx context.Conte
 
 // Execute executes the request
 //  @return []CustomField
-func (a *ExtrasApiService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtrasCustomFieldsBulkPartialUpdateRequest) ([]CustomField, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtrasCustomFieldsBulkPartialUpdateRequest) ([]CustomField, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8684,7 +8684,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtra
 		localVarReturnValue  []CustomField
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8770,7 +8770,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtra
 
 type ApiExtrasCustomFieldsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -8791,7 +8791,7 @@ Put a list of custom field objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldsBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkUpdateRequest {
 	return ApiExtrasCustomFieldsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8800,7 +8800,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkUpdate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []CustomField
-func (a *ExtrasApiService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustomFieldsBulkUpdateRequest) ([]CustomField, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustomFieldsBulkUpdateRequest) ([]CustomField, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8808,7 +8808,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustom
 		localVarReturnValue  []CustomField
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8894,7 +8894,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustom
 
 type ApiExtrasCustomFieldsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableCustomFieldRequest *WritableCustomFieldRequest
 }
 
@@ -8915,7 +8915,7 @@ Post a list of custom field objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldsCreateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsCreate(ctx context.Context) ApiExtrasCustomFieldsCreateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsCreate(ctx context.Context) ApiExtrasCustomFieldsCreateRequest {
 	return ApiExtrasCustomFieldsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8924,7 +8924,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsCreate(ctx context.Context) ApiExtr
 
 // Execute executes the request
 //  @return CustomField
-func (a *ExtrasApiService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFieldsCreateRequest) (*CustomField, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFieldsCreateRequest) (*CustomField, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8932,7 +8932,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFiel
 		localVarReturnValue  *CustomField
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9018,7 +9018,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFiel
 
 type ApiExtrasCustomFieldsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -9035,7 +9035,7 @@ Delete a custom field object.
  @param id A unique integer value identifying this custom field.
  @return ApiExtrasCustomFieldsDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsDestroy(ctx context.Context, id int32) ApiExtrasCustomFieldsDestroyRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsDestroy(ctx context.Context, id int32) ApiExtrasCustomFieldsDestroyRequest {
 	return ApiExtrasCustomFieldsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9044,14 +9044,14 @@ func (a *ExtrasApiService) ExtrasCustomFieldsDestroy(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFieldsDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFieldsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9124,7 +9124,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFie
 
 type ApiExtrasCustomFieldsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	choiceSet *[]string
 	choiceSetN *[]string
 	choiceSetId *[]*int32
@@ -9671,7 +9671,7 @@ Get a list of custom field objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomFieldsListRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsList(ctx context.Context) ApiExtrasCustomFieldsListRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsList(ctx context.Context) ApiExtrasCustomFieldsListRequest {
 	return ApiExtrasCustomFieldsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9680,7 +9680,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsList(ctx context.Context) ApiExtras
 
 // Execute executes the request
 //  @return PaginatedCustomFieldList
-func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFieldsListRequest) (*PaginatedCustomFieldList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFieldsListRequest) (*PaginatedCustomFieldList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9688,7 +9688,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		localVarReturnValue  *PaginatedCustomFieldList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9704,7 +9704,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set", t, "multi")
@@ -9715,7 +9715,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set__n", t, "multi")
@@ -9726,7 +9726,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id", t, "multi")
@@ -9737,7 +9737,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "choice_set_id__n", t, "multi")
@@ -9748,7 +9748,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
@@ -9759,7 +9759,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", t, "multi")
@@ -9770,7 +9770,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", t, "multi")
@@ -9781,7 +9781,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", t, "multi")
@@ -9792,7 +9792,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", t, "multi")
@@ -9803,7 +9803,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", t, "multi")
@@ -9814,7 +9814,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", t, "multi")
@@ -9855,7 +9855,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -9869,7 +9869,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -9880,7 +9880,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -9891,7 +9891,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -9902,7 +9902,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -9913,7 +9913,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -9924,7 +9924,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -9935,7 +9935,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -9946,7 +9946,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -9957,7 +9957,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -9974,7 +9974,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", t, "multi")
@@ -9988,7 +9988,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", t, "multi")
@@ -9999,7 +9999,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", t, "multi")
@@ -10010,7 +10010,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", t, "multi")
@@ -10021,7 +10021,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", t, "multi")
@@ -10032,7 +10032,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", t, "multi")
@@ -10043,7 +10043,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", t, "multi")
@@ -10054,7 +10054,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", t, "multi")
@@ -10065,7 +10065,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", t, "multi")
@@ -10076,7 +10076,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", t, "multi")
@@ -10087,7 +10087,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -10101,7 +10101,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -10112,7 +10112,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -10123,7 +10123,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -10134,7 +10134,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -10145,7 +10145,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -10162,7 +10162,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -10176,7 +10176,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -10187,7 +10187,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -10198,7 +10198,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -10209,7 +10209,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -10220,7 +10220,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -10231,7 +10231,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -10242,7 +10242,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -10253,7 +10253,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -10264,7 +10264,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -10287,7 +10287,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight", t, "multi")
@@ -10301,7 +10301,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gt", t, "multi")
@@ -10312,7 +10312,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__gte", t, "multi")
@@ -10323,7 +10323,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lt", t, "multi")
@@ -10334,7 +10334,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__lte", t, "multi")
@@ -10345,7 +10345,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "search_weight__n", t, "multi")
@@ -10356,7 +10356,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "multi")
@@ -10367,7 +10367,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "multi")
@@ -10384,7 +10384,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
@@ -10398,7 +10398,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
@@ -10409,7 +10409,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
@@ -10420,7 +10420,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
@@ -10431,7 +10431,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
@@ -10442,7 +10442,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
@@ -10518,7 +10518,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 
 type ApiExtrasCustomFieldsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableCustomFieldRequest *PatchedWritableCustomFieldRequest
 }
@@ -10541,7 +10541,7 @@ Patch a custom field object.
  @param id A unique integer value identifying this custom field.
  @return ApiExtrasCustomFieldsPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldsPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldsPartialUpdateRequest {
 	return ApiExtrasCustomFieldsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10551,7 +10551,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsPartialUpdate(ctx context.Context, 
 
 // Execute executes the request
 //  @return CustomField
-func (a *ExtrasApiService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCustomFieldsPartialUpdateRequest) (*CustomField, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCustomFieldsPartialUpdateRequest) (*CustomField, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -10559,7 +10559,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCus
 		localVarReturnValue  *CustomField
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10643,7 +10643,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCus
 
 type ApiExtrasCustomFieldsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -10660,7 +10660,7 @@ Get a custom field object.
  @param id A unique integer value identifying this custom field.
  @return ApiExtrasCustomFieldsRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldsRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsRetrieve(ctx context.Context, id int32) ApiExtrasCustomFieldsRetrieveRequest {
 	return ApiExtrasCustomFieldsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10670,7 +10670,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsRetrieve(ctx context.Context, id in
 
 // Execute executes the request
 //  @return CustomField
-func (a *ExtrasApiService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFieldsRetrieveRequest) (*CustomField, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFieldsRetrieveRequest) (*CustomField, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10678,7 +10678,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFi
 		localVarReturnValue  *CustomField
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10760,7 +10760,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFi
 
 type ApiExtrasCustomFieldsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableCustomFieldRequest *WritableCustomFieldRequest
 }
@@ -10783,7 +10783,7 @@ Put a custom field object.
  @param id A unique integer value identifying this custom field.
  @return ApiExtrasCustomFieldsUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomFieldsUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldsUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomFieldsUpdate(ctx context.Context, id int32) ApiExtrasCustomFieldsUpdateRequest {
 	return ApiExtrasCustomFieldsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10793,7 +10793,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsUpdate(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return CustomField
-func (a *ExtrasApiService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFieldsUpdateRequest) (*CustomField, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFieldsUpdateRequest) (*CustomField, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10801,7 +10801,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFiel
 		localVarReturnValue  *CustomField
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomFieldsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomFieldsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10888,7 +10888,7 @@ func (a *ExtrasApiService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFiel
 
 type ApiExtrasCustomLinksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -10909,7 +10909,7 @@ Delete a list of custom link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomLinksBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksBulkDestroy(ctx context.Context) ApiExtrasCustomLinksBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksBulkDestroy(ctx context.Context) ApiExtrasCustomLinksBulkDestroyRequest {
 	return ApiExtrasCustomLinksBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10917,14 +10917,14 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkDestroy(ctx context.Context) Api
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustomLinksBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustomLinksBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11001,7 +11001,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustom
 
 type ApiExtrasCustomLinksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -11022,7 +11022,7 @@ Patch a list of custom link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomLinksBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksBulkPartialUpdate(ctx context.Context) ApiExtrasCustomLinksBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksBulkPartialUpdate(ctx context.Context) ApiExtrasCustomLinksBulkPartialUpdateRequest {
 	return ApiExtrasCustomLinksBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11031,7 +11031,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkPartialUpdate(ctx context.Contex
 
 // Execute executes the request
 //  @return []CustomLink
-func (a *ExtrasApiService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtrasCustomLinksBulkPartialUpdateRequest) ([]CustomLink, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtrasCustomLinksBulkPartialUpdateRequest) ([]CustomLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -11039,7 +11039,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtras
 		localVarReturnValue  []CustomLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11125,7 +11125,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtras
 
 type ApiExtrasCustomLinksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -11146,7 +11146,7 @@ Put a list of custom link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomLinksBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksBulkUpdate(ctx context.Context) ApiExtrasCustomLinksBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksBulkUpdate(ctx context.Context) ApiExtrasCustomLinksBulkUpdateRequest {
 	return ApiExtrasCustomLinksBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11155,7 +11155,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkUpdate(ctx context.Context) ApiE
 
 // Execute executes the request
 //  @return []CustomLink
-func (a *ExtrasApiService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomLinksBulkUpdateRequest) ([]CustomLink, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomLinksBulkUpdateRequest) ([]CustomLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11163,7 +11163,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomL
 		localVarReturnValue  []CustomLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11249,7 +11249,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomL
 
 type ApiExtrasCustomLinksCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	customLinkRequest *CustomLinkRequest
 }
 
@@ -11270,7 +11270,7 @@ Post a list of custom link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomLinksCreateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksCreate(ctx context.Context) ApiExtrasCustomLinksCreateRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksCreate(ctx context.Context) ApiExtrasCustomLinksCreateRequest {
 	return ApiExtrasCustomLinksCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11279,7 +11279,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksCreate(ctx context.Context) ApiExtra
 
 // Execute executes the request
 //  @return CustomLink
-func (a *ExtrasApiService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinksCreateRequest) (*CustomLink, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinksCreateRequest) (*CustomLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -11287,7 +11287,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinks
 		localVarReturnValue  *CustomLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11373,7 +11373,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinks
 
 type ApiExtrasCustomLinksDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -11390,7 +11390,7 @@ Delete a custom link object.
  @param id A unique integer value identifying this custom link.
  @return ApiExtrasCustomLinksDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksDestroy(ctx context.Context, id int32) ApiExtrasCustomLinksDestroyRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksDestroy(ctx context.Context, id int32) ApiExtrasCustomLinksDestroyRequest {
 	return ApiExtrasCustomLinksDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11399,14 +11399,14 @@ func (a *ExtrasApiService) ExtrasCustomLinksDestroy(ctx context.Context, id int3
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLinksDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLinksDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11479,7 +11479,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLink
 
 type ApiExtrasCustomLinksListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	contentTypeId *[]int32
 	contentTypeIdEmpty *[]int32
 	contentTypeIdGt *[]int32
@@ -11972,7 +11972,7 @@ Get a list of custom link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasCustomLinksListRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksList(ctx context.Context) ApiExtrasCustomLinksListRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksList(ctx context.Context) ApiExtrasCustomLinksListRequest {
 	return ApiExtrasCustomLinksListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11981,7 +11981,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksList(ctx context.Context) ApiExtrasC
 
 // Execute executes the request
 //  @return PaginatedCustomLinkList
-func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksListRequest) (*PaginatedCustomLinkList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksListRequest) (*PaginatedCustomLinkList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11989,7 +11989,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		localVarReturnValue  *PaginatedCustomLinkList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12005,7 +12005,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
@@ -12016,7 +12016,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", t, "multi")
@@ -12027,7 +12027,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", t, "multi")
@@ -12038,7 +12038,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", t, "multi")
@@ -12049,7 +12049,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", t, "multi")
@@ -12060,7 +12060,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", t, "multi")
@@ -12071,7 +12071,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", t, "multi")
@@ -12115,7 +12115,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name", t, "multi")
@@ -12129,7 +12129,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ic", t, "multi")
@@ -12140,7 +12140,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__ie", t, "multi")
@@ -12151,7 +12151,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__iew", t, "multi")
@@ -12162,7 +12162,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__isw", t, "multi")
@@ -12173,7 +12173,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__n", t, "multi")
@@ -12184,7 +12184,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nic", t, "multi")
@@ -12195,7 +12195,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nie", t, "multi")
@@ -12206,7 +12206,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__niew", t, "multi")
@@ -12217,7 +12217,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_name__nisw", t, "multi")
@@ -12228,7 +12228,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -12242,7 +12242,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -12253,7 +12253,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -12264,7 +12264,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -12275,7 +12275,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -12286,7 +12286,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -12360,7 +12360,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -12374,7 +12374,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -12385,7 +12385,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -12396,7 +12396,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -12407,7 +12407,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -12418,7 +12418,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -12429,7 +12429,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -12440,7 +12440,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -12451,7 +12451,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -12462,7 +12462,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -12485,7 +12485,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
@@ -12499,7 +12499,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
@@ -12510,7 +12510,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
@@ -12521,7 +12521,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
@@ -12532,7 +12532,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
@@ -12543,7 +12543,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
@@ -12619,7 +12619,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 
 type ApiExtrasCustomLinksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedCustomLinkRequest *PatchedCustomLinkRequest
 }
@@ -12642,7 +12642,7 @@ Patch a custom link object.
  @param id A unique integer value identifying this custom link.
  @return ApiExtrasCustomLinksPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomLinksPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksPartialUpdate(ctx context.Context, id int32) ApiExtrasCustomLinksPartialUpdateRequest {
 	return ApiExtrasCustomLinksPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12652,7 +12652,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksPartialUpdate(ctx context.Context, i
 
 // Execute executes the request
 //  @return CustomLink
-func (a *ExtrasApiService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCustomLinksPartialUpdateRequest) (*CustomLink, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCustomLinksPartialUpdateRequest) (*CustomLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -12660,7 +12660,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCust
 		localVarReturnValue  *CustomLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12744,7 +12744,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCust
 
 type ApiExtrasCustomLinksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -12761,7 +12761,7 @@ Get a custom link object.
  @param id A unique integer value identifying this custom link.
  @return ApiExtrasCustomLinksRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksRetrieve(ctx context.Context, id int32) ApiExtrasCustomLinksRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksRetrieve(ctx context.Context, id int32) ApiExtrasCustomLinksRetrieveRequest {
 	return ApiExtrasCustomLinksRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12771,7 +12771,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksRetrieve(ctx context.Context, id int
 
 // Execute executes the request
 //  @return CustomLink
-func (a *ExtrasApiService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLinksRetrieveRequest) (*CustomLink, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLinksRetrieveRequest) (*CustomLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12779,7 +12779,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLin
 		localVarReturnValue  *CustomLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12861,7 +12861,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLin
 
 type ApiExtrasCustomLinksUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	customLinkRequest *CustomLinkRequest
 }
@@ -12884,7 +12884,7 @@ Put a custom link object.
  @param id A unique integer value identifying this custom link.
  @return ApiExtrasCustomLinksUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasCustomLinksUpdate(ctx context.Context, id int32) ApiExtrasCustomLinksUpdateRequest {
+func (a *ExtrasAPIService) ExtrasCustomLinksUpdate(ctx context.Context, id int32) ApiExtrasCustomLinksUpdateRequest {
 	return ApiExtrasCustomLinksUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12894,7 +12894,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return CustomLink
-func (a *ExtrasApiService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinksUpdateRequest) (*CustomLink, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinksUpdateRequest) (*CustomLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12902,7 +12902,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinks
 		localVarReturnValue  *CustomLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasCustomLinksUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasCustomLinksUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12989,7 +12989,7 @@ func (a *ExtrasApiService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinks
 
 type ApiExtrasDashboardDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 }
 
 func (r ApiExtrasDashboardDestroyRequest) Execute() (*http.Response, error) {
@@ -13004,7 +13004,7 @@ Delete a list of dashboard objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasDashboardDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasDashboardDestroy(ctx context.Context) ApiExtrasDashboardDestroyRequest {
+func (a *ExtrasAPIService) ExtrasDashboardDestroy(ctx context.Context) ApiExtrasDashboardDestroyRequest {
 	return ApiExtrasDashboardDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13012,14 +13012,14 @@ func (a *ExtrasApiService) ExtrasDashboardDestroy(ctx context.Context) ApiExtras
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasDashboardDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13091,7 +13091,7 @@ func (a *ExtrasApiService) ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDes
 
 type ApiExtrasDashboardPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	patchedDashboardRequest *PatchedDashboardRequest
 }
 
@@ -13112,7 +13112,7 @@ Patch a list of dashboard objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasDashboardPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasDashboardPartialUpdate(ctx context.Context) ApiExtrasDashboardPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasDashboardPartialUpdate(ctx context.Context) ApiExtrasDashboardPartialUpdateRequest {
 	return ApiExtrasDashboardPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13121,7 +13121,7 @@ func (a *ExtrasApiService) ExtrasDashboardPartialUpdate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return Dashboard
-func (a *ExtrasApiService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashboardPartialUpdateRequest) (*Dashboard, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashboardPartialUpdateRequest) (*Dashboard, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -13129,7 +13129,7 @@ func (a *ExtrasApiService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashbo
 		localVarReturnValue  *Dashboard
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasDashboardPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13212,7 +13212,7 @@ func (a *ExtrasApiService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashbo
 
 type ApiExtrasDashboardRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 }
 
 func (r ApiExtrasDashboardRetrieveRequest) Execute() (*Dashboard, *http.Response, error) {
@@ -13227,7 +13227,7 @@ Get a list of dashboard objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasDashboardRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasDashboardRetrieve(ctx context.Context) ApiExtrasDashboardRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasDashboardRetrieve(ctx context.Context) ApiExtrasDashboardRetrieveRequest {
 	return ApiExtrasDashboardRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13236,7 +13236,7 @@ func (a *ExtrasApiService) ExtrasDashboardRetrieve(ctx context.Context) ApiExtra
 
 // Execute executes the request
 //  @return Dashboard
-func (a *ExtrasApiService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRetrieveRequest) (*Dashboard, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRetrieveRequest) (*Dashboard, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13244,7 +13244,7 @@ func (a *ExtrasApiService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRe
 		localVarReturnValue  *Dashboard
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasDashboardRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13325,7 +13325,7 @@ func (a *ExtrasApiService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRe
 
 type ApiExtrasDashboardUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	dashboardRequest *DashboardRequest
 }
 
@@ -13346,7 +13346,7 @@ Put a list of dashboard objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasDashboardUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasDashboardUpdate(ctx context.Context) ApiExtrasDashboardUpdateRequest {
+func (a *ExtrasAPIService) ExtrasDashboardUpdate(ctx context.Context) ApiExtrasDashboardUpdateRequest {
 	return ApiExtrasDashboardUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13355,7 +13355,7 @@ func (a *ExtrasApiService) ExtrasDashboardUpdate(ctx context.Context) ApiExtrasD
 
 // Execute executes the request
 //  @return Dashboard
-func (a *ExtrasApiService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpdateRequest) (*Dashboard, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpdateRequest) (*Dashboard, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13363,7 +13363,7 @@ func (a *ExtrasApiService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpda
 		localVarReturnValue  *Dashboard
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasDashboardUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasDashboardUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13446,7 +13446,7 @@ func (a *ExtrasApiService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpda
 
 type ApiExtrasExportTemplatesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -13467,7 +13467,7 @@ Delete a list of export template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasExportTemplatesBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesBulkDestroy(ctx context.Context) ApiExtrasExportTemplatesBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesBulkDestroy(ctx context.Context) ApiExtrasExportTemplatesBulkDestroyRequest {
 	return ApiExtrasExportTemplatesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13475,14 +13475,14 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkDestroy(ctx context.Context)
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasExportTemplatesBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasExportTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13559,7 +13559,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasEx
 
 type ApiExtrasExportTemplatesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -13580,7 +13580,7 @@ Patch a list of export template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasExportTemplatesBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkPartialUpdateRequest {
 	return ApiExtrasExportTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13589,7 +13589,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkPartialUpdate(ctx context.Co
 
 // Execute executes the request
 //  @return []ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiExtrasExportTemplatesBulkPartialUpdateRequest) ([]ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiExtrasExportTemplatesBulkPartialUpdateRequest) ([]ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -13597,7 +13597,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiEx
 		localVarReturnValue  []ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13683,7 +13683,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiEx
 
 type ApiExtrasExportTemplatesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -13704,7 +13704,7 @@ Put a list of export template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasExportTemplatesBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesBulkUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesBulkUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkUpdateRequest {
 	return ApiExtrasExportTemplatesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13713,7 +13713,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkUpdate(ctx context.Context) 
 
 // Execute executes the request
 //  @return []ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExportTemplatesBulkUpdateRequest) ([]ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExportTemplatesBulkUpdateRequest) ([]ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13721,7 +13721,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExp
 		localVarReturnValue  []ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13807,7 +13807,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExp
 
 type ApiExtrasExportTemplatesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableExportTemplateRequest *WritableExportTemplateRequest
 }
 
@@ -13828,7 +13828,7 @@ Post a list of export template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasExportTemplatesCreateRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesCreate(ctx context.Context) ApiExtrasExportTemplatesCreateRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesCreate(ctx context.Context) ApiExtrasExportTemplatesCreateRequest {
 	return ApiExtrasExportTemplatesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13837,7 +13837,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesCreate(ctx context.Context) ApiE
 
 // Execute executes the request
 //  @return ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportTemplatesCreateRequest) (*ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportTemplatesCreateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -13845,7 +13845,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportT
 		localVarReturnValue  *ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13931,7 +13931,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportT
 
 type ApiExtrasExportTemplatesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -13948,7 +13948,7 @@ Delete a export template object.
  @param id A unique integer value identifying this export template.
  @return ApiExtrasExportTemplatesDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesDestroy(ctx context.Context, id int32) ApiExtrasExportTemplatesDestroyRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesDestroy(ctx context.Context, id int32) ApiExtrasExportTemplatesDestroyRequest {
 	return ApiExtrasExportTemplatesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13957,14 +13957,14 @@ func (a *ExtrasApiService) ExtrasExportTemplatesDestroy(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasExportTemplatesDestroyExecute(r ApiExtrasExportTemplatesDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesDestroyExecute(r ApiExtrasExportTemplatesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14037,7 +14037,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesDestroyExecute(r ApiExtrasExport
 
 type ApiExtrasExportTemplatesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	contentTypeId *[]int32
 	contentTypeIdEmpty *[]int32
 	contentTypeIdGt *[]int32
@@ -14426,7 +14426,7 @@ Get a list of export template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasExportTemplatesListRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesList(ctx context.Context) ApiExtrasExportTemplatesListRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesList(ctx context.Context) ApiExtrasExportTemplatesListRequest {
 	return ApiExtrasExportTemplatesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -14435,7 +14435,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesList(ctx context.Context) ApiExt
 
 // Execute executes the request
 //  @return PaginatedExportTemplateList
-func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTemplatesListRequest) (*PaginatedExportTemplateList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTemplatesListRequest) (*PaginatedExportTemplateList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14443,7 +14443,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		localVarReturnValue  *PaginatedExportTemplateList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14459,7 +14459,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
@@ -14470,7 +14470,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", t, "multi")
@@ -14481,7 +14481,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", t, "multi")
@@ -14492,7 +14492,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", t, "multi")
@@ -14503,7 +14503,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", t, "multi")
@@ -14514,7 +14514,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", t, "multi")
@@ -14525,7 +14525,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", t, "multi")
@@ -14566,7 +14566,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id", t, "multi")
@@ -14577,7 +14577,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_file_id__n", t, "multi")
@@ -14588,7 +14588,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id", t, "multi")
@@ -14599,7 +14599,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_source_id__n", t, "multi")
@@ -14610,7 +14610,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced", t, "multi")
@@ -14624,7 +14624,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gt", t, "multi")
@@ -14635,7 +14635,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__gte", t, "multi")
@@ -14646,7 +14646,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lt", t, "multi")
@@ -14657,7 +14657,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__lte", t, "multi")
@@ -14668,7 +14668,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "data_synced__n", t, "multi")
@@ -14679,7 +14679,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -14693,7 +14693,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -14704,7 +14704,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -14715,7 +14715,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -14726,7 +14726,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -14737,7 +14737,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -14748,7 +14748,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -14759,7 +14759,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -14770,7 +14770,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -14781,7 +14781,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -14792,7 +14792,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -14806,7 +14806,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -14817,7 +14817,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -14828,7 +14828,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -14839,7 +14839,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -14850,7 +14850,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -14864,7 +14864,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -14878,7 +14878,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -14889,7 +14889,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -14900,7 +14900,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -14911,7 +14911,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -14922,7 +14922,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -14933,7 +14933,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -14944,7 +14944,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -14955,7 +14955,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -14966,7 +14966,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -15051,7 +15051,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 
 type ApiExtrasExportTemplatesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableExportTemplateRequest *PatchedWritableExportTemplateRequest
 }
@@ -15074,7 +15074,7 @@ Patch a export template object.
  @param id A unique integer value identifying this export template.
  @return ApiExtrasExportTemplatesPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesPartialUpdate(ctx context.Context, id int32) ApiExtrasExportTemplatesPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesPartialUpdate(ctx context.Context, id int32) ApiExtrasExportTemplatesPartialUpdateRequest {
 	return ApiExtrasExportTemplatesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15084,7 +15084,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesPartialUpdate(ctx context.Contex
 
 // Execute executes the request
 //  @return ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtrasExportTemplatesPartialUpdateRequest) (*ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtrasExportTemplatesPartialUpdateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -15092,7 +15092,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtras
 		localVarReturnValue  *ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15176,7 +15176,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtras
 
 type ApiExtrasExportTemplatesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -15193,7 +15193,7 @@ Get a export template object.
  @param id A unique integer value identifying this export template.
  @return ApiExtrasExportTemplatesRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesRetrieve(ctx context.Context, id int32) ApiExtrasExportTemplatesRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesRetrieve(ctx context.Context, id int32) ApiExtrasExportTemplatesRetrieveRequest {
 	return ApiExtrasExportTemplatesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15203,7 +15203,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesRetrieve(ctx context.Context, id
 
 // Execute executes the request
 //  @return ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExportTemplatesRetrieveRequest) (*ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExportTemplatesRetrieveRequest) (*ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15211,7 +15211,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExpor
 		localVarReturnValue  *ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15293,7 +15293,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExpor
 
 type ApiExtrasExportTemplatesSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableExportTemplateRequest *WritableExportTemplateRequest
 }
@@ -15316,7 +15316,7 @@ Provide a /sync API endpoint to synchronize an object's data from its associated
  @param id A unique integer value identifying this export template.
  @return ApiExtrasExportTemplatesSyncCreateRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesSyncCreate(ctx context.Context, id int32) ApiExtrasExportTemplatesSyncCreateRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesSyncCreate(ctx context.Context, id int32) ApiExtrasExportTemplatesSyncCreateRequest {
 	return ApiExtrasExportTemplatesSyncCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15326,7 +15326,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesSyncCreate(ctx context.Context, 
 
 // Execute executes the request
 //  @return ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExportTemplatesSyncCreateRequest) (*ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExportTemplatesSyncCreateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15334,7 +15334,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExp
 		localVarReturnValue  *ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesSyncCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesSyncCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15421,7 +15421,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExp
 
 type ApiExtrasExportTemplatesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableExportTemplateRequest *WritableExportTemplateRequest
 }
@@ -15444,7 +15444,7 @@ Put a export template object.
  @param id A unique integer value identifying this export template.
  @return ApiExtrasExportTemplatesUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasExportTemplatesUpdate(ctx context.Context, id int32) ApiExtrasExportTemplatesUpdateRequest {
+func (a *ExtrasAPIService) ExtrasExportTemplatesUpdate(ctx context.Context, id int32) ApiExtrasExportTemplatesUpdateRequest {
 	return ApiExtrasExportTemplatesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15454,7 +15454,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesUpdate(ctx context.Context, id i
 
 // Execute executes the request
 //  @return ExportTemplate
-func (a *ExtrasApiService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportTemplatesUpdateRequest) (*ExportTemplate, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportTemplatesUpdateRequest) (*ExportTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -15462,7 +15462,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportT
 		localVarReturnValue  *ExportTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasExportTemplatesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasExportTemplatesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15549,7 +15549,7 @@ func (a *ExtrasApiService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportT
 
 type ApiExtrasImageAttachmentsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -15570,7 +15570,7 @@ Delete a list of image attachment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasImageAttachmentsBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsBulkDestroy(ctx context.Context) ApiExtrasImageAttachmentsBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkDestroy(ctx context.Context) ApiExtrasImageAttachmentsBulkDestroyRequest {
 	return ApiExtrasImageAttachmentsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15578,14 +15578,14 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkDestroy(ctx context.Context
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasImageAttachmentsBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasImageAttachmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15662,7 +15662,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasI
 
 type ApiExtrasImageAttachmentsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -15683,7 +15683,7 @@ Patch a list of image attachment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasImageAttachmentsBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsBulkPartialUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkPartialUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkPartialUpdateRequest {
 	return ApiExtrasImageAttachmentsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15692,7 +15692,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkPartialUpdate(ctx context.C
 
 // Execute executes the request
 //  @return []ImageAttachment
-func (a *ExtrasApiService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiExtrasImageAttachmentsBulkPartialUpdateRequest) ([]ImageAttachment, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiExtrasImageAttachmentsBulkPartialUpdateRequest) ([]ImageAttachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -15700,7 +15700,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiE
 		localVarReturnValue  []ImageAttachment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15786,7 +15786,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiE
 
 type ApiExtrasImageAttachmentsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -15807,7 +15807,7 @@ Put a list of image attachment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasImageAttachmentsBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsBulkUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkUpdateRequest {
 	return ApiExtrasImageAttachmentsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15816,7 +15816,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkUpdate(ctx context.Context)
 
 // Execute executes the request
 //  @return []ImageAttachment
-func (a *ExtrasApiService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasImageAttachmentsBulkUpdateRequest) ([]ImageAttachment, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasImageAttachmentsBulkUpdateRequest) ([]ImageAttachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -15824,7 +15824,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasIm
 		localVarReturnValue  []ImageAttachment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15910,7 +15910,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasIm
 
 type ApiExtrasImageAttachmentsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	imageAttachmentRequest *ImageAttachmentRequest
 }
 
@@ -15931,7 +15931,7 @@ Post a list of image attachment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasImageAttachmentsCreateRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsCreate(ctx context.Context) ApiExtrasImageAttachmentsCreateRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsCreate(ctx context.Context) ApiExtrasImageAttachmentsCreateRequest {
 	return ApiExtrasImageAttachmentsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15940,7 +15940,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsCreate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return ImageAttachment
-func (a *ExtrasApiService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageAttachmentsCreateRequest) (*ImageAttachment, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageAttachmentsCreateRequest) (*ImageAttachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15948,7 +15948,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageA
 		localVarReturnValue  *ImageAttachment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16034,7 +16034,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageA
 
 type ApiExtrasImageAttachmentsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -16051,7 +16051,7 @@ Delete a image attachment object.
  @param id A unique integer value identifying this image attachment.
  @return ApiExtrasImageAttachmentsDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsDestroy(ctx context.Context, id int32) ApiExtrasImageAttachmentsDestroyRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsDestroy(ctx context.Context, id int32) ApiExtrasImageAttachmentsDestroyRequest {
 	return ApiExtrasImageAttachmentsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16060,14 +16060,14 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsDestroy(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImageAttachmentsDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImageAttachmentsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16140,7 +16140,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImage
 
 type ApiExtrasImageAttachmentsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	contentType *string
 	contentTypeN *string
 	contentTypeId *int32
@@ -16363,7 +16363,7 @@ Get a list of image attachment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasImageAttachmentsListRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsList(ctx context.Context) ApiExtrasImageAttachmentsListRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsList(ctx context.Context) ApiExtrasImageAttachmentsListRequest {
 	return ApiExtrasImageAttachmentsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16372,7 +16372,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsList(ctx context.Context) ApiEx
 
 // Execute executes the request
 //  @return PaginatedImageAttachmentList
-func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAttachmentsListRequest) (*PaginatedImageAttachmentList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAttachmentsListRequest) (*PaginatedImageAttachmentList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16380,7 +16380,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		localVarReturnValue  *PaginatedImageAttachmentList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16411,7 +16411,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -16425,7 +16425,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -16436,7 +16436,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -16447,7 +16447,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -16458,7 +16458,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -16469,7 +16469,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -16483,7 +16483,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -16497,7 +16497,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -16508,7 +16508,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -16519,7 +16519,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -16530,7 +16530,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -16541,7 +16541,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -16552,7 +16552,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -16563,7 +16563,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -16574,7 +16574,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -16585,7 +16585,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -16596,7 +16596,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "multi")
@@ -16610,7 +16610,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "multi")
@@ -16621,7 +16621,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "multi")
@@ -16632,7 +16632,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "multi")
@@ -16643,7 +16643,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "multi")
@@ -16654,7 +16654,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "multi")
@@ -16739,7 +16739,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 
 type ApiExtrasImageAttachmentsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedImageAttachmentRequest *PatchedImageAttachmentRequest
 }
@@ -16762,7 +16762,7 @@ Patch a image attachment object.
  @param id A unique integer value identifying this image attachment.
  @return ApiExtrasImageAttachmentsPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsPartialUpdate(ctx context.Context, id int32) ApiExtrasImageAttachmentsPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsPartialUpdate(ctx context.Context, id int32) ApiExtrasImageAttachmentsPartialUpdateRequest {
 	return ApiExtrasImageAttachmentsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16772,7 +16772,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsPartialUpdate(ctx context.Conte
 
 // Execute executes the request
 //  @return ImageAttachment
-func (a *ExtrasApiService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtrasImageAttachmentsPartialUpdateRequest) (*ImageAttachment, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtrasImageAttachmentsPartialUpdateRequest) (*ImageAttachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -16780,7 +16780,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtra
 		localVarReturnValue  *ImageAttachment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16864,7 +16864,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtra
 
 type ApiExtrasImageAttachmentsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -16881,7 +16881,7 @@ Get a image attachment object.
  @param id A unique integer value identifying this image attachment.
  @return ApiExtrasImageAttachmentsRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsRetrieve(ctx context.Context, id int32) ApiExtrasImageAttachmentsRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsRetrieve(ctx context.Context, id int32) ApiExtrasImageAttachmentsRetrieveRequest {
 	return ApiExtrasImageAttachmentsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16891,7 +16891,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsRetrieve(ctx context.Context, i
 
 // Execute executes the request
 //  @return ImageAttachment
-func (a *ExtrasApiService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImageAttachmentsRetrieveRequest) (*ImageAttachment, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImageAttachmentsRetrieveRequest) (*ImageAttachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16899,7 +16899,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImag
 		localVarReturnValue  *ImageAttachment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16981,7 +16981,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImag
 
 type ApiExtrasImageAttachmentsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	imageAttachmentRequest *ImageAttachmentRequest
 }
@@ -17004,7 +17004,7 @@ Put a image attachment object.
  @param id A unique integer value identifying this image attachment.
  @return ApiExtrasImageAttachmentsUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasImageAttachmentsUpdate(ctx context.Context, id int32) ApiExtrasImageAttachmentsUpdateRequest {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsUpdate(ctx context.Context, id int32) ApiExtrasImageAttachmentsUpdateRequest {
 	return ApiExtrasImageAttachmentsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17014,7 +17014,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsUpdate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return ImageAttachment
-func (a *ExtrasApiService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageAttachmentsUpdateRequest) (*ImageAttachment, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageAttachmentsUpdateRequest) (*ImageAttachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17022,7 +17022,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageA
 		localVarReturnValue  *ImageAttachment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasImageAttachmentsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasImageAttachmentsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17109,7 +17109,7 @@ func (a *ExtrasApiService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageA
 
 type ApiExtrasJournalEntriesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -17130,7 +17130,7 @@ Delete a list of journal entry objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasJournalEntriesBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesBulkDestroy(ctx context.Context) ApiExtrasJournalEntriesBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesBulkDestroy(ctx context.Context) ApiExtrasJournalEntriesBulkDestroyRequest {
 	return ApiExtrasJournalEntriesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17138,14 +17138,14 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkDestroy(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJournalEntriesBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJournalEntriesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17222,7 +17222,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJou
 
 type ApiExtrasJournalEntriesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -17243,7 +17243,7 @@ Patch a list of journal entry objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasJournalEntriesBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesBulkPartialUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesBulkPartialUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkPartialUpdateRequest {
 	return ApiExtrasJournalEntriesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17252,7 +17252,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkPartialUpdate(ctx context.Con
 
 // Execute executes the request
 //  @return []JournalEntry
-func (a *ExtrasApiService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExtrasJournalEntriesBulkPartialUpdateRequest) ([]JournalEntry, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExtrasJournalEntriesBulkPartialUpdateRequest) ([]JournalEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -17260,7 +17260,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExt
 		localVarReturnValue  []JournalEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17346,7 +17346,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExt
 
 type ApiExtrasJournalEntriesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -17367,7 +17367,7 @@ Put a list of journal entry objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasJournalEntriesBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesBulkUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesBulkUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkUpdateRequest {
 	return ApiExtrasJournalEntriesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17376,7 +17376,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkUpdate(ctx context.Context) A
 
 // Execute executes the request
 //  @return []JournalEntry
-func (a *ExtrasApiService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJournalEntriesBulkUpdateRequest) ([]JournalEntry, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJournalEntriesBulkUpdateRequest) ([]JournalEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17384,7 +17384,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJour
 		localVarReturnValue  []JournalEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17470,7 +17470,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJour
 
 type ApiExtrasJournalEntriesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	writableJournalEntryRequest *WritableJournalEntryRequest
 }
 
@@ -17491,7 +17491,7 @@ Post a list of journal entry objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasJournalEntriesCreateRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesCreate(ctx context.Context) ApiExtrasJournalEntriesCreateRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesCreate(ctx context.Context) ApiExtrasJournalEntriesCreateRequest {
 	return ApiExtrasJournalEntriesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17500,7 +17500,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesCreate(ctx context.Context) ApiEx
 
 // Execute executes the request
 //  @return JournalEntry
-func (a *ExtrasApiService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalEntriesCreateRequest) (*JournalEntry, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalEntriesCreateRequest) (*JournalEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -17508,7 +17508,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalE
 		localVarReturnValue  *JournalEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17594,7 +17594,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalE
 
 type ApiExtrasJournalEntriesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -17611,7 +17611,7 @@ Delete a journal entry object.
  @param id A unique integer value identifying this journal entry.
  @return ApiExtrasJournalEntriesDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesDestroy(ctx context.Context, id int32) ApiExtrasJournalEntriesDestroyRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesDestroy(ctx context.Context, id int32) ApiExtrasJournalEntriesDestroyRequest {
 	return ApiExtrasJournalEntriesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17620,14 +17620,14 @@ func (a *ExtrasApiService) ExtrasJournalEntriesDestroy(ctx context.Context, id i
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournalEntriesDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournalEntriesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17700,7 +17700,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournal
 
 type ApiExtrasJournalEntriesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	assignedObjectId *[]int32
 	assignedObjectIdEmpty *bool
 	assignedObjectIdGt *[]int32
@@ -17975,7 +17975,7 @@ Get a list of journal entry objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasJournalEntriesListRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesList(ctx context.Context) ApiExtrasJournalEntriesListRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesList(ctx context.Context) ApiExtrasJournalEntriesListRequest {
 	return ApiExtrasJournalEntriesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17984,7 +17984,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesList(ctx context.Context) ApiExtr
 
 // Execute executes the request
 //  @return PaginatedJournalEntryList
-func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEntriesListRequest) (*PaginatedJournalEntryList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEntriesListRequest) (*PaginatedJournalEntryList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -17992,7 +17992,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		localVarReturnValue  *PaginatedJournalEntryList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18008,7 +18008,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id", t, "multi")
@@ -18022,7 +18022,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gt", t, "multi")
@@ -18033,7 +18033,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__gte", t, "multi")
@@ -18044,7 +18044,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lt", t, "multi")
@@ -18055,7 +18055,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__lte", t, "multi")
@@ -18066,7 +18066,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_id__n", t, "multi")
@@ -18083,7 +18083,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id", t, "multi")
@@ -18094,7 +18094,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "assigned_object_type_id__n", t, "multi")
@@ -18111,7 +18111,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by", t, "multi")
@@ -18122,7 +18122,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by__n", t, "multi")
@@ -18133,7 +18133,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id", t, "multi")
@@ -18144,7 +18144,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_id__n", t, "multi")
@@ -18158,7 +18158,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -18172,7 +18172,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -18183,7 +18183,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -18194,7 +18194,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -18205,7 +18205,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -18216,7 +18216,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -18227,7 +18227,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "kind", t, "multi")
@@ -18238,7 +18238,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "kind__n", t, "multi")
@@ -18249,7 +18249,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -18260,7 +18260,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -18271,7 +18271,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -18282,7 +18282,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -18293,7 +18293,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -18304,7 +18304,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -18315,7 +18315,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -18341,7 +18341,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -18352,7 +18352,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -18431,7 +18431,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 
 type ApiExtrasJournalEntriesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWritableJournalEntryRequest *PatchedWritableJournalEntryRequest
 }
@@ -18454,7 +18454,7 @@ Patch a journal entry object.
  @param id A unique integer value identifying this journal entry.
  @return ApiExtrasJournalEntriesPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesPartialUpdate(ctx context.Context, id int32) ApiExtrasJournalEntriesPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesPartialUpdate(ctx context.Context, id int32) ApiExtrasJournalEntriesPartialUpdateRequest {
 	return ApiExtrasJournalEntriesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18464,7 +18464,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesPartialUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return JournalEntry
-func (a *ExtrasApiService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJournalEntriesPartialUpdateRequest) (*JournalEntry, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJournalEntriesPartialUpdateRequest) (*JournalEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -18472,7 +18472,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJ
 		localVarReturnValue  *JournalEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18556,7 +18556,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJ
 
 type ApiExtrasJournalEntriesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -18573,7 +18573,7 @@ Get a journal entry object.
  @param id A unique integer value identifying this journal entry.
  @return ApiExtrasJournalEntriesRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesRetrieve(ctx context.Context, id int32) ApiExtrasJournalEntriesRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesRetrieve(ctx context.Context, id int32) ApiExtrasJournalEntriesRetrieveRequest {
 	return ApiExtrasJournalEntriesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18583,7 +18583,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesRetrieve(ctx context.Context, id 
 
 // Execute executes the request
 //  @return JournalEntry
-func (a *ExtrasApiService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJournalEntriesRetrieveRequest) (*JournalEntry, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJournalEntriesRetrieveRequest) (*JournalEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -18591,7 +18591,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJourna
 		localVarReturnValue  *JournalEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18673,7 +18673,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJourna
 
 type ApiExtrasJournalEntriesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	writableJournalEntryRequest *WritableJournalEntryRequest
 }
@@ -18696,7 +18696,7 @@ Put a journal entry object.
  @param id A unique integer value identifying this journal entry.
  @return ApiExtrasJournalEntriesUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasJournalEntriesUpdate(ctx context.Context, id int32) ApiExtrasJournalEntriesUpdateRequest {
+func (a *ExtrasAPIService) ExtrasJournalEntriesUpdate(ctx context.Context, id int32) ApiExtrasJournalEntriesUpdateRequest {
 	return ApiExtrasJournalEntriesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18706,7 +18706,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesUpdate(ctx context.Context, id in
 
 // Execute executes the request
 //  @return JournalEntry
-func (a *ExtrasApiService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalEntriesUpdateRequest) (*JournalEntry, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalEntriesUpdateRequest) (*JournalEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -18714,7 +18714,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalE
 		localVarReturnValue  *JournalEntry
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasJournalEntriesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasJournalEntriesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18801,7 +18801,7 @@ func (a *ExtrasApiService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalE
 
 type ApiExtrasObjectChangesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	action *string
 	actionN *string
 	changedObjectId *[]int32
@@ -19142,7 +19142,7 @@ Retrieve a list of recent changes.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasObjectChangesListRequest
 */
-func (a *ExtrasApiService) ExtrasObjectChangesList(ctx context.Context) ApiExtrasObjectChangesListRequest {
+func (a *ExtrasAPIService) ExtrasObjectChangesList(ctx context.Context) ApiExtrasObjectChangesListRequest {
 	return ApiExtrasObjectChangesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -19151,7 +19151,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesList(ctx context.Context) ApiExtra
 
 // Execute executes the request
 //  @return PaginatedObjectChangeList
-func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChangesListRequest) (*PaginatedObjectChangeList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChangesListRequest) (*PaginatedObjectChangeList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -19159,7 +19159,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		localVarReturnValue  *PaginatedObjectChangeList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasObjectChangesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasObjectChangesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19181,7 +19181,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id", t, "multi")
@@ -19195,7 +19195,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__gt", t, "multi")
@@ -19206,7 +19206,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__gte", t, "multi")
@@ -19217,7 +19217,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__lt", t, "multi")
@@ -19228,7 +19228,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__lte", t, "multi")
@@ -19239,7 +19239,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_id__n", t, "multi")
@@ -19256,7 +19256,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_type_id", t, "multi")
@@ -19267,7 +19267,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "changed_object_type_id__n", t, "multi")
@@ -19278,7 +19278,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -19292,7 +19292,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -19303,7 +19303,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -19314,7 +19314,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -19325,7 +19325,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -19336,7 +19336,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -19350,7 +19350,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr", t, "multi")
@@ -19364,7 +19364,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__ic", t, "multi")
@@ -19375,7 +19375,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__ie", t, "multi")
@@ -19386,7 +19386,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__iew", t, "multi")
@@ -19397,7 +19397,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__isw", t, "multi")
@@ -19408,7 +19408,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__n", t, "multi")
@@ -19419,7 +19419,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nic", t, "multi")
@@ -19430,7 +19430,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nie", t, "multi")
@@ -19441,7 +19441,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__niew", t, "multi")
@@ -19452,7 +19452,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_repr__nisw", t, "multi")
@@ -19481,7 +19481,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
@@ -19492,7 +19492,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
@@ -19503,7 +19503,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
@@ -19514,7 +19514,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
@@ -19525,7 +19525,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name", t, "multi")
@@ -19539,7 +19539,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__ic", t, "multi")
@@ -19550,7 +19550,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__ie", t, "multi")
@@ -19561,7 +19561,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__iew", t, "multi")
@@ -19572,7 +19572,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__isw", t, "multi")
@@ -19583,7 +19583,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__n", t, "multi")
@@ -19594,7 +19594,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nic", t, "multi")
@@ -19605,7 +19605,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nie", t, "multi")
@@ -19616,7 +19616,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__niew", t, "multi")
@@ -19627,7 +19627,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_name__nisw", t, "multi")
@@ -19703,7 +19703,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesListExecute(r ApiExtrasObjectChang
 
 type ApiExtrasObjectChangesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -19720,7 +19720,7 @@ Retrieve a list of recent changes.
  @param id A unique integer value identifying this object change.
  @return ApiExtrasObjectChangesRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasObjectChangesRetrieve(ctx context.Context, id int32) ApiExtrasObjectChangesRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasObjectChangesRetrieve(ctx context.Context, id int32) ApiExtrasObjectChangesRetrieveRequest {
 	return ApiExtrasObjectChangesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -19730,7 +19730,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesRetrieve(ctx context.Context, id i
 
 // Execute executes the request
 //  @return ObjectChange
-func (a *ExtrasApiService) ExtrasObjectChangesRetrieveExecute(r ApiExtrasObjectChangesRetrieveRequest) (*ObjectChange, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasObjectChangesRetrieveExecute(r ApiExtrasObjectChangesRetrieveRequest) (*ObjectChange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -19738,7 +19738,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesRetrieveExecute(r ApiExtrasObjectC
 		localVarReturnValue  *ObjectChange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasObjectChangesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasObjectChangesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19820,7 +19820,7 @@ func (a *ExtrasApiService) ExtrasObjectChangesRetrieveExecute(r ApiExtrasObjectC
 
 type ApiExtrasSavedFiltersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -19841,7 +19841,7 @@ Delete a list of saved filter objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasSavedFiltersBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersBulkDestroy(ctx context.Context) ApiExtrasSavedFiltersBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersBulkDestroy(ctx context.Context) ApiExtrasSavedFiltersBulkDestroyRequest {
 	return ApiExtrasSavedFiltersBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -19849,14 +19849,14 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkDestroy(ctx context.Context) Ap
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSavedFiltersBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSavedFiltersBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19933,7 +19933,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSaved
 
 type ApiExtrasSavedFiltersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -19954,7 +19954,7 @@ Patch a list of saved filter objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasSavedFiltersBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersBulkPartialUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersBulkPartialUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkPartialUpdateRequest {
 	return ApiExtrasSavedFiltersBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -19963,7 +19963,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkPartialUpdate(ctx context.Conte
 
 // Execute executes the request
 //  @return []SavedFilter
-func (a *ExtrasApiService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtrasSavedFiltersBulkPartialUpdateRequest) ([]SavedFilter, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtrasSavedFiltersBulkPartialUpdateRequest) ([]SavedFilter, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -19971,7 +19971,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtra
 		localVarReturnValue  []SavedFilter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20057,7 +20057,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtra
 
 type ApiExtrasSavedFiltersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -20078,7 +20078,7 @@ Put a list of saved filter objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasSavedFiltersBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersBulkUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersBulkUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkUpdateRequest {
 	return ApiExtrasSavedFiltersBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20087,7 +20087,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkUpdate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []SavedFilter
-func (a *ExtrasApiService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedFiltersBulkUpdateRequest) ([]SavedFilter, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedFiltersBulkUpdateRequest) ([]SavedFilter, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -20095,7 +20095,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedF
 		localVarReturnValue  []SavedFilter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20181,7 +20181,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedF
 
 type ApiExtrasSavedFiltersCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	savedFilterRequest *SavedFilterRequest
 }
 
@@ -20202,7 +20202,7 @@ Post a list of saved filter objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasSavedFiltersCreateRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersCreate(ctx context.Context) ApiExtrasSavedFiltersCreateRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersCreate(ctx context.Context) ApiExtrasSavedFiltersCreateRequest {
 	return ApiExtrasSavedFiltersCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20211,7 +20211,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersCreate(ctx context.Context) ApiExtr
 
 // Execute executes the request
 //  @return SavedFilter
-func (a *ExtrasApiService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFiltersCreateRequest) (*SavedFilter, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFiltersCreateRequest) (*SavedFilter, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -20219,7 +20219,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFilte
 		localVarReturnValue  *SavedFilter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20305,7 +20305,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFilte
 
 type ApiExtrasSavedFiltersDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -20322,7 +20322,7 @@ Delete a saved filter object.
  @param id A unique integer value identifying this saved filter.
  @return ApiExtrasSavedFiltersDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersDestroy(ctx context.Context, id int32) ApiExtrasSavedFiltersDestroyRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersDestroy(ctx context.Context, id int32) ApiExtrasSavedFiltersDestroyRequest {
 	return ApiExtrasSavedFiltersDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20331,14 +20331,14 @@ func (a *ExtrasApiService) ExtrasSavedFiltersDestroy(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFiltersDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFiltersDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20411,7 +20411,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFilt
 
 type ApiExtrasSavedFiltersListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	contentTypeId *[]int32
 	contentTypeIdEmpty *[]int32
 	contentTypeIdGt *[]int32
@@ -20884,7 +20884,7 @@ Get a list of saved filter objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasSavedFiltersListRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersList(ctx context.Context) ApiExtrasSavedFiltersListRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersList(ctx context.Context) ApiExtrasSavedFiltersListRequest {
 	return ApiExtrasSavedFiltersListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20893,7 +20893,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersList(ctx context.Context) ApiExtras
 
 // Execute executes the request
 //  @return PaginatedSavedFilterList
-func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFiltersListRequest) (*PaginatedSavedFilterList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFiltersListRequest) (*PaginatedSavedFilterList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -20901,7 +20901,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		localVarReturnValue  *PaginatedSavedFilterList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20917,7 +20917,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
@@ -20928,7 +20928,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", t, "multi")
@@ -20939,7 +20939,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", t, "multi")
@@ -20950,7 +20950,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", t, "multi")
@@ -20961,7 +20961,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", t, "multi")
@@ -20972,7 +20972,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", t, "multi")
@@ -20983,7 +20983,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", t, "multi")
@@ -21024,7 +21024,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -21038,7 +21038,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -21049,7 +21049,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -21060,7 +21060,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -21071,7 +21071,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -21082,7 +21082,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -21093,7 +21093,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -21104,7 +21104,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -21115,7 +21115,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -21126,7 +21126,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -21140,7 +21140,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -21154,7 +21154,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -21165,7 +21165,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -21176,7 +21176,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -21187,7 +21187,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -21198,7 +21198,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -21212,7 +21212,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -21226,7 +21226,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -21237,7 +21237,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -21248,7 +21248,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -21259,7 +21259,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -21270,7 +21270,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -21281,7 +21281,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -21292,7 +21292,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -21303,7 +21303,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -21314,7 +21314,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -21337,7 +21337,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -21351,7 +21351,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -21362,7 +21362,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -21373,7 +21373,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -21384,7 +21384,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -21395,7 +21395,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -21406,7 +21406,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -21417,7 +21417,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -21428,7 +21428,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -21439,7 +21439,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -21453,7 +21453,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
@@ -21464,7 +21464,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
@@ -21475,7 +21475,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
@@ -21486,7 +21486,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
@@ -21497,7 +21497,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight", t, "multi")
@@ -21511,7 +21511,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gt", t, "multi")
@@ -21522,7 +21522,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__gte", t, "multi")
@@ -21533,7 +21533,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lt", t, "multi")
@@ -21544,7 +21544,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__lte", t, "multi")
@@ -21555,7 +21555,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "weight__n", t, "multi")
@@ -21631,7 +21631,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 
 type ApiExtrasSavedFiltersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedSavedFilterRequest *PatchedSavedFilterRequest
 }
@@ -21654,7 +21654,7 @@ Patch a saved filter object.
  @param id A unique integer value identifying this saved filter.
  @return ApiExtrasSavedFiltersPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersPartialUpdate(ctx context.Context, id int32) ApiExtrasSavedFiltersPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersPartialUpdate(ctx context.Context, id int32) ApiExtrasSavedFiltersPartialUpdateRequest {
 	return ApiExtrasSavedFiltersPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -21664,7 +21664,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersPartialUpdate(ctx context.Context, 
 
 // Execute executes the request
 //  @return SavedFilter
-func (a *ExtrasApiService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSavedFiltersPartialUpdateRequest) (*SavedFilter, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSavedFiltersPartialUpdateRequest) (*SavedFilter, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -21672,7 +21672,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSav
 		localVarReturnValue  *SavedFilter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21756,7 +21756,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSav
 
 type ApiExtrasSavedFiltersRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -21773,7 +21773,7 @@ Get a saved filter object.
  @param id A unique integer value identifying this saved filter.
  @return ApiExtrasSavedFiltersRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersRetrieve(ctx context.Context, id int32) ApiExtrasSavedFiltersRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersRetrieve(ctx context.Context, id int32) ApiExtrasSavedFiltersRetrieveRequest {
 	return ApiExtrasSavedFiltersRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -21783,7 +21783,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersRetrieve(ctx context.Context, id in
 
 // Execute executes the request
 //  @return SavedFilter
-func (a *ExtrasApiService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFiltersRetrieveRequest) (*SavedFilter, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFiltersRetrieveRequest) (*SavedFilter, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -21791,7 +21791,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFil
 		localVarReturnValue  *SavedFilter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21873,7 +21873,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFil
 
 type ApiExtrasSavedFiltersUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	savedFilterRequest *SavedFilterRequest
 }
@@ -21896,7 +21896,7 @@ Put a saved filter object.
  @param id A unique integer value identifying this saved filter.
  @return ApiExtrasSavedFiltersUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasSavedFiltersUpdate(ctx context.Context, id int32) ApiExtrasSavedFiltersUpdateRequest {
+func (a *ExtrasAPIService) ExtrasSavedFiltersUpdate(ctx context.Context, id int32) ApiExtrasSavedFiltersUpdateRequest {
 	return ApiExtrasSavedFiltersUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -21906,7 +21906,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersUpdate(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return SavedFilter
-func (a *ExtrasApiService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFiltersUpdateRequest) (*SavedFilter, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFiltersUpdateRequest) (*SavedFilter, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -21914,7 +21914,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFilte
 		localVarReturnValue  *SavedFilter
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasSavedFiltersUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasSavedFiltersUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22001,7 +22001,7 @@ func (a *ExtrasApiService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFilte
 
 type ApiExtrasTagsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	tagRequest *[]TagRequest
 }
 
@@ -22022,7 +22022,7 @@ Delete a list of tag objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasTagsBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasTagsBulkDestroy(ctx context.Context) ApiExtrasTagsBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasTagsBulkDestroy(ctx context.Context) ApiExtrasTagsBulkDestroyRequest {
 	return ApiExtrasTagsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22030,14 +22030,14 @@ func (a *ExtrasApiService) ExtrasTagsBulkDestroy(ctx context.Context) ApiExtrasT
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22114,7 +22114,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestr
 
 type ApiExtrasTagsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	tagRequest *[]TagRequest
 }
 
@@ -22135,7 +22135,7 @@ Patch a list of tag objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasTagsBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasTagsBulkPartialUpdate(ctx context.Context) ApiExtrasTagsBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasTagsBulkPartialUpdate(ctx context.Context) ApiExtrasTagsBulkPartialUpdateRequest {
 	return ApiExtrasTagsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22144,7 +22144,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkPartialUpdate(ctx context.Context) ApiE
 
 // Execute executes the request
 //  @return []Tag
-func (a *ExtrasApiService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBulkPartialUpdateRequest) ([]Tag, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBulkPartialUpdateRequest) ([]Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -22152,7 +22152,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBul
 		localVarReturnValue  []Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22238,7 +22238,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBul
 
 type ApiExtrasTagsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	tagRequest *[]TagRequest
 }
 
@@ -22259,7 +22259,7 @@ Put a list of tag objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasTagsBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasTagsBulkUpdate(ctx context.Context) ApiExtrasTagsBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasTagsBulkUpdate(ctx context.Context) ApiExtrasTagsBulkUpdateRequest {
 	return ApiExtrasTagsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22268,7 +22268,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkUpdate(ctx context.Context) ApiExtrasTa
 
 // Execute executes the request
 //  @return []Tag
-func (a *ExtrasApiService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdateRequest) ([]Tag, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdateRequest) ([]Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -22276,7 +22276,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdate
 		localVarReturnValue  []Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22362,7 +22362,7 @@ func (a *ExtrasApiService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdate
 
 type ApiExtrasTagsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	tagRequest *TagRequest
 }
 
@@ -22383,7 +22383,7 @@ Post a list of tag objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasTagsCreateRequest
 */
-func (a *ExtrasApiService) ExtrasTagsCreate(ctx context.Context) ApiExtrasTagsCreateRequest {
+func (a *ExtrasAPIService) ExtrasTagsCreate(ctx context.Context) ApiExtrasTagsCreateRequest {
 	return ApiExtrasTagsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22392,7 +22392,7 @@ func (a *ExtrasApiService) ExtrasTagsCreate(ctx context.Context) ApiExtrasTagsCr
 
 // Execute executes the request
 //  @return Tag
-func (a *ExtrasApiService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest) (*Tag, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -22400,7 +22400,7 @@ func (a *ExtrasApiService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest)
 		localVarReturnValue  *Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22486,7 +22486,7 @@ func (a *ExtrasApiService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest)
 
 type ApiExtrasTagsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -22503,7 +22503,7 @@ Delete a tag object.
  @param id A unique integer value identifying this tag.
  @return ApiExtrasTagsDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasTagsDestroy(ctx context.Context, id int32) ApiExtrasTagsDestroyRequest {
+func (a *ExtrasAPIService) ExtrasTagsDestroy(ctx context.Context, id int32) ApiExtrasTagsDestroyRequest {
 	return ApiExtrasTagsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22512,14 +22512,14 @@ func (a *ExtrasApiService) ExtrasTagsDestroy(ctx context.Context, id int32) ApiE
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22592,7 +22592,7 @@ func (a *ExtrasApiService) ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyReques
 
 type ApiExtrasTagsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	color *[]string
 	colorEmpty *bool
 	colorIc *[]string
@@ -23073,7 +23073,7 @@ Get a list of tag objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasTagsListRequest
 */
-func (a *ExtrasApiService) ExtrasTagsList(ctx context.Context) ApiExtrasTagsListRequest {
+func (a *ExtrasAPIService) ExtrasTagsList(ctx context.Context) ApiExtrasTagsListRequest {
 	return ApiExtrasTagsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23082,7 +23082,7 @@ func (a *ExtrasApiService) ExtrasTagsList(ctx context.Context) ApiExtrasTagsList
 
 // Execute executes the request
 //  @return PaginatedTagList
-func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*PaginatedTagList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*PaginatedTagList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -23090,7 +23090,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		localVarReturnValue  *PaginatedTagList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23106,7 +23106,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color", t, "multi")
@@ -23120,7 +23120,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ic", t, "multi")
@@ -23131,7 +23131,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__ie", t, "multi")
@@ -23142,7 +23142,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__iew", t, "multi")
@@ -23153,7 +23153,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__isw", t, "multi")
@@ -23164,7 +23164,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__n", t, "multi")
@@ -23175,7 +23175,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nic", t, "multi")
@@ -23186,7 +23186,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nie", t, "multi")
@@ -23197,7 +23197,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__niew", t, "multi")
@@ -23208,7 +23208,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "color__nisw", t, "multi")
@@ -23219,7 +23219,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type", t, "multi")
@@ -23230,7 +23230,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
@@ -23241,7 +23241,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -23252,7 +23252,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -23263,7 +23263,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -23274,7 +23274,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -23285,7 +23285,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -23296,7 +23296,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -23307,7 +23307,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -23321,7 +23321,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -23335,7 +23335,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -23346,7 +23346,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -23357,7 +23357,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -23368,7 +23368,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -23379,7 +23379,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -23390,7 +23390,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -23401,7 +23401,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -23412,7 +23412,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -23423,7 +23423,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -23434,7 +23434,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "for_object_type_id", t, "multi")
@@ -23445,7 +23445,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -23459,7 +23459,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -23470,7 +23470,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -23481,7 +23481,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -23492,7 +23492,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -23503,7 +23503,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -23514,7 +23514,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -23525,7 +23525,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -23536,7 +23536,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -23547,7 +23547,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -23558,7 +23558,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -23569,7 +23569,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -23580,7 +23580,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -23597,7 +23597,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -23611,7 +23611,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -23622,7 +23622,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -23633,7 +23633,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -23644,7 +23644,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -23655,7 +23655,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -23666,7 +23666,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -23677,7 +23677,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -23688,7 +23688,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -23699,7 +23699,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -23710,7 +23710,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", t, "multi")
@@ -23721,7 +23721,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", t, "multi")
@@ -23741,7 +23741,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -23755,7 +23755,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -23766,7 +23766,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -23777,7 +23777,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -23788,7 +23788,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -23799,7 +23799,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -23810,7 +23810,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -23821,7 +23821,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -23832,7 +23832,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -23843,7 +23843,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -23922,7 +23922,7 @@ func (a *ExtrasApiService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 
 type ApiExtrasTagsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedTagRequest *PatchedTagRequest
 }
@@ -23945,7 +23945,7 @@ Patch a tag object.
  @param id A unique integer value identifying this tag.
  @return ApiExtrasTagsPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasTagsPartialUpdate(ctx context.Context, id int32) ApiExtrasTagsPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasTagsPartialUpdate(ctx context.Context, id int32) ApiExtrasTagsPartialUpdateRequest {
 	return ApiExtrasTagsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23955,7 +23955,7 @@ func (a *ExtrasApiService) ExtrasTagsPartialUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Tag
-func (a *ExtrasApiService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartialUpdateRequest) (*Tag, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartialUpdateRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -23963,7 +23963,7 @@ func (a *ExtrasApiService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartial
 		localVarReturnValue  *Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24047,7 +24047,7 @@ func (a *ExtrasApiService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartial
 
 type ApiExtrasTagsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -24064,7 +24064,7 @@ Get a tag object.
  @param id A unique integer value identifying this tag.
  @return ApiExtrasTagsRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasTagsRetrieve(ctx context.Context, id int32) ApiExtrasTagsRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasTagsRetrieve(ctx context.Context, id int32) ApiExtrasTagsRetrieveRequest {
 	return ApiExtrasTagsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24074,7 +24074,7 @@ func (a *ExtrasApiService) ExtrasTagsRetrieve(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return Tag
-func (a *ExtrasApiService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequest) (*Tag, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -24082,7 +24082,7 @@ func (a *ExtrasApiService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequ
 		localVarReturnValue  *Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24164,7 +24164,7 @@ func (a *ExtrasApiService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequ
 
 type ApiExtrasTagsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	tagRequest *TagRequest
 }
@@ -24187,7 +24187,7 @@ Put a tag object.
  @param id A unique integer value identifying this tag.
  @return ApiExtrasTagsUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasTagsUpdate(ctx context.Context, id int32) ApiExtrasTagsUpdateRequest {
+func (a *ExtrasAPIService) ExtrasTagsUpdate(ctx context.Context, id int32) ApiExtrasTagsUpdateRequest {
 	return ApiExtrasTagsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24197,7 +24197,7 @@ func (a *ExtrasApiService) ExtrasTagsUpdate(ctx context.Context, id int32) ApiEx
 
 // Execute executes the request
 //  @return Tag
-func (a *ExtrasApiService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest) (*Tag, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -24205,7 +24205,7 @@ func (a *ExtrasApiService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest)
 		localVarReturnValue  *Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasTagsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasTagsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24292,7 +24292,7 @@ func (a *ExtrasApiService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest)
 
 type ApiExtrasWebhooksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	webhookRequest *[]WebhookRequest
 }
 
@@ -24313,7 +24313,7 @@ Delete a list of webhook objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasWebhooksBulkDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExtrasWebhooksBulkDestroyRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExtrasWebhooksBulkDestroyRequest {
 	return ApiExtrasWebhooksBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24321,14 +24321,14 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExt
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksBulkDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24405,7 +24405,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksB
 
 type ApiExtrasWebhooksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	webhookRequest *[]WebhookRequest
 }
 
@@ -24426,7 +24426,7 @@ Patch a list of webhook objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasWebhooksBulkPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksBulkPartialUpdate(ctx context.Context) ApiExtrasWebhooksBulkPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdate(ctx context.Context) ApiExtrasWebhooksBulkPartialUpdateRequest {
 	return ApiExtrasWebhooksBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24435,7 +24435,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkPartialUpdate(ctx context.Context) 
 
 // Execute executes the request
 //  @return []Webhook
-func (a *ExtrasApiService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWebhooksBulkPartialUpdateRequest) ([]Webhook, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWebhooksBulkPartialUpdateRequest) ([]Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -24443,7 +24443,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWeb
 		localVarReturnValue  []Webhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24529,7 +24529,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWeb
 
 type ApiExtrasWebhooksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	webhookRequest *[]WebhookRequest
 }
 
@@ -24550,7 +24550,7 @@ Put a list of webhook objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasWebhooksBulkUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtrasWebhooksBulkUpdateRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtrasWebhooksBulkUpdateRequest {
 	return ApiExtrasWebhooksBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24559,7 +24559,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtr
 
 // Execute executes the request
 //  @return []Webhook
-func (a *ExtrasApiService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBulkUpdateRequest) ([]Webhook, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBulkUpdateRequest) ([]Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -24567,7 +24567,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBu
 		localVarReturnValue  []Webhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24653,7 +24653,7 @@ func (a *ExtrasApiService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBu
 
 type ApiExtrasWebhooksCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	webhookRequest *WebhookRequest
 }
 
@@ -24674,7 +24674,7 @@ Post a list of webhook objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasWebhooksCreateRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWebhooksCreateRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWebhooksCreateRequest {
 	return ApiExtrasWebhooksCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24683,7 +24683,7 @@ func (a *ExtrasApiService) ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWe
 
 // Execute executes the request
 //  @return Webhook
-func (a *ExtrasApiService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreateRequest) (*Webhook, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreateRequest) (*Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -24691,7 +24691,7 @@ func (a *ExtrasApiService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreate
 		localVarReturnValue  *Webhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24777,7 +24777,7 @@ func (a *ExtrasApiService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreate
 
 type ApiExtrasWebhooksDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -24794,7 +24794,7 @@ Delete a webhook object.
  @param id A unique integer value identifying this webhook.
  @return ApiExtrasWebhooksDestroyRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksDestroy(ctx context.Context, id int32) ApiExtrasWebhooksDestroyRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksDestroy(ctx context.Context, id int32) ApiExtrasWebhooksDestroyRequest {
 	return ApiExtrasWebhooksDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24803,14 +24803,14 @@ func (a *ExtrasApiService) ExtrasWebhooksDestroy(ctx context.Context, id int32) 
 }
 
 // Execute executes the request
-func (a *ExtrasApiService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestroyRequest) (*http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24883,7 +24883,7 @@ func (a *ExtrasApiService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestr
 
 type ApiExtrasWebhooksListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	caFilePath *[]string
 	caFilePathEmpty *bool
 	caFilePathIc *[]string
@@ -25568,7 +25568,7 @@ Get a list of webhook objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiExtrasWebhooksListRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksList(ctx context.Context) ApiExtrasWebhooksListRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksList(ctx context.Context) ApiExtrasWebhooksListRequest {
 	return ApiExtrasWebhooksListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25577,7 +25577,7 @@ func (a *ExtrasApiService) ExtrasWebhooksList(ctx context.Context) ApiExtrasWebh
 
 // Execute executes the request
 //  @return PaginatedWebhookList
-func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequest) (*PaginatedWebhookList, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequest) (*PaginatedWebhookList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -25585,7 +25585,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		localVarReturnValue  *PaginatedWebhookList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25601,7 +25601,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", t, "multi")
@@ -25615,7 +25615,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", t, "multi")
@@ -25626,7 +25626,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", t, "multi")
@@ -25637,7 +25637,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", t, "multi")
@@ -25648,7 +25648,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", t, "multi")
@@ -25659,7 +25659,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", t, "multi")
@@ -25670,7 +25670,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", t, "multi")
@@ -25681,7 +25681,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", t, "multi")
@@ -25692,7 +25692,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", t, "multi")
@@ -25703,7 +25703,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", t, "multi")
@@ -25714,7 +25714,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id", t, "multi")
@@ -25725,7 +25725,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__empty", t, "multi")
@@ -25736,7 +25736,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gt", t, "multi")
@@ -25747,7 +25747,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__gte", t, "multi")
@@ -25758,7 +25758,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lt", t, "multi")
@@ -25769,7 +25769,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__lte", t, "multi")
@@ -25780,7 +25780,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "content_type_id__n", t, "multi")
@@ -25821,7 +25821,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -25832,7 +25832,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -25843,7 +25843,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -25854,7 +25854,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -25865,7 +25865,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -25876,7 +25876,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -25887,7 +25887,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -25904,7 +25904,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", t, "multi")
@@ -25918,7 +25918,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", t, "multi")
@@ -25929,7 +25929,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", t, "multi")
@@ -25940,7 +25940,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", t, "multi")
@@ -25951,7 +25951,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", t, "multi")
@@ -25962,7 +25962,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", t, "multi")
@@ -25973,7 +25973,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", t, "multi")
@@ -25984,7 +25984,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", t, "multi")
@@ -25995,7 +25995,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", t, "multi")
@@ -26006,7 +26006,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", t, "multi")
@@ -26017,7 +26017,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", t, "multi")
@@ -26028,7 +26028,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", t, "multi")
@@ -26039,7 +26039,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -26053,7 +26053,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -26064,7 +26064,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -26075,7 +26075,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -26086,7 +26086,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -26097,7 +26097,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -26108,7 +26108,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -26119,7 +26119,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -26130,7 +26130,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -26141,7 +26141,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -26152,7 +26152,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -26163,7 +26163,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -26174,7 +26174,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -26191,7 +26191,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -26205,7 +26205,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -26216,7 +26216,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -26227,7 +26227,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -26238,7 +26238,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -26249,7 +26249,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -26260,7 +26260,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -26271,7 +26271,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -26282,7 +26282,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -26293,7 +26293,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -26310,7 +26310,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", t, "multi")
@@ -26324,7 +26324,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__ic", t, "multi")
@@ -26335,7 +26335,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__ie", t, "multi")
@@ -26346,7 +26346,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__iew", t, "multi")
@@ -26357,7 +26357,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__isw", t, "multi")
@@ -26368,7 +26368,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__n", t, "multi")
@@ -26379,7 +26379,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nic", t, "multi")
@@ -26390,7 +26390,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nie", t, "multi")
@@ -26401,7 +26401,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__niew", t, "multi")
@@ -26412,7 +26412,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url__nisw", t, "multi")
@@ -26426,7 +26426,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret", t, "multi")
@@ -26440,7 +26440,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", t, "multi")
@@ -26451,7 +26451,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", t, "multi")
@@ -26462,7 +26462,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", t, "multi")
@@ -26473,7 +26473,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", t, "multi")
@@ -26484,7 +26484,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", t, "multi")
@@ -26495,7 +26495,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", t, "multi")
@@ -26506,7 +26506,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", t, "multi")
@@ -26517,7 +26517,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", t, "multi")
@@ -26528,7 +26528,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", t, "multi")
@@ -26542,7 +26542,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -26553,7 +26553,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -26647,7 +26647,7 @@ func (a *ExtrasApiService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 
 type ApiExtrasWebhooksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	patchedWebhookRequest *PatchedWebhookRequest
 }
@@ -26670,7 +26670,7 @@ Patch a webhook object.
  @param id A unique integer value identifying this webhook.
  @return ApiExtrasWebhooksPartialUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksPartialUpdate(ctx context.Context, id int32) ApiExtrasWebhooksPartialUpdateRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdate(ctx context.Context, id int32) ApiExtrasWebhooksPartialUpdateRequest {
 	return ApiExtrasWebhooksPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -26680,7 +26680,7 @@ func (a *ExtrasApiService) ExtrasWebhooksPartialUpdate(ctx context.Context, id i
 
 // Execute executes the request
 //  @return Webhook
-func (a *ExtrasApiService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhooksPartialUpdateRequest) (*Webhook, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhooksPartialUpdateRequest) (*Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -26688,7 +26688,7 @@ func (a *ExtrasApiService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhook
 		localVarReturnValue  *Webhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -26772,7 +26772,7 @@ func (a *ExtrasApiService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhook
 
 type ApiExtrasWebhooksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 }
 
@@ -26789,7 +26789,7 @@ Get a webhook object.
  @param id A unique integer value identifying this webhook.
  @return ApiExtrasWebhooksRetrieveRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksRetrieve(ctx context.Context, id int32) ApiExtrasWebhooksRetrieveRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksRetrieve(ctx context.Context, id int32) ApiExtrasWebhooksRetrieveRequest {
 	return ApiExtrasWebhooksRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -26799,7 +26799,7 @@ func (a *ExtrasApiService) ExtrasWebhooksRetrieve(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return Webhook
-func (a *ExtrasApiService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetrieveRequest) (*Webhook, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetrieveRequest) (*Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -26807,7 +26807,7 @@ func (a *ExtrasApiService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetr
 		localVarReturnValue  *Webhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -26889,7 +26889,7 @@ func (a *ExtrasApiService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetr
 
 type ApiExtrasWebhooksUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasApiService
+	ApiService *ExtrasAPIService
 	id int32
 	webhookRequest *WebhookRequest
 }
@@ -26912,7 +26912,7 @@ Put a webhook object.
  @param id A unique integer value identifying this webhook.
  @return ApiExtrasWebhooksUpdateRequest
 */
-func (a *ExtrasApiService) ExtrasWebhooksUpdate(ctx context.Context, id int32) ApiExtrasWebhooksUpdateRequest {
+func (a *ExtrasAPIService) ExtrasWebhooksUpdate(ctx context.Context, id int32) ApiExtrasWebhooksUpdateRequest {
 	return ApiExtrasWebhooksUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -26922,7 +26922,7 @@ func (a *ExtrasApiService) ExtrasWebhooksUpdate(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return Webhook
-func (a *ExtrasApiService) ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdateRequest) (*Webhook, *http.Response, error) {
+func (a *ExtrasAPIService) ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdateRequest) (*Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -26930,7 +26930,7 @@ func (a *ExtrasApiService) ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdate
 		localVarReturnValue  *Webhook
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasApiService.ExtrasWebhooksUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -32,10 +32,7 @@ type InventoryItemRole struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	InventoryitemCount int32 `json:"inventoryitem_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InventoryItemRole InventoryItemRole
 
 // NewInventoryItemRole instantiates a new InventoryItemRole object
 // This constructor will assign default values to properties that have it defined,
@@ -396,9 +393,9 @@ func (o InventoryItemRole) MarshalJSON() ([]byte, error) {
 
 func (o InventoryItemRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Color) {
@@ -415,41 +412,8 @@ func (o InventoryItemRole) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: inventoryitem_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["inventoryitem_count"] = o.InventoryitemCount
 	return toSerialize, nil
-}
-
-func (o *InventoryItemRole) UnmarshalJSON(bytes []byte) (err error) {
-	varInventoryItemRole := _InventoryItemRole{}
-
-	if err = json.Unmarshal(bytes, &varInventoryItemRole); err == nil {
-		*o = InventoryItemRole(varInventoryItemRole)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "inventoryitem_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInventoryItemRole struct {

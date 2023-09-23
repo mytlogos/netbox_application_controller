@@ -95938,10 +95938,10 @@ components:
           key: ""
         created: 2000-01-23T04:56:07.000+00:00
         display: display
-        name: name
-        id: 0
+        ram_limit: -706837403899411000000000000000000000000000000000
+        idle_cpu: idle_cpu
+        version: version
         url: https://openapi-generator.tech
-        status: running
         tags:
         - color: color
           display: display
@@ -95955,6 +95955,14 @@ components:
           id: 5
           url: https://openapi-generator.tech
           slug: slug
+        application_manager: none
+        cpu_limit: cpu_limit
+        name: name
+        id: 0
+        last_version_upgrade: 2000-01-23T04:56:07.000+00:00
+        device: 6
+        status: running
+        group: 5
       properties:
         id:
           readOnly: true
@@ -96002,6 +96010,53 @@ components:
         url:
           format: uri
           readOnly: true
+          type: string
+        device:
+          nullable: true
+          type: integer
+        cpu_limit:
+          description: Maximum CPU Usage in cores or total percent (100% * number
+            of cores) - 0 for no limit
+          maxLength: 10
+          type: string
+        ram_limit:
+          description: Maximum RAM Usage in MegaBytes - 0 for no limit
+          exclusiveMaximum: true
+          exclusiveMinimum: true
+          format: double
+          maximum: 1000000000000000000000000000000000000000000000000
+          minimum: -1000000000000000000000000000000000000000000000000
+          type: number
+        idle_cpu:
+          description: Idle CPU Usage in cores or total percent (100% * number of
+            cores) - 0 for unknown or none
+          maxLength: 10
+          title: Idle CPU Usage
+          type: string
+        application_manager:
+          description: |-
+            * `none` - None
+            * `systemd` - Systemd
+            * `docker` - Docker
+            * `podman` - Podman
+            * `kubernetes` - Kubernetes
+          enum:
+          - none
+          - systemd
+          - docker
+          - podman
+          - kubernetes
+          type: string
+        group:
+          nullable: true
+          type: integer
+        version:
+          description: Version of the Application
+          maxLength: 200
+          type: string
+        last_version_upgrade:
+          format: date-time
+          nullable: true
           type: string
       required:
       - created
@@ -96236,12 +96291,14 @@ components:
       example:
         last_updated: 2000-01-23T04:56:07.000+00:00
         comments: comments
-        port: 39501
         custom_fields:
           key: ""
         created: 2000-01-23T04:56:07.000+00:00
         display: display
-        id: 0
+        transport_security: none
+        application_protocols:
+        - 5
+        - 5
         url: https://openapi-generator.tech
         tags:
         - color: color
@@ -96256,6 +96313,12 @@ components:
           id: 5
           url: https://openapi-generator.tech
           slug: slug
+        ipaddresses:
+        - 1
+        - 1
+        application: 5
+        port: 39501
+        id: 0
       properties:
         id:
           readOnly: true
@@ -96290,7 +96353,31 @@ components:
           format: uri
           readOnly: true
           type: string
+        ipaddresses:
+          items:
+            title: IP addresses
+            type: integer
+          title: IP addresses
+          type: array
+        application_protocols:
+          items:
+            type: integer
+          type: array
+        application:
+          type: integer
+        transport_security:
+          description: |-
+            * `none` - None
+            * `udp` - SSL
+            * `quic` - Starttls
+          enum:
+          - none
+          - udp
+          - quic
+          type: string
       required:
+      - application
+      - application_protocols
       - created
       - display
       - id
@@ -96302,9 +96389,17 @@ components:
       description: Adds support for custom fields and tags.
       example:
         comments: comments
+        ipaddresses:
+        - 6
+        - 6
+        application: 5
         port: 5249
         custom_fields:
           key: ""
+        transport_security: none
+        application_protocols:
+        - 1
+        - 1
         tags:
         - color: color
           name: name
@@ -96326,7 +96421,31 @@ components:
         custom_fields:
           additionalProperties: {}
           type: object
+        ipaddresses:
+          items:
+            title: IP addresses
+            type: integer
+          title: IP addresses
+          type: array
+        application_protocols:
+          items:
+            type: integer
+          type: array
+        application:
+          type: integer
+        transport_security:
+          description: |-
+            * `none` - None
+            * `udp` - SSL
+            * `quic` - Starttls
+          enum:
+          - none
+          - udp
+          - quic
+          type: string
       required:
+      - application
+      - application_protocols
       - port
       type: object
     ApplicationProtocol:
@@ -96437,8 +96556,9 @@ components:
         comments: comments
         custom_fields:
           key: ""
-        name: name
-        status: running
+        ram_limit: 205491236614080630000000000000000000000000000000
+        idle_cpu: idle_cpu
+        version: version
         tags:
         - color: color
           name: name
@@ -96446,6 +96566,13 @@ components:
         - color: color
           name: name
           slug: slug
+        application_manager: none
+        cpu_limit: cpu_limit
+        name: name
+        last_version_upgrade: 2000-01-23T04:56:07.000+00:00
+        device: 0
+        status: running
+        group: 1
       properties:
         name:
           description: Name of the Application
@@ -96475,6 +96602,55 @@ components:
         custom_fields:
           additionalProperties: {}
           type: object
+        device:
+          nullable: true
+          type: integer
+        cpu_limit:
+          description: Maximum CPU Usage in cores or total percent (100% * number
+            of cores) - 0 for no limit
+          maxLength: 10
+          minLength: 1
+          type: string
+        ram_limit:
+          description: Maximum RAM Usage in MegaBytes - 0 for no limit
+          exclusiveMaximum: true
+          exclusiveMinimum: true
+          format: double
+          maximum: 1000000000000000000000000000000000000000000000000
+          minimum: -1000000000000000000000000000000000000000000000000
+          type: number
+        idle_cpu:
+          description: Idle CPU Usage in cores or total percent (100% * number of
+            cores) - 0 for unknown or none
+          maxLength: 10
+          minLength: 1
+          title: Idle CPU Usage
+          type: string
+        application_manager:
+          description: |-
+            * `none` - None
+            * `systemd` - Systemd
+            * `docker` - Docker
+            * `podman` - Podman
+            * `kubernetes` - Kubernetes
+          enum:
+          - none
+          - systemd
+          - docker
+          - podman
+          - kubernetes
+          type: string
+        group:
+          nullable: true
+          type: integer
+        version:
+          description: Version of the Application
+          maxLength: 200
+          type: string
+        last_version_upgrade:
+          format: date-time
+          nullable: true
+          type: string
       required:
       - name
       type: object
@@ -111201,10 +111377,10 @@ components:
             key: ""
           created: 2000-01-23T04:56:07.000+00:00
           display: display
-          name: name
-          id: 0
+          ram_limit: -706837403899411000000000000000000000000000000000
+          idle_cpu: idle_cpu
+          version: version
           url: https://openapi-generator.tech
-          status: running
           tags:
           - color: color
             display: display
@@ -111218,16 +111394,24 @@ components:
             id: 5
             url: https://openapi-generator.tech
             slug: slug
+          application_manager: none
+          cpu_limit: cpu_limit
+          name: name
+          id: 0
+          last_version_upgrade: 2000-01-23T04:56:07.000+00:00
+          device: 6
+          status: running
+          group: 5
         - last_updated: 2000-01-23T04:56:07.000+00:00
           comments: comments
           custom_fields:
             key: ""
           created: 2000-01-23T04:56:07.000+00:00
           display: display
-          name: name
-          id: 0
+          ram_limit: -706837403899411000000000000000000000000000000000
+          idle_cpu: idle_cpu
+          version: version
           url: https://openapi-generator.tech
-          status: running
           tags:
           - color: color
             display: display
@@ -111241,6 +111425,14 @@ components:
             id: 5
             url: https://openapi-generator.tech
             slug: slug
+          application_manager: none
+          cpu_limit: cpu_limit
+          name: name
+          id: 0
+          last_version_upgrade: 2000-01-23T04:56:07.000+00:00
+          device: 6
+          status: running
+          group: 5
       properties:
         count:
           example: 123
@@ -111268,12 +111460,14 @@ components:
         results:
         - last_updated: 2000-01-23T04:56:07.000+00:00
           comments: comments
-          port: 39501
           custom_fields:
             key: ""
           created: 2000-01-23T04:56:07.000+00:00
           display: display
-          id: 0
+          transport_security: none
+          application_protocols:
+          - 5
+          - 5
           url: https://openapi-generator.tech
           tags:
           - color: color
@@ -111288,14 +111482,22 @@ components:
             id: 5
             url: https://openapi-generator.tech
             slug: slug
+          ipaddresses:
+          - 1
+          - 1
+          application: 5
+          port: 39501
+          id: 0
         - last_updated: 2000-01-23T04:56:07.000+00:00
           comments: comments
-          port: 39501
           custom_fields:
             key: ""
           created: 2000-01-23T04:56:07.000+00:00
           display: display
-          id: 0
+          transport_security: none
+          application_protocols:
+          - 5
+          - 5
           url: https://openapi-generator.tech
           tags:
           - color: color
@@ -111310,6 +111512,12 @@ components:
             id: 5
             url: https://openapi-generator.tech
             slug: slug
+          ipaddresses:
+          - 1
+          - 1
+          application: 5
+          port: 39501
+          id: 0
       properties:
         count:
           example: 123
@@ -119900,9 +120108,17 @@ components:
       description: Adds support for custom fields and tags.
       example:
         comments: comments
+        ipaddresses:
+        - 6
+        - 6
+        application: 5
         port: 5249
         custom_fields:
           key: ""
+        transport_security: none
+        application_protocols:
+        - 1
+        - 1
         tags:
         - color: color
           name: name
@@ -119924,6 +120140,28 @@ components:
         custom_fields:
           additionalProperties: {}
           type: object
+        ipaddresses:
+          items:
+            title: IP addresses
+            type: integer
+          title: IP addresses
+          type: array
+        application_protocols:
+          items:
+            type: integer
+          type: array
+        application:
+          type: integer
+        transport_security:
+          description: |-
+            * `none` - None
+            * `udp` - SSL
+            * `quic` - Starttls
+          enum:
+          - none
+          - udp
+          - quic
+          type: string
       type: object
     PatchedApplicationProtocolRequest:
       description: Adds support for custom fields and tags.
@@ -119960,8 +120198,9 @@ components:
         comments: comments
         custom_fields:
           key: ""
-        name: name
-        status: running
+        ram_limit: 205491236614080630000000000000000000000000000000
+        idle_cpu: idle_cpu
+        version: version
         tags:
         - color: color
           name: name
@@ -119969,6 +120208,13 @@ components:
         - color: color
           name: name
           slug: slug
+        application_manager: none
+        cpu_limit: cpu_limit
+        name: name
+        last_version_upgrade: 2000-01-23T04:56:07.000+00:00
+        device: 0
+        status: running
+        group: 1
       properties:
         name:
           description: Name of the Application
@@ -119998,6 +120244,55 @@ components:
         custom_fields:
           additionalProperties: {}
           type: object
+        device:
+          nullable: true
+          type: integer
+        cpu_limit:
+          description: Maximum CPU Usage in cores or total percent (100% * number
+            of cores) - 0 for no limit
+          maxLength: 10
+          minLength: 1
+          type: string
+        ram_limit:
+          description: Maximum RAM Usage in MegaBytes - 0 for no limit
+          exclusiveMaximum: true
+          exclusiveMinimum: true
+          format: double
+          maximum: 1000000000000000000000000000000000000000000000000
+          minimum: -1000000000000000000000000000000000000000000000000
+          type: number
+        idle_cpu:
+          description: Idle CPU Usage in cores or total percent (100% * number of
+            cores) - 0 for unknown or none
+          maxLength: 10
+          minLength: 1
+          title: Idle CPU Usage
+          type: string
+        application_manager:
+          description: |-
+            * `none` - None
+            * `systemd` - Systemd
+            * `docker` - Docker
+            * `podman` - Podman
+            * `kubernetes` - Kubernetes
+          enum:
+          - none
+          - systemd
+          - docker
+          - podman
+          - kubernetes
+          type: string
+        group:
+          nullable: true
+          type: integer
+        version:
+          description: Version of the Application
+          maxLength: 200
+          type: string
+        last_version_upgrade:
+          format: date-time
+          nullable: true
+          type: string
       type: object
     PatchedCableTerminationRequest:
       description: Adds support for custom fields and tags.

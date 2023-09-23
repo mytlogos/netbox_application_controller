@@ -23,10 +23,7 @@ type NestedWirelessLink struct {
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Ssid *string `json:"ssid,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedWirelessLink NestedWirelessLink
 
 // NewNestedWirelessLink instantiates a new NestedWirelessLink object
 // This constructor will assign default values to properties that have it defined,
@@ -162,38 +159,13 @@ func (o NestedWirelessLink) MarshalJSON() ([]byte, error) {
 
 func (o NestedWirelessLink) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if !IsNil(o.Ssid) {
 		toSerialize["ssid"] = o.Ssid
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedWirelessLink) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedWirelessLink := _NestedWirelessLink{}
-
-	if err = json.Unmarshal(bytes, &varNestedWirelessLink); err == nil {
-		*o = NestedWirelessLink(varNestedWirelessLink)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "ssid")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedWirelessLink struct {

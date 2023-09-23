@@ -32,10 +32,7 @@ type RackRole struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	RackCount int32 `json:"rack_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RackRole RackRole
 
 // NewRackRole instantiates a new RackRole object
 // This constructor will assign default values to properties that have it defined,
@@ -396,9 +393,9 @@ func (o RackRole) MarshalJSON() ([]byte, error) {
 
 func (o RackRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Color) {
@@ -415,41 +412,8 @@ func (o RackRole) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: rack_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["rack_count"] = o.RackCount
 	return toSerialize, nil
-}
-
-func (o *RackRole) UnmarshalJSON(bytes []byte) (err error) {
-	varRackRole := _RackRole{}
-
-	if err = json.Unmarshal(bytes, &varRackRole); err == nil {
-		*o = RackRole(varRackRole)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "rack_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRackRole struct {

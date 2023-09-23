@@ -43,10 +43,7 @@ type Prefix struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	Children int32 `json:"children"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Prefix Prefix
 
 // NewPrefix instantiates a new Prefix object
 // This constructor will assign default values to properties that have it defined,
@@ -738,9 +735,9 @@ func (o Prefix) MarshalJSON() ([]byte, error) {
 
 func (o Prefix) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["family"] = o.Family
 	toSerialize["prefix"] = o.Prefix
 	if o.Site.IsSet() {
@@ -781,51 +778,9 @@ func (o Prefix) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: children is readOnly
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["children"] = o.Children
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *Prefix) UnmarshalJSON(bytes []byte) (err error) {
-	varPrefix := _Prefix{}
-
-	if err = json.Unmarshal(bytes, &varPrefix); err == nil {
-		*o = Prefix(varPrefix)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "vlan")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "is_pool")
-		delete(additionalProperties, "mark_utilized")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "children")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePrefix struct {

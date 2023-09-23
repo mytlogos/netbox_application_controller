@@ -33,10 +33,7 @@ type ObjectChange struct {
 	ChangedObject map[string]interface{} `json:"changed_object"`
 	PrechangeData map[string]interface{} `json:"prechange_data"`
 	PostchangeData map[string]interface{} `json:"postchange_data"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ObjectChange ObjectChange
 
 // NewObjectChange instantiates a new ObjectChange object
 // This constructor will assign default values to properties that have it defined,
@@ -396,15 +393,15 @@ func (o ObjectChange) MarshalJSON() ([]byte, error) {
 
 func (o ObjectChange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: time is readOnly
-	// skip: user is readOnly
-	// skip: user_name is readOnly
-	// skip: request_id is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["time"] = o.Time
+	toSerialize["user"] = o.User
+	toSerialize["user_name"] = o.UserName
+	toSerialize["request_id"] = o.RequestId
 	toSerialize["action"] = o.Action
-	// skip: changed_object_type is readOnly
+	toSerialize["changed_object_type"] = o.ChangedObjectType
 	toSerialize["changed_object_id"] = o.ChangedObjectId
 	if o.ChangedObject != nil {
 		toSerialize["changed_object"] = o.ChangedObject
@@ -415,41 +412,7 @@ func (o ObjectChange) ToMap() (map[string]interface{}, error) {
 	if o.PostchangeData != nil {
 		toSerialize["postchange_data"] = o.PostchangeData
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ObjectChange) UnmarshalJSON(bytes []byte) (err error) {
-	varObjectChange := _ObjectChange{}
-
-	if err = json.Unmarshal(bytes, &varObjectChange); err == nil {
-		*o = ObjectChange(varObjectChange)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "time")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "user_name")
-		delete(additionalProperties, "request_id")
-		delete(additionalProperties, "action")
-		delete(additionalProperties, "changed_object_type")
-		delete(additionalProperties, "changed_object_id")
-		delete(additionalProperties, "changed_object")
-		delete(additionalProperties, "prechange_data")
-		delete(additionalProperties, "postchange_data")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableObjectChange struct {

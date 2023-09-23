@@ -26,10 +26,7 @@ type FrontPortRearPort struct {
 	// Physical label
 	Label *string `json:"label,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _FrontPortRearPort FrontPortRearPort
 
 // NewFrontPortRearPort instantiates a new FrontPortRearPort object
 // This constructor will assign default values to properties that have it defined,
@@ -222,9 +219,9 @@ func (o FrontPortRearPort) MarshalJSON() ([]byte, error) {
 
 func (o FrontPortRearPort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
@@ -232,34 +229,7 @@ func (o FrontPortRearPort) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *FrontPortRearPort) UnmarshalJSON(bytes []byte) (err error) {
-	varFrontPortRearPort := _FrontPortRearPort{}
-
-	if err = json.Unmarshal(bytes, &varFrontPortRearPort); err == nil {
-		*o = FrontPortRearPort(varFrontPortRearPort)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableFrontPortRearPort struct {

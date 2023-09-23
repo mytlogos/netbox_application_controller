@@ -32,10 +32,7 @@ type ObjectPermission struct {
 	Actions []string `json:"actions"`
 	// Queryset filter matching the applicable objects of the selected type(s)
 	Constraints map[string]interface{} `json:"constraints,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ObjectPermission ObjectPermission
 
 // NewObjectPermission instantiates a new ObjectPermission object
 // This constructor will assign default values to properties that have it defined,
@@ -375,9 +372,9 @@ func (o ObjectPermission) MarshalJSON() ([]byte, error) {
 
 func (o ObjectPermission) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -396,39 +393,7 @@ func (o ObjectPermission) ToMap() (map[string]interface{}, error) {
 	if o.Constraints != nil {
 		toSerialize["constraints"] = o.Constraints
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ObjectPermission) UnmarshalJSON(bytes []byte) (err error) {
-	varObjectPermission := _ObjectPermission{}
-
-	if err = json.Unmarshal(bytes, &varObjectPermission); err == nil {
-		*o = ObjectPermission(varObjectPermission)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "object_types")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "users")
-		delete(additionalProperties, "actions")
-		delete(additionalProperties, "constraints")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableObjectPermission struct {

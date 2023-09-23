@@ -41,10 +41,7 @@ type ExportTemplate struct {
 	DataSynced NullableTime `json:"data_synced"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ExportTemplate ExportTemplate
 
 // NewExportTemplate instantiates a new ExportTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -514,9 +511,9 @@ func (o ExportTemplate) MarshalJSON() ([]byte, error) {
 
 func (o ExportTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["content_types"] = o.ContentTypes
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
@@ -535,49 +532,12 @@ func (o ExportTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DataSource) {
 		toSerialize["data_source"] = o.DataSource
 	}
-	// skip: data_path is readOnly
-	// skip: data_file is readOnly
+	toSerialize["data_path"] = o.DataPath
+	toSerialize["data_file"] = o.DataFile
 	toSerialize["data_synced"] = o.DataSynced.Get()
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ExportTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varExportTemplate := _ExportTemplate{}
-
-	if err = json.Unmarshal(bytes, &varExportTemplate); err == nil {
-		*o = ExportTemplate(varExportTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "template_code")
-		delete(additionalProperties, "mime_type")
-		delete(additionalProperties, "file_extension")
-		delete(additionalProperties, "as_attachment")
-		delete(additionalProperties, "data_source")
-		delete(additionalProperties, "data_path")
-		delete(additionalProperties, "data_file")
-		delete(additionalProperties, "data_synced")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableExportTemplate struct {

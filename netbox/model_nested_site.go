@@ -25,10 +25,7 @@ type NestedSite struct {
 	// Full name of the site
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedSite NestedSite
 
 // NewNestedSite instantiates a new NestedSite object
 // This constructor will assign default values to properties that have it defined,
@@ -182,38 +179,12 @@ func (o NestedSite) MarshalJSON() ([]byte, error) {
 
 func (o NestedSite) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedSite) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedSite := _NestedSite{}
-
-	if err = json.Unmarshal(bytes, &varNestedSite); err == nil {
-		*o = NestedSite(varNestedSite)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedSite struct {

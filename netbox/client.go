@@ -49,29 +49,29 @@ type APIClient struct {
 
 	// API Services
 
-	CircuitsApi *CircuitsApiService
+	CircuitsAPI *CircuitsAPIService
 
-	CoreApi *CoreApiService
+	CoreAPI *CoreAPIService
 
-	DcimApi *DcimApiService
+	DcimAPI *DcimAPIService
 
-	ExtrasApi *ExtrasApiService
+	ExtrasAPI *ExtrasAPIService
 
-	IpamApi *IpamApiService
+	IpamAPI *IpamAPIService
 
-	PluginsApi *PluginsApiService
+	PluginsAPI *PluginsAPIService
 
-	SchemaApi *SchemaApiService
+	SchemaAPI *SchemaAPIService
 
-	StatusApi *StatusApiService
+	StatusAPI *StatusAPIService
 
-	TenancyApi *TenancyApiService
+	TenancyAPI *TenancyAPIService
 
-	UsersApi *UsersApiService
+	UsersAPI *UsersAPIService
 
-	VirtualizationApi *VirtualizationApiService
+	VirtualizationAPI *VirtualizationAPIService
 
-	WirelessApi *WirelessApiService
+	WirelessAPI *WirelessAPIService
 }
 
 type service struct {
@@ -90,18 +90,18 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.CircuitsApi = (*CircuitsApiService)(&c.common)
-	c.CoreApi = (*CoreApiService)(&c.common)
-	c.DcimApi = (*DcimApiService)(&c.common)
-	c.ExtrasApi = (*ExtrasApiService)(&c.common)
-	c.IpamApi = (*IpamApiService)(&c.common)
-	c.PluginsApi = (*PluginsApiService)(&c.common)
-	c.SchemaApi = (*SchemaApiService)(&c.common)
-	c.StatusApi = (*StatusApiService)(&c.common)
-	c.TenancyApi = (*TenancyApiService)(&c.common)
-	c.UsersApi = (*UsersApiService)(&c.common)
-	c.VirtualizationApi = (*VirtualizationApiService)(&c.common)
-	c.WirelessApi = (*WirelessApiService)(&c.common)
+	c.CircuitsAPI = (*CircuitsAPIService)(&c.common)
+	c.CoreAPI = (*CoreAPIService)(&c.common)
+	c.DcimAPI = (*DcimAPIService)(&c.common)
+	c.ExtrasAPI = (*ExtrasAPIService)(&c.common)
+	c.IpamAPI = (*IpamAPIService)(&c.common)
+	c.PluginsAPI = (*PluginsAPIService)(&c.common)
+	c.SchemaAPI = (*SchemaAPIService)(&c.common)
+	c.StatusAPI = (*StatusAPIService)(&c.common)
+	c.TenancyAPI = (*TenancyAPIService)(&c.common)
+	c.UsersAPI = (*UsersAPIService)(&c.common)
+	c.VirtualizationAPI = (*VirtualizationAPIService)(&c.common)
+	c.WirelessAPI = (*WirelessAPIService)(&c.common)
 
 	return c
 }
@@ -176,12 +176,7 @@ func parameterValueToString( obj interface{}, key string ) string {
 // parameterAddToHeaderOrQuery adds the provided object to the request header or url query
 // supporting deep object syntax
 func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix string, obj interface{}, collectionType string) {
-	var v reflect.Value
-	if refValue, ok := obj.(reflect.Value); ok {
-		v = refValue
-	} else {
-		v = reflect.ValueOf(obj)
-	}
+	var v = reflect.ValueOf(obj)
 	var value = ""
 	if v == reflect.ValueOf(nil) {
 		value = "null"
@@ -474,6 +469,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 			return
 		}
 		_, err = f.Seek(0, io.SeekStart)
+		err = os.Remove(f.Name())
 		return
 	}
 	if f, ok := v.(**os.File); ok {
@@ -486,6 +482,7 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 			return
 		}
 		_, err = (*f).Seek(0, io.SeekStart)
+		err = os.Remove((*f).Name())
 		return
 	}
 	if xmlCheck.MatchString(contentType) {
@@ -562,7 +559,11 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 	} else if jsonCheck.MatchString(contentType) {
 		err = json.NewEncoder(bodyBuf).Encode(body)
 	} else if xmlCheck.MatchString(contentType) {
-		err = xml.NewEncoder(bodyBuf).Encode(body)
+		var bs []byte
+		bs, err = xml.Marshal(body)
+		if err == nil {
+			bodyBuf.Write(bs)
+		}
 	}
 
 	if err != nil {

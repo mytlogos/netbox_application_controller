@@ -22,10 +22,7 @@ type CustomFieldType struct {
 	// * `text` - Text * `longtext` - Text (long) * `integer` - Integer * `decimal` - Decimal * `boolean` - Boolean (true/false) * `date` - Date * `datetime` - Date & time * `url` - URL * `json` - JSON * `select` - Selection * `multiselect` - Multiple selection * `object` - Object * `multiobject` - Multiple objects
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomFieldType CustomFieldType
 
 // NewCustomFieldType instantiates a new CustomFieldType object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o CustomFieldType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomFieldType) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomFieldType := _CustomFieldType{}
-
-	if err = json.Unmarshal(bytes, &varCustomFieldType); err == nil {
-		*o = CustomFieldType(varCustomFieldType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomFieldType struct {

@@ -73,10 +73,7 @@ type Device struct {
 	DeviceBayCount int32 `json:"device_bay_count"`
 	ModuleBayCount int32 `json:"module_bay_count"`
 	InventoryItemCount int32 `json:"inventory_item_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Device Device
 
 // NewDevice instantiates a new Device object
 // This constructor will assign default values to properties that have it defined,
@@ -1637,9 +1634,9 @@ func (o Device) MarshalJSON() ([]byte, error) {
 
 func (o Device) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
@@ -1677,14 +1674,14 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if o.Longitude.IsSet() {
 		toSerialize["longitude"] = o.Longitude.Get()
 	}
-	// skip: parent_device is readOnly
+	toSerialize["parent_device"] = o.ParentDevice
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if !IsNil(o.Airflow) {
 		toSerialize["airflow"] = o.Airflow
 	}
-	// skip: primary_ip is readOnly
+	toSerialize["primary_ip"] = o.PrimaryIp
 	if o.PrimaryIp4.IsSet() {
 		toSerialize["primary_ip4"] = o.PrimaryIp4.Get()
 	}
@@ -1726,85 +1723,17 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: console_port_count is readOnly
-	// skip: console_server_port_count is readOnly
-	// skip: power_port_count is readOnly
-	// skip: power_outlet_count is readOnly
-	// skip: interface_count is readOnly
-	// skip: front_port_count is readOnly
-	// skip: rear_port_count is readOnly
-	// skip: device_bay_count is readOnly
-	// skip: module_bay_count is readOnly
-	// skip: inventory_item_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["console_port_count"] = o.ConsolePortCount
+	toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
+	toSerialize["power_port_count"] = o.PowerPortCount
+	toSerialize["power_outlet_count"] = o.PowerOutletCount
+	toSerialize["interface_count"] = o.InterfaceCount
+	toSerialize["front_port_count"] = o.FrontPortCount
+	toSerialize["rear_port_count"] = o.RearPortCount
+	toSerialize["device_bay_count"] = o.DeviceBayCount
+	toSerialize["module_bay_count"] = o.ModuleBayCount
+	toSerialize["inventory_item_count"] = o.InventoryItemCount
 	return toSerialize, nil
-}
-
-func (o *Device) UnmarshalJSON(bytes []byte) (err error) {
-	varDevice := _Device{}
-
-	if err = json.Unmarshal(bytes, &varDevice); err == nil {
-		*o = Device(varDevice)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "device_role")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "rack")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "face")
-		delete(additionalProperties, "latitude")
-		delete(additionalProperties, "longitude")
-		delete(additionalProperties, "parent_device")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "airflow")
-		delete(additionalProperties, "primary_ip")
-		delete(additionalProperties, "primary_ip4")
-		delete(additionalProperties, "primary_ip6")
-		delete(additionalProperties, "oob_ip")
-		delete(additionalProperties, "cluster")
-		delete(additionalProperties, "virtual_chassis")
-		delete(additionalProperties, "vc_position")
-		delete(additionalProperties, "vc_priority")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "config_template")
-		delete(additionalProperties, "local_context_data")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "console_port_count")
-		delete(additionalProperties, "console_server_port_count")
-		delete(additionalProperties, "power_port_count")
-		delete(additionalProperties, "power_outlet_count")
-		delete(additionalProperties, "interface_count")
-		delete(additionalProperties, "front_port_count")
-		delete(additionalProperties, "rear_port_count")
-		delete(additionalProperties, "device_bay_count")
-		delete(additionalProperties, "module_bay_count")
-		delete(additionalProperties, "inventory_item_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDevice struct {

@@ -33,10 +33,7 @@ type Region struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	SiteCount int32 `json:"site_count"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Region Region
 
 // NewRegion instantiates a new Region object
 // This constructor will assign default values to properties that have it defined,
@@ -432,9 +429,9 @@ func (o Region) MarshalJSON() ([]byte, error) {
 
 func (o Region) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Parent.IsSet() {
@@ -451,43 +448,9 @@ func (o Region) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: site_count is readOnly
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["site_count"] = o.SiteCount
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *Region) UnmarshalJSON(bytes []byte) (err error) {
-	varRegion := _Region{}
-
-	if err = json.Unmarshal(bytes, &varRegion); err == nil {
-		*o = Region(varRegion)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "site_count")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRegion struct {

@@ -28,10 +28,7 @@ type PatchedWritableDeviceRoleRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableDeviceRoleRequest PatchedWritableDeviceRoleRequest
 
 // NewPatchedWritableDeviceRoleRequest instantiates a new PatchedWritableDeviceRoleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -350,36 +347,7 @@ func (o PatchedWritableDeviceRoleRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableDeviceRoleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableDeviceRoleRequest := _PatchedWritableDeviceRoleRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableDeviceRoleRequest); err == nil {
-		*o = PatchedWritableDeviceRoleRequest(varPatchedWritableDeviceRoleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "vm_role")
-		delete(additionalProperties, "config_template")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableDeviceRoleRequest struct {

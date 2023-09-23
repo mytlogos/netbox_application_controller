@@ -22,10 +22,7 @@ type PowerOutletFeedLeg struct {
 	// * `A` - A * `B` - B * `C` - C
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerOutletFeedLeg PowerOutletFeedLeg
 
 // NewPowerOutletFeedLeg instantiates a new PowerOutletFeedLeg object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o PowerOutletFeedLeg) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerOutletFeedLeg) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerOutletFeedLeg := _PowerOutletFeedLeg{}
-
-	if err = json.Unmarshal(bytes, &varPowerOutletFeedLeg); err == nil {
-		*o = PowerOutletFeedLeg(varPowerOutletFeedLeg)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerOutletFeedLeg struct {

@@ -24,10 +24,7 @@ type NestedProviderAccount struct {
 	Display string `json:"display"`
 	Name *string `json:"name,omitempty"`
 	Account string `json:"account"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedProviderAccount NestedProviderAccount
 
 // NewNestedProviderAccount instantiates a new NestedProviderAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -188,40 +185,14 @@ func (o NestedProviderAccount) MarshalJSON() ([]byte, error) {
 
 func (o NestedProviderAccount) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["account"] = o.Account
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedProviderAccount) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedProviderAccount := _NestedProviderAccount{}
-
-	if err = json.Unmarshal(bytes, &varNestedProviderAccount); err == nil {
-		*o = NestedProviderAccount(varNestedProviderAccount)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedProviderAccount struct {

@@ -30,10 +30,7 @@ type DataFile struct {
 	Size int32 `json:"size"`
 	// SHA256 hash of the file data
 	Hash string `json:"hash"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DataFile DataFile
 
 // NewDataFile instantiates a new DataFile object
 // This constructor will assign default values to properties that have it defined,
@@ -262,44 +259,15 @@ func (o DataFile) MarshalJSON() ([]byte, error) {
 
 func (o DataFile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: source is readOnly
-	// skip: path is readOnly
-	// skip: last_updated is readOnly
-	// skip: size is readOnly
-	// skip: hash is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["source"] = o.Source
+	toSerialize["path"] = o.Path
+	toSerialize["last_updated"] = o.LastUpdated
+	toSerialize["size"] = o.Size
+	toSerialize["hash"] = o.Hash
 	return toSerialize, nil
-}
-
-func (o *DataFile) UnmarshalJSON(bytes []byte) (err error) {
-	varDataFile := _DataFile{}
-
-	if err = json.Unmarshal(bytes, &varDataFile); err == nil {
-		*o = DataFile(varDataFile)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "hash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDataFile struct {

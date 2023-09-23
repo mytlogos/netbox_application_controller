@@ -30,10 +30,7 @@ type Token struct {
 	// Permit create/update/delete operations using this key
 	WriteEnabled *bool `json:"write_enabled,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Token Token
 
 // NewToken instantiates a new Token object
 // This constructor will assign default values to properties that have it defined,
@@ -335,11 +332,11 @@ func (o Token) MarshalJSON() ([]byte, error) {
 
 func (o Token) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["user"] = o.User
-	// skip: created is readOnly
+	toSerialize["created"] = o.Created
 	if o.Expires.IsSet() {
 		toSerialize["expires"] = o.Expires.Get()
 	}
@@ -352,37 +349,7 @@ func (o Token) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Token) UnmarshalJSON(bytes []byte) (err error) {
-	varToken := _Token{}
-
-	if err = json.Unmarshal(bytes, &varToken); err == nil {
-		*o = Token(varToken)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "expires")
-		delete(additionalProperties, "last_used")
-		delete(additionalProperties, "write_enabled")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableToken struct {

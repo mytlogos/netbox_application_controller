@@ -23,10 +23,7 @@ type NestedCable struct {
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedCable NestedCable
 
 // NewNestedCable instantiates a new NestedCable object
 // This constructor will assign default values to properties that have it defined,
@@ -162,38 +159,13 @@ func (o NestedCable) MarshalJSON() ([]byte, error) {
 
 func (o NestedCable) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedCable) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedCable := _NestedCable{}
-
-	if err = json.Unmarshal(bytes, &varNestedCable); err == nil {
-		*o = NestedCable(varNestedCable)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedCable struct {

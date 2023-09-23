@@ -22,12 +22,12 @@ import (
 )
 
 
-// WirelessApiService WirelessApi service
-type WirelessApiService service
+// WirelessAPIService WirelessAPI service
+type WirelessAPIService service
 
 type ApiWirelessWirelessLanGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLANGroupRequest *[]WirelessLANGroupRequest
 }
 
@@ -48,7 +48,7 @@ Delete a list of wireless LAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLanGroupsBulkDestroyRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsBulkDestroy(ctx context.Context) ApiWirelessWirelessLanGroupsBulkDestroyRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkDestroy(ctx context.Context) ApiWirelessWirelessLanGroupsBulkDestroyRequest {
 	return ApiWirelessWirelessLanGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,14 +56,14 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkDestroy(ctx context.Co
 }
 
 // Execute executes the request
-func (a *WirelessApiService) WirelessWirelessLanGroupsBulkDestroyExecute(r ApiWirelessWirelessLanGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkDestroyExecute(r ApiWirelessWirelessLanGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkDestroyExecute(r ApiWi
 
 type ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLANGroupRequest *[]WirelessLANGroupRequest
 }
 
@@ -161,7 +161,7 @@ Patch a list of wireless LAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest {
 	return ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -170,7 +170,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkPartialUpdate(ctx cont
 
 // Execute executes the request
 //  @return []WirelessLANGroup
-func (a *WirelessApiService) WirelessWirelessLanGroupsBulkPartialUpdateExecute(r ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest) ([]WirelessLANGroup, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkPartialUpdateExecute(r ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest) ([]WirelessLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkPartialUpdateExecute(r
 		localVarReturnValue  []WirelessLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,7 +264,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkPartialUpdateExecute(r
 
 type ApiWirelessWirelessLanGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLANGroupRequest *[]WirelessLANGroupRequest
 }
 
@@ -285,7 +285,7 @@ Put a list of wireless LAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLanGroupsBulkUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsBulkUpdate(ctx context.Context) ApiWirelessWirelessLanGroupsBulkUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkUpdate(ctx context.Context) ApiWirelessWirelessLanGroupsBulkUpdateRequest {
 	return ApiWirelessWirelessLanGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -294,7 +294,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkUpdate(ctx context.Con
 
 // Execute executes the request
 //  @return []WirelessLANGroup
-func (a *WirelessApiService) WirelessWirelessLanGroupsBulkUpdateExecute(r ApiWirelessWirelessLanGroupsBulkUpdateRequest) ([]WirelessLANGroup, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkUpdateExecute(r ApiWirelessWirelessLanGroupsBulkUpdateRequest) ([]WirelessLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -302,7 +302,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkUpdateExecute(r ApiWir
 		localVarReturnValue  []WirelessLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsBulkUpdateExecute(r ApiWir
 
 type ApiWirelessWirelessLanGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	writableWirelessLANGroupRequest *WritableWirelessLANGroupRequest
 }
 
@@ -409,7 +409,7 @@ Post a list of wireless LAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLanGroupsCreateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsCreate(ctx context.Context) ApiWirelessWirelessLanGroupsCreateRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsCreate(ctx context.Context) ApiWirelessWirelessLanGroupsCreateRequest {
 	return ApiWirelessWirelessLanGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -418,7 +418,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsCreate(ctx context.Context
 
 // Execute executes the request
 //  @return WirelessLANGroup
-func (a *WirelessApiService) WirelessWirelessLanGroupsCreateExecute(r ApiWirelessWirelessLanGroupsCreateRequest) (*WirelessLANGroup, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsCreateExecute(r ApiWirelessWirelessLanGroupsCreateRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -426,7 +426,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsCreateExecute(r ApiWireles
 		localVarReturnValue  *WirelessLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,7 +512,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsCreateExecute(r ApiWireles
 
 type ApiWirelessWirelessLanGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 }
 
@@ -529,7 +529,7 @@ Delete a wireless LAN group object.
  @param id A unique integer value identifying this wireless LAN group.
  @return ApiWirelessWirelessLanGroupsDestroyRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsDestroy(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsDestroyRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsDestroy(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsDestroyRequest {
 	return ApiWirelessWirelessLanGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -538,14 +538,14 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsDestroy(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *WirelessApiService) WirelessWirelessLanGroupsDestroyExecute(r ApiWirelessWirelessLanGroupsDestroyRequest) (*http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsDestroyExecute(r ApiWirelessWirelessLanGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -618,7 +618,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsDestroyExecute(r ApiWirele
 
 type ApiWirelessWirelessLanGroupsListRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -1039,7 +1039,7 @@ Get a list of wireless LAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLanGroupsListRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsList(ctx context.Context) ApiWirelessWirelessLanGroupsListRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsList(ctx context.Context) ApiWirelessWirelessLanGroupsListRequest {
 	return ApiWirelessWirelessLanGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1048,7 +1048,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsList(ctx context.Context) 
 
 // Execute executes the request
 //  @return PaginatedWirelessLANGroupList
-func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessWirelessLanGroupsListRequest) (*PaginatedWirelessLANGroupList, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsListExecute(r ApiWirelessWirelessLanGroupsListRequest) (*PaginatedWirelessLANGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1056,7 +1056,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		localVarReturnValue  *PaginatedWirelessLANGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1072,7 +1072,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -1083,7 +1083,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -1094,7 +1094,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -1105,7 +1105,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -1116,7 +1116,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -1127,7 +1127,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -1138,7 +1138,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -1152,7 +1152,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -1166,7 +1166,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -1177,7 +1177,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -1188,7 +1188,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -1199,7 +1199,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -1210,7 +1210,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -1221,7 +1221,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -1232,7 +1232,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -1243,7 +1243,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -1254,7 +1254,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -1265,7 +1265,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -1279,7 +1279,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -1290,7 +1290,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -1301,7 +1301,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -1312,7 +1312,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -1323,7 +1323,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -1334,7 +1334,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -1345,7 +1345,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -1356,7 +1356,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -1367,7 +1367,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -1378,7 +1378,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -1389,7 +1389,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -1400,7 +1400,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -1417,7 +1417,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -1431,7 +1431,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -1442,7 +1442,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -1453,7 +1453,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -1464,7 +1464,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -1475,7 +1475,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -1486,7 +1486,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -1497,7 +1497,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -1508,7 +1508,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -1519,7 +1519,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -1536,7 +1536,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent", t, "multi")
@@ -1547,7 +1547,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent__n", t, "multi")
@@ -1558,7 +1558,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", t, "multi")
@@ -1569,7 +1569,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", t, "multi")
@@ -1583,7 +1583,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -1597,7 +1597,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -1608,7 +1608,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -1619,7 +1619,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -1630,7 +1630,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -1641,7 +1641,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -1652,7 +1652,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -1663,7 +1663,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -1674,7 +1674,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -1685,7 +1685,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -1696,7 +1696,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -1707,7 +1707,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -1786,7 +1786,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 
 type ApiWirelessWirelessLanGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 	patchedWritableWirelessLANGroupRequest *PatchedWritableWirelessLANGroupRequest
 }
@@ -1809,7 +1809,7 @@ Patch a wireless LAN group object.
  @param id A unique integer value identifying this wireless LAN group.
  @return ApiWirelessWirelessLanGroupsPartialUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsPartialUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsPartialUpdateRequest {
 	return ApiWirelessWirelessLanGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1819,7 +1819,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsPartialUpdate(ctx context.
 
 // Execute executes the request
 //  @return WirelessLANGroup
-func (a *WirelessApiService) WirelessWirelessLanGroupsPartialUpdateExecute(r ApiWirelessWirelessLanGroupsPartialUpdateRequest) (*WirelessLANGroup, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsPartialUpdateExecute(r ApiWirelessWirelessLanGroupsPartialUpdateRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1827,7 +1827,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsPartialUpdateExecute(r Api
 		localVarReturnValue  *WirelessLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1911,7 +1911,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsPartialUpdateExecute(r Api
 
 type ApiWirelessWirelessLanGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 }
 
@@ -1928,7 +1928,7 @@ Get a wireless LAN group object.
  @param id A unique integer value identifying this wireless LAN group.
  @return ApiWirelessWirelessLanGroupsRetrieveRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsRetrieveRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsRetrieveRequest {
 	return ApiWirelessWirelessLanGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1938,7 +1938,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsRetrieve(ctx context.Conte
 
 // Execute executes the request
 //  @return WirelessLANGroup
-func (a *WirelessApiService) WirelessWirelessLanGroupsRetrieveExecute(r ApiWirelessWirelessLanGroupsRetrieveRequest) (*WirelessLANGroup, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsRetrieveExecute(r ApiWirelessWirelessLanGroupsRetrieveRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1946,7 +1946,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsRetrieveExecute(r ApiWirel
 		localVarReturnValue  *WirelessLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2028,7 +2028,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsRetrieveExecute(r ApiWirel
 
 type ApiWirelessWirelessLanGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 	writableWirelessLANGroupRequest *WritableWirelessLANGroupRequest
 }
@@ -2051,7 +2051,7 @@ Put a wireless LAN group object.
  @param id A unique integer value identifying this wireless LAN group.
  @return ApiWirelessWirelessLanGroupsUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLanGroupsUpdate(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsUpdate(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsUpdateRequest {
 	return ApiWirelessWirelessLanGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2061,7 +2061,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return WirelessLANGroup
-func (a *WirelessApiService) WirelessWirelessLanGroupsUpdateExecute(r ApiWirelessWirelessLanGroupsUpdateRequest) (*WirelessLANGroup, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLanGroupsUpdateExecute(r ApiWirelessWirelessLanGroupsUpdateRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2069,7 +2069,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsUpdateExecute(r ApiWireles
 		localVarReturnValue  *WirelessLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLanGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2156,7 +2156,7 @@ func (a *WirelessApiService) WirelessWirelessLanGroupsUpdateExecute(r ApiWireles
 
 type ApiWirelessWirelessLansBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLANRequest *[]WirelessLANRequest
 }
 
@@ -2177,7 +2177,7 @@ Delete a list of wireless LAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLansBulkDestroyRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansBulkDestroy(ctx context.Context) ApiWirelessWirelessLansBulkDestroyRequest {
+func (a *WirelessAPIService) WirelessWirelessLansBulkDestroy(ctx context.Context) ApiWirelessWirelessLansBulkDestroyRequest {
 	return ApiWirelessWirelessLansBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2185,14 +2185,14 @@ func (a *WirelessApiService) WirelessWirelessLansBulkDestroy(ctx context.Context
 }
 
 // Execute executes the request
-func (a *WirelessApiService) WirelessWirelessLansBulkDestroyExecute(r ApiWirelessWirelessLansBulkDestroyRequest) (*http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansBulkDestroyExecute(r ApiWirelessWirelessLansBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2269,7 +2269,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkDestroyExecute(r ApiWireles
 
 type ApiWirelessWirelessLansBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLANRequest *[]WirelessLANRequest
 }
 
@@ -2290,7 +2290,7 @@ Patch a list of wireless LAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLansBulkPartialUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLansBulkPartialUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLansBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLansBulkPartialUpdateRequest {
 	return ApiWirelessWirelessLansBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2299,7 +2299,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkPartialUpdate(ctx context.C
 
 // Execute executes the request
 //  @return []WirelessLAN
-func (a *WirelessApiService) WirelessWirelessLansBulkPartialUpdateExecute(r ApiWirelessWirelessLansBulkPartialUpdateRequest) ([]WirelessLAN, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansBulkPartialUpdateExecute(r ApiWirelessWirelessLansBulkPartialUpdateRequest) ([]WirelessLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -2307,7 +2307,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkPartialUpdateExecute(r ApiW
 		localVarReturnValue  []WirelessLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2393,7 +2393,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkPartialUpdateExecute(r ApiW
 
 type ApiWirelessWirelessLansBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLANRequest *[]WirelessLANRequest
 }
 
@@ -2414,7 +2414,7 @@ Put a list of wireless LAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLansBulkUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansBulkUpdate(ctx context.Context) ApiWirelessWirelessLansBulkUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLansBulkUpdate(ctx context.Context) ApiWirelessWirelessLansBulkUpdateRequest {
 	return ApiWirelessWirelessLansBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2423,7 +2423,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkUpdate(ctx context.Context)
 
 // Execute executes the request
 //  @return []WirelessLAN
-func (a *WirelessApiService) WirelessWirelessLansBulkUpdateExecute(r ApiWirelessWirelessLansBulkUpdateRequest) ([]WirelessLAN, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansBulkUpdateExecute(r ApiWirelessWirelessLansBulkUpdateRequest) ([]WirelessLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2431,7 +2431,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkUpdateExecute(r ApiWireless
 		localVarReturnValue  []WirelessLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2517,7 +2517,7 @@ func (a *WirelessApiService) WirelessWirelessLansBulkUpdateExecute(r ApiWireless
 
 type ApiWirelessWirelessLansCreateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	writableWirelessLANRequest *WritableWirelessLANRequest
 }
 
@@ -2538,7 +2538,7 @@ Post a list of wireless LAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLansCreateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansCreate(ctx context.Context) ApiWirelessWirelessLansCreateRequest {
+func (a *WirelessAPIService) WirelessWirelessLansCreate(ctx context.Context) ApiWirelessWirelessLansCreateRequest {
 	return ApiWirelessWirelessLansCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2547,7 +2547,7 @@ func (a *WirelessApiService) WirelessWirelessLansCreate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return WirelessLAN
-func (a *WirelessApiService) WirelessWirelessLansCreateExecute(r ApiWirelessWirelessLansCreateRequest) (*WirelessLAN, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansCreateExecute(r ApiWirelessWirelessLansCreateRequest) (*WirelessLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2555,7 +2555,7 @@ func (a *WirelessApiService) WirelessWirelessLansCreateExecute(r ApiWirelessWire
 		localVarReturnValue  *WirelessLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2641,7 +2641,7 @@ func (a *WirelessApiService) WirelessWirelessLansCreateExecute(r ApiWirelessWire
 
 type ApiWirelessWirelessLansDestroyRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 }
 
@@ -2658,7 +2658,7 @@ Delete a wireless LAN object.
  @param id A unique integer value identifying this wireless LAN.
  @return ApiWirelessWirelessLansDestroyRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansDestroy(ctx context.Context, id int32) ApiWirelessWirelessLansDestroyRequest {
+func (a *WirelessAPIService) WirelessWirelessLansDestroy(ctx context.Context, id int32) ApiWirelessWirelessLansDestroyRequest {
 	return ApiWirelessWirelessLansDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2667,14 +2667,14 @@ func (a *WirelessApiService) WirelessWirelessLansDestroy(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *WirelessApiService) WirelessWirelessLansDestroyExecute(r ApiWirelessWirelessLansDestroyRequest) (*http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansDestroyExecute(r ApiWirelessWirelessLansDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2747,7 +2747,7 @@ func (a *WirelessApiService) WirelessWirelessLansDestroyExecute(r ApiWirelessWir
 
 type ApiWirelessWirelessLansListRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	authCipher *[]string
 	authCipherN *[]string
 	authPsk *[]string
@@ -3272,7 +3272,7 @@ Get a list of wireless LAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLansListRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansList(ctx context.Context) ApiWirelessWirelessLansListRequest {
+func (a *WirelessAPIService) WirelessWirelessLansList(ctx context.Context) ApiWirelessWirelessLansListRequest {
 	return ApiWirelessWirelessLansListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3281,7 +3281,7 @@ func (a *WirelessApiService) WirelessWirelessLansList(ctx context.Context) ApiWi
 
 // Execute executes the request
 //  @return PaginatedWirelessLANList
-func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirelessLansListRequest) (*PaginatedWirelessLANList, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansListExecute(r ApiWirelessWirelessLansListRequest) (*PaginatedWirelessLANList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3289,7 +3289,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		localVarReturnValue  *PaginatedWirelessLANList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3305,7 +3305,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher", t, "multi")
@@ -3316,7 +3316,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher__n", t, "multi")
@@ -3327,7 +3327,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk", t, "multi")
@@ -3341,7 +3341,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ic", t, "multi")
@@ -3352,7 +3352,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ie", t, "multi")
@@ -3363,7 +3363,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__iew", t, "multi")
@@ -3374,7 +3374,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__isw", t, "multi")
@@ -3385,7 +3385,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__n", t, "multi")
@@ -3396,7 +3396,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nic", t, "multi")
@@ -3407,7 +3407,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nie", t, "multi")
@@ -3418,7 +3418,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__niew", t, "multi")
@@ -3429,7 +3429,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nisw", t, "multi")
@@ -3440,7 +3440,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", t, "multi")
@@ -3451,7 +3451,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", t, "multi")
@@ -3462,7 +3462,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -3473,7 +3473,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -3484,7 +3484,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -3495,7 +3495,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -3506,7 +3506,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -3517,7 +3517,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -3528,7 +3528,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -3542,7 +3542,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -3556,7 +3556,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -3567,7 +3567,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -3578,7 +3578,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -3589,7 +3589,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -3600,7 +3600,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -3611,7 +3611,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -3622,7 +3622,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -3633,7 +3633,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -3644,7 +3644,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -3655,7 +3655,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -3666,7 +3666,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -3677,7 +3677,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -3688,7 +3688,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -3699,7 +3699,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -3713,7 +3713,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -3724,7 +3724,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -3735,7 +3735,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -3746,7 +3746,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -3757,7 +3757,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -3768,7 +3768,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -3779,7 +3779,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -3790,7 +3790,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -3801,7 +3801,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -3812,7 +3812,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -3823,7 +3823,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -3834,7 +3834,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -3860,7 +3860,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid", t, "multi")
@@ -3874,7 +3874,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ic", t, "multi")
@@ -3885,7 +3885,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ie", t, "multi")
@@ -3896,7 +3896,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__iew", t, "multi")
@@ -3907,7 +3907,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__isw", t, "multi")
@@ -3918,7 +3918,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__n", t, "multi")
@@ -3929,7 +3929,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nic", t, "multi")
@@ -3940,7 +3940,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nie", t, "multi")
@@ -3951,7 +3951,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__niew", t, "multi")
@@ -3962,7 +3962,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nisw", t, "multi")
@@ -3973,7 +3973,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -3984,7 +3984,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -3995,7 +3995,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -4006,7 +4006,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -4017,7 +4017,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -4028,7 +4028,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -4039,7 +4039,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -4050,7 +4050,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -4061,7 +4061,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -4072,7 +4072,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -4083,7 +4083,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -4094,7 +4094,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -4108,7 +4108,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", t, "multi")
@@ -4119,7 +4119,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", t, "multi")
@@ -4195,7 +4195,7 @@ func (a *WirelessApiService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 
 type ApiWirelessWirelessLansPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 	patchedWritableWirelessLANRequest *PatchedWritableWirelessLANRequest
 }
@@ -4218,7 +4218,7 @@ Patch a wireless LAN object.
  @param id A unique integer value identifying this wireless LAN.
  @return ApiWirelessWirelessLansPartialUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLansPartialUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLansPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLansPartialUpdateRequest {
 	return ApiWirelessWirelessLansPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4228,7 +4228,7 @@ func (a *WirelessApiService) WirelessWirelessLansPartialUpdate(ctx context.Conte
 
 // Execute executes the request
 //  @return WirelessLAN
-func (a *WirelessApiService) WirelessWirelessLansPartialUpdateExecute(r ApiWirelessWirelessLansPartialUpdateRequest) (*WirelessLAN, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansPartialUpdateExecute(r ApiWirelessWirelessLansPartialUpdateRequest) (*WirelessLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4236,7 +4236,7 @@ func (a *WirelessApiService) WirelessWirelessLansPartialUpdateExecute(r ApiWirel
 		localVarReturnValue  *WirelessLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4320,7 +4320,7 @@ func (a *WirelessApiService) WirelessWirelessLansPartialUpdateExecute(r ApiWirel
 
 type ApiWirelessWirelessLansRetrieveRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 }
 
@@ -4337,7 +4337,7 @@ Get a wireless LAN object.
  @param id A unique integer value identifying this wireless LAN.
  @return ApiWirelessWirelessLansRetrieveRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLansRetrieveRequest {
+func (a *WirelessAPIService) WirelessWirelessLansRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLansRetrieveRequest {
 	return ApiWirelessWirelessLansRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4347,7 +4347,7 @@ func (a *WirelessApiService) WirelessWirelessLansRetrieve(ctx context.Context, i
 
 // Execute executes the request
 //  @return WirelessLAN
-func (a *WirelessApiService) WirelessWirelessLansRetrieveExecute(r ApiWirelessWirelessLansRetrieveRequest) (*WirelessLAN, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansRetrieveExecute(r ApiWirelessWirelessLansRetrieveRequest) (*WirelessLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4355,7 +4355,7 @@ func (a *WirelessApiService) WirelessWirelessLansRetrieveExecute(r ApiWirelessWi
 		localVarReturnValue  *WirelessLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4437,7 +4437,7 @@ func (a *WirelessApiService) WirelessWirelessLansRetrieveExecute(r ApiWirelessWi
 
 type ApiWirelessWirelessLansUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 	writableWirelessLANRequest *WritableWirelessLANRequest
 }
@@ -4460,7 +4460,7 @@ Put a wireless LAN object.
  @param id A unique integer value identifying this wireless LAN.
  @return ApiWirelessWirelessLansUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLansUpdate(ctx context.Context, id int32) ApiWirelessWirelessLansUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLansUpdate(ctx context.Context, id int32) ApiWirelessWirelessLansUpdateRequest {
 	return ApiWirelessWirelessLansUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4470,7 +4470,7 @@ func (a *WirelessApiService) WirelessWirelessLansUpdate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return WirelessLAN
-func (a *WirelessApiService) WirelessWirelessLansUpdateExecute(r ApiWirelessWirelessLansUpdateRequest) (*WirelessLAN, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLansUpdateExecute(r ApiWirelessWirelessLansUpdateRequest) (*WirelessLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4478,7 +4478,7 @@ func (a *WirelessApiService) WirelessWirelessLansUpdateExecute(r ApiWirelessWire
 		localVarReturnValue  *WirelessLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLansUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4565,7 +4565,7 @@ func (a *WirelessApiService) WirelessWirelessLansUpdateExecute(r ApiWirelessWire
 
 type ApiWirelessWirelessLinksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLinkRequest *[]WirelessLinkRequest
 }
 
@@ -4586,7 +4586,7 @@ Delete a list of wireless link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLinksBulkDestroyRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksBulkDestroy(ctx context.Context) ApiWirelessWirelessLinksBulkDestroyRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksBulkDestroy(ctx context.Context) ApiWirelessWirelessLinksBulkDestroyRequest {
 	return ApiWirelessWirelessLinksBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4594,14 +4594,14 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkDestroy(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *WirelessApiService) WirelessWirelessLinksBulkDestroyExecute(r ApiWirelessWirelessLinksBulkDestroyRequest) (*http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksBulkDestroyExecute(r ApiWirelessWirelessLinksBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4678,7 +4678,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkDestroyExecute(r ApiWirele
 
 type ApiWirelessWirelessLinksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLinkRequest *[]WirelessLinkRequest
 }
 
@@ -4699,7 +4699,7 @@ Patch a list of wireless link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLinksBulkPartialUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLinksBulkPartialUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLinksBulkPartialUpdateRequest {
 	return ApiWirelessWirelessLinksBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4708,7 +4708,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkPartialUpdate(ctx context.
 
 // Execute executes the request
 //  @return []WirelessLink
-func (a *WirelessApiService) WirelessWirelessLinksBulkPartialUpdateExecute(r ApiWirelessWirelessLinksBulkPartialUpdateRequest) ([]WirelessLink, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksBulkPartialUpdateExecute(r ApiWirelessWirelessLinksBulkPartialUpdateRequest) ([]WirelessLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4716,7 +4716,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkPartialUpdateExecute(r Api
 		localVarReturnValue  []WirelessLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4802,7 +4802,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkPartialUpdateExecute(r Api
 
 type ApiWirelessWirelessLinksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	wirelessLinkRequest *[]WirelessLinkRequest
 }
 
@@ -4823,7 +4823,7 @@ Put a list of wireless link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLinksBulkUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksBulkUpdate(ctx context.Context) ApiWirelessWirelessLinksBulkUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksBulkUpdate(ctx context.Context) ApiWirelessWirelessLinksBulkUpdateRequest {
 	return ApiWirelessWirelessLinksBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4832,7 +4832,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkUpdate(ctx context.Context
 
 // Execute executes the request
 //  @return []WirelessLink
-func (a *WirelessApiService) WirelessWirelessLinksBulkUpdateExecute(r ApiWirelessWirelessLinksBulkUpdateRequest) ([]WirelessLink, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksBulkUpdateExecute(r ApiWirelessWirelessLinksBulkUpdateRequest) ([]WirelessLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4840,7 +4840,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkUpdateExecute(r ApiWireles
 		localVarReturnValue  []WirelessLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4926,7 +4926,7 @@ func (a *WirelessApiService) WirelessWirelessLinksBulkUpdateExecute(r ApiWireles
 
 type ApiWirelessWirelessLinksCreateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	writableWirelessLinkRequest *WritableWirelessLinkRequest
 }
 
@@ -4947,7 +4947,7 @@ Post a list of wireless link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLinksCreateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksCreate(ctx context.Context) ApiWirelessWirelessLinksCreateRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksCreate(ctx context.Context) ApiWirelessWirelessLinksCreateRequest {
 	return ApiWirelessWirelessLinksCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4956,7 +4956,7 @@ func (a *WirelessApiService) WirelessWirelessLinksCreate(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return WirelessLink
-func (a *WirelessApiService) WirelessWirelessLinksCreateExecute(r ApiWirelessWirelessLinksCreateRequest) (*WirelessLink, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksCreateExecute(r ApiWirelessWirelessLinksCreateRequest) (*WirelessLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4964,7 +4964,7 @@ func (a *WirelessApiService) WirelessWirelessLinksCreateExecute(r ApiWirelessWir
 		localVarReturnValue  *WirelessLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5050,7 +5050,7 @@ func (a *WirelessApiService) WirelessWirelessLinksCreateExecute(r ApiWirelessWir
 
 type ApiWirelessWirelessLinksDestroyRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 }
 
@@ -5067,7 +5067,7 @@ Delete a wireless link object.
  @param id A unique integer value identifying this wireless link.
  @return ApiWirelessWirelessLinksDestroyRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksDestroy(ctx context.Context, id int32) ApiWirelessWirelessLinksDestroyRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksDestroy(ctx context.Context, id int32) ApiWirelessWirelessLinksDestroyRequest {
 	return ApiWirelessWirelessLinksDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5076,14 +5076,14 @@ func (a *WirelessApiService) WirelessWirelessLinksDestroy(ctx context.Context, i
 }
 
 // Execute executes the request
-func (a *WirelessApiService) WirelessWirelessLinksDestroyExecute(r ApiWirelessWirelessLinksDestroyRequest) (*http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksDestroyExecute(r ApiWirelessWirelessLinksDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5156,7 +5156,7 @@ func (a *WirelessApiService) WirelessWirelessLinksDestroyExecute(r ApiWirelessWi
 
 type ApiWirelessWirelessLinksListRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	authCipher *[]string
 	authCipherN *[]string
 	authPsk *[]string
@@ -5729,7 +5729,7 @@ Get a list of wireless link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiWirelessWirelessLinksListRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksList(ctx context.Context) ApiWirelessWirelessLinksListRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksList(ctx context.Context) ApiWirelessWirelessLinksListRequest {
 	return ApiWirelessWirelessLinksListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5738,7 +5738,7 @@ func (a *WirelessApiService) WirelessWirelessLinksList(ctx context.Context) ApiW
 
 // Execute executes the request
 //  @return PaginatedWirelessLinkList
-func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirelessLinksListRequest) (*PaginatedWirelessLinkList, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksListExecute(r ApiWirelessWirelessLinksListRequest) (*PaginatedWirelessLinkList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5746,7 +5746,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		localVarReturnValue  *PaginatedWirelessLinkList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5762,7 +5762,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher", t, "multi")
@@ -5773,7 +5773,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_cipher__n", t, "multi")
@@ -5784,7 +5784,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk", t, "multi")
@@ -5798,7 +5798,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ic", t, "multi")
@@ -5809,7 +5809,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__ie", t, "multi")
@@ -5820,7 +5820,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__iew", t, "multi")
@@ -5831,7 +5831,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__isw", t, "multi")
@@ -5842,7 +5842,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__n", t, "multi")
@@ -5853,7 +5853,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nic", t, "multi")
@@ -5864,7 +5864,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nie", t, "multi")
@@ -5875,7 +5875,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__niew", t, "multi")
@@ -5886,7 +5886,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_psk__nisw", t, "multi")
@@ -5897,7 +5897,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", t, "multi")
@@ -5908,7 +5908,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", t, "multi")
@@ -5919,7 +5919,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -5930,7 +5930,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -5941,7 +5941,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -5952,7 +5952,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -5963,7 +5963,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -5974,7 +5974,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -5985,7 +5985,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -5999,7 +5999,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -6013,7 +6013,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -6024,7 +6024,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -6035,7 +6035,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -6046,7 +6046,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -6057,7 +6057,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -6068,7 +6068,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -6079,7 +6079,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -6090,7 +6090,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -6101,7 +6101,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -6112,7 +6112,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -6126,7 +6126,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -6137,7 +6137,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -6148,7 +6148,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -6159,7 +6159,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -6170,7 +6170,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -6181,7 +6181,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id", t, "multi")
@@ -6192,7 +6192,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__empty", t, "multi")
@@ -6203,7 +6203,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__gt", t, "multi")
@@ -6214,7 +6214,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__gte", t, "multi")
@@ -6225,7 +6225,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__lt", t, "multi")
@@ -6236,7 +6236,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__lte", t, "multi")
@@ -6247,7 +6247,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_a_id__n", t, "multi")
@@ -6258,7 +6258,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id", t, "multi")
@@ -6269,7 +6269,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__empty", t, "multi")
@@ -6280,7 +6280,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__gt", t, "multi")
@@ -6291,7 +6291,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__gte", t, "multi")
@@ -6302,7 +6302,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__lt", t, "multi")
@@ -6313,7 +6313,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__lte", t, "multi")
@@ -6324,7 +6324,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_b_id__n", t, "multi")
@@ -6335,7 +6335,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -6346,7 +6346,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -6357,7 +6357,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -6368,7 +6368,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -6379,7 +6379,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -6390,7 +6390,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -6401,7 +6401,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -6427,7 +6427,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid", t, "multi")
@@ -6441,7 +6441,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ic", t, "multi")
@@ -6452,7 +6452,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__ie", t, "multi")
@@ -6463,7 +6463,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__iew", t, "multi")
@@ -6474,7 +6474,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__isw", t, "multi")
@@ -6485,7 +6485,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__n", t, "multi")
@@ -6496,7 +6496,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nic", t, "multi")
@@ -6507,7 +6507,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nie", t, "multi")
@@ -6518,7 +6518,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__niew", t, "multi")
@@ -6529,7 +6529,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ssid__nisw", t, "multi")
@@ -6540,7 +6540,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -6551,7 +6551,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -6562,7 +6562,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -6573,7 +6573,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -6584,7 +6584,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -6595,7 +6595,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -6606,7 +6606,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -6617,7 +6617,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -6628,7 +6628,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -6639,7 +6639,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -6650,7 +6650,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -6661,7 +6661,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -6740,7 +6740,7 @@ func (a *WirelessApiService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 
 type ApiWirelessWirelessLinksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 	patchedWritableWirelessLinkRequest *PatchedWritableWirelessLinkRequest
 }
@@ -6763,7 +6763,7 @@ Patch a wireless link object.
  @param id A unique integer value identifying this wireless link.
  @return ApiWirelessWirelessLinksPartialUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLinksPartialUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLinksPartialUpdateRequest {
 	return ApiWirelessWirelessLinksPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6773,7 +6773,7 @@ func (a *WirelessApiService) WirelessWirelessLinksPartialUpdate(ctx context.Cont
 
 // Execute executes the request
 //  @return WirelessLink
-func (a *WirelessApiService) WirelessWirelessLinksPartialUpdateExecute(r ApiWirelessWirelessLinksPartialUpdateRequest) (*WirelessLink, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksPartialUpdateExecute(r ApiWirelessWirelessLinksPartialUpdateRequest) (*WirelessLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6781,7 +6781,7 @@ func (a *WirelessApiService) WirelessWirelessLinksPartialUpdateExecute(r ApiWire
 		localVarReturnValue  *WirelessLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6865,7 +6865,7 @@ func (a *WirelessApiService) WirelessWirelessLinksPartialUpdateExecute(r ApiWire
 
 type ApiWirelessWirelessLinksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 }
 
@@ -6882,7 +6882,7 @@ Get a wireless link object.
  @param id A unique integer value identifying this wireless link.
  @return ApiWirelessWirelessLinksRetrieveRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLinksRetrieveRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLinksRetrieveRequest {
 	return ApiWirelessWirelessLinksRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6892,7 +6892,7 @@ func (a *WirelessApiService) WirelessWirelessLinksRetrieve(ctx context.Context, 
 
 // Execute executes the request
 //  @return WirelessLink
-func (a *WirelessApiService) WirelessWirelessLinksRetrieveExecute(r ApiWirelessWirelessLinksRetrieveRequest) (*WirelessLink, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksRetrieveExecute(r ApiWirelessWirelessLinksRetrieveRequest) (*WirelessLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6900,7 +6900,7 @@ func (a *WirelessApiService) WirelessWirelessLinksRetrieveExecute(r ApiWirelessW
 		localVarReturnValue  *WirelessLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6982,7 +6982,7 @@ func (a *WirelessApiService) WirelessWirelessLinksRetrieveExecute(r ApiWirelessW
 
 type ApiWirelessWirelessLinksUpdateRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	id int32
 	writableWirelessLinkRequest *WritableWirelessLinkRequest
 }
@@ -7005,7 +7005,7 @@ Put a wireless link object.
  @param id A unique integer value identifying this wireless link.
  @return ApiWirelessWirelessLinksUpdateRequest
 */
-func (a *WirelessApiService) WirelessWirelessLinksUpdate(ctx context.Context, id int32) ApiWirelessWirelessLinksUpdateRequest {
+func (a *WirelessAPIService) WirelessWirelessLinksUpdate(ctx context.Context, id int32) ApiWirelessWirelessLinksUpdateRequest {
 	return ApiWirelessWirelessLinksUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7015,7 +7015,7 @@ func (a *WirelessApiService) WirelessWirelessLinksUpdate(ctx context.Context, id
 
 // Execute executes the request
 //  @return WirelessLink
-func (a *WirelessApiService) WirelessWirelessLinksUpdateExecute(r ApiWirelessWirelessLinksUpdateRequest) (*WirelessLink, *http.Response, error) {
+func (a *WirelessAPIService) WirelessWirelessLinksUpdateExecute(r ApiWirelessWirelessLinksUpdateRequest) (*WirelessLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -7023,7 +7023,7 @@ func (a *WirelessApiService) WirelessWirelessLinksUpdateExecute(r ApiWirelessWir
 		localVarReturnValue  *WirelessLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.WirelessWirelessLinksUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

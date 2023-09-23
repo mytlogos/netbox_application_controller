@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedWirelessLinkRequest{}
 // NestedWirelessLinkRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedWirelessLinkRequest struct {
 	Ssid *string `json:"ssid,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedWirelessLinkRequest NestedWirelessLinkRequest
 
 // NewNestedWirelessLinkRequest instantiates a new NestedWirelessLinkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -87,29 +84,7 @@ func (o NestedWirelessLinkRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ssid) {
 		toSerialize["ssid"] = o.Ssid
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedWirelessLinkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedWirelessLinkRequest := _NestedWirelessLinkRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedWirelessLinkRequest); err == nil {
-		*o = NestedWirelessLinkRequest(varNestedWirelessLinkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "ssid")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedWirelessLinkRequest struct {

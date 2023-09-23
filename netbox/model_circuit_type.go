@@ -31,10 +31,7 @@ type CircuitType struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	CircuitCount int32 `json:"circuit_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CircuitType CircuitType
 
 // NewCircuitType instantiates a new CircuitType object
 // This constructor will assign default values to properties that have it defined,
@@ -363,9 +360,9 @@ func (o CircuitType) MarshalJSON() ([]byte, error) {
 
 func (o CircuitType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
@@ -379,40 +376,8 @@ func (o CircuitType) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: circuit_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["circuit_count"] = o.CircuitCount
 	return toSerialize, nil
-}
-
-func (o *CircuitType) UnmarshalJSON(bytes []byte) (err error) {
-	varCircuitType := _CircuitType{}
-
-	if err = json.Unmarshal(bytes, &varCircuitType); err == nil {
-		*o = CircuitType(varCircuitType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "circuit_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCircuitType struct {

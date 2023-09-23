@@ -30,10 +30,7 @@ type PatchedFHRPGroupRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedFHRPGroupRequest PatchedFHRPGroupRequest
 
 // NewPatchedFHRPGroupRequest instantiates a new PatchedFHRPGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -377,37 +374,7 @@ func (o PatchedFHRPGroupRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedFHRPGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedFHRPGroupRequest := _PatchedFHRPGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedFHRPGroupRequest); err == nil {
-		*o = PatchedFHRPGroupRequest(varPatchedFHRPGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "group_id")
-		delete(additionalProperties, "auth_type")
-		delete(additionalProperties, "auth_key")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedFHRPGroupRequest struct {

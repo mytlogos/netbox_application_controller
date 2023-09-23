@@ -23,10 +23,7 @@ type PaginatedClusterList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []Cluster `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedClusterList PaginatedClusterList
 
 // NewPaginatedClusterList instantiates a new PaginatedClusterList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedClusterList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedClusterList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedClusterList := _PaginatedClusterList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedClusterList); err == nil {
-		*o = PaginatedClusterList(varPaginatedClusterList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedClusterList struct {

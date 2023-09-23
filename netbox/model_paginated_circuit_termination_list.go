@@ -23,10 +23,7 @@ type PaginatedCircuitTerminationList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []CircuitTermination `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedCircuitTerminationList PaginatedCircuitTerminationList
 
 // NewPaginatedCircuitTerminationList instantiates a new PaginatedCircuitTerminationList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedCircuitTerminationList) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedCircuitTerminationList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedCircuitTerminationList := _PaginatedCircuitTerminationList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedCircuitTerminationList); err == nil {
-		*o = PaginatedCircuitTerminationList(varPaginatedCircuitTerminationList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedCircuitTerminationList struct {

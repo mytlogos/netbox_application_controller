@@ -25,10 +25,7 @@ type NestedProvider struct {
 	// Full name of the provider
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedProvider NestedProvider
 
 // NewNestedProvider instantiates a new NestedProvider object
 // This constructor will assign default values to properties that have it defined,
@@ -182,38 +179,12 @@ func (o NestedProvider) MarshalJSON() ([]byte, error) {
 
 func (o NestedProvider) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedProvider) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedProvider := _NestedProvider{}
-
-	if err = json.Unmarshal(bytes, &varNestedProvider); err == nil {
-		*o = NestedProvider(varNestedProvider)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedProvider struct {

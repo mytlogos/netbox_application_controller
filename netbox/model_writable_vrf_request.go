@@ -31,10 +31,7 @@ type WritableVRFRequest struct {
 	ExportTargets []int32 `json:"export_targets,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableVRFRequest WritableVRFRequest
 
 // NewWritableVRFRequest instantiates a new WritableVRFRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -424,38 +421,7 @@ func (o WritableVRFRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableVRFRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableVRFRequest := _WritableVRFRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableVRFRequest); err == nil {
-		*o = WritableVRFRequest(varWritableVRFRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rd")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "enforce_unique")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "import_targets")
-		delete(additionalProperties, "export_targets")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableVRFRequest struct {

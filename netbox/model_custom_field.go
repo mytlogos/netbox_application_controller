@@ -55,10 +55,7 @@ type CustomField struct {
 	ChoiceSet *NestedCustomFieldChoiceSet `json:"choice_set,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomField CustomField
 
 // NewCustomField instantiates a new CustomField object
 // This constructor will assign default values to properties that have it defined,
@@ -817,15 +814,15 @@ func (o CustomField) MarshalJSON() ([]byte, error) {
 
 func (o CustomField) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["content_types"] = o.ContentTypes
 	toSerialize["type"] = o.Type
 	if !IsNil(o.ObjectType) {
 		toSerialize["object_type"] = o.ObjectType
 	}
-	// skip: data_type is readOnly
+	toSerialize["data_type"] = o.DataType
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
@@ -871,52 +868,7 @@ func (o CustomField) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomField) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomField := _CustomField{}
-
-	if err = json.Unmarshal(bytes, &varCustomField); err == nil {
-		*o = CustomField(varCustomField)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "data_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "group_name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "search_weight")
-		delete(additionalProperties, "filter_logic")
-		delete(additionalProperties, "ui_visibility")
-		delete(additionalProperties, "is_cloneable")
-		delete(additionalProperties, "default")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "validation_minimum")
-		delete(additionalProperties, "validation_maximum")
-		delete(additionalProperties, "validation_regex")
-		delete(additionalProperties, "choice_set")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomField struct {

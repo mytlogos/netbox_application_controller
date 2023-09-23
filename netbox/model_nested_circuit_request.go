@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedCircuitRequest{}
 type NestedCircuitRequest struct {
 	// Unique circuit ID
 	Cid string `json:"cid"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedCircuitRequest NestedCircuitRequest
 
 // NewNestedCircuitRequest instantiates a new NestedCircuitRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -79,29 +76,7 @@ func (o NestedCircuitRequest) MarshalJSON() ([]byte, error) {
 func (o NestedCircuitRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cid"] = o.Cid
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedCircuitRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedCircuitRequest := _NestedCircuitRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedCircuitRequest); err == nil {
-		*o = NestedCircuitRequest(varNestedCircuitRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "cid")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedCircuitRequest struct {

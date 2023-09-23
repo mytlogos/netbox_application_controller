@@ -24,10 +24,7 @@ type NestedContactRole struct {
 	Display string `json:"display"`
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedContactRole NestedContactRole
 
 // NewNestedContactRole instantiates a new NestedContactRole object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o NestedContactRole) MarshalJSON() ([]byte, error) {
 
 func (o NestedContactRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedContactRole) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedContactRole := _NestedContactRole{}
-
-	if err = json.Unmarshal(bytes, &varNestedContactRole); err == nil {
-		*o = NestedContactRole(varNestedContactRole)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedContactRole struct {

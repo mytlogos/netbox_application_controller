@@ -23,10 +23,7 @@ type PaginatedVirtualChassisList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []VirtualChassis `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedVirtualChassisList PaginatedVirtualChassisList
 
 // NewPaginatedVirtualChassisList instantiates a new PaginatedVirtualChassisList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedVirtualChassisList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedVirtualChassisList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedVirtualChassisList := _PaginatedVirtualChassisList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedVirtualChassisList); err == nil {
-		*o = PaginatedVirtualChassisList(varPaginatedVirtualChassisList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedVirtualChassisList struct {

@@ -37,10 +37,7 @@ type InterfaceTemplateRequest struct {
 	PoeType NullableString `json:"poe_type,omitempty"`
 	// * `ap` - Access point * `station` - Station
 	RfRole NullableString `json:"rf_role,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfaceTemplateRequest InterfaceTemplateRequest
 
 // NewInterfaceTemplateRequest instantiates a new InterfaceTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -531,40 +528,7 @@ func (o InterfaceTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if o.RfRole.IsSet() {
 		toSerialize["rf_role"] = o.RfRole.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfaceTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfaceTemplateRequest := _InterfaceTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varInterfaceTemplateRequest); err == nil {
-		*o = InterfaceTemplateRequest(varInterfaceTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "mgmt_only")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "poe_mode")
-		delete(additionalProperties, "poe_type")
-		delete(additionalProperties, "rf_role")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfaceTemplateRequest struct {

@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedClusterTypeRequest{}
 type NestedClusterTypeRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedClusterTypeRequest NestedClusterTypeRequest
 
 // NewNestedClusterTypeRequest instantiates a new NestedClusterTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedClusterTypeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedClusterTypeRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedClusterTypeRequest := _NestedClusterTypeRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedClusterTypeRequest); err == nil {
-		*o = NestedClusterTypeRequest(varNestedClusterTypeRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedClusterTypeRequest struct {

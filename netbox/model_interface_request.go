@@ -63,10 +63,7 @@ type InterfaceRequest struct {
 	Vrf NullableNestedVRFRequest `json:"vrf,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfaceRequest InterfaceRequest
 
 // NewInterfaceRequest instantiates a new InterfaceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -1328,60 +1325,7 @@ func (o InterfaceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfaceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfaceRequest := _InterfaceRequest{}
-
-	if err = json.Unmarshal(bytes, &varInterfaceRequest); err == nil {
-		*o = InterfaceRequest(varInterfaceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "vdcs")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "lag")
-		delete(additionalProperties, "mtu")
-		delete(additionalProperties, "mac_address")
-		delete(additionalProperties, "speed")
-		delete(additionalProperties, "duplex")
-		delete(additionalProperties, "wwn")
-		delete(additionalProperties, "mgmt_only")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "rf_role")
-		delete(additionalProperties, "rf_channel")
-		delete(additionalProperties, "poe_mode")
-		delete(additionalProperties, "poe_type")
-		delete(additionalProperties, "rf_channel_frequency")
-		delete(additionalProperties, "rf_channel_width")
-		delete(additionalProperties, "tx_power")
-		delete(additionalProperties, "untagged_vlan")
-		delete(additionalProperties, "tagged_vlans")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "wireless_lans")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfaceRequest struct {

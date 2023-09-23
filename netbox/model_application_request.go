@@ -12,6 +12,7 @@ package netbox
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // checks if the ApplicationRequest type satisfies the MappedNullable interface at compile time
@@ -26,10 +27,20 @@ type ApplicationRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Device NullableInt32 `json:"device,omitempty"`
+	// Maximum CPU Usage in cores or total percent (100% * number of cores) - 0 for no limit
+	CpuLimit *string `json:"cpu_limit,omitempty"`
+	// Maximum RAM Usage in MegaBytes - 0 for no limit
+	RamLimit *float64 `json:"ram_limit,omitempty"`
+	// Idle CPU Usage in cores or total percent (100% * number of cores) - 0 for unknown or none
+	IdleCpu *string `json:"idle_cpu,omitempty"`
+	// * `none` - None * `systemd` - Systemd * `docker` - Docker * `podman` - Podman * `kubernetes` - Kubernetes
+	ApplicationManager *string `json:"application_manager,omitempty"`
+	Group NullableInt32 `json:"group,omitempty"`
+	// Version of the Application
+	Version *string `json:"version,omitempty"`
+	LastVersionUpgrade NullableTime `json:"last_version_upgrade,omitempty"`
 }
-
-type _ApplicationRequest ApplicationRequest
 
 // NewApplicationRequest instantiates a new ApplicationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -201,6 +212,292 @@ func (o *ApplicationRequest) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
+// GetDevice returns the Device field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ApplicationRequest) GetDevice() int32 {
+	if o == nil || IsNil(o.Device.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Device.Get()
+}
+
+// GetDeviceOk returns a tuple with the Device field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ApplicationRequest) GetDeviceOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Device.Get(), o.Device.IsSet()
+}
+
+// HasDevice returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasDevice() bool {
+	if o != nil && o.Device.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDevice gets a reference to the given NullableInt32 and assigns it to the Device field.
+func (o *ApplicationRequest) SetDevice(v int32) {
+	o.Device.Set(&v)
+}
+// SetDeviceNil sets the value for Device to be an explicit nil
+func (o *ApplicationRequest) SetDeviceNil() {
+	o.Device.Set(nil)
+}
+
+// UnsetDevice ensures that no value is present for Device, not even an explicit nil
+func (o *ApplicationRequest) UnsetDevice() {
+	o.Device.Unset()
+}
+
+// GetCpuLimit returns the CpuLimit field value if set, zero value otherwise.
+func (o *ApplicationRequest) GetCpuLimit() string {
+	if o == nil || IsNil(o.CpuLimit) {
+		var ret string
+		return ret
+	}
+	return *o.CpuLimit
+}
+
+// GetCpuLimitOk returns a tuple with the CpuLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationRequest) GetCpuLimitOk() (*string, bool) {
+	if o == nil || IsNil(o.CpuLimit) {
+		return nil, false
+	}
+	return o.CpuLimit, true
+}
+
+// HasCpuLimit returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasCpuLimit() bool {
+	if o != nil && !IsNil(o.CpuLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetCpuLimit gets a reference to the given string and assigns it to the CpuLimit field.
+func (o *ApplicationRequest) SetCpuLimit(v string) {
+	o.CpuLimit = &v
+}
+
+// GetRamLimit returns the RamLimit field value if set, zero value otherwise.
+func (o *ApplicationRequest) GetRamLimit() float64 {
+	if o == nil || IsNil(o.RamLimit) {
+		var ret float64
+		return ret
+	}
+	return *o.RamLimit
+}
+
+// GetRamLimitOk returns a tuple with the RamLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationRequest) GetRamLimitOk() (*float64, bool) {
+	if o == nil || IsNil(o.RamLimit) {
+		return nil, false
+	}
+	return o.RamLimit, true
+}
+
+// HasRamLimit returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasRamLimit() bool {
+	if o != nil && !IsNil(o.RamLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRamLimit gets a reference to the given float64 and assigns it to the RamLimit field.
+func (o *ApplicationRequest) SetRamLimit(v float64) {
+	o.RamLimit = &v
+}
+
+// GetIdleCpu returns the IdleCpu field value if set, zero value otherwise.
+func (o *ApplicationRequest) GetIdleCpu() string {
+	if o == nil || IsNil(o.IdleCpu) {
+		var ret string
+		return ret
+	}
+	return *o.IdleCpu
+}
+
+// GetIdleCpuOk returns a tuple with the IdleCpu field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationRequest) GetIdleCpuOk() (*string, bool) {
+	if o == nil || IsNil(o.IdleCpu) {
+		return nil, false
+	}
+	return o.IdleCpu, true
+}
+
+// HasIdleCpu returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasIdleCpu() bool {
+	if o != nil && !IsNil(o.IdleCpu) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdleCpu gets a reference to the given string and assigns it to the IdleCpu field.
+func (o *ApplicationRequest) SetIdleCpu(v string) {
+	o.IdleCpu = &v
+}
+
+// GetApplicationManager returns the ApplicationManager field value if set, zero value otherwise.
+func (o *ApplicationRequest) GetApplicationManager() string {
+	if o == nil || IsNil(o.ApplicationManager) {
+		var ret string
+		return ret
+	}
+	return *o.ApplicationManager
+}
+
+// GetApplicationManagerOk returns a tuple with the ApplicationManager field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationRequest) GetApplicationManagerOk() (*string, bool) {
+	if o == nil || IsNil(o.ApplicationManager) {
+		return nil, false
+	}
+	return o.ApplicationManager, true
+}
+
+// HasApplicationManager returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasApplicationManager() bool {
+	if o != nil && !IsNil(o.ApplicationManager) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationManager gets a reference to the given string and assigns it to the ApplicationManager field.
+func (o *ApplicationRequest) SetApplicationManager(v string) {
+	o.ApplicationManager = &v
+}
+
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ApplicationRequest) GetGroup() int32 {
+	if o == nil || IsNil(o.Group.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Group.Get()
+}
+
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ApplicationRequest) GetGroupOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Group.Get(), o.Group.IsSet()
+}
+
+// HasGroup returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasGroup() bool {
+	if o != nil && o.Group.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given NullableInt32 and assigns it to the Group field.
+func (o *ApplicationRequest) SetGroup(v int32) {
+	o.Group.Set(&v)
+}
+// SetGroupNil sets the value for Group to be an explicit nil
+func (o *ApplicationRequest) SetGroupNil() {
+	o.Group.Set(nil)
+}
+
+// UnsetGroup ensures that no value is present for Group, not even an explicit nil
+func (o *ApplicationRequest) UnsetGroup() {
+	o.Group.Unset()
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *ApplicationRequest) GetVersion() string {
+	if o == nil || IsNil(o.Version) {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationRequest) GetVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.Version) {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasVersion() bool {
+	if o != nil && !IsNil(o.Version) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *ApplicationRequest) SetVersion(v string) {
+	o.Version = &v
+}
+
+// GetLastVersionUpgrade returns the LastVersionUpgrade field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ApplicationRequest) GetLastVersionUpgrade() time.Time {
+	if o == nil || IsNil(o.LastVersionUpgrade.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastVersionUpgrade.Get()
+}
+
+// GetLastVersionUpgradeOk returns a tuple with the LastVersionUpgrade field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ApplicationRequest) GetLastVersionUpgradeOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LastVersionUpgrade.Get(), o.LastVersionUpgrade.IsSet()
+}
+
+// HasLastVersionUpgrade returns a boolean if a field has been set.
+func (o *ApplicationRequest) HasLastVersionUpgrade() bool {
+	if o != nil && o.LastVersionUpgrade.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastVersionUpgrade gets a reference to the given NullableTime and assigns it to the LastVersionUpgrade field.
+func (o *ApplicationRequest) SetLastVersionUpgrade(v time.Time) {
+	o.LastVersionUpgrade.Set(&v)
+}
+// SetLastVersionUpgradeNil sets the value for LastVersionUpgrade to be an explicit nil
+func (o *ApplicationRequest) SetLastVersionUpgradeNil() {
+	o.LastVersionUpgrade.Set(nil)
+}
+
+// UnsetLastVersionUpgrade ensures that no value is present for LastVersionUpgrade, not even an explicit nil
+func (o *ApplicationRequest) UnsetLastVersionUpgrade() {
+	o.LastVersionUpgrade.Unset()
+}
+
 func (o ApplicationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -224,33 +521,31 @@ func (o ApplicationRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	if o.Device.IsSet() {
+		toSerialize["device"] = o.Device.Get()
 	}
-
+	if !IsNil(o.CpuLimit) {
+		toSerialize["cpu_limit"] = o.CpuLimit
+	}
+	if !IsNil(o.RamLimit) {
+		toSerialize["ram_limit"] = o.RamLimit
+	}
+	if !IsNil(o.IdleCpu) {
+		toSerialize["idle_cpu"] = o.IdleCpu
+	}
+	if !IsNil(o.ApplicationManager) {
+		toSerialize["application_manager"] = o.ApplicationManager
+	}
+	if o.Group.IsSet() {
+		toSerialize["group"] = o.Group.Get()
+	}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
+	}
+	if o.LastVersionUpgrade.IsSet() {
+		toSerialize["last_version_upgrade"] = o.LastVersionUpgrade.Get()
+	}
 	return toSerialize, nil
-}
-
-func (o *ApplicationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationRequest := _ApplicationRequest{}
-
-	if err = json.Unmarshal(bytes, &varApplicationRequest); err == nil {
-		*o = ApplicationRequest(varApplicationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationRequest struct {

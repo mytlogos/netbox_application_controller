@@ -31,10 +31,7 @@ type CircuitCircuitTermination struct {
 	// ID of the local cross-connect
 	XconnectId *string `json:"xconnect_id,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CircuitCircuitTermination CircuitCircuitTermination
 
 // NewCircuitCircuitTermination instantiates a new CircuitCircuitTermination object
 // This constructor will assign default values to properties that have it defined,
@@ -340,9 +337,9 @@ func (o CircuitCircuitTermination) MarshalJSON() ([]byte, error) {
 
 func (o CircuitCircuitTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["site"] = o.Site.Get()
 	toSerialize["provider_network"] = o.ProviderNetwork.Get()
 	if o.PortSpeed.IsSet() {
@@ -357,37 +354,7 @@ func (o CircuitCircuitTermination) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CircuitCircuitTermination) UnmarshalJSON(bytes []byte) (err error) {
-	varCircuitCircuitTermination := _CircuitCircuitTermination{}
-
-	if err = json.Unmarshal(bytes, &varCircuitCircuitTermination); err == nil {
-		*o = CircuitCircuitTermination(varCircuitCircuitTermination)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "provider_network")
-		delete(additionalProperties, "port_speed")
-		delete(additionalProperties, "upstream_speed")
-		delete(additionalProperties, "xconnect_id")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCircuitCircuitTermination struct {

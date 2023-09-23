@@ -23,10 +23,7 @@ type PaginatedApplicationProtocolList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ApplicationProtocol `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedApplicationProtocolList PaginatedApplicationProtocolList
 
 // NewPaginatedApplicationProtocolList instantiates a new PaginatedApplicationProtocolList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedApplicationProtocolList) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedApplicationProtocolList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedApplicationProtocolList := _PaginatedApplicationProtocolList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedApplicationProtocolList); err == nil {
-		*o = PaginatedApplicationProtocolList(varPaginatedApplicationProtocolList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedApplicationProtocolList struct {

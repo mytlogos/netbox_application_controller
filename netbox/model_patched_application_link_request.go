@@ -25,10 +25,7 @@ type PatchedApplicationLinkRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedApplicationLinkRequest PatchedApplicationLinkRequest
 
 // NewPatchedApplicationLinkRequest instantiates a new PatchedApplicationLinkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -267,34 +264,7 @@ func (o PatchedApplicationLinkRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedApplicationLinkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedApplicationLinkRequest := _PatchedApplicationLinkRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedApplicationLinkRequest); err == nil {
-		*o = PatchedApplicationLinkRequest(varPatchedApplicationLinkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "link")
-		delete(additionalProperties, "application")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedApplicationLinkRequest struct {

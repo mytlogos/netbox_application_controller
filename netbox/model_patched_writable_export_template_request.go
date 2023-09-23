@@ -32,10 +32,7 @@ type PatchedWritableExportTemplateRequest struct {
 	AsAttachment *bool `json:"as_attachment,omitempty"`
 	// Remote data source
 	DataSource NullableInt32 `json:"data_source,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableExportTemplateRequest PatchedWritableExportTemplateRequest
 
 // NewPatchedWritableExportTemplateRequest instantiates a new PatchedWritableExportTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -354,36 +351,7 @@ func (o PatchedWritableExportTemplateRequest) ToMap() (map[string]interface{}, e
 	if o.DataSource.IsSet() {
 		toSerialize["data_source"] = o.DataSource.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableExportTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableExportTemplateRequest := _PatchedWritableExportTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableExportTemplateRequest); err == nil {
-		*o = PatchedWritableExportTemplateRequest(varPatchedWritableExportTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "template_code")
-		delete(additionalProperties, "mime_type")
-		delete(additionalProperties, "file_extension")
-		delete(additionalProperties, "as_attachment")
-		delete(additionalProperties, "data_source")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableExportTemplateRequest struct {

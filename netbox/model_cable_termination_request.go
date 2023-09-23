@@ -24,10 +24,7 @@ type CableTerminationRequest struct {
 	CableEnd string `json:"cable_end"`
 	TerminationType string `json:"termination_type"`
 	TerminationId int64 `json:"termination_id"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CableTerminationRequest CableTerminationRequest
 
 // NewCableTerminationRequest instantiates a new CableTerminationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -160,32 +157,7 @@ func (o CableTerminationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["cable_end"] = o.CableEnd
 	toSerialize["termination_type"] = o.TerminationType
 	toSerialize["termination_id"] = o.TerminationId
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CableTerminationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varCableTerminationRequest := _CableTerminationRequest{}
-
-	if err = json.Unmarshal(bytes, &varCableTerminationRequest); err == nil {
-		*o = CableTerminationRequest(varCableTerminationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "cable_end")
-		delete(additionalProperties, "termination_type")
-		delete(additionalProperties, "termination_id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCableTerminationRequest struct {

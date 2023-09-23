@@ -20,12 +20,12 @@ import (
 )
 
 
-// PluginsApiService PluginsApi service
-type PluginsApiService service
+// PluginsAPIService PluginsAPI service
+type PluginsAPIService service
 
 type ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationGroupRequest *[]ApplicationGroupRequest
 }
 
@@ -46,7 +46,7 @@ Delete a list of application group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest {
 	return ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -54,14 +54,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkDestroy(ctx 
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkDestroyExecute(r ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsBulkDestroyExecute(r ApiPluginsApplicationsApplicationGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkDestroyExecu
 
 type ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationGroupRequest *[]ApplicationGroupRequest
 }
 
@@ -159,7 +159,7 @@ Patch a list of application group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -168,7 +168,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkPartialUpdat
 
 // Execute executes the request
 //  @return []ApplicationGroup
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest) ([]ApplicationGroup, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationGroupsBulkPartialUpdateRequest) ([]ApplicationGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -176,7 +176,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkPartialUpdat
 		localVarReturnValue  []ApplicationGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -262,7 +262,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkPartialUpdat
 
 type ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationGroupRequest *[]ApplicationGroupRequest
 }
 
@@ -283,7 +283,7 @@ Put a list of application group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest {
 	return ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -292,7 +292,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkUpdate(ctx c
 
 // Execute executes the request
 //  @return []ApplicationGroup
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkUpdateExecute(r ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest) ([]ApplicationGroup, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsBulkUpdateExecute(r ApiPluginsApplicationsApplicationGroupsBulkUpdateRequest) ([]ApplicationGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkUpdateExecut
 		localVarReturnValue  []ApplicationGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,7 +386,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsBulkUpdateExecut
 
 type ApiPluginsApplicationsApplicationGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationGroupRequest *ApplicationGroupRequest
 }
 
@@ -407,7 +407,7 @@ Post a list of application group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationGroupsCreateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsCreate(ctx context.Context) ApiPluginsApplicationsApplicationGroupsCreateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsCreate(ctx context.Context) ApiPluginsApplicationsApplicationGroupsCreateRequest {
 	return ApiPluginsApplicationsApplicationGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -416,7 +416,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsCreate(ctx conte
 
 // Execute executes the request
 //  @return ApplicationGroup
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsCreateExecute(r ApiPluginsApplicationsApplicationGroupsCreateRequest) (*ApplicationGroup, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsCreateExecute(r ApiPluginsApplicationsApplicationGroupsCreateRequest) (*ApplicationGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -424,7 +424,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsCreateExecute(r 
 		localVarReturnValue  *ApplicationGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -510,7 +510,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsCreateExecute(r 
 
 type ApiPluginsApplicationsApplicationGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -527,7 +527,7 @@ Delete a application group object.
  @param id A unique integer value identifying this application group.
  @return ApiPluginsApplicationsApplicationGroupsDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsDestroyRequest {
 	return ApiPluginsApplicationsApplicationGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -536,14 +536,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsDestroy(ctx cont
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsDestroyExecute(r ApiPluginsApplicationsApplicationGroupsDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsDestroyExecute(r ApiPluginsApplicationsApplicationGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,7 +616,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsDestroyExecute(r
 
 type ApiPluginsApplicationsApplicationGroupsListRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	limit *int32
 	offset *int32
 	ordering *string
@@ -652,7 +652,7 @@ Get a list of application group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationGroupsListRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsList(ctx context.Context) ApiPluginsApplicationsApplicationGroupsListRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsList(ctx context.Context) ApiPluginsApplicationsApplicationGroupsListRequest {
 	return ApiPluginsApplicationsApplicationGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -661,7 +661,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsList(ctx context
 
 // Execute executes the request
 //  @return PaginatedApplicationGroupList
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsListExecute(r ApiPluginsApplicationsApplicationGroupsListRequest) (*PaginatedApplicationGroupList, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsListExecute(r ApiPluginsApplicationsApplicationGroupsListRequest) (*PaginatedApplicationGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -669,7 +669,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsListExecute(r Ap
 		localVarReturnValue  *PaginatedApplicationGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -759,7 +759,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsListExecute(r Ap
 
 type ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	patchedApplicationGroupRequest *PatchedApplicationGroupRequest
 }
@@ -782,7 +782,7 @@ Patch a application group object.
  @param id A unique integer value identifying this application group.
  @return ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -792,7 +792,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsPartialUpdate(ct
 
 // Execute executes the request
 //  @return ApplicationGroup
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsPartialUpdateExecute(r ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest) (*ApplicationGroup, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsPartialUpdateExecute(r ApiPluginsApplicationsApplicationGroupsPartialUpdateRequest) (*ApplicationGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -800,7 +800,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsPartialUpdateExe
 		localVarReturnValue  *ApplicationGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -884,7 +884,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsPartialUpdateExe
 
 type ApiPluginsApplicationsApplicationGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -901,7 +901,7 @@ Get a application group object.
  @param id A unique integer value identifying this application group.
  @return ApiPluginsApplicationsApplicationGroupsRetrieveRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsRetrieveRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsRetrieveRequest {
 	return ApiPluginsApplicationsApplicationGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -911,7 +911,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsRetrieve(ctx con
 
 // Execute executes the request
 //  @return ApplicationGroup
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsRetrieveExecute(r ApiPluginsApplicationsApplicationGroupsRetrieveRequest) (*ApplicationGroup, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsRetrieveExecute(r ApiPluginsApplicationsApplicationGroupsRetrieveRequest) (*ApplicationGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -919,7 +919,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsRetrieveExecute(
 		localVarReturnValue  *ApplicationGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1001,7 +1001,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsRetrieveExecute(
 
 type ApiPluginsApplicationsApplicationGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	applicationGroupRequest *ApplicationGroupRequest
 }
@@ -1024,7 +1024,7 @@ Put a application group object.
  @param id A unique integer value identifying this application group.
  @return ApiPluginsApplicationsApplicationGroupsUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationGroupsUpdateRequest {
 	return ApiPluginsApplicationsApplicationGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1034,7 +1034,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsUpdate(ctx conte
 
 // Execute executes the request
 //  @return ApplicationGroup
-func (a *PluginsApiService) PluginsApplicationsApplicationGroupsUpdateExecute(r ApiPluginsApplicationsApplicationGroupsUpdateRequest) (*ApplicationGroup, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationGroupsUpdateExecute(r ApiPluginsApplicationsApplicationGroupsUpdateRequest) (*ApplicationGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1042,7 +1042,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsUpdateExecute(r 
 		localVarReturnValue  *ApplicationGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1129,7 +1129,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationGroupsUpdateExecute(r 
 
 type ApiPluginsApplicationsApplicationLinksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationLinkRequest *[]ApplicationLinkRequest
 }
 
@@ -1150,7 +1150,7 @@ Delete a list of application link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationLinksBulkDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationLinksBulkDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationLinksBulkDestroyRequest {
 	return ApiPluginsApplicationsApplicationLinksBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1158,14 +1158,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkDestroy(ctx c
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkDestroyExecute(r ApiPluginsApplicationsApplicationLinksBulkDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksBulkDestroyExecute(r ApiPluginsApplicationsApplicationLinksBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1242,7 +1242,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkDestroyExecut
 
 type ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationLinkRequest *[]ApplicationLinkRequest
 }
 
@@ -1263,7 +1263,7 @@ Patch a list of application link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1272,7 +1272,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkPartialUpdate
 
 // Execute executes the request
 //  @return []ApplicationLink
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest) ([]ApplicationLink, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationLinksBulkPartialUpdateRequest) ([]ApplicationLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1280,7 +1280,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkPartialUpdate
 		localVarReturnValue  []ApplicationLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1366,7 +1366,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkPartialUpdate
 
 type ApiPluginsApplicationsApplicationLinksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationLinkRequest *[]ApplicationLinkRequest
 }
 
@@ -1387,7 +1387,7 @@ Put a list of application link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationLinksBulkUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationLinksBulkUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationLinksBulkUpdateRequest {
 	return ApiPluginsApplicationsApplicationLinksBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1396,7 +1396,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkUpdate(ctx co
 
 // Execute executes the request
 //  @return []ApplicationLink
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkUpdateExecute(r ApiPluginsApplicationsApplicationLinksBulkUpdateRequest) ([]ApplicationLink, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksBulkUpdateExecute(r ApiPluginsApplicationsApplicationLinksBulkUpdateRequest) ([]ApplicationLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1404,7 +1404,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkUpdateExecute
 		localVarReturnValue  []ApplicationLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1490,7 +1490,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksBulkUpdateExecute
 
 type ApiPluginsApplicationsApplicationLinksCreateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationLinkRequest *ApplicationLinkRequest
 }
 
@@ -1511,7 +1511,7 @@ Post a list of application link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationLinksCreateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksCreate(ctx context.Context) ApiPluginsApplicationsApplicationLinksCreateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksCreate(ctx context.Context) ApiPluginsApplicationsApplicationLinksCreateRequest {
 	return ApiPluginsApplicationsApplicationLinksCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1520,7 +1520,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksCreate(ctx contex
 
 // Execute executes the request
 //  @return ApplicationLink
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksCreateExecute(r ApiPluginsApplicationsApplicationLinksCreateRequest) (*ApplicationLink, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksCreateExecute(r ApiPluginsApplicationsApplicationLinksCreateRequest) (*ApplicationLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1528,7 +1528,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksCreateExecute(r A
 		localVarReturnValue  *ApplicationLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1614,7 +1614,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksCreateExecute(r A
 
 type ApiPluginsApplicationsApplicationLinksDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -1631,7 +1631,7 @@ Delete a application link object.
  @param id A unique integer value identifying this application link.
  @return ApiPluginsApplicationsApplicationLinksDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksDestroyRequest {
 	return ApiPluginsApplicationsApplicationLinksDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1640,14 +1640,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksDestroy(ctx conte
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksDestroyExecute(r ApiPluginsApplicationsApplicationLinksDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksDestroyExecute(r ApiPluginsApplicationsApplicationLinksDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1720,7 +1720,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksDestroyExecute(r 
 
 type ApiPluginsApplicationsApplicationLinksListRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	limit *int32
 	offset *int32
 	ordering *string
@@ -1756,7 +1756,7 @@ Get a list of application link objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationLinksListRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksList(ctx context.Context) ApiPluginsApplicationsApplicationLinksListRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksList(ctx context.Context) ApiPluginsApplicationsApplicationLinksListRequest {
 	return ApiPluginsApplicationsApplicationLinksListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1765,7 +1765,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksList(ctx context.
 
 // Execute executes the request
 //  @return PaginatedApplicationLinkList
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksListExecute(r ApiPluginsApplicationsApplicationLinksListRequest) (*PaginatedApplicationLinkList, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksListExecute(r ApiPluginsApplicationsApplicationLinksListRequest) (*PaginatedApplicationLinkList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1773,7 +1773,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksListExecute(r Api
 		localVarReturnValue  *PaginatedApplicationLinkList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1863,7 +1863,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksListExecute(r Api
 
 type ApiPluginsApplicationsApplicationLinksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	patchedApplicationLinkRequest *PatchedApplicationLinkRequest
 }
@@ -1886,7 +1886,7 @@ Patch a application link object.
  @param id A unique integer value identifying this application link.
  @return ApiPluginsApplicationsApplicationLinksPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationLinksPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1896,7 +1896,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksPartialUpdate(ctx
 
 // Execute executes the request
 //  @return ApplicationLink
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksPartialUpdateExecute(r ApiPluginsApplicationsApplicationLinksPartialUpdateRequest) (*ApplicationLink, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksPartialUpdateExecute(r ApiPluginsApplicationsApplicationLinksPartialUpdateRequest) (*ApplicationLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1904,7 +1904,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksPartialUpdateExec
 		localVarReturnValue  *ApplicationLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1988,7 +1988,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksPartialUpdateExec
 
 type ApiPluginsApplicationsApplicationLinksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -2005,7 +2005,7 @@ Get a application link object.
  @param id A unique integer value identifying this application link.
  @return ApiPluginsApplicationsApplicationLinksRetrieveRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksRetrieveRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksRetrieveRequest {
 	return ApiPluginsApplicationsApplicationLinksRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2015,7 +2015,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksRetrieve(ctx cont
 
 // Execute executes the request
 //  @return ApplicationLink
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksRetrieveExecute(r ApiPluginsApplicationsApplicationLinksRetrieveRequest) (*ApplicationLink, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksRetrieveExecute(r ApiPluginsApplicationsApplicationLinksRetrieveRequest) (*ApplicationLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2023,7 +2023,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksRetrieveExecute(r
 		localVarReturnValue  *ApplicationLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2105,7 +2105,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksRetrieveExecute(r
 
 type ApiPluginsApplicationsApplicationLinksUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	applicationLinkRequest *ApplicationLinkRequest
 }
@@ -2128,7 +2128,7 @@ Put a application link object.
  @param id A unique integer value identifying this application link.
  @return ApiPluginsApplicationsApplicationLinksUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationLinksUpdateRequest {
 	return ApiPluginsApplicationsApplicationLinksUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2138,7 +2138,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksUpdate(ctx contex
 
 // Execute executes the request
 //  @return ApplicationLink
-func (a *PluginsApiService) PluginsApplicationsApplicationLinksUpdateExecute(r ApiPluginsApplicationsApplicationLinksUpdateRequest) (*ApplicationLink, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationLinksUpdateExecute(r ApiPluginsApplicationsApplicationLinksUpdateRequest) (*ApplicationLink, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2146,7 +2146,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksUpdateExecute(r A
 		localVarReturnValue  *ApplicationLink
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationLinksUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationLinksUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2233,7 +2233,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationLinksUpdateExecute(r A
 
 type ApiPluginsApplicationsApplicationPortsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationPortRequest *[]ApplicationPortRequest
 }
 
@@ -2254,7 +2254,7 @@ Delete a list of application port objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationPortsBulkDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationPortsBulkDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationPortsBulkDestroyRequest {
 	return ApiPluginsApplicationsApplicationPortsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2262,14 +2262,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkDestroy(ctx c
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkDestroyExecute(r ApiPluginsApplicationsApplicationPortsBulkDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsBulkDestroyExecute(r ApiPluginsApplicationsApplicationPortsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2346,7 +2346,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkDestroyExecut
 
 type ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationPortRequest *[]ApplicationPortRequest
 }
 
@@ -2367,7 +2367,7 @@ Patch a list of application port objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2376,7 +2376,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkPartialUpdate
 
 // Execute executes the request
 //  @return []ApplicationPort
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest) ([]ApplicationPort, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationPortsBulkPartialUpdateRequest) ([]ApplicationPort, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -2384,7 +2384,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkPartialUpdate
 		localVarReturnValue  []ApplicationPort
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2470,7 +2470,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkPartialUpdate
 
 type ApiPluginsApplicationsApplicationPortsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationPortRequest *[]ApplicationPortRequest
 }
 
@@ -2491,7 +2491,7 @@ Put a list of application port objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationPortsBulkUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationPortsBulkUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationPortsBulkUpdateRequest {
 	return ApiPluginsApplicationsApplicationPortsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2500,7 +2500,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkUpdate(ctx co
 
 // Execute executes the request
 //  @return []ApplicationPort
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkUpdateExecute(r ApiPluginsApplicationsApplicationPortsBulkUpdateRequest) ([]ApplicationPort, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsBulkUpdateExecute(r ApiPluginsApplicationsApplicationPortsBulkUpdateRequest) ([]ApplicationPort, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2508,7 +2508,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkUpdateExecute
 		localVarReturnValue  []ApplicationPort
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2594,7 +2594,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsBulkUpdateExecute
 
 type ApiPluginsApplicationsApplicationPortsCreateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationPortRequest *ApplicationPortRequest
 }
 
@@ -2615,7 +2615,7 @@ Post a list of application port objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationPortsCreateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsCreate(ctx context.Context) ApiPluginsApplicationsApplicationPortsCreateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsCreate(ctx context.Context) ApiPluginsApplicationsApplicationPortsCreateRequest {
 	return ApiPluginsApplicationsApplicationPortsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2624,7 +2624,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsCreate(ctx contex
 
 // Execute executes the request
 //  @return ApplicationPort
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsCreateExecute(r ApiPluginsApplicationsApplicationPortsCreateRequest) (*ApplicationPort, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsCreateExecute(r ApiPluginsApplicationsApplicationPortsCreateRequest) (*ApplicationPort, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2632,7 +2632,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsCreateExecute(r A
 		localVarReturnValue  *ApplicationPort
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2718,7 +2718,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsCreateExecute(r A
 
 type ApiPluginsApplicationsApplicationPortsDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -2735,7 +2735,7 @@ Delete a application port object.
  @param id A unique integer value identifying this application port.
  @return ApiPluginsApplicationsApplicationPortsDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsDestroyRequest {
 	return ApiPluginsApplicationsApplicationPortsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2744,14 +2744,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsDestroy(ctx conte
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsDestroyExecute(r ApiPluginsApplicationsApplicationPortsDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsDestroyExecute(r ApiPluginsApplicationsApplicationPortsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2824,7 +2824,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsDestroyExecute(r 
 
 type ApiPluginsApplicationsApplicationPortsListRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	limit *int32
 	offset *int32
 	ordering *string
@@ -2860,7 +2860,7 @@ Get a list of application port objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationPortsListRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsList(ctx context.Context) ApiPluginsApplicationsApplicationPortsListRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsList(ctx context.Context) ApiPluginsApplicationsApplicationPortsListRequest {
 	return ApiPluginsApplicationsApplicationPortsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2869,7 +2869,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsList(ctx context.
 
 // Execute executes the request
 //  @return PaginatedApplicationPortList
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsListExecute(r ApiPluginsApplicationsApplicationPortsListRequest) (*PaginatedApplicationPortList, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsListExecute(r ApiPluginsApplicationsApplicationPortsListRequest) (*PaginatedApplicationPortList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2877,7 +2877,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsListExecute(r Api
 		localVarReturnValue  *PaginatedApplicationPortList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2967,7 +2967,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsListExecute(r Api
 
 type ApiPluginsApplicationsApplicationPortsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	patchedApplicationPortRequest *PatchedApplicationPortRequest
 }
@@ -2990,7 +2990,7 @@ Patch a application port object.
  @param id A unique integer value identifying this application port.
  @return ApiPluginsApplicationsApplicationPortsPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationPortsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3000,7 +3000,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsPartialUpdate(ctx
 
 // Execute executes the request
 //  @return ApplicationPort
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsPartialUpdateExecute(r ApiPluginsApplicationsApplicationPortsPartialUpdateRequest) (*ApplicationPort, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsPartialUpdateExecute(r ApiPluginsApplicationsApplicationPortsPartialUpdateRequest) (*ApplicationPort, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3008,7 +3008,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsPartialUpdateExec
 		localVarReturnValue  *ApplicationPort
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3092,7 +3092,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsPartialUpdateExec
 
 type ApiPluginsApplicationsApplicationPortsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -3109,7 +3109,7 @@ Get a application port object.
  @param id A unique integer value identifying this application port.
  @return ApiPluginsApplicationsApplicationPortsRetrieveRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsRetrieveRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsRetrieveRequest {
 	return ApiPluginsApplicationsApplicationPortsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3119,7 +3119,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsRetrieve(ctx cont
 
 // Execute executes the request
 //  @return ApplicationPort
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsRetrieveExecute(r ApiPluginsApplicationsApplicationPortsRetrieveRequest) (*ApplicationPort, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsRetrieveExecute(r ApiPluginsApplicationsApplicationPortsRetrieveRequest) (*ApplicationPort, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3127,7 +3127,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsRetrieveExecute(r
 		localVarReturnValue  *ApplicationPort
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3209,7 +3209,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsRetrieveExecute(r
 
 type ApiPluginsApplicationsApplicationPortsUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	applicationPortRequest *ApplicationPortRequest
 }
@@ -3232,7 +3232,7 @@ Put a application port object.
  @param id A unique integer value identifying this application port.
  @return ApiPluginsApplicationsApplicationPortsUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationPortsUpdateRequest {
 	return ApiPluginsApplicationsApplicationPortsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3242,7 +3242,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsUpdate(ctx contex
 
 // Execute executes the request
 //  @return ApplicationPort
-func (a *PluginsApiService) PluginsApplicationsApplicationPortsUpdateExecute(r ApiPluginsApplicationsApplicationPortsUpdateRequest) (*ApplicationPort, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationPortsUpdateExecute(r ApiPluginsApplicationsApplicationPortsUpdateRequest) (*ApplicationPort, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3250,7 +3250,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsUpdateExecute(r A
 		localVarReturnValue  *ApplicationPort
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationPortsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationPortsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3337,7 +3337,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationPortsUpdateExecute(r A
 
 type ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationProtocolRequest *[]ApplicationProtocolRequest
 }
 
@@ -3358,7 +3358,7 @@ Delete a list of application protocol objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest {
 	return ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3366,14 +3366,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkDestroy(c
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkDestroyExecute(r ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsBulkDestroyExecute(r ApiPluginsApplicationsApplicationProtocolsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3450,7 +3450,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkDestroyEx
 
 type ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationProtocolRequest *[]ApplicationProtocolRequest
 }
 
@@ -3471,7 +3471,7 @@ Patch a list of application protocol objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3480,7 +3480,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkPartialUp
 
 // Execute executes the request
 //  @return []ApplicationProtocol
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest) ([]ApplicationProtocol, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsBulkPartialUpdateRequest) ([]ApplicationProtocol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3488,7 +3488,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkPartialUp
 		localVarReturnValue  []ApplicationProtocol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3574,7 +3574,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkPartialUp
 
 type ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationProtocolRequest *[]ApplicationProtocolRequest
 }
 
@@ -3595,7 +3595,7 @@ Put a list of application protocol objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest {
 	return ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3604,7 +3604,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkUpdate(ct
 
 // Execute executes the request
 //  @return []ApplicationProtocol
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest) ([]ApplicationProtocol, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsBulkUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsBulkUpdateRequest) ([]ApplicationProtocol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3612,7 +3612,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkUpdateExe
 		localVarReturnValue  []ApplicationProtocol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3698,7 +3698,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsBulkUpdateExe
 
 type ApiPluginsApplicationsApplicationProtocolsCreateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationProtocolRequest *ApplicationProtocolRequest
 }
 
@@ -3719,7 +3719,7 @@ Post a list of application protocol objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationProtocolsCreateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsCreate(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsCreateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsCreate(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsCreateRequest {
 	return ApiPluginsApplicationsApplicationProtocolsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3728,7 +3728,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsCreate(ctx co
 
 // Execute executes the request
 //  @return ApplicationProtocol
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsCreateExecute(r ApiPluginsApplicationsApplicationProtocolsCreateRequest) (*ApplicationProtocol, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsCreateExecute(r ApiPluginsApplicationsApplicationProtocolsCreateRequest) (*ApplicationProtocol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3736,7 +3736,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsCreateExecute
 		localVarReturnValue  *ApplicationProtocol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3822,7 +3822,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsCreateExecute
 
 type ApiPluginsApplicationsApplicationProtocolsDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -3839,7 +3839,7 @@ Delete a application protocol object.
  @param id A unique integer value identifying this application protocol.
  @return ApiPluginsApplicationsApplicationProtocolsDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsDestroyRequest {
 	return ApiPluginsApplicationsApplicationProtocolsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3848,14 +3848,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsDestroy(ctx c
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsDestroyExecute(r ApiPluginsApplicationsApplicationProtocolsDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsDestroyExecute(r ApiPluginsApplicationsApplicationProtocolsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3928,7 +3928,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsDestroyExecut
 
 type ApiPluginsApplicationsApplicationProtocolsListRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	limit *int32
 	offset *int32
 	ordering *string
@@ -3964,7 +3964,7 @@ Get a list of application protocol objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationProtocolsListRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsList(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsListRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsList(ctx context.Context) ApiPluginsApplicationsApplicationProtocolsListRequest {
 	return ApiPluginsApplicationsApplicationProtocolsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3973,7 +3973,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsList(ctx cont
 
 // Execute executes the request
 //  @return PaginatedApplicationProtocolList
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsListExecute(r ApiPluginsApplicationsApplicationProtocolsListRequest) (*PaginatedApplicationProtocolList, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsListExecute(r ApiPluginsApplicationsApplicationProtocolsListRequest) (*PaginatedApplicationProtocolList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3981,7 +3981,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsListExecute(r
 		localVarReturnValue  *PaginatedApplicationProtocolList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4071,7 +4071,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsListExecute(r
 
 type ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	patchedApplicationProtocolRequest *PatchedApplicationProtocolRequest
 }
@@ -4094,7 +4094,7 @@ Patch a application protocol object.
  @param id A unique integer value identifying this application protocol.
  @return ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4104,7 +4104,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsPartialUpdate
 
 // Execute executes the request
 //  @return ApplicationProtocol
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsPartialUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest) (*ApplicationProtocol, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsPartialUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsPartialUpdateRequest) (*ApplicationProtocol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4112,7 +4112,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsPartialUpdate
 		localVarReturnValue  *ApplicationProtocol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4196,7 +4196,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsPartialUpdate
 
 type ApiPluginsApplicationsApplicationProtocolsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -4213,7 +4213,7 @@ Get a application protocol object.
  @param id A unique integer value identifying this application protocol.
  @return ApiPluginsApplicationsApplicationProtocolsRetrieveRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsRetrieveRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsRetrieveRequest {
 	return ApiPluginsApplicationsApplicationProtocolsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4223,7 +4223,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsRetrieve(ctx 
 
 // Execute executes the request
 //  @return ApplicationProtocol
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsRetrieveExecute(r ApiPluginsApplicationsApplicationProtocolsRetrieveRequest) (*ApplicationProtocol, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsRetrieveExecute(r ApiPluginsApplicationsApplicationProtocolsRetrieveRequest) (*ApplicationProtocol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4231,7 +4231,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsRetrieveExecu
 		localVarReturnValue  *ApplicationProtocol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4313,7 +4313,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsRetrieveExecu
 
 type ApiPluginsApplicationsApplicationProtocolsUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	applicationProtocolRequest *ApplicationProtocolRequest
 }
@@ -4336,7 +4336,7 @@ Put a application protocol object.
  @param id A unique integer value identifying this application protocol.
  @return ApiPluginsApplicationsApplicationProtocolsUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationProtocolsUpdateRequest {
 	return ApiPluginsApplicationsApplicationProtocolsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4346,7 +4346,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsUpdate(ctx co
 
 // Execute executes the request
 //  @return ApplicationProtocol
-func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsUpdateRequest) (*ApplicationProtocol, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationProtocolsUpdateExecute(r ApiPluginsApplicationsApplicationProtocolsUpdateRequest) (*ApplicationProtocol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4354,7 +4354,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsUpdateExecute
 		localVarReturnValue  *ApplicationProtocol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationProtocolsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationProtocolsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4441,7 +4441,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationProtocolsUpdateExecute
 
 type ApiPluginsApplicationsApplicationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationRequest *[]ApplicationRequest
 }
 
@@ -4462,7 +4462,7 @@ Delete a list of application objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationsBulkDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationsBulkDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsBulkDestroy(ctx context.Context) ApiPluginsApplicationsApplicationsBulkDestroyRequest {
 	return ApiPluginsApplicationsApplicationsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4470,14 +4470,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkDestroy(ctx conte
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationsBulkDestroyExecute(r ApiPluginsApplicationsApplicationsBulkDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsBulkDestroyExecute(r ApiPluginsApplicationsApplicationsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4554,7 +4554,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkDestroyExecute(r 
 
 type ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationRequest *[]ApplicationRequest
 }
 
@@ -4575,7 +4575,7 @@ Patch a list of application objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsBulkPartialUpdate(ctx context.Context) ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4584,7 +4584,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkPartialUpdate(ctx
 
 // Execute executes the request
 //  @return []Application
-func (a *PluginsApiService) PluginsApplicationsApplicationsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest) ([]Application, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsBulkPartialUpdateExecute(r ApiPluginsApplicationsApplicationsBulkPartialUpdateRequest) ([]Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4592,7 +4592,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkPartialUpdateExec
 		localVarReturnValue  []Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4678,7 +4678,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkPartialUpdateExec
 
 type ApiPluginsApplicationsApplicationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationRequest *[]ApplicationRequest
 }
 
@@ -4699,7 +4699,7 @@ Put a list of application objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationsBulkUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationsBulkUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsBulkUpdate(ctx context.Context) ApiPluginsApplicationsApplicationsBulkUpdateRequest {
 	return ApiPluginsApplicationsApplicationsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4708,7 +4708,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkUpdate(ctx contex
 
 // Execute executes the request
 //  @return []Application
-func (a *PluginsApiService) PluginsApplicationsApplicationsBulkUpdateExecute(r ApiPluginsApplicationsApplicationsBulkUpdateRequest) ([]Application, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsBulkUpdateExecute(r ApiPluginsApplicationsApplicationsBulkUpdateRequest) ([]Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4716,7 +4716,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkUpdateExecute(r A
 		localVarReturnValue  []Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4802,7 +4802,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsBulkUpdateExecute(r A
 
 type ApiPluginsApplicationsApplicationsCreateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	applicationRequest *ApplicationRequest
 }
 
@@ -4823,7 +4823,7 @@ Post a list of application objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationsCreateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsCreate(ctx context.Context) ApiPluginsApplicationsApplicationsCreateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsCreate(ctx context.Context) ApiPluginsApplicationsApplicationsCreateRequest {
 	return ApiPluginsApplicationsApplicationsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4832,7 +4832,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsCreate(ctx context.Co
 
 // Execute executes the request
 //  @return Application
-func (a *PluginsApiService) PluginsApplicationsApplicationsCreateExecute(r ApiPluginsApplicationsApplicationsCreateRequest) (*Application, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsCreateExecute(r ApiPluginsApplicationsApplicationsCreateRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4840,7 +4840,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsCreateExecute(r ApiPl
 		localVarReturnValue  *Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4926,7 +4926,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsCreateExecute(r ApiPl
 
 type ApiPluginsApplicationsApplicationsDestroyRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -4943,7 +4943,7 @@ Delete a application object.
  @param id A unique integer value identifying this application.
  @return ApiPluginsApplicationsApplicationsDestroyRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsDestroyRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsDestroy(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsDestroyRequest {
 	return ApiPluginsApplicationsApplicationsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4952,14 +4952,14 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsDestroy(ctx context.C
 }
 
 // Execute executes the request
-func (a *PluginsApiService) PluginsApplicationsApplicationsDestroyExecute(r ApiPluginsApplicationsApplicationsDestroyRequest) (*http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsDestroyExecute(r ApiPluginsApplicationsApplicationsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5032,7 +5032,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsDestroyExecute(r ApiP
 
 type ApiPluginsApplicationsApplicationsListRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	limit *int32
 	offset *int32
 	ordering *string
@@ -5068,7 +5068,7 @@ Get a list of application objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPluginsApplicationsApplicationsListRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsList(ctx context.Context) ApiPluginsApplicationsApplicationsListRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsList(ctx context.Context) ApiPluginsApplicationsApplicationsListRequest {
 	return ApiPluginsApplicationsApplicationsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5077,7 +5077,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsList(ctx context.Cont
 
 // Execute executes the request
 //  @return PaginatedApplicationList
-func (a *PluginsApiService) PluginsApplicationsApplicationsListExecute(r ApiPluginsApplicationsApplicationsListRequest) (*PaginatedApplicationList, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsListExecute(r ApiPluginsApplicationsApplicationsListRequest) (*PaginatedApplicationList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5085,7 +5085,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsListExecute(r ApiPlug
 		localVarReturnValue  *PaginatedApplicationList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5175,7 +5175,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsListExecute(r ApiPlug
 
 type ApiPluginsApplicationsApplicationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	patchedApplicationRequest *PatchedApplicationRequest
 }
@@ -5198,7 +5198,7 @@ Patch a application object.
  @param id A unique integer value identifying this application.
  @return ApiPluginsApplicationsApplicationsPartialUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsPartialUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsPartialUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsPartialUpdateRequest {
 	return ApiPluginsApplicationsApplicationsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5208,7 +5208,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsPartialUpdate(ctx con
 
 // Execute executes the request
 //  @return Application
-func (a *PluginsApiService) PluginsApplicationsApplicationsPartialUpdateExecute(r ApiPluginsApplicationsApplicationsPartialUpdateRequest) (*Application, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsPartialUpdateExecute(r ApiPluginsApplicationsApplicationsPartialUpdateRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -5216,7 +5216,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsPartialUpdateExecute(
 		localVarReturnValue  *Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5300,7 +5300,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsPartialUpdateExecute(
 
 type ApiPluginsApplicationsApplicationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 }
 
@@ -5317,7 +5317,7 @@ Get a application object.
  @param id A unique integer value identifying this application.
  @return ApiPluginsApplicationsApplicationsRetrieveRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsRetrieveRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsRetrieve(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsRetrieveRequest {
 	return ApiPluginsApplicationsApplicationsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5327,7 +5327,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsRetrieve(ctx context.
 
 // Execute executes the request
 //  @return Application
-func (a *PluginsApiService) PluginsApplicationsApplicationsRetrieveExecute(r ApiPluginsApplicationsApplicationsRetrieveRequest) (*Application, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsRetrieveExecute(r ApiPluginsApplicationsApplicationsRetrieveRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5335,7 +5335,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsRetrieveExecute(r Api
 		localVarReturnValue  *Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5417,7 +5417,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsRetrieveExecute(r Api
 
 type ApiPluginsApplicationsApplicationsUpdateRequest struct {
 	ctx context.Context
-	ApiService *PluginsApiService
+	ApiService *PluginsAPIService
 	id int32
 	applicationRequest *ApplicationRequest
 }
@@ -5440,7 +5440,7 @@ Put a application object.
  @param id A unique integer value identifying this application.
  @return ApiPluginsApplicationsApplicationsUpdateRequest
 */
-func (a *PluginsApiService) PluginsApplicationsApplicationsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsUpdateRequest {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsUpdate(ctx context.Context, id int32) ApiPluginsApplicationsApplicationsUpdateRequest {
 	return ApiPluginsApplicationsApplicationsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5450,7 +5450,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsUpdate(ctx context.Co
 
 // Execute executes the request
 //  @return Application
-func (a *PluginsApiService) PluginsApplicationsApplicationsUpdateExecute(r ApiPluginsApplicationsApplicationsUpdateRequest) (*Application, *http.Response, error) {
+func (a *PluginsAPIService) PluginsApplicationsApplicationsUpdateExecute(r ApiPluginsApplicationsApplicationsUpdateRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -5458,7 +5458,7 @@ func (a *PluginsApiService) PluginsApplicationsApplicationsUpdateExecute(r ApiPl
 		localVarReturnValue  *Application
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsApiService.PluginsApplicationsApplicationsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.PluginsApplicationsApplicationsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

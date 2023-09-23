@@ -42,10 +42,7 @@ type WritableDeviceTypeRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableDeviceTypeRequest WritableDeviceTypeRequest
 
 // NewWritableDeviceTypeRequest instantiates a new WritableDeviceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -666,45 +663,7 @@ func (o WritableDeviceTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableDeviceTypeRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableDeviceTypeRequest := _WritableDeviceTypeRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableDeviceTypeRequest); err == nil {
-		*o = WritableDeviceTypeRequest(varWritableDeviceTypeRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "default_platform")
-		delete(additionalProperties, "model")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "part_number")
-		delete(additionalProperties, "u_height")
-		delete(additionalProperties, "is_full_depth")
-		delete(additionalProperties, "subdevice_role")
-		delete(additionalProperties, "airflow")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "weight_unit")
-		delete(additionalProperties, "front_image")
-		delete(additionalProperties, "rear_image")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableDeviceTypeRequest struct {

@@ -39,10 +39,7 @@ type VirtualDeviceContext struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	InterfaceCount int32 `json:"interface_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VirtualDeviceContext VirtualDeviceContext
 
 // NewVirtualDeviceContext instantiates a new VirtualDeviceContext object
 // This constructor will assign default values to properties that have it defined,
@@ -623,9 +620,9 @@ func (o VirtualDeviceContext) MarshalJSON() ([]byte, error) {
 
 func (o VirtualDeviceContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["device"] = o.Device
 	if o.Identifier.IsSet() {
@@ -656,47 +653,8 @@ func (o VirtualDeviceContext) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: interface_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["interface_count"] = o.InterfaceCount
 	return toSerialize, nil
-}
-
-func (o *VirtualDeviceContext) UnmarshalJSON(bytes []byte) (err error) {
-	varVirtualDeviceContext := _VirtualDeviceContext{}
-
-	if err = json.Unmarshal(bytes, &varVirtualDeviceContext); err == nil {
-		*o = VirtualDeviceContext(varVirtualDeviceContext)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "identifier")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "primary_ip")
-		delete(additionalProperties, "primary_ip4")
-		delete(additionalProperties, "primary_ip6")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "interface_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVirtualDeviceContext struct {

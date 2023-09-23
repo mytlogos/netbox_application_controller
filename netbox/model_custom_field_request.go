@@ -51,10 +51,7 @@ type CustomFieldRequest struct {
 	// Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, <code>^[A-Z]{3}$</code> will limit values to exactly three uppercase letters.
 	ValidationRegex *string `json:"validation_regex,omitempty"`
 	ChoiceSet *NestedCustomFieldChoiceSetRequest `json:"choice_set,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomFieldRequest CustomFieldRequest
 
 // NewCustomFieldRequest instantiates a new CustomFieldRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -707,46 +704,7 @@ func (o CustomFieldRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ChoiceSet) {
 		toSerialize["choice_set"] = o.ChoiceSet
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomFieldRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomFieldRequest := _CustomFieldRequest{}
-
-	if err = json.Unmarshal(bytes, &varCustomFieldRequest); err == nil {
-		*o = CustomFieldRequest(varCustomFieldRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "object_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "group_name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "search_weight")
-		delete(additionalProperties, "filter_logic")
-		delete(additionalProperties, "ui_visibility")
-		delete(additionalProperties, "is_cloneable")
-		delete(additionalProperties, "default")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "validation_minimum")
-		delete(additionalProperties, "validation_maximum")
-		delete(additionalProperties, "validation_regex")
-		delete(additionalProperties, "choice_set")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomFieldRequest struct {

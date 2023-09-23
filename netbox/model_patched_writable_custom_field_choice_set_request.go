@@ -26,10 +26,7 @@ type PatchedWritableCustomFieldChoiceSetRequest struct {
 	ExtraChoices [][]string `json:"extra_choices,omitempty"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically *bool `json:"order_alphabetically,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableCustomFieldChoiceSetRequest PatchedWritableCustomFieldChoiceSetRequest
 
 // NewPatchedWritableCustomFieldChoiceSetRequest instantiates a new PatchedWritableCustomFieldChoiceSetRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -234,33 +231,7 @@ func (o PatchedWritableCustomFieldChoiceSetRequest) ToMap() (map[string]interfac
 	if !IsNil(o.OrderAlphabetically) {
 		toSerialize["order_alphabetically"] = o.OrderAlphabetically
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableCustomFieldChoiceSetRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableCustomFieldChoiceSetRequest := _PatchedWritableCustomFieldChoiceSetRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableCustomFieldChoiceSetRequest); err == nil {
-		*o = PatchedWritableCustomFieldChoiceSetRequest(varPatchedWritableCustomFieldChoiceSetRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "base_choices")
-		delete(additionalProperties, "extra_choices")
-		delete(additionalProperties, "order_alphabetically")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableCustomFieldChoiceSetRequest struct {

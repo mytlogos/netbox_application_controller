@@ -26,10 +26,7 @@ type WritableContactAssignmentRequest struct {
 	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
 	Priority *string `json:"priority,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableContactAssignmentRequest WritableContactAssignmentRequest
 
 // NewWritableContactAssignmentRequest instantiates a new WritableContactAssignmentRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -232,34 +229,7 @@ func (o WritableContactAssignmentRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableContactAssignmentRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableContactAssignmentRequest := _WritableContactAssignmentRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableContactAssignmentRequest); err == nil {
-		*o = WritableContactAssignmentRequest(varWritableContactAssignmentRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_type")
-		delete(additionalProperties, "object_id")
-		delete(additionalProperties, "contact")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "tags")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableContactAssignmentRequest struct {

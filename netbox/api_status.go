@@ -19,12 +19,12 @@ import (
 )
 
 
-// StatusApiService StatusApi service
-type StatusApiService service
+// StatusAPIService StatusAPI service
+type StatusAPIService service
 
 type ApiStatusRetrieveRequest struct {
 	ctx context.Context
-	ApiService *StatusApiService
+	ApiService *StatusAPIService
 }
 
 func (r ApiStatusRetrieveRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -39,7 +39,7 @@ A lightweight read-only endpoint for conveying NetBox's current operational stat
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiStatusRetrieveRequest
 */
-func (a *StatusApiService) StatusRetrieve(ctx context.Context) ApiStatusRetrieveRequest {
+func (a *StatusAPIService) StatusRetrieve(ctx context.Context) ApiStatusRetrieveRequest {
 	return ApiStatusRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -48,7 +48,7 @@ func (a *StatusApiService) StatusRetrieve(ctx context.Context) ApiStatusRetrieve
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StatusApiService) StatusRetrieveExecute(r ApiStatusRetrieveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StatusAPIService) StatusRetrieveExecute(r ApiStatusRetrieveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -56,7 +56,7 @@ func (a *StatusApiService) StatusRetrieveExecute(r ApiStatusRetrieveRequest) (ma
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusApiService.StatusRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusAPIService.StatusRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

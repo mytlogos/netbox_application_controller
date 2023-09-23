@@ -23,10 +23,7 @@ type PaginatedInventoryItemList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []InventoryItem `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedInventoryItemList PaginatedInventoryItemList
 
 // NewPaginatedInventoryItemList instantiates a new PaginatedInventoryItemList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedInventoryItemList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedInventoryItemList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedInventoryItemList := _PaginatedInventoryItemList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedInventoryItemList); err == nil {
-		*o = PaginatedInventoryItemList(varPaginatedInventoryItemList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedInventoryItemList struct {

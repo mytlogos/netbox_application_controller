@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedManufacturerRequest{}
 type NestedManufacturerRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedManufacturerRequest NestedManufacturerRequest
 
 // NewNestedManufacturerRequest instantiates a new NestedManufacturerRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedManufacturerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedManufacturerRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedManufacturerRequest := _NestedManufacturerRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedManufacturerRequest); err == nil {
-		*o = NestedManufacturerRequest(varNestedManufacturerRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedManufacturerRequest struct {

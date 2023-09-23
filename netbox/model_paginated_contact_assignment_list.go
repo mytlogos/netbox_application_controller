@@ -23,10 +23,7 @@ type PaginatedContactAssignmentList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ContactAssignment `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedContactAssignmentList PaginatedContactAssignmentList
 
 // NewPaginatedContactAssignmentList instantiates a new PaginatedContactAssignmentList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedContactAssignmentList) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedContactAssignmentList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedContactAssignmentList := _PaginatedContactAssignmentList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedContactAssignmentList); err == nil {
-		*o = PaginatedContactAssignmentList(varPaginatedContactAssignmentList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedContactAssignmentList struct {

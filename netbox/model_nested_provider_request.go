@@ -22,10 +22,7 @@ type NestedProviderRequest struct {
 	// Full name of the provider
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedProviderRequest NestedProviderRequest
 
 // NewNestedProviderRequest instantiates a new NestedProviderRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -106,30 +103,7 @@ func (o NestedProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedProviderRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedProviderRequest := _NestedProviderRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedProviderRequest); err == nil {
-		*o = NestedProviderRequest(varNestedProviderRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedProviderRequest struct {

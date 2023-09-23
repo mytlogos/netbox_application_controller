@@ -23,10 +23,7 @@ type PaginatedImageAttachmentList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ImageAttachment `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedImageAttachmentList PaginatedImageAttachmentList
 
 // NewPaginatedImageAttachmentList instantiates a new PaginatedImageAttachmentList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedImageAttachmentList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedImageAttachmentList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedImageAttachmentList := _PaginatedImageAttachmentList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedImageAttachmentList); err == nil {
-		*o = PaginatedImageAttachmentList(varPaginatedImageAttachmentList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedImageAttachmentList struct {

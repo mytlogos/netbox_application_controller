@@ -23,10 +23,7 @@ type PaginatedFHRPGroupList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []FHRPGroup `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedFHRPGroupList PaginatedFHRPGroupList
 
 // NewPaginatedFHRPGroupList instantiates a new PaginatedFHRPGroupList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedFHRPGroupList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedFHRPGroupList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedFHRPGroupList := _PaginatedFHRPGroupList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedFHRPGroupList); err == nil {
-		*o = PaginatedFHRPGroupList(varPaginatedFHRPGroupList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedFHRPGroupList struct {

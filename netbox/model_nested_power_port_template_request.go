@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedPowerPortTemplateRequest{}
 type NestedPowerPortTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedPowerPortTemplateRequest NestedPowerPortTemplateRequest
 
 // NewNestedPowerPortTemplateRequest instantiates a new NestedPowerPortTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -79,29 +76,7 @@ func (o NestedPowerPortTemplateRequest) MarshalJSON() ([]byte, error) {
 func (o NestedPowerPortTemplateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedPowerPortTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedPowerPortTemplateRequest := _NestedPowerPortTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedPowerPortTemplateRequest); err == nil {
-		*o = NestedPowerPortTemplateRequest(varNestedPowerPortTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedPowerPortTemplateRequest struct {

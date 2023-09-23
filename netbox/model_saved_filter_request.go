@@ -28,10 +28,7 @@ type SavedFilterRequest struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Shared *bool `json:"shared,omitempty"`
 	Parameters map[string]interface{} `json:"parameters"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _SavedFilterRequest SavedFilterRequest
 
 // NewSavedFilterRequest instantiates a new SavedFilterRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -349,37 +346,7 @@ func (o SavedFilterRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["shared"] = o.Shared
 	}
 	toSerialize["parameters"] = o.Parameters
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *SavedFilterRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varSavedFilterRequest := _SavedFilterRequest{}
-
-	if err = json.Unmarshal(bytes, &varSavedFilterRequest); err == nil {
-		*o = SavedFilterRequest(varSavedFilterRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "shared")
-		delete(additionalProperties, "parameters")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableSavedFilterRequest struct {

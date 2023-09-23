@@ -34,10 +34,7 @@ type User struct {
 	IsActive *bool `json:"is_active,omitempty"`
 	DateJoined *time.Time `json:"date_joined,omitempty"`
 	Groups []int32 `json:"groups,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _User User
 
 // NewUser instantiates a new User object
 // This constructor will assign default values to properties that have it defined,
@@ -390,9 +387,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 
 func (o User) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["username"] = o.Username
 	if !IsNil(o.FirstName) {
 		toSerialize["first_name"] = o.FirstName
@@ -415,39 +412,7 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *User) UnmarshalJSON(bytes []byte) (err error) {
-	varUser := _User{}
-
-	if err = json.Unmarshal(bytes, &varUser); err == nil {
-		*o = User(varUser)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "first_name")
-		delete(additionalProperties, "last_name")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "is_staff")
-		delete(additionalProperties, "is_active")
-		delete(additionalProperties, "date_joined")
-		delete(additionalProperties, "groups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableUser struct {

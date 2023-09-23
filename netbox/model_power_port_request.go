@@ -35,10 +35,7 @@ type PowerPortRequest struct {
 	MarkConnected *bool `json:"mark_connected,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerPortRequest PowerPortRequest
 
 // NewPowerPortRequest instantiates a new PowerPortRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -474,39 +471,7 @@ func (o PowerPortRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerPortRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerPortRequest := _PowerPortRequest{}
-
-	if err = json.Unmarshal(bytes, &varPowerPortRequest); err == nil {
-		*o = PowerPortRequest(varPowerPortRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "maximum_draw")
-		delete(additionalProperties, "allocated_draw")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerPortRequest struct {

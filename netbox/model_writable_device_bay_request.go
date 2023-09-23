@@ -27,10 +27,7 @@ type WritableDeviceBayRequest struct {
 	InstalledDevice NullableInt32 `json:"installed_device,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableDeviceBayRequest WritableDeviceBayRequest
 
 // NewWritableDeviceBayRequest instantiates a new WritableDeviceBayRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -296,35 +293,7 @@ func (o WritableDeviceBayRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableDeviceBayRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableDeviceBayRequest := _WritableDeviceBayRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableDeviceBayRequest); err == nil {
-		*o = WritableDeviceBayRequest(varWritableDeviceBayRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "installed_device")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableDeviceBayRequest struct {

@@ -30,10 +30,7 @@ type RearPortTemplateRequest struct {
 	Color *string `json:"color,omitempty"`
 	Positions *int32 `json:"positions,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _RearPortTemplateRequest RearPortTemplateRequest
 
 // NewRearPortTemplateRequest instantiates a new RearPortTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -344,36 +341,7 @@ func (o RearPortTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *RearPortTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varRearPortTemplateRequest := _RearPortTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varRearPortTemplateRequest); err == nil {
-		*o = RearPortTemplateRequest(varRearPortTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "positions")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRearPortTemplateRequest struct {

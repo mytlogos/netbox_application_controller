@@ -24,10 +24,7 @@ type TagRequest struct {
 	Color *string `json:"color,omitempty"`
 	Description *string `json:"description,omitempty"`
 	ObjectTypes []string `json:"object_types,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _TagRequest TagRequest
 
 // NewTagRequest instantiates a new TagRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -213,33 +210,7 @@ func (o TagRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ObjectTypes) {
 		toSerialize["object_types"] = o.ObjectTypes
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *TagRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varTagRequest := _TagRequest{}
-
-	if err = json.Unmarshal(bytes, &varTagRequest); err == nil {
-		*o = TagRequest(varTagRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "object_types")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTagRequest struct {

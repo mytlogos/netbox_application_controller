@@ -26,10 +26,7 @@ type TokenProvisionRequest struct {
 	Description *string `json:"description,omitempty"`
 	Username string `json:"username"`
 	Password string `json:"password"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _TokenProvisionRequest TokenProvisionRequest
 
 // NewTokenProvisionRequest instantiates a new TokenProvisionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -225,33 +222,7 @@ func (o TokenProvisionRequest) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["username"] = o.Username
 	toSerialize["password"] = o.Password
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *TokenProvisionRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varTokenProvisionRequest := _TokenProvisionRequest{}
-
-	if err = json.Unmarshal(bytes, &varTokenProvisionRequest); err == nil {
-		*o = TokenProvisionRequest(varTokenProvisionRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "expires")
-		delete(additionalProperties, "write_enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTokenProvisionRequest struct {

@@ -23,10 +23,7 @@ type PaginatedContactGroupList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ContactGroup `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedContactGroupList PaginatedContactGroupList
 
 // NewPaginatedContactGroupList instantiates a new PaginatedContactGroupList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedContactGroupList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedContactGroupList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedContactGroupList := _PaginatedContactGroupList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedContactGroupList); err == nil {
-		*o = PaginatedContactGroupList(varPaginatedContactGroupList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedContactGroupList struct {

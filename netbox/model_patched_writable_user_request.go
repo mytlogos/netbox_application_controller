@@ -33,10 +33,7 @@ type PatchedWritableUserRequest struct {
 	DateJoined *time.Time `json:"date_joined,omitempty"`
 	// The groups this user belongs to. A user will get all permissions granted to each of their groups.
 	Groups []int32 `json:"groups,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableUserRequest PatchedWritableUserRequest
 
 // NewPatchedWritableUserRequest instantiates a new PatchedWritableUserRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -380,37 +377,7 @@ func (o PatchedWritableUserRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableUserRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableUserRequest := _PatchedWritableUserRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableUserRequest); err == nil {
-		*o = PatchedWritableUserRequest(varPatchedWritableUserRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "first_name")
-		delete(additionalProperties, "last_name")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "is_staff")
-		delete(additionalProperties, "is_active")
-		delete(additionalProperties, "date_joined")
-		delete(additionalProperties, "groups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableUserRequest struct {

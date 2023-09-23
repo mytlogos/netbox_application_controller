@@ -22,12 +22,12 @@ import (
 )
 
 
-// CoreApiService CoreApi service
-type CoreApiService service
+// CoreAPIService CoreAPI service
+type CoreAPIService service
 
 type ApiCoreDataFilesListRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -415,7 +415,7 @@ Get a list of data file objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreDataFilesListRequest
 */
-func (a *CoreApiService) CoreDataFilesList(ctx context.Context) ApiCoreDataFilesListRequest {
+func (a *CoreAPIService) CoreDataFilesList(ctx context.Context) ApiCoreDataFilesListRequest {
 	return ApiCoreDataFilesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -424,7 +424,7 @@ func (a *CoreApiService) CoreDataFilesList(ctx context.Context) ApiCoreDataFiles
 
 // Execute executes the request
 //  @return PaginatedDataFileList
-func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest) (*PaginatedDataFileList, *http.Response, error) {
+func (a *CoreAPIService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest) (*PaginatedDataFileList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -432,7 +432,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		localVarReturnValue  *PaginatedDataFileList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataFilesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataFilesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -448,7 +448,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -459,7 +459,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -470,7 +470,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -481,7 +481,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -492,7 +492,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -503,7 +503,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -514,7 +514,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -528,7 +528,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash", t, "multi")
@@ -542,7 +542,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", t, "multi")
@@ -553,7 +553,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", t, "multi")
@@ -564,7 +564,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", t, "multi")
@@ -575,7 +575,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", t, "multi")
@@ -586,7 +586,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", t, "multi")
@@ -597,7 +597,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", t, "multi")
@@ -608,7 +608,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", t, "multi")
@@ -619,7 +619,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", t, "multi")
@@ -630,7 +630,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", t, "multi")
@@ -641,7 +641,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -655,7 +655,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -666,7 +666,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -677,7 +677,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -688,7 +688,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -699,7 +699,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -710,7 +710,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -721,7 +721,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -732,7 +732,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -743,7 +743,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -754,7 +754,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -765,7 +765,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -776,7 +776,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -799,7 +799,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path", t, "multi")
@@ -813,7 +813,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__ic", t, "multi")
@@ -824,7 +824,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__ie", t, "multi")
@@ -835,7 +835,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__iew", t, "multi")
@@ -846,7 +846,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__isw", t, "multi")
@@ -857,7 +857,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__n", t, "multi")
@@ -868,7 +868,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__nic", t, "multi")
@@ -879,7 +879,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__nie", t, "multi")
@@ -890,7 +890,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__niew", t, "multi")
@@ -901,7 +901,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "path__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "path__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "path__nisw", t, "multi")
@@ -915,7 +915,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "size", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "size", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "size", t, "multi")
@@ -929,7 +929,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "size__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "size__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "size__gt", t, "multi")
@@ -940,7 +940,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "size__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "size__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "size__gte", t, "multi")
@@ -951,7 +951,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "size__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "size__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "size__lt", t, "multi")
@@ -962,7 +962,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "size__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "size__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "size__lte", t, "multi")
@@ -973,7 +973,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "size__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "size__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "size__n", t, "multi")
@@ -984,7 +984,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "source", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "source", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "source", t, "multi")
@@ -995,7 +995,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "source__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "source__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "source__n", t, "multi")
@@ -1006,7 +1006,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "source_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "source_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "source_id", t, "multi")
@@ -1017,7 +1017,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "source_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "source_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "source_id__n", t, "multi")
@@ -1096,7 +1096,7 @@ func (a *CoreApiService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 
 type ApiCoreDataFilesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 }
 
@@ -1113,7 +1113,7 @@ Get a data file object.
  @param id A unique integer value identifying this data file.
  @return ApiCoreDataFilesRetrieveRequest
 */
-func (a *CoreApiService) CoreDataFilesRetrieve(ctx context.Context, id int32) ApiCoreDataFilesRetrieveRequest {
+func (a *CoreAPIService) CoreDataFilesRetrieve(ctx context.Context, id int32) ApiCoreDataFilesRetrieveRequest {
 	return ApiCoreDataFilesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1123,7 +1123,7 @@ func (a *CoreApiService) CoreDataFilesRetrieve(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return DataFile
-func (a *CoreApiService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieveRequest) (*DataFile, *http.Response, error) {
+func (a *CoreAPIService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieveRequest) (*DataFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1131,7 +1131,7 @@ func (a *CoreApiService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieve
 		localVarReturnValue  *DataFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataFilesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataFilesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1213,7 +1213,7 @@ func (a *CoreApiService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieve
 
 type ApiCoreDataSourcesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1234,7 +1234,7 @@ Delete a list of data source objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreDataSourcesBulkDestroyRequest
 */
-func (a *CoreApiService) CoreDataSourcesBulkDestroy(ctx context.Context) ApiCoreDataSourcesBulkDestroyRequest {
+func (a *CoreAPIService) CoreDataSourcesBulkDestroy(ctx context.Context) ApiCoreDataSourcesBulkDestroyRequest {
 	return ApiCoreDataSourcesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1242,14 +1242,14 @@ func (a *CoreApiService) CoreDataSourcesBulkDestroy(ctx context.Context) ApiCore
 }
 
 // Execute executes the request
-func (a *CoreApiService) CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesBulkDestroyRequest) (*http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1326,7 +1326,7 @@ func (a *CoreApiService) CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesB
 
 type ApiCoreDataSourcesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1347,7 +1347,7 @@ Patch a list of data source objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreDataSourcesBulkPartialUpdateRequest
 */
-func (a *CoreApiService) CoreDataSourcesBulkPartialUpdate(ctx context.Context) ApiCoreDataSourcesBulkPartialUpdateRequest {
+func (a *CoreAPIService) CoreDataSourcesBulkPartialUpdate(ctx context.Context) ApiCoreDataSourcesBulkPartialUpdateRequest {
 	return ApiCoreDataSourcesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1356,7 +1356,7 @@ func (a *CoreApiService) CoreDataSourcesBulkPartialUpdate(ctx context.Context) A
 
 // Execute executes the request
 //  @return []DataSource
-func (a *CoreApiService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSourcesBulkPartialUpdateRequest) ([]DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSourcesBulkPartialUpdateRequest) ([]DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1364,7 +1364,7 @@ func (a *CoreApiService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSo
 		localVarReturnValue  []DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1450,7 +1450,7 @@ func (a *CoreApiService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSo
 
 type ApiCoreDataSourcesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1471,7 +1471,7 @@ Put a list of data source objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreDataSourcesBulkUpdateRequest
 */
-func (a *CoreApiService) CoreDataSourcesBulkUpdate(ctx context.Context) ApiCoreDataSourcesBulkUpdateRequest {
+func (a *CoreAPIService) CoreDataSourcesBulkUpdate(ctx context.Context) ApiCoreDataSourcesBulkUpdateRequest {
 	return ApiCoreDataSourcesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1480,7 +1480,7 @@ func (a *CoreApiService) CoreDataSourcesBulkUpdate(ctx context.Context) ApiCoreD
 
 // Execute executes the request
 //  @return []DataSource
-func (a *CoreApiService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBulkUpdateRequest) ([]DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBulkUpdateRequest) ([]DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1488,7 +1488,7 @@ func (a *CoreApiService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBu
 		localVarReturnValue  []DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1574,7 +1574,7 @@ func (a *CoreApiService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBu
 
 type ApiCoreDataSourcesCreateRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	writableDataSourceRequest *WritableDataSourceRequest
 }
 
@@ -1595,7 +1595,7 @@ Post a list of data source objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreDataSourcesCreateRequest
 */
-func (a *CoreApiService) CoreDataSourcesCreate(ctx context.Context) ApiCoreDataSourcesCreateRequest {
+func (a *CoreAPIService) CoreDataSourcesCreate(ctx context.Context) ApiCoreDataSourcesCreateRequest {
 	return ApiCoreDataSourcesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1604,7 +1604,7 @@ func (a *CoreApiService) CoreDataSourcesCreate(ctx context.Context) ApiCoreDataS
 
 // Execute executes the request
 //  @return DataSource
-func (a *CoreApiService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreateRequest) (*DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreateRequest) (*DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1612,7 +1612,7 @@ func (a *CoreApiService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreate
 		localVarReturnValue  *DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1698,7 +1698,7 @@ func (a *CoreApiService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreate
 
 type ApiCoreDataSourcesDestroyRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 }
 
@@ -1715,7 +1715,7 @@ Delete a data source object.
  @param id A unique integer value identifying this data source.
  @return ApiCoreDataSourcesDestroyRequest
 */
-func (a *CoreApiService) CoreDataSourcesDestroy(ctx context.Context, id int32) ApiCoreDataSourcesDestroyRequest {
+func (a *CoreAPIService) CoreDataSourcesDestroy(ctx context.Context, id int32) ApiCoreDataSourcesDestroyRequest {
 	return ApiCoreDataSourcesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1724,14 +1724,14 @@ func (a *CoreApiService) CoreDataSourcesDestroy(ctx context.Context, id int32) A
 }
 
 // Execute executes the request
-func (a *CoreApiService) CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestroyRequest) (*http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1804,7 +1804,7 @@ func (a *CoreApiService) CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestr
 
 type ApiCoreDataSourcesListRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -2099,7 +2099,7 @@ Get a list of data source objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreDataSourcesListRequest
 */
-func (a *CoreApiService) CoreDataSourcesList(ctx context.Context) ApiCoreDataSourcesListRequest {
+func (a *CoreAPIService) CoreDataSourcesList(ctx context.Context) ApiCoreDataSourcesListRequest {
 	return ApiCoreDataSourcesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2108,7 +2108,7 @@ func (a *CoreApiService) CoreDataSourcesList(ctx context.Context) ApiCoreDataSou
 
 // Execute executes the request
 //  @return PaginatedDataSourceList
-func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequest) (*PaginatedDataSourceList, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequest) (*PaginatedDataSourceList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2116,7 +2116,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		localVarReturnValue  *PaginatedDataSourceList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2132,7 +2132,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -2143,7 +2143,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -2154,7 +2154,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -2165,7 +2165,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -2176,7 +2176,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -2187,7 +2187,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -2198,7 +2198,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -2215,7 +2215,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -2229,7 +2229,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -2240,7 +2240,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -2251,7 +2251,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -2262,7 +2262,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -2273,7 +2273,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -2284,7 +2284,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -2295,7 +2295,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -2306,7 +2306,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -2317,7 +2317,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -2328,7 +2328,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -2339,7 +2339,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -2350,7 +2350,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -2367,7 +2367,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -2381,7 +2381,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -2392,7 +2392,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -2403,7 +2403,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -2414,7 +2414,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -2425,7 +2425,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -2436,7 +2436,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -2447,7 +2447,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -2458,7 +2458,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -2469,7 +2469,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -2489,7 +2489,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -2500,7 +2500,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -2511,7 +2511,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -2522,7 +2522,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -2533,7 +2533,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "multi")
@@ -2544,7 +2544,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "multi")
@@ -2623,7 +2623,7 @@ func (a *CoreApiService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 
 type ApiCoreDataSourcesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 	patchedWritableDataSourceRequest *PatchedWritableDataSourceRequest
 }
@@ -2646,7 +2646,7 @@ Patch a data source object.
  @param id A unique integer value identifying this data source.
  @return ApiCoreDataSourcesPartialUpdateRequest
 */
-func (a *CoreApiService) CoreDataSourcesPartialUpdate(ctx context.Context, id int32) ApiCoreDataSourcesPartialUpdateRequest {
+func (a *CoreAPIService) CoreDataSourcesPartialUpdate(ctx context.Context, id int32) ApiCoreDataSourcesPartialUpdateRequest {
 	return ApiCoreDataSourcesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2656,7 +2656,7 @@ func (a *CoreApiService) CoreDataSourcesPartialUpdate(ctx context.Context, id in
 
 // Execute executes the request
 //  @return DataSource
-func (a *CoreApiService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSourcesPartialUpdateRequest) (*DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSourcesPartialUpdateRequest) (*DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -2664,7 +2664,7 @@ func (a *CoreApiService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSource
 		localVarReturnValue  *DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2748,7 +2748,7 @@ func (a *CoreApiService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSource
 
 type ApiCoreDataSourcesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 }
 
@@ -2765,7 +2765,7 @@ Get a data source object.
  @param id A unique integer value identifying this data source.
  @return ApiCoreDataSourcesRetrieveRequest
 */
-func (a *CoreApiService) CoreDataSourcesRetrieve(ctx context.Context, id int32) ApiCoreDataSourcesRetrieveRequest {
+func (a *CoreAPIService) CoreDataSourcesRetrieve(ctx context.Context, id int32) ApiCoreDataSourcesRetrieveRequest {
 	return ApiCoreDataSourcesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2775,7 +2775,7 @@ func (a *CoreApiService) CoreDataSourcesRetrieve(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return DataSource
-func (a *CoreApiService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetrieveRequest) (*DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetrieveRequest) (*DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2783,7 +2783,7 @@ func (a *CoreApiService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetr
 		localVarReturnValue  *DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2865,7 +2865,7 @@ func (a *CoreApiService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetr
 
 type ApiCoreDataSourcesSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 	writableDataSourceRequest *WritableDataSourceRequest
 }
@@ -2888,7 +2888,7 @@ Enqueue a job to synchronize the DataSource.
  @param id A unique integer value identifying this data source.
  @return ApiCoreDataSourcesSyncCreateRequest
 */
-func (a *CoreApiService) CoreDataSourcesSyncCreate(ctx context.Context, id int32) ApiCoreDataSourcesSyncCreateRequest {
+func (a *CoreAPIService) CoreDataSourcesSyncCreate(ctx context.Context, id int32) ApiCoreDataSourcesSyncCreateRequest {
 	return ApiCoreDataSourcesSyncCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2898,7 +2898,7 @@ func (a *CoreApiService) CoreDataSourcesSyncCreate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return DataSource
-func (a *CoreApiService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSyncCreateRequest) (*DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSyncCreateRequest) (*DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2906,7 +2906,7 @@ func (a *CoreApiService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSy
 		localVarReturnValue  *DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesSyncCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesSyncCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2993,7 +2993,7 @@ func (a *CoreApiService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSy
 
 type ApiCoreDataSourcesUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 	writableDataSourceRequest *WritableDataSourceRequest
 }
@@ -3016,7 +3016,7 @@ Put a data source object.
  @param id A unique integer value identifying this data source.
  @return ApiCoreDataSourcesUpdateRequest
 */
-func (a *CoreApiService) CoreDataSourcesUpdate(ctx context.Context, id int32) ApiCoreDataSourcesUpdateRequest {
+func (a *CoreAPIService) CoreDataSourcesUpdate(ctx context.Context, id int32) ApiCoreDataSourcesUpdateRequest {
 	return ApiCoreDataSourcesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3026,7 +3026,7 @@ func (a *CoreApiService) CoreDataSourcesUpdate(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return DataSource
-func (a *CoreApiService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdateRequest) (*DataSource, *http.Response, error) {
+func (a *CoreAPIService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdateRequest) (*DataSource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3034,7 +3034,7 @@ func (a *CoreApiService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdate
 		localVarReturnValue  *DataSource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreDataSourcesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreDataSourcesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3121,7 +3121,7 @@ func (a *CoreApiService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdate
 
 type ApiCoreJobsListRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	completed *time.Time
 	completedAfter *time.Time
 	completedBefore *time.Time
@@ -3464,7 +3464,7 @@ Retrieve a list of job results
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCoreJobsListRequest
 */
-func (a *CoreApiService) CoreJobsList(ctx context.Context) ApiCoreJobsListRequest {
+func (a *CoreAPIService) CoreJobsList(ctx context.Context) ApiCoreJobsListRequest {
 	return ApiCoreJobsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3473,7 +3473,7 @@ func (a *CoreApiService) CoreJobsList(ctx context.Context) ApiCoreJobsListReques
 
 // Execute executes the request
 //  @return PaginatedJobList
-func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*PaginatedJobList, *http.Response, error) {
+func (a *CoreAPIService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*PaginatedJobList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3481,7 +3481,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		localVarReturnValue  *PaginatedJobList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreJobsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreJobsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3515,7 +3515,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -3529,7 +3529,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -3540,7 +3540,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -3551,7 +3551,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -3562,7 +3562,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -3573,7 +3573,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -3584,7 +3584,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interval", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interval", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interval", t, "multi")
@@ -3598,7 +3598,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interval__gt", t, "multi")
@@ -3609,7 +3609,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interval__gte", t, "multi")
@@ -3620,7 +3620,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interval__lt", t, "multi")
@@ -3631,7 +3631,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interval__lte", t, "multi")
@@ -3642,7 +3642,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interval__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interval__n", t, "multi")
@@ -3656,7 +3656,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -3670,7 +3670,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -3681,7 +3681,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -3692,7 +3692,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -3703,7 +3703,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -3714,7 +3714,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -3725,7 +3725,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -3736,7 +3736,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -3747,7 +3747,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -3758,7 +3758,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -3769,7 +3769,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id", t, "multi")
@@ -3783,7 +3783,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gt", t, "multi")
@@ -3794,7 +3794,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__gte", t, "multi")
@@ -3805,7 +3805,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lt", t, "multi")
@@ -3816,7 +3816,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__lte", t, "multi")
@@ -3827,7 +3827,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_id__n", t, "multi")
@@ -3871,7 +3871,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -3882,7 +3882,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -3964,7 +3964,7 @@ func (a *CoreApiService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 
 type ApiCoreJobsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreApiService
+	ApiService *CoreAPIService
 	id int32
 }
 
@@ -3981,7 +3981,7 @@ Retrieve a list of job results
  @param id A unique integer value identifying this job.
  @return ApiCoreJobsRetrieveRequest
 */
-func (a *CoreApiService) CoreJobsRetrieve(ctx context.Context, id int32) ApiCoreJobsRetrieveRequest {
+func (a *CoreAPIService) CoreJobsRetrieve(ctx context.Context, id int32) ApiCoreJobsRetrieveRequest {
 	return ApiCoreJobsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3991,7 +3991,7 @@ func (a *CoreApiService) CoreJobsRetrieve(ctx context.Context, id int32) ApiCore
 
 // Execute executes the request
 //  @return Job
-func (a *CoreApiService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (*Job, *http.Response, error) {
+func (a *CoreAPIService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (*Job, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3999,7 +3999,7 @@ func (a *CoreApiService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (
 		localVarReturnValue  *Job
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreApiService.CoreJobsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CoreAPIService.CoreJobsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

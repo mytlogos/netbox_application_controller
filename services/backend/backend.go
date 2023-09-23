@@ -88,7 +88,7 @@ func (b *Backend) getContext() context.Context {
 
 func (b *Backend) GetDevices() ([]netbox.DeviceWithConfigContext, error) {
 	ctx := b.getContext()
-	list, _, err := b.client.DcimApi.DcimDevicesList(ctx).Execute()
+	list, _, err := b.client.DcimAPI.DcimDevicesList(ctx).Execute()
 
 	if err != nil {
 		return nil, err
@@ -99,7 +99,7 @@ func (b *Backend) GetDevices() ([]netbox.DeviceWithConfigContext, error) {
 
 func (b *Backend) GetPlatforms() ([]netbox.Platform, error) {
 	ctx := b.getContext()
-	list, _, err := b.client.DcimApi.DcimPlatformsList(ctx).Execute()
+	list, _, err := b.client.DcimAPI.DcimPlatformsList(ctx).Execute()
 
 	if err != nil {
 		return nil, err
@@ -110,7 +110,7 @@ func (b *Backend) GetPlatforms() ([]netbox.Platform, error) {
 
 func (b *Backend) CreatePlatform(platform netbox.Platform) (*netbox.Platform, error) {
 	ctx := b.getContext()
-	result, _, err := b.client.DcimApi.DcimPlatformsCreate(ctx).WritablePlatformRequest(
+	result, _, err := b.client.DcimAPI.DcimPlatformsCreate(ctx).WritablePlatformRequest(
 		netbox.WritablePlatformRequest{
 			Name: platform.Name,
 			Slug: platform.Slug,
@@ -129,7 +129,7 @@ func (b *Backend) GetDeviceByUuid(uuid string) (*netbox.DeviceWithConfigContext,
 	ctx = context.WithValue(ctx, ContextCustomFieldQueries, map[string]string{
 		CustomFieldUuid: uuid,
 	})
-	list, _, err := b.client.DcimApi.DcimDevicesList(ctx).Execute()
+	list, _, err := b.client.DcimAPI.DcimDevicesList(ctx).Execute()
 
 	if err != nil {
 		return nil, err
@@ -151,7 +151,7 @@ func (b *Backend) CreateDevice(device *netbox.DeviceWithConfigContext) (*netbox.
 	if device.Platform.Get() != nil {
 		platformId = *netbox.NewNullableInt32(&device.Platform.Get().Id)
 	}
-	req := b.client.DcimApi.DcimDevicesCreate(ctx)
+	req := b.client.DcimAPI.DcimDevicesCreate(ctx)
 	req = req.WritableDeviceWithConfigContextRequest(netbox.WritableDeviceWithConfigContextRequest{
 		Name: device.Name,
 		// DeviceType:   device.DeviceType.Id,
@@ -172,7 +172,7 @@ func (b *Backend) UpdateDevice(id int32, device *netbox.DeviceWithConfigContext)
 		platformId = *netbox.NewNullableInt32(&device.Platform.Get().Id)
 	}
 
-	req := b.client.DcimApi.DcimDevicesUpdate(ctx, id)
+	req := b.client.DcimAPI.DcimDevicesUpdate(ctx, id)
 	req = req.WritableDeviceWithConfigContextRequest(netbox.WritableDeviceWithConfigContextRequest{
 		Name:         device.Name,
 		DeviceType:   device.DeviceType.Id,
@@ -187,7 +187,7 @@ func (b *Backend) UpdateDevice(id int32, device *netbox.DeviceWithConfigContext)
 
 func (b *Backend) GetInterfaces(deviceId int32) ([]netbox.Interface, error) {
 	ctx := b.getContext()
-	req := b.client.DcimApi.DcimInterfacesList(ctx)
+	req := b.client.DcimAPI.DcimInterfacesList(ctx)
 	req = req.DeviceId([]int32{deviceId})
 	list, _, err := req.Execute()
 	return list.GetResults(), err
@@ -195,7 +195,7 @@ func (b *Backend) GetInterfaces(deviceId int32) ([]netbox.Interface, error) {
 
 func (b *Backend) CreateIPAddress(value netbox.IPAddress) (*netbox.IPAddress, error) {
 	ctx := b.getContext()
-	req := b.client.IpamApi.IpamIpAddressesCreate(ctx)
+	req := b.client.IpamAPI.IpamIpAddressesCreate(ctx)
 	req = req.WritableIPAddressRequest(netbox.WritableIPAddressRequest{
 		Address:            value.Address,
 		DnsName:            value.DnsName,
@@ -209,7 +209,7 @@ func (b *Backend) CreateIPAddress(value netbox.IPAddress) (*netbox.IPAddress, er
 
 func (b *Backend) UpdateIPAddress(value netbox.IPAddress) (*netbox.IPAddress, error) {
 	ctx := b.getContext()
-	req := b.client.IpamApi.IpamIpAddressesUpdate(ctx, value.Id)
+	req := b.client.IpamAPI.IpamIpAddressesUpdate(ctx, value.Id)
 	req = req.WritableIPAddressRequest(netbox.WritableIPAddressRequest{
 		Address:            value.Address,
 		DnsName:            value.DnsName,
@@ -223,14 +223,14 @@ func (b *Backend) UpdateIPAddress(value netbox.IPAddress) (*netbox.IPAddress, er
 
 func (b *Backend) DeleteIP(ipId int32) error {
 	ctx := b.getContext()
-	req := b.client.IpamApi.IpamIpAddressesDestroy(ctx, ipId)
+	req := b.client.IpamAPI.IpamIpAddressesDestroy(ctx, ipId)
 	_, err := req.Execute()
 	return err
 }
 
 func (b *Backend) GetIPAddressByInterface(interfaceId int32) ([]netbox.IPAddress, error) {
 	ctx := b.getContext()
-	req := b.client.IpamApi.IpamIpAddressesList(ctx)
+	req := b.client.IpamAPI.IpamIpAddressesList(ctx)
 	req = req.InterfaceId([]int32{interfaceId})
 	netInterface, _, err := req.Execute()
 	return netInterface.GetResults(), err
@@ -238,7 +238,7 @@ func (b *Backend) GetIPAddressByInterface(interfaceId int32) ([]netbox.IPAddress
 
 func (b *Backend) GetIPAddressByDevice(deviceId int32) ([]netbox.IPAddress, error) {
 	ctx := b.getContext()
-	req := b.client.IpamApi.IpamIpAddressesList(ctx)
+	req := b.client.IpamAPI.IpamIpAddressesList(ctx)
 	req = req.DeviceId([]int32{deviceId})
 	netInterface, _, err := req.Execute()
 	return netInterface.GetResults(), err
@@ -246,7 +246,7 @@ func (b *Backend) GetIPAddressByDevice(deviceId int32) ([]netbox.IPAddress, erro
 
 func (b *Backend) CreateInterface(deviceId int32, value netbox.Interface) (*netbox.Interface, error) {
 	ctx := b.getContext()
-	req := b.client.DcimApi.DcimInterfacesCreate(ctx)
+	req := b.client.DcimAPI.DcimInterfacesCreate(ctx)
 	req = req.WritableInterfaceRequest(netbox.WritableInterfaceRequest{
 		Device:     deviceId,
 		Name:       value.Name,
@@ -260,7 +260,7 @@ func (b *Backend) CreateInterface(deviceId int32, value netbox.Interface) (*netb
 
 func (b *Backend) UpdateInterface(value netbox.Interface) (*netbox.Interface, error) {
 	ctx := b.getContext()
-	req := b.client.DcimApi.DcimInterfacesPartialUpdate(ctx, value.Id)
+	req := b.client.DcimAPI.DcimInterfacesPartialUpdate(ctx, value.Id)
 	req = req.PatchedWritableInterfaceRequest(netbox.PatchedWritableInterfaceRequest{
 		Device:     &value.Device.Id,
 		Name:       &value.Name,
@@ -275,20 +275,20 @@ func (b *Backend) UpdateInterface(value netbox.Interface) (*netbox.Interface, er
 
 func (b *Backend) DeleteInterface(interfaceId int32) error {
 	ctx := b.getContext()
-	req := b.client.DcimApi.DcimInterfacesDestroy(ctx, interfaceId)
+	req := b.client.DcimAPI.DcimInterfacesDestroy(ctx, interfaceId)
 	_, err := req.Execute()
 	return err
 }
 
 func (b *Backend) GetApplicationGroups() ([]netbox.ApplicationGroup, error) {
 	ctx := b.getContext()
-	result, _, err := b.client.PluginsApi.PluginsApplicationsApplicationGroupsList(ctx).Execute()
+	result, _, err := b.client.PluginsAPI.PluginsApplicationsApplicationGroupsList(ctx).Execute()
 	return result.GetResults(), err
 }
 
 func (b *Backend) CreateApplicationGroup(group netbox.ApplicationGroup) (*netbox.ApplicationGroup, error) {
 	ctx := b.getContext()
-	result, _, err := b.client.PluginsApi.
+	result, _, err := b.client.PluginsAPI.
 		PluginsApplicationsApplicationGroupsCreate(ctx).
 		ApplicationGroupRequest(netbox.ApplicationGroupRequest{
 			Name: group.Name,
@@ -299,13 +299,13 @@ func (b *Backend) CreateApplicationGroup(group netbox.ApplicationGroup) (*netbox
 
 func (b *Backend) GetApplications() ([]netbox.Application, error) {
 	ctx := b.getContext()
-	result, _, err := b.client.PluginsApi.PluginsApplicationsApplicationsList(ctx).Execute()
+	result, _, err := b.client.PluginsAPI.PluginsApplicationsApplicationsList(ctx).Execute()
 	return result.GetResults(), err
 }
 
 func (b *Backend) CreateApplication(group netbox.Application) (*netbox.Application, error) {
 	ctx := b.getContext()
-	result, _, err := b.client.PluginsApi.
+	result, _, err := b.client.PluginsAPI.
 		PluginsApplicationsApplicationsCreate(ctx).
 		ApplicationRequest(netbox.ApplicationRequest{
 			Name:   group.Name,
@@ -318,7 +318,7 @@ func (b *Backend) CreateApplication(group netbox.Application) (*netbox.Applicati
 func (b *Backend) InitBackend() error {
 	// create necessary backend custom fields
 	ctx := b.getContext()
-	list, _, err := b.client.ExtrasApi.ExtrasCustomFieldsList(ctx).Execute()
+	list, _, err := b.client.ExtrasAPI.ExtrasCustomFieldsList(ctx).Execute()
 
 	if err != nil {
 		return err
@@ -339,7 +339,7 @@ func (b *Backend) InitBackend() error {
 
 	if !agentFieldExists {
 		slog.Info("custom field for agent missing on device, recreating")
-		req := b.client.ExtrasApi.ExtrasCustomFieldsCreate(ctx)
+		req := b.client.ExtrasAPI.ExtrasCustomFieldsCreate(ctx)
 		description := "Agent Storage"
 		fieldType := "json"
 
@@ -360,7 +360,7 @@ func (b *Backend) InitBackend() error {
 
 	if !agentUuidFieldExists {
 		slog.Info("custom field for agent uuid missing on device, recreating")
-		req := b.client.ExtrasApi.ExtrasCustomFieldsCreate(ctx)
+		req := b.client.ExtrasAPI.ExtrasCustomFieldsCreate(ctx)
 		description := "Custom Field for querying device by agent uuid"
 		fieldType := "text"
 

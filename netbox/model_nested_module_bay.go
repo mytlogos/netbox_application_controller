@@ -24,10 +24,7 @@ type NestedModuleBay struct {
 	Display string `json:"display"`
 	Module NullableNestedModule `json:"module"`
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedModuleBay NestedModuleBay
 
 // NewNestedModuleBay instantiates a new NestedModuleBay object
 // This constructor will assign default values to properties that have it defined,
@@ -183,38 +180,12 @@ func (o NestedModuleBay) MarshalJSON() ([]byte, error) {
 
 func (o NestedModuleBay) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["module"] = o.Module.Get()
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedModuleBay) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedModuleBay := _NestedModuleBay{}
-
-	if err = json.Unmarshal(bytes, &varNestedModuleBay); err == nil {
-		*o = NestedModuleBay(varNestedModuleBay)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedModuleBay struct {

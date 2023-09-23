@@ -49,10 +49,7 @@ type CircuitTermination struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CircuitTermination CircuitTermination
 
 // NewCircuitTermination instantiates a new CircuitTermination object
 // This constructor will assign default values to properties that have it defined,
@@ -747,9 +744,9 @@ func (o CircuitTermination) MarshalJSON() ([]byte, error) {
 
 func (o CircuitTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["circuit"] = o.Circuit
 	toSerialize["term_side"] = o.TermSide
 	if o.Site.IsSet() {
@@ -777,9 +774,9 @@ func (o CircuitTermination) ToMap() (map[string]interface{}, error) {
 		toSerialize["mark_connected"] = o.MarkConnected
 	}
 	toSerialize["cable"] = o.Cable.Get()
-	// skip: cable_end is readOnly
-	// skip: link_peers is readOnly
-	// skip: link_peers_type is readOnly
+	toSerialize["cable_end"] = o.CableEnd
+	toSerialize["link_peers"] = o.LinkPeers
+	toSerialize["link_peers_type"] = o.LinkPeersType
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
@@ -788,51 +785,8 @@ func (o CircuitTermination) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: _occupied is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_occupied"] = o.Occupied
 	return toSerialize, nil
-}
-
-func (o *CircuitTermination) UnmarshalJSON(bytes []byte) (err error) {
-	varCircuitTermination := _CircuitTermination{}
-
-	if err = json.Unmarshal(bytes, &varCircuitTermination); err == nil {
-		*o = CircuitTermination(varCircuitTermination)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "circuit")
-		delete(additionalProperties, "term_side")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "provider_network")
-		delete(additionalProperties, "port_speed")
-		delete(additionalProperties, "upstream_speed")
-		delete(additionalProperties, "xconnect_id")
-		delete(additionalProperties, "pp_info")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "cable_end")
-		delete(additionalProperties, "link_peers")
-		delete(additionalProperties, "link_peers_type")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "_occupied")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCircuitTermination struct {

@@ -24,10 +24,7 @@ type PatchedClusterGroupRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedClusterGroupRequest PatchedClusterGroupRequest
 
 // NewPatchedClusterGroupRequest instantiates a new PatchedClusterGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -231,33 +228,7 @@ func (o PatchedClusterGroupRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedClusterGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedClusterGroupRequest := _PatchedClusterGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedClusterGroupRequest); err == nil {
-		*o = PatchedClusterGroupRequest(varPatchedClusterGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedClusterGroupRequest struct {

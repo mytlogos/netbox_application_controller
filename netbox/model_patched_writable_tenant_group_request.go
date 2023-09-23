@@ -25,10 +25,7 @@ type PatchedWritableTenantGroupRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableTenantGroupRequest PatchedWritableTenantGroupRequest
 
 // NewPatchedWritableTenantGroupRequest instantiates a new PatchedWritableTenantGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -277,34 +274,7 @@ func (o PatchedWritableTenantGroupRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableTenantGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableTenantGroupRequest := _PatchedWritableTenantGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableTenantGroupRequest); err == nil {
-		*o = PatchedWritableTenantGroupRequest(varPatchedWritableTenantGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableTenantGroupRequest struct {

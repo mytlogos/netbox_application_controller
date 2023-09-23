@@ -22,10 +22,7 @@ type PrefixStatus struct {
 	// * `container` - Container * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PrefixStatus PrefixStatus
 
 // NewPrefixStatus instantiates a new PrefixStatus object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o PrefixStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PrefixStatus) UnmarshalJSON(bytes []byte) (err error) {
-	varPrefixStatus := _PrefixStatus{}
-
-	if err = json.Unmarshal(bytes, &varPrefixStatus); err == nil {
-		*o = PrefixStatus(varPrefixStatus)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePrefixStatus struct {

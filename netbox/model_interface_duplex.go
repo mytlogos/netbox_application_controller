@@ -22,10 +22,7 @@ type InterfaceDuplex struct {
 	// * `half` - Half * `full` - Full * `auto` - Auto
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfaceDuplex InterfaceDuplex
 
 // NewInterfaceDuplex instantiates a new InterfaceDuplex object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o InterfaceDuplex) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfaceDuplex) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfaceDuplex := _InterfaceDuplex{}
-
-	if err = json.Unmarshal(bytes, &varInterfaceDuplex); err == nil {
-		*o = InterfaceDuplex(varInterfaceDuplex)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfaceDuplex struct {

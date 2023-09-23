@@ -25,10 +25,7 @@ type PatchedRoleRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedRoleRequest PatchedRoleRequest
 
 // NewPatchedRoleRequest instantiates a new PatchedRoleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -267,34 +264,7 @@ func (o PatchedRoleRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedRoleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedRoleRequest := _PatchedRoleRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedRoleRequest); err == nil {
-		*o = PatchedRoleRequest(varPatchedRoleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedRoleRequest struct {

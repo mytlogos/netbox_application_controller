@@ -37,10 +37,7 @@ type Cluster struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	DeviceCount int32 `json:"device_count"`
 	VirtualmachineCount int32 `json:"virtualmachine_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Cluster Cluster
 
 // NewCluster instantiates a new Cluster object
 // This constructor will assign default values to properties that have it defined,
@@ -584,9 +581,9 @@ func (o Cluster) MarshalJSON() ([]byte, error) {
 
 func (o Cluster) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["type"] = o.Type
 	if o.Group.IsSet() {
@@ -615,47 +612,9 @@ func (o Cluster) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: device_count is readOnly
-	// skip: virtualmachine_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["device_count"] = o.DeviceCount
+	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	return toSerialize, nil
-}
-
-func (o *Cluster) UnmarshalJSON(bytes []byte) (err error) {
-	varCluster := _Cluster{}
-
-	if err = json.Unmarshal(bytes, &varCluster); err == nil {
-		*o = Cluster(varCluster)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "device_count")
-		delete(additionalProperties, "virtualmachine_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCluster struct {

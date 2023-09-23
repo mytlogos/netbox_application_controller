@@ -23,10 +23,7 @@ type PaginatedVirtualDeviceContextList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []VirtualDeviceContext `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedVirtualDeviceContextList PaginatedVirtualDeviceContextList
 
 // NewPaginatedVirtualDeviceContextList instantiates a new PaginatedVirtualDeviceContextList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedVirtualDeviceContextList) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedVirtualDeviceContextList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedVirtualDeviceContextList := _PaginatedVirtualDeviceContextList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedVirtualDeviceContextList); err == nil {
-		*o = PaginatedVirtualDeviceContextList(varPaginatedVirtualDeviceContextList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedVirtualDeviceContextList struct {

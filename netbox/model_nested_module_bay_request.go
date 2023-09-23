@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedModuleBayRequest{}
 // NestedModuleBayRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedModuleBayRequest struct {
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedModuleBayRequest NestedModuleBayRequest
 
 // NewNestedModuleBayRequest instantiates a new NestedModuleBayRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -78,29 +75,7 @@ func (o NestedModuleBayRequest) MarshalJSON() ([]byte, error) {
 func (o NestedModuleBayRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedModuleBayRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedModuleBayRequest := _NestedModuleBayRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedModuleBayRequest); err == nil {
-		*o = NestedModuleBayRequest(varNestedModuleBayRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedModuleBayRequest struct {

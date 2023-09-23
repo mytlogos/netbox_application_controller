@@ -24,10 +24,7 @@ type ComponentNestedModule struct {
 	Display string `json:"display"`
 	Device int32 `json:"device"`
 	ModuleBay ModuleNestedModuleBay `json:"module_bay"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ComponentNestedModule ComponentNestedModule
 
 // NewComponentNestedModule instantiates a new ComponentNestedModule object
 // This constructor will assign default values to properties that have it defined,
@@ -181,38 +178,12 @@ func (o ComponentNestedModule) MarshalJSON() ([]byte, error) {
 
 func (o ComponentNestedModule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["device"] = o.Device
-	// skip: module_bay is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["module_bay"] = o.ModuleBay
 	return toSerialize, nil
-}
-
-func (o *ComponentNestedModule) UnmarshalJSON(bytes []byte) (err error) {
-	varComponentNestedModule := _ComponentNestedModule{}
-
-	if err = json.Unmarshal(bytes, &varComponentNestedModule); err == nil {
-		*o = ComponentNestedModule(varComponentNestedModule)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module_bay")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableComponentNestedModule struct {

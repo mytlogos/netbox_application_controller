@@ -27,10 +27,7 @@ type AggregateRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _AggregateRequest AggregateRequest
 
 // NewAggregateRequest instantiates a new AggregateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -341,36 +338,7 @@ func (o AggregateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *AggregateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varAggregateRequest := _AggregateRequest{}
-
-	if err = json.Unmarshal(bytes, &varAggregateRequest); err == nil {
-		*o = AggregateRequest(varAggregateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "rir")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "date_added")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAggregateRequest struct {

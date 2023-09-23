@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -54,7 +55,7 @@ docs/CircuitTermination.md
 docs/CircuitTerminationRequest.md
 docs/CircuitType.md
 docs/CircuitTypeRequest.md
-docs/CircuitsApi.md
+docs/CircuitsAPI.md
 docs/Cluster.md
 docs/ClusterGroup.md
 docs/ClusterGroupRequest.md
@@ -88,7 +89,7 @@ docs/ContactRequest.md
 docs/ContactRole.md
 docs/ContactRoleRequest.md
 docs/ContentType.md
-docs/CoreApi.md
+docs/CoreAPI.md
 docs/CustomField.md
 docs/CustomFieldChoiceSet.md
 docs/CustomFieldChoiceSetBaseChoices.md
@@ -106,7 +107,7 @@ docs/DataSource.md
 docs/DataSourceRequest.md
 docs/DataSourceStatus.md
 docs/DataSourceType.md
-docs/DcimApi.md
+docs/DcimAPI.md
 docs/Device.md
 docs/DeviceAirflow.md
 docs/DeviceBay.md
@@ -127,7 +128,7 @@ docs/DeviceWithConfigContext.md
 docs/DeviceWithConfigContextRequest.md
 docs/ExportTemplate.md
 docs/ExportTemplateRequest.md
-docs/ExtrasApi.md
+docs/ExtrasAPI.md
 docs/FHRPGroup.md
 docs/FHRPGroupAssignment.md
 docs/FHRPGroupAssignmentRequest.md
@@ -172,7 +173,7 @@ docs/InventoryItemRole.md
 docs/InventoryItemRoleRequest.md
 docs/InventoryItemTemplate.md
 docs/InventoryItemTemplateRequest.md
-docs/IpamApi.md
+docs/IpamAPI.md
 docs/Job.md
 docs/JobStatus.md
 docs/JournalEntry.md
@@ -522,7 +523,7 @@ docs/PatchedWritableWirelessLANRequest.md
 docs/PatchedWritableWirelessLinkRequest.md
 docs/Platform.md
 docs/PlatformRequest.md
-docs/PluginsApi.md
+docs/PluginsAPI.md
 docs/PowerFeed.md
 docs/PowerFeedPhase.md
 docs/PowerFeedRequest.md
@@ -575,7 +576,7 @@ docs/RouteTarget.md
 docs/RouteTargetRequest.md
 docs/SavedFilter.md
 docs/SavedFilterRequest.md
-docs/SchemaApi.md
+docs/SchemaAPI.md
 docs/Service.md
 docs/ServiceProtocol.md
 docs/ServiceRequest.md
@@ -585,10 +586,10 @@ docs/Site.md
 docs/SiteGroup.md
 docs/SiteGroupRequest.md
 docs/SiteRequest.md
-docs/StatusApi.md
+docs/StatusAPI.md
 docs/Tag.md
 docs/TagRequest.md
-docs/TenancyApi.md
+docs/TenancyAPI.md
 docs/Tenant.md
 docs/TenantGroup.md
 docs/TenantGroupRequest.md
@@ -599,7 +600,7 @@ docs/TokenProvisionRequest.md
 docs/TokenRequest.md
 docs/User.md
 docs/UserRequest.md
-docs/UsersApi.md
+docs/UsersAPI.md
 docs/VLAN.md
 docs/VLANGroup.md
 docs/VLANGroupRequest.md
@@ -615,10 +616,10 @@ docs/VirtualDeviceContextRequest.md
 docs/VirtualDeviceContextStatus.md
 docs/VirtualMachineWithConfigContext.md
 docs/VirtualMachineWithConfigContextRequest.md
-docs/VirtualizationApi.md
+docs/VirtualizationAPI.md
 docs/Webhook.md
 docs/WebhookRequest.md
-docs/WirelessApi.md
+docs/WirelessAPI.md
 docs/WirelessLAN.md
 docs/WirelessLANAuthCipher.md
 docs/WirelessLANAuthType.md
@@ -1388,4 +1389,16 @@ model_writable_wireless_lan_group_request.go
 model_writable_wireless_lan_request.go
 model_writable_wireless_link_request.go
 response.go
+test/api_circuits_test.go
+test/api_core_test.go
+test/api_dcim_test.go
+test/api_extras_test.go
+test/api_ipam_test.go
+test/api_plugins_test.go
+test/api_schema_test.go
+test/api_status_test.go
+test/api_tenancy_test.go
+test/api_users_test.go
+test/api_virtualization_test.go
+test/api_wireless_test.go
 utils.go

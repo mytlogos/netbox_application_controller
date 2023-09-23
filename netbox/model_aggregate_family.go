@@ -22,10 +22,7 @@ type AggregateFamily struct {
 	// * `4` - IPv4 * `6` - IPv6
 	Value *int32 `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _AggregateFamily AggregateFamily
 
 // NewAggregateFamily instantiates a new AggregateFamily object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o AggregateFamily) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *AggregateFamily) UnmarshalJSON(bytes []byte) (err error) {
-	varAggregateFamily := _AggregateFamily{}
-
-	if err = json.Unmarshal(bytes, &varAggregateFamily); err == nil {
-		*o = AggregateFamily(varAggregateFamily)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAggregateFamily struct {

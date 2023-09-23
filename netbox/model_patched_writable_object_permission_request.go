@@ -29,10 +29,7 @@ type PatchedWritableObjectPermissionRequest struct {
 	Actions []string `json:"actions,omitempty"`
 	// Queryset filter matching the applicable objects of the selected type(s)
 	Constraints map[string]interface{} `json:"constraints,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableObjectPermissionRequest PatchedWritableObjectPermissionRequest
 
 // NewPatchedWritableObjectPermissionRequest instantiates a new PatchedWritableObjectPermissionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -342,36 +339,7 @@ func (o PatchedWritableObjectPermissionRequest) ToMap() (map[string]interface{},
 	if o.Constraints != nil {
 		toSerialize["constraints"] = o.Constraints
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableObjectPermissionRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableObjectPermissionRequest := _PatchedWritableObjectPermissionRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableObjectPermissionRequest); err == nil {
-		*o = PatchedWritableObjectPermissionRequest(varPatchedWritableObjectPermissionRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "object_types")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "users")
-		delete(additionalProperties, "actions")
-		delete(additionalProperties, "constraints")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableObjectPermissionRequest struct {

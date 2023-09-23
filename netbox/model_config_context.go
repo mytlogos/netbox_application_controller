@@ -48,10 +48,7 @@ type ConfigContext struct {
 	Data map[string]interface{} `json:"data"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConfigContext ConfigContext
 
 // NewConfigContext instantiates a new ConfigContext object
 // This constructor will assign default values to properties that have it defined,
@@ -880,9 +877,9 @@ func (o ConfigContext) MarshalJSON() ([]byte, error) {
 
 func (o ConfigContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Weight) {
 		toSerialize["weight"] = o.Weight
@@ -935,61 +932,13 @@ func (o ConfigContext) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DataSource) {
 		toSerialize["data_source"] = o.DataSource
 	}
-	// skip: data_path is readOnly
-	// skip: data_file is readOnly
+	toSerialize["data_path"] = o.DataPath
+	toSerialize["data_file"] = o.DataFile
 	toSerialize["data_synced"] = o.DataSynced.Get()
 	toSerialize["data"] = o.Data
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConfigContext) UnmarshalJSON(bytes []byte) (err error) {
-	varConfigContext := _ConfigContext{}
-
-	if err = json.Unmarshal(bytes, &varConfigContext); err == nil {
-		*o = ConfigContext(varConfigContext)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "is_active")
-		delete(additionalProperties, "regions")
-		delete(additionalProperties, "site_groups")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "locations")
-		delete(additionalProperties, "device_types")
-		delete(additionalProperties, "roles")
-		delete(additionalProperties, "platforms")
-		delete(additionalProperties, "cluster_types")
-		delete(additionalProperties, "cluster_groups")
-		delete(additionalProperties, "clusters")
-		delete(additionalProperties, "tenant_groups")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "data_source")
-		delete(additionalProperties, "data_path")
-		delete(additionalProperties, "data_file")
-		delete(additionalProperties, "data_synced")
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConfigContext struct {

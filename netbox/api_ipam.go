@@ -22,12 +22,12 @@ import (
 )
 
 
-// IpamApiService IpamApi service
-type IpamApiService service
+// IpamAPIService IpamAPI service
+type IpamAPIService service
 
 type ApiIpamAggregatesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aggregateRequest *[]AggregateRequest
 }
 
@@ -48,7 +48,7 @@ Delete a list of aggregate objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAggregatesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamAggregatesBulkDestroy(ctx context.Context) ApiIpamAggregatesBulkDestroyRequest {
+func (a *IpamAPIService) IpamAggregatesBulkDestroy(ctx context.Context) ApiIpamAggregatesBulkDestroyRequest {
 	return ApiIpamAggregatesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,14 +56,14 @@ func (a *IpamApiService) IpamAggregatesBulkDestroy(ctx context.Context) ApiIpamA
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamAggregatesBulkDestroyExecute(r ApiIpamAggregatesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesBulkDestroyExecute(r ApiIpamAggregatesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *IpamApiService) IpamAggregatesBulkDestroyExecute(r ApiIpamAggregatesBul
 
 type ApiIpamAggregatesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aggregateRequest *[]AggregateRequest
 }
 
@@ -161,7 +161,7 @@ Patch a list of aggregate objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAggregatesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamAggregatesBulkPartialUpdate(ctx context.Context) ApiIpamAggregatesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamAggregatesBulkPartialUpdate(ctx context.Context) ApiIpamAggregatesBulkPartialUpdateRequest {
 	return ApiIpamAggregatesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -170,7 +170,7 @@ func (a *IpamApiService) IpamAggregatesBulkPartialUpdate(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []Aggregate
-func (a *IpamApiService) IpamAggregatesBulkPartialUpdateExecute(r ApiIpamAggregatesBulkPartialUpdateRequest) ([]Aggregate, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesBulkPartialUpdateExecute(r ApiIpamAggregatesBulkPartialUpdateRequest) ([]Aggregate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *IpamApiService) IpamAggregatesBulkPartialUpdateExecute(r ApiIpamAggrega
 		localVarReturnValue  []Aggregate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,7 +264,7 @@ func (a *IpamApiService) IpamAggregatesBulkPartialUpdateExecute(r ApiIpamAggrega
 
 type ApiIpamAggregatesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aggregateRequest *[]AggregateRequest
 }
 
@@ -285,7 +285,7 @@ Put a list of aggregate objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAggregatesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamAggregatesBulkUpdate(ctx context.Context) ApiIpamAggregatesBulkUpdateRequest {
+func (a *IpamAPIService) IpamAggregatesBulkUpdate(ctx context.Context) ApiIpamAggregatesBulkUpdateRequest {
 	return ApiIpamAggregatesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -294,7 +294,7 @@ func (a *IpamApiService) IpamAggregatesBulkUpdate(ctx context.Context) ApiIpamAg
 
 // Execute executes the request
 //  @return []Aggregate
-func (a *IpamApiService) IpamAggregatesBulkUpdateExecute(r ApiIpamAggregatesBulkUpdateRequest) ([]Aggregate, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesBulkUpdateExecute(r ApiIpamAggregatesBulkUpdateRequest) ([]Aggregate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -302,7 +302,7 @@ func (a *IpamApiService) IpamAggregatesBulkUpdateExecute(r ApiIpamAggregatesBulk
 		localVarReturnValue  []Aggregate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *IpamApiService) IpamAggregatesBulkUpdateExecute(r ApiIpamAggregatesBulk
 
 type ApiIpamAggregatesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableAggregateRequest *WritableAggregateRequest
 }
 
@@ -409,7 +409,7 @@ Post a list of aggregate objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAggregatesCreateRequest
 */
-func (a *IpamApiService) IpamAggregatesCreate(ctx context.Context) ApiIpamAggregatesCreateRequest {
+func (a *IpamAPIService) IpamAggregatesCreate(ctx context.Context) ApiIpamAggregatesCreateRequest {
 	return ApiIpamAggregatesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -418,7 +418,7 @@ func (a *IpamApiService) IpamAggregatesCreate(ctx context.Context) ApiIpamAggreg
 
 // Execute executes the request
 //  @return Aggregate
-func (a *IpamApiService) IpamAggregatesCreateExecute(r ApiIpamAggregatesCreateRequest) (*Aggregate, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesCreateExecute(r ApiIpamAggregatesCreateRequest) (*Aggregate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -426,7 +426,7 @@ func (a *IpamApiService) IpamAggregatesCreateExecute(r ApiIpamAggregatesCreateRe
 		localVarReturnValue  *Aggregate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,7 +512,7 @@ func (a *IpamApiService) IpamAggregatesCreateExecute(r ApiIpamAggregatesCreateRe
 
 type ApiIpamAggregatesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -529,7 +529,7 @@ Delete a aggregate object.
  @param id A unique integer value identifying this aggregate.
  @return ApiIpamAggregatesDestroyRequest
 */
-func (a *IpamApiService) IpamAggregatesDestroy(ctx context.Context, id int32) ApiIpamAggregatesDestroyRequest {
+func (a *IpamAPIService) IpamAggregatesDestroy(ctx context.Context, id int32) ApiIpamAggregatesDestroyRequest {
 	return ApiIpamAggregatesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -538,14 +538,14 @@ func (a *IpamApiService) IpamAggregatesDestroy(ctx context.Context, id int32) Ap
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamAggregatesDestroyExecute(r ApiIpamAggregatesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesDestroyExecute(r ApiIpamAggregatesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -618,7 +618,7 @@ func (a *IpamApiService) IpamAggregatesDestroyExecute(r ApiIpamAggregatesDestroy
 
 type ApiIpamAggregatesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -1022,7 +1022,7 @@ Get a list of aggregate objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAggregatesListRequest
 */
-func (a *IpamApiService) IpamAggregatesList(ctx context.Context) ApiIpamAggregatesListRequest {
+func (a *IpamAPIService) IpamAggregatesList(ctx context.Context) ApiIpamAggregatesListRequest {
 	return ApiIpamAggregatesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1031,7 +1031,7 @@ func (a *IpamApiService) IpamAggregatesList(ctx context.Context) ApiIpamAggregat
 
 // Execute executes the request
 //  @return PaginatedAggregateList
-func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListRequest) (*PaginatedAggregateList, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesListExecute(r ApiIpamAggregatesListRequest) (*PaginatedAggregateList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1039,7 +1039,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		localVarReturnValue  *PaginatedAggregateList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1055,7 +1055,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -1066,7 +1066,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -1077,7 +1077,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -1088,7 +1088,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -1099,7 +1099,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -1110,7 +1110,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -1121,7 +1121,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -1135,7 +1135,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "date_added", t, "multi")
@@ -1149,7 +1149,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__gt", t, "multi")
@@ -1160,7 +1160,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__gte", t, "multi")
@@ -1171,7 +1171,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__lt", t, "multi")
@@ -1182,7 +1182,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__lte", t, "multi")
@@ -1193,7 +1193,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "date_added__n", t, "multi")
@@ -1204,7 +1204,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -1218,7 +1218,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -1229,7 +1229,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -1240,7 +1240,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -1251,7 +1251,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -1262,7 +1262,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -1273,7 +1273,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -1284,7 +1284,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -1295,7 +1295,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -1306,7 +1306,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -1320,7 +1320,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -1334,7 +1334,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -1345,7 +1345,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -1356,7 +1356,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -1367,7 +1367,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -1378,7 +1378,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -1389,7 +1389,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -1400,7 +1400,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -1411,7 +1411,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -1422,7 +1422,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -1433,7 +1433,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -1444,7 +1444,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -1455,7 +1455,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -1484,7 +1484,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir", t, "multi")
@@ -1495,7 +1495,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", t, "multi")
@@ -1506,7 +1506,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", t, "multi")
@@ -1517,7 +1517,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", t, "multi")
@@ -1528,7 +1528,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -1539,7 +1539,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -1550,7 +1550,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -1561,7 +1561,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -1572,7 +1572,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -1583,7 +1583,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -1594,7 +1594,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -1605,7 +1605,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -1616,7 +1616,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -1627,7 +1627,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -1706,7 +1706,7 @@ func (a *IpamApiService) IpamAggregatesListExecute(r ApiIpamAggregatesListReques
 
 type ApiIpamAggregatesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableAggregateRequest *PatchedWritableAggregateRequest
 }
@@ -1729,7 +1729,7 @@ Patch a aggregate object.
  @param id A unique integer value identifying this aggregate.
  @return ApiIpamAggregatesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamAggregatesPartialUpdate(ctx context.Context, id int32) ApiIpamAggregatesPartialUpdateRequest {
+func (a *IpamAPIService) IpamAggregatesPartialUpdate(ctx context.Context, id int32) ApiIpamAggregatesPartialUpdateRequest {
 	return ApiIpamAggregatesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1739,7 +1739,7 @@ func (a *IpamApiService) IpamAggregatesPartialUpdate(ctx context.Context, id int
 
 // Execute executes the request
 //  @return Aggregate
-func (a *IpamApiService) IpamAggregatesPartialUpdateExecute(r ApiIpamAggregatesPartialUpdateRequest) (*Aggregate, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesPartialUpdateExecute(r ApiIpamAggregatesPartialUpdateRequest) (*Aggregate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1747,7 +1747,7 @@ func (a *IpamApiService) IpamAggregatesPartialUpdateExecute(r ApiIpamAggregatesP
 		localVarReturnValue  *Aggregate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1831,7 +1831,7 @@ func (a *IpamApiService) IpamAggregatesPartialUpdateExecute(r ApiIpamAggregatesP
 
 type ApiIpamAggregatesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -1848,7 +1848,7 @@ Get a aggregate object.
  @param id A unique integer value identifying this aggregate.
  @return ApiIpamAggregatesRetrieveRequest
 */
-func (a *IpamApiService) IpamAggregatesRetrieve(ctx context.Context, id int32) ApiIpamAggregatesRetrieveRequest {
+func (a *IpamAPIService) IpamAggregatesRetrieve(ctx context.Context, id int32) ApiIpamAggregatesRetrieveRequest {
 	return ApiIpamAggregatesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1858,7 +1858,7 @@ func (a *IpamApiService) IpamAggregatesRetrieve(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return Aggregate
-func (a *IpamApiService) IpamAggregatesRetrieveExecute(r ApiIpamAggregatesRetrieveRequest) (*Aggregate, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesRetrieveExecute(r ApiIpamAggregatesRetrieveRequest) (*Aggregate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1866,7 +1866,7 @@ func (a *IpamApiService) IpamAggregatesRetrieveExecute(r ApiIpamAggregatesRetrie
 		localVarReturnValue  *Aggregate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1948,7 +1948,7 @@ func (a *IpamApiService) IpamAggregatesRetrieveExecute(r ApiIpamAggregatesRetrie
 
 type ApiIpamAggregatesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableAggregateRequest *WritableAggregateRequest
 }
@@ -1971,7 +1971,7 @@ Put a aggregate object.
  @param id A unique integer value identifying this aggregate.
  @return ApiIpamAggregatesUpdateRequest
 */
-func (a *IpamApiService) IpamAggregatesUpdate(ctx context.Context, id int32) ApiIpamAggregatesUpdateRequest {
+func (a *IpamAPIService) IpamAggregatesUpdate(ctx context.Context, id int32) ApiIpamAggregatesUpdateRequest {
 	return ApiIpamAggregatesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1981,7 +1981,7 @@ func (a *IpamApiService) IpamAggregatesUpdate(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return Aggregate
-func (a *IpamApiService) IpamAggregatesUpdateExecute(r ApiIpamAggregatesUpdateRequest) (*Aggregate, *http.Response, error) {
+func (a *IpamAPIService) IpamAggregatesUpdateExecute(r ApiIpamAggregatesUpdateRequest) (*Aggregate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1989,7 +1989,7 @@ func (a *IpamApiService) IpamAggregatesUpdateExecute(r ApiIpamAggregatesUpdateRe
 		localVarReturnValue  *Aggregate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAggregatesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAggregatesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2076,7 +2076,7 @@ func (a *IpamApiService) IpamAggregatesUpdateExecute(r ApiIpamAggregatesUpdateRe
 
 type ApiIpamAsnRangesAvailableAsnsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	aSNRequest *[]ASNRequest
 }
@@ -2099,7 +2099,7 @@ Post a ASN object.
  @param id
  @return ApiIpamAsnRangesAvailableAsnsCreateRequest
 */
-func (a *IpamApiService) IpamAsnRangesAvailableAsnsCreate(ctx context.Context, id int32) ApiIpamAsnRangesAvailableAsnsCreateRequest {
+func (a *IpamAPIService) IpamAsnRangesAvailableAsnsCreate(ctx context.Context, id int32) ApiIpamAsnRangesAvailableAsnsCreateRequest {
 	return ApiIpamAsnRangesAvailableAsnsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2109,7 +2109,7 @@ func (a *IpamApiService) IpamAsnRangesAvailableAsnsCreate(ctx context.Context, i
 
 // Execute executes the request
 //  @return []ASN
-func (a *IpamApiService) IpamAsnRangesAvailableAsnsCreateExecute(r ApiIpamAsnRangesAvailableAsnsCreateRequest) ([]ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesAvailableAsnsCreateExecute(r ApiIpamAsnRangesAvailableAsnsCreateRequest) ([]ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2117,7 +2117,7 @@ func (a *IpamApiService) IpamAsnRangesAvailableAsnsCreateExecute(r ApiIpamAsnRan
 		localVarReturnValue  []ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesAvailableAsnsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesAvailableAsnsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2204,7 +2204,7 @@ func (a *IpamApiService) IpamAsnRangesAvailableAsnsCreateExecute(r ApiIpamAsnRan
 
 type ApiIpamAsnRangesAvailableAsnsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -2221,7 +2221,7 @@ Get a ASN object.
  @param id
  @return ApiIpamAsnRangesAvailableAsnsListRequest
 */
-func (a *IpamApiService) IpamAsnRangesAvailableAsnsList(ctx context.Context, id int32) ApiIpamAsnRangesAvailableAsnsListRequest {
+func (a *IpamAPIService) IpamAsnRangesAvailableAsnsList(ctx context.Context, id int32) ApiIpamAsnRangesAvailableAsnsListRequest {
 	return ApiIpamAsnRangesAvailableAsnsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2231,7 +2231,7 @@ func (a *IpamApiService) IpamAsnRangesAvailableAsnsList(ctx context.Context, id 
 
 // Execute executes the request
 //  @return []AvailableASN
-func (a *IpamApiService) IpamAsnRangesAvailableAsnsListExecute(r ApiIpamAsnRangesAvailableAsnsListRequest) ([]AvailableASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesAvailableAsnsListExecute(r ApiIpamAsnRangesAvailableAsnsListRequest) ([]AvailableASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2239,7 +2239,7 @@ func (a *IpamApiService) IpamAsnRangesAvailableAsnsListExecute(r ApiIpamAsnRange
 		localVarReturnValue  []AvailableASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesAvailableAsnsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesAvailableAsnsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2321,7 +2321,7 @@ func (a *IpamApiService) IpamAsnRangesAvailableAsnsListExecute(r ApiIpamAsnRange
 
 type ApiIpamAsnRangesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aSNRangeRequest *[]ASNRangeRequest
 }
 
@@ -2342,7 +2342,7 @@ Delete a list of ASN range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnRangesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamAsnRangesBulkDestroy(ctx context.Context) ApiIpamAsnRangesBulkDestroyRequest {
+func (a *IpamAPIService) IpamAsnRangesBulkDestroy(ctx context.Context) ApiIpamAsnRangesBulkDestroyRequest {
 	return ApiIpamAsnRangesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2350,14 +2350,14 @@ func (a *IpamApiService) IpamAsnRangesBulkDestroy(ctx context.Context) ApiIpamAs
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamAsnRangesBulkDestroyExecute(r ApiIpamAsnRangesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesBulkDestroyExecute(r ApiIpamAsnRangesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2434,7 +2434,7 @@ func (a *IpamApiService) IpamAsnRangesBulkDestroyExecute(r ApiIpamAsnRangesBulkD
 
 type ApiIpamAsnRangesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aSNRangeRequest *[]ASNRangeRequest
 }
 
@@ -2455,7 +2455,7 @@ Patch a list of ASN range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnRangesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamAsnRangesBulkPartialUpdate(ctx context.Context) ApiIpamAsnRangesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamAsnRangesBulkPartialUpdate(ctx context.Context) ApiIpamAsnRangesBulkPartialUpdateRequest {
 	return ApiIpamAsnRangesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2464,7 +2464,7 @@ func (a *IpamApiService) IpamAsnRangesBulkPartialUpdate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []ASNRange
-func (a *IpamApiService) IpamAsnRangesBulkPartialUpdateExecute(r ApiIpamAsnRangesBulkPartialUpdateRequest) ([]ASNRange, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesBulkPartialUpdateExecute(r ApiIpamAsnRangesBulkPartialUpdateRequest) ([]ASNRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -2472,7 +2472,7 @@ func (a *IpamApiService) IpamAsnRangesBulkPartialUpdateExecute(r ApiIpamAsnRange
 		localVarReturnValue  []ASNRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2558,7 +2558,7 @@ func (a *IpamApiService) IpamAsnRangesBulkPartialUpdateExecute(r ApiIpamAsnRange
 
 type ApiIpamAsnRangesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aSNRangeRequest *[]ASNRangeRequest
 }
 
@@ -2579,7 +2579,7 @@ Put a list of ASN range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnRangesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamAsnRangesBulkUpdate(ctx context.Context) ApiIpamAsnRangesBulkUpdateRequest {
+func (a *IpamAPIService) IpamAsnRangesBulkUpdate(ctx context.Context) ApiIpamAsnRangesBulkUpdateRequest {
 	return ApiIpamAsnRangesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2588,7 +2588,7 @@ func (a *IpamApiService) IpamAsnRangesBulkUpdate(ctx context.Context) ApiIpamAsn
 
 // Execute executes the request
 //  @return []ASNRange
-func (a *IpamApiService) IpamAsnRangesBulkUpdateExecute(r ApiIpamAsnRangesBulkUpdateRequest) ([]ASNRange, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesBulkUpdateExecute(r ApiIpamAsnRangesBulkUpdateRequest) ([]ASNRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2596,7 +2596,7 @@ func (a *IpamApiService) IpamAsnRangesBulkUpdateExecute(r ApiIpamAsnRangesBulkUp
 		localVarReturnValue  []ASNRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2682,7 +2682,7 @@ func (a *IpamApiService) IpamAsnRangesBulkUpdateExecute(r ApiIpamAsnRangesBulkUp
 
 type ApiIpamAsnRangesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableASNRangeRequest *WritableASNRangeRequest
 }
 
@@ -2703,7 +2703,7 @@ Post a list of ASN range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnRangesCreateRequest
 */
-func (a *IpamApiService) IpamAsnRangesCreate(ctx context.Context) ApiIpamAsnRangesCreateRequest {
+func (a *IpamAPIService) IpamAsnRangesCreate(ctx context.Context) ApiIpamAsnRangesCreateRequest {
 	return ApiIpamAsnRangesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2712,7 +2712,7 @@ func (a *IpamApiService) IpamAsnRangesCreate(ctx context.Context) ApiIpamAsnRang
 
 // Execute executes the request
 //  @return ASNRange
-func (a *IpamApiService) IpamAsnRangesCreateExecute(r ApiIpamAsnRangesCreateRequest) (*ASNRange, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesCreateExecute(r ApiIpamAsnRangesCreateRequest) (*ASNRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2720,7 +2720,7 @@ func (a *IpamApiService) IpamAsnRangesCreateExecute(r ApiIpamAsnRangesCreateRequ
 		localVarReturnValue  *ASNRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2806,7 +2806,7 @@ func (a *IpamApiService) IpamAsnRangesCreateExecute(r ApiIpamAsnRangesCreateRequ
 
 type ApiIpamAsnRangesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -2823,7 +2823,7 @@ Delete a ASN range object.
  @param id A unique integer value identifying this ASN range.
  @return ApiIpamAsnRangesDestroyRequest
 */
-func (a *IpamApiService) IpamAsnRangesDestroy(ctx context.Context, id int32) ApiIpamAsnRangesDestroyRequest {
+func (a *IpamAPIService) IpamAsnRangesDestroy(ctx context.Context, id int32) ApiIpamAsnRangesDestroyRequest {
 	return ApiIpamAsnRangesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2832,14 +2832,14 @@ func (a *IpamApiService) IpamAsnRangesDestroy(ctx context.Context, id int32) Api
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamAsnRangesDestroyExecute(r ApiIpamAsnRangesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesDestroyExecute(r ApiIpamAsnRangesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2912,7 +2912,7 @@ func (a *IpamApiService) IpamAsnRangesDestroyExecute(r ApiIpamAsnRangesDestroyRe
 
 type ApiIpamAsnRangesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -3411,7 +3411,7 @@ Get a list of ASN range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnRangesListRequest
 */
-func (a *IpamApiService) IpamAsnRangesList(ctx context.Context) ApiIpamAsnRangesListRequest {
+func (a *IpamAPIService) IpamAsnRangesList(ctx context.Context) ApiIpamAsnRangesListRequest {
 	return ApiIpamAsnRangesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3420,7 +3420,7 @@ func (a *IpamApiService) IpamAsnRangesList(ctx context.Context) ApiIpamAsnRanges
 
 // Execute executes the request
 //  @return PaginatedASNRangeList
-func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest) (*PaginatedASNRangeList, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest) (*PaginatedASNRangeList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3428,7 +3428,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		localVarReturnValue  *PaginatedASNRangeList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3444,7 +3444,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -3455,7 +3455,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -3466,7 +3466,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -3477,7 +3477,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -3488,7 +3488,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -3499,7 +3499,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -3510,7 +3510,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -3524,7 +3524,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -3538,7 +3538,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -3549,7 +3549,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -3560,7 +3560,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -3571,7 +3571,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -3582,7 +3582,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -3593,7 +3593,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -3604,7 +3604,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -3615,7 +3615,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -3626,7 +3626,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -3637,7 +3637,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end", t, "multi")
@@ -3651,7 +3651,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end__gt", t, "multi")
@@ -3662,7 +3662,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end__gte", t, "multi")
@@ -3673,7 +3673,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end__lt", t, "multi")
@@ -3684,7 +3684,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end__lte", t, "multi")
@@ -3695,7 +3695,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end__n", t, "multi")
@@ -3706,7 +3706,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -3720,7 +3720,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -3731,7 +3731,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -3742,7 +3742,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -3753,7 +3753,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -3764,7 +3764,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -3775,7 +3775,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -3786,7 +3786,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -3797,7 +3797,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -3808,7 +3808,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -3819,7 +3819,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -3830,7 +3830,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -3841,7 +3841,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -3858,7 +3858,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -3872,7 +3872,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -3883,7 +3883,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -3894,7 +3894,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -3905,7 +3905,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -3916,7 +3916,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -3927,7 +3927,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -3938,7 +3938,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -3949,7 +3949,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -3960,7 +3960,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -3980,7 +3980,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir", t, "multi")
@@ -3991,7 +3991,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", t, "multi")
@@ -4002,7 +4002,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", t, "multi")
@@ -4013,7 +4013,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", t, "multi")
@@ -4024,7 +4024,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start", t, "multi")
@@ -4038,7 +4038,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start__gt", t, "multi")
@@ -4049,7 +4049,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start__gte", t, "multi")
@@ -4060,7 +4060,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start__lt", t, "multi")
@@ -4071,7 +4071,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start__lte", t, "multi")
@@ -4082,7 +4082,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start__n", t, "multi")
@@ -4093,7 +4093,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -4104,7 +4104,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -4115,7 +4115,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -4126,7 +4126,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -4137,7 +4137,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -4148,7 +4148,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -4159,7 +4159,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -4170,7 +4170,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -4181,7 +4181,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -4192,7 +4192,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -4271,7 +4271,7 @@ func (a *IpamApiService) IpamAsnRangesListExecute(r ApiIpamAsnRangesListRequest)
 
 type ApiIpamAsnRangesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableASNRangeRequest *PatchedWritableASNRangeRequest
 }
@@ -4294,7 +4294,7 @@ Patch a ASN range object.
  @param id A unique integer value identifying this ASN range.
  @return ApiIpamAsnRangesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamAsnRangesPartialUpdate(ctx context.Context, id int32) ApiIpamAsnRangesPartialUpdateRequest {
+func (a *IpamAPIService) IpamAsnRangesPartialUpdate(ctx context.Context, id int32) ApiIpamAsnRangesPartialUpdateRequest {
 	return ApiIpamAsnRangesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4304,7 +4304,7 @@ func (a *IpamApiService) IpamAsnRangesPartialUpdate(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return ASNRange
-func (a *IpamApiService) IpamAsnRangesPartialUpdateExecute(r ApiIpamAsnRangesPartialUpdateRequest) (*ASNRange, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesPartialUpdateExecute(r ApiIpamAsnRangesPartialUpdateRequest) (*ASNRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4312,7 +4312,7 @@ func (a *IpamApiService) IpamAsnRangesPartialUpdateExecute(r ApiIpamAsnRangesPar
 		localVarReturnValue  *ASNRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4396,7 +4396,7 @@ func (a *IpamApiService) IpamAsnRangesPartialUpdateExecute(r ApiIpamAsnRangesPar
 
 type ApiIpamAsnRangesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -4413,7 +4413,7 @@ Get a ASN range object.
  @param id A unique integer value identifying this ASN range.
  @return ApiIpamAsnRangesRetrieveRequest
 */
-func (a *IpamApiService) IpamAsnRangesRetrieve(ctx context.Context, id int32) ApiIpamAsnRangesRetrieveRequest {
+func (a *IpamAPIService) IpamAsnRangesRetrieve(ctx context.Context, id int32) ApiIpamAsnRangesRetrieveRequest {
 	return ApiIpamAsnRangesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4423,7 +4423,7 @@ func (a *IpamApiService) IpamAsnRangesRetrieve(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return ASNRange
-func (a *IpamApiService) IpamAsnRangesRetrieveExecute(r ApiIpamAsnRangesRetrieveRequest) (*ASNRange, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesRetrieveExecute(r ApiIpamAsnRangesRetrieveRequest) (*ASNRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4431,7 +4431,7 @@ func (a *IpamApiService) IpamAsnRangesRetrieveExecute(r ApiIpamAsnRangesRetrieve
 		localVarReturnValue  *ASNRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4513,7 +4513,7 @@ func (a *IpamApiService) IpamAsnRangesRetrieveExecute(r ApiIpamAsnRangesRetrieve
 
 type ApiIpamAsnRangesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableASNRangeRequest *WritableASNRangeRequest
 }
@@ -4536,7 +4536,7 @@ Put a ASN range object.
  @param id A unique integer value identifying this ASN range.
  @return ApiIpamAsnRangesUpdateRequest
 */
-func (a *IpamApiService) IpamAsnRangesUpdate(ctx context.Context, id int32) ApiIpamAsnRangesUpdateRequest {
+func (a *IpamAPIService) IpamAsnRangesUpdate(ctx context.Context, id int32) ApiIpamAsnRangesUpdateRequest {
 	return ApiIpamAsnRangesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4546,7 +4546,7 @@ func (a *IpamApiService) IpamAsnRangesUpdate(ctx context.Context, id int32) ApiI
 
 // Execute executes the request
 //  @return ASNRange
-func (a *IpamApiService) IpamAsnRangesUpdateExecute(r ApiIpamAsnRangesUpdateRequest) (*ASNRange, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnRangesUpdateExecute(r ApiIpamAsnRangesUpdateRequest) (*ASNRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4554,7 +4554,7 @@ func (a *IpamApiService) IpamAsnRangesUpdateExecute(r ApiIpamAsnRangesUpdateRequ
 		localVarReturnValue  *ASNRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnRangesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnRangesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4641,7 +4641,7 @@ func (a *IpamApiService) IpamAsnRangesUpdateExecute(r ApiIpamAsnRangesUpdateRequ
 
 type ApiIpamAsnsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aSNRequest *[]ASNRequest
 }
 
@@ -4662,7 +4662,7 @@ Delete a list of ASN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamAsnsBulkDestroy(ctx context.Context) ApiIpamAsnsBulkDestroyRequest {
+func (a *IpamAPIService) IpamAsnsBulkDestroy(ctx context.Context) ApiIpamAsnsBulkDestroyRequest {
 	return ApiIpamAsnsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4670,14 +4670,14 @@ func (a *IpamApiService) IpamAsnsBulkDestroy(ctx context.Context) ApiIpamAsnsBul
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamAsnsBulkDestroyExecute(r ApiIpamAsnsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamAsnsBulkDestroyExecute(r ApiIpamAsnsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4754,7 +4754,7 @@ func (a *IpamApiService) IpamAsnsBulkDestroyExecute(r ApiIpamAsnsBulkDestroyRequ
 
 type ApiIpamAsnsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aSNRequest *[]ASNRequest
 }
 
@@ -4775,7 +4775,7 @@ Patch a list of ASN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamAsnsBulkPartialUpdate(ctx context.Context) ApiIpamAsnsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamAsnsBulkPartialUpdate(ctx context.Context) ApiIpamAsnsBulkPartialUpdateRequest {
 	return ApiIpamAsnsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4784,7 +4784,7 @@ func (a *IpamApiService) IpamAsnsBulkPartialUpdate(ctx context.Context) ApiIpamA
 
 // Execute executes the request
 //  @return []ASN
-func (a *IpamApiService) IpamAsnsBulkPartialUpdateExecute(r ApiIpamAsnsBulkPartialUpdateRequest) ([]ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsBulkPartialUpdateExecute(r ApiIpamAsnsBulkPartialUpdateRequest) ([]ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4792,7 +4792,7 @@ func (a *IpamApiService) IpamAsnsBulkPartialUpdateExecute(r ApiIpamAsnsBulkParti
 		localVarReturnValue  []ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4878,7 +4878,7 @@ func (a *IpamApiService) IpamAsnsBulkPartialUpdateExecute(r ApiIpamAsnsBulkParti
 
 type ApiIpamAsnsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	aSNRequest *[]ASNRequest
 }
 
@@ -4899,7 +4899,7 @@ Put a list of ASN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamAsnsBulkUpdate(ctx context.Context) ApiIpamAsnsBulkUpdateRequest {
+func (a *IpamAPIService) IpamAsnsBulkUpdate(ctx context.Context) ApiIpamAsnsBulkUpdateRequest {
 	return ApiIpamAsnsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4908,7 +4908,7 @@ func (a *IpamApiService) IpamAsnsBulkUpdate(ctx context.Context) ApiIpamAsnsBulk
 
 // Execute executes the request
 //  @return []ASN
-func (a *IpamApiService) IpamAsnsBulkUpdateExecute(r ApiIpamAsnsBulkUpdateRequest) ([]ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsBulkUpdateExecute(r ApiIpamAsnsBulkUpdateRequest) ([]ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4916,7 +4916,7 @@ func (a *IpamApiService) IpamAsnsBulkUpdateExecute(r ApiIpamAsnsBulkUpdateReques
 		localVarReturnValue  []ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5002,7 +5002,7 @@ func (a *IpamApiService) IpamAsnsBulkUpdateExecute(r ApiIpamAsnsBulkUpdateReques
 
 type ApiIpamAsnsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableASNRequest *WritableASNRequest
 }
 
@@ -5023,7 +5023,7 @@ Post a list of ASN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnsCreateRequest
 */
-func (a *IpamApiService) IpamAsnsCreate(ctx context.Context) ApiIpamAsnsCreateRequest {
+func (a *IpamAPIService) IpamAsnsCreate(ctx context.Context) ApiIpamAsnsCreateRequest {
 	return ApiIpamAsnsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5032,7 +5032,7 @@ func (a *IpamApiService) IpamAsnsCreate(ctx context.Context) ApiIpamAsnsCreateRe
 
 // Execute executes the request
 //  @return ASN
-func (a *IpamApiService) IpamAsnsCreateExecute(r ApiIpamAsnsCreateRequest) (*ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsCreateExecute(r ApiIpamAsnsCreateRequest) (*ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5040,7 +5040,7 @@ func (a *IpamApiService) IpamAsnsCreateExecute(r ApiIpamAsnsCreateRequest) (*ASN
 		localVarReturnValue  *ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5126,7 +5126,7 @@ func (a *IpamApiService) IpamAsnsCreateExecute(r ApiIpamAsnsCreateRequest) (*ASN
 
 type ApiIpamAsnsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -5143,7 +5143,7 @@ Delete a ASN object.
  @param id A unique integer value identifying this ASN.
  @return ApiIpamAsnsDestroyRequest
 */
-func (a *IpamApiService) IpamAsnsDestroy(ctx context.Context, id int32) ApiIpamAsnsDestroyRequest {
+func (a *IpamAPIService) IpamAsnsDestroy(ctx context.Context, id int32) ApiIpamAsnsDestroyRequest {
 	return ApiIpamAsnsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5152,14 +5152,14 @@ func (a *IpamApiService) IpamAsnsDestroy(ctx context.Context, id int32) ApiIpamA
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamAsnsDestroyExecute(r ApiIpamAsnsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamAsnsDestroyExecute(r ApiIpamAsnsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5232,7 +5232,7 @@ func (a *IpamApiService) IpamAsnsDestroyExecute(r ApiIpamAsnsDestroyRequest) (*h
 
 type ApiIpamAsnsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	asn *[]int32
 	asnEmpty *bool
 	asnGt *[]int32
@@ -5651,7 +5651,7 @@ Get a list of ASN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamAsnsListRequest
 */
-func (a *IpamApiService) IpamAsnsList(ctx context.Context) ApiIpamAsnsListRequest {
+func (a *IpamAPIService) IpamAsnsList(ctx context.Context) ApiIpamAsnsListRequest {
 	return ApiIpamAsnsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5660,7 +5660,7 @@ func (a *IpamApiService) IpamAsnsList(ctx context.Context) ApiIpamAsnsListReques
 
 // Execute executes the request
 //  @return PaginatedASNList
-func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*PaginatedASNList, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*PaginatedASNList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5668,7 +5668,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		localVarReturnValue  *PaginatedASNList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5684,7 +5684,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "asn", t, "multi")
@@ -5698,7 +5698,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__gt", t, "multi")
@@ -5709,7 +5709,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__gte", t, "multi")
@@ -5720,7 +5720,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__lt", t, "multi")
@@ -5731,7 +5731,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__lte", t, "multi")
@@ -5742,7 +5742,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "asn__n", t, "multi")
@@ -5753,7 +5753,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -5764,7 +5764,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -5775,7 +5775,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -5786,7 +5786,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -5797,7 +5797,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -5808,7 +5808,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -5819,7 +5819,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -5833,7 +5833,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -5847,7 +5847,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -5858,7 +5858,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -5869,7 +5869,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -5880,7 +5880,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -5891,7 +5891,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -5902,7 +5902,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -5913,7 +5913,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -5924,7 +5924,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -5935,7 +5935,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -5946,7 +5946,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -5960,7 +5960,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -5971,7 +5971,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -5982,7 +5982,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -5993,7 +5993,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -6004,7 +6004,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -6015,7 +6015,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -6026,7 +6026,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -6037,7 +6037,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -6048,7 +6048,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -6059,7 +6059,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -6070,7 +6070,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -6081,7 +6081,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -6107,7 +6107,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir", t, "multi")
@@ -6118,7 +6118,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir__n", t, "multi")
@@ -6129,7 +6129,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id", t, "multi")
@@ -6140,7 +6140,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rir_id__n", t, "multi")
@@ -6151,7 +6151,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -6162,7 +6162,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
@@ -6173,7 +6173,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -6184,7 +6184,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
@@ -6195,7 +6195,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -6206,7 +6206,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -6217,7 +6217,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -6228,7 +6228,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -6239,7 +6239,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -6250,7 +6250,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -6261,7 +6261,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -6272,7 +6272,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -6283,7 +6283,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -6294,7 +6294,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -6373,7 +6373,7 @@ func (a *IpamApiService) IpamAsnsListExecute(r ApiIpamAsnsListRequest) (*Paginat
 
 type ApiIpamAsnsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableASNRequest *PatchedWritableASNRequest
 }
@@ -6396,7 +6396,7 @@ Patch a ASN object.
  @param id A unique integer value identifying this ASN.
  @return ApiIpamAsnsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamAsnsPartialUpdate(ctx context.Context, id int32) ApiIpamAsnsPartialUpdateRequest {
+func (a *IpamAPIService) IpamAsnsPartialUpdate(ctx context.Context, id int32) ApiIpamAsnsPartialUpdateRequest {
 	return ApiIpamAsnsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6406,7 +6406,7 @@ func (a *IpamApiService) IpamAsnsPartialUpdate(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return ASN
-func (a *IpamApiService) IpamAsnsPartialUpdateExecute(r ApiIpamAsnsPartialUpdateRequest) (*ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsPartialUpdateExecute(r ApiIpamAsnsPartialUpdateRequest) (*ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6414,7 +6414,7 @@ func (a *IpamApiService) IpamAsnsPartialUpdateExecute(r ApiIpamAsnsPartialUpdate
 		localVarReturnValue  *ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6498,7 +6498,7 @@ func (a *IpamApiService) IpamAsnsPartialUpdateExecute(r ApiIpamAsnsPartialUpdate
 
 type ApiIpamAsnsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -6515,7 +6515,7 @@ Get a ASN object.
  @param id A unique integer value identifying this ASN.
  @return ApiIpamAsnsRetrieveRequest
 */
-func (a *IpamApiService) IpamAsnsRetrieve(ctx context.Context, id int32) ApiIpamAsnsRetrieveRequest {
+func (a *IpamAPIService) IpamAsnsRetrieve(ctx context.Context, id int32) ApiIpamAsnsRetrieveRequest {
 	return ApiIpamAsnsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6525,7 +6525,7 @@ func (a *IpamApiService) IpamAsnsRetrieve(ctx context.Context, id int32) ApiIpam
 
 // Execute executes the request
 //  @return ASN
-func (a *IpamApiService) IpamAsnsRetrieveExecute(r ApiIpamAsnsRetrieveRequest) (*ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsRetrieveExecute(r ApiIpamAsnsRetrieveRequest) (*ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6533,7 +6533,7 @@ func (a *IpamApiService) IpamAsnsRetrieveExecute(r ApiIpamAsnsRetrieveRequest) (
 		localVarReturnValue  *ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6615,7 +6615,7 @@ func (a *IpamApiService) IpamAsnsRetrieveExecute(r ApiIpamAsnsRetrieveRequest) (
 
 type ApiIpamAsnsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableASNRequest *WritableASNRequest
 }
@@ -6638,7 +6638,7 @@ Put a ASN object.
  @param id A unique integer value identifying this ASN.
  @return ApiIpamAsnsUpdateRequest
 */
-func (a *IpamApiService) IpamAsnsUpdate(ctx context.Context, id int32) ApiIpamAsnsUpdateRequest {
+func (a *IpamAPIService) IpamAsnsUpdate(ctx context.Context, id int32) ApiIpamAsnsUpdateRequest {
 	return ApiIpamAsnsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6648,7 +6648,7 @@ func (a *IpamApiService) IpamAsnsUpdate(ctx context.Context, id int32) ApiIpamAs
 
 // Execute executes the request
 //  @return ASN
-func (a *IpamApiService) IpamAsnsUpdateExecute(r ApiIpamAsnsUpdateRequest) (*ASN, *http.Response, error) {
+func (a *IpamAPIService) IpamAsnsUpdateExecute(r ApiIpamAsnsUpdateRequest) (*ASN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -6656,7 +6656,7 @@ func (a *IpamApiService) IpamAsnsUpdateExecute(r ApiIpamAsnsUpdateRequest) (*ASN
 		localVarReturnValue  *ASN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamAsnsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamAsnsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6743,7 +6743,7 @@ func (a *IpamApiService) IpamAsnsUpdateExecute(r ApiIpamAsnsUpdateRequest) (*ASN
 
 type ApiIpamFhrpGroupAssignmentsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupAssignmentRequest *[]FHRPGroupAssignmentRequest
 }
 
@@ -6764,7 +6764,7 @@ Delete a list of FHRP group assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupAssignmentsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkDestroy(ctx context.Context) ApiIpamFhrpGroupAssignmentsBulkDestroyRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsBulkDestroy(ctx context.Context) ApiIpamFhrpGroupAssignmentsBulkDestroyRequest {
 	return ApiIpamFhrpGroupAssignmentsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6772,14 +6772,14 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkDestroy(ctx context.Context
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkDestroyExecute(r ApiIpamFhrpGroupAssignmentsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsBulkDestroyExecute(r ApiIpamFhrpGroupAssignmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6856,7 +6856,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkDestroyExecute(r ApiIpamFhr
 
 type ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupAssignmentRequest *[]FHRPGroupAssignmentRequest
 }
 
@@ -6877,7 +6877,7 @@ Patch a list of FHRP group assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkPartialUpdate(ctx context.Context) ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsBulkPartialUpdate(ctx context.Context) ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest {
 	return ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6886,7 +6886,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkPartialUpdate(ctx context.C
 
 // Execute executes the request
 //  @return []FHRPGroupAssignment
-func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkPartialUpdateExecute(r ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest) ([]FHRPGroupAssignment, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsBulkPartialUpdateExecute(r ApiIpamFhrpGroupAssignmentsBulkPartialUpdateRequest) ([]FHRPGroupAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6894,7 +6894,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkPartialUpdateExecute(r ApiI
 		localVarReturnValue  []FHRPGroupAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6980,7 +6980,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkPartialUpdateExecute(r ApiI
 
 type ApiIpamFhrpGroupAssignmentsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupAssignmentRequest *[]FHRPGroupAssignmentRequest
 }
 
@@ -7001,7 +7001,7 @@ Put a list of FHRP group assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupAssignmentsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkUpdate(ctx context.Context) ApiIpamFhrpGroupAssignmentsBulkUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsBulkUpdate(ctx context.Context) ApiIpamFhrpGroupAssignmentsBulkUpdateRequest {
 	return ApiIpamFhrpGroupAssignmentsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7010,7 +7010,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkUpdate(ctx context.Context)
 
 // Execute executes the request
 //  @return []FHRPGroupAssignment
-func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkUpdateExecute(r ApiIpamFhrpGroupAssignmentsBulkUpdateRequest) ([]FHRPGroupAssignment, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsBulkUpdateExecute(r ApiIpamFhrpGroupAssignmentsBulkUpdateRequest) ([]FHRPGroupAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -7018,7 +7018,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkUpdateExecute(r ApiIpamFhrp
 		localVarReturnValue  []FHRPGroupAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7104,7 +7104,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsBulkUpdateExecute(r ApiIpamFhrp
 
 type ApiIpamFhrpGroupAssignmentsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableFHRPGroupAssignmentRequest *WritableFHRPGroupAssignmentRequest
 }
 
@@ -7125,7 +7125,7 @@ Post a list of FHRP group assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupAssignmentsCreateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsCreate(ctx context.Context) ApiIpamFhrpGroupAssignmentsCreateRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsCreate(ctx context.Context) ApiIpamFhrpGroupAssignmentsCreateRequest {
 	return ApiIpamFhrpGroupAssignmentsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7134,7 +7134,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsCreate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return FHRPGroupAssignment
-func (a *IpamApiService) IpamFhrpGroupAssignmentsCreateExecute(r ApiIpamFhrpGroupAssignmentsCreateRequest) (*FHRPGroupAssignment, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsCreateExecute(r ApiIpamFhrpGroupAssignmentsCreateRequest) (*FHRPGroupAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7142,7 +7142,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsCreateExecute(r ApiIpamFhrpGrou
 		localVarReturnValue  *FHRPGroupAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7228,7 +7228,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsCreateExecute(r ApiIpamFhrpGrou
 
 type ApiIpamFhrpGroupAssignmentsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -7245,7 +7245,7 @@ Delete a FHRP group assignment object.
  @param id A unique integer value identifying this FHRP group assignment.
  @return ApiIpamFhrpGroupAssignmentsDestroyRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsDestroy(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsDestroyRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsDestroy(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsDestroyRequest {
 	return ApiIpamFhrpGroupAssignmentsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7254,14 +7254,14 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsDestroy(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamFhrpGroupAssignmentsDestroyExecute(r ApiIpamFhrpGroupAssignmentsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsDestroyExecute(r ApiIpamFhrpGroupAssignmentsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7334,7 +7334,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsDestroyExecute(r ApiIpamFhrpGro
 
 type ApiIpamFhrpGroupAssignmentsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -7648,7 +7648,7 @@ Get a list of FHRP group assignment objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupAssignmentsListRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsList(ctx context.Context) ApiIpamFhrpGroupAssignmentsListRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsList(ctx context.Context) ApiIpamFhrpGroupAssignmentsListRequest {
 	return ApiIpamFhrpGroupAssignmentsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7657,7 +7657,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsList(ctx context.Context) ApiIp
 
 // Execute executes the request
 //  @return PaginatedFHRPGroupAssignmentList
-func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupAssignmentsListRequest) (*PaginatedFHRPGroupAssignmentList, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupAssignmentsListRequest) (*PaginatedFHRPGroupAssignmentList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7665,7 +7665,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		localVarReturnValue  *PaginatedFHRPGroupAssignmentList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7681,7 +7681,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -7692,7 +7692,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -7703,7 +7703,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -7714,7 +7714,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -7725,7 +7725,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -7736,7 +7736,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -7747,7 +7747,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -7761,7 +7761,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device", t, "multi")
@@ -7772,7 +7772,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", t, "multi")
@@ -7783,7 +7783,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -7794,7 +7794,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -7805,7 +7805,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -7819,7 +7819,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -7830,7 +7830,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -7841,7 +7841,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -7852,7 +7852,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -7863,7 +7863,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -7874,7 +7874,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", t, "multi")
@@ -7888,7 +7888,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__gt", t, "multi")
@@ -7899,7 +7899,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__gte", t, "multi")
@@ -7910,7 +7910,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__lt", t, "multi")
@@ -7921,7 +7921,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__lte", t, "multi")
@@ -7932,7 +7932,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", t, "multi")
@@ -7949,7 +7949,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -7960,7 +7960,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -7971,7 +7971,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -7982,7 +7982,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -7993,7 +7993,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -8004,7 +8004,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -8015,7 +8015,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -8038,7 +8038,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "priority", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "priority", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "priority", t, "multi")
@@ -8052,7 +8052,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "priority__gt", t, "multi")
@@ -8063,7 +8063,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "priority__gte", t, "multi")
@@ -8074,7 +8074,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "priority__lt", t, "multi")
@@ -8085,7 +8085,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "priority__lte", t, "multi")
@@ -8096,7 +8096,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "priority__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "priority__n", t, "multi")
@@ -8110,7 +8110,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", t, "multi")
@@ -8121,7 +8121,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", t, "multi")
@@ -8197,7 +8197,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsListExecute(r ApiIpamFhrpGroupA
 
 type ApiIpamFhrpGroupAssignmentsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableFHRPGroupAssignmentRequest *PatchedWritableFHRPGroupAssignmentRequest
 }
@@ -8220,7 +8220,7 @@ Patch a FHRP group assignment object.
  @param id A unique integer value identifying this FHRP group assignment.
  @return ApiIpamFhrpGroupAssignmentsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsPartialUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsPartialUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsPartialUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsPartialUpdateRequest {
 	return ApiIpamFhrpGroupAssignmentsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8230,7 +8230,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsPartialUpdate(ctx context.Conte
 
 // Execute executes the request
 //  @return FHRPGroupAssignment
-func (a *IpamApiService) IpamFhrpGroupAssignmentsPartialUpdateExecute(r ApiIpamFhrpGroupAssignmentsPartialUpdateRequest) (*FHRPGroupAssignment, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsPartialUpdateExecute(r ApiIpamFhrpGroupAssignmentsPartialUpdateRequest) (*FHRPGroupAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8238,7 +8238,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsPartialUpdateExecute(r ApiIpamF
 		localVarReturnValue  *FHRPGroupAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8322,7 +8322,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsPartialUpdateExecute(r ApiIpamF
 
 type ApiIpamFhrpGroupAssignmentsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -8339,7 +8339,7 @@ Get a FHRP group assignment object.
  @param id A unique integer value identifying this FHRP group assignment.
  @return ApiIpamFhrpGroupAssignmentsRetrieveRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsRetrieve(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsRetrieveRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsRetrieve(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsRetrieveRequest {
 	return ApiIpamFhrpGroupAssignmentsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8349,7 +8349,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsRetrieve(ctx context.Context, i
 
 // Execute executes the request
 //  @return FHRPGroupAssignment
-func (a *IpamApiService) IpamFhrpGroupAssignmentsRetrieveExecute(r ApiIpamFhrpGroupAssignmentsRetrieveRequest) (*FHRPGroupAssignment, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsRetrieveExecute(r ApiIpamFhrpGroupAssignmentsRetrieveRequest) (*FHRPGroupAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8357,7 +8357,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsRetrieveExecute(r ApiIpamFhrpGr
 		localVarReturnValue  *FHRPGroupAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8439,7 +8439,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsRetrieveExecute(r ApiIpamFhrpGr
 
 type ApiIpamFhrpGroupAssignmentsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableFHRPGroupAssignmentRequest *WritableFHRPGroupAssignmentRequest
 }
@@ -8462,7 +8462,7 @@ Put a FHRP group assignment object.
  @param id A unique integer value identifying this FHRP group assignment.
  @return ApiIpamFhrpGroupAssignmentsUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupAssignmentsUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupAssignmentsUpdateRequest {
 	return ApiIpamFhrpGroupAssignmentsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8472,7 +8472,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsUpdate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return FHRPGroupAssignment
-func (a *IpamApiService) IpamFhrpGroupAssignmentsUpdateExecute(r ApiIpamFhrpGroupAssignmentsUpdateRequest) (*FHRPGroupAssignment, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupAssignmentsUpdateExecute(r ApiIpamFhrpGroupAssignmentsUpdateRequest) (*FHRPGroupAssignment, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8480,7 +8480,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsUpdateExecute(r ApiIpamFhrpGrou
 		localVarReturnValue  *FHRPGroupAssignment
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupAssignmentsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupAssignmentsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8567,7 +8567,7 @@ func (a *IpamApiService) IpamFhrpGroupAssignmentsUpdateExecute(r ApiIpamFhrpGrou
 
 type ApiIpamFhrpGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupRequest *[]FHRPGroupRequest
 }
 
@@ -8588,7 +8588,7 @@ Delete a list of FHRP group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsBulkDestroy(ctx context.Context) ApiIpamFhrpGroupsBulkDestroyRequest {
+func (a *IpamAPIService) IpamFhrpGroupsBulkDestroy(ctx context.Context) ApiIpamFhrpGroupsBulkDestroyRequest {
 	return ApiIpamFhrpGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8596,14 +8596,14 @@ func (a *IpamApiService) IpamFhrpGroupsBulkDestroy(ctx context.Context) ApiIpamF
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamFhrpGroupsBulkDestroyExecute(r ApiIpamFhrpGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsBulkDestroyExecute(r ApiIpamFhrpGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8680,7 +8680,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkDestroyExecute(r ApiIpamFhrpGroupsBul
 
 type ApiIpamFhrpGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupRequest *[]FHRPGroupRequest
 }
 
@@ -8701,7 +8701,7 @@ Patch a list of FHRP group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsBulkPartialUpdate(ctx context.Context) ApiIpamFhrpGroupsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupsBulkPartialUpdate(ctx context.Context) ApiIpamFhrpGroupsBulkPartialUpdateRequest {
 	return ApiIpamFhrpGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8710,7 +8710,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkPartialUpdate(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []FHRPGroup
-func (a *IpamApiService) IpamFhrpGroupsBulkPartialUpdateExecute(r ApiIpamFhrpGroupsBulkPartialUpdateRequest) ([]FHRPGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsBulkPartialUpdateExecute(r ApiIpamFhrpGroupsBulkPartialUpdateRequest) ([]FHRPGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8718,7 +8718,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkPartialUpdateExecute(r ApiIpamFhrpGro
 		localVarReturnValue  []FHRPGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8804,7 +8804,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkPartialUpdateExecute(r ApiIpamFhrpGro
 
 type ApiIpamFhrpGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupRequest *[]FHRPGroupRequest
 }
 
@@ -8825,7 +8825,7 @@ Put a list of FHRP group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsBulkUpdate(ctx context.Context) ApiIpamFhrpGroupsBulkUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupsBulkUpdate(ctx context.Context) ApiIpamFhrpGroupsBulkUpdateRequest {
 	return ApiIpamFhrpGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8834,7 +8834,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkUpdate(ctx context.Context) ApiIpamFh
 
 // Execute executes the request
 //  @return []FHRPGroup
-func (a *IpamApiService) IpamFhrpGroupsBulkUpdateExecute(r ApiIpamFhrpGroupsBulkUpdateRequest) ([]FHRPGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsBulkUpdateExecute(r ApiIpamFhrpGroupsBulkUpdateRequest) ([]FHRPGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8842,7 +8842,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkUpdateExecute(r ApiIpamFhrpGroupsBulk
 		localVarReturnValue  []FHRPGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8928,7 +8928,7 @@ func (a *IpamApiService) IpamFhrpGroupsBulkUpdateExecute(r ApiIpamFhrpGroupsBulk
 
 type ApiIpamFhrpGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	fHRPGroupRequest *FHRPGroupRequest
 }
 
@@ -8949,7 +8949,7 @@ Post a list of FHRP group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupsCreateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsCreate(ctx context.Context) ApiIpamFhrpGroupsCreateRequest {
+func (a *IpamAPIService) IpamFhrpGroupsCreate(ctx context.Context) ApiIpamFhrpGroupsCreateRequest {
 	return ApiIpamFhrpGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8958,7 +8958,7 @@ func (a *IpamApiService) IpamFhrpGroupsCreate(ctx context.Context) ApiIpamFhrpGr
 
 // Execute executes the request
 //  @return FHRPGroup
-func (a *IpamApiService) IpamFhrpGroupsCreateExecute(r ApiIpamFhrpGroupsCreateRequest) (*FHRPGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsCreateExecute(r ApiIpamFhrpGroupsCreateRequest) (*FHRPGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8966,7 +8966,7 @@ func (a *IpamApiService) IpamFhrpGroupsCreateExecute(r ApiIpamFhrpGroupsCreateRe
 		localVarReturnValue  *FHRPGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9052,7 +9052,7 @@ func (a *IpamApiService) IpamFhrpGroupsCreateExecute(r ApiIpamFhrpGroupsCreateRe
 
 type ApiIpamFhrpGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -9069,7 +9069,7 @@ Delete a FHRP group object.
  @param id A unique integer value identifying this FHRP group.
  @return ApiIpamFhrpGroupsDestroyRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsDestroy(ctx context.Context, id int32) ApiIpamFhrpGroupsDestroyRequest {
+func (a *IpamAPIService) IpamFhrpGroupsDestroy(ctx context.Context, id int32) ApiIpamFhrpGroupsDestroyRequest {
 	return ApiIpamFhrpGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9078,14 +9078,14 @@ func (a *IpamApiService) IpamFhrpGroupsDestroy(ctx context.Context, id int32) Ap
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamFhrpGroupsDestroyExecute(r ApiIpamFhrpGroupsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsDestroyExecute(r ApiIpamFhrpGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9158,7 +9158,7 @@ func (a *IpamApiService) IpamFhrpGroupsDestroyExecute(r ApiIpamFhrpGroupsDestroy
 
 type ApiIpamFhrpGroupsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	authKey *[]string
 	authKeyEmpty *bool
 	authKeyIc *[]string
@@ -9561,7 +9561,7 @@ Get a list of FHRP group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamFhrpGroupsListRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsList(ctx context.Context) ApiIpamFhrpGroupsListRequest {
+func (a *IpamAPIService) IpamFhrpGroupsList(ctx context.Context) ApiIpamFhrpGroupsListRequest {
 	return ApiIpamFhrpGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9570,7 +9570,7 @@ func (a *IpamApiService) IpamFhrpGroupsList(ctx context.Context) ApiIpamFhrpGrou
 
 // Execute executes the request
 //  @return PaginatedFHRPGroupList
-func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListRequest) (*PaginatedFHRPGroupList, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListRequest) (*PaginatedFHRPGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9578,7 +9578,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		localVarReturnValue  *PaginatedFHRPGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9594,7 +9594,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key", t, "multi")
@@ -9608,7 +9608,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__ic", t, "multi")
@@ -9619,7 +9619,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__ie", t, "multi")
@@ -9630,7 +9630,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__iew", t, "multi")
@@ -9641,7 +9641,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__isw", t, "multi")
@@ -9652,7 +9652,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__n", t, "multi")
@@ -9663,7 +9663,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nic", t, "multi")
@@ -9674,7 +9674,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nie", t, "multi")
@@ -9685,7 +9685,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__niew", t, "multi")
@@ -9696,7 +9696,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_key__nisw", t, "multi")
@@ -9707,7 +9707,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type", t, "multi")
@@ -9718,7 +9718,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "auth_type__n", t, "multi")
@@ -9729,7 +9729,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -9740,7 +9740,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -9751,7 +9751,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -9762,7 +9762,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -9773,7 +9773,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -9784,7 +9784,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -9795,7 +9795,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -9809,7 +9809,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -9823,7 +9823,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__gt", t, "multi")
@@ -9834,7 +9834,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__gte", t, "multi")
@@ -9845,7 +9845,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__lt", t, "multi")
@@ -9856,7 +9856,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__lte", t, "multi")
@@ -9867,7 +9867,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -9878,7 +9878,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -9892,7 +9892,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -9903,7 +9903,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -9914,7 +9914,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -9925,7 +9925,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -9936,7 +9936,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -9947,7 +9947,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -9958,7 +9958,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -9969,7 +9969,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -9980,7 +9980,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -9991,7 +9991,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -10002,7 +10002,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -10013,7 +10013,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -10030,7 +10030,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -10044,7 +10044,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -10055,7 +10055,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -10066,7 +10066,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -10077,7 +10077,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -10088,7 +10088,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -10099,7 +10099,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -10110,7 +10110,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -10121,7 +10121,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -10132,7 +10132,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -10149,7 +10149,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", t, "multi")
@@ -10160,7 +10160,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "protocol__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "protocol__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "protocol__n", t, "multi")
@@ -10174,7 +10174,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "related_ip", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "related_ip", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "related_ip", t, "multi")
@@ -10185,7 +10185,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -10196,7 +10196,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -10275,7 +10275,7 @@ func (a *IpamApiService) IpamFhrpGroupsListExecute(r ApiIpamFhrpGroupsListReques
 
 type ApiIpamFhrpGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedFHRPGroupRequest *PatchedFHRPGroupRequest
 }
@@ -10298,7 +10298,7 @@ Patch a FHRP group object.
  @param id A unique integer value identifying this FHRP group.
  @return ApiIpamFhrpGroupsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsPartialUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupsPartialUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupsPartialUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupsPartialUpdateRequest {
 	return ApiIpamFhrpGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10308,7 +10308,7 @@ func (a *IpamApiService) IpamFhrpGroupsPartialUpdate(ctx context.Context, id int
 
 // Execute executes the request
 //  @return FHRPGroup
-func (a *IpamApiService) IpamFhrpGroupsPartialUpdateExecute(r ApiIpamFhrpGroupsPartialUpdateRequest) (*FHRPGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsPartialUpdateExecute(r ApiIpamFhrpGroupsPartialUpdateRequest) (*FHRPGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -10316,7 +10316,7 @@ func (a *IpamApiService) IpamFhrpGroupsPartialUpdateExecute(r ApiIpamFhrpGroupsP
 		localVarReturnValue  *FHRPGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10400,7 +10400,7 @@ func (a *IpamApiService) IpamFhrpGroupsPartialUpdateExecute(r ApiIpamFhrpGroupsP
 
 type ApiIpamFhrpGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -10417,7 +10417,7 @@ Get a FHRP group object.
  @param id A unique integer value identifying this FHRP group.
  @return ApiIpamFhrpGroupsRetrieveRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsRetrieve(ctx context.Context, id int32) ApiIpamFhrpGroupsRetrieveRequest {
+func (a *IpamAPIService) IpamFhrpGroupsRetrieve(ctx context.Context, id int32) ApiIpamFhrpGroupsRetrieveRequest {
 	return ApiIpamFhrpGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10427,7 +10427,7 @@ func (a *IpamApiService) IpamFhrpGroupsRetrieve(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return FHRPGroup
-func (a *IpamApiService) IpamFhrpGroupsRetrieveExecute(r ApiIpamFhrpGroupsRetrieveRequest) (*FHRPGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsRetrieveExecute(r ApiIpamFhrpGroupsRetrieveRequest) (*FHRPGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10435,7 +10435,7 @@ func (a *IpamApiService) IpamFhrpGroupsRetrieveExecute(r ApiIpamFhrpGroupsRetrie
 		localVarReturnValue  *FHRPGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10517,7 +10517,7 @@ func (a *IpamApiService) IpamFhrpGroupsRetrieveExecute(r ApiIpamFhrpGroupsRetrie
 
 type ApiIpamFhrpGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	fHRPGroupRequest *FHRPGroupRequest
 }
@@ -10540,7 +10540,7 @@ Put a FHRP group object.
  @param id A unique integer value identifying this FHRP group.
  @return ApiIpamFhrpGroupsUpdateRequest
 */
-func (a *IpamApiService) IpamFhrpGroupsUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupsUpdateRequest {
+func (a *IpamAPIService) IpamFhrpGroupsUpdate(ctx context.Context, id int32) ApiIpamFhrpGroupsUpdateRequest {
 	return ApiIpamFhrpGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10550,7 +10550,7 @@ func (a *IpamApiService) IpamFhrpGroupsUpdate(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return FHRPGroup
-func (a *IpamApiService) IpamFhrpGroupsUpdateExecute(r ApiIpamFhrpGroupsUpdateRequest) (*FHRPGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamFhrpGroupsUpdateExecute(r ApiIpamFhrpGroupsUpdateRequest) (*FHRPGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10558,7 +10558,7 @@ func (a *IpamApiService) IpamFhrpGroupsUpdateExecute(r ApiIpamFhrpGroupsUpdateRe
 		localVarReturnValue  *FHRPGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamFhrpGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamFhrpGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10645,7 +10645,7 @@ func (a *IpamApiService) IpamFhrpGroupsUpdateExecute(r ApiIpamFhrpGroupsUpdateRe
 
 type ApiIpamIpAddressesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	iPAddressRequest *[]IPAddressRequest
 }
 
@@ -10666,7 +10666,7 @@ Delete a list of IP address objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpAddressesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamIpAddressesBulkDestroy(ctx context.Context) ApiIpamIpAddressesBulkDestroyRequest {
+func (a *IpamAPIService) IpamIpAddressesBulkDestroy(ctx context.Context) ApiIpamIpAddressesBulkDestroyRequest {
 	return ApiIpamIpAddressesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10674,14 +10674,14 @@ func (a *IpamApiService) IpamIpAddressesBulkDestroy(ctx context.Context) ApiIpam
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamIpAddressesBulkDestroyExecute(r ApiIpamIpAddressesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesBulkDestroyExecute(r ApiIpamIpAddressesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10758,7 +10758,7 @@ func (a *IpamApiService) IpamIpAddressesBulkDestroyExecute(r ApiIpamIpAddressesB
 
 type ApiIpamIpAddressesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	iPAddressRequest *[]IPAddressRequest
 }
 
@@ -10779,7 +10779,7 @@ Patch a list of IP address objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpAddressesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamIpAddressesBulkPartialUpdate(ctx context.Context) ApiIpamIpAddressesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamIpAddressesBulkPartialUpdate(ctx context.Context) ApiIpamIpAddressesBulkPartialUpdateRequest {
 	return ApiIpamIpAddressesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10788,7 +10788,7 @@ func (a *IpamApiService) IpamIpAddressesBulkPartialUpdate(ctx context.Context) A
 
 // Execute executes the request
 //  @return []IPAddress
-func (a *IpamApiService) IpamIpAddressesBulkPartialUpdateExecute(r ApiIpamIpAddressesBulkPartialUpdateRequest) ([]IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesBulkPartialUpdateExecute(r ApiIpamIpAddressesBulkPartialUpdateRequest) ([]IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -10796,7 +10796,7 @@ func (a *IpamApiService) IpamIpAddressesBulkPartialUpdateExecute(r ApiIpamIpAddr
 		localVarReturnValue  []IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10882,7 +10882,7 @@ func (a *IpamApiService) IpamIpAddressesBulkPartialUpdateExecute(r ApiIpamIpAddr
 
 type ApiIpamIpAddressesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	iPAddressRequest *[]IPAddressRequest
 }
 
@@ -10903,7 +10903,7 @@ Put a list of IP address objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpAddressesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamIpAddressesBulkUpdate(ctx context.Context) ApiIpamIpAddressesBulkUpdateRequest {
+func (a *IpamAPIService) IpamIpAddressesBulkUpdate(ctx context.Context) ApiIpamIpAddressesBulkUpdateRequest {
 	return ApiIpamIpAddressesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10912,7 +10912,7 @@ func (a *IpamApiService) IpamIpAddressesBulkUpdate(ctx context.Context) ApiIpamI
 
 // Execute executes the request
 //  @return []IPAddress
-func (a *IpamApiService) IpamIpAddressesBulkUpdateExecute(r ApiIpamIpAddressesBulkUpdateRequest) ([]IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesBulkUpdateExecute(r ApiIpamIpAddressesBulkUpdateRequest) ([]IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10920,7 +10920,7 @@ func (a *IpamApiService) IpamIpAddressesBulkUpdateExecute(r ApiIpamIpAddressesBu
 		localVarReturnValue  []IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11006,7 +11006,7 @@ func (a *IpamApiService) IpamIpAddressesBulkUpdateExecute(r ApiIpamIpAddressesBu
 
 type ApiIpamIpAddressesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableIPAddressRequest *WritableIPAddressRequest
 }
 
@@ -11027,7 +11027,7 @@ Post a list of IP address objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpAddressesCreateRequest
 */
-func (a *IpamApiService) IpamIpAddressesCreate(ctx context.Context) ApiIpamIpAddressesCreateRequest {
+func (a *IpamAPIService) IpamIpAddressesCreate(ctx context.Context) ApiIpamIpAddressesCreateRequest {
 	return ApiIpamIpAddressesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11036,7 +11036,7 @@ func (a *IpamApiService) IpamIpAddressesCreate(ctx context.Context) ApiIpamIpAdd
 
 // Execute executes the request
 //  @return IPAddress
-func (a *IpamApiService) IpamIpAddressesCreateExecute(r ApiIpamIpAddressesCreateRequest) (*IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesCreateExecute(r ApiIpamIpAddressesCreateRequest) (*IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -11044,7 +11044,7 @@ func (a *IpamApiService) IpamIpAddressesCreateExecute(r ApiIpamIpAddressesCreate
 		localVarReturnValue  *IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11130,7 +11130,7 @@ func (a *IpamApiService) IpamIpAddressesCreateExecute(r ApiIpamIpAddressesCreate
 
 type ApiIpamIpAddressesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -11147,7 +11147,7 @@ Delete a IP address object.
  @param id A unique integer value identifying this IP address.
  @return ApiIpamIpAddressesDestroyRequest
 */
-func (a *IpamApiService) IpamIpAddressesDestroy(ctx context.Context, id int32) ApiIpamIpAddressesDestroyRequest {
+func (a *IpamAPIService) IpamIpAddressesDestroy(ctx context.Context, id int32) ApiIpamIpAddressesDestroyRequest {
 	return ApiIpamIpAddressesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11156,14 +11156,14 @@ func (a *IpamApiService) IpamIpAddressesDestroy(ctx context.Context, id int32) A
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamIpAddressesDestroyExecute(r ApiIpamIpAddressesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesDestroyExecute(r ApiIpamIpAddressesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11236,7 +11236,7 @@ func (a *IpamApiService) IpamIpAddressesDestroyExecute(r ApiIpamIpAddressesDestr
 
 type ApiIpamIpAddressesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	address *[]string
 	assigned *bool
 	assignedToInterface *bool
@@ -11824,7 +11824,7 @@ Get a list of IP address objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpAddressesListRequest
 */
-func (a *IpamApiService) IpamIpAddressesList(ctx context.Context) ApiIpamIpAddressesListRequest {
+func (a *IpamAPIService) IpamIpAddressesList(ctx context.Context) ApiIpamIpAddressesListRequest {
 	return ApiIpamIpAddressesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11833,7 +11833,7 @@ func (a *IpamApiService) IpamIpAddressesList(ctx context.Context) ApiIpamIpAddre
 
 // Execute executes the request
 //  @return PaginatedIPAddressList
-func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequest) (*PaginatedIPAddressList, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequest) (*PaginatedIPAddressList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11841,7 +11841,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		localVarReturnValue  *PaginatedIPAddressList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11857,7 +11857,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "address", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "address", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address", t, "multi")
@@ -11874,7 +11874,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -11885,7 +11885,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -11896,7 +11896,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -11907,7 +11907,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -11918,7 +11918,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -11929,7 +11929,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -11940,7 +11940,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -11954,7 +11954,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -11968,7 +11968,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -11979,7 +11979,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -11990,7 +11990,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -12001,7 +12001,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -12012,7 +12012,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -12023,7 +12023,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -12034,7 +12034,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -12045,7 +12045,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -12056,7 +12056,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -12067,7 +12067,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device", t, "multi")
@@ -12078,7 +12078,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", t, "multi")
@@ -12089,7 +12089,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name", t, "multi")
@@ -12103,7 +12103,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__ic", t, "multi")
@@ -12114,7 +12114,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__ie", t, "multi")
@@ -12125,7 +12125,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__iew", t, "multi")
@@ -12136,7 +12136,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__isw", t, "multi")
@@ -12147,7 +12147,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__n", t, "multi")
@@ -12158,7 +12158,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nic", t, "multi")
@@ -12169,7 +12169,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nie", t, "multi")
@@ -12180,7 +12180,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__niew", t, "multi")
@@ -12191,7 +12191,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "dns_name__nisw", t, "multi")
@@ -12205,7 +12205,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "fhrpgroup_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "fhrpgroup_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "fhrpgroup_id", t, "multi")
@@ -12216,7 +12216,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "fhrpgroup_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "fhrpgroup_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "fhrpgroup_id__n", t, "multi")
@@ -12227,7 +12227,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -12241,7 +12241,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -12252,7 +12252,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -12263,7 +12263,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -12274,7 +12274,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -12285,7 +12285,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -12296,7 +12296,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface", t, "multi")
@@ -12307,7 +12307,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface__n", t, "multi")
@@ -12318,7 +12318,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", t, "multi")
@@ -12329,7 +12329,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", t, "multi")
@@ -12340,7 +12340,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -12351,7 +12351,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -12362,7 +12362,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -12373,7 +12373,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -12384,7 +12384,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -12395,7 +12395,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -12406,7 +12406,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -12432,7 +12432,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent", t, "multi")
@@ -12452,7 +12452,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -12463,7 +12463,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -12474,7 +12474,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -12485,7 +12485,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -12496,7 +12496,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -12507,7 +12507,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -12518,7 +12518,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -12529,7 +12529,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -12540,7 +12540,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -12551,7 +12551,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -12562,7 +12562,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -12573,7 +12573,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -12584,7 +12584,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -12595,7 +12595,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -12609,7 +12609,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", t, "multi")
@@ -12620,7 +12620,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", t, "multi")
@@ -12631,7 +12631,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface", t, "multi")
@@ -12642,7 +12642,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface__n", t, "multi")
@@ -12653,7 +12653,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id", t, "multi")
@@ -12664,7 +12664,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id__n", t, "multi")
@@ -12675,7 +12675,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", t, "multi")
@@ -12686,7 +12686,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", t, "multi")
@@ -12697,7 +12697,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", t, "multi")
@@ -12708,7 +12708,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", t, "multi")
@@ -12784,7 +12784,7 @@ func (a *IpamApiService) IpamIpAddressesListExecute(r ApiIpamIpAddressesListRequ
 
 type ApiIpamIpAddressesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableIPAddressRequest *PatchedWritableIPAddressRequest
 }
@@ -12807,7 +12807,7 @@ Patch a IP address object.
  @param id A unique integer value identifying this IP address.
  @return ApiIpamIpAddressesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamIpAddressesPartialUpdate(ctx context.Context, id int32) ApiIpamIpAddressesPartialUpdateRequest {
+func (a *IpamAPIService) IpamIpAddressesPartialUpdate(ctx context.Context, id int32) ApiIpamIpAddressesPartialUpdateRequest {
 	return ApiIpamIpAddressesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12817,7 +12817,7 @@ func (a *IpamApiService) IpamIpAddressesPartialUpdate(ctx context.Context, id in
 
 // Execute executes the request
 //  @return IPAddress
-func (a *IpamApiService) IpamIpAddressesPartialUpdateExecute(r ApiIpamIpAddressesPartialUpdateRequest) (*IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesPartialUpdateExecute(r ApiIpamIpAddressesPartialUpdateRequest) (*IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -12825,7 +12825,7 @@ func (a *IpamApiService) IpamIpAddressesPartialUpdateExecute(r ApiIpamIpAddresse
 		localVarReturnValue  *IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12909,7 +12909,7 @@ func (a *IpamApiService) IpamIpAddressesPartialUpdateExecute(r ApiIpamIpAddresse
 
 type ApiIpamIpAddressesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -12926,7 +12926,7 @@ Get a IP address object.
  @param id A unique integer value identifying this IP address.
  @return ApiIpamIpAddressesRetrieveRequest
 */
-func (a *IpamApiService) IpamIpAddressesRetrieve(ctx context.Context, id int32) ApiIpamIpAddressesRetrieveRequest {
+func (a *IpamAPIService) IpamIpAddressesRetrieve(ctx context.Context, id int32) ApiIpamIpAddressesRetrieveRequest {
 	return ApiIpamIpAddressesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12936,7 +12936,7 @@ func (a *IpamApiService) IpamIpAddressesRetrieve(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return IPAddress
-func (a *IpamApiService) IpamIpAddressesRetrieveExecute(r ApiIpamIpAddressesRetrieveRequest) (*IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesRetrieveExecute(r ApiIpamIpAddressesRetrieveRequest) (*IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12944,7 +12944,7 @@ func (a *IpamApiService) IpamIpAddressesRetrieveExecute(r ApiIpamIpAddressesRetr
 		localVarReturnValue  *IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13026,7 +13026,7 @@ func (a *IpamApiService) IpamIpAddressesRetrieveExecute(r ApiIpamIpAddressesRetr
 
 type ApiIpamIpAddressesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableIPAddressRequest *WritableIPAddressRequest
 }
@@ -13049,7 +13049,7 @@ Put a IP address object.
  @param id A unique integer value identifying this IP address.
  @return ApiIpamIpAddressesUpdateRequest
 */
-func (a *IpamApiService) IpamIpAddressesUpdate(ctx context.Context, id int32) ApiIpamIpAddressesUpdateRequest {
+func (a *IpamAPIService) IpamIpAddressesUpdate(ctx context.Context, id int32) ApiIpamIpAddressesUpdateRequest {
 	return ApiIpamIpAddressesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13059,7 +13059,7 @@ func (a *IpamApiService) IpamIpAddressesUpdate(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return IPAddress
-func (a *IpamApiService) IpamIpAddressesUpdateExecute(r ApiIpamIpAddressesUpdateRequest) (*IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpAddressesUpdateExecute(r ApiIpamIpAddressesUpdateRequest) (*IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13067,7 +13067,7 @@ func (a *IpamApiService) IpamIpAddressesUpdateExecute(r ApiIpamIpAddressesUpdate
 		localVarReturnValue  *IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpAddressesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpAddressesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13154,7 +13154,7 @@ func (a *IpamApiService) IpamIpAddressesUpdateExecute(r ApiIpamIpAddressesUpdate
 
 type ApiIpamIpRangesAvailableIpsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	iPAddressRequest *[]IPAddressRequest
 }
@@ -13177,7 +13177,7 @@ Post a IP address object.
  @param id
  @return ApiIpamIpRangesAvailableIpsCreateRequest
 */
-func (a *IpamApiService) IpamIpRangesAvailableIpsCreate(ctx context.Context, id int32) ApiIpamIpRangesAvailableIpsCreateRequest {
+func (a *IpamAPIService) IpamIpRangesAvailableIpsCreate(ctx context.Context, id int32) ApiIpamIpRangesAvailableIpsCreateRequest {
 	return ApiIpamIpRangesAvailableIpsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13187,7 +13187,7 @@ func (a *IpamApiService) IpamIpRangesAvailableIpsCreate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return []IPAddress
-func (a *IpamApiService) IpamIpRangesAvailableIpsCreateExecute(r ApiIpamIpRangesAvailableIpsCreateRequest) ([]IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesAvailableIpsCreateExecute(r ApiIpamIpRangesAvailableIpsCreateRequest) ([]IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -13195,7 +13195,7 @@ func (a *IpamApiService) IpamIpRangesAvailableIpsCreateExecute(r ApiIpamIpRanges
 		localVarReturnValue  []IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesAvailableIpsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesAvailableIpsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13282,7 +13282,7 @@ func (a *IpamApiService) IpamIpRangesAvailableIpsCreateExecute(r ApiIpamIpRanges
 
 type ApiIpamIpRangesAvailableIpsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -13299,7 +13299,7 @@ Get a IP address object.
  @param id
  @return ApiIpamIpRangesAvailableIpsListRequest
 */
-func (a *IpamApiService) IpamIpRangesAvailableIpsList(ctx context.Context, id int32) ApiIpamIpRangesAvailableIpsListRequest {
+func (a *IpamAPIService) IpamIpRangesAvailableIpsList(ctx context.Context, id int32) ApiIpamIpRangesAvailableIpsListRequest {
 	return ApiIpamIpRangesAvailableIpsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13309,7 +13309,7 @@ func (a *IpamApiService) IpamIpRangesAvailableIpsList(ctx context.Context, id in
 
 // Execute executes the request
 //  @return []AvailableIP
-func (a *IpamApiService) IpamIpRangesAvailableIpsListExecute(r ApiIpamIpRangesAvailableIpsListRequest) ([]AvailableIP, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesAvailableIpsListExecute(r ApiIpamIpRangesAvailableIpsListRequest) ([]AvailableIP, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13317,7 +13317,7 @@ func (a *IpamApiService) IpamIpRangesAvailableIpsListExecute(r ApiIpamIpRangesAv
 		localVarReturnValue  []AvailableIP
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesAvailableIpsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesAvailableIpsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13399,7 +13399,7 @@ func (a *IpamApiService) IpamIpRangesAvailableIpsListExecute(r ApiIpamIpRangesAv
 
 type ApiIpamIpRangesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	iPRangeRequest *[]IPRangeRequest
 }
 
@@ -13420,7 +13420,7 @@ Delete a list of IP range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpRangesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamIpRangesBulkDestroy(ctx context.Context) ApiIpamIpRangesBulkDestroyRequest {
+func (a *IpamAPIService) IpamIpRangesBulkDestroy(ctx context.Context) ApiIpamIpRangesBulkDestroyRequest {
 	return ApiIpamIpRangesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13428,14 +13428,14 @@ func (a *IpamApiService) IpamIpRangesBulkDestroy(ctx context.Context) ApiIpamIpR
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamIpRangesBulkDestroyExecute(r ApiIpamIpRangesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesBulkDestroyExecute(r ApiIpamIpRangesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13512,7 +13512,7 @@ func (a *IpamApiService) IpamIpRangesBulkDestroyExecute(r ApiIpamIpRangesBulkDes
 
 type ApiIpamIpRangesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	iPRangeRequest *[]IPRangeRequest
 }
 
@@ -13533,7 +13533,7 @@ Patch a list of IP range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpRangesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamIpRangesBulkPartialUpdate(ctx context.Context) ApiIpamIpRangesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamIpRangesBulkPartialUpdate(ctx context.Context) ApiIpamIpRangesBulkPartialUpdateRequest {
 	return ApiIpamIpRangesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13542,7 +13542,7 @@ func (a *IpamApiService) IpamIpRangesBulkPartialUpdate(ctx context.Context) ApiI
 
 // Execute executes the request
 //  @return []IPRange
-func (a *IpamApiService) IpamIpRangesBulkPartialUpdateExecute(r ApiIpamIpRangesBulkPartialUpdateRequest) ([]IPRange, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesBulkPartialUpdateExecute(r ApiIpamIpRangesBulkPartialUpdateRequest) ([]IPRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -13550,7 +13550,7 @@ func (a *IpamApiService) IpamIpRangesBulkPartialUpdateExecute(r ApiIpamIpRangesB
 		localVarReturnValue  []IPRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13636,7 +13636,7 @@ func (a *IpamApiService) IpamIpRangesBulkPartialUpdateExecute(r ApiIpamIpRangesB
 
 type ApiIpamIpRangesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	iPRangeRequest *[]IPRangeRequest
 }
 
@@ -13657,7 +13657,7 @@ Put a list of IP range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpRangesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamIpRangesBulkUpdate(ctx context.Context) ApiIpamIpRangesBulkUpdateRequest {
+func (a *IpamAPIService) IpamIpRangesBulkUpdate(ctx context.Context) ApiIpamIpRangesBulkUpdateRequest {
 	return ApiIpamIpRangesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13666,7 +13666,7 @@ func (a *IpamApiService) IpamIpRangesBulkUpdate(ctx context.Context) ApiIpamIpRa
 
 // Execute executes the request
 //  @return []IPRange
-func (a *IpamApiService) IpamIpRangesBulkUpdateExecute(r ApiIpamIpRangesBulkUpdateRequest) ([]IPRange, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesBulkUpdateExecute(r ApiIpamIpRangesBulkUpdateRequest) ([]IPRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13674,7 +13674,7 @@ func (a *IpamApiService) IpamIpRangesBulkUpdateExecute(r ApiIpamIpRangesBulkUpda
 		localVarReturnValue  []IPRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13760,7 +13760,7 @@ func (a *IpamApiService) IpamIpRangesBulkUpdateExecute(r ApiIpamIpRangesBulkUpda
 
 type ApiIpamIpRangesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableIPRangeRequest *WritableIPRangeRequest
 }
 
@@ -13781,7 +13781,7 @@ Post a list of IP range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpRangesCreateRequest
 */
-func (a *IpamApiService) IpamIpRangesCreate(ctx context.Context) ApiIpamIpRangesCreateRequest {
+func (a *IpamAPIService) IpamIpRangesCreate(ctx context.Context) ApiIpamIpRangesCreateRequest {
 	return ApiIpamIpRangesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13790,7 +13790,7 @@ func (a *IpamApiService) IpamIpRangesCreate(ctx context.Context) ApiIpamIpRanges
 
 // Execute executes the request
 //  @return IPRange
-func (a *IpamApiService) IpamIpRangesCreateExecute(r ApiIpamIpRangesCreateRequest) (*IPRange, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesCreateExecute(r ApiIpamIpRangesCreateRequest) (*IPRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -13798,7 +13798,7 @@ func (a *IpamApiService) IpamIpRangesCreateExecute(r ApiIpamIpRangesCreateReques
 		localVarReturnValue  *IPRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13884,7 +13884,7 @@ func (a *IpamApiService) IpamIpRangesCreateExecute(r ApiIpamIpRangesCreateReques
 
 type ApiIpamIpRangesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -13901,7 +13901,7 @@ Delete a IP range object.
  @param id A unique integer value identifying this IP range.
  @return ApiIpamIpRangesDestroyRequest
 */
-func (a *IpamApiService) IpamIpRangesDestroy(ctx context.Context, id int32) ApiIpamIpRangesDestroyRequest {
+func (a *IpamAPIService) IpamIpRangesDestroy(ctx context.Context, id int32) ApiIpamIpRangesDestroyRequest {
 	return ApiIpamIpRangesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13910,14 +13910,14 @@ func (a *IpamApiService) IpamIpRangesDestroy(ctx context.Context, id int32) ApiI
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamIpRangesDestroyExecute(r ApiIpamIpRangesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesDestroyExecute(r ApiIpamIpRangesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13990,7 +13990,7 @@ func (a *IpamApiService) IpamIpRangesDestroyExecute(r ApiIpamIpRangesDestroyRequ
 
 type ApiIpamIpRangesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	contains *string
 	created *[]time.Time
 	createdEmpty *[]time.Time
@@ -14418,7 +14418,7 @@ Get a list of IP range objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamIpRangesListRequest
 */
-func (a *IpamApiService) IpamIpRangesList(ctx context.Context) ApiIpamIpRangesListRequest {
+func (a *IpamAPIService) IpamIpRangesList(ctx context.Context) ApiIpamIpRangesListRequest {
 	return ApiIpamIpRangesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -14427,7 +14427,7 @@ func (a *IpamApiService) IpamIpRangesList(ctx context.Context) ApiIpamIpRangesLi
 
 // Execute executes the request
 //  @return PaginatedIPRangeList
-func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (*PaginatedIPRangeList, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (*PaginatedIPRangeList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14435,7 +14435,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		localVarReturnValue  *PaginatedIPRangeList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14454,7 +14454,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -14465,7 +14465,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -14476,7 +14476,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -14487,7 +14487,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -14498,7 +14498,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -14509,7 +14509,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -14520,7 +14520,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -14534,7 +14534,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -14548,7 +14548,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -14559,7 +14559,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -14570,7 +14570,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -14581,7 +14581,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -14592,7 +14592,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -14603,7 +14603,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -14614,7 +14614,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -14625,7 +14625,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -14636,7 +14636,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -14647,7 +14647,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "end_address", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "end_address", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "end_address", t, "multi")
@@ -14661,7 +14661,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -14675,7 +14675,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -14686,7 +14686,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -14697,7 +14697,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -14708,7 +14708,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -14719,7 +14719,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -14730,7 +14730,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -14741,7 +14741,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -14752,7 +14752,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -14763,7 +14763,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -14774,7 +14774,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -14785,7 +14785,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -14796,7 +14796,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -14822,7 +14822,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent", t, "multi")
@@ -14836,7 +14836,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -14847,7 +14847,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -14858,7 +14858,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", t, "multi")
@@ -14869,7 +14869,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", t, "multi")
@@ -14880,7 +14880,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "start_address", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "start_address", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "start_address", t, "multi")
@@ -14891,7 +14891,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -14902,7 +14902,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -14913,7 +14913,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -14924,7 +14924,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -14935,7 +14935,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -14946,7 +14946,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -14957,7 +14957,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -14968,7 +14968,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -14979,7 +14979,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -14990,7 +14990,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -15001,7 +15001,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -15012,7 +15012,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -15026,7 +15026,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", t, "multi")
@@ -15037,7 +15037,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", t, "multi")
@@ -15048,7 +15048,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", t, "multi")
@@ -15059,7 +15059,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", t, "multi")
@@ -15135,7 +15135,7 @@ func (a *IpamApiService) IpamIpRangesListExecute(r ApiIpamIpRangesListRequest) (
 
 type ApiIpamIpRangesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableIPRangeRequest *PatchedWritableIPRangeRequest
 }
@@ -15158,7 +15158,7 @@ Patch a IP range object.
  @param id A unique integer value identifying this IP range.
  @return ApiIpamIpRangesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamIpRangesPartialUpdate(ctx context.Context, id int32) ApiIpamIpRangesPartialUpdateRequest {
+func (a *IpamAPIService) IpamIpRangesPartialUpdate(ctx context.Context, id int32) ApiIpamIpRangesPartialUpdateRequest {
 	return ApiIpamIpRangesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15168,7 +15168,7 @@ func (a *IpamApiService) IpamIpRangesPartialUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return IPRange
-func (a *IpamApiService) IpamIpRangesPartialUpdateExecute(r ApiIpamIpRangesPartialUpdateRequest) (*IPRange, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesPartialUpdateExecute(r ApiIpamIpRangesPartialUpdateRequest) (*IPRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -15176,7 +15176,7 @@ func (a *IpamApiService) IpamIpRangesPartialUpdateExecute(r ApiIpamIpRangesParti
 		localVarReturnValue  *IPRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15260,7 +15260,7 @@ func (a *IpamApiService) IpamIpRangesPartialUpdateExecute(r ApiIpamIpRangesParti
 
 type ApiIpamIpRangesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -15277,7 +15277,7 @@ Get a IP range object.
  @param id A unique integer value identifying this IP range.
  @return ApiIpamIpRangesRetrieveRequest
 */
-func (a *IpamApiService) IpamIpRangesRetrieve(ctx context.Context, id int32) ApiIpamIpRangesRetrieveRequest {
+func (a *IpamAPIService) IpamIpRangesRetrieve(ctx context.Context, id int32) ApiIpamIpRangesRetrieveRequest {
 	return ApiIpamIpRangesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15287,7 +15287,7 @@ func (a *IpamApiService) IpamIpRangesRetrieve(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return IPRange
-func (a *IpamApiService) IpamIpRangesRetrieveExecute(r ApiIpamIpRangesRetrieveRequest) (*IPRange, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesRetrieveExecute(r ApiIpamIpRangesRetrieveRequest) (*IPRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15295,7 +15295,7 @@ func (a *IpamApiService) IpamIpRangesRetrieveExecute(r ApiIpamIpRangesRetrieveRe
 		localVarReturnValue  *IPRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15377,7 +15377,7 @@ func (a *IpamApiService) IpamIpRangesRetrieveExecute(r ApiIpamIpRangesRetrieveRe
 
 type ApiIpamIpRangesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableIPRangeRequest *WritableIPRangeRequest
 }
@@ -15400,7 +15400,7 @@ Put a IP range object.
  @param id A unique integer value identifying this IP range.
  @return ApiIpamIpRangesUpdateRequest
 */
-func (a *IpamApiService) IpamIpRangesUpdate(ctx context.Context, id int32) ApiIpamIpRangesUpdateRequest {
+func (a *IpamAPIService) IpamIpRangesUpdate(ctx context.Context, id int32) ApiIpamIpRangesUpdateRequest {
 	return ApiIpamIpRangesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15410,7 +15410,7 @@ func (a *IpamApiService) IpamIpRangesUpdate(ctx context.Context, id int32) ApiIp
 
 // Execute executes the request
 //  @return IPRange
-func (a *IpamApiService) IpamIpRangesUpdateExecute(r ApiIpamIpRangesUpdateRequest) (*IPRange, *http.Response, error) {
+func (a *IpamAPIService) IpamIpRangesUpdateExecute(r ApiIpamIpRangesUpdateRequest) (*IPRange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -15418,7 +15418,7 @@ func (a *IpamApiService) IpamIpRangesUpdateExecute(r ApiIpamIpRangesUpdateReques
 		localVarReturnValue  *IPRange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamIpRangesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamIpRangesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15505,7 +15505,7 @@ func (a *IpamApiService) IpamIpRangesUpdateExecute(r ApiIpamIpRangesUpdateReques
 
 type ApiIpamL2vpnTerminationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -15526,7 +15526,7 @@ Delete a list of L2VPN termination objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnTerminationsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsBulkDestroy(ctx context.Context) ApiIpamL2vpnTerminationsBulkDestroyRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsBulkDestroy(ctx context.Context) ApiIpamL2vpnTerminationsBulkDestroyRequest {
 	return ApiIpamL2vpnTerminationsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15534,14 +15534,14 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkDestroy(ctx context.Context) A
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamL2vpnTerminationsBulkDestroyExecute(r ApiIpamL2vpnTerminationsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsBulkDestroyExecute(r ApiIpamL2vpnTerminationsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15618,7 +15618,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkDestroyExecute(r ApiIpamL2vpnT
 
 type ApiIpamL2vpnTerminationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -15639,7 +15639,7 @@ Patch a list of L2VPN termination objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnTerminationsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsBulkPartialUpdate(ctx context.Context) ApiIpamL2vpnTerminationsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsBulkPartialUpdate(ctx context.Context) ApiIpamL2vpnTerminationsBulkPartialUpdateRequest {
 	return ApiIpamL2vpnTerminationsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15648,7 +15648,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkPartialUpdate(ctx context.Cont
 
 // Execute executes the request
 //  @return []L2VPNTermination
-func (a *IpamApiService) IpamL2vpnTerminationsBulkPartialUpdateExecute(r ApiIpamL2vpnTerminationsBulkPartialUpdateRequest) ([]L2VPNTermination, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsBulkPartialUpdateExecute(r ApiIpamL2vpnTerminationsBulkPartialUpdateRequest) ([]L2VPNTermination, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -15656,7 +15656,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkPartialUpdateExecute(r ApiIpam
 		localVarReturnValue  []L2VPNTermination
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15742,7 +15742,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkPartialUpdateExecute(r ApiIpam
 
 type ApiIpamL2vpnTerminationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -15763,7 +15763,7 @@ Put a list of L2VPN termination objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnTerminationsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsBulkUpdate(ctx context.Context) ApiIpamL2vpnTerminationsBulkUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsBulkUpdate(ctx context.Context) ApiIpamL2vpnTerminationsBulkUpdateRequest {
 	return ApiIpamL2vpnTerminationsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15772,7 +15772,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkUpdate(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []L2VPNTermination
-func (a *IpamApiService) IpamL2vpnTerminationsBulkUpdateExecute(r ApiIpamL2vpnTerminationsBulkUpdateRequest) ([]L2VPNTermination, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsBulkUpdateExecute(r ApiIpamL2vpnTerminationsBulkUpdateRequest) ([]L2VPNTermination, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -15780,7 +15780,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkUpdateExecute(r ApiIpamL2vpnTe
 		localVarReturnValue  []L2VPNTermination
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15866,7 +15866,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsBulkUpdateExecute(r ApiIpamL2vpnTe
 
 type ApiIpamL2vpnTerminationsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableL2VPNTerminationRequest *WritableL2VPNTerminationRequest
 }
 
@@ -15887,7 +15887,7 @@ Post a list of L2VPN termination objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnTerminationsCreateRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsCreate(ctx context.Context) ApiIpamL2vpnTerminationsCreateRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsCreate(ctx context.Context) ApiIpamL2vpnTerminationsCreateRequest {
 	return ApiIpamL2vpnTerminationsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15896,7 +15896,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsCreate(ctx context.Context) ApiIpa
 
 // Execute executes the request
 //  @return L2VPNTermination
-func (a *IpamApiService) IpamL2vpnTerminationsCreateExecute(r ApiIpamL2vpnTerminationsCreateRequest) (*L2VPNTermination, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsCreateExecute(r ApiIpamL2vpnTerminationsCreateRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15904,7 +15904,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsCreateExecute(r ApiIpamL2vpnTermin
 		localVarReturnValue  *L2VPNTermination
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15990,7 +15990,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsCreateExecute(r ApiIpamL2vpnTermin
 
 type ApiIpamL2vpnTerminationsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -16007,7 +16007,7 @@ Delete a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiIpamL2vpnTerminationsDestroyRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsDestroy(ctx context.Context, id int32) ApiIpamL2vpnTerminationsDestroyRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsDestroy(ctx context.Context, id int32) ApiIpamL2vpnTerminationsDestroyRequest {
 	return ApiIpamL2vpnTerminationsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16016,14 +16016,14 @@ func (a *IpamApiService) IpamL2vpnTerminationsDestroy(ctx context.Context, id in
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamL2vpnTerminationsDestroyExecute(r ApiIpamL2vpnTerminationsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsDestroyExecute(r ApiIpamL2vpnTerminationsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16096,7 +16096,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsDestroyExecute(r ApiIpamL2vpnTermi
 
 type ApiIpamL2vpnTerminationsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	assignedObjectType *string
 	assignedObjectTypeN *string
 	assignedObjectTypeId *int32
@@ -16560,7 +16560,7 @@ Get a list of L2VPN termination objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnTerminationsListRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsList(ctx context.Context) ApiIpamL2vpnTerminationsListRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsList(ctx context.Context) ApiIpamL2vpnTerminationsListRequest {
 	return ApiIpamL2vpnTerminationsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16569,7 +16569,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsList(ctx context.Context) ApiIpamL
 
 // Execute executes the request
 //  @return PaginatedL2VPNTerminationList
-func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminationsListRequest) (*PaginatedL2VPNTerminationList, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminationsListRequest) (*PaginatedL2VPNTerminationList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16577,7 +16577,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		localVarReturnValue  *PaginatedL2VPNTerminationList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16605,7 +16605,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -16616,7 +16616,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -16627,7 +16627,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -16638,7 +16638,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -16649,7 +16649,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -16660,7 +16660,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -16671,7 +16671,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -16685,7 +16685,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device", t, "multi")
@@ -16696,7 +16696,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", t, "multi")
@@ -16707,7 +16707,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", t, "multi")
@@ -16718,7 +16718,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", t, "multi")
@@ -16729,7 +16729,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -16743,7 +16743,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -16754,7 +16754,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -16765,7 +16765,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -16776,7 +16776,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -16787,7 +16787,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -16798,7 +16798,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface", t, "multi")
@@ -16809,7 +16809,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface__n", t, "multi")
@@ -16820,7 +16820,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id", t, "multi")
@@ -16831,7 +16831,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "interface_id__n", t, "multi")
@@ -16842,7 +16842,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", t, "multi")
@@ -16853,7 +16853,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", t, "multi")
@@ -16864,7 +16864,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", t, "multi")
@@ -16875,7 +16875,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", t, "multi")
@@ -16886,7 +16886,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -16897,7 +16897,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -16908,7 +16908,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -16919,7 +16919,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -16930,7 +16930,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -16941,7 +16941,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -16952,7 +16952,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -16978,7 +16978,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
@@ -16989,7 +16989,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
@@ -17000,7 +17000,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -17011,7 +17011,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -17022,7 +17022,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -17033,7 +17033,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -17047,7 +17047,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", t, "multi")
@@ -17058,7 +17058,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", t, "multi")
@@ -17069,7 +17069,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", t, "multi")
@@ -17080,7 +17080,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", t, "multi")
@@ -17091,7 +17091,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan", t, "multi")
@@ -17102,7 +17102,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan__n", t, "multi")
@@ -17113,7 +17113,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", t, "multi")
@@ -17124,7 +17124,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", t, "multi")
@@ -17156,7 +17156,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface", t, "multi")
@@ -17167,7 +17167,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface__n", t, "multi")
@@ -17178,7 +17178,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id", t, "multi")
@@ -17189,7 +17189,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vminterface_id__n", t, "multi")
@@ -17265,7 +17265,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsListExecute(r ApiIpamL2vpnTerminat
 
 type ApiIpamL2vpnTerminationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableL2VPNTerminationRequest *PatchedWritableL2VPNTerminationRequest
 }
@@ -17288,7 +17288,7 @@ Patch a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiIpamL2vpnTerminationsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsPartialUpdate(ctx context.Context, id int32) ApiIpamL2vpnTerminationsPartialUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsPartialUpdate(ctx context.Context, id int32) ApiIpamL2vpnTerminationsPartialUpdateRequest {
 	return ApiIpamL2vpnTerminationsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17298,7 +17298,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsPartialUpdate(ctx context.Context,
 
 // Execute executes the request
 //  @return L2VPNTermination
-func (a *IpamApiService) IpamL2vpnTerminationsPartialUpdateExecute(r ApiIpamL2vpnTerminationsPartialUpdateRequest) (*L2VPNTermination, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsPartialUpdateExecute(r ApiIpamL2vpnTerminationsPartialUpdateRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -17306,7 +17306,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsPartialUpdateExecute(r ApiIpamL2vp
 		localVarReturnValue  *L2VPNTermination
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17390,7 +17390,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsPartialUpdateExecute(r ApiIpamL2vp
 
 type ApiIpamL2vpnTerminationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -17407,7 +17407,7 @@ Get a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiIpamL2vpnTerminationsRetrieveRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsRetrieve(ctx context.Context, id int32) ApiIpamL2vpnTerminationsRetrieveRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsRetrieve(ctx context.Context, id int32) ApiIpamL2vpnTerminationsRetrieveRequest {
 	return ApiIpamL2vpnTerminationsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17417,7 +17417,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsRetrieve(ctx context.Context, id i
 
 // Execute executes the request
 //  @return L2VPNTermination
-func (a *IpamApiService) IpamL2vpnTerminationsRetrieveExecute(r ApiIpamL2vpnTerminationsRetrieveRequest) (*L2VPNTermination, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsRetrieveExecute(r ApiIpamL2vpnTerminationsRetrieveRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -17425,7 +17425,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsRetrieveExecute(r ApiIpamL2vpnTerm
 		localVarReturnValue  *L2VPNTermination
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17507,7 +17507,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsRetrieveExecute(r ApiIpamL2vpnTerm
 
 type ApiIpamL2vpnTerminationsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableL2VPNTerminationRequest *WritableL2VPNTerminationRequest
 }
@@ -17530,7 +17530,7 @@ Put a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiIpamL2vpnTerminationsUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnTerminationsUpdate(ctx context.Context, id int32) ApiIpamL2vpnTerminationsUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnTerminationsUpdate(ctx context.Context, id int32) ApiIpamL2vpnTerminationsUpdateRequest {
 	return ApiIpamL2vpnTerminationsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17540,7 +17540,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsUpdate(ctx context.Context, id int
 
 // Execute executes the request
 //  @return L2VPNTermination
-func (a *IpamApiService) IpamL2vpnTerminationsUpdateExecute(r ApiIpamL2vpnTerminationsUpdateRequest) (*L2VPNTermination, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnTerminationsUpdateExecute(r ApiIpamL2vpnTerminationsUpdateRequest) (*L2VPNTermination, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17548,7 +17548,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsUpdateExecute(r ApiIpamL2vpnTermin
 		localVarReturnValue  *L2VPNTermination
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnTerminationsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnTerminationsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17635,7 +17635,7 @@ func (a *IpamApiService) IpamL2vpnTerminationsUpdateExecute(r ApiIpamL2vpnTermin
 
 type ApiIpamL2vpnsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -17656,7 +17656,7 @@ Delete a list of L2VPN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamL2vpnsBulkDestroy(ctx context.Context) ApiIpamL2vpnsBulkDestroyRequest {
+func (a *IpamAPIService) IpamL2vpnsBulkDestroy(ctx context.Context) ApiIpamL2vpnsBulkDestroyRequest {
 	return ApiIpamL2vpnsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17664,14 +17664,14 @@ func (a *IpamApiService) IpamL2vpnsBulkDestroy(ctx context.Context) ApiIpamL2vpn
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamL2vpnsBulkDestroyExecute(r ApiIpamL2vpnsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsBulkDestroyExecute(r ApiIpamL2vpnsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17748,7 +17748,7 @@ func (a *IpamApiService) IpamL2vpnsBulkDestroyExecute(r ApiIpamL2vpnsBulkDestroy
 
 type ApiIpamL2vpnsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -17769,7 +17769,7 @@ Patch a list of L2VPN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnsBulkPartialUpdate(ctx context.Context) ApiIpamL2vpnsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnsBulkPartialUpdate(ctx context.Context) ApiIpamL2vpnsBulkPartialUpdateRequest {
 	return ApiIpamL2vpnsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17778,7 +17778,7 @@ func (a *IpamApiService) IpamL2vpnsBulkPartialUpdate(ctx context.Context) ApiIpa
 
 // Execute executes the request
 //  @return []L2VPN
-func (a *IpamApiService) IpamL2vpnsBulkPartialUpdateExecute(r ApiIpamL2vpnsBulkPartialUpdateRequest) ([]L2VPN, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsBulkPartialUpdateExecute(r ApiIpamL2vpnsBulkPartialUpdateRequest) ([]L2VPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -17786,7 +17786,7 @@ func (a *IpamApiService) IpamL2vpnsBulkPartialUpdateExecute(r ApiIpamL2vpnsBulkP
 		localVarReturnValue  []L2VPN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17872,7 +17872,7 @@ func (a *IpamApiService) IpamL2vpnsBulkPartialUpdateExecute(r ApiIpamL2vpnsBulkP
 
 type ApiIpamL2vpnsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -17893,7 +17893,7 @@ Put a list of L2VPN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnsBulkUpdate(ctx context.Context) ApiIpamL2vpnsBulkUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnsBulkUpdate(ctx context.Context) ApiIpamL2vpnsBulkUpdateRequest {
 	return ApiIpamL2vpnsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -17902,7 +17902,7 @@ func (a *IpamApiService) IpamL2vpnsBulkUpdate(ctx context.Context) ApiIpamL2vpns
 
 // Execute executes the request
 //  @return []L2VPN
-func (a *IpamApiService) IpamL2vpnsBulkUpdateExecute(r ApiIpamL2vpnsBulkUpdateRequest) ([]L2VPN, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsBulkUpdateExecute(r ApiIpamL2vpnsBulkUpdateRequest) ([]L2VPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17910,7 +17910,7 @@ func (a *IpamApiService) IpamL2vpnsBulkUpdateExecute(r ApiIpamL2vpnsBulkUpdateRe
 		localVarReturnValue  []L2VPN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17996,7 +17996,7 @@ func (a *IpamApiService) IpamL2vpnsBulkUpdateExecute(r ApiIpamL2vpnsBulkUpdateRe
 
 type ApiIpamL2vpnsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableL2VPNRequest *WritableL2VPNRequest
 }
 
@@ -18017,7 +18017,7 @@ Post a list of L2VPN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnsCreateRequest
 */
-func (a *IpamApiService) IpamL2vpnsCreate(ctx context.Context) ApiIpamL2vpnsCreateRequest {
+func (a *IpamAPIService) IpamL2vpnsCreate(ctx context.Context) ApiIpamL2vpnsCreateRequest {
 	return ApiIpamL2vpnsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18026,7 +18026,7 @@ func (a *IpamApiService) IpamL2vpnsCreate(ctx context.Context) ApiIpamL2vpnsCrea
 
 // Execute executes the request
 //  @return L2VPN
-func (a *IpamApiService) IpamL2vpnsCreateExecute(r ApiIpamL2vpnsCreateRequest) (*L2VPN, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsCreateExecute(r ApiIpamL2vpnsCreateRequest) (*L2VPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -18034,7 +18034,7 @@ func (a *IpamApiService) IpamL2vpnsCreateExecute(r ApiIpamL2vpnsCreateRequest) (
 		localVarReturnValue  *L2VPN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18120,7 +18120,7 @@ func (a *IpamApiService) IpamL2vpnsCreateExecute(r ApiIpamL2vpnsCreateRequest) (
 
 type ApiIpamL2vpnsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -18137,7 +18137,7 @@ Delete a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiIpamL2vpnsDestroyRequest
 */
-func (a *IpamApiService) IpamL2vpnsDestroy(ctx context.Context, id int32) ApiIpamL2vpnsDestroyRequest {
+func (a *IpamAPIService) IpamL2vpnsDestroy(ctx context.Context, id int32) ApiIpamL2vpnsDestroyRequest {
 	return ApiIpamL2vpnsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18146,14 +18146,14 @@ func (a *IpamApiService) IpamL2vpnsDestroy(ctx context.Context, id int32) ApiIpa
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamL2vpnsDestroyExecute(r ApiIpamL2vpnsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsDestroyExecute(r ApiIpamL2vpnsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18226,7 +18226,7 @@ func (a *IpamApiService) IpamL2vpnsDestroyExecute(r ApiIpamL2vpnsDestroyRequest)
 
 type ApiIpamL2vpnsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -18789,7 +18789,7 @@ Get a list of L2VPN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamL2vpnsListRequest
 */
-func (a *IpamApiService) IpamL2vpnsList(ctx context.Context) ApiIpamL2vpnsListRequest {
+func (a *IpamAPIService) IpamL2vpnsList(ctx context.Context) ApiIpamL2vpnsListRequest {
 	return ApiIpamL2vpnsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18798,7 +18798,7 @@ func (a *IpamApiService) IpamL2vpnsList(ctx context.Context) ApiIpamL2vpnsListRe
 
 // Execute executes the request
 //  @return PaginatedL2VPNList
-func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*PaginatedL2VPNList, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*PaginatedL2VPNList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -18806,7 +18806,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		localVarReturnValue  *PaginatedL2VPNList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18822,7 +18822,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -18833,7 +18833,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -18844,7 +18844,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -18855,7 +18855,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -18866,7 +18866,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -18877,7 +18877,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -18888,7 +18888,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -18902,7 +18902,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -18916,7 +18916,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -18927,7 +18927,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -18938,7 +18938,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -18949,7 +18949,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -18960,7 +18960,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -18971,7 +18971,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -18982,7 +18982,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -18993,7 +18993,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -19004,7 +19004,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -19015,7 +19015,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target", t, "multi")
@@ -19026,7 +19026,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target__n", t, "multi")
@@ -19037,7 +19037,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id", t, "multi")
@@ -19048,7 +19048,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id__n", t, "multi")
@@ -19059,7 +19059,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -19073,7 +19073,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -19084,7 +19084,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -19095,7 +19095,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -19106,7 +19106,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -19117,7 +19117,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -19128,7 +19128,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "identifier", t, "multi")
@@ -19142,7 +19142,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__gt", t, "multi")
@@ -19153,7 +19153,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__gte", t, "multi")
@@ -19164,7 +19164,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__lt", t, "multi")
@@ -19175,7 +19175,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__lte", t, "multi")
@@ -19186,7 +19186,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "identifier__n", t, "multi")
@@ -19197,7 +19197,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target", t, "multi")
@@ -19208,7 +19208,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target__n", t, "multi")
@@ -19219,7 +19219,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id", t, "multi")
@@ -19230,7 +19230,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id__n", t, "multi")
@@ -19241,7 +19241,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -19252,7 +19252,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -19263,7 +19263,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -19274,7 +19274,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -19285,7 +19285,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -19296,7 +19296,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -19307,7 +19307,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -19324,7 +19324,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -19338,7 +19338,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -19349,7 +19349,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -19360,7 +19360,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -19371,7 +19371,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -19382,7 +19382,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -19393,7 +19393,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -19404,7 +19404,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -19415,7 +19415,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -19426,7 +19426,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -19446,7 +19446,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -19460,7 +19460,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -19471,7 +19471,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -19482,7 +19482,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -19493,7 +19493,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -19504,7 +19504,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -19515,7 +19515,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -19526,7 +19526,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -19537,7 +19537,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -19548,7 +19548,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -19559,7 +19559,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -19570,7 +19570,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -19581,7 +19581,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -19592,7 +19592,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -19603,7 +19603,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -19614,7 +19614,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -19625,7 +19625,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -19636,7 +19636,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -19647,7 +19647,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -19658,7 +19658,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -19669,7 +19669,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "multi")
@@ -19680,7 +19680,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "multi")
@@ -19759,7 +19759,7 @@ func (a *IpamApiService) IpamL2vpnsListExecute(r ApiIpamL2vpnsListRequest) (*Pag
 
 type ApiIpamL2vpnsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableL2VPNRequest *PatchedWritableL2VPNRequest
 }
@@ -19782,7 +19782,7 @@ Patch a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiIpamL2vpnsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnsPartialUpdate(ctx context.Context, id int32) ApiIpamL2vpnsPartialUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnsPartialUpdate(ctx context.Context, id int32) ApiIpamL2vpnsPartialUpdateRequest {
 	return ApiIpamL2vpnsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -19792,7 +19792,7 @@ func (a *IpamApiService) IpamL2vpnsPartialUpdate(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return L2VPN
-func (a *IpamApiService) IpamL2vpnsPartialUpdateExecute(r ApiIpamL2vpnsPartialUpdateRequest) (*L2VPN, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsPartialUpdateExecute(r ApiIpamL2vpnsPartialUpdateRequest) (*L2VPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -19800,7 +19800,7 @@ func (a *IpamApiService) IpamL2vpnsPartialUpdateExecute(r ApiIpamL2vpnsPartialUp
 		localVarReturnValue  *L2VPN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19884,7 +19884,7 @@ func (a *IpamApiService) IpamL2vpnsPartialUpdateExecute(r ApiIpamL2vpnsPartialUp
 
 type ApiIpamL2vpnsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -19901,7 +19901,7 @@ Get a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiIpamL2vpnsRetrieveRequest
 */
-func (a *IpamApiService) IpamL2vpnsRetrieve(ctx context.Context, id int32) ApiIpamL2vpnsRetrieveRequest {
+func (a *IpamAPIService) IpamL2vpnsRetrieve(ctx context.Context, id int32) ApiIpamL2vpnsRetrieveRequest {
 	return ApiIpamL2vpnsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -19911,7 +19911,7 @@ func (a *IpamApiService) IpamL2vpnsRetrieve(ctx context.Context, id int32) ApiIp
 
 // Execute executes the request
 //  @return L2VPN
-func (a *IpamApiService) IpamL2vpnsRetrieveExecute(r ApiIpamL2vpnsRetrieveRequest) (*L2VPN, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsRetrieveExecute(r ApiIpamL2vpnsRetrieveRequest) (*L2VPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -19919,7 +19919,7 @@ func (a *IpamApiService) IpamL2vpnsRetrieveExecute(r ApiIpamL2vpnsRetrieveReques
 		localVarReturnValue  *L2VPN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20001,7 +20001,7 @@ func (a *IpamApiService) IpamL2vpnsRetrieveExecute(r ApiIpamL2vpnsRetrieveReques
 
 type ApiIpamL2vpnsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableL2VPNRequest *WritableL2VPNRequest
 }
@@ -20024,7 +20024,7 @@ Put a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiIpamL2vpnsUpdateRequest
 */
-func (a *IpamApiService) IpamL2vpnsUpdate(ctx context.Context, id int32) ApiIpamL2vpnsUpdateRequest {
+func (a *IpamAPIService) IpamL2vpnsUpdate(ctx context.Context, id int32) ApiIpamL2vpnsUpdateRequest {
 	return ApiIpamL2vpnsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20034,7 +20034,7 @@ func (a *IpamApiService) IpamL2vpnsUpdate(ctx context.Context, id int32) ApiIpam
 
 // Execute executes the request
 //  @return L2VPN
-func (a *IpamApiService) IpamL2vpnsUpdateExecute(r ApiIpamL2vpnsUpdateRequest) (*L2VPN, *http.Response, error) {
+func (a *IpamAPIService) IpamL2vpnsUpdateExecute(r ApiIpamL2vpnsUpdateRequest) (*L2VPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -20042,7 +20042,7 @@ func (a *IpamApiService) IpamL2vpnsUpdateExecute(r ApiIpamL2vpnsUpdateRequest) (
 		localVarReturnValue  *L2VPN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamL2vpnsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamL2vpnsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20129,7 +20129,7 @@ func (a *IpamApiService) IpamL2vpnsUpdateExecute(r ApiIpamL2vpnsUpdateRequest) (
 
 type ApiIpamPrefixesAvailableIpsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	iPAddressRequest *[]IPAddressRequest
 }
@@ -20152,7 +20152,7 @@ Post a IP address object.
  @param id
  @return ApiIpamPrefixesAvailableIpsCreateRequest
 */
-func (a *IpamApiService) IpamPrefixesAvailableIpsCreate(ctx context.Context, id int32) ApiIpamPrefixesAvailableIpsCreateRequest {
+func (a *IpamAPIService) IpamPrefixesAvailableIpsCreate(ctx context.Context, id int32) ApiIpamPrefixesAvailableIpsCreateRequest {
 	return ApiIpamPrefixesAvailableIpsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20162,7 +20162,7 @@ func (a *IpamApiService) IpamPrefixesAvailableIpsCreate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return []IPAddress
-func (a *IpamApiService) IpamPrefixesAvailableIpsCreateExecute(r ApiIpamPrefixesAvailableIpsCreateRequest) ([]IPAddress, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesAvailableIpsCreateExecute(r ApiIpamPrefixesAvailableIpsCreateRequest) ([]IPAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -20170,7 +20170,7 @@ func (a *IpamApiService) IpamPrefixesAvailableIpsCreateExecute(r ApiIpamPrefixes
 		localVarReturnValue  []IPAddress
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesAvailableIpsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesAvailableIpsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20257,7 +20257,7 @@ func (a *IpamApiService) IpamPrefixesAvailableIpsCreateExecute(r ApiIpamPrefixes
 
 type ApiIpamPrefixesAvailableIpsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -20274,7 +20274,7 @@ Get a IP address object.
  @param id
  @return ApiIpamPrefixesAvailableIpsListRequest
 */
-func (a *IpamApiService) IpamPrefixesAvailableIpsList(ctx context.Context, id int32) ApiIpamPrefixesAvailableIpsListRequest {
+func (a *IpamAPIService) IpamPrefixesAvailableIpsList(ctx context.Context, id int32) ApiIpamPrefixesAvailableIpsListRequest {
 	return ApiIpamPrefixesAvailableIpsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20284,7 +20284,7 @@ func (a *IpamApiService) IpamPrefixesAvailableIpsList(ctx context.Context, id in
 
 // Execute executes the request
 //  @return []AvailableIP
-func (a *IpamApiService) IpamPrefixesAvailableIpsListExecute(r ApiIpamPrefixesAvailableIpsListRequest) ([]AvailableIP, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesAvailableIpsListExecute(r ApiIpamPrefixesAvailableIpsListRequest) ([]AvailableIP, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -20292,7 +20292,7 @@ func (a *IpamApiService) IpamPrefixesAvailableIpsListExecute(r ApiIpamPrefixesAv
 		localVarReturnValue  []AvailableIP
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesAvailableIpsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesAvailableIpsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20374,7 +20374,7 @@ func (a *IpamApiService) IpamPrefixesAvailableIpsListExecute(r ApiIpamPrefixesAv
 
 type ApiIpamPrefixesAvailablePrefixesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	prefixRequest *[]PrefixRequest
 }
@@ -20397,7 +20397,7 @@ Post a prefix object.
  @param id
  @return ApiIpamPrefixesAvailablePrefixesCreateRequest
 */
-func (a *IpamApiService) IpamPrefixesAvailablePrefixesCreate(ctx context.Context, id int32) ApiIpamPrefixesAvailablePrefixesCreateRequest {
+func (a *IpamAPIService) IpamPrefixesAvailablePrefixesCreate(ctx context.Context, id int32) ApiIpamPrefixesAvailablePrefixesCreateRequest {
 	return ApiIpamPrefixesAvailablePrefixesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20407,7 +20407,7 @@ func (a *IpamApiService) IpamPrefixesAvailablePrefixesCreate(ctx context.Context
 
 // Execute executes the request
 //  @return []Prefix
-func (a *IpamApiService) IpamPrefixesAvailablePrefixesCreateExecute(r ApiIpamPrefixesAvailablePrefixesCreateRequest) ([]Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesAvailablePrefixesCreateExecute(r ApiIpamPrefixesAvailablePrefixesCreateRequest) ([]Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -20415,7 +20415,7 @@ func (a *IpamApiService) IpamPrefixesAvailablePrefixesCreateExecute(r ApiIpamPre
 		localVarReturnValue  []Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesAvailablePrefixesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesAvailablePrefixesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20502,7 +20502,7 @@ func (a *IpamApiService) IpamPrefixesAvailablePrefixesCreateExecute(r ApiIpamPre
 
 type ApiIpamPrefixesAvailablePrefixesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -20519,7 +20519,7 @@ Get a prefix object.
  @param id
  @return ApiIpamPrefixesAvailablePrefixesListRequest
 */
-func (a *IpamApiService) IpamPrefixesAvailablePrefixesList(ctx context.Context, id int32) ApiIpamPrefixesAvailablePrefixesListRequest {
+func (a *IpamAPIService) IpamPrefixesAvailablePrefixesList(ctx context.Context, id int32) ApiIpamPrefixesAvailablePrefixesListRequest {
 	return ApiIpamPrefixesAvailablePrefixesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20529,7 +20529,7 @@ func (a *IpamApiService) IpamPrefixesAvailablePrefixesList(ctx context.Context, 
 
 // Execute executes the request
 //  @return []AvailablePrefix
-func (a *IpamApiService) IpamPrefixesAvailablePrefixesListExecute(r ApiIpamPrefixesAvailablePrefixesListRequest) ([]AvailablePrefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesAvailablePrefixesListExecute(r ApiIpamPrefixesAvailablePrefixesListRequest) ([]AvailablePrefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -20537,7 +20537,7 @@ func (a *IpamApiService) IpamPrefixesAvailablePrefixesListExecute(r ApiIpamPrefi
 		localVarReturnValue  []AvailablePrefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesAvailablePrefixesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesAvailablePrefixesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20619,7 +20619,7 @@ func (a *IpamApiService) IpamPrefixesAvailablePrefixesListExecute(r ApiIpamPrefi
 
 type ApiIpamPrefixesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	prefixRequest *[]PrefixRequest
 }
 
@@ -20640,7 +20640,7 @@ Delete a list of prefix objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamPrefixesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamPrefixesBulkDestroy(ctx context.Context) ApiIpamPrefixesBulkDestroyRequest {
+func (a *IpamAPIService) IpamPrefixesBulkDestroy(ctx context.Context) ApiIpamPrefixesBulkDestroyRequest {
 	return ApiIpamPrefixesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20648,14 +20648,14 @@ func (a *IpamApiService) IpamPrefixesBulkDestroy(ctx context.Context) ApiIpamPre
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamPrefixesBulkDestroyExecute(r ApiIpamPrefixesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesBulkDestroyExecute(r ApiIpamPrefixesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20732,7 +20732,7 @@ func (a *IpamApiService) IpamPrefixesBulkDestroyExecute(r ApiIpamPrefixesBulkDes
 
 type ApiIpamPrefixesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	prefixRequest *[]PrefixRequest
 }
 
@@ -20753,7 +20753,7 @@ Patch a list of prefix objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamPrefixesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamPrefixesBulkPartialUpdate(ctx context.Context) ApiIpamPrefixesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamPrefixesBulkPartialUpdate(ctx context.Context) ApiIpamPrefixesBulkPartialUpdateRequest {
 	return ApiIpamPrefixesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20762,7 +20762,7 @@ func (a *IpamApiService) IpamPrefixesBulkPartialUpdate(ctx context.Context) ApiI
 
 // Execute executes the request
 //  @return []Prefix
-func (a *IpamApiService) IpamPrefixesBulkPartialUpdateExecute(r ApiIpamPrefixesBulkPartialUpdateRequest) ([]Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesBulkPartialUpdateExecute(r ApiIpamPrefixesBulkPartialUpdateRequest) ([]Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -20770,7 +20770,7 @@ func (a *IpamApiService) IpamPrefixesBulkPartialUpdateExecute(r ApiIpamPrefixesB
 		localVarReturnValue  []Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20856,7 +20856,7 @@ func (a *IpamApiService) IpamPrefixesBulkPartialUpdateExecute(r ApiIpamPrefixesB
 
 type ApiIpamPrefixesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	prefixRequest *[]PrefixRequest
 }
 
@@ -20877,7 +20877,7 @@ Put a list of prefix objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamPrefixesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamPrefixesBulkUpdate(ctx context.Context) ApiIpamPrefixesBulkUpdateRequest {
+func (a *IpamAPIService) IpamPrefixesBulkUpdate(ctx context.Context) ApiIpamPrefixesBulkUpdateRequest {
 	return ApiIpamPrefixesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20886,7 +20886,7 @@ func (a *IpamApiService) IpamPrefixesBulkUpdate(ctx context.Context) ApiIpamPref
 
 // Execute executes the request
 //  @return []Prefix
-func (a *IpamApiService) IpamPrefixesBulkUpdateExecute(r ApiIpamPrefixesBulkUpdateRequest) ([]Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesBulkUpdateExecute(r ApiIpamPrefixesBulkUpdateRequest) ([]Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -20894,7 +20894,7 @@ func (a *IpamApiService) IpamPrefixesBulkUpdateExecute(r ApiIpamPrefixesBulkUpda
 		localVarReturnValue  []Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20980,7 +20980,7 @@ func (a *IpamApiService) IpamPrefixesBulkUpdateExecute(r ApiIpamPrefixesBulkUpda
 
 type ApiIpamPrefixesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writablePrefixRequest *WritablePrefixRequest
 }
 
@@ -21001,7 +21001,7 @@ Post a list of prefix objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamPrefixesCreateRequest
 */
-func (a *IpamApiService) IpamPrefixesCreate(ctx context.Context) ApiIpamPrefixesCreateRequest {
+func (a *IpamAPIService) IpamPrefixesCreate(ctx context.Context) ApiIpamPrefixesCreateRequest {
 	return ApiIpamPrefixesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -21010,7 +21010,7 @@ func (a *IpamApiService) IpamPrefixesCreate(ctx context.Context) ApiIpamPrefixes
 
 // Execute executes the request
 //  @return Prefix
-func (a *IpamApiService) IpamPrefixesCreateExecute(r ApiIpamPrefixesCreateRequest) (*Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesCreateExecute(r ApiIpamPrefixesCreateRequest) (*Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -21018,7 +21018,7 @@ func (a *IpamApiService) IpamPrefixesCreateExecute(r ApiIpamPrefixesCreateReques
 		localVarReturnValue  *Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21104,7 +21104,7 @@ func (a *IpamApiService) IpamPrefixesCreateExecute(r ApiIpamPrefixesCreateReques
 
 type ApiIpamPrefixesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -21121,7 +21121,7 @@ Delete a prefix object.
  @param id A unique integer value identifying this prefix.
  @return ApiIpamPrefixesDestroyRequest
 */
-func (a *IpamApiService) IpamPrefixesDestroy(ctx context.Context, id int32) ApiIpamPrefixesDestroyRequest {
+func (a *IpamAPIService) IpamPrefixesDestroy(ctx context.Context, id int32) ApiIpamPrefixesDestroyRequest {
 	return ApiIpamPrefixesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -21130,14 +21130,14 @@ func (a *IpamApiService) IpamPrefixesDestroy(ctx context.Context, id int32) ApiI
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamPrefixesDestroyExecute(r ApiIpamPrefixesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesDestroyExecute(r ApiIpamPrefixesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21210,7 +21210,7 @@ func (a *IpamApiService) IpamPrefixesDestroyExecute(r ApiIpamPrefixesDestroyRequ
 
 type ApiIpamPrefixesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	children *[]int32
 	childrenEmpty *[]int32
 	childrenGt *[]int32
@@ -21907,7 +21907,7 @@ Get a list of prefix objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamPrefixesListRequest
 */
-func (a *IpamApiService) IpamPrefixesList(ctx context.Context) ApiIpamPrefixesListRequest {
+func (a *IpamAPIService) IpamPrefixesList(ctx context.Context) ApiIpamPrefixesListRequest {
 	return ApiIpamPrefixesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -21916,7 +21916,7 @@ func (a *IpamApiService) IpamPrefixesList(ctx context.Context) ApiIpamPrefixesLi
 
 // Execute executes the request
 //  @return PaginatedPrefixList
-func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (*PaginatedPrefixList, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (*PaginatedPrefixList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -21924,7 +21924,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		localVarReturnValue  *PaginatedPrefixList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21940,7 +21940,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children", t, "multi")
@@ -21951,7 +21951,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children__empty", t, "multi")
@@ -21962,7 +21962,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children__gt", t, "multi")
@@ -21973,7 +21973,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children__gte", t, "multi")
@@ -21984,7 +21984,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children__lt", t, "multi")
@@ -21995,7 +21995,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children__lte", t, "multi")
@@ -22006,7 +22006,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "children__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "children__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "children__n", t, "multi")
@@ -22020,7 +22020,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -22031,7 +22031,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -22042,7 +22042,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -22053,7 +22053,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -22064,7 +22064,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -22075,7 +22075,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -22086,7 +22086,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -22100,7 +22100,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth", t, "multi")
@@ -22111,7 +22111,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth__empty", t, "multi")
@@ -22122,7 +22122,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth__gt", t, "multi")
@@ -22133,7 +22133,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth__gte", t, "multi")
@@ -22144,7 +22144,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth__lt", t, "multi")
@@ -22155,7 +22155,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth__lte", t, "multi")
@@ -22166,7 +22166,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "depth__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "depth__n", t, "multi")
@@ -22177,7 +22177,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -22191,7 +22191,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -22202,7 +22202,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -22213,7 +22213,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -22224,7 +22224,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -22235,7 +22235,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -22246,7 +22246,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -22257,7 +22257,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -22268,7 +22268,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -22279,7 +22279,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -22293,7 +22293,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -22307,7 +22307,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -22318,7 +22318,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -22329,7 +22329,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -22340,7 +22340,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -22351,7 +22351,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -22365,7 +22365,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -22376,7 +22376,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -22387,7 +22387,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -22398,7 +22398,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -22409,7 +22409,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -22420,7 +22420,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -22431,7 +22431,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -22448,7 +22448,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mask_length", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mask_length", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mask_length", t, "multi")
@@ -22474,7 +22474,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "prefix", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "prefix", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "prefix", t, "multi")
@@ -22494,7 +22494,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
@@ -22505,7 +22505,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
@@ -22516,7 +22516,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
@@ -22527,7 +22527,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
@@ -22538,7 +22538,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -22549,7 +22549,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -22560,7 +22560,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", t, "multi")
@@ -22571,7 +22571,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", t, "multi")
@@ -22582,7 +22582,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -22593,7 +22593,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
@@ -22604,7 +22604,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
@@ -22615,7 +22615,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
@@ -22626,7 +22626,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
@@ -22637,7 +22637,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
@@ -22648,7 +22648,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -22659,7 +22659,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
@@ -22670,7 +22670,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -22681,7 +22681,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -22692,7 +22692,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -22703,7 +22703,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -22714,7 +22714,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -22725,7 +22725,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -22736,7 +22736,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -22747,7 +22747,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -22758,7 +22758,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -22769,7 +22769,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -22780,7 +22780,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -22791,7 +22791,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -22805,7 +22805,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id", t, "multi")
@@ -22816,7 +22816,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vlan_id__n", t, "multi")
@@ -22848,7 +22848,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", t, "multi")
@@ -22859,7 +22859,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", t, "multi")
@@ -22870,7 +22870,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", t, "multi")
@@ -22881,7 +22881,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", t, "multi")
@@ -22963,7 +22963,7 @@ func (a *IpamApiService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 
 type ApiIpamPrefixesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritablePrefixRequest *PatchedWritablePrefixRequest
 }
@@ -22986,7 +22986,7 @@ Patch a prefix object.
  @param id A unique integer value identifying this prefix.
  @return ApiIpamPrefixesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamPrefixesPartialUpdate(ctx context.Context, id int32) ApiIpamPrefixesPartialUpdateRequest {
+func (a *IpamAPIService) IpamPrefixesPartialUpdate(ctx context.Context, id int32) ApiIpamPrefixesPartialUpdateRequest {
 	return ApiIpamPrefixesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22996,7 +22996,7 @@ func (a *IpamApiService) IpamPrefixesPartialUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Prefix
-func (a *IpamApiService) IpamPrefixesPartialUpdateExecute(r ApiIpamPrefixesPartialUpdateRequest) (*Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesPartialUpdateExecute(r ApiIpamPrefixesPartialUpdateRequest) (*Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -23004,7 +23004,7 @@ func (a *IpamApiService) IpamPrefixesPartialUpdateExecute(r ApiIpamPrefixesParti
 		localVarReturnValue  *Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23088,7 +23088,7 @@ func (a *IpamApiService) IpamPrefixesPartialUpdateExecute(r ApiIpamPrefixesParti
 
 type ApiIpamPrefixesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -23105,7 +23105,7 @@ Get a prefix object.
  @param id A unique integer value identifying this prefix.
  @return ApiIpamPrefixesRetrieveRequest
 */
-func (a *IpamApiService) IpamPrefixesRetrieve(ctx context.Context, id int32) ApiIpamPrefixesRetrieveRequest {
+func (a *IpamAPIService) IpamPrefixesRetrieve(ctx context.Context, id int32) ApiIpamPrefixesRetrieveRequest {
 	return ApiIpamPrefixesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23115,7 +23115,7 @@ func (a *IpamApiService) IpamPrefixesRetrieve(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return Prefix
-func (a *IpamApiService) IpamPrefixesRetrieveExecute(r ApiIpamPrefixesRetrieveRequest) (*Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesRetrieveExecute(r ApiIpamPrefixesRetrieveRequest) (*Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -23123,7 +23123,7 @@ func (a *IpamApiService) IpamPrefixesRetrieveExecute(r ApiIpamPrefixesRetrieveRe
 		localVarReturnValue  *Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23205,7 +23205,7 @@ func (a *IpamApiService) IpamPrefixesRetrieveExecute(r ApiIpamPrefixesRetrieveRe
 
 type ApiIpamPrefixesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writablePrefixRequest *WritablePrefixRequest
 }
@@ -23228,7 +23228,7 @@ Put a prefix object.
  @param id A unique integer value identifying this prefix.
  @return ApiIpamPrefixesUpdateRequest
 */
-func (a *IpamApiService) IpamPrefixesUpdate(ctx context.Context, id int32) ApiIpamPrefixesUpdateRequest {
+func (a *IpamAPIService) IpamPrefixesUpdate(ctx context.Context, id int32) ApiIpamPrefixesUpdateRequest {
 	return ApiIpamPrefixesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23238,7 +23238,7 @@ func (a *IpamApiService) IpamPrefixesUpdate(ctx context.Context, id int32) ApiIp
 
 // Execute executes the request
 //  @return Prefix
-func (a *IpamApiService) IpamPrefixesUpdateExecute(r ApiIpamPrefixesUpdateRequest) (*Prefix, *http.Response, error) {
+func (a *IpamAPIService) IpamPrefixesUpdateExecute(r ApiIpamPrefixesUpdateRequest) (*Prefix, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -23246,7 +23246,7 @@ func (a *IpamApiService) IpamPrefixesUpdateExecute(r ApiIpamPrefixesUpdateReques
 		localVarReturnValue  *Prefix
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamPrefixesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamPrefixesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23333,7 +23333,7 @@ func (a *IpamApiService) IpamPrefixesUpdateExecute(r ApiIpamPrefixesUpdateReques
 
 type ApiIpamRirsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	rIRRequest *[]RIRRequest
 }
 
@@ -23354,7 +23354,7 @@ Delete a list of RIR objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRirsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamRirsBulkDestroy(ctx context.Context) ApiIpamRirsBulkDestroyRequest {
+func (a *IpamAPIService) IpamRirsBulkDestroy(ctx context.Context) ApiIpamRirsBulkDestroyRequest {
 	return ApiIpamRirsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23362,14 +23362,14 @@ func (a *IpamApiService) IpamRirsBulkDestroy(ctx context.Context) ApiIpamRirsBul
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamRirsBulkDestroyExecute(r ApiIpamRirsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamRirsBulkDestroyExecute(r ApiIpamRirsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23446,7 +23446,7 @@ func (a *IpamApiService) IpamRirsBulkDestroyExecute(r ApiIpamRirsBulkDestroyRequ
 
 type ApiIpamRirsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	rIRRequest *[]RIRRequest
 }
 
@@ -23467,7 +23467,7 @@ Patch a list of RIR objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRirsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamRirsBulkPartialUpdate(ctx context.Context) ApiIpamRirsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamRirsBulkPartialUpdate(ctx context.Context) ApiIpamRirsBulkPartialUpdateRequest {
 	return ApiIpamRirsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23476,7 +23476,7 @@ func (a *IpamApiService) IpamRirsBulkPartialUpdate(ctx context.Context) ApiIpamR
 
 // Execute executes the request
 //  @return []RIR
-func (a *IpamApiService) IpamRirsBulkPartialUpdateExecute(r ApiIpamRirsBulkPartialUpdateRequest) ([]RIR, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsBulkPartialUpdateExecute(r ApiIpamRirsBulkPartialUpdateRequest) ([]RIR, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -23484,7 +23484,7 @@ func (a *IpamApiService) IpamRirsBulkPartialUpdateExecute(r ApiIpamRirsBulkParti
 		localVarReturnValue  []RIR
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23570,7 +23570,7 @@ func (a *IpamApiService) IpamRirsBulkPartialUpdateExecute(r ApiIpamRirsBulkParti
 
 type ApiIpamRirsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	rIRRequest *[]RIRRequest
 }
 
@@ -23591,7 +23591,7 @@ Put a list of RIR objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRirsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamRirsBulkUpdate(ctx context.Context) ApiIpamRirsBulkUpdateRequest {
+func (a *IpamAPIService) IpamRirsBulkUpdate(ctx context.Context) ApiIpamRirsBulkUpdateRequest {
 	return ApiIpamRirsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23600,7 +23600,7 @@ func (a *IpamApiService) IpamRirsBulkUpdate(ctx context.Context) ApiIpamRirsBulk
 
 // Execute executes the request
 //  @return []RIR
-func (a *IpamApiService) IpamRirsBulkUpdateExecute(r ApiIpamRirsBulkUpdateRequest) ([]RIR, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsBulkUpdateExecute(r ApiIpamRirsBulkUpdateRequest) ([]RIR, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -23608,7 +23608,7 @@ func (a *IpamApiService) IpamRirsBulkUpdateExecute(r ApiIpamRirsBulkUpdateReques
 		localVarReturnValue  []RIR
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23694,7 +23694,7 @@ func (a *IpamApiService) IpamRirsBulkUpdateExecute(r ApiIpamRirsBulkUpdateReques
 
 type ApiIpamRirsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	rIRRequest *RIRRequest
 }
 
@@ -23715,7 +23715,7 @@ Post a list of RIR objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRirsCreateRequest
 */
-func (a *IpamApiService) IpamRirsCreate(ctx context.Context) ApiIpamRirsCreateRequest {
+func (a *IpamAPIService) IpamRirsCreate(ctx context.Context) ApiIpamRirsCreateRequest {
 	return ApiIpamRirsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23724,7 +23724,7 @@ func (a *IpamApiService) IpamRirsCreate(ctx context.Context) ApiIpamRirsCreateRe
 
 // Execute executes the request
 //  @return RIR
-func (a *IpamApiService) IpamRirsCreateExecute(r ApiIpamRirsCreateRequest) (*RIR, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsCreateExecute(r ApiIpamRirsCreateRequest) (*RIR, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -23732,7 +23732,7 @@ func (a *IpamApiService) IpamRirsCreateExecute(r ApiIpamRirsCreateRequest) (*RIR
 		localVarReturnValue  *RIR
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23818,7 +23818,7 @@ func (a *IpamApiService) IpamRirsCreateExecute(r ApiIpamRirsCreateRequest) (*RIR
 
 type ApiIpamRirsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -23835,7 +23835,7 @@ Delete a RIR object.
  @param id A unique integer value identifying this RIR.
  @return ApiIpamRirsDestroyRequest
 */
-func (a *IpamApiService) IpamRirsDestroy(ctx context.Context, id int32) ApiIpamRirsDestroyRequest {
+func (a *IpamAPIService) IpamRirsDestroy(ctx context.Context, id int32) ApiIpamRirsDestroyRequest {
 	return ApiIpamRirsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23844,14 +23844,14 @@ func (a *IpamApiService) IpamRirsDestroy(ctx context.Context, id int32) ApiIpamR
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamRirsDestroyExecute(r ApiIpamRirsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamRirsDestroyExecute(r ApiIpamRirsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23924,7 +23924,7 @@ func (a *IpamApiService) IpamRirsDestroyExecute(r ApiIpamRirsDestroyRequest) (*h
 
 type ApiIpamRirsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -24327,7 +24327,7 @@ Get a list of RIR objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRirsListRequest
 */
-func (a *IpamApiService) IpamRirsList(ctx context.Context) ApiIpamRirsListRequest {
+func (a *IpamAPIService) IpamRirsList(ctx context.Context) ApiIpamRirsListRequest {
 	return ApiIpamRirsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24336,7 +24336,7 @@ func (a *IpamApiService) IpamRirsList(ctx context.Context) ApiIpamRirsListReques
 
 // Execute executes the request
 //  @return PaginatedRIRList
-func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*PaginatedRIRList, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*PaginatedRIRList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -24344,7 +24344,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		localVarReturnValue  *PaginatedRIRList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24360,7 +24360,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -24371,7 +24371,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -24382,7 +24382,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -24393,7 +24393,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -24404,7 +24404,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -24415,7 +24415,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -24426,7 +24426,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -24440,7 +24440,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -24454,7 +24454,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -24465,7 +24465,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -24476,7 +24476,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -24487,7 +24487,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -24498,7 +24498,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -24509,7 +24509,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -24520,7 +24520,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -24531,7 +24531,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -24542,7 +24542,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -24553,7 +24553,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -24567,7 +24567,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -24578,7 +24578,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -24589,7 +24589,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -24600,7 +24600,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -24611,7 +24611,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -24625,7 +24625,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -24636,7 +24636,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -24647,7 +24647,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -24658,7 +24658,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -24669,7 +24669,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -24680,7 +24680,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -24691,7 +24691,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -24708,7 +24708,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -24722,7 +24722,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -24733,7 +24733,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -24744,7 +24744,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -24755,7 +24755,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -24766,7 +24766,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -24777,7 +24777,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -24788,7 +24788,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -24799,7 +24799,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -24810,7 +24810,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -24830,7 +24830,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -24844,7 +24844,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -24855,7 +24855,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -24866,7 +24866,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -24877,7 +24877,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -24888,7 +24888,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -24899,7 +24899,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -24910,7 +24910,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -24921,7 +24921,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -24932,7 +24932,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -24943,7 +24943,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -24954,7 +24954,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -25033,7 +25033,7 @@ func (a *IpamApiService) IpamRirsListExecute(r ApiIpamRirsListRequest) (*Paginat
 
 type ApiIpamRirsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedRIRRequest *PatchedRIRRequest
 }
@@ -25056,7 +25056,7 @@ Patch a RIR object.
  @param id A unique integer value identifying this RIR.
  @return ApiIpamRirsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamRirsPartialUpdate(ctx context.Context, id int32) ApiIpamRirsPartialUpdateRequest {
+func (a *IpamAPIService) IpamRirsPartialUpdate(ctx context.Context, id int32) ApiIpamRirsPartialUpdateRequest {
 	return ApiIpamRirsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25066,7 +25066,7 @@ func (a *IpamApiService) IpamRirsPartialUpdate(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return RIR
-func (a *IpamApiService) IpamRirsPartialUpdateExecute(r ApiIpamRirsPartialUpdateRequest) (*RIR, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsPartialUpdateExecute(r ApiIpamRirsPartialUpdateRequest) (*RIR, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -25074,7 +25074,7 @@ func (a *IpamApiService) IpamRirsPartialUpdateExecute(r ApiIpamRirsPartialUpdate
 		localVarReturnValue  *RIR
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25158,7 +25158,7 @@ func (a *IpamApiService) IpamRirsPartialUpdateExecute(r ApiIpamRirsPartialUpdate
 
 type ApiIpamRirsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -25175,7 +25175,7 @@ Get a RIR object.
  @param id A unique integer value identifying this RIR.
  @return ApiIpamRirsRetrieveRequest
 */
-func (a *IpamApiService) IpamRirsRetrieve(ctx context.Context, id int32) ApiIpamRirsRetrieveRequest {
+func (a *IpamAPIService) IpamRirsRetrieve(ctx context.Context, id int32) ApiIpamRirsRetrieveRequest {
 	return ApiIpamRirsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25185,7 +25185,7 @@ func (a *IpamApiService) IpamRirsRetrieve(ctx context.Context, id int32) ApiIpam
 
 // Execute executes the request
 //  @return RIR
-func (a *IpamApiService) IpamRirsRetrieveExecute(r ApiIpamRirsRetrieveRequest) (*RIR, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsRetrieveExecute(r ApiIpamRirsRetrieveRequest) (*RIR, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -25193,7 +25193,7 @@ func (a *IpamApiService) IpamRirsRetrieveExecute(r ApiIpamRirsRetrieveRequest) (
 		localVarReturnValue  *RIR
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25275,7 +25275,7 @@ func (a *IpamApiService) IpamRirsRetrieveExecute(r ApiIpamRirsRetrieveRequest) (
 
 type ApiIpamRirsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	rIRRequest *RIRRequest
 }
@@ -25298,7 +25298,7 @@ Put a RIR object.
  @param id A unique integer value identifying this RIR.
  @return ApiIpamRirsUpdateRequest
 */
-func (a *IpamApiService) IpamRirsUpdate(ctx context.Context, id int32) ApiIpamRirsUpdateRequest {
+func (a *IpamAPIService) IpamRirsUpdate(ctx context.Context, id int32) ApiIpamRirsUpdateRequest {
 	return ApiIpamRirsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25308,7 +25308,7 @@ func (a *IpamApiService) IpamRirsUpdate(ctx context.Context, id int32) ApiIpamRi
 
 // Execute executes the request
 //  @return RIR
-func (a *IpamApiService) IpamRirsUpdateExecute(r ApiIpamRirsUpdateRequest) (*RIR, *http.Response, error) {
+func (a *IpamAPIService) IpamRirsUpdateExecute(r ApiIpamRirsUpdateRequest) (*RIR, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -25316,7 +25316,7 @@ func (a *IpamApiService) IpamRirsUpdateExecute(r ApiIpamRirsUpdateRequest) (*RIR
 		localVarReturnValue  *RIR
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRirsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRirsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25403,7 +25403,7 @@ func (a *IpamApiService) IpamRirsUpdateExecute(r ApiIpamRirsUpdateRequest) (*RIR
 
 type ApiIpamRolesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	roleRequest *[]RoleRequest
 }
 
@@ -25424,7 +25424,7 @@ Delete a list of role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRolesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamRolesBulkDestroy(ctx context.Context) ApiIpamRolesBulkDestroyRequest {
+func (a *IpamAPIService) IpamRolesBulkDestroy(ctx context.Context) ApiIpamRolesBulkDestroyRequest {
 	return ApiIpamRolesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25432,14 +25432,14 @@ func (a *IpamApiService) IpamRolesBulkDestroy(ctx context.Context) ApiIpamRolesB
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamRolesBulkDestroyExecute(r ApiIpamRolesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamRolesBulkDestroyExecute(r ApiIpamRolesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25516,7 +25516,7 @@ func (a *IpamApiService) IpamRolesBulkDestroyExecute(r ApiIpamRolesBulkDestroyRe
 
 type ApiIpamRolesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	roleRequest *[]RoleRequest
 }
 
@@ -25537,7 +25537,7 @@ Patch a list of role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRolesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamRolesBulkPartialUpdate(ctx context.Context) ApiIpamRolesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamRolesBulkPartialUpdate(ctx context.Context) ApiIpamRolesBulkPartialUpdateRequest {
 	return ApiIpamRolesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25546,7 +25546,7 @@ func (a *IpamApiService) IpamRolesBulkPartialUpdate(ctx context.Context) ApiIpam
 
 // Execute executes the request
 //  @return []Role
-func (a *IpamApiService) IpamRolesBulkPartialUpdateExecute(r ApiIpamRolesBulkPartialUpdateRequest) ([]Role, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesBulkPartialUpdateExecute(r ApiIpamRolesBulkPartialUpdateRequest) ([]Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -25554,7 +25554,7 @@ func (a *IpamApiService) IpamRolesBulkPartialUpdateExecute(r ApiIpamRolesBulkPar
 		localVarReturnValue  []Role
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25640,7 +25640,7 @@ func (a *IpamApiService) IpamRolesBulkPartialUpdateExecute(r ApiIpamRolesBulkPar
 
 type ApiIpamRolesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	roleRequest *[]RoleRequest
 }
 
@@ -25661,7 +25661,7 @@ Put a list of role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRolesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamRolesBulkUpdate(ctx context.Context) ApiIpamRolesBulkUpdateRequest {
+func (a *IpamAPIService) IpamRolesBulkUpdate(ctx context.Context) ApiIpamRolesBulkUpdateRequest {
 	return ApiIpamRolesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25670,7 +25670,7 @@ func (a *IpamApiService) IpamRolesBulkUpdate(ctx context.Context) ApiIpamRolesBu
 
 // Execute executes the request
 //  @return []Role
-func (a *IpamApiService) IpamRolesBulkUpdateExecute(r ApiIpamRolesBulkUpdateRequest) ([]Role, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesBulkUpdateExecute(r ApiIpamRolesBulkUpdateRequest) ([]Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -25678,7 +25678,7 @@ func (a *IpamApiService) IpamRolesBulkUpdateExecute(r ApiIpamRolesBulkUpdateRequ
 		localVarReturnValue  []Role
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25764,7 +25764,7 @@ func (a *IpamApiService) IpamRolesBulkUpdateExecute(r ApiIpamRolesBulkUpdateRequ
 
 type ApiIpamRolesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	roleRequest *RoleRequest
 }
 
@@ -25785,7 +25785,7 @@ Post a list of role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRolesCreateRequest
 */
-func (a *IpamApiService) IpamRolesCreate(ctx context.Context) ApiIpamRolesCreateRequest {
+func (a *IpamAPIService) IpamRolesCreate(ctx context.Context) ApiIpamRolesCreateRequest {
 	return ApiIpamRolesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25794,7 +25794,7 @@ func (a *IpamApiService) IpamRolesCreate(ctx context.Context) ApiIpamRolesCreate
 
 // Execute executes the request
 //  @return Role
-func (a *IpamApiService) IpamRolesCreateExecute(r ApiIpamRolesCreateRequest) (*Role, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesCreateExecute(r ApiIpamRolesCreateRequest) (*Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -25802,7 +25802,7 @@ func (a *IpamApiService) IpamRolesCreateExecute(r ApiIpamRolesCreateRequest) (*R
 		localVarReturnValue  *Role
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25888,7 +25888,7 @@ func (a *IpamApiService) IpamRolesCreateExecute(r ApiIpamRolesCreateRequest) (*R
 
 type ApiIpamRolesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -25905,7 +25905,7 @@ Delete a role object.
  @param id A unique integer value identifying this role.
  @return ApiIpamRolesDestroyRequest
 */
-func (a *IpamApiService) IpamRolesDestroy(ctx context.Context, id int32) ApiIpamRolesDestroyRequest {
+func (a *IpamAPIService) IpamRolesDestroy(ctx context.Context, id int32) ApiIpamRolesDestroyRequest {
 	return ApiIpamRolesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -25914,14 +25914,14 @@ func (a *IpamApiService) IpamRolesDestroy(ctx context.Context, id int32) ApiIpam
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamRolesDestroyExecute(r ApiIpamRolesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamRolesDestroyExecute(r ApiIpamRolesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25994,7 +25994,7 @@ func (a *IpamApiService) IpamRolesDestroyExecute(r ApiIpamRolesDestroyRequest) (
 
 type ApiIpamRolesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -26391,7 +26391,7 @@ Get a list of role objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRolesListRequest
 */
-func (a *IpamApiService) IpamRolesList(ctx context.Context) ApiIpamRolesListRequest {
+func (a *IpamAPIService) IpamRolesList(ctx context.Context) ApiIpamRolesListRequest {
 	return ApiIpamRolesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -26400,7 +26400,7 @@ func (a *IpamApiService) IpamRolesList(ctx context.Context) ApiIpamRolesListRequ
 
 // Execute executes the request
 //  @return PaginatedRoleList
-func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*PaginatedRoleList, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*PaginatedRoleList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -26408,7 +26408,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		localVarReturnValue  *PaginatedRoleList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -26424,7 +26424,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -26435,7 +26435,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -26446,7 +26446,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -26457,7 +26457,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -26468,7 +26468,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -26479,7 +26479,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -26490,7 +26490,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -26504,7 +26504,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -26518,7 +26518,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -26529,7 +26529,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -26540,7 +26540,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -26551,7 +26551,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -26562,7 +26562,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -26573,7 +26573,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -26584,7 +26584,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -26595,7 +26595,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -26606,7 +26606,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -26617,7 +26617,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -26631,7 +26631,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -26642,7 +26642,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -26653,7 +26653,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -26664,7 +26664,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -26675,7 +26675,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -26686,7 +26686,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -26697,7 +26697,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -26708,7 +26708,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -26719,7 +26719,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -26730,7 +26730,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -26741,7 +26741,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -26752,7 +26752,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -26769,7 +26769,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -26783,7 +26783,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -26794,7 +26794,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -26805,7 +26805,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -26816,7 +26816,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -26827,7 +26827,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -26838,7 +26838,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -26849,7 +26849,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -26860,7 +26860,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -26871,7 +26871,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -26891,7 +26891,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -26905,7 +26905,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -26916,7 +26916,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -26927,7 +26927,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -26938,7 +26938,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -26949,7 +26949,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -26960,7 +26960,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -26971,7 +26971,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -26982,7 +26982,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -26993,7 +26993,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -27004,7 +27004,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -27015,7 +27015,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -27094,7 +27094,7 @@ func (a *IpamApiService) IpamRolesListExecute(r ApiIpamRolesListRequest) (*Pagin
 
 type ApiIpamRolesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedRoleRequest *PatchedRoleRequest
 }
@@ -27117,7 +27117,7 @@ Patch a role object.
  @param id A unique integer value identifying this role.
  @return ApiIpamRolesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamRolesPartialUpdate(ctx context.Context, id int32) ApiIpamRolesPartialUpdateRequest {
+func (a *IpamAPIService) IpamRolesPartialUpdate(ctx context.Context, id int32) ApiIpamRolesPartialUpdateRequest {
 	return ApiIpamRolesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27127,7 +27127,7 @@ func (a *IpamApiService) IpamRolesPartialUpdate(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return Role
-func (a *IpamApiService) IpamRolesPartialUpdateExecute(r ApiIpamRolesPartialUpdateRequest) (*Role, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesPartialUpdateExecute(r ApiIpamRolesPartialUpdateRequest) (*Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -27135,7 +27135,7 @@ func (a *IpamApiService) IpamRolesPartialUpdateExecute(r ApiIpamRolesPartialUpda
 		localVarReturnValue  *Role
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27219,7 +27219,7 @@ func (a *IpamApiService) IpamRolesPartialUpdateExecute(r ApiIpamRolesPartialUpda
 
 type ApiIpamRolesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -27236,7 +27236,7 @@ Get a role object.
  @param id A unique integer value identifying this role.
  @return ApiIpamRolesRetrieveRequest
 */
-func (a *IpamApiService) IpamRolesRetrieve(ctx context.Context, id int32) ApiIpamRolesRetrieveRequest {
+func (a *IpamAPIService) IpamRolesRetrieve(ctx context.Context, id int32) ApiIpamRolesRetrieveRequest {
 	return ApiIpamRolesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27246,7 +27246,7 @@ func (a *IpamApiService) IpamRolesRetrieve(ctx context.Context, id int32) ApiIpa
 
 // Execute executes the request
 //  @return Role
-func (a *IpamApiService) IpamRolesRetrieveExecute(r ApiIpamRolesRetrieveRequest) (*Role, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesRetrieveExecute(r ApiIpamRolesRetrieveRequest) (*Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -27254,7 +27254,7 @@ func (a *IpamApiService) IpamRolesRetrieveExecute(r ApiIpamRolesRetrieveRequest)
 		localVarReturnValue  *Role
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27336,7 +27336,7 @@ func (a *IpamApiService) IpamRolesRetrieveExecute(r ApiIpamRolesRetrieveRequest)
 
 type ApiIpamRolesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	roleRequest *RoleRequest
 }
@@ -27359,7 +27359,7 @@ Put a role object.
  @param id A unique integer value identifying this role.
  @return ApiIpamRolesUpdateRequest
 */
-func (a *IpamApiService) IpamRolesUpdate(ctx context.Context, id int32) ApiIpamRolesUpdateRequest {
+func (a *IpamAPIService) IpamRolesUpdate(ctx context.Context, id int32) ApiIpamRolesUpdateRequest {
 	return ApiIpamRolesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27369,7 +27369,7 @@ func (a *IpamApiService) IpamRolesUpdate(ctx context.Context, id int32) ApiIpamR
 
 // Execute executes the request
 //  @return Role
-func (a *IpamApiService) IpamRolesUpdateExecute(r ApiIpamRolesUpdateRequest) (*Role, *http.Response, error) {
+func (a *IpamAPIService) IpamRolesUpdateExecute(r ApiIpamRolesUpdateRequest) (*Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -27377,7 +27377,7 @@ func (a *IpamApiService) IpamRolesUpdateExecute(r ApiIpamRolesUpdateRequest) (*R
 		localVarReturnValue  *Role
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRolesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRolesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27464,7 +27464,7 @@ func (a *IpamApiService) IpamRolesUpdateExecute(r ApiIpamRolesUpdateRequest) (*R
 
 type ApiIpamRouteTargetsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	routeTargetRequest *[]RouteTargetRequest
 }
 
@@ -27485,7 +27485,7 @@ Delete a list of route target objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRouteTargetsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamRouteTargetsBulkDestroy(ctx context.Context) ApiIpamRouteTargetsBulkDestroyRequest {
+func (a *IpamAPIService) IpamRouteTargetsBulkDestroy(ctx context.Context) ApiIpamRouteTargetsBulkDestroyRequest {
 	return ApiIpamRouteTargetsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27493,14 +27493,14 @@ func (a *IpamApiService) IpamRouteTargetsBulkDestroy(ctx context.Context) ApiIpa
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamRouteTargetsBulkDestroyExecute(r ApiIpamRouteTargetsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsBulkDestroyExecute(r ApiIpamRouteTargetsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27577,7 +27577,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkDestroyExecute(r ApiIpamRouteTarget
 
 type ApiIpamRouteTargetsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	routeTargetRequest *[]RouteTargetRequest
 }
 
@@ -27598,7 +27598,7 @@ Patch a list of route target objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRouteTargetsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamRouteTargetsBulkPartialUpdate(ctx context.Context) ApiIpamRouteTargetsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamRouteTargetsBulkPartialUpdate(ctx context.Context) ApiIpamRouteTargetsBulkPartialUpdateRequest {
 	return ApiIpamRouteTargetsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27607,7 +27607,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkPartialUpdate(ctx context.Context) 
 
 // Execute executes the request
 //  @return []RouteTarget
-func (a *IpamApiService) IpamRouteTargetsBulkPartialUpdateExecute(r ApiIpamRouteTargetsBulkPartialUpdateRequest) ([]RouteTarget, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsBulkPartialUpdateExecute(r ApiIpamRouteTargetsBulkPartialUpdateRequest) ([]RouteTarget, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -27615,7 +27615,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkPartialUpdateExecute(r ApiIpamRoute
 		localVarReturnValue  []RouteTarget
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27701,7 +27701,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkPartialUpdateExecute(r ApiIpamRoute
 
 type ApiIpamRouteTargetsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	routeTargetRequest *[]RouteTargetRequest
 }
 
@@ -27722,7 +27722,7 @@ Put a list of route target objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRouteTargetsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamRouteTargetsBulkUpdate(ctx context.Context) ApiIpamRouteTargetsBulkUpdateRequest {
+func (a *IpamAPIService) IpamRouteTargetsBulkUpdate(ctx context.Context) ApiIpamRouteTargetsBulkUpdateRequest {
 	return ApiIpamRouteTargetsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27731,7 +27731,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkUpdate(ctx context.Context) ApiIpam
 
 // Execute executes the request
 //  @return []RouteTarget
-func (a *IpamApiService) IpamRouteTargetsBulkUpdateExecute(r ApiIpamRouteTargetsBulkUpdateRequest) ([]RouteTarget, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsBulkUpdateExecute(r ApiIpamRouteTargetsBulkUpdateRequest) ([]RouteTarget, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -27739,7 +27739,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkUpdateExecute(r ApiIpamRouteTargets
 		localVarReturnValue  []RouteTarget
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27825,7 +27825,7 @@ func (a *IpamApiService) IpamRouteTargetsBulkUpdateExecute(r ApiIpamRouteTargets
 
 type ApiIpamRouteTargetsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableRouteTargetRequest *WritableRouteTargetRequest
 }
 
@@ -27846,7 +27846,7 @@ Post a list of route target objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRouteTargetsCreateRequest
 */
-func (a *IpamApiService) IpamRouteTargetsCreate(ctx context.Context) ApiIpamRouteTargetsCreateRequest {
+func (a *IpamAPIService) IpamRouteTargetsCreate(ctx context.Context) ApiIpamRouteTargetsCreateRequest {
 	return ApiIpamRouteTargetsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27855,7 +27855,7 @@ func (a *IpamApiService) IpamRouteTargetsCreate(ctx context.Context) ApiIpamRout
 
 // Execute executes the request
 //  @return RouteTarget
-func (a *IpamApiService) IpamRouteTargetsCreateExecute(r ApiIpamRouteTargetsCreateRequest) (*RouteTarget, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsCreateExecute(r ApiIpamRouteTargetsCreateRequest) (*RouteTarget, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -27863,7 +27863,7 @@ func (a *IpamApiService) IpamRouteTargetsCreateExecute(r ApiIpamRouteTargetsCrea
 		localVarReturnValue  *RouteTarget
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -27949,7 +27949,7 @@ func (a *IpamApiService) IpamRouteTargetsCreateExecute(r ApiIpamRouteTargetsCrea
 
 type ApiIpamRouteTargetsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -27966,7 +27966,7 @@ Delete a route target object.
  @param id A unique integer value identifying this route target.
  @return ApiIpamRouteTargetsDestroyRequest
 */
-func (a *IpamApiService) IpamRouteTargetsDestroy(ctx context.Context, id int32) ApiIpamRouteTargetsDestroyRequest {
+func (a *IpamAPIService) IpamRouteTargetsDestroy(ctx context.Context, id int32) ApiIpamRouteTargetsDestroyRequest {
 	return ApiIpamRouteTargetsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -27975,14 +27975,14 @@ func (a *IpamApiService) IpamRouteTargetsDestroy(ctx context.Context, id int32) 
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamRouteTargetsDestroyExecute(r ApiIpamRouteTargetsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsDestroyExecute(r ApiIpamRouteTargetsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -28055,7 +28055,7 @@ func (a *IpamApiService) IpamRouteTargetsDestroyExecute(r ApiIpamRouteTargetsDes
 
 type ApiIpamRouteTargetsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -28498,7 +28498,7 @@ Get a list of route target objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamRouteTargetsListRequest
 */
-func (a *IpamApiService) IpamRouteTargetsList(ctx context.Context) ApiIpamRouteTargetsListRequest {
+func (a *IpamAPIService) IpamRouteTargetsList(ctx context.Context) ApiIpamRouteTargetsListRequest {
 	return ApiIpamRouteTargetsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -28507,7 +28507,7 @@ func (a *IpamApiService) IpamRouteTargetsList(ctx context.Context) ApiIpamRouteT
 
 // Execute executes the request
 //  @return PaginatedRouteTargetList
-func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRequest) (*PaginatedRouteTargetList, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRequest) (*PaginatedRouteTargetList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -28515,7 +28515,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		localVarReturnValue  *PaginatedRouteTargetList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -28531,7 +28531,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -28542,7 +28542,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -28553,7 +28553,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -28564,7 +28564,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -28575,7 +28575,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -28586,7 +28586,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -28597,7 +28597,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -28611,7 +28611,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -28625,7 +28625,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -28636,7 +28636,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -28647,7 +28647,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -28658,7 +28658,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -28669,7 +28669,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -28680,7 +28680,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -28691,7 +28691,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -28702,7 +28702,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -28713,7 +28713,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -28724,7 +28724,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf", t, "multi")
@@ -28735,7 +28735,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf__n", t, "multi")
@@ -28746,7 +28746,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf_id", t, "multi")
@@ -28757,7 +28757,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "exporting_vrf_id__n", t, "multi")
@@ -28768,7 +28768,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -28782,7 +28782,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -28793,7 +28793,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -28804,7 +28804,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -28815,7 +28815,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -28826,7 +28826,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -28837,7 +28837,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf", t, "multi")
@@ -28848,7 +28848,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf__n", t, "multi")
@@ -28859,7 +28859,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf_id", t, "multi")
@@ -28870,7 +28870,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "importing_vrf_id__n", t, "multi")
@@ -28881,7 +28881,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -28892,7 +28892,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -28903,7 +28903,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -28914,7 +28914,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -28925,7 +28925,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -28936,7 +28936,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -28947,7 +28947,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -28964,7 +28964,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -28978,7 +28978,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -28989,7 +28989,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -29000,7 +29000,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -29011,7 +29011,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -29022,7 +29022,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -29033,7 +29033,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -29044,7 +29044,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -29055,7 +29055,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -29066,7 +29066,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -29086,7 +29086,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -29097,7 +29097,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -29108,7 +29108,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -29119,7 +29119,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -29130,7 +29130,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -29141,7 +29141,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -29152,7 +29152,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -29163,7 +29163,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -29174,7 +29174,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -29185,7 +29185,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -29264,7 +29264,7 @@ func (a *IpamApiService) IpamRouteTargetsListExecute(r ApiIpamRouteTargetsListRe
 
 type ApiIpamRouteTargetsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableRouteTargetRequest *PatchedWritableRouteTargetRequest
 }
@@ -29287,7 +29287,7 @@ Patch a route target object.
  @param id A unique integer value identifying this route target.
  @return ApiIpamRouteTargetsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamRouteTargetsPartialUpdate(ctx context.Context, id int32) ApiIpamRouteTargetsPartialUpdateRequest {
+func (a *IpamAPIService) IpamRouteTargetsPartialUpdate(ctx context.Context, id int32) ApiIpamRouteTargetsPartialUpdateRequest {
 	return ApiIpamRouteTargetsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -29297,7 +29297,7 @@ func (a *IpamApiService) IpamRouteTargetsPartialUpdate(ctx context.Context, id i
 
 // Execute executes the request
 //  @return RouteTarget
-func (a *IpamApiService) IpamRouteTargetsPartialUpdateExecute(r ApiIpamRouteTargetsPartialUpdateRequest) (*RouteTarget, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsPartialUpdateExecute(r ApiIpamRouteTargetsPartialUpdateRequest) (*RouteTarget, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -29305,7 +29305,7 @@ func (a *IpamApiService) IpamRouteTargetsPartialUpdateExecute(r ApiIpamRouteTarg
 		localVarReturnValue  *RouteTarget
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -29389,7 +29389,7 @@ func (a *IpamApiService) IpamRouteTargetsPartialUpdateExecute(r ApiIpamRouteTarg
 
 type ApiIpamRouteTargetsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -29406,7 +29406,7 @@ Get a route target object.
  @param id A unique integer value identifying this route target.
  @return ApiIpamRouteTargetsRetrieveRequest
 */
-func (a *IpamApiService) IpamRouteTargetsRetrieve(ctx context.Context, id int32) ApiIpamRouteTargetsRetrieveRequest {
+func (a *IpamAPIService) IpamRouteTargetsRetrieve(ctx context.Context, id int32) ApiIpamRouteTargetsRetrieveRequest {
 	return ApiIpamRouteTargetsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -29416,7 +29416,7 @@ func (a *IpamApiService) IpamRouteTargetsRetrieve(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return RouteTarget
-func (a *IpamApiService) IpamRouteTargetsRetrieveExecute(r ApiIpamRouteTargetsRetrieveRequest) (*RouteTarget, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsRetrieveExecute(r ApiIpamRouteTargetsRetrieveRequest) (*RouteTarget, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -29424,7 +29424,7 @@ func (a *IpamApiService) IpamRouteTargetsRetrieveExecute(r ApiIpamRouteTargetsRe
 		localVarReturnValue  *RouteTarget
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -29506,7 +29506,7 @@ func (a *IpamApiService) IpamRouteTargetsRetrieveExecute(r ApiIpamRouteTargetsRe
 
 type ApiIpamRouteTargetsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableRouteTargetRequest *WritableRouteTargetRequest
 }
@@ -29529,7 +29529,7 @@ Put a route target object.
  @param id A unique integer value identifying this route target.
  @return ApiIpamRouteTargetsUpdateRequest
 */
-func (a *IpamApiService) IpamRouteTargetsUpdate(ctx context.Context, id int32) ApiIpamRouteTargetsUpdateRequest {
+func (a *IpamAPIService) IpamRouteTargetsUpdate(ctx context.Context, id int32) ApiIpamRouteTargetsUpdateRequest {
 	return ApiIpamRouteTargetsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -29539,7 +29539,7 @@ func (a *IpamApiService) IpamRouteTargetsUpdate(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return RouteTarget
-func (a *IpamApiService) IpamRouteTargetsUpdateExecute(r ApiIpamRouteTargetsUpdateRequest) (*RouteTarget, *http.Response, error) {
+func (a *IpamAPIService) IpamRouteTargetsUpdateExecute(r ApiIpamRouteTargetsUpdateRequest) (*RouteTarget, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -29547,7 +29547,7 @@ func (a *IpamApiService) IpamRouteTargetsUpdateExecute(r ApiIpamRouteTargetsUpda
 		localVarReturnValue  *RouteTarget
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamRouteTargetsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamRouteTargetsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -29634,7 +29634,7 @@ func (a *IpamApiService) IpamRouteTargetsUpdateExecute(r ApiIpamRouteTargetsUpda
 
 type ApiIpamServiceTemplatesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	serviceTemplateRequest *[]ServiceTemplateRequest
 }
 
@@ -29655,7 +29655,7 @@ Delete a list of service template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServiceTemplatesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesBulkDestroy(ctx context.Context) ApiIpamServiceTemplatesBulkDestroyRequest {
+func (a *IpamAPIService) IpamServiceTemplatesBulkDestroy(ctx context.Context) ApiIpamServiceTemplatesBulkDestroyRequest {
 	return ApiIpamServiceTemplatesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -29663,14 +29663,14 @@ func (a *IpamApiService) IpamServiceTemplatesBulkDestroy(ctx context.Context) Ap
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamServiceTemplatesBulkDestroyExecute(r ApiIpamServiceTemplatesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesBulkDestroyExecute(r ApiIpamServiceTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -29747,7 +29747,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkDestroyExecute(r ApiIpamService
 
 type ApiIpamServiceTemplatesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	serviceTemplateRequest *[]ServiceTemplateRequest
 }
 
@@ -29768,7 +29768,7 @@ Patch a list of service template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServiceTemplatesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesBulkPartialUpdate(ctx context.Context) ApiIpamServiceTemplatesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamServiceTemplatesBulkPartialUpdate(ctx context.Context) ApiIpamServiceTemplatesBulkPartialUpdateRequest {
 	return ApiIpamServiceTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -29777,7 +29777,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkPartialUpdate(ctx context.Conte
 
 // Execute executes the request
 //  @return []ServiceTemplate
-func (a *IpamApiService) IpamServiceTemplatesBulkPartialUpdateExecute(r ApiIpamServiceTemplatesBulkPartialUpdateRequest) ([]ServiceTemplate, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesBulkPartialUpdateExecute(r ApiIpamServiceTemplatesBulkPartialUpdateRequest) ([]ServiceTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -29785,7 +29785,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkPartialUpdateExecute(r ApiIpamS
 		localVarReturnValue  []ServiceTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -29871,7 +29871,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkPartialUpdateExecute(r ApiIpamS
 
 type ApiIpamServiceTemplatesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	serviceTemplateRequest *[]ServiceTemplateRequest
 }
 
@@ -29892,7 +29892,7 @@ Put a list of service template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServiceTemplatesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesBulkUpdate(ctx context.Context) ApiIpamServiceTemplatesBulkUpdateRequest {
+func (a *IpamAPIService) IpamServiceTemplatesBulkUpdate(ctx context.Context) ApiIpamServiceTemplatesBulkUpdateRequest {
 	return ApiIpamServiceTemplatesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -29901,7 +29901,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkUpdate(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []ServiceTemplate
-func (a *IpamApiService) IpamServiceTemplatesBulkUpdateExecute(r ApiIpamServiceTemplatesBulkUpdateRequest) ([]ServiceTemplate, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesBulkUpdateExecute(r ApiIpamServiceTemplatesBulkUpdateRequest) ([]ServiceTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -29909,7 +29909,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkUpdateExecute(r ApiIpamServiceT
 		localVarReturnValue  []ServiceTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -29995,7 +29995,7 @@ func (a *IpamApiService) IpamServiceTemplatesBulkUpdateExecute(r ApiIpamServiceT
 
 type ApiIpamServiceTemplatesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableServiceTemplateRequest *WritableServiceTemplateRequest
 }
 
@@ -30016,7 +30016,7 @@ Post a list of service template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServiceTemplatesCreateRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesCreate(ctx context.Context) ApiIpamServiceTemplatesCreateRequest {
+func (a *IpamAPIService) IpamServiceTemplatesCreate(ctx context.Context) ApiIpamServiceTemplatesCreateRequest {
 	return ApiIpamServiceTemplatesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -30025,7 +30025,7 @@ func (a *IpamApiService) IpamServiceTemplatesCreate(ctx context.Context) ApiIpam
 
 // Execute executes the request
 //  @return ServiceTemplate
-func (a *IpamApiService) IpamServiceTemplatesCreateExecute(r ApiIpamServiceTemplatesCreateRequest) (*ServiceTemplate, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesCreateExecute(r ApiIpamServiceTemplatesCreateRequest) (*ServiceTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -30033,7 +30033,7 @@ func (a *IpamApiService) IpamServiceTemplatesCreateExecute(r ApiIpamServiceTempl
 		localVarReturnValue  *ServiceTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -30119,7 +30119,7 @@ func (a *IpamApiService) IpamServiceTemplatesCreateExecute(r ApiIpamServiceTempl
 
 type ApiIpamServiceTemplatesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -30136,7 +30136,7 @@ Delete a service template object.
  @param id A unique integer value identifying this service template.
  @return ApiIpamServiceTemplatesDestroyRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesDestroy(ctx context.Context, id int32) ApiIpamServiceTemplatesDestroyRequest {
+func (a *IpamAPIService) IpamServiceTemplatesDestroy(ctx context.Context, id int32) ApiIpamServiceTemplatesDestroyRequest {
 	return ApiIpamServiceTemplatesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -30145,14 +30145,14 @@ func (a *IpamApiService) IpamServiceTemplatesDestroy(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamServiceTemplatesDestroyExecute(r ApiIpamServiceTemplatesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesDestroyExecute(r ApiIpamServiceTemplatesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -30225,7 +30225,7 @@ func (a *IpamApiService) IpamServiceTemplatesDestroyExecute(r ApiIpamServiceTemp
 
 type ApiIpamServiceTemplatesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -30508,7 +30508,7 @@ Get a list of service template objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServiceTemplatesListRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesList(ctx context.Context) ApiIpamServiceTemplatesListRequest {
+func (a *IpamAPIService) IpamServiceTemplatesList(ctx context.Context) ApiIpamServiceTemplatesListRequest {
 	return ApiIpamServiceTemplatesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -30517,7 +30517,7 @@ func (a *IpamApiService) IpamServiceTemplatesList(ctx context.Context) ApiIpamSe
 
 // Execute executes the request
 //  @return PaginatedServiceTemplateList
-func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplatesListRequest) (*PaginatedServiceTemplateList, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplatesListRequest) (*PaginatedServiceTemplateList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -30525,7 +30525,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		localVarReturnValue  *PaginatedServiceTemplateList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -30541,7 +30541,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -30552,7 +30552,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -30563,7 +30563,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -30574,7 +30574,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -30585,7 +30585,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -30596,7 +30596,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -30607,7 +30607,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -30621,7 +30621,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -30635,7 +30635,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -30646,7 +30646,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -30657,7 +30657,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -30668,7 +30668,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -30679,7 +30679,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -30690,7 +30690,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -30701,7 +30701,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -30712,7 +30712,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -30723,7 +30723,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -30734,7 +30734,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -30745,7 +30745,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -30756,7 +30756,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -30773,7 +30773,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -30787,7 +30787,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -30798,7 +30798,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -30809,7 +30809,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -30820,7 +30820,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -30831,7 +30831,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -30842,7 +30842,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -30853,7 +30853,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -30864,7 +30864,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -30875,7 +30875,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -30904,7 +30904,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -30915,7 +30915,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -30994,7 +30994,7 @@ func (a *IpamApiService) IpamServiceTemplatesListExecute(r ApiIpamServiceTemplat
 
 type ApiIpamServiceTemplatesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableServiceTemplateRequest *PatchedWritableServiceTemplateRequest
 }
@@ -31017,7 +31017,7 @@ Patch a service template object.
  @param id A unique integer value identifying this service template.
  @return ApiIpamServiceTemplatesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesPartialUpdate(ctx context.Context, id int32) ApiIpamServiceTemplatesPartialUpdateRequest {
+func (a *IpamAPIService) IpamServiceTemplatesPartialUpdate(ctx context.Context, id int32) ApiIpamServiceTemplatesPartialUpdateRequest {
 	return ApiIpamServiceTemplatesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31027,7 +31027,7 @@ func (a *IpamApiService) IpamServiceTemplatesPartialUpdate(ctx context.Context, 
 
 // Execute executes the request
 //  @return ServiceTemplate
-func (a *IpamApiService) IpamServiceTemplatesPartialUpdateExecute(r ApiIpamServiceTemplatesPartialUpdateRequest) (*ServiceTemplate, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesPartialUpdateExecute(r ApiIpamServiceTemplatesPartialUpdateRequest) (*ServiceTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -31035,7 +31035,7 @@ func (a *IpamApiService) IpamServiceTemplatesPartialUpdateExecute(r ApiIpamServi
 		localVarReturnValue  *ServiceTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31119,7 +31119,7 @@ func (a *IpamApiService) IpamServiceTemplatesPartialUpdateExecute(r ApiIpamServi
 
 type ApiIpamServiceTemplatesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -31136,7 +31136,7 @@ Get a service template object.
  @param id A unique integer value identifying this service template.
  @return ApiIpamServiceTemplatesRetrieveRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesRetrieve(ctx context.Context, id int32) ApiIpamServiceTemplatesRetrieveRequest {
+func (a *IpamAPIService) IpamServiceTemplatesRetrieve(ctx context.Context, id int32) ApiIpamServiceTemplatesRetrieveRequest {
 	return ApiIpamServiceTemplatesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31146,7 +31146,7 @@ func (a *IpamApiService) IpamServiceTemplatesRetrieve(ctx context.Context, id in
 
 // Execute executes the request
 //  @return ServiceTemplate
-func (a *IpamApiService) IpamServiceTemplatesRetrieveExecute(r ApiIpamServiceTemplatesRetrieveRequest) (*ServiceTemplate, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesRetrieveExecute(r ApiIpamServiceTemplatesRetrieveRequest) (*ServiceTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -31154,7 +31154,7 @@ func (a *IpamApiService) IpamServiceTemplatesRetrieveExecute(r ApiIpamServiceTem
 		localVarReturnValue  *ServiceTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31236,7 +31236,7 @@ func (a *IpamApiService) IpamServiceTemplatesRetrieveExecute(r ApiIpamServiceTem
 
 type ApiIpamServiceTemplatesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableServiceTemplateRequest *WritableServiceTemplateRequest
 }
@@ -31259,7 +31259,7 @@ Put a service template object.
  @param id A unique integer value identifying this service template.
  @return ApiIpamServiceTemplatesUpdateRequest
 */
-func (a *IpamApiService) IpamServiceTemplatesUpdate(ctx context.Context, id int32) ApiIpamServiceTemplatesUpdateRequest {
+func (a *IpamAPIService) IpamServiceTemplatesUpdate(ctx context.Context, id int32) ApiIpamServiceTemplatesUpdateRequest {
 	return ApiIpamServiceTemplatesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31269,7 +31269,7 @@ func (a *IpamApiService) IpamServiceTemplatesUpdate(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return ServiceTemplate
-func (a *IpamApiService) IpamServiceTemplatesUpdateExecute(r ApiIpamServiceTemplatesUpdateRequest) (*ServiceTemplate, *http.Response, error) {
+func (a *IpamAPIService) IpamServiceTemplatesUpdateExecute(r ApiIpamServiceTemplatesUpdateRequest) (*ServiceTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -31277,7 +31277,7 @@ func (a *IpamApiService) IpamServiceTemplatesUpdateExecute(r ApiIpamServiceTempl
 		localVarReturnValue  *ServiceTemplate
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServiceTemplatesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServiceTemplatesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31364,7 +31364,7 @@ func (a *IpamApiService) IpamServiceTemplatesUpdateExecute(r ApiIpamServiceTempl
 
 type ApiIpamServicesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	serviceRequest *[]ServiceRequest
 }
 
@@ -31385,7 +31385,7 @@ Delete a list of service objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServicesBulkDestroyRequest
 */
-func (a *IpamApiService) IpamServicesBulkDestroy(ctx context.Context) ApiIpamServicesBulkDestroyRequest {
+func (a *IpamAPIService) IpamServicesBulkDestroy(ctx context.Context) ApiIpamServicesBulkDestroyRequest {
 	return ApiIpamServicesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31393,14 +31393,14 @@ func (a *IpamApiService) IpamServicesBulkDestroy(ctx context.Context) ApiIpamSer
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamServicesBulkDestroyExecute(r ApiIpamServicesBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamServicesBulkDestroyExecute(r ApiIpamServicesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31477,7 +31477,7 @@ func (a *IpamApiService) IpamServicesBulkDestroyExecute(r ApiIpamServicesBulkDes
 
 type ApiIpamServicesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	serviceRequest *[]ServiceRequest
 }
 
@@ -31498,7 +31498,7 @@ Patch a list of service objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServicesBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamServicesBulkPartialUpdate(ctx context.Context) ApiIpamServicesBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamServicesBulkPartialUpdate(ctx context.Context) ApiIpamServicesBulkPartialUpdateRequest {
 	return ApiIpamServicesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31507,7 +31507,7 @@ func (a *IpamApiService) IpamServicesBulkPartialUpdate(ctx context.Context) ApiI
 
 // Execute executes the request
 //  @return []Service
-func (a *IpamApiService) IpamServicesBulkPartialUpdateExecute(r ApiIpamServicesBulkPartialUpdateRequest) ([]Service, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesBulkPartialUpdateExecute(r ApiIpamServicesBulkPartialUpdateRequest) ([]Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -31515,7 +31515,7 @@ func (a *IpamApiService) IpamServicesBulkPartialUpdateExecute(r ApiIpamServicesB
 		localVarReturnValue  []Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31601,7 +31601,7 @@ func (a *IpamApiService) IpamServicesBulkPartialUpdateExecute(r ApiIpamServicesB
 
 type ApiIpamServicesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	serviceRequest *[]ServiceRequest
 }
 
@@ -31622,7 +31622,7 @@ Put a list of service objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServicesBulkUpdateRequest
 */
-func (a *IpamApiService) IpamServicesBulkUpdate(ctx context.Context) ApiIpamServicesBulkUpdateRequest {
+func (a *IpamAPIService) IpamServicesBulkUpdate(ctx context.Context) ApiIpamServicesBulkUpdateRequest {
 	return ApiIpamServicesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31631,7 +31631,7 @@ func (a *IpamApiService) IpamServicesBulkUpdate(ctx context.Context) ApiIpamServ
 
 // Execute executes the request
 //  @return []Service
-func (a *IpamApiService) IpamServicesBulkUpdateExecute(r ApiIpamServicesBulkUpdateRequest) ([]Service, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesBulkUpdateExecute(r ApiIpamServicesBulkUpdateRequest) ([]Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -31639,7 +31639,7 @@ func (a *IpamApiService) IpamServicesBulkUpdateExecute(r ApiIpamServicesBulkUpda
 		localVarReturnValue  []Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31725,7 +31725,7 @@ func (a *IpamApiService) IpamServicesBulkUpdateExecute(r ApiIpamServicesBulkUpda
 
 type ApiIpamServicesCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableServiceRequest *WritableServiceRequest
 }
 
@@ -31746,7 +31746,7 @@ Post a list of service objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServicesCreateRequest
 */
-func (a *IpamApiService) IpamServicesCreate(ctx context.Context) ApiIpamServicesCreateRequest {
+func (a *IpamAPIService) IpamServicesCreate(ctx context.Context) ApiIpamServicesCreateRequest {
 	return ApiIpamServicesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31755,7 +31755,7 @@ func (a *IpamApiService) IpamServicesCreate(ctx context.Context) ApiIpamServices
 
 // Execute executes the request
 //  @return Service
-func (a *IpamApiService) IpamServicesCreateExecute(r ApiIpamServicesCreateRequest) (*Service, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesCreateExecute(r ApiIpamServicesCreateRequest) (*Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -31763,7 +31763,7 @@ func (a *IpamApiService) IpamServicesCreateExecute(r ApiIpamServicesCreateReques
 		localVarReturnValue  *Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31849,7 +31849,7 @@ func (a *IpamApiService) IpamServicesCreateExecute(r ApiIpamServicesCreateReques
 
 type ApiIpamServicesDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -31866,7 +31866,7 @@ Delete a service object.
  @param id A unique integer value identifying this service.
  @return ApiIpamServicesDestroyRequest
 */
-func (a *IpamApiService) IpamServicesDestroy(ctx context.Context, id int32) ApiIpamServicesDestroyRequest {
+func (a *IpamAPIService) IpamServicesDestroy(ctx context.Context, id int32) ApiIpamServicesDestroyRequest {
 	return ApiIpamServicesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -31875,14 +31875,14 @@ func (a *IpamApiService) IpamServicesDestroy(ctx context.Context, id int32) ApiI
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamServicesDestroyExecute(r ApiIpamServicesDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamServicesDestroyExecute(r ApiIpamServicesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -31955,7 +31955,7 @@ func (a *IpamApiService) IpamServicesDestroyExecute(r ApiIpamServicesDestroyRequ
 
 type ApiIpamServicesListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -32388,7 +32388,7 @@ Get a list of service objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamServicesListRequest
 */
-func (a *IpamApiService) IpamServicesList(ctx context.Context) ApiIpamServicesListRequest {
+func (a *IpamAPIService) IpamServicesList(ctx context.Context) ApiIpamServicesListRequest {
 	return ApiIpamServicesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -32397,7 +32397,7 @@ func (a *IpamApiService) IpamServicesList(ctx context.Context) ApiIpamServicesLi
 
 // Execute executes the request
 //  @return PaginatedServiceList
-func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (*PaginatedServiceList, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesListExecute(r ApiIpamServicesListRequest) (*PaginatedServiceList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -32405,7 +32405,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		localVarReturnValue  *PaginatedServiceList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -32421,7 +32421,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -32432,7 +32432,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -32443,7 +32443,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -32454,7 +32454,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -32465,7 +32465,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -32476,7 +32476,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -32487,7 +32487,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -32501,7 +32501,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -32515,7 +32515,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -32526,7 +32526,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -32537,7 +32537,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -32548,7 +32548,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -32559,7 +32559,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -32570,7 +32570,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -32581,7 +32581,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -32592,7 +32592,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -32603,7 +32603,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -32614,7 +32614,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device", t, "multi")
@@ -32625,7 +32625,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", t, "multi")
@@ -32636,7 +32636,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", t, "multi")
@@ -32647,7 +32647,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", t, "multi")
@@ -32658,7 +32658,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -32672,7 +32672,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -32683,7 +32683,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -32694,7 +32694,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -32705,7 +32705,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -32716,7 +32716,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -32727,7 +32727,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress", t, "multi")
@@ -32738,7 +32738,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress__n", t, "multi")
@@ -32749,7 +32749,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress_id", t, "multi")
@@ -32760,7 +32760,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "ipaddress_id__n", t, "multi")
@@ -32771,7 +32771,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -32782,7 +32782,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -32793,7 +32793,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -32804,7 +32804,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -32815,7 +32815,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -32826,7 +32826,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -32837,7 +32837,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -32854,7 +32854,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -32868,7 +32868,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -32879,7 +32879,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -32890,7 +32890,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -32901,7 +32901,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -32912,7 +32912,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -32923,7 +32923,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -32934,7 +32934,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -32945,7 +32945,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -32956,7 +32956,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -32985,7 +32985,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -32996,7 +32996,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -33010,7 +33010,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", t, "multi")
@@ -33021,7 +33021,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", t, "multi")
@@ -33032,7 +33032,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", t, "multi")
@@ -33043,7 +33043,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", t, "multi")
@@ -33119,7 +33119,7 @@ func (a *IpamApiService) IpamServicesListExecute(r ApiIpamServicesListRequest) (
 
 type ApiIpamServicesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableServiceRequest *PatchedWritableServiceRequest
 }
@@ -33142,7 +33142,7 @@ Patch a service object.
  @param id A unique integer value identifying this service.
  @return ApiIpamServicesPartialUpdateRequest
 */
-func (a *IpamApiService) IpamServicesPartialUpdate(ctx context.Context, id int32) ApiIpamServicesPartialUpdateRequest {
+func (a *IpamAPIService) IpamServicesPartialUpdate(ctx context.Context, id int32) ApiIpamServicesPartialUpdateRequest {
 	return ApiIpamServicesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33152,7 +33152,7 @@ func (a *IpamApiService) IpamServicesPartialUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Service
-func (a *IpamApiService) IpamServicesPartialUpdateExecute(r ApiIpamServicesPartialUpdateRequest) (*Service, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesPartialUpdateExecute(r ApiIpamServicesPartialUpdateRequest) (*Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -33160,7 +33160,7 @@ func (a *IpamApiService) IpamServicesPartialUpdateExecute(r ApiIpamServicesParti
 		localVarReturnValue  *Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33244,7 +33244,7 @@ func (a *IpamApiService) IpamServicesPartialUpdateExecute(r ApiIpamServicesParti
 
 type ApiIpamServicesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -33261,7 +33261,7 @@ Get a service object.
  @param id A unique integer value identifying this service.
  @return ApiIpamServicesRetrieveRequest
 */
-func (a *IpamApiService) IpamServicesRetrieve(ctx context.Context, id int32) ApiIpamServicesRetrieveRequest {
+func (a *IpamAPIService) IpamServicesRetrieve(ctx context.Context, id int32) ApiIpamServicesRetrieveRequest {
 	return ApiIpamServicesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33271,7 +33271,7 @@ func (a *IpamApiService) IpamServicesRetrieve(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return Service
-func (a *IpamApiService) IpamServicesRetrieveExecute(r ApiIpamServicesRetrieveRequest) (*Service, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesRetrieveExecute(r ApiIpamServicesRetrieveRequest) (*Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -33279,7 +33279,7 @@ func (a *IpamApiService) IpamServicesRetrieveExecute(r ApiIpamServicesRetrieveRe
 		localVarReturnValue  *Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33361,7 +33361,7 @@ func (a *IpamApiService) IpamServicesRetrieveExecute(r ApiIpamServicesRetrieveRe
 
 type ApiIpamServicesUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableServiceRequest *WritableServiceRequest
 }
@@ -33384,7 +33384,7 @@ Put a service object.
  @param id A unique integer value identifying this service.
  @return ApiIpamServicesUpdateRequest
 */
-func (a *IpamApiService) IpamServicesUpdate(ctx context.Context, id int32) ApiIpamServicesUpdateRequest {
+func (a *IpamAPIService) IpamServicesUpdate(ctx context.Context, id int32) ApiIpamServicesUpdateRequest {
 	return ApiIpamServicesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33394,7 +33394,7 @@ func (a *IpamApiService) IpamServicesUpdate(ctx context.Context, id int32) ApiIp
 
 // Execute executes the request
 //  @return Service
-func (a *IpamApiService) IpamServicesUpdateExecute(r ApiIpamServicesUpdateRequest) (*Service, *http.Response, error) {
+func (a *IpamAPIService) IpamServicesUpdateExecute(r ApiIpamServicesUpdateRequest) (*Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -33402,7 +33402,7 @@ func (a *IpamApiService) IpamServicesUpdateExecute(r ApiIpamServicesUpdateReques
 		localVarReturnValue  *Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamServicesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamServicesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33489,7 +33489,7 @@ func (a *IpamApiService) IpamServicesUpdateExecute(r ApiIpamServicesUpdateReques
 
 type ApiIpamVlanGroupsAvailableVlansCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	vLANRequest *[]VLANRequest
 }
@@ -33512,7 +33512,7 @@ Post a VLAN object.
  @param id
  @return ApiIpamVlanGroupsAvailableVlansCreateRequest
 */
-func (a *IpamApiService) IpamVlanGroupsAvailableVlansCreate(ctx context.Context, id int32) ApiIpamVlanGroupsAvailableVlansCreateRequest {
+func (a *IpamAPIService) IpamVlanGroupsAvailableVlansCreate(ctx context.Context, id int32) ApiIpamVlanGroupsAvailableVlansCreateRequest {
 	return ApiIpamVlanGroupsAvailableVlansCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33522,7 +33522,7 @@ func (a *IpamApiService) IpamVlanGroupsAvailableVlansCreate(ctx context.Context,
 
 // Execute executes the request
 //  @return []VLAN
-func (a *IpamApiService) IpamVlanGroupsAvailableVlansCreateExecute(r ApiIpamVlanGroupsAvailableVlansCreateRequest) ([]VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsAvailableVlansCreateExecute(r ApiIpamVlanGroupsAvailableVlansCreateRequest) ([]VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -33530,7 +33530,7 @@ func (a *IpamApiService) IpamVlanGroupsAvailableVlansCreateExecute(r ApiIpamVlan
 		localVarReturnValue  []VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsAvailableVlansCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsAvailableVlansCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33617,7 +33617,7 @@ func (a *IpamApiService) IpamVlanGroupsAvailableVlansCreateExecute(r ApiIpamVlan
 
 type ApiIpamVlanGroupsAvailableVlansListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -33634,7 +33634,7 @@ Get a VLAN object.
  @param id
  @return ApiIpamVlanGroupsAvailableVlansListRequest
 */
-func (a *IpamApiService) IpamVlanGroupsAvailableVlansList(ctx context.Context, id int32) ApiIpamVlanGroupsAvailableVlansListRequest {
+func (a *IpamAPIService) IpamVlanGroupsAvailableVlansList(ctx context.Context, id int32) ApiIpamVlanGroupsAvailableVlansListRequest {
 	return ApiIpamVlanGroupsAvailableVlansListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33644,7 +33644,7 @@ func (a *IpamApiService) IpamVlanGroupsAvailableVlansList(ctx context.Context, i
 
 // Execute executes the request
 //  @return []AvailableVLAN
-func (a *IpamApiService) IpamVlanGroupsAvailableVlansListExecute(r ApiIpamVlanGroupsAvailableVlansListRequest) ([]AvailableVLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsAvailableVlansListExecute(r ApiIpamVlanGroupsAvailableVlansListRequest) ([]AvailableVLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -33652,7 +33652,7 @@ func (a *IpamApiService) IpamVlanGroupsAvailableVlansListExecute(r ApiIpamVlanGr
 		localVarReturnValue  []AvailableVLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsAvailableVlansList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsAvailableVlansList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33734,7 +33734,7 @@ func (a *IpamApiService) IpamVlanGroupsAvailableVlansListExecute(r ApiIpamVlanGr
 
 type ApiIpamVlanGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANGroupRequest *[]VLANGroupRequest
 }
 
@@ -33755,7 +33755,7 @@ Delete a list of VLAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlanGroupsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamVlanGroupsBulkDestroy(ctx context.Context) ApiIpamVlanGroupsBulkDestroyRequest {
+func (a *IpamAPIService) IpamVlanGroupsBulkDestroy(ctx context.Context) ApiIpamVlanGroupsBulkDestroyRequest {
 	return ApiIpamVlanGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33763,14 +33763,14 @@ func (a *IpamApiService) IpamVlanGroupsBulkDestroy(ctx context.Context) ApiIpamV
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamVlanGroupsBulkDestroyExecute(r ApiIpamVlanGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsBulkDestroyExecute(r ApiIpamVlanGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33847,7 +33847,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkDestroyExecute(r ApiIpamVlanGroupsBul
 
 type ApiIpamVlanGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANGroupRequest *[]VLANGroupRequest
 }
 
@@ -33868,7 +33868,7 @@ Patch a list of VLAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlanGroupsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamVlanGroupsBulkPartialUpdate(ctx context.Context) ApiIpamVlanGroupsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamVlanGroupsBulkPartialUpdate(ctx context.Context) ApiIpamVlanGroupsBulkPartialUpdateRequest {
 	return ApiIpamVlanGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -33877,7 +33877,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkPartialUpdate(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []VLANGroup
-func (a *IpamApiService) IpamVlanGroupsBulkPartialUpdateExecute(r ApiIpamVlanGroupsBulkPartialUpdateRequest) ([]VLANGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsBulkPartialUpdateExecute(r ApiIpamVlanGroupsBulkPartialUpdateRequest) ([]VLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -33885,7 +33885,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkPartialUpdateExecute(r ApiIpamVlanGro
 		localVarReturnValue  []VLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -33971,7 +33971,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkPartialUpdateExecute(r ApiIpamVlanGro
 
 type ApiIpamVlanGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANGroupRequest *[]VLANGroupRequest
 }
 
@@ -33992,7 +33992,7 @@ Put a list of VLAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlanGroupsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamVlanGroupsBulkUpdate(ctx context.Context) ApiIpamVlanGroupsBulkUpdateRequest {
+func (a *IpamAPIService) IpamVlanGroupsBulkUpdate(ctx context.Context) ApiIpamVlanGroupsBulkUpdateRequest {
 	return ApiIpamVlanGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -34001,7 +34001,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkUpdate(ctx context.Context) ApiIpamVl
 
 // Execute executes the request
 //  @return []VLANGroup
-func (a *IpamApiService) IpamVlanGroupsBulkUpdateExecute(r ApiIpamVlanGroupsBulkUpdateRequest) ([]VLANGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsBulkUpdateExecute(r ApiIpamVlanGroupsBulkUpdateRequest) ([]VLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -34009,7 +34009,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkUpdateExecute(r ApiIpamVlanGroupsBulk
 		localVarReturnValue  []VLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -34095,7 +34095,7 @@ func (a *IpamApiService) IpamVlanGroupsBulkUpdateExecute(r ApiIpamVlanGroupsBulk
 
 type ApiIpamVlanGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANGroupRequest *VLANGroupRequest
 }
 
@@ -34116,7 +34116,7 @@ Post a list of VLAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlanGroupsCreateRequest
 */
-func (a *IpamApiService) IpamVlanGroupsCreate(ctx context.Context) ApiIpamVlanGroupsCreateRequest {
+func (a *IpamAPIService) IpamVlanGroupsCreate(ctx context.Context) ApiIpamVlanGroupsCreateRequest {
 	return ApiIpamVlanGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -34125,7 +34125,7 @@ func (a *IpamApiService) IpamVlanGroupsCreate(ctx context.Context) ApiIpamVlanGr
 
 // Execute executes the request
 //  @return VLANGroup
-func (a *IpamApiService) IpamVlanGroupsCreateExecute(r ApiIpamVlanGroupsCreateRequest) (*VLANGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsCreateExecute(r ApiIpamVlanGroupsCreateRequest) (*VLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -34133,7 +34133,7 @@ func (a *IpamApiService) IpamVlanGroupsCreateExecute(r ApiIpamVlanGroupsCreateRe
 		localVarReturnValue  *VLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -34219,7 +34219,7 @@ func (a *IpamApiService) IpamVlanGroupsCreateExecute(r ApiIpamVlanGroupsCreateRe
 
 type ApiIpamVlanGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -34236,7 +34236,7 @@ Delete a VLAN group object.
  @param id A unique integer value identifying this VLAN group.
  @return ApiIpamVlanGroupsDestroyRequest
 */
-func (a *IpamApiService) IpamVlanGroupsDestroy(ctx context.Context, id int32) ApiIpamVlanGroupsDestroyRequest {
+func (a *IpamAPIService) IpamVlanGroupsDestroy(ctx context.Context, id int32) ApiIpamVlanGroupsDestroyRequest {
 	return ApiIpamVlanGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -34245,14 +34245,14 @@ func (a *IpamApiService) IpamVlanGroupsDestroy(ctx context.Context, id int32) Ap
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamVlanGroupsDestroyExecute(r ApiIpamVlanGroupsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsDestroyExecute(r ApiIpamVlanGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -34325,7 +34325,7 @@ func (a *IpamApiService) IpamVlanGroupsDestroyExecute(r ApiIpamVlanGroupsDestroy
 
 type ApiIpamVlanGroupsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	cluster *int32
 	clustergroup *float32
 	created *[]time.Time
@@ -34902,7 +34902,7 @@ Get a list of VLAN group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlanGroupsListRequest
 */
-func (a *IpamApiService) IpamVlanGroupsList(ctx context.Context) ApiIpamVlanGroupsListRequest {
+func (a *IpamAPIService) IpamVlanGroupsList(ctx context.Context) ApiIpamVlanGroupsListRequest {
 	return ApiIpamVlanGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -34911,7 +34911,7 @@ func (a *IpamApiService) IpamVlanGroupsList(ctx context.Context) ApiIpamVlanGrou
 
 // Execute executes the request
 //  @return PaginatedVLANGroupList
-func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListRequest) (*PaginatedVLANGroupList, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListRequest) (*PaginatedVLANGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -34919,7 +34919,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		localVarReturnValue  *PaginatedVLANGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -34941,7 +34941,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -34952,7 +34952,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -34963,7 +34963,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -34974,7 +34974,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -34985,7 +34985,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -34996,7 +34996,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -35007,7 +35007,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -35021,7 +35021,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -35035,7 +35035,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -35046,7 +35046,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -35057,7 +35057,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -35068,7 +35068,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -35079,7 +35079,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -35090,7 +35090,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -35101,7 +35101,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -35112,7 +35112,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -35123,7 +35123,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -35134,7 +35134,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -35148,7 +35148,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -35159,7 +35159,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -35170,7 +35170,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -35181,7 +35181,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -35192,7 +35192,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -35203,7 +35203,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -35214,7 +35214,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -35225,7 +35225,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -35236,7 +35236,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -35247,7 +35247,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -35258,7 +35258,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -35269,7 +35269,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -35286,7 +35286,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid", t, "multi")
@@ -35300,7 +35300,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__gt", t, "multi")
@@ -35311,7 +35311,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__gte", t, "multi")
@@ -35322,7 +35322,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__lt", t, "multi")
@@ -35333,7 +35333,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__lte", t, "multi")
@@ -35344,7 +35344,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "max_vid__n", t, "multi")
@@ -35355,7 +35355,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid", t, "multi")
@@ -35369,7 +35369,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__gt", t, "multi")
@@ -35380,7 +35380,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__gte", t, "multi")
@@ -35391,7 +35391,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__lt", t, "multi")
@@ -35402,7 +35402,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__lte", t, "multi")
@@ -35413,7 +35413,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "min_vid__n", t, "multi")
@@ -35427,7 +35427,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -35441,7 +35441,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -35452,7 +35452,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -35463,7 +35463,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -35474,7 +35474,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -35485,7 +35485,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -35496,7 +35496,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -35507,7 +35507,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -35518,7 +35518,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -35529,7 +35529,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -35555,7 +35555,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id", t, "multi")
@@ -35569,7 +35569,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__gt", t, "multi")
@@ -35580,7 +35580,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__gte", t, "multi")
@@ -35591,7 +35591,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__lt", t, "multi")
@@ -35602,7 +35602,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__lte", t, "multi")
@@ -35613,7 +35613,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "scope_id__n", t, "multi")
@@ -35636,7 +35636,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -35650,7 +35650,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -35661,7 +35661,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -35672,7 +35672,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -35683,7 +35683,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -35694,7 +35694,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -35705,7 +35705,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -35716,7 +35716,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -35727,7 +35727,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -35738,7 +35738,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -35749,7 +35749,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -35760,7 +35760,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -35839,7 +35839,7 @@ func (a *IpamApiService) IpamVlanGroupsListExecute(r ApiIpamVlanGroupsListReques
 
 type ApiIpamVlanGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedVLANGroupRequest *PatchedVLANGroupRequest
 }
@@ -35862,7 +35862,7 @@ Patch a VLAN group object.
  @param id A unique integer value identifying this VLAN group.
  @return ApiIpamVlanGroupsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamVlanGroupsPartialUpdate(ctx context.Context, id int32) ApiIpamVlanGroupsPartialUpdateRequest {
+func (a *IpamAPIService) IpamVlanGroupsPartialUpdate(ctx context.Context, id int32) ApiIpamVlanGroupsPartialUpdateRequest {
 	return ApiIpamVlanGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -35872,7 +35872,7 @@ func (a *IpamApiService) IpamVlanGroupsPartialUpdate(ctx context.Context, id int
 
 // Execute executes the request
 //  @return VLANGroup
-func (a *IpamApiService) IpamVlanGroupsPartialUpdateExecute(r ApiIpamVlanGroupsPartialUpdateRequest) (*VLANGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsPartialUpdateExecute(r ApiIpamVlanGroupsPartialUpdateRequest) (*VLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -35880,7 +35880,7 @@ func (a *IpamApiService) IpamVlanGroupsPartialUpdateExecute(r ApiIpamVlanGroupsP
 		localVarReturnValue  *VLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -35964,7 +35964,7 @@ func (a *IpamApiService) IpamVlanGroupsPartialUpdateExecute(r ApiIpamVlanGroupsP
 
 type ApiIpamVlanGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -35981,7 +35981,7 @@ Get a VLAN group object.
  @param id A unique integer value identifying this VLAN group.
  @return ApiIpamVlanGroupsRetrieveRequest
 */
-func (a *IpamApiService) IpamVlanGroupsRetrieve(ctx context.Context, id int32) ApiIpamVlanGroupsRetrieveRequest {
+func (a *IpamAPIService) IpamVlanGroupsRetrieve(ctx context.Context, id int32) ApiIpamVlanGroupsRetrieveRequest {
 	return ApiIpamVlanGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -35991,7 +35991,7 @@ func (a *IpamApiService) IpamVlanGroupsRetrieve(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return VLANGroup
-func (a *IpamApiService) IpamVlanGroupsRetrieveExecute(r ApiIpamVlanGroupsRetrieveRequest) (*VLANGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsRetrieveExecute(r ApiIpamVlanGroupsRetrieveRequest) (*VLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -35999,7 +35999,7 @@ func (a *IpamApiService) IpamVlanGroupsRetrieveExecute(r ApiIpamVlanGroupsRetrie
 		localVarReturnValue  *VLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36081,7 +36081,7 @@ func (a *IpamApiService) IpamVlanGroupsRetrieveExecute(r ApiIpamVlanGroupsRetrie
 
 type ApiIpamVlanGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	vLANGroupRequest *VLANGroupRequest
 }
@@ -36104,7 +36104,7 @@ Put a VLAN group object.
  @param id A unique integer value identifying this VLAN group.
  @return ApiIpamVlanGroupsUpdateRequest
 */
-func (a *IpamApiService) IpamVlanGroupsUpdate(ctx context.Context, id int32) ApiIpamVlanGroupsUpdateRequest {
+func (a *IpamAPIService) IpamVlanGroupsUpdate(ctx context.Context, id int32) ApiIpamVlanGroupsUpdateRequest {
 	return ApiIpamVlanGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -36114,7 +36114,7 @@ func (a *IpamApiService) IpamVlanGroupsUpdate(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return VLANGroup
-func (a *IpamApiService) IpamVlanGroupsUpdateExecute(r ApiIpamVlanGroupsUpdateRequest) (*VLANGroup, *http.Response, error) {
+func (a *IpamAPIService) IpamVlanGroupsUpdateExecute(r ApiIpamVlanGroupsUpdateRequest) (*VLANGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -36122,7 +36122,7 @@ func (a *IpamApiService) IpamVlanGroupsUpdateExecute(r ApiIpamVlanGroupsUpdateRe
 		localVarReturnValue  *VLANGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlanGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlanGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36209,7 +36209,7 @@ func (a *IpamApiService) IpamVlanGroupsUpdateExecute(r ApiIpamVlanGroupsUpdateRe
 
 type ApiIpamVlansBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANRequest *[]VLANRequest
 }
 
@@ -36230,7 +36230,7 @@ Delete a list of VLAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlansBulkDestroyRequest
 */
-func (a *IpamApiService) IpamVlansBulkDestroy(ctx context.Context) ApiIpamVlansBulkDestroyRequest {
+func (a *IpamAPIService) IpamVlansBulkDestroy(ctx context.Context) ApiIpamVlansBulkDestroyRequest {
 	return ApiIpamVlansBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -36238,14 +36238,14 @@ func (a *IpamApiService) IpamVlansBulkDestroy(ctx context.Context) ApiIpamVlansB
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamVlansBulkDestroyExecute(r ApiIpamVlansBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamVlansBulkDestroyExecute(r ApiIpamVlansBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36322,7 +36322,7 @@ func (a *IpamApiService) IpamVlansBulkDestroyExecute(r ApiIpamVlansBulkDestroyRe
 
 type ApiIpamVlansBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANRequest *[]VLANRequest
 }
 
@@ -36343,7 +36343,7 @@ Patch a list of VLAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlansBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamVlansBulkPartialUpdate(ctx context.Context) ApiIpamVlansBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamVlansBulkPartialUpdate(ctx context.Context) ApiIpamVlansBulkPartialUpdateRequest {
 	return ApiIpamVlansBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -36352,7 +36352,7 @@ func (a *IpamApiService) IpamVlansBulkPartialUpdate(ctx context.Context) ApiIpam
 
 // Execute executes the request
 //  @return []VLAN
-func (a *IpamApiService) IpamVlansBulkPartialUpdateExecute(r ApiIpamVlansBulkPartialUpdateRequest) ([]VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansBulkPartialUpdateExecute(r ApiIpamVlansBulkPartialUpdateRequest) ([]VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -36360,7 +36360,7 @@ func (a *IpamApiService) IpamVlansBulkPartialUpdateExecute(r ApiIpamVlansBulkPar
 		localVarReturnValue  []VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36446,7 +36446,7 @@ func (a *IpamApiService) IpamVlansBulkPartialUpdateExecute(r ApiIpamVlansBulkPar
 
 type ApiIpamVlansBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vLANRequest *[]VLANRequest
 }
 
@@ -36467,7 +36467,7 @@ Put a list of VLAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlansBulkUpdateRequest
 */
-func (a *IpamApiService) IpamVlansBulkUpdate(ctx context.Context) ApiIpamVlansBulkUpdateRequest {
+func (a *IpamAPIService) IpamVlansBulkUpdate(ctx context.Context) ApiIpamVlansBulkUpdateRequest {
 	return ApiIpamVlansBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -36476,7 +36476,7 @@ func (a *IpamApiService) IpamVlansBulkUpdate(ctx context.Context) ApiIpamVlansBu
 
 // Execute executes the request
 //  @return []VLAN
-func (a *IpamApiService) IpamVlansBulkUpdateExecute(r ApiIpamVlansBulkUpdateRequest) ([]VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansBulkUpdateExecute(r ApiIpamVlansBulkUpdateRequest) ([]VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -36484,7 +36484,7 @@ func (a *IpamApiService) IpamVlansBulkUpdateExecute(r ApiIpamVlansBulkUpdateRequ
 		localVarReturnValue  []VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36570,7 +36570,7 @@ func (a *IpamApiService) IpamVlansBulkUpdateExecute(r ApiIpamVlansBulkUpdateRequ
 
 type ApiIpamVlansCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableVLANRequest *WritableVLANRequest
 }
 
@@ -36591,7 +36591,7 @@ Post a list of VLAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlansCreateRequest
 */
-func (a *IpamApiService) IpamVlansCreate(ctx context.Context) ApiIpamVlansCreateRequest {
+func (a *IpamAPIService) IpamVlansCreate(ctx context.Context) ApiIpamVlansCreateRequest {
 	return ApiIpamVlansCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -36600,7 +36600,7 @@ func (a *IpamApiService) IpamVlansCreate(ctx context.Context) ApiIpamVlansCreate
 
 // Execute executes the request
 //  @return VLAN
-func (a *IpamApiService) IpamVlansCreateExecute(r ApiIpamVlansCreateRequest) (*VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansCreateExecute(r ApiIpamVlansCreateRequest) (*VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -36608,7 +36608,7 @@ func (a *IpamApiService) IpamVlansCreateExecute(r ApiIpamVlansCreateRequest) (*V
 		localVarReturnValue  *VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36694,7 +36694,7 @@ func (a *IpamApiService) IpamVlansCreateExecute(r ApiIpamVlansCreateRequest) (*V
 
 type ApiIpamVlansDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -36711,7 +36711,7 @@ Delete a VLAN object.
  @param id A unique integer value identifying this VLAN.
  @return ApiIpamVlansDestroyRequest
 */
-func (a *IpamApiService) IpamVlansDestroy(ctx context.Context, id int32) ApiIpamVlansDestroyRequest {
+func (a *IpamAPIService) IpamVlansDestroy(ctx context.Context, id int32) ApiIpamVlansDestroyRequest {
 	return ApiIpamVlansDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -36720,14 +36720,14 @@ func (a *IpamApiService) IpamVlansDestroy(ctx context.Context, id int32) ApiIpam
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamVlansDestroyExecute(r ApiIpamVlansDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamVlansDestroyExecute(r ApiIpamVlansDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -36800,7 +36800,7 @@ func (a *IpamApiService) IpamVlansDestroyExecute(r ApiIpamVlansDestroyRequest) (
 
 type ApiIpamVlansListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	availableOnDevice *string
 	availableOnVirtualmachine *string
 	created *[]time.Time
@@ -37423,7 +37423,7 @@ Get a list of VLAN objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVlansListRequest
 */
-func (a *IpamApiService) IpamVlansList(ctx context.Context) ApiIpamVlansListRequest {
+func (a *IpamAPIService) IpamVlansList(ctx context.Context) ApiIpamVlansListRequest {
 	return ApiIpamVlansListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -37432,7 +37432,7 @@ func (a *IpamApiService) IpamVlansList(ctx context.Context) ApiIpamVlansListRequ
 
 // Execute executes the request
 //  @return PaginatedVLANList
-func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*PaginatedVLANList, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*PaginatedVLANList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -37440,7 +37440,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		localVarReturnValue  *PaginatedVLANList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -37462,7 +37462,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -37473,7 +37473,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -37484,7 +37484,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -37495,7 +37495,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -37506,7 +37506,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -37517,7 +37517,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -37528,7 +37528,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -37542,7 +37542,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -37556,7 +37556,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -37567,7 +37567,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -37578,7 +37578,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -37589,7 +37589,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -37600,7 +37600,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -37611,7 +37611,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -37622,7 +37622,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -37633,7 +37633,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -37644,7 +37644,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -37655,7 +37655,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -37666,7 +37666,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -37677,7 +37677,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -37688,7 +37688,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -37699,7 +37699,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -37713,7 +37713,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -37724,7 +37724,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -37735,7 +37735,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -37746,7 +37746,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -37757,7 +37757,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -37768,7 +37768,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", t, "multi")
@@ -37779,7 +37779,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", t, "multi")
@@ -37790,7 +37790,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", t, "multi")
@@ -37801,7 +37801,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", t, "multi")
@@ -37812,7 +37812,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -37823,7 +37823,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -37834,7 +37834,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -37845,7 +37845,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -37856,7 +37856,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -37867,7 +37867,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -37878,7 +37878,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -37895,7 +37895,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -37909,7 +37909,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -37920,7 +37920,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -37931,7 +37931,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -37942,7 +37942,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -37953,7 +37953,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -37964,7 +37964,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -37975,7 +37975,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -37986,7 +37986,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -37997,7 +37997,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -38017,7 +38017,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
@@ -38028,7 +38028,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
@@ -38039,7 +38039,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
@@ -38050,7 +38050,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
@@ -38061,7 +38061,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -38072,7 +38072,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -38083,7 +38083,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", t, "multi")
@@ -38094,7 +38094,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", t, "multi")
@@ -38105,7 +38105,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -38116,7 +38116,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
@@ -38127,7 +38127,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
@@ -38138,7 +38138,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
@@ -38149,7 +38149,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
@@ -38160,7 +38160,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
@@ -38171,7 +38171,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -38182,7 +38182,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
@@ -38193,7 +38193,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -38204,7 +38204,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -38215,7 +38215,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -38226,7 +38226,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -38237,7 +38237,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -38248,7 +38248,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -38259,7 +38259,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -38270,7 +38270,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -38281,7 +38281,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -38292,7 +38292,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -38303,7 +38303,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -38314,7 +38314,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -38328,7 +38328,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vid", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vid", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vid", t, "multi")
@@ -38342,7 +38342,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vid__gt", t, "multi")
@@ -38353,7 +38353,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vid__gte", t, "multi")
@@ -38364,7 +38364,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vid__lt", t, "multi")
@@ -38375,7 +38375,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vid__lte", t, "multi")
@@ -38386,7 +38386,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vid__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vid__n", t, "multi")
@@ -38462,7 +38462,7 @@ func (a *IpamApiService) IpamVlansListExecute(r ApiIpamVlansListRequest) (*Pagin
 
 type ApiIpamVlansPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableVLANRequest *PatchedWritableVLANRequest
 }
@@ -38485,7 +38485,7 @@ Patch a VLAN object.
  @param id A unique integer value identifying this VLAN.
  @return ApiIpamVlansPartialUpdateRequest
 */
-func (a *IpamApiService) IpamVlansPartialUpdate(ctx context.Context, id int32) ApiIpamVlansPartialUpdateRequest {
+func (a *IpamAPIService) IpamVlansPartialUpdate(ctx context.Context, id int32) ApiIpamVlansPartialUpdateRequest {
 	return ApiIpamVlansPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -38495,7 +38495,7 @@ func (a *IpamApiService) IpamVlansPartialUpdate(ctx context.Context, id int32) A
 
 // Execute executes the request
 //  @return VLAN
-func (a *IpamApiService) IpamVlansPartialUpdateExecute(r ApiIpamVlansPartialUpdateRequest) (*VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansPartialUpdateExecute(r ApiIpamVlansPartialUpdateRequest) (*VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -38503,7 +38503,7 @@ func (a *IpamApiService) IpamVlansPartialUpdateExecute(r ApiIpamVlansPartialUpda
 		localVarReturnValue  *VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -38587,7 +38587,7 @@ func (a *IpamApiService) IpamVlansPartialUpdateExecute(r ApiIpamVlansPartialUpda
 
 type ApiIpamVlansRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -38604,7 +38604,7 @@ Get a VLAN object.
  @param id A unique integer value identifying this VLAN.
  @return ApiIpamVlansRetrieveRequest
 */
-func (a *IpamApiService) IpamVlansRetrieve(ctx context.Context, id int32) ApiIpamVlansRetrieveRequest {
+func (a *IpamAPIService) IpamVlansRetrieve(ctx context.Context, id int32) ApiIpamVlansRetrieveRequest {
 	return ApiIpamVlansRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -38614,7 +38614,7 @@ func (a *IpamApiService) IpamVlansRetrieve(ctx context.Context, id int32) ApiIpa
 
 // Execute executes the request
 //  @return VLAN
-func (a *IpamApiService) IpamVlansRetrieveExecute(r ApiIpamVlansRetrieveRequest) (*VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansRetrieveExecute(r ApiIpamVlansRetrieveRequest) (*VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -38622,7 +38622,7 @@ func (a *IpamApiService) IpamVlansRetrieveExecute(r ApiIpamVlansRetrieveRequest)
 		localVarReturnValue  *VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -38704,7 +38704,7 @@ func (a *IpamApiService) IpamVlansRetrieveExecute(r ApiIpamVlansRetrieveRequest)
 
 type ApiIpamVlansUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableVLANRequest *WritableVLANRequest
 }
@@ -38727,7 +38727,7 @@ Put a VLAN object.
  @param id A unique integer value identifying this VLAN.
  @return ApiIpamVlansUpdateRequest
 */
-func (a *IpamApiService) IpamVlansUpdate(ctx context.Context, id int32) ApiIpamVlansUpdateRequest {
+func (a *IpamAPIService) IpamVlansUpdate(ctx context.Context, id int32) ApiIpamVlansUpdateRequest {
 	return ApiIpamVlansUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -38737,7 +38737,7 @@ func (a *IpamApiService) IpamVlansUpdate(ctx context.Context, id int32) ApiIpamV
 
 // Execute executes the request
 //  @return VLAN
-func (a *IpamApiService) IpamVlansUpdateExecute(r ApiIpamVlansUpdateRequest) (*VLAN, *http.Response, error) {
+func (a *IpamAPIService) IpamVlansUpdateExecute(r ApiIpamVlansUpdateRequest) (*VLAN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -38745,7 +38745,7 @@ func (a *IpamApiService) IpamVlansUpdateExecute(r ApiIpamVlansUpdateRequest) (*V
 		localVarReturnValue  *VLAN
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVlansUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVlansUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -38832,7 +38832,7 @@ func (a *IpamApiService) IpamVlansUpdateExecute(r ApiIpamVlansUpdateRequest) (*V
 
 type ApiIpamVrfsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vRFRequest *[]VRFRequest
 }
 
@@ -38853,7 +38853,7 @@ Delete a list of VRF objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVrfsBulkDestroyRequest
 */
-func (a *IpamApiService) IpamVrfsBulkDestroy(ctx context.Context) ApiIpamVrfsBulkDestroyRequest {
+func (a *IpamAPIService) IpamVrfsBulkDestroy(ctx context.Context) ApiIpamVrfsBulkDestroyRequest {
 	return ApiIpamVrfsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -38861,14 +38861,14 @@ func (a *IpamApiService) IpamVrfsBulkDestroy(ctx context.Context) ApiIpamVrfsBul
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamVrfsBulkDestroyExecute(r ApiIpamVrfsBulkDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamVrfsBulkDestroyExecute(r ApiIpamVrfsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -38945,7 +38945,7 @@ func (a *IpamApiService) IpamVrfsBulkDestroyExecute(r ApiIpamVrfsBulkDestroyRequ
 
 type ApiIpamVrfsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vRFRequest *[]VRFRequest
 }
 
@@ -38966,7 +38966,7 @@ Patch a list of VRF objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVrfsBulkPartialUpdateRequest
 */
-func (a *IpamApiService) IpamVrfsBulkPartialUpdate(ctx context.Context) ApiIpamVrfsBulkPartialUpdateRequest {
+func (a *IpamAPIService) IpamVrfsBulkPartialUpdate(ctx context.Context) ApiIpamVrfsBulkPartialUpdateRequest {
 	return ApiIpamVrfsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -38975,7 +38975,7 @@ func (a *IpamApiService) IpamVrfsBulkPartialUpdate(ctx context.Context) ApiIpamV
 
 // Execute executes the request
 //  @return []VRF
-func (a *IpamApiService) IpamVrfsBulkPartialUpdateExecute(r ApiIpamVrfsBulkPartialUpdateRequest) ([]VRF, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsBulkPartialUpdateExecute(r ApiIpamVrfsBulkPartialUpdateRequest) ([]VRF, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -38983,7 +38983,7 @@ func (a *IpamApiService) IpamVrfsBulkPartialUpdateExecute(r ApiIpamVrfsBulkParti
 		localVarReturnValue  []VRF
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -39069,7 +39069,7 @@ func (a *IpamApiService) IpamVrfsBulkPartialUpdateExecute(r ApiIpamVrfsBulkParti
 
 type ApiIpamVrfsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	vRFRequest *[]VRFRequest
 }
 
@@ -39090,7 +39090,7 @@ Put a list of VRF objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVrfsBulkUpdateRequest
 */
-func (a *IpamApiService) IpamVrfsBulkUpdate(ctx context.Context) ApiIpamVrfsBulkUpdateRequest {
+func (a *IpamAPIService) IpamVrfsBulkUpdate(ctx context.Context) ApiIpamVrfsBulkUpdateRequest {
 	return ApiIpamVrfsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -39099,7 +39099,7 @@ func (a *IpamApiService) IpamVrfsBulkUpdate(ctx context.Context) ApiIpamVrfsBulk
 
 // Execute executes the request
 //  @return []VRF
-func (a *IpamApiService) IpamVrfsBulkUpdateExecute(r ApiIpamVrfsBulkUpdateRequest) ([]VRF, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsBulkUpdateExecute(r ApiIpamVrfsBulkUpdateRequest) ([]VRF, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -39107,7 +39107,7 @@ func (a *IpamApiService) IpamVrfsBulkUpdateExecute(r ApiIpamVrfsBulkUpdateReques
 		localVarReturnValue  []VRF
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -39193,7 +39193,7 @@ func (a *IpamApiService) IpamVrfsBulkUpdateExecute(r ApiIpamVrfsBulkUpdateReques
 
 type ApiIpamVrfsCreateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	writableVRFRequest *WritableVRFRequest
 }
 
@@ -39214,7 +39214,7 @@ Post a list of VRF objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVrfsCreateRequest
 */
-func (a *IpamApiService) IpamVrfsCreate(ctx context.Context) ApiIpamVrfsCreateRequest {
+func (a *IpamAPIService) IpamVrfsCreate(ctx context.Context) ApiIpamVrfsCreateRequest {
 	return ApiIpamVrfsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -39223,7 +39223,7 @@ func (a *IpamApiService) IpamVrfsCreate(ctx context.Context) ApiIpamVrfsCreateRe
 
 // Execute executes the request
 //  @return VRF
-func (a *IpamApiService) IpamVrfsCreateExecute(r ApiIpamVrfsCreateRequest) (*VRF, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsCreateExecute(r ApiIpamVrfsCreateRequest) (*VRF, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -39231,7 +39231,7 @@ func (a *IpamApiService) IpamVrfsCreateExecute(r ApiIpamVrfsCreateRequest) (*VRF
 		localVarReturnValue  *VRF
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -39317,7 +39317,7 @@ func (a *IpamApiService) IpamVrfsCreateExecute(r ApiIpamVrfsCreateRequest) (*VRF
 
 type ApiIpamVrfsDestroyRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -39334,7 +39334,7 @@ Delete a VRF object.
  @param id A unique integer value identifying this VRF.
  @return ApiIpamVrfsDestroyRequest
 */
-func (a *IpamApiService) IpamVrfsDestroy(ctx context.Context, id int32) ApiIpamVrfsDestroyRequest {
+func (a *IpamAPIService) IpamVrfsDestroy(ctx context.Context, id int32) ApiIpamVrfsDestroyRequest {
 	return ApiIpamVrfsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -39343,14 +39343,14 @@ func (a *IpamApiService) IpamVrfsDestroy(ctx context.Context, id int32) ApiIpamV
 }
 
 // Execute executes the request
-func (a *IpamApiService) IpamVrfsDestroyExecute(r ApiIpamVrfsDestroyRequest) (*http.Response, error) {
+func (a *IpamAPIService) IpamVrfsDestroyExecute(r ApiIpamVrfsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -39423,7 +39423,7 @@ func (a *IpamApiService) IpamVrfsDestroyExecute(r ApiIpamVrfsDestroyRequest) (*h
 
 type ApiIpamVrfsListRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -39938,7 +39938,7 @@ Get a list of VRF objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiIpamVrfsListRequest
 */
-func (a *IpamApiService) IpamVrfsList(ctx context.Context) ApiIpamVrfsListRequest {
+func (a *IpamAPIService) IpamVrfsList(ctx context.Context) ApiIpamVrfsListRequest {
 	return ApiIpamVrfsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -39947,7 +39947,7 @@ func (a *IpamApiService) IpamVrfsList(ctx context.Context) ApiIpamVrfsListReques
 
 // Execute executes the request
 //  @return PaginatedVRFList
-func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*PaginatedVRFList, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*PaginatedVRFList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -39955,7 +39955,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		localVarReturnValue  *PaginatedVRFList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -39971,7 +39971,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -39982,7 +39982,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -39993,7 +39993,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -40004,7 +40004,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -40015,7 +40015,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -40026,7 +40026,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -40037,7 +40037,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -40051,7 +40051,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -40065,7 +40065,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -40076,7 +40076,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -40087,7 +40087,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -40098,7 +40098,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -40109,7 +40109,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -40120,7 +40120,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -40131,7 +40131,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -40142,7 +40142,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -40153,7 +40153,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -40167,7 +40167,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target", t, "multi")
@@ -40178,7 +40178,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target__n", t, "multi")
@@ -40189,7 +40189,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id", t, "multi")
@@ -40200,7 +40200,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "export_target_id__n", t, "multi")
@@ -40211,7 +40211,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -40225,7 +40225,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -40236,7 +40236,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -40247,7 +40247,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -40258,7 +40258,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -40269,7 +40269,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -40280,7 +40280,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target", t, "multi")
@@ -40291,7 +40291,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target__n", t, "multi")
@@ -40302,7 +40302,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id", t, "multi")
@@ -40313,7 +40313,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "import_target_id__n", t, "multi")
@@ -40324,7 +40324,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -40335,7 +40335,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -40346,7 +40346,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -40357,7 +40357,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -40368,7 +40368,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -40379,7 +40379,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -40390,7 +40390,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -40407,7 +40407,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -40421,7 +40421,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -40432,7 +40432,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -40443,7 +40443,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -40454,7 +40454,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -40465,7 +40465,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -40476,7 +40476,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -40487,7 +40487,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -40498,7 +40498,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -40509,7 +40509,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -40529,7 +40529,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd", t, "multi")
@@ -40543,7 +40543,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__ic", t, "multi")
@@ -40554,7 +40554,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__ie", t, "multi")
@@ -40565,7 +40565,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__iew", t, "multi")
@@ -40576,7 +40576,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__isw", t, "multi")
@@ -40587,7 +40587,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__n", t, "multi")
@@ -40598,7 +40598,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nic", t, "multi")
@@ -40609,7 +40609,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nie", t, "multi")
@@ -40620,7 +40620,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__niew", t, "multi")
@@ -40631,7 +40631,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "rd__nisw", t, "multi")
@@ -40642,7 +40642,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -40653,7 +40653,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -40664,7 +40664,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -40675,7 +40675,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -40686,7 +40686,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -40697,7 +40697,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -40708,7 +40708,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -40719,7 +40719,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -40730,7 +40730,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -40741,7 +40741,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -40820,7 +40820,7 @@ func (a *IpamApiService) IpamVrfsListExecute(r ApiIpamVrfsListRequest) (*Paginat
 
 type ApiIpamVrfsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	patchedWritableVRFRequest *PatchedWritableVRFRequest
 }
@@ -40843,7 +40843,7 @@ Patch a VRF object.
  @param id A unique integer value identifying this VRF.
  @return ApiIpamVrfsPartialUpdateRequest
 */
-func (a *IpamApiService) IpamVrfsPartialUpdate(ctx context.Context, id int32) ApiIpamVrfsPartialUpdateRequest {
+func (a *IpamAPIService) IpamVrfsPartialUpdate(ctx context.Context, id int32) ApiIpamVrfsPartialUpdateRequest {
 	return ApiIpamVrfsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -40853,7 +40853,7 @@ func (a *IpamApiService) IpamVrfsPartialUpdate(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return VRF
-func (a *IpamApiService) IpamVrfsPartialUpdateExecute(r ApiIpamVrfsPartialUpdateRequest) (*VRF, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsPartialUpdateExecute(r ApiIpamVrfsPartialUpdateRequest) (*VRF, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -40861,7 +40861,7 @@ func (a *IpamApiService) IpamVrfsPartialUpdateExecute(r ApiIpamVrfsPartialUpdate
 		localVarReturnValue  *VRF
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -40945,7 +40945,7 @@ func (a *IpamApiService) IpamVrfsPartialUpdateExecute(r ApiIpamVrfsPartialUpdate
 
 type ApiIpamVrfsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 }
 
@@ -40962,7 +40962,7 @@ Get a VRF object.
  @param id A unique integer value identifying this VRF.
  @return ApiIpamVrfsRetrieveRequest
 */
-func (a *IpamApiService) IpamVrfsRetrieve(ctx context.Context, id int32) ApiIpamVrfsRetrieveRequest {
+func (a *IpamAPIService) IpamVrfsRetrieve(ctx context.Context, id int32) ApiIpamVrfsRetrieveRequest {
 	return ApiIpamVrfsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -40972,7 +40972,7 @@ func (a *IpamApiService) IpamVrfsRetrieve(ctx context.Context, id int32) ApiIpam
 
 // Execute executes the request
 //  @return VRF
-func (a *IpamApiService) IpamVrfsRetrieveExecute(r ApiIpamVrfsRetrieveRequest) (*VRF, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsRetrieveExecute(r ApiIpamVrfsRetrieveRequest) (*VRF, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -40980,7 +40980,7 @@ func (a *IpamApiService) IpamVrfsRetrieveExecute(r ApiIpamVrfsRetrieveRequest) (
 		localVarReturnValue  *VRF
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -41062,7 +41062,7 @@ func (a *IpamApiService) IpamVrfsRetrieveExecute(r ApiIpamVrfsRetrieveRequest) (
 
 type ApiIpamVrfsUpdateRequest struct {
 	ctx context.Context
-	ApiService *IpamApiService
+	ApiService *IpamAPIService
 	id int32
 	writableVRFRequest *WritableVRFRequest
 }
@@ -41085,7 +41085,7 @@ Put a VRF object.
  @param id A unique integer value identifying this VRF.
  @return ApiIpamVrfsUpdateRequest
 */
-func (a *IpamApiService) IpamVrfsUpdate(ctx context.Context, id int32) ApiIpamVrfsUpdateRequest {
+func (a *IpamAPIService) IpamVrfsUpdate(ctx context.Context, id int32) ApiIpamVrfsUpdateRequest {
 	return ApiIpamVrfsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -41095,7 +41095,7 @@ func (a *IpamApiService) IpamVrfsUpdate(ctx context.Context, id int32) ApiIpamVr
 
 // Execute executes the request
 //  @return VRF
-func (a *IpamApiService) IpamVrfsUpdateExecute(r ApiIpamVrfsUpdateRequest) (*VRF, *http.Response, error) {
+func (a *IpamAPIService) IpamVrfsUpdateExecute(r ApiIpamVrfsUpdateRequest) (*VRF, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -41103,7 +41103,7 @@ func (a *IpamApiService) IpamVrfsUpdateExecute(r ApiIpamVrfsUpdateRequest) (*VRF
 		localVarReturnValue  *VRF
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamApiService.IpamVrfsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IpamAPIService.IpamVrfsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

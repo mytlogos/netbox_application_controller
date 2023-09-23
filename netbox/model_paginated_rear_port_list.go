@@ -23,10 +23,7 @@ type PaginatedRearPortList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []RearPort `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedRearPortList PaginatedRearPortList
 
 // NewPaginatedRearPortList instantiates a new PaginatedRearPortList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedRearPortList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedRearPortList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedRearPortList := _PaginatedRearPortList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedRearPortList); err == nil {
-		*o = PaginatedRearPortList(varPaginatedRearPortList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedRearPortList struct {

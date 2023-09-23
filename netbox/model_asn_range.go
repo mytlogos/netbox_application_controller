@@ -35,10 +35,7 @@ type ASNRange struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	AsnCount int32 `json:"asn_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ASNRange ASNRange
 
 // NewASNRange instantiates a new ASNRange object
 // This constructor will assign default values to properties that have it defined,
@@ -484,9 +481,9 @@ func (o ASNRange) MarshalJSON() ([]byte, error) {
 
 func (o ASNRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	toSerialize["rir"] = o.Rir
@@ -506,44 +503,8 @@ func (o ASNRange) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: asn_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["asn_count"] = o.AsnCount
 	return toSerialize, nil
-}
-
-func (o *ASNRange) UnmarshalJSON(bytes []byte) (err error) {
-	varASNRange := _ASNRange{}
-
-	if err = json.Unmarshal(bytes, &varASNRange); err == nil {
-		*o = ASNRange(varASNRange)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "rir")
-		delete(additionalProperties, "start")
-		delete(additionalProperties, "end")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "asn_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableASNRange struct {

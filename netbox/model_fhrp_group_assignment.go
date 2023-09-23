@@ -30,10 +30,7 @@ type FHRPGroupAssignment struct {
 	Priority int32 `json:"priority"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _FHRPGroupAssignment FHRPGroupAssignment
 
 // NewFHRPGroupAssignment instantiates a new FHRPGroupAssignment object
 // This constructor will assign default values to properties that have it defined,
@@ -318,9 +315,9 @@ func (o FHRPGroupAssignment) MarshalJSON() ([]byte, error) {
 
 func (o FHRPGroupAssignment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["group"] = o.Group
 	toSerialize["interface_type"] = o.InterfaceType
 	toSerialize["interface_id"] = o.InterfaceId
@@ -330,38 +327,7 @@ func (o FHRPGroupAssignment) ToMap() (map[string]interface{}, error) {
 	toSerialize["priority"] = o.Priority
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *FHRPGroupAssignment) UnmarshalJSON(bytes []byte) (err error) {
-	varFHRPGroupAssignment := _FHRPGroupAssignment{}
-
-	if err = json.Unmarshal(bytes, &varFHRPGroupAssignment); err == nil {
-		*o = FHRPGroupAssignment(varFHRPGroupAssignment)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "interface_type")
-		delete(additionalProperties, "interface_id")
-		delete(additionalProperties, "interface")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableFHRPGroupAssignment struct {

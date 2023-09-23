@@ -39,10 +39,7 @@ type PatchedWritableVirtualMachineWithConfigContextRequest struct {
 	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableVirtualMachineWithConfigContextRequest PatchedWritableVirtualMachineWithConfigContextRequest
 
 // NewPatchedWritableVirtualMachineWithConfigContextRequest instantiates a new PatchedWritableVirtualMachineWithConfigContextRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -812,46 +809,7 @@ func (o PatchedWritableVirtualMachineWithConfigContextRequest) ToMap() (map[stri
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableVirtualMachineWithConfigContextRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableVirtualMachineWithConfigContextRequest := _PatchedWritableVirtualMachineWithConfigContextRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableVirtualMachineWithConfigContextRequest); err == nil {
-		*o = PatchedWritableVirtualMachineWithConfigContextRequest(varPatchedWritableVirtualMachineWithConfigContextRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "cluster")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "primary_ip4")
-		delete(additionalProperties, "primary_ip6")
-		delete(additionalProperties, "vcpus")
-		delete(additionalProperties, "memory")
-		delete(additionalProperties, "disk")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "local_context_data")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableVirtualMachineWithConfigContextRequest struct {

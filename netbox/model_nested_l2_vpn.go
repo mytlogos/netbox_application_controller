@@ -27,10 +27,7 @@ type NestedL2VPN struct {
 	Slug string `json:"slug"`
 	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
 	Type string `json:"type"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedL2VPN NestedL2VPN
 
 // NewNestedL2VPN instantiates a new NestedL2VPN object
 // This constructor will assign default values to properties that have it defined,
@@ -251,44 +248,16 @@ func (o NestedL2VPN) MarshalJSON() ([]byte, error) {
 
 func (o NestedL2VPN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.Identifier.IsSet() {
 		toSerialize["identifier"] = o.Identifier.Get()
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	toSerialize["type"] = o.Type
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedL2VPN) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedL2VPN := _NestedL2VPN{}
-
-	if err = json.Unmarshal(bytes, &varNestedL2VPN); err == nil {
-		*o = NestedL2VPN(varNestedL2VPN)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "identifier")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedL2VPN struct {

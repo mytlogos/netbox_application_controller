@@ -42,10 +42,7 @@ type Tenant struct {
 	VlanCount int32 `json:"vlan_count"`
 	VrfCount int32 `json:"vrf_count"`
 	ClusterCount int32 `json:"cluster_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Tenant Tenant
 
 // NewTenant instantiates a new Tenant object
 // This constructor will assign default values to properties that have it defined,
@@ -673,9 +670,9 @@ func (o Tenant) MarshalJSON() ([]byte, error) {
 
 func (o Tenant) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Group.IsSet() {
@@ -695,60 +692,17 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: circuit_count is readOnly
-	// skip: device_count is readOnly
-	// skip: ipaddress_count is readOnly
-	// skip: prefix_count is readOnly
-	// skip: rack_count is readOnly
-	// skip: site_count is readOnly
-	// skip: virtualmachine_count is readOnly
-	// skip: vlan_count is readOnly
-	// skip: vrf_count is readOnly
-	// skip: cluster_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["circuit_count"] = o.CircuitCount
+	toSerialize["device_count"] = o.DeviceCount
+	toSerialize["ipaddress_count"] = o.IpaddressCount
+	toSerialize["prefix_count"] = o.PrefixCount
+	toSerialize["rack_count"] = o.RackCount
+	toSerialize["site_count"] = o.SiteCount
+	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
+	toSerialize["vlan_count"] = o.VlanCount
+	toSerialize["vrf_count"] = o.VrfCount
+	toSerialize["cluster_count"] = o.ClusterCount
 	return toSerialize, nil
-}
-
-func (o *Tenant) UnmarshalJSON(bytes []byte) (err error) {
-	varTenant := _Tenant{}
-
-	if err = json.Unmarshal(bytes, &varTenant); err == nil {
-		*o = Tenant(varTenant)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "circuit_count")
-		delete(additionalProperties, "device_count")
-		delete(additionalProperties, "ipaddress_count")
-		delete(additionalProperties, "prefix_count")
-		delete(additionalProperties, "rack_count")
-		delete(additionalProperties, "site_count")
-		delete(additionalProperties, "virtualmachine_count")
-		delete(additionalProperties, "vlan_count")
-		delete(additionalProperties, "vrf_count")
-		delete(additionalProperties, "cluster_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTenant struct {

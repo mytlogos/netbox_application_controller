@@ -22,10 +22,7 @@ type JournalEntryKind struct {
 	// * `info` - Info * `success` - Success * `warning` - Warning * `danger` - Danger
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _JournalEntryKind JournalEntryKind
 
 // NewJournalEntryKind instantiates a new JournalEntryKind object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o JournalEntryKind) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *JournalEntryKind) UnmarshalJSON(bytes []byte) (err error) {
-	varJournalEntryKind := _JournalEntryKind{}
-
-	if err = json.Unmarshal(bytes, &varJournalEntryKind); err == nil {
-		*o = JournalEntryKind(varJournalEntryKind)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableJournalEntryKind struct {

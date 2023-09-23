@@ -33,10 +33,7 @@ type VirtualChassis struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	MemberCount int32 `json:"member_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VirtualChassis VirtualChassis
 
 // NewVirtualChassis instantiates a new VirtualChassis object
 // This constructor will assign default values to properties that have it defined,
@@ -446,9 +443,9 @@ func (o VirtualChassis) MarshalJSON() ([]byte, error) {
 
 func (o VirtualChassis) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Domain) {
 		toSerialize["domain"] = o.Domain
@@ -470,42 +467,8 @@ func (o VirtualChassis) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: member_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["member_count"] = o.MemberCount
 	return toSerialize, nil
-}
-
-func (o *VirtualChassis) UnmarshalJSON(bytes []byte) (err error) {
-	varVirtualChassis := _VirtualChassis{}
-
-	if err = json.Unmarshal(bytes, &varVirtualChassis); err == nil {
-		*o = VirtualChassis(varVirtualChassis)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "domain")
-		delete(additionalProperties, "master")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "member_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVirtualChassis struct {

@@ -22,10 +22,7 @@ type ConsolePortSpeed struct {
 	// * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps
 	Value *int32 `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConsolePortSpeed ConsolePortSpeed
 
 // NewConsolePortSpeed instantiates a new ConsolePortSpeed object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o ConsolePortSpeed) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConsolePortSpeed) UnmarshalJSON(bytes []byte) (err error) {
-	varConsolePortSpeed := _ConsolePortSpeed{}
-
-	if err = json.Unmarshal(bytes, &varConsolePortSpeed); err == nil {
-		*o = ConsolePortSpeed(varConsolePortSpeed)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConsolePortSpeed struct {

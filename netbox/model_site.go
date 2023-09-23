@@ -54,10 +54,7 @@ type Site struct {
 	RackCount int32 `json:"rack_count"`
 	VirtualmachineCount int32 `json:"virtualmachine_count"`
 	VlanCount int32 `json:"vlan_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Site Site
 
 // NewSite instantiates a new Site object
 // This constructor will assign default values to properties that have it defined,
@@ -955,9 +952,9 @@ func (o Site) MarshalJSON() ([]byte, error) {
 
 func (o Site) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Status) {
@@ -1007,62 +1004,13 @@ func (o Site) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: circuit_count is readOnly
-	// skip: device_count is readOnly
-	// skip: prefix_count is readOnly
-	// skip: rack_count is readOnly
-	// skip: virtualmachine_count is readOnly
-	// skip: vlan_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["circuit_count"] = o.CircuitCount
+	toSerialize["device_count"] = o.DeviceCount
+	toSerialize["prefix_count"] = o.PrefixCount
+	toSerialize["rack_count"] = o.RackCount
+	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
+	toSerialize["vlan_count"] = o.VlanCount
 	return toSerialize, nil
-}
-
-func (o *Site) UnmarshalJSON(bytes []byte) (err error) {
-	varSite := _Site{}
-
-	if err = json.Unmarshal(bytes, &varSite); err == nil {
-		*o = Site(varSite)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "region")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "facility")
-		delete(additionalProperties, "time_zone")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "physical_address")
-		delete(additionalProperties, "shipping_address")
-		delete(additionalProperties, "latitude")
-		delete(additionalProperties, "longitude")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "asns")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "circuit_count")
-		delete(additionalProperties, "device_count")
-		delete(additionalProperties, "prefix_count")
-		delete(additionalProperties, "rack_count")
-		delete(additionalProperties, "virtualmachine_count")
-		delete(additionalProperties, "vlan_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableSite struct {

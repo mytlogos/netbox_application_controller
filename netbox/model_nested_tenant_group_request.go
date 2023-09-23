@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedTenantGroupRequest{}
 type NestedTenantGroupRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedTenantGroupRequest NestedTenantGroupRequest
 
 // NewNestedTenantGroupRequest instantiates a new NestedTenantGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedTenantGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedTenantGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedTenantGroupRequest := _NestedTenantGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedTenantGroupRequest); err == nil {
-		*o = NestedTenantGroupRequest(varNestedTenantGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedTenantGroupRequest struct {

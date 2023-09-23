@@ -34,10 +34,7 @@ type PatchedWritablePowerOutletRequest struct {
 	MarkConnected *bool `json:"mark_connected,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritablePowerOutletRequest PatchedWritablePowerOutletRequest
 
 // NewPatchedWritablePowerOutletRequest instantiates a new PatchedWritablePowerOutletRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -471,39 +468,7 @@ func (o PatchedWritablePowerOutletRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritablePowerOutletRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritablePowerOutletRequest := _PatchedWritablePowerOutletRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritablePowerOutletRequest); err == nil {
-		*o = PatchedWritablePowerOutletRequest(varPatchedWritablePowerOutletRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "power_port")
-		delete(additionalProperties, "feed_leg")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritablePowerOutletRequest struct {

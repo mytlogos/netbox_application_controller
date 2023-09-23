@@ -22,12 +22,12 @@ import (
 )
 
 
-// VirtualizationApiService VirtualizationApi service
-type VirtualizationApiService service
+// VirtualizationAPIService VirtualizationAPI service
+type VirtualizationAPIService service
 
 type ApiVirtualizationClusterGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *[]ClusterGroupRequest
 }
 
@@ -48,7 +48,7 @@ Delete a list of cluster group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterGroupsBulkDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkDestroy(ctx context.Context) ApiVirtualizationClusterGroupsBulkDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkDestroy(ctx context.Context) ApiVirtualizationClusterGroupsBulkDestroyRequest {
 	return ApiVirtualizationClusterGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -56,14 +56,14 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkDestroy(ctx co
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkDestroyExecute(r ApiVirtualizationClusterGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkDestroyExecute(r ApiVirtualizationClusterGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkDestroyExecute
 
 type ApiVirtualizationClusterGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *[]ClusterGroupRequest
 }
 
@@ -161,7 +161,7 @@ Patch a list of cluster group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterGroupsBulkPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkPartialUpdate(ctx context.Context) ApiVirtualizationClusterGroupsBulkPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkPartialUpdate(ctx context.Context) ApiVirtualizationClusterGroupsBulkPartialUpdateRequest {
 	return ApiVirtualizationClusterGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -170,7 +170,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkPartialUpdate(
 
 // Execute executes the request
 //  @return []ClusterGroup
-func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkPartialUpdateExecute(r ApiVirtualizationClusterGroupsBulkPartialUpdateRequest) ([]ClusterGroup, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkPartialUpdateExecute(r ApiVirtualizationClusterGroupsBulkPartialUpdateRequest) ([]ClusterGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkPartialUpdateE
 		localVarReturnValue  []ClusterGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -264,7 +264,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkPartialUpdateE
 
 type ApiVirtualizationClusterGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *[]ClusterGroupRequest
 }
 
@@ -285,7 +285,7 @@ Put a list of cluster group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterGroupsBulkUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkUpdate(ctx context.Context) ApiVirtualizationClusterGroupsBulkUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkUpdate(ctx context.Context) ApiVirtualizationClusterGroupsBulkUpdateRequest {
 	return ApiVirtualizationClusterGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -294,7 +294,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkUpdate(ctx con
 
 // Execute executes the request
 //  @return []ClusterGroup
-func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkUpdateExecute(r ApiVirtualizationClusterGroupsBulkUpdateRequest) ([]ClusterGroup, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkUpdateExecute(r ApiVirtualizationClusterGroupsBulkUpdateRequest) ([]ClusterGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -302,7 +302,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkUpdateExecute(
 		localVarReturnValue  []ClusterGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsBulkUpdateExecute(
 
 type ApiVirtualizationClusterGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *ClusterGroupRequest
 }
 
@@ -409,7 +409,7 @@ Post a list of cluster group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterGroupsCreateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsCreate(ctx context.Context) ApiVirtualizationClusterGroupsCreateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsCreate(ctx context.Context) ApiVirtualizationClusterGroupsCreateRequest {
 	return ApiVirtualizationClusterGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -418,7 +418,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsCreate(ctx context
 
 // Execute executes the request
 //  @return ClusterGroup
-func (a *VirtualizationApiService) VirtualizationClusterGroupsCreateExecute(r ApiVirtualizationClusterGroupsCreateRequest) (*ClusterGroup, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsCreateExecute(r ApiVirtualizationClusterGroupsCreateRequest) (*ClusterGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -426,7 +426,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsCreateExecute(r Ap
 		localVarReturnValue  *ClusterGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,7 +512,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsCreateExecute(r Ap
 
 type ApiVirtualizationClusterGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -529,7 +529,7 @@ Delete a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsDestroy(ctx context.Context, id int32) ApiVirtualizationClusterGroupsDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsDestroy(ctx context.Context, id int32) ApiVirtualizationClusterGroupsDestroyRequest {
 	return ApiVirtualizationClusterGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -538,14 +538,14 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsDestroy(ctx contex
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationClusterGroupsDestroyExecute(r ApiVirtualizationClusterGroupsDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsDestroyExecute(r ApiVirtualizationClusterGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -618,7 +618,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsDestroyExecute(r A
 
 type ApiVirtualizationClusterGroupsListRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	contact *[]int32
 	contactN *[]int32
 	contactGroup *[]int32
@@ -1057,7 +1057,7 @@ Get a list of cluster group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterGroupsListRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsList(ctx context.Context) ApiVirtualizationClusterGroupsListRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsList(ctx context.Context) ApiVirtualizationClusterGroupsListRequest {
 	return ApiVirtualizationClusterGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1066,7 +1066,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsList(ctx context.C
 
 // Execute executes the request
 //  @return PaginatedClusterGroupList
-func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiVirtualizationClusterGroupsListRequest) (*PaginatedClusterGroupList, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsListExecute(r ApiVirtualizationClusterGroupsListRequest) (*PaginatedClusterGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1074,7 +1074,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		localVarReturnValue  *PaginatedClusterGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1090,7 +1090,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "multi")
@@ -1101,7 +1101,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "multi")
@@ -1112,7 +1112,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "multi")
@@ -1123,7 +1123,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "multi")
@@ -1134,7 +1134,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "multi")
@@ -1145,7 +1145,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "multi")
@@ -1156,7 +1156,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -1167,7 +1167,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -1178,7 +1178,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -1189,7 +1189,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -1200,7 +1200,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -1211,7 +1211,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -1222,7 +1222,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -1236,7 +1236,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -1250,7 +1250,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -1261,7 +1261,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -1272,7 +1272,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -1283,7 +1283,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -1294,7 +1294,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -1305,7 +1305,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -1316,7 +1316,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -1327,7 +1327,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -1338,7 +1338,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -1349,7 +1349,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -1363,7 +1363,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -1374,7 +1374,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -1385,7 +1385,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -1396,7 +1396,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -1407,7 +1407,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -1418,7 +1418,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -1429,7 +1429,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -1440,7 +1440,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -1451,7 +1451,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -1462,7 +1462,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -1473,7 +1473,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -1484,7 +1484,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -1501,7 +1501,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -1515,7 +1515,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -1526,7 +1526,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -1537,7 +1537,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -1548,7 +1548,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -1559,7 +1559,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -1570,7 +1570,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -1581,7 +1581,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -1592,7 +1592,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -1603,7 +1603,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -1623,7 +1623,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -1637,7 +1637,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -1648,7 +1648,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -1659,7 +1659,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -1670,7 +1670,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -1681,7 +1681,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -1692,7 +1692,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -1703,7 +1703,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -1714,7 +1714,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -1725,7 +1725,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -1736,7 +1736,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -1747,7 +1747,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -1826,7 +1826,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsListExecute(r ApiV
 
 type ApiVirtualizationClusterGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	patchedClusterGroupRequest *PatchedClusterGroupRequest
 }
@@ -1849,7 +1849,7 @@ Patch a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsPartialUpdateRequest {
 	return ApiVirtualizationClusterGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1859,7 +1859,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsPartialUpdate(ctx 
 
 // Execute executes the request
 //  @return ClusterGroup
-func (a *VirtualizationApiService) VirtualizationClusterGroupsPartialUpdateExecute(r ApiVirtualizationClusterGroupsPartialUpdateRequest) (*ClusterGroup, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsPartialUpdateExecute(r ApiVirtualizationClusterGroupsPartialUpdateRequest) (*ClusterGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1867,7 +1867,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsPartialUpdateExecu
 		localVarReturnValue  *ClusterGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1951,7 +1951,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsPartialUpdateExecu
 
 type ApiVirtualizationClusterGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -1968,7 +1968,7 @@ Get a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsRetrieveRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterGroupsRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterGroupsRetrieveRequest {
 	return ApiVirtualizationClusterGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1978,7 +1978,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsRetrieve(ctx conte
 
 // Execute executes the request
 //  @return ClusterGroup
-func (a *VirtualizationApiService) VirtualizationClusterGroupsRetrieveExecute(r ApiVirtualizationClusterGroupsRetrieveRequest) (*ClusterGroup, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsRetrieveExecute(r ApiVirtualizationClusterGroupsRetrieveRequest) (*ClusterGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1986,7 +1986,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsRetrieveExecute(r 
 		localVarReturnValue  *ClusterGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2068,7 +2068,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsRetrieveExecute(r 
 
 type ApiVirtualizationClusterGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	clusterGroupRequest *ClusterGroupRequest
 }
@@ -2091,7 +2091,7 @@ Put a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterGroupsUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsUpdateRequest {
 	return ApiVirtualizationClusterGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2101,7 +2101,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsUpdate(ctx context
 
 // Execute executes the request
 //  @return ClusterGroup
-func (a *VirtualizationApiService) VirtualizationClusterGroupsUpdateExecute(r ApiVirtualizationClusterGroupsUpdateRequest) (*ClusterGroup, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsUpdateExecute(r ApiVirtualizationClusterGroupsUpdateRequest) (*ClusterGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2109,7 +2109,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsUpdateExecute(r Ap
 		localVarReturnValue  *ClusterGroup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2196,7 +2196,7 @@ func (a *VirtualizationApiService) VirtualizationClusterGroupsUpdateExecute(r Ap
 
 type ApiVirtualizationClusterTypesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *[]ClusterTypeRequest
 }
 
@@ -2217,7 +2217,7 @@ Delete a list of cluster type objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterTypesBulkDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesBulkDestroy(ctx context.Context) ApiVirtualizationClusterTypesBulkDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkDestroy(ctx context.Context) ApiVirtualizationClusterTypesBulkDestroyRequest {
 	return ApiVirtualizationClusterTypesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2225,14 +2225,14 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkDestroy(ctx con
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationClusterTypesBulkDestroyExecute(r ApiVirtualizationClusterTypesBulkDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkDestroyExecute(r ApiVirtualizationClusterTypesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2309,7 +2309,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkDestroyExecute(
 
 type ApiVirtualizationClusterTypesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *[]ClusterTypeRequest
 }
 
@@ -2330,7 +2330,7 @@ Patch a list of cluster type objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterTypesBulkPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesBulkPartialUpdate(ctx context.Context) ApiVirtualizationClusterTypesBulkPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkPartialUpdate(ctx context.Context) ApiVirtualizationClusterTypesBulkPartialUpdateRequest {
 	return ApiVirtualizationClusterTypesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2339,7 +2339,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkPartialUpdate(c
 
 // Execute executes the request
 //  @return []ClusterType
-func (a *VirtualizationApiService) VirtualizationClusterTypesBulkPartialUpdateExecute(r ApiVirtualizationClusterTypesBulkPartialUpdateRequest) ([]ClusterType, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkPartialUpdateExecute(r ApiVirtualizationClusterTypesBulkPartialUpdateRequest) ([]ClusterType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -2347,7 +2347,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkPartialUpdateEx
 		localVarReturnValue  []ClusterType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2433,7 +2433,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkPartialUpdateEx
 
 type ApiVirtualizationClusterTypesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *[]ClusterTypeRequest
 }
 
@@ -2454,7 +2454,7 @@ Put a list of cluster type objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterTypesBulkUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesBulkUpdate(ctx context.Context) ApiVirtualizationClusterTypesBulkUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkUpdate(ctx context.Context) ApiVirtualizationClusterTypesBulkUpdateRequest {
 	return ApiVirtualizationClusterTypesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2463,7 +2463,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkUpdate(ctx cont
 
 // Execute executes the request
 //  @return []ClusterType
-func (a *VirtualizationApiService) VirtualizationClusterTypesBulkUpdateExecute(r ApiVirtualizationClusterTypesBulkUpdateRequest) ([]ClusterType, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkUpdateExecute(r ApiVirtualizationClusterTypesBulkUpdateRequest) ([]ClusterType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2471,7 +2471,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkUpdateExecute(r
 		localVarReturnValue  []ClusterType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2557,7 +2557,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesBulkUpdateExecute(r
 
 type ApiVirtualizationClusterTypesCreateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *ClusterTypeRequest
 }
 
@@ -2578,7 +2578,7 @@ Post a list of cluster type objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterTypesCreateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesCreate(ctx context.Context) ApiVirtualizationClusterTypesCreateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesCreate(ctx context.Context) ApiVirtualizationClusterTypesCreateRequest {
 	return ApiVirtualizationClusterTypesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2587,7 +2587,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesCreate(ctx context.
 
 // Execute executes the request
 //  @return ClusterType
-func (a *VirtualizationApiService) VirtualizationClusterTypesCreateExecute(r ApiVirtualizationClusterTypesCreateRequest) (*ClusterType, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesCreateExecute(r ApiVirtualizationClusterTypesCreateRequest) (*ClusterType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2595,7 +2595,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesCreateExecute(r Api
 		localVarReturnValue  *ClusterType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2681,7 +2681,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesCreateExecute(r Api
 
 type ApiVirtualizationClusterTypesDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -2698,7 +2698,7 @@ Delete a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesDestroy(ctx context.Context, id int32) ApiVirtualizationClusterTypesDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesDestroy(ctx context.Context, id int32) ApiVirtualizationClusterTypesDestroyRequest {
 	return ApiVirtualizationClusterTypesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2707,14 +2707,14 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesDestroy(ctx context
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationClusterTypesDestroyExecute(r ApiVirtualizationClusterTypesDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesDestroyExecute(r ApiVirtualizationClusterTypesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2787,7 +2787,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesDestroyExecute(r Ap
 
 type ApiVirtualizationClusterTypesListRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -3184,7 +3184,7 @@ Get a list of cluster type objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClusterTypesListRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesList(ctx context.Context) ApiVirtualizationClusterTypesListRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesList(ctx context.Context) ApiVirtualizationClusterTypesListRequest {
 	return ApiVirtualizationClusterTypesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3193,7 +3193,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesList(ctx context.Co
 
 // Execute executes the request
 //  @return PaginatedClusterTypeList
-func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVirtualizationClusterTypesListRequest) (*PaginatedClusterTypeList, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesListExecute(r ApiVirtualizationClusterTypesListRequest) (*PaginatedClusterTypeList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3201,7 +3201,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		localVarReturnValue  *PaginatedClusterTypeList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3217,7 +3217,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -3228,7 +3228,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -3239,7 +3239,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -3250,7 +3250,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -3261,7 +3261,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -3272,7 +3272,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -3283,7 +3283,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -3297,7 +3297,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -3311,7 +3311,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -3322,7 +3322,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -3333,7 +3333,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -3344,7 +3344,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -3355,7 +3355,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -3366,7 +3366,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -3377,7 +3377,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -3388,7 +3388,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -3399,7 +3399,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -3410,7 +3410,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -3424,7 +3424,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -3435,7 +3435,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -3446,7 +3446,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -3457,7 +3457,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -3468,7 +3468,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -3479,7 +3479,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -3490,7 +3490,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -3501,7 +3501,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -3512,7 +3512,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -3523,7 +3523,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -3534,7 +3534,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -3545,7 +3545,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -3562,7 +3562,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -3576,7 +3576,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -3587,7 +3587,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -3598,7 +3598,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -3609,7 +3609,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -3620,7 +3620,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -3631,7 +3631,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -3642,7 +3642,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -3653,7 +3653,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -3664,7 +3664,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -3684,7 +3684,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug", t, "multi")
@@ -3698,7 +3698,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ic", t, "multi")
@@ -3709,7 +3709,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__ie", t, "multi")
@@ -3720,7 +3720,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__iew", t, "multi")
@@ -3731,7 +3731,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__isw", t, "multi")
@@ -3742,7 +3742,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__n", t, "multi")
@@ -3753,7 +3753,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nic", t, "multi")
@@ -3764,7 +3764,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nie", t, "multi")
@@ -3775,7 +3775,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__niew", t, "multi")
@@ -3786,7 +3786,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "slug__nisw", t, "multi")
@@ -3797,7 +3797,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -3808,7 +3808,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -3887,7 +3887,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesListExecute(r ApiVi
 
 type ApiVirtualizationClusterTypesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	patchedClusterTypeRequest *PatchedClusterTypeRequest
 }
@@ -3910,7 +3910,7 @@ Patch a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesPartialUpdateRequest {
 	return ApiVirtualizationClusterTypesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3920,7 +3920,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesPartialUpdate(ctx c
 
 // Execute executes the request
 //  @return ClusterType
-func (a *VirtualizationApiService) VirtualizationClusterTypesPartialUpdateExecute(r ApiVirtualizationClusterTypesPartialUpdateRequest) (*ClusterType, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesPartialUpdateExecute(r ApiVirtualizationClusterTypesPartialUpdateRequest) (*ClusterType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3928,7 +3928,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesPartialUpdateExecut
 		localVarReturnValue  *ClusterType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4012,7 +4012,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesPartialUpdateExecut
 
 type ApiVirtualizationClusterTypesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -4029,7 +4029,7 @@ Get a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesRetrieveRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterTypesRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterTypesRetrieveRequest {
 	return ApiVirtualizationClusterTypesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4039,7 +4039,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesRetrieve(ctx contex
 
 // Execute executes the request
 //  @return ClusterType
-func (a *VirtualizationApiService) VirtualizationClusterTypesRetrieveExecute(r ApiVirtualizationClusterTypesRetrieveRequest) (*ClusterType, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesRetrieveExecute(r ApiVirtualizationClusterTypesRetrieveRequest) (*ClusterType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4047,7 +4047,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesRetrieveExecute(r A
 		localVarReturnValue  *ClusterType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4129,7 +4129,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesRetrieveExecute(r A
 
 type ApiVirtualizationClusterTypesUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	clusterTypeRequest *ClusterTypeRequest
 }
@@ -4152,7 +4152,7 @@ Put a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClusterTypesUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesUpdateRequest {
 	return ApiVirtualizationClusterTypesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4162,7 +4162,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesUpdate(ctx context.
 
 // Execute executes the request
 //  @return ClusterType
-func (a *VirtualizationApiService) VirtualizationClusterTypesUpdateExecute(r ApiVirtualizationClusterTypesUpdateRequest) (*ClusterType, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesUpdateExecute(r ApiVirtualizationClusterTypesUpdateRequest) (*ClusterType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4170,7 +4170,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesUpdateExecute(r Api
 		localVarReturnValue  *ClusterType
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClusterTypesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClusterTypesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4257,7 +4257,7 @@ func (a *VirtualizationApiService) VirtualizationClusterTypesUpdateExecute(r Api
 
 type ApiVirtualizationClustersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterRequest *[]ClusterRequest
 }
 
@@ -4278,7 +4278,7 @@ Delete a list of cluster objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClustersBulkDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersBulkDestroy(ctx context.Context) ApiVirtualizationClustersBulkDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersBulkDestroy(ctx context.Context) ApiVirtualizationClustersBulkDestroyRequest {
 	return ApiVirtualizationClustersBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4286,14 +4286,14 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkDestroy(ctx context
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationClustersBulkDestroyExecute(r ApiVirtualizationClustersBulkDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersBulkDestroyExecute(r ApiVirtualizationClustersBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4370,7 +4370,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkDestroyExecute(r Ap
 
 type ApiVirtualizationClustersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterRequest *[]ClusterRequest
 }
 
@@ -4391,7 +4391,7 @@ Patch a list of cluster objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClustersBulkPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersBulkPartialUpdate(ctx context.Context) ApiVirtualizationClustersBulkPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersBulkPartialUpdate(ctx context.Context) ApiVirtualizationClustersBulkPartialUpdateRequest {
 	return ApiVirtualizationClustersBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4400,7 +4400,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkPartialUpdate(ctx c
 
 // Execute executes the request
 //  @return []Cluster
-func (a *VirtualizationApiService) VirtualizationClustersBulkPartialUpdateExecute(r ApiVirtualizationClustersBulkPartialUpdateRequest) ([]Cluster, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersBulkPartialUpdateExecute(r ApiVirtualizationClustersBulkPartialUpdateRequest) ([]Cluster, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4408,7 +4408,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkPartialUpdateExecut
 		localVarReturnValue  []Cluster
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4494,7 +4494,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkPartialUpdateExecut
 
 type ApiVirtualizationClustersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	clusterRequest *[]ClusterRequest
 }
 
@@ -4515,7 +4515,7 @@ Put a list of cluster objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClustersBulkUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersBulkUpdate(ctx context.Context) ApiVirtualizationClustersBulkUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersBulkUpdate(ctx context.Context) ApiVirtualizationClustersBulkUpdateRequest {
 	return ApiVirtualizationClustersBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4524,7 +4524,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkUpdate(ctx context.
 
 // Execute executes the request
 //  @return []Cluster
-func (a *VirtualizationApiService) VirtualizationClustersBulkUpdateExecute(r ApiVirtualizationClustersBulkUpdateRequest) ([]Cluster, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersBulkUpdateExecute(r ApiVirtualizationClustersBulkUpdateRequest) ([]Cluster, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4532,7 +4532,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkUpdateExecute(r Api
 		localVarReturnValue  []Cluster
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4618,7 +4618,7 @@ func (a *VirtualizationApiService) VirtualizationClustersBulkUpdateExecute(r Api
 
 type ApiVirtualizationClustersCreateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	writableClusterRequest *WritableClusterRequest
 }
 
@@ -4639,7 +4639,7 @@ Post a list of cluster objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClustersCreateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersCreate(ctx context.Context) ApiVirtualizationClustersCreateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersCreate(ctx context.Context) ApiVirtualizationClustersCreateRequest {
 	return ApiVirtualizationClustersCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4648,7 +4648,7 @@ func (a *VirtualizationApiService) VirtualizationClustersCreate(ctx context.Cont
 
 // Execute executes the request
 //  @return Cluster
-func (a *VirtualizationApiService) VirtualizationClustersCreateExecute(r ApiVirtualizationClustersCreateRequest) (*Cluster, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersCreateExecute(r ApiVirtualizationClustersCreateRequest) (*Cluster, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4656,7 +4656,7 @@ func (a *VirtualizationApiService) VirtualizationClustersCreateExecute(r ApiVirt
 		localVarReturnValue  *Cluster
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4742,7 +4742,7 @@ func (a *VirtualizationApiService) VirtualizationClustersCreateExecute(r ApiVirt
 
 type ApiVirtualizationClustersDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -4759,7 +4759,7 @@ Delete a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersDestroy(ctx context.Context, id int32) ApiVirtualizationClustersDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersDestroy(ctx context.Context, id int32) ApiVirtualizationClustersDestroyRequest {
 	return ApiVirtualizationClustersDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4768,14 +4768,14 @@ func (a *VirtualizationApiService) VirtualizationClustersDestroy(ctx context.Con
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationClustersDestroyExecute(r ApiVirtualizationClustersDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersDestroyExecute(r ApiVirtualizationClustersDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4848,7 +4848,7 @@ func (a *VirtualizationApiService) VirtualizationClustersDestroyExecute(r ApiVir
 
 type ApiVirtualizationClustersListRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	contact *[]int32
 	contactN *[]int32
 	contactGroup *[]int32
@@ -5363,7 +5363,7 @@ Get a list of cluster objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationClustersListRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersList(ctx context.Context) ApiVirtualizationClustersListRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersList(ctx context.Context) ApiVirtualizationClustersListRequest {
 	return ApiVirtualizationClustersListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5372,7 +5372,7 @@ func (a *VirtualizationApiService) VirtualizationClustersList(ctx context.Contex
 
 // Execute executes the request
 //  @return PaginatedClusterList
-func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtualizationClustersListRequest) (*PaginatedClusterList, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersListExecute(r ApiVirtualizationClustersListRequest) (*PaginatedClusterList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5380,7 +5380,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		localVarReturnValue  *PaginatedClusterList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5396,7 +5396,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "multi")
@@ -5407,7 +5407,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "multi")
@@ -5418,7 +5418,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "multi")
@@ -5429,7 +5429,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "multi")
@@ -5440,7 +5440,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "multi")
@@ -5451,7 +5451,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "multi")
@@ -5462,7 +5462,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -5473,7 +5473,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -5484,7 +5484,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -5495,7 +5495,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -5506,7 +5506,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -5517,7 +5517,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -5528,7 +5528,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -5542,7 +5542,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -5553,7 +5553,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -5564,7 +5564,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -5575,7 +5575,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -5586,7 +5586,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -5600,7 +5600,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -5611,7 +5611,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -5622,7 +5622,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -5633,7 +5633,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -5644,7 +5644,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -5655,7 +5655,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -5666,7 +5666,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -5677,7 +5677,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -5688,7 +5688,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -5699,7 +5699,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -5710,7 +5710,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -5721,7 +5721,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -5738,7 +5738,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -5752,7 +5752,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -5763,7 +5763,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -5774,7 +5774,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -5785,7 +5785,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -5796,7 +5796,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -5807,7 +5807,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -5818,7 +5818,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -5829,7 +5829,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -5840,7 +5840,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -5860,7 +5860,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
@@ -5871,7 +5871,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
@@ -5882,7 +5882,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
@@ -5893,7 +5893,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
@@ -5904,7 +5904,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -5915,7 +5915,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
@@ -5926,7 +5926,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
@@ -5937,7 +5937,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
@@ -5948,7 +5948,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
@@ -5959,7 +5959,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
@@ -5970,7 +5970,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -5981,7 +5981,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
@@ -5992,7 +5992,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -6003,7 +6003,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -6014,7 +6014,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -6025,7 +6025,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -6036,7 +6036,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -6047,7 +6047,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -6058,7 +6058,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -6069,7 +6069,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -6080,7 +6080,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -6091,7 +6091,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -6102,7 +6102,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -6113,7 +6113,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -6124,7 +6124,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type", t, "multi")
@@ -6135,7 +6135,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type__n", t, "multi")
@@ -6146,7 +6146,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type_id", t, "multi")
@@ -6157,7 +6157,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "type_id__n", t, "multi")
@@ -6236,7 +6236,7 @@ func (a *VirtualizationApiService) VirtualizationClustersListExecute(r ApiVirtua
 
 type ApiVirtualizationClustersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	patchedWritableClusterRequest *PatchedWritableClusterRequest
 }
@@ -6259,7 +6259,7 @@ Patch a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClustersPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClustersPartialUpdateRequest {
 	return ApiVirtualizationClustersPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6269,7 +6269,7 @@ func (a *VirtualizationApiService) VirtualizationClustersPartialUpdate(ctx conte
 
 // Execute executes the request
 //  @return Cluster
-func (a *VirtualizationApiService) VirtualizationClustersPartialUpdateExecute(r ApiVirtualizationClustersPartialUpdateRequest) (*Cluster, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersPartialUpdateExecute(r ApiVirtualizationClustersPartialUpdateRequest) (*Cluster, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6277,7 +6277,7 @@ func (a *VirtualizationApiService) VirtualizationClustersPartialUpdateExecute(r 
 		localVarReturnValue  *Cluster
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6361,7 +6361,7 @@ func (a *VirtualizationApiService) VirtualizationClustersPartialUpdateExecute(r 
 
 type ApiVirtualizationClustersRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -6378,7 +6378,7 @@ Get a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersRetrieveRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersRetrieve(ctx context.Context, id int32) ApiVirtualizationClustersRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersRetrieve(ctx context.Context, id int32) ApiVirtualizationClustersRetrieveRequest {
 	return ApiVirtualizationClustersRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6388,7 +6388,7 @@ func (a *VirtualizationApiService) VirtualizationClustersRetrieve(ctx context.Co
 
 // Execute executes the request
 //  @return Cluster
-func (a *VirtualizationApiService) VirtualizationClustersRetrieveExecute(r ApiVirtualizationClustersRetrieveRequest) (*Cluster, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersRetrieveExecute(r ApiVirtualizationClustersRetrieveRequest) (*Cluster, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6396,7 +6396,7 @@ func (a *VirtualizationApiService) VirtualizationClustersRetrieveExecute(r ApiVi
 		localVarReturnValue  *Cluster
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6478,7 +6478,7 @@ func (a *VirtualizationApiService) VirtualizationClustersRetrieveExecute(r ApiVi
 
 type ApiVirtualizationClustersUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	writableClusterRequest *WritableClusterRequest
 }
@@ -6501,7 +6501,7 @@ Put a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationClustersUpdate(ctx context.Context, id int32) ApiVirtualizationClustersUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersUpdate(ctx context.Context, id int32) ApiVirtualizationClustersUpdateRequest {
 	return ApiVirtualizationClustersUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6511,7 +6511,7 @@ func (a *VirtualizationApiService) VirtualizationClustersUpdate(ctx context.Cont
 
 // Execute executes the request
 //  @return Cluster
-func (a *VirtualizationApiService) VirtualizationClustersUpdateExecute(r ApiVirtualizationClustersUpdateRequest) (*Cluster, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationClustersUpdateExecute(r ApiVirtualizationClustersUpdateRequest) (*Cluster, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -6519,7 +6519,7 @@ func (a *VirtualizationApiService) VirtualizationClustersUpdateExecute(r ApiVirt
 		localVarReturnValue  *Cluster
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationClustersUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationClustersUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6606,7 +6606,7 @@ func (a *VirtualizationApiService) VirtualizationClustersUpdateExecute(r ApiVirt
 
 type ApiVirtualizationInterfacesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	vMInterfaceRequest *[]VMInterfaceRequest
 }
 
@@ -6627,7 +6627,7 @@ Delete a list of interface objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationInterfacesBulkDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesBulkDestroy(ctx context.Context) ApiVirtualizationInterfacesBulkDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesBulkDestroy(ctx context.Context) ApiVirtualizationInterfacesBulkDestroyRequest {
 	return ApiVirtualizationInterfacesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6635,14 +6635,14 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkDestroy(ctx conte
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationInterfacesBulkDestroyExecute(r ApiVirtualizationInterfacesBulkDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesBulkDestroyExecute(r ApiVirtualizationInterfacesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6719,7 +6719,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkDestroyExecute(r 
 
 type ApiVirtualizationInterfacesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	vMInterfaceRequest *[]VMInterfaceRequest
 }
 
@@ -6740,7 +6740,7 @@ Patch a list of interface objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationInterfacesBulkPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesBulkPartialUpdate(ctx context.Context) ApiVirtualizationInterfacesBulkPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesBulkPartialUpdate(ctx context.Context) ApiVirtualizationInterfacesBulkPartialUpdateRequest {
 	return ApiVirtualizationInterfacesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6749,7 +6749,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkPartialUpdate(ctx
 
 // Execute executes the request
 //  @return []VMInterface
-func (a *VirtualizationApiService) VirtualizationInterfacesBulkPartialUpdateExecute(r ApiVirtualizationInterfacesBulkPartialUpdateRequest) ([]VMInterface, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesBulkPartialUpdateExecute(r ApiVirtualizationInterfacesBulkPartialUpdateRequest) ([]VMInterface, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6757,7 +6757,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkPartialUpdateExec
 		localVarReturnValue  []VMInterface
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6843,7 +6843,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkPartialUpdateExec
 
 type ApiVirtualizationInterfacesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	vMInterfaceRequest *[]VMInterfaceRequest
 }
 
@@ -6864,7 +6864,7 @@ Put a list of interface objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationInterfacesBulkUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesBulkUpdate(ctx context.Context) ApiVirtualizationInterfacesBulkUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesBulkUpdate(ctx context.Context) ApiVirtualizationInterfacesBulkUpdateRequest {
 	return ApiVirtualizationInterfacesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6873,7 +6873,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkUpdate(ctx contex
 
 // Execute executes the request
 //  @return []VMInterface
-func (a *VirtualizationApiService) VirtualizationInterfacesBulkUpdateExecute(r ApiVirtualizationInterfacesBulkUpdateRequest) ([]VMInterface, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesBulkUpdateExecute(r ApiVirtualizationInterfacesBulkUpdateRequest) ([]VMInterface, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -6881,7 +6881,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkUpdateExecute(r A
 		localVarReturnValue  []VMInterface
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6967,7 +6967,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesBulkUpdateExecute(r A
 
 type ApiVirtualizationInterfacesCreateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	writableVMInterfaceRequest *WritableVMInterfaceRequest
 }
 
@@ -6988,7 +6988,7 @@ Post a list of interface objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationInterfacesCreateRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesCreate(ctx context.Context) ApiVirtualizationInterfacesCreateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesCreate(ctx context.Context) ApiVirtualizationInterfacesCreateRequest {
 	return ApiVirtualizationInterfacesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6997,7 +6997,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesCreate(ctx context.Co
 
 // Execute executes the request
 //  @return VMInterface
-func (a *VirtualizationApiService) VirtualizationInterfacesCreateExecute(r ApiVirtualizationInterfacesCreateRequest) (*VMInterface, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesCreateExecute(r ApiVirtualizationInterfacesCreateRequest) (*VMInterface, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7005,7 +7005,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesCreateExecute(r ApiVi
 		localVarReturnValue  *VMInterface
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7091,7 +7091,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesCreateExecute(r ApiVi
 
 type ApiVirtualizationInterfacesDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -7108,7 +7108,7 @@ Delete a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesDestroy(ctx context.Context, id int32) ApiVirtualizationInterfacesDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesDestroy(ctx context.Context, id int32) ApiVirtualizationInterfacesDestroyRequest {
 	return ApiVirtualizationInterfacesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7117,14 +7117,14 @@ func (a *VirtualizationApiService) VirtualizationInterfacesDestroy(ctx context.C
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationInterfacesDestroyExecute(r ApiVirtualizationInterfacesDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesDestroyExecute(r ApiVirtualizationInterfacesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7197,7 +7197,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesDestroyExecute(r ApiV
 
 type ApiVirtualizationInterfacesListRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	bridgeId *[]int32
 	bridgeIdN *[]int32
 	cluster *[]string
@@ -7790,7 +7790,7 @@ Get a list of interface objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationInterfacesListRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesList(ctx context.Context) ApiVirtualizationInterfacesListRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesList(ctx context.Context) ApiVirtualizationInterfacesListRequest {
 	return ApiVirtualizationInterfacesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7799,7 +7799,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesList(ctx context.Cont
 
 // Execute executes the request
 //  @return PaginatedVMInterfaceList
-func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirtualizationInterfacesListRequest) (*PaginatedVMInterfaceList, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesListExecute(r ApiVirtualizationInterfacesListRequest) (*PaginatedVMInterfaceList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7807,7 +7807,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		localVarReturnValue  *PaginatedVMInterfaceList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7823,7 +7823,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bridge_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bridge_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "bridge_id", t, "multi")
@@ -7834,7 +7834,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bridge_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bridge_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "bridge_id__n", t, "multi")
@@ -7845,7 +7845,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster", t, "multi")
@@ -7856,7 +7856,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster__n", t, "multi")
@@ -7867,7 +7867,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", t, "multi")
@@ -7878,7 +7878,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", t, "multi")
@@ -7889,7 +7889,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -7900,7 +7900,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -7911,7 +7911,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -7922,7 +7922,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -7933,7 +7933,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -7944,7 +7944,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -7955,7 +7955,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -7969,7 +7969,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -7983,7 +7983,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -7994,7 +7994,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -8005,7 +8005,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -8016,7 +8016,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -8027,7 +8027,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -8038,7 +8038,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -8049,7 +8049,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -8060,7 +8060,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -8071,7 +8071,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -8085,7 +8085,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -8099,7 +8099,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -8110,7 +8110,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -8121,7 +8121,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -8132,7 +8132,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -8143,7 +8143,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -8154,7 +8154,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn", t, "multi")
@@ -8165,7 +8165,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn__n", t, "multi")
@@ -8176,7 +8176,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id", t, "multi")
@@ -8187,7 +8187,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "l2vpn_id__n", t, "multi")
@@ -8198,7 +8198,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -8209,7 +8209,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -8220,7 +8220,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -8231,7 +8231,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -8242,7 +8242,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -8253,7 +8253,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -8264,7 +8264,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -8278,7 +8278,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address", t, "multi")
@@ -8289,7 +8289,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ic", t, "multi")
@@ -8300,7 +8300,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ie", t, "multi")
@@ -8311,7 +8311,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__iew", t, "multi")
@@ -8322,7 +8322,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__isw", t, "multi")
@@ -8333,7 +8333,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__n", t, "multi")
@@ -8344,7 +8344,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nic", t, "multi")
@@ -8355,7 +8355,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nie", t, "multi")
@@ -8366,7 +8366,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__niew", t, "multi")
@@ -8377,7 +8377,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nisw", t, "multi")
@@ -8391,7 +8391,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mtu", t, "multi")
@@ -8405,7 +8405,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__gt", t, "multi")
@@ -8416,7 +8416,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__gte", t, "multi")
@@ -8427,7 +8427,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__lt", t, "multi")
@@ -8438,7 +8438,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__lte", t, "multi")
@@ -8449,7 +8449,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mtu__n", t, "multi")
@@ -8460,7 +8460,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -8474,7 +8474,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -8485,7 +8485,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -8496,7 +8496,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -8507,7 +8507,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -8518,7 +8518,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -8529,7 +8529,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -8540,7 +8540,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -8551,7 +8551,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -8562,7 +8562,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -8579,7 +8579,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id", t, "multi")
@@ -8590,7 +8590,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "parent_id__n", t, "multi")
@@ -8604,7 +8604,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -8615,7 +8615,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -8629,7 +8629,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine", t, "multi")
@@ -8640,7 +8640,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine__n", t, "multi")
@@ -8651,7 +8651,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id", t, "multi")
@@ -8662,7 +8662,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "virtual_machine_id__n", t, "multi")
@@ -8679,7 +8679,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf", t, "multi")
@@ -8690,7 +8690,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf__n", t, "multi")
@@ -8701,7 +8701,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id", t, "multi")
@@ -8712,7 +8712,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vrf_id__n", t, "multi")
@@ -8788,7 +8788,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesListExecute(r ApiVirt
 
 type ApiVirtualizationInterfacesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	patchedWritableVMInterfaceRequest *PatchedWritableVMInterfaceRequest
 }
@@ -8811,7 +8811,7 @@ Patch a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesPartialUpdateRequest {
 	return ApiVirtualizationInterfacesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8821,7 +8821,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesPartialUpdate(ctx con
 
 // Execute executes the request
 //  @return VMInterface
-func (a *VirtualizationApiService) VirtualizationInterfacesPartialUpdateExecute(r ApiVirtualizationInterfacesPartialUpdateRequest) (*VMInterface, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesPartialUpdateExecute(r ApiVirtualizationInterfacesPartialUpdateRequest) (*VMInterface, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -8829,7 +8829,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesPartialUpdateExecute(
 		localVarReturnValue  *VMInterface
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8913,7 +8913,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesPartialUpdateExecute(
 
 type ApiVirtualizationInterfacesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -8930,7 +8930,7 @@ Get a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesRetrieveRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesRetrieve(ctx context.Context, id int32) ApiVirtualizationInterfacesRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesRetrieve(ctx context.Context, id int32) ApiVirtualizationInterfacesRetrieveRequest {
 	return ApiVirtualizationInterfacesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8940,7 +8940,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesRetrieve(ctx context.
 
 // Execute executes the request
 //  @return VMInterface
-func (a *VirtualizationApiService) VirtualizationInterfacesRetrieveExecute(r ApiVirtualizationInterfacesRetrieveRequest) (*VMInterface, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesRetrieveExecute(r ApiVirtualizationInterfacesRetrieveRequest) (*VMInterface, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8948,7 +8948,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesRetrieveExecute(r Api
 		localVarReturnValue  *VMInterface
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9030,7 +9030,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesRetrieveExecute(r Api
 
 type ApiVirtualizationInterfacesUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	writableVMInterfaceRequest *WritableVMInterfaceRequest
 }
@@ -9053,7 +9053,7 @@ Put a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationInterfacesUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesUpdateRequest {
 	return ApiVirtualizationInterfacesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9063,7 +9063,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesUpdate(ctx context.Co
 
 // Execute executes the request
 //  @return VMInterface
-func (a *VirtualizationApiService) VirtualizationInterfacesUpdateExecute(r ApiVirtualizationInterfacesUpdateRequest) (*VMInterface, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationInterfacesUpdateExecute(r ApiVirtualizationInterfacesUpdateRequest) (*VMInterface, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9071,7 +9071,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesUpdateExecute(r ApiVi
 		localVarReturnValue  *VMInterface
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationInterfacesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationInterfacesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9158,7 +9158,7 @@ func (a *VirtualizationApiService) VirtualizationInterfacesUpdateExecute(r ApiVi
 
 type ApiVirtualizationVirtualMachinesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	virtualMachineWithConfigContextRequest *[]VirtualMachineWithConfigContextRequest
 }
 
@@ -9179,7 +9179,7 @@ Delete a list of virtual machine objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationVirtualMachinesBulkDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkDestroy(ctx context.Context) ApiVirtualizationVirtualMachinesBulkDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkDestroy(ctx context.Context) ApiVirtualizationVirtualMachinesBulkDestroyRequest {
 	return ApiVirtualizationVirtualMachinesBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9187,14 +9187,14 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkDestroy(ctx 
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkDestroyExecute(r ApiVirtualizationVirtualMachinesBulkDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkDestroyExecute(r ApiVirtualizationVirtualMachinesBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9271,7 +9271,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkDestroyExecu
 
 type ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	virtualMachineWithConfigContextRequest *[]VirtualMachineWithConfigContextRequest
 }
 
@@ -9292,7 +9292,7 @@ Patch a list of virtual machine objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkPartialUpdate(ctx context.Context) ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkPartialUpdate(ctx context.Context) ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest {
 	return ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9301,7 +9301,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkPartialUpdat
 
 // Execute executes the request
 //  @return []VirtualMachineWithConfigContext
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkPartialUpdateExecute(r ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest) ([]VirtualMachineWithConfigContext, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkPartialUpdateExecute(r ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest) ([]VirtualMachineWithConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -9309,7 +9309,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkPartialUpdat
 		localVarReturnValue  []VirtualMachineWithConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9395,7 +9395,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkPartialUpdat
 
 type ApiVirtualizationVirtualMachinesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	virtualMachineWithConfigContextRequest *[]VirtualMachineWithConfigContextRequest
 }
 
@@ -9416,7 +9416,7 @@ Put a list of virtual machine objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationVirtualMachinesBulkUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkUpdate(ctx context.Context) ApiVirtualizationVirtualMachinesBulkUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkUpdate(ctx context.Context) ApiVirtualizationVirtualMachinesBulkUpdateRequest {
 	return ApiVirtualizationVirtualMachinesBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9425,7 +9425,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkUpdate(ctx c
 
 // Execute executes the request
 //  @return []VirtualMachineWithConfigContext
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkUpdateExecute(r ApiVirtualizationVirtualMachinesBulkUpdateRequest) ([]VirtualMachineWithConfigContext, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkUpdateExecute(r ApiVirtualizationVirtualMachinesBulkUpdateRequest) ([]VirtualMachineWithConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9433,7 +9433,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkUpdateExecut
 		localVarReturnValue  []VirtualMachineWithConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9519,7 +9519,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesBulkUpdateExecut
 
 type ApiVirtualizationVirtualMachinesCreateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
 }
 
@@ -9540,7 +9540,7 @@ Post a list of virtual machine objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationVirtualMachinesCreateRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesCreate(ctx context.Context) ApiVirtualizationVirtualMachinesCreateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesCreate(ctx context.Context) ApiVirtualizationVirtualMachinesCreateRequest {
 	return ApiVirtualizationVirtualMachinesCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9549,7 +9549,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesCreate(ctx conte
 
 // Execute executes the request
 //  @return VirtualMachineWithConfigContext
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesCreateExecute(r ApiVirtualizationVirtualMachinesCreateRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesCreateExecute(r ApiVirtualizationVirtualMachinesCreateRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -9557,7 +9557,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesCreateExecute(r 
 		localVarReturnValue  *VirtualMachineWithConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9643,7 +9643,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesCreateExecute(r 
 
 type ApiVirtualizationVirtualMachinesDestroyRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -9660,7 +9660,7 @@ Delete a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesDestroyRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesDestroy(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesDestroy(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesDestroyRequest {
 	return ApiVirtualizationVirtualMachinesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9669,14 +9669,14 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesDestroy(ctx cont
 }
 
 // Execute executes the request
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesDestroyExecute(r ApiVirtualizationVirtualMachinesDestroyRequest) (*http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesDestroyExecute(r ApiVirtualizationVirtualMachinesDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9749,7 +9749,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesDestroyExecute(r
 
 type ApiVirtualizationVirtualMachinesListRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	cluster *[]string
 	clusterN *[]string
 	clusterGroup *[]string
@@ -10590,7 +10590,7 @@ Get a list of virtual machine objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiVirtualizationVirtualMachinesListRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesList(ctx context.Context) ApiVirtualizationVirtualMachinesListRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesList(ctx context.Context) ApiVirtualizationVirtualMachinesListRequest {
 	return ApiVirtualizationVirtualMachinesListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10599,7 +10599,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesList(ctx context
 
 // Execute executes the request
 //  @return PaginatedVirtualMachineWithConfigContextList
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r ApiVirtualizationVirtualMachinesListRequest) (*PaginatedVirtualMachineWithConfigContextList, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesListExecute(r ApiVirtualizationVirtualMachinesListRequest) (*PaginatedVirtualMachineWithConfigContextList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10607,7 +10607,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		localVarReturnValue  *PaginatedVirtualMachineWithConfigContextList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10623,7 +10623,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster", t, "multi")
@@ -10634,7 +10634,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster__n", t, "multi")
@@ -10645,7 +10645,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group", t, "multi")
@@ -10656,7 +10656,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group__n", t, "multi")
@@ -10667,7 +10667,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id", t, "multi")
@@ -10678,7 +10678,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_group_id__n", t, "multi")
@@ -10689,7 +10689,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id", t, "multi")
@@ -10700,7 +10700,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_id__n", t, "multi")
@@ -10711,7 +10711,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type", t, "multi")
@@ -10722,7 +10722,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type__n", t, "multi")
@@ -10733,7 +10733,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id", t, "multi")
@@ -10744,7 +10744,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cluster_type_id__n", t, "multi")
@@ -10755,7 +10755,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "config_template_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "config_template_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "config_template_id", t, "multi")
@@ -10766,7 +10766,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "config_template_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "config_template_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "config_template_id__n", t, "multi")
@@ -10777,7 +10777,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact", t, "multi")
@@ -10788,7 +10788,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact__n", t, "multi")
@@ -10799,7 +10799,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group", t, "multi")
@@ -10810,7 +10810,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_group__n", t, "multi")
@@ -10821,7 +10821,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role", t, "multi")
@@ -10832,7 +10832,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "contact_role__n", t, "multi")
@@ -10843,7 +10843,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "multi")
@@ -10854,7 +10854,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "multi")
@@ -10865,7 +10865,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "multi")
@@ -10876,7 +10876,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "multi")
@@ -10887,7 +10887,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "multi")
@@ -10898,7 +10898,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "multi")
@@ -10909,7 +10909,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "multi")
@@ -10923,7 +10923,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device", t, "multi")
@@ -10934,7 +10934,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device__n", t, "multi")
@@ -10945,7 +10945,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", t, "multi")
@@ -10956,7 +10956,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "device_id__n", t, "multi")
@@ -10967,7 +10967,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "disk", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "disk", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "disk", t, "multi")
@@ -10981,7 +10981,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "disk__gt", t, "multi")
@@ -10992,7 +10992,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "disk__gte", t, "multi")
@@ -11003,7 +11003,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "disk__lt", t, "multi")
@@ -11014,7 +11014,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "disk__lte", t, "multi")
@@ -11025,7 +11025,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "disk__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "disk__n", t, "multi")
@@ -11039,7 +11039,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -11053,7 +11053,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -11064,7 +11064,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -11075,7 +11075,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -11086,7 +11086,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -11097,7 +11097,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -11108,7 +11108,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "multi")
@@ -11119,7 +11119,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "multi")
@@ -11130,7 +11130,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "multi")
@@ -11141,7 +11141,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "multi")
@@ -11152,7 +11152,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "multi")
@@ -11163,7 +11163,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "multi")
@@ -11174,7 +11174,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "multi")
@@ -11191,7 +11191,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address", t, "multi")
@@ -11202,7 +11202,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ic", t, "multi")
@@ -11213,7 +11213,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__ie", t, "multi")
@@ -11224,7 +11224,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__iew", t, "multi")
@@ -11235,7 +11235,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__isw", t, "multi")
@@ -11246,7 +11246,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__n", t, "multi")
@@ -11257,7 +11257,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nic", t, "multi")
@@ -11268,7 +11268,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nie", t, "multi")
@@ -11279,7 +11279,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__niew", t, "multi")
@@ -11290,7 +11290,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "mac_address__nisw", t, "multi")
@@ -11301,7 +11301,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "memory", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "memory", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "memory", t, "multi")
@@ -11315,7 +11315,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "memory__gt", t, "multi")
@@ -11326,7 +11326,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "memory__gte", t, "multi")
@@ -11337,7 +11337,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "memory__lt", t, "multi")
@@ -11348,7 +11348,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "memory__lte", t, "multi")
@@ -11359,7 +11359,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "memory__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "memory__n", t, "multi")
@@ -11373,7 +11373,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -11387,7 +11387,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -11398,7 +11398,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -11409,7 +11409,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -11420,7 +11420,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -11431,7 +11431,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -11442,7 +11442,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -11453,7 +11453,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -11464,7 +11464,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -11475,7 +11475,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -11492,7 +11492,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform", t, "multi")
@@ -11503,7 +11503,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform__n", t, "multi")
@@ -11514,7 +11514,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id", t, "multi")
@@ -11525,7 +11525,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "platform_id__n", t, "multi")
@@ -11539,7 +11539,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region", t, "multi")
@@ -11550,7 +11550,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region__n", t, "multi")
@@ -11561,7 +11561,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id", t, "multi")
@@ -11572,7 +11572,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "region_id__n", t, "multi")
@@ -11583,7 +11583,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role", t, "multi")
@@ -11594,7 +11594,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role__n", t, "multi")
@@ -11605,7 +11605,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id", t, "multi")
@@ -11616,7 +11616,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "role_id__n", t, "multi")
@@ -11627,7 +11627,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site", t, "multi")
@@ -11638,7 +11638,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site__n", t, "multi")
@@ -11649,7 +11649,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group", t, "multi")
@@ -11660,7 +11660,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group__n", t, "multi")
@@ -11671,7 +11671,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id", t, "multi")
@@ -11682,7 +11682,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_group_id__n", t, "multi")
@@ -11693,7 +11693,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id", t, "multi")
@@ -11704,7 +11704,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "site_id__n", t, "multi")
@@ -11715,7 +11715,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status", t, "multi")
@@ -11726,7 +11726,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "status__n", t, "multi")
@@ -11737,7 +11737,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "multi")
@@ -11748,7 +11748,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "multi")
@@ -11759,7 +11759,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant", t, "multi")
@@ -11770,7 +11770,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant__n", t, "multi")
@@ -11781,7 +11781,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group", t, "multi")
@@ -11792,7 +11792,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group__n", t, "multi")
@@ -11803,7 +11803,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id", t, "multi")
@@ -11814,7 +11814,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_group_id__n", t, "multi")
@@ -11825,7 +11825,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id", t, "multi")
@@ -11836,7 +11836,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "tenant_id__n", t, "multi")
@@ -11850,7 +11850,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus", t, "multi")
@@ -11864,7 +11864,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__gt", t, "multi")
@@ -11875,7 +11875,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__gte", t, "multi")
@@ -11886,7 +11886,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__lt", t, "multi")
@@ -11897,7 +11897,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__lte", t, "multi")
@@ -11908,7 +11908,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "vcpus__n", t, "multi")
@@ -11984,7 +11984,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesListExecute(r Ap
 
 type ApiVirtualizationVirtualMachinesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	patchedWritableVirtualMachineWithConfigContextRequest *PatchedWritableVirtualMachineWithConfigContextRequest
 }
@@ -12007,7 +12007,7 @@ Patch a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesPartialUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesPartialUpdateRequest {
 	return ApiVirtualizationVirtualMachinesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12017,7 +12017,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesPartialUpdate(ct
 
 // Execute executes the request
 //  @return VirtualMachineWithConfigContext
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesPartialUpdateExecute(r ApiVirtualizationVirtualMachinesPartialUpdateRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesPartialUpdateExecute(r ApiVirtualizationVirtualMachinesPartialUpdateRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -12025,7 +12025,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesPartialUpdateExe
 		localVarReturnValue  *VirtualMachineWithConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12109,7 +12109,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesPartialUpdateExe
 
 type ApiVirtualizationVirtualMachinesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 }
 
@@ -12126,7 +12126,7 @@ Get a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesRetrieveRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesRetrieve(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRetrieve(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesRetrieveRequest {
 	return ApiVirtualizationVirtualMachinesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12136,7 +12136,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesRetrieve(ctx con
 
 // Execute executes the request
 //  @return VirtualMachineWithConfigContext
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesRetrieveExecute(r ApiVirtualizationVirtualMachinesRetrieveRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRetrieveExecute(r ApiVirtualizationVirtualMachinesRetrieveRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12144,7 +12144,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesRetrieveExecute(
 		localVarReturnValue  *VirtualMachineWithConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12226,7 +12226,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesRetrieveExecute(
 
 type ApiVirtualizationVirtualMachinesUpdateRequest struct {
 	ctx context.Context
-	ApiService *VirtualizationApiService
+	ApiService *VirtualizationAPIService
 	id int32
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
 }
@@ -12249,7 +12249,7 @@ Put a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesUpdateRequest
 */
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesUpdateRequest {
 	return ApiVirtualizationVirtualMachinesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12259,7 +12259,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesUpdate(ctx conte
 
 // Execute executes the request
 //  @return VirtualMachineWithConfigContext
-func (a *VirtualizationApiService) VirtualizationVirtualMachinesUpdateExecute(r ApiVirtualizationVirtualMachinesUpdateRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesUpdateExecute(r ApiVirtualizationVirtualMachinesUpdateRequest) (*VirtualMachineWithConfigContext, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12267,7 +12267,7 @@ func (a *VirtualizationApiService) VirtualizationVirtualMachinesUpdateExecute(r 
 		localVarReturnValue  *VirtualMachineWithConfigContext
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationApiService.VirtualizationVirtualMachinesUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualizationAPIService.VirtualizationVirtualMachinesUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

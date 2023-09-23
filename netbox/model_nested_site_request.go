@@ -22,10 +22,7 @@ type NestedSiteRequest struct {
 	// Full name of the site
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedSiteRequest NestedSiteRequest
 
 // NewNestedSiteRequest instantiates a new NestedSiteRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -106,30 +103,7 @@ func (o NestedSiteRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedSiteRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedSiteRequest := _NestedSiteRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedSiteRequest); err == nil {
-		*o = NestedSiteRequest(varNestedSiteRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedSiteRequest struct {

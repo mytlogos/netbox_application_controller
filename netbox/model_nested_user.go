@@ -24,10 +24,7 @@ type NestedUser struct {
 	Display string `json:"display"`
 	// Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
 	Username string `json:"username"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedUser NestedUser
 
 // NewNestedUser instantiates a new NestedUser object
 // This constructor will assign default values to properties that have it defined,
@@ -156,36 +153,11 @@ func (o NestedUser) MarshalJSON() ([]byte, error) {
 
 func (o NestedUser) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["username"] = o.Username
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedUser) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedUser := _NestedUser{}
-
-	if err = json.Unmarshal(bytes, &varNestedUser); err == nil {
-		*o = NestedUser(varNestedUser)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "username")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedUser struct {

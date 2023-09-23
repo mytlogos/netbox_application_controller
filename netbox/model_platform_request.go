@@ -26,10 +26,7 @@ type PlatformRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PlatformRequest PlatformRequest
 
 // NewPlatformRequest instantiates a new PlatformRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -305,35 +302,7 @@ func (o PlatformRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PlatformRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPlatformRequest := _PlatformRequest{}
-
-	if err = json.Unmarshal(bytes, &varPlatformRequest); err == nil {
-		*o = PlatformRequest(varPlatformRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "config_template")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePlatformRequest struct {

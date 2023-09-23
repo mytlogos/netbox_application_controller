@@ -31,10 +31,7 @@ type ApplicationLink struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	Url string `json:"url"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ApplicationLink ApplicationLink
 
 // NewApplicationLink instantiates a new ApplicationLink object
 // This constructor will assign default values to properties that have it defined,
@@ -363,8 +360,8 @@ func (o ApplicationLink) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationLink) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["link"] = o.Link
 	toSerialize["application"] = o.Application
@@ -379,40 +376,8 @@ func (o ApplicationLink) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: url is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["url"] = o.Url
 	return toSerialize, nil
-}
-
-func (o *ApplicationLink) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationLink := _ApplicationLink{}
-
-	if err = json.Unmarshal(bytes, &varApplicationLink); err == nil {
-		*o = ApplicationLink(varApplicationLink)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "link")
-		delete(additionalProperties, "application")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "url")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationLink struct {

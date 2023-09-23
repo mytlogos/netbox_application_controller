@@ -22,10 +22,7 @@ type NestedVRFRequest struct {
 	Name string `json:"name"`
 	// Unique route distinguisher (as defined in RFC 4364)
 	Rd NullableString `json:"rd,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVRFRequest NestedVRFRequest
 
 // NewNestedVRFRequest instantiates a new NestedVRFRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -125,30 +122,7 @@ func (o NestedVRFRequest) ToMap() (map[string]interface{}, error) {
 	if o.Rd.IsSet() {
 		toSerialize["rd"] = o.Rd.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVRFRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVRFRequest := _NestedVRFRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedVRFRequest); err == nil {
-		*o = NestedVRFRequest(varNestedVRFRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rd")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVRFRequest struct {

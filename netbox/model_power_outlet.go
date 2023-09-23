@@ -47,10 +47,7 @@ type PowerOutlet struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerOutlet PowerOutlet
 
 // NewPowerOutlet instantiates a new PowerOutlet object
 // This constructor will assign default values to properties that have it defined,
@@ -788,9 +785,9 @@ func (o PowerOutlet) MarshalJSON() ([]byte, error) {
 
 func (o PowerOutlet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["device"] = o.Device
 	if o.Module.IsSet() {
 		toSerialize["module"] = o.Module.Get()
@@ -815,12 +812,12 @@ func (o PowerOutlet) ToMap() (map[string]interface{}, error) {
 		toSerialize["mark_connected"] = o.MarkConnected
 	}
 	toSerialize["cable"] = o.Cable.Get()
-	// skip: cable_end is readOnly
-	// skip: link_peers is readOnly
-	// skip: link_peers_type is readOnly
-	// skip: connected_endpoints is readOnly
-	// skip: connected_endpoints_type is readOnly
-	// skip: connected_endpoints_reachable is readOnly
+	toSerialize["cable_end"] = o.CableEnd
+	toSerialize["link_peers"] = o.LinkPeers
+	toSerialize["link_peers_type"] = o.LinkPeersType
+	toSerialize["connected_endpoints"] = o.ConnectedEndpoints
+	toSerialize["connected_endpoints_type"] = o.ConnectedEndpointsType
+	toSerialize["connected_endpoints_reachable"] = o.ConnectedEndpointsReachable
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
@@ -829,53 +826,8 @@ func (o PowerOutlet) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: _occupied is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_occupied"] = o.Occupied
 	return toSerialize, nil
-}
-
-func (o *PowerOutlet) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerOutlet := _PowerOutlet{}
-
-	if err = json.Unmarshal(bytes, &varPowerOutlet); err == nil {
-		*o = PowerOutlet(varPowerOutlet)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "power_port")
-		delete(additionalProperties, "feed_leg")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "cable_end")
-		delete(additionalProperties, "link_peers")
-		delete(additionalProperties, "link_peers_type")
-		delete(additionalProperties, "connected_endpoints")
-		delete(additionalProperties, "connected_endpoints_type")
-		delete(additionalProperties, "connected_endpoints_reachable")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "_occupied")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerOutlet struct {

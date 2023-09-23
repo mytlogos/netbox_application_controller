@@ -58,10 +58,7 @@ type Webhook struct {
 	Tags []NestedTag `json:"tags,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Webhook Webhook
 
 // NewWebhook instantiates a new Webhook object
 // This constructor will assign default values to properties that have it defined,
@@ -817,9 +814,9 @@ func (o Webhook) MarshalJSON() ([]byte, error) {
 
 func (o Webhook) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["content_types"] = o.ContentTypes
 	toSerialize["name"] = o.Name
 	if !IsNil(o.TypeCreate) {
@@ -873,52 +870,7 @@ func (o Webhook) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Webhook) UnmarshalJSON(bytes []byte) (err error) {
-	varWebhook := _Webhook{}
-
-	if err = json.Unmarshal(bytes, &varWebhook); err == nil {
-		*o = Webhook(varWebhook)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type_create")
-		delete(additionalProperties, "type_update")
-		delete(additionalProperties, "type_delete")
-		delete(additionalProperties, "type_job_start")
-		delete(additionalProperties, "type_job_end")
-		delete(additionalProperties, "payload_url")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "http_method")
-		delete(additionalProperties, "http_content_type")
-		delete(additionalProperties, "additional_headers")
-		delete(additionalProperties, "body_template")
-		delete(additionalProperties, "secret")
-		delete(additionalProperties, "conditions")
-		delete(additionalProperties, "ssl_verification")
-		delete(additionalProperties, "ca_file_path")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWebhook struct {

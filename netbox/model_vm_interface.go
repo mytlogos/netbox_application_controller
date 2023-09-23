@@ -42,10 +42,7 @@ type VMInterface struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	CountIpaddresses int32 `json:"count_ipaddresses"`
 	CountFhrpGroups int32 `json:"count_fhrp_groups"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VMInterface VMInterface
 
 // NewVMInterface instantiates a new VMInterface object
 // This constructor will assign default values to properties that have it defined,
@@ -774,9 +771,9 @@ func (o VMInterface) MarshalJSON() ([]byte, error) {
 
 func (o VMInterface) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["virtual_machine"] = o.VirtualMachine
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Enabled) {
@@ -818,52 +815,9 @@ func (o VMInterface) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: count_ipaddresses is readOnly
-	// skip: count_fhrp_groups is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["count_ipaddresses"] = o.CountIpaddresses
+	toSerialize["count_fhrp_groups"] = o.CountFhrpGroups
 	return toSerialize, nil
-}
-
-func (o *VMInterface) UnmarshalJSON(bytes []byte) (err error) {
-	varVMInterface := _VMInterface{}
-
-	if err = json.Unmarshal(bytes, &varVMInterface); err == nil {
-		*o = VMInterface(varVMInterface)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "virtual_machine")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "mtu")
-		delete(additionalProperties, "mac_address")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "untagged_vlan")
-		delete(additionalProperties, "tagged_vlans")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "l2vpn_termination")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "count_ipaddresses")
-		delete(additionalProperties, "count_fhrp_groups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVMInterface struct {

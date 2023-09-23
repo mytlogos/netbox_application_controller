@@ -40,10 +40,7 @@ type InventoryItemTemplate struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	Depth int32 `json:"_depth"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InventoryItemTemplate InventoryItemTemplate
 
 // NewInventoryItemTemplate instantiates a new InventoryItemTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -609,9 +606,9 @@ func (o InventoryItemTemplate) MarshalJSON() ([]byte, error) {
 
 func (o InventoryItemTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["device_type"] = o.DeviceType
 	if o.Parent.IsSet() {
 		toSerialize["parent"] = o.Parent.Get()
@@ -643,46 +640,8 @@ func (o InventoryItemTemplate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: _depth is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_depth"] = o.Depth
 	return toSerialize, nil
-}
-
-func (o *InventoryItemTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varInventoryItemTemplate := _InventoryItemTemplate{}
-
-	if err = json.Unmarshal(bytes, &varInventoryItemTemplate); err == nil {
-		*o = InventoryItemTemplate(varInventoryItemTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "part_id")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "component_type")
-		delete(additionalProperties, "component_id")
-		delete(additionalProperties, "component")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "_depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInventoryItemTemplate struct {

@@ -23,10 +23,7 @@ type PaginatedVRFList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []VRF `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedVRFList PaginatedVRFList
 
 // NewPaginatedVRFList instantiates a new PaginatedVRFList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedVRFList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedVRFList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedVRFList := _PaginatedVRFList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedVRFList); err == nil {
-		*o = PaginatedVRFList(varPaginatedVRFList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedVRFList struct {

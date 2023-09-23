@@ -35,10 +35,7 @@ type ASN struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	SiteCount int32 `json:"site_count"`
 	ProviderCount int32 `json:"provider_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ASN ASN
 
 // NewASN instantiates a new ASN object
 // This constructor will assign default values to properties that have it defined,
@@ -483,9 +480,9 @@ func (o ASN) MarshalJSON() ([]byte, error) {
 
 func (o ASN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["asn"] = o.Asn
 	if o.Rir.IsSet() {
 		toSerialize["rir"] = o.Rir.Get()
@@ -507,44 +504,9 @@ func (o ASN) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: site_count is readOnly
-	// skip: provider_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["site_count"] = o.SiteCount
+	toSerialize["provider_count"] = o.ProviderCount
 	return toSerialize, nil
-}
-
-func (o *ASN) UnmarshalJSON(bytes []byte) (err error) {
-	varASN := _ASN{}
-
-	if err = json.Unmarshal(bytes, &varASN); err == nil {
-		*o = ASN(varASN)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "asn")
-		delete(additionalProperties, "rir")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "site_count")
-		delete(additionalProperties, "provider_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableASN struct {

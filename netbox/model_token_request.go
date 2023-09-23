@@ -27,10 +27,7 @@ type TokenRequest struct {
 	// Permit create/update/delete operations using this key
 	WriteEnabled *bool `json:"write_enabled,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _TokenRequest TokenRequest
 
 // NewTokenRequest instantiates a new TokenRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -280,34 +277,7 @@ func (o TokenRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *TokenRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varTokenRequest := _TokenRequest{}
-
-	if err = json.Unmarshal(bytes, &varTokenRequest); err == nil {
-		*o = TokenRequest(varTokenRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "expires")
-		delete(additionalProperties, "last_used")
-		delete(additionalProperties, "key")
-		delete(additionalProperties, "write_enabled")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableTokenRequest struct {

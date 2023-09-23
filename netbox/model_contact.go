@@ -36,10 +36,7 @@ type Contact struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Contact Contact
 
 // NewContact instantiates a new Contact object
 // This constructor will assign default values to properties that have it defined,
@@ -552,9 +549,9 @@ func (o Contact) MarshalJSON() ([]byte, error) {
 
 func (o Contact) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.Group.IsSet() {
 		toSerialize["group"] = o.Group.Get()
 	}
@@ -588,44 +585,7 @@ func (o Contact) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Contact) UnmarshalJSON(bytes []byte) (err error) {
-	varContact := _Contact{}
-
-	if err = json.Unmarshal(bytes, &varContact); err == nil {
-		*o = Contact(varContact)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "phone")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "address")
-		delete(additionalProperties, "link")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableContact struct {

@@ -39,10 +39,7 @@ type InterfaceTemplate struct {
 	RfRole NullableInterfaceTemplateRfRole `json:"rf_role,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _InterfaceTemplate InterfaceTemplate
 
 // NewInterfaceTemplate instantiates a new InterfaceTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -630,9 +627,9 @@ func (o InterfaceTemplate) MarshalJSON() ([]byte, error) {
 
 func (o InterfaceTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.DeviceType.IsSet() {
 		toSerialize["device_type"] = o.DeviceType.Get()
 	}
@@ -667,45 +664,7 @@ func (o InterfaceTemplate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *InterfaceTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varInterfaceTemplate := _InterfaceTemplate{}
-
-	if err = json.Unmarshal(bytes, &varInterfaceTemplate); err == nil {
-		*o = InterfaceTemplate(varInterfaceTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "mgmt_only")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "poe_mode")
-		delete(additionalProperties, "poe_type")
-		delete(additionalProperties, "rf_role")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableInterfaceTemplate struct {

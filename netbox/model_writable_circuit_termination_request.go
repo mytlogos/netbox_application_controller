@@ -37,10 +37,7 @@ type WritableCircuitTerminationRequest struct {
 	MarkConnected *bool `json:"mark_connected,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableCircuitTerminationRequest WritableCircuitTerminationRequest
 
 // NewWritableCircuitTerminationRequest instantiates a new WritableCircuitTerminationRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -511,40 +508,7 @@ func (o WritableCircuitTerminationRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableCircuitTerminationRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableCircuitTerminationRequest := _WritableCircuitTerminationRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableCircuitTerminationRequest); err == nil {
-		*o = WritableCircuitTerminationRequest(varWritableCircuitTerminationRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "circuit")
-		delete(additionalProperties, "term_side")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "provider_network")
-		delete(additionalProperties, "port_speed")
-		delete(additionalProperties, "upstream_speed")
-		delete(additionalProperties, "xconnect_id")
-		delete(additionalProperties, "pp_info")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mark_connected")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableCircuitTerminationRequest struct {

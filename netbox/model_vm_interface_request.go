@@ -34,10 +34,7 @@ type VMInterfaceRequest struct {
 	Vrf NullableNestedVRFRequest `json:"vrf,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VMInterfaceRequest VMInterfaceRequest
 
 // NewVMInterfaceRequest instantiates a new VMInterfaceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -598,42 +595,7 @@ func (o VMInterfaceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *VMInterfaceRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varVMInterfaceRequest := _VMInterfaceRequest{}
-
-	if err = json.Unmarshal(bytes, &varVMInterfaceRequest); err == nil {
-		*o = VMInterfaceRequest(varVMInterfaceRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "virtual_machine")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "bridge")
-		delete(additionalProperties, "mtu")
-		delete(additionalProperties, "mac_address")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "untagged_vlan")
-		delete(additionalProperties, "tagged_vlans")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVMInterfaceRequest struct {

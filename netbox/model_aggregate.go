@@ -34,10 +34,7 @@ type Aggregate struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Aggregate Aggregate
 
 // NewAggregate instantiates a new Aggregate object
 // This constructor will assign default values to properties that have it defined,
@@ -482,9 +479,9 @@ func (o Aggregate) MarshalJSON() ([]byte, error) {
 
 func (o Aggregate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["family"] = o.Family
 	toSerialize["prefix"] = o.Prefix
 	toSerialize["rir"] = o.Rir
@@ -508,42 +505,7 @@ func (o Aggregate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *Aggregate) UnmarshalJSON(bytes []byte) (err error) {
-	varAggregate := _Aggregate{}
-
-	if err = json.Unmarshal(bytes, &varAggregate); err == nil {
-		*o = Aggregate(varAggregate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "rir")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "date_added")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableAggregate struct {

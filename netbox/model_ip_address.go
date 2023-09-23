@@ -42,10 +42,7 @@ type IPAddress struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _IPAddress IPAddress
 
 // NewIPAddress instantiates a new IPAddress object
 // This constructor will assign default values to properties that have it defined,
@@ -739,9 +736,9 @@ func (o IPAddress) MarshalJSON() ([]byte, error) {
 
 func (o IPAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["family"] = o.Family
 	toSerialize["address"] = o.Address
 	if o.Vrf.IsSet() {
@@ -768,7 +765,7 @@ func (o IPAddress) ToMap() (map[string]interface{}, error) {
 	if o.NatInside.IsSet() {
 		toSerialize["nat_inside"] = o.NatInside.Get()
 	}
-	// skip: nat_outside is readOnly
+	toSerialize["nat_outside"] = o.NatOutside
 	if !IsNil(o.DnsName) {
 		toSerialize["dns_name"] = o.DnsName
 	}
@@ -786,49 +783,7 @@ func (o IPAddress) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *IPAddress) UnmarshalJSON(bytes []byte) (err error) {
-	varIPAddress := _IPAddress{}
-
-	if err = json.Unmarshal(bytes, &varIPAddress); err == nil {
-		*o = IPAddress(varIPAddress)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "address")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "assigned_object_type")
-		delete(additionalProperties, "assigned_object_id")
-		delete(additionalProperties, "assigned_object")
-		delete(additionalProperties, "nat_inside")
-		delete(additionalProperties, "nat_outside")
-		delete(additionalProperties, "dns_name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableIPAddress struct {

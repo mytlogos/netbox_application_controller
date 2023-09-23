@@ -22,10 +22,7 @@ type CableLengthUnit struct {
 	// * `km` - Kilometers * `m` - Meters * `cm` - Centimeters * `mi` - Miles * `ft` - Feet * `in` - Inches
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CableLengthUnit CableLengthUnit
 
 // NewCableLengthUnit instantiates a new CableLengthUnit object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o CableLengthUnit) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CableLengthUnit) UnmarshalJSON(bytes []byte) (err error) {
-	varCableLengthUnit := _CableLengthUnit{}
-
-	if err = json.Unmarshal(bytes, &varCableLengthUnit); err == nil {
-		*o = CableLengthUnit(varCableLengthUnit)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCableLengthUnit struct {

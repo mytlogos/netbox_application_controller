@@ -23,10 +23,7 @@ type NestedVirtualMachine struct {
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVirtualMachine NestedVirtualMachine
 
 // NewNestedVirtualMachine instantiates a new NestedVirtualMachine object
 // This constructor will assign default values to properties that have it defined,
@@ -155,36 +152,11 @@ func (o NestedVirtualMachine) MarshalJSON() ([]byte, error) {
 
 func (o NestedVirtualMachine) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVirtualMachine) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVirtualMachine := _NestedVirtualMachine{}
-
-	if err = json.Unmarshal(bytes, &varNestedVirtualMachine); err == nil {
-		*o = NestedVirtualMachine(varNestedVirtualMachine)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVirtualMachine struct {

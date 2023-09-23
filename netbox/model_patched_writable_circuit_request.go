@@ -35,10 +35,7 @@ type PatchedWritableCircuitRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableCircuitRequest PatchedWritableCircuitRequest
 
 // NewPatchedWritableCircuitRequest instantiates a new PatchedWritableCircuitRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -572,41 +569,7 @@ func (o PatchedWritableCircuitRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableCircuitRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableCircuitRequest := _PatchedWritableCircuitRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableCircuitRequest); err == nil {
-		*o = PatchedWritableCircuitRequest(varPatchedWritableCircuitRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "cid")
-		delete(additionalProperties, "provider")
-		delete(additionalProperties, "provider_account")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "install_date")
-		delete(additionalProperties, "termination_date")
-		delete(additionalProperties, "commit_rate")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableCircuitRequest struct {

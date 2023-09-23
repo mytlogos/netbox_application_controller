@@ -26,10 +26,7 @@ type NestedInterface struct {
 	Name string `json:"name"`
 	Cable NullableInt32 `json:"cable,omitempty"`
 	Occupied bool `json:"_occupied"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedInterface NestedInterface
 
 // NewNestedInterface instantiates a new NestedInterface object
 // This constructor will assign default values to properties that have it defined,
@@ -250,44 +247,16 @@ func (o NestedInterface) MarshalJSON() ([]byte, error) {
 
 func (o NestedInterface) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
-	// skip: device is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
+	toSerialize["device"] = o.Device
 	toSerialize["name"] = o.Name
 	if o.Cable.IsSet() {
 		toSerialize["cable"] = o.Cable.Get()
 	}
-	// skip: _occupied is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["_occupied"] = o.Occupied
 	return toSerialize, nil
-}
-
-func (o *NestedInterface) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedInterface := _NestedInterface{}
-
-	if err = json.Unmarshal(bytes, &varNestedInterface); err == nil {
-		*o = NestedInterface(varNestedInterface)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "cable")
-		delete(additionalProperties, "_occupied")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedInterface struct {

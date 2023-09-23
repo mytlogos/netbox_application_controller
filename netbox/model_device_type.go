@@ -55,10 +55,7 @@ type DeviceType struct {
 	DeviceBayTemplateCount int32 `json:"device_bay_template_count"`
 	ModuleBayTemplateCount int32 `json:"module_bay_template_count"`
 	InventoryItemTemplateCount int32 `json:"inventory_item_template_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DeviceType DeviceType
 
 // NewDeviceType instantiates a new DeviceType object
 // This constructor will assign default values to properties that have it defined,
@@ -1068,9 +1065,9 @@ func (o DeviceType) MarshalJSON() ([]byte, error) {
 
 func (o DeviceType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["manufacturer"] = o.Manufacturer
 	if o.DefaultPlatform.IsSet() {
 		toSerialize["default_platform"] = o.DefaultPlatform.Get()
@@ -1118,72 +1115,18 @@ func (o DeviceType) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: device_count is readOnly
-	// skip: console_port_template_count is readOnly
-	// skip: console_server_port_template_count is readOnly
-	// skip: power_port_template_count is readOnly
-	// skip: power_outlet_template_count is readOnly
-	// skip: interface_template_count is readOnly
-	// skip: front_port_template_count is readOnly
-	// skip: rear_port_template_count is readOnly
-	// skip: device_bay_template_count is readOnly
-	// skip: module_bay_template_count is readOnly
-	// skip: inventory_item_template_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["device_count"] = o.DeviceCount
+	toSerialize["console_port_template_count"] = o.ConsolePortTemplateCount
+	toSerialize["console_server_port_template_count"] = o.ConsoleServerPortTemplateCount
+	toSerialize["power_port_template_count"] = o.PowerPortTemplateCount
+	toSerialize["power_outlet_template_count"] = o.PowerOutletTemplateCount
+	toSerialize["interface_template_count"] = o.InterfaceTemplateCount
+	toSerialize["front_port_template_count"] = o.FrontPortTemplateCount
+	toSerialize["rear_port_template_count"] = o.RearPortTemplateCount
+	toSerialize["device_bay_template_count"] = o.DeviceBayTemplateCount
+	toSerialize["module_bay_template_count"] = o.ModuleBayTemplateCount
+	toSerialize["inventory_item_template_count"] = o.InventoryItemTemplateCount
 	return toSerialize, nil
-}
-
-func (o *DeviceType) UnmarshalJSON(bytes []byte) (err error) {
-	varDeviceType := _DeviceType{}
-
-	if err = json.Unmarshal(bytes, &varDeviceType); err == nil {
-		*o = DeviceType(varDeviceType)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "default_platform")
-		delete(additionalProperties, "model")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "part_number")
-		delete(additionalProperties, "u_height")
-		delete(additionalProperties, "is_full_depth")
-		delete(additionalProperties, "subdevice_role")
-		delete(additionalProperties, "airflow")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "weight_unit")
-		delete(additionalProperties, "front_image")
-		delete(additionalProperties, "rear_image")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "device_count")
-		delete(additionalProperties, "console_port_template_count")
-		delete(additionalProperties, "console_server_port_template_count")
-		delete(additionalProperties, "power_port_template_count")
-		delete(additionalProperties, "power_outlet_template_count")
-		delete(additionalProperties, "interface_template_count")
-		delete(additionalProperties, "front_port_template_count")
-		delete(additionalProperties, "rear_port_template_count")
-		delete(additionalProperties, "device_bay_template_count")
-		delete(additionalProperties, "module_bay_template_count")
-		delete(additionalProperties, "inventory_item_template_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDeviceType struct {

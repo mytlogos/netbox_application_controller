@@ -20,10 +20,7 @@ var _ MappedNullable = &GroupRequest{}
 // GroupRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type GroupRequest struct {
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _GroupRequest GroupRequest
 
 // NewGroupRequest instantiates a new GroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -78,29 +75,7 @@ func (o GroupRequest) MarshalJSON() ([]byte, error) {
 func (o GroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *GroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varGroupRequest := _GroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varGroupRequest); err == nil {
-		*o = GroupRequest(varGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableGroupRequest struct {

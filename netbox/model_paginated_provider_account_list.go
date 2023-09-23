@@ -23,10 +23,7 @@ type PaginatedProviderAccountList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ProviderAccount `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedProviderAccountList PaginatedProviderAccountList
 
 // NewPaginatedProviderAccountList instantiates a new PaginatedProviderAccountList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedProviderAccountList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedProviderAccountList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedProviderAccountList := _PaginatedProviderAccountList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedProviderAccountList); err == nil {
-		*o = PaginatedProviderAccountList(varPaginatedProviderAccountList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedProviderAccountList struct {

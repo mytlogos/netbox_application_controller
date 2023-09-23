@@ -32,10 +32,7 @@ type IPRangeRequest struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	// Treat as 100% utilized
 	MarkUtilized *bool `json:"mark_utilized,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _IPRangeRequest IPRangeRequest
 
 // NewIPRangeRequest instantiates a new IPRangeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -461,39 +458,7 @@ func (o IPRangeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MarkUtilized) {
 		toSerialize["mark_utilized"] = o.MarkUtilized
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *IPRangeRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varIPRangeRequest := _IPRangeRequest{}
-
-	if err = json.Unmarshal(bytes, &varIPRangeRequest); err == nil {
-		*o = IPRangeRequest(varIPRangeRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "start_address")
-		delete(additionalProperties, "end_address")
-		delete(additionalProperties, "vrf")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "mark_utilized")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableIPRangeRequest struct {

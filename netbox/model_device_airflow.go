@@ -22,10 +22,7 @@ type DeviceAirflow struct {
 	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _DeviceAirflow DeviceAirflow
 
 // NewDeviceAirflow instantiates a new DeviceAirflow object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o DeviceAirflow) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *DeviceAirflow) UnmarshalJSON(bytes []byte) (err error) {
-	varDeviceAirflow := _DeviceAirflow{}
-
-	if err = json.Unmarshal(bytes, &varDeviceAirflow); err == nil {
-		*o = DeviceAirflow(varDeviceAirflow)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableDeviceAirflow struct {

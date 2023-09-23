@@ -23,10 +23,7 @@ type FHRPGroupAssignmentRequest struct {
 	InterfaceType string `json:"interface_type"`
 	InterfaceId int64 `json:"interface_id"`
 	Priority int32 `json:"priority"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _FHRPGroupAssignmentRequest FHRPGroupAssignmentRequest
 
 // NewFHRPGroupAssignmentRequest instantiates a new FHRPGroupAssignmentRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -159,32 +156,7 @@ func (o FHRPGroupAssignmentRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["interface_type"] = o.InterfaceType
 	toSerialize["interface_id"] = o.InterfaceId
 	toSerialize["priority"] = o.Priority
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *FHRPGroupAssignmentRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varFHRPGroupAssignmentRequest := _FHRPGroupAssignmentRequest{}
-
-	if err = json.Unmarshal(bytes, &varFHRPGroupAssignmentRequest); err == nil {
-		*o = FHRPGroupAssignmentRequest(varFHRPGroupAssignmentRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "interface_type")
-		delete(additionalProperties, "interface_id")
-		delete(additionalProperties, "priority")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableFHRPGroupAssignmentRequest struct {

@@ -31,10 +31,7 @@ type PatchedWritableModuleRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableModuleRequest PatchedWritableModuleRequest
 
 // NewPatchedWritableModuleRequest instantiates a new PatchedWritableModuleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -423,38 +420,7 @@ func (o PatchedWritableModuleRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableModuleRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableModuleRequest := _PatchedWritableModuleRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableModuleRequest); err == nil {
-		*o = PatchedWritableModuleRequest(varPatchedWritableModuleRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "module_bay")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableModuleRequest struct {

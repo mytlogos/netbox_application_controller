@@ -22,10 +22,7 @@ type ObjectChangeAction struct {
 	// * `create` - Created * `update` - Updated * `delete` - Deleted
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ObjectChangeAction ObjectChangeAction
 
 // NewObjectChangeAction instantiates a new ObjectChangeAction object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o ObjectChangeAction) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ObjectChangeAction) UnmarshalJSON(bytes []byte) (err error) {
-	varObjectChangeAction := _ObjectChangeAction{}
-
-	if err = json.Unmarshal(bytes, &varObjectChangeAction); err == nil {
-		*o = ObjectChangeAction(varObjectChangeAction)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableObjectChangeAction struct {

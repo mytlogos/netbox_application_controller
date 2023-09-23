@@ -29,10 +29,7 @@ type ModuleBayRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ModuleBayRequest ModuleBayRequest
 
 // NewModuleBayRequest instantiates a new ModuleBayRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -333,36 +330,7 @@ func (o ModuleBayRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ModuleBayRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varModuleBayRequest := _ModuleBayRequest{}
-
-	if err = json.Unmarshal(bytes, &varModuleBayRequest); err == nil {
-		*o = ModuleBayRequest(varModuleBayRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "installed_module")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableModuleBayRequest struct {

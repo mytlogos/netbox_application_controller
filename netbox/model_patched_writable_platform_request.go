@@ -27,10 +27,7 @@ type PatchedWritablePlatformRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritablePlatformRequest PatchedWritablePlatformRequest
 
 // NewPatchedWritablePlatformRequest instantiates a new PatchedWritablePlatformRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -324,35 +321,7 @@ func (o PatchedWritablePlatformRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritablePlatformRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritablePlatformRequest := _PatchedWritablePlatformRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritablePlatformRequest); err == nil {
-		*o = PatchedWritablePlatformRequest(varPatchedWritablePlatformRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "manufacturer")
-		delete(additionalProperties, "config_template")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritablePlatformRequest struct {

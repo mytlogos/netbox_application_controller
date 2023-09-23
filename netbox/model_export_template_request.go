@@ -31,10 +31,7 @@ type ExportTemplateRequest struct {
 	// Download file as attachment
 	AsAttachment *bool `json:"as_attachment,omitempty"`
 	DataSource *NestedDataSourceRequest `json:"data_source,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ExportTemplateRequest ExportTemplateRequest
 
 // NewExportTemplateRequest instantiates a new ExportTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -316,36 +313,7 @@ func (o ExportTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DataSource) {
 		toSerialize["data_source"] = o.DataSource
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ExportTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varExportTemplateRequest := _ExportTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varExportTemplateRequest); err == nil {
-		*o = ExportTemplateRequest(varExportTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "template_code")
-		delete(additionalProperties, "mime_type")
-		delete(additionalProperties, "file_extension")
-		delete(additionalProperties, "as_attachment")
-		delete(additionalProperties, "data_source")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableExportTemplateRequest struct {

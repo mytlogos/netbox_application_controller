@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedUserRequest{}
 type NestedUserRequest struct {
 	// Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
 	Username string `json:"username"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedUserRequest NestedUserRequest
 
 // NewNestedUserRequest instantiates a new NestedUserRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -79,29 +76,7 @@ func (o NestedUserRequest) MarshalJSON() ([]byte, error) {
 func (o NestedUserRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["username"] = o.Username
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedUserRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedUserRequest := _NestedUserRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedUserRequest); err == nil {
-		*o = NestedUserRequest(varNestedUserRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedUserRequest struct {

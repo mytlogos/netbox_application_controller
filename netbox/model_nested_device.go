@@ -23,10 +23,7 @@ type NestedDevice struct {
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Name NullableString `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedDevice NestedDevice
 
 // NewNestedDevice instantiates a new NestedDevice object
 // This constructor will assign default values to properties that have it defined,
@@ -172,38 +169,13 @@ func (o NestedDevice) MarshalJSON() ([]byte, error) {
 
 func (o NestedDevice) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedDevice) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedDevice := _NestedDevice{}
-
-	if err = json.Unmarshal(bytes, &varNestedDevice); err == nil {
-		*o = NestedDevice(varNestedDevice)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedDevice struct {

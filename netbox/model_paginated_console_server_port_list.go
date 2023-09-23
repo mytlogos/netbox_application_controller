@@ -23,10 +23,7 @@ type PaginatedConsoleServerPortList struct {
 	Next NullableString `json:"next,omitempty"`
 	Previous NullableString `json:"previous,omitempty"`
 	Results []ConsoleServerPort `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PaginatedConsoleServerPortList PaginatedConsoleServerPortList
 
 // NewPaginatedConsoleServerPortList instantiates a new PaginatedConsoleServerPortList object
 // This constructor will assign default values to properties that have it defined,
@@ -215,32 +212,7 @@ func (o PaginatedConsoleServerPortList) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PaginatedConsoleServerPortList) UnmarshalJSON(bytes []byte) (err error) {
-	varPaginatedConsoleServerPortList := _PaginatedConsoleServerPortList{}
-
-	if err = json.Unmarshal(bytes, &varPaginatedConsoleServerPortList); err == nil {
-		*o = PaginatedConsoleServerPortList(varPaginatedConsoleServerPortList)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePaginatedConsoleServerPortList struct {

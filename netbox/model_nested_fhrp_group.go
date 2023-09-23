@@ -25,10 +25,7 @@ type NestedFHRPGroup struct {
 	// * `vrrp2` - VRRPv2 * `vrrp3` - VRRPv3 * `carp` - CARP * `clusterxl` - ClusterXL * `hsrp` - HSRP * `glbp` - GLBP * `other` - Other
 	Protocol string `json:"protocol"`
 	GroupId int32 `json:"group_id"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedFHRPGroup NestedFHRPGroup
 
 // NewNestedFHRPGroup instantiates a new NestedFHRPGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -182,38 +179,12 @@ func (o NestedFHRPGroup) MarshalJSON() ([]byte, error) {
 
 func (o NestedFHRPGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["group_id"] = o.GroupId
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedFHRPGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedFHRPGroup := _NestedFHRPGroup{}
-
-	if err = json.Unmarshal(bytes, &varNestedFHRPGroup); err == nil {
-		*o = NestedFHRPGroup(varNestedFHRPGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "group_id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedFHRPGroup struct {

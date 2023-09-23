@@ -23,10 +23,7 @@ type ApplicationProtocolRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ApplicationProtocolRequest ApplicationProtocolRequest
 
 // NewApplicationProtocolRequest instantiates a new ApplicationProtocolRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -186,32 +183,7 @@ func (o ApplicationProtocolRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ApplicationProtocolRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationProtocolRequest := _ApplicationProtocolRequest{}
-
-	if err = json.Unmarshal(bytes, &varApplicationProtocolRequest); err == nil {
-		*o = ApplicationProtocolRequest(varApplicationProtocolRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationProtocolRequest struct {

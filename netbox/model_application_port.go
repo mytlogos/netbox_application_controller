@@ -29,16 +29,18 @@ type ApplicationPort struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	Url string `json:"url"`
-	AdditionalProperties map[string]interface{}
+	Ipaddresses []int32 `json:"ipaddresses,omitempty"`
+	ApplicationProtocols []int32 `json:"application_protocols"`
+	Application int32 `json:"application"`
+	// * `none` - None * `udp` - SSL * `quic` - Starttls
+	TransportSecurity *string `json:"transport_security,omitempty"`
 }
-
-type _ApplicationPort ApplicationPort
 
 // NewApplicationPort instantiates a new ApplicationPort object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApplicationPort(id int32, display string, port int32, created NullableTime, lastUpdated NullableTime, url string) *ApplicationPort {
+func NewApplicationPort(id int32, display string, port int32, created NullableTime, lastUpdated NullableTime, url string, applicationProtocols []int32, application int32) *ApplicationPort {
 	this := ApplicationPort{}
 	this.Id = id
 	this.Display = display
@@ -46,6 +48,8 @@ func NewApplicationPort(id int32, display string, port int32, created NullableTi
 	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.Url = url
+	this.ApplicationProtocols = applicationProtocols
+	this.Application = application
 	return &this
 }
 
@@ -301,6 +305,118 @@ func (o *ApplicationPort) SetUrl(v string) {
 	o.Url = v
 }
 
+// GetIpaddresses returns the Ipaddresses field value if set, zero value otherwise.
+func (o *ApplicationPort) GetIpaddresses() []int32 {
+	if o == nil || IsNil(o.Ipaddresses) {
+		var ret []int32
+		return ret
+	}
+	return o.Ipaddresses
+}
+
+// GetIpaddressesOk returns a tuple with the Ipaddresses field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationPort) GetIpaddressesOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Ipaddresses) {
+		return nil, false
+	}
+	return o.Ipaddresses, true
+}
+
+// HasIpaddresses returns a boolean if a field has been set.
+func (o *ApplicationPort) HasIpaddresses() bool {
+	if o != nil && !IsNil(o.Ipaddresses) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpaddresses gets a reference to the given []int32 and assigns it to the Ipaddresses field.
+func (o *ApplicationPort) SetIpaddresses(v []int32) {
+	o.Ipaddresses = v
+}
+
+// GetApplicationProtocols returns the ApplicationProtocols field value
+func (o *ApplicationPort) GetApplicationProtocols() []int32 {
+	if o == nil {
+		var ret []int32
+		return ret
+	}
+
+	return o.ApplicationProtocols
+}
+
+// GetApplicationProtocolsOk returns a tuple with the ApplicationProtocols field value
+// and a boolean to check if the value has been set.
+func (o *ApplicationPort) GetApplicationProtocolsOk() ([]int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ApplicationProtocols, true
+}
+
+// SetApplicationProtocols sets field value
+func (o *ApplicationPort) SetApplicationProtocols(v []int32) {
+	o.ApplicationProtocols = v
+}
+
+// GetApplication returns the Application field value
+func (o *ApplicationPort) GetApplication() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.Application
+}
+
+// GetApplicationOk returns a tuple with the Application field value
+// and a boolean to check if the value has been set.
+func (o *ApplicationPort) GetApplicationOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Application, true
+}
+
+// SetApplication sets field value
+func (o *ApplicationPort) SetApplication(v int32) {
+	o.Application = v
+}
+
+// GetTransportSecurity returns the TransportSecurity field value if set, zero value otherwise.
+func (o *ApplicationPort) GetTransportSecurity() string {
+	if o == nil || IsNil(o.TransportSecurity) {
+		var ret string
+		return ret
+	}
+	return *o.TransportSecurity
+}
+
+// GetTransportSecurityOk returns a tuple with the TransportSecurity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationPort) GetTransportSecurityOk() (*string, bool) {
+	if o == nil || IsNil(o.TransportSecurity) {
+		return nil, false
+	}
+	return o.TransportSecurity, true
+}
+
+// HasTransportSecurity returns a boolean if a field has been set.
+func (o *ApplicationPort) HasTransportSecurity() bool {
+	if o != nil && !IsNil(o.TransportSecurity) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransportSecurity gets a reference to the given string and assigns it to the TransportSecurity field.
+func (o *ApplicationPort) SetTransportSecurity(v string) {
+	o.TransportSecurity = &v
+}
+
 func (o ApplicationPort) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -311,8 +427,8 @@ func (o ApplicationPort) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationPort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["display"] = o.Display
 	toSerialize["port"] = o.Port
 	if !IsNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
@@ -325,38 +441,16 @@ func (o ApplicationPort) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: url is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	toSerialize["url"] = o.Url
+	if !IsNil(o.Ipaddresses) {
+		toSerialize["ipaddresses"] = o.Ipaddresses
 	}
-
+	toSerialize["application_protocols"] = o.ApplicationProtocols
+	toSerialize["application"] = o.Application
+	if !IsNil(o.TransportSecurity) {
+		toSerialize["transport_security"] = o.TransportSecurity
+	}
 	return toSerialize, nil
-}
-
-func (o *ApplicationPort) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationPort := _ApplicationPort{}
-
-	if err = json.Unmarshal(bytes, &varApplicationPort); err == nil {
-		*o = ApplicationPort(varApplicationPort)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "url")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationPort struct {

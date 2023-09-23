@@ -24,10 +24,7 @@ type NestedInterfaceTemplate struct {
 	Display string `json:"display"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedInterfaceTemplate NestedInterfaceTemplate
 
 // NewNestedInterfaceTemplate instantiates a new NestedInterfaceTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -156,36 +153,11 @@ func (o NestedInterfaceTemplate) MarshalJSON() ([]byte, error) {
 
 func (o NestedInterfaceTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedInterfaceTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedInterfaceTemplate := _NestedInterfaceTemplate{}
-
-	if err = json.Unmarshal(bytes, &varNestedInterfaceTemplate); err == nil {
-		*o = NestedInterfaceTemplate(varNestedInterfaceTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedInterfaceTemplate struct {

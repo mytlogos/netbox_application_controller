@@ -22,10 +22,7 @@ type NestedTagRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
 	Color *string `json:"color,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedTagRequest NestedTagRequest
 
 // NewNestedTagRequest instantiates a new NestedTagRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -141,31 +138,7 @@ func (o NestedTagRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Color) {
 		toSerialize["color"] = o.Color
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedTagRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedTagRequest := _NestedTagRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedTagRequest); err == nil {
-		*o = NestedTagRequest(varNestedTagRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "color")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedTagRequest struct {

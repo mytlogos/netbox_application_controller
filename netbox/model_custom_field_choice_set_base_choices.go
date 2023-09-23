@@ -22,10 +22,7 @@ type CustomFieldChoiceSetBaseChoices struct {
 	// * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _CustomFieldChoiceSetBaseChoices CustomFieldChoiceSetBaseChoices
 
 // NewCustomFieldChoiceSetBaseChoices instantiates a new CustomFieldChoiceSetBaseChoices object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o CustomFieldChoiceSetBaseChoices) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *CustomFieldChoiceSetBaseChoices) UnmarshalJSON(bytes []byte) (err error) {
-	varCustomFieldChoiceSetBaseChoices := _CustomFieldChoiceSetBaseChoices{}
-
-	if err = json.Unmarshal(bytes, &varCustomFieldChoiceSetBaseChoices); err == nil {
-		*o = CustomFieldChoiceSetBaseChoices(varCustomFieldChoiceSetBaseChoices)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableCustomFieldChoiceSetBaseChoices struct {

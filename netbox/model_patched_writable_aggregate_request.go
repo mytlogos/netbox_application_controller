@@ -28,10 +28,7 @@ type PatchedWritableAggregateRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableAggregateRequest PatchedWritableAggregateRequest
 
 // NewPatchedWritableAggregateRequest instantiates a new PatchedWritableAggregateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -360,36 +357,7 @@ func (o PatchedWritableAggregateRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableAggregateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableAggregateRequest := _PatchedWritableAggregateRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableAggregateRequest); err == nil {
-		*o = PatchedWritableAggregateRequest(varPatchedWritableAggregateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "rir")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "date_added")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableAggregateRequest struct {

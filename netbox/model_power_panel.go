@@ -33,10 +33,7 @@ type PowerPanel struct {
 	PowerfeedCount int32 `json:"powerfeed_count"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PowerPanel PowerPanel
 
 // NewPowerPanel instantiates a new PowerPanel object
 // This constructor will assign default values to properties that have it defined,
@@ -439,9 +436,9 @@ func (o PowerPanel) MarshalJSON() ([]byte, error) {
 
 func (o PowerPanel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["site"] = o.Site
 	if o.Location.IsSet() {
 		toSerialize["location"] = o.Location.Get()
@@ -459,44 +456,10 @@ func (o PowerPanel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	// skip: powerfeed_count is readOnly
+	toSerialize["powerfeed_count"] = o.PowerfeedCount
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PowerPanel) UnmarshalJSON(bytes []byte) (err error) {
-	varPowerPanel := _PowerPanel{}
-
-	if err = json.Unmarshal(bytes, &varPowerPanel); err == nil {
-		*o = PowerPanel(varPowerPanel)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "powerfeed_count")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePowerPanel struct {

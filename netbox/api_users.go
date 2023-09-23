@@ -22,12 +22,12 @@ import (
 )
 
 
-// UsersApiService UsersApi service
-type UsersApiService service
+// UsersAPIService UsersAPI service
+type UsersAPIService service
 
 type ApiUsersConfigRetrieveRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 }
 
 func (r ApiUsersConfigRetrieveRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -42,7 +42,7 @@ An API endpoint via which a user can update his or her own UserConfig data (but 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersConfigRetrieveRequest
 */
-func (a *UsersApiService) UsersConfigRetrieve(ctx context.Context) ApiUsersConfigRetrieveRequest {
+func (a *UsersAPIService) UsersConfigRetrieve(ctx context.Context) ApiUsersConfigRetrieveRequest {
 	return ApiUsersConfigRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,7 +51,7 @@ func (a *UsersApiService) UsersConfigRetrieve(ctx context.Context) ApiUsersConfi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *UsersApiService) UsersConfigRetrieveExecute(r ApiUsersConfigRetrieveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UsersAPIService) UsersConfigRetrieveExecute(r ApiUsersConfigRetrieveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *UsersApiService) UsersConfigRetrieveExecute(r ApiUsersConfigRetrieveReq
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersConfigRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersConfigRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *UsersApiService) UsersConfigRetrieveExecute(r ApiUsersConfigRetrieveReq
 
 type ApiUsersGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	groupRequest *[]GroupRequest
 }
 
@@ -161,7 +161,7 @@ Delete a list of group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersGroupsBulkDestroyRequest
 */
-func (a *UsersApiService) UsersGroupsBulkDestroy(ctx context.Context) ApiUsersGroupsBulkDestroyRequest {
+func (a *UsersAPIService) UsersGroupsBulkDestroy(ctx context.Context) ApiUsersGroupsBulkDestroyRequest {
 	return ApiUsersGroupsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *UsersApiService) UsersGroupsBulkDestroy(ctx context.Context) ApiUsersGr
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersGroupsBulkDestroyExecute(r ApiUsersGroupsBulkDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersGroupsBulkDestroyExecute(r ApiUsersGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -253,7 +253,7 @@ func (a *UsersApiService) UsersGroupsBulkDestroyExecute(r ApiUsersGroupsBulkDest
 
 type ApiUsersGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	groupRequest *[]GroupRequest
 }
 
@@ -274,7 +274,7 @@ Patch a list of group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersGroupsBulkPartialUpdateRequest
 */
-func (a *UsersApiService) UsersGroupsBulkPartialUpdate(ctx context.Context) ApiUsersGroupsBulkPartialUpdateRequest {
+func (a *UsersAPIService) UsersGroupsBulkPartialUpdate(ctx context.Context) ApiUsersGroupsBulkPartialUpdateRequest {
 	return ApiUsersGroupsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -283,7 +283,7 @@ func (a *UsersApiService) UsersGroupsBulkPartialUpdate(ctx context.Context) ApiU
 
 // Execute executes the request
 //  @return []Group
-func (a *UsersApiService) UsersGroupsBulkPartialUpdateExecute(r ApiUsersGroupsBulkPartialUpdateRequest) ([]Group, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsBulkPartialUpdateExecute(r ApiUsersGroupsBulkPartialUpdateRequest) ([]Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -291,7 +291,7 @@ func (a *UsersApiService) UsersGroupsBulkPartialUpdateExecute(r ApiUsersGroupsBu
 		localVarReturnValue  []Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -377,7 +377,7 @@ func (a *UsersApiService) UsersGroupsBulkPartialUpdateExecute(r ApiUsersGroupsBu
 
 type ApiUsersGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	groupRequest *[]GroupRequest
 }
 
@@ -398,7 +398,7 @@ Put a list of group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersGroupsBulkUpdateRequest
 */
-func (a *UsersApiService) UsersGroupsBulkUpdate(ctx context.Context) ApiUsersGroupsBulkUpdateRequest {
+func (a *UsersAPIService) UsersGroupsBulkUpdate(ctx context.Context) ApiUsersGroupsBulkUpdateRequest {
 	return ApiUsersGroupsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -407,7 +407,7 @@ func (a *UsersApiService) UsersGroupsBulkUpdate(ctx context.Context) ApiUsersGro
 
 // Execute executes the request
 //  @return []Group
-func (a *UsersApiService) UsersGroupsBulkUpdateExecute(r ApiUsersGroupsBulkUpdateRequest) ([]Group, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsBulkUpdateExecute(r ApiUsersGroupsBulkUpdateRequest) ([]Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -415,7 +415,7 @@ func (a *UsersApiService) UsersGroupsBulkUpdateExecute(r ApiUsersGroupsBulkUpdat
 		localVarReturnValue  []Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -501,7 +501,7 @@ func (a *UsersApiService) UsersGroupsBulkUpdateExecute(r ApiUsersGroupsBulkUpdat
 
 type ApiUsersGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	groupRequest *GroupRequest
 }
 
@@ -522,7 +522,7 @@ Post a list of group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersGroupsCreateRequest
 */
-func (a *UsersApiService) UsersGroupsCreate(ctx context.Context) ApiUsersGroupsCreateRequest {
+func (a *UsersAPIService) UsersGroupsCreate(ctx context.Context) ApiUsersGroupsCreateRequest {
 	return ApiUsersGroupsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -531,7 +531,7 @@ func (a *UsersApiService) UsersGroupsCreate(ctx context.Context) ApiUsersGroupsC
 
 // Execute executes the request
 //  @return Group
-func (a *UsersApiService) UsersGroupsCreateExecute(r ApiUsersGroupsCreateRequest) (*Group, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsCreateExecute(r ApiUsersGroupsCreateRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -539,7 +539,7 @@ func (a *UsersApiService) UsersGroupsCreateExecute(r ApiUsersGroupsCreateRequest
 		localVarReturnValue  *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -625,7 +625,7 @@ func (a *UsersApiService) UsersGroupsCreateExecute(r ApiUsersGroupsCreateRequest
 
 type ApiUsersGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -642,7 +642,7 @@ Delete a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsDestroyRequest
 */
-func (a *UsersApiService) UsersGroupsDestroy(ctx context.Context, id int32) ApiUsersGroupsDestroyRequest {
+func (a *UsersAPIService) UsersGroupsDestroy(ctx context.Context, id int32) ApiUsersGroupsDestroyRequest {
 	return ApiUsersGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -651,14 +651,14 @@ func (a *UsersApiService) UsersGroupsDestroy(ctx context.Context, id int32) ApiU
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersGroupsDestroyExecute(r ApiUsersGroupsDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersGroupsDestroyExecute(r ApiUsersGroupsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -731,7 +731,7 @@ func (a *UsersApiService) UsersGroupsDestroyExecute(r ApiUsersGroupsDestroyReque
 
 type ApiUsersGroupsListRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id *[]int32
 	idEmpty *bool
 	idGt *[]int32
@@ -882,7 +882,7 @@ Get a list of group objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersGroupsListRequest
 */
-func (a *UsersApiService) UsersGroupsList(ctx context.Context) ApiUsersGroupsListRequest {
+func (a *UsersAPIService) UsersGroupsList(ctx context.Context) ApiUsersGroupsListRequest {
 	return ApiUsersGroupsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -891,7 +891,7 @@ func (a *UsersApiService) UsersGroupsList(ctx context.Context) ApiUsersGroupsLis
 
 // Execute executes the request
 //  @return PaginatedGroupList
-func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*PaginatedGroupList, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*PaginatedGroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -899,7 +899,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		localVarReturnValue  *PaginatedGroupList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -915,7 +915,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -929,7 +929,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -940,7 +940,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -951,7 +951,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -962,7 +962,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -973,7 +973,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -987,7 +987,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -1001,7 +1001,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -1012,7 +1012,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -1023,7 +1023,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -1034,7 +1034,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -1045,7 +1045,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -1056,7 +1056,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -1067,7 +1067,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -1078,7 +1078,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -1089,7 +1089,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -1174,7 +1174,7 @@ func (a *UsersApiService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 
 type ApiUsersGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	patchedGroupRequest *PatchedGroupRequest
 }
@@ -1197,7 +1197,7 @@ Patch a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsPartialUpdateRequest
 */
-func (a *UsersApiService) UsersGroupsPartialUpdate(ctx context.Context, id int32) ApiUsersGroupsPartialUpdateRequest {
+func (a *UsersAPIService) UsersGroupsPartialUpdate(ctx context.Context, id int32) ApiUsersGroupsPartialUpdateRequest {
 	return ApiUsersGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1207,7 +1207,7 @@ func (a *UsersApiService) UsersGroupsPartialUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Group
-func (a *UsersApiService) UsersGroupsPartialUpdateExecute(r ApiUsersGroupsPartialUpdateRequest) (*Group, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsPartialUpdateExecute(r ApiUsersGroupsPartialUpdateRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1215,7 +1215,7 @@ func (a *UsersApiService) UsersGroupsPartialUpdateExecute(r ApiUsersGroupsPartia
 		localVarReturnValue  *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1299,7 +1299,7 @@ func (a *UsersApiService) UsersGroupsPartialUpdateExecute(r ApiUsersGroupsPartia
 
 type ApiUsersGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -1316,7 +1316,7 @@ Get a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsRetrieveRequest
 */
-func (a *UsersApiService) UsersGroupsRetrieve(ctx context.Context, id int32) ApiUsersGroupsRetrieveRequest {
+func (a *UsersAPIService) UsersGroupsRetrieve(ctx context.Context, id int32) ApiUsersGroupsRetrieveRequest {
 	return ApiUsersGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1326,7 +1326,7 @@ func (a *UsersApiService) UsersGroupsRetrieve(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return Group
-func (a *UsersApiService) UsersGroupsRetrieveExecute(r ApiUsersGroupsRetrieveRequest) (*Group, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsRetrieveExecute(r ApiUsersGroupsRetrieveRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1334,7 +1334,7 @@ func (a *UsersApiService) UsersGroupsRetrieveExecute(r ApiUsersGroupsRetrieveReq
 		localVarReturnValue  *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1416,7 +1416,7 @@ func (a *UsersApiService) UsersGroupsRetrieveExecute(r ApiUsersGroupsRetrieveReq
 
 type ApiUsersGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	groupRequest *GroupRequest
 }
@@ -1439,7 +1439,7 @@ Put a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsUpdateRequest
 */
-func (a *UsersApiService) UsersGroupsUpdate(ctx context.Context, id int32) ApiUsersGroupsUpdateRequest {
+func (a *UsersAPIService) UsersGroupsUpdate(ctx context.Context, id int32) ApiUsersGroupsUpdateRequest {
 	return ApiUsersGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1449,7 +1449,7 @@ func (a *UsersApiService) UsersGroupsUpdate(ctx context.Context, id int32) ApiUs
 
 // Execute executes the request
 //  @return Group
-func (a *UsersApiService) UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest) (*Group, *http.Response, error) {
+func (a *UsersAPIService) UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1457,7 +1457,7 @@ func (a *UsersApiService) UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest
 		localVarReturnValue  *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersGroupsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGroupsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1544,7 +1544,7 @@ func (a *UsersApiService) UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest
 
 type ApiUsersPermissionsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	objectPermissionRequest *[]ObjectPermissionRequest
 }
 
@@ -1565,7 +1565,7 @@ Delete a list of permission objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersPermissionsBulkDestroyRequest
 */
-func (a *UsersApiService) UsersPermissionsBulkDestroy(ctx context.Context) ApiUsersPermissionsBulkDestroyRequest {
+func (a *UsersAPIService) UsersPermissionsBulkDestroy(ctx context.Context) ApiUsersPermissionsBulkDestroyRequest {
 	return ApiUsersPermissionsBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1573,14 +1573,14 @@ func (a *UsersApiService) UsersPermissionsBulkDestroy(ctx context.Context) ApiUs
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersPermissionsBulkDestroyExecute(r ApiUsersPermissionsBulkDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsBulkDestroyExecute(r ApiUsersPermissionsBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1657,7 +1657,7 @@ func (a *UsersApiService) UsersPermissionsBulkDestroyExecute(r ApiUsersPermissio
 
 type ApiUsersPermissionsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	objectPermissionRequest *[]ObjectPermissionRequest
 }
 
@@ -1678,7 +1678,7 @@ Patch a list of permission objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersPermissionsBulkPartialUpdateRequest
 */
-func (a *UsersApiService) UsersPermissionsBulkPartialUpdate(ctx context.Context) ApiUsersPermissionsBulkPartialUpdateRequest {
+func (a *UsersAPIService) UsersPermissionsBulkPartialUpdate(ctx context.Context) ApiUsersPermissionsBulkPartialUpdateRequest {
 	return ApiUsersPermissionsBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1687,7 +1687,7 @@ func (a *UsersApiService) UsersPermissionsBulkPartialUpdate(ctx context.Context)
 
 // Execute executes the request
 //  @return []ObjectPermission
-func (a *UsersApiService) UsersPermissionsBulkPartialUpdateExecute(r ApiUsersPermissionsBulkPartialUpdateRequest) ([]ObjectPermission, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsBulkPartialUpdateExecute(r ApiUsersPermissionsBulkPartialUpdateRequest) ([]ObjectPermission, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1695,7 +1695,7 @@ func (a *UsersApiService) UsersPermissionsBulkPartialUpdateExecute(r ApiUsersPer
 		localVarReturnValue  []ObjectPermission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1781,7 +1781,7 @@ func (a *UsersApiService) UsersPermissionsBulkPartialUpdateExecute(r ApiUsersPer
 
 type ApiUsersPermissionsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	objectPermissionRequest *[]ObjectPermissionRequest
 }
 
@@ -1802,7 +1802,7 @@ Put a list of permission objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersPermissionsBulkUpdateRequest
 */
-func (a *UsersApiService) UsersPermissionsBulkUpdate(ctx context.Context) ApiUsersPermissionsBulkUpdateRequest {
+func (a *UsersAPIService) UsersPermissionsBulkUpdate(ctx context.Context) ApiUsersPermissionsBulkUpdateRequest {
 	return ApiUsersPermissionsBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1811,7 +1811,7 @@ func (a *UsersApiService) UsersPermissionsBulkUpdate(ctx context.Context) ApiUse
 
 // Execute executes the request
 //  @return []ObjectPermission
-func (a *UsersApiService) UsersPermissionsBulkUpdateExecute(r ApiUsersPermissionsBulkUpdateRequest) ([]ObjectPermission, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsBulkUpdateExecute(r ApiUsersPermissionsBulkUpdateRequest) ([]ObjectPermission, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1819,7 +1819,7 @@ func (a *UsersApiService) UsersPermissionsBulkUpdateExecute(r ApiUsersPermission
 		localVarReturnValue  []ObjectPermission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1905,7 +1905,7 @@ func (a *UsersApiService) UsersPermissionsBulkUpdateExecute(r ApiUsersPermission
 
 type ApiUsersPermissionsCreateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	writableObjectPermissionRequest *WritableObjectPermissionRequest
 }
 
@@ -1926,7 +1926,7 @@ Post a list of permission objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersPermissionsCreateRequest
 */
-func (a *UsersApiService) UsersPermissionsCreate(ctx context.Context) ApiUsersPermissionsCreateRequest {
+func (a *UsersAPIService) UsersPermissionsCreate(ctx context.Context) ApiUsersPermissionsCreateRequest {
 	return ApiUsersPermissionsCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1935,7 +1935,7 @@ func (a *UsersApiService) UsersPermissionsCreate(ctx context.Context) ApiUsersPe
 
 // Execute executes the request
 //  @return ObjectPermission
-func (a *UsersApiService) UsersPermissionsCreateExecute(r ApiUsersPermissionsCreateRequest) (*ObjectPermission, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsCreateExecute(r ApiUsersPermissionsCreateRequest) (*ObjectPermission, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1943,7 +1943,7 @@ func (a *UsersApiService) UsersPermissionsCreateExecute(r ApiUsersPermissionsCre
 		localVarReturnValue  *ObjectPermission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2029,7 +2029,7 @@ func (a *UsersApiService) UsersPermissionsCreateExecute(r ApiUsersPermissionsCre
 
 type ApiUsersPermissionsDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -2046,7 +2046,7 @@ Delete a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsDestroyRequest
 */
-func (a *UsersApiService) UsersPermissionsDestroy(ctx context.Context, id int32) ApiUsersPermissionsDestroyRequest {
+func (a *UsersAPIService) UsersPermissionsDestroy(ctx context.Context, id int32) ApiUsersPermissionsDestroyRequest {
 	return ApiUsersPermissionsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2055,14 +2055,14 @@ func (a *UsersApiService) UsersPermissionsDestroy(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersPermissionsDestroyExecute(r ApiUsersPermissionsDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsDestroyExecute(r ApiUsersPermissionsDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2135,7 +2135,7 @@ func (a *UsersApiService) UsersPermissionsDestroyExecute(r ApiUsersPermissionsDe
 
 type ApiUsersPermissionsListRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	canAdd *bool
 	canChange *bool
 	canDelete *bool
@@ -2450,7 +2450,7 @@ Get a list of permission objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersPermissionsListRequest
 */
-func (a *UsersApiService) UsersPermissionsList(ctx context.Context) ApiUsersPermissionsListRequest {
+func (a *UsersAPIService) UsersPermissionsList(ctx context.Context) ApiUsersPermissionsListRequest {
 	return ApiUsersPermissionsListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2459,7 +2459,7 @@ func (a *UsersApiService) UsersPermissionsList(ctx context.Context) ApiUsersPerm
 
 // Execute executes the request
 //  @return PaginatedObjectPermissionList
-func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListRequest) (*PaginatedObjectPermissionList, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsListExecute(r ApiUsersPermissionsListRequest) (*PaginatedObjectPermissionList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2467,7 +2467,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		localVarReturnValue  *PaginatedObjectPermissionList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2495,7 +2495,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -2509,7 +2509,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -2520,7 +2520,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -2531,7 +2531,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -2542,7 +2542,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -2553,7 +2553,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -2564,7 +2564,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -2575,7 +2575,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -2586,7 +2586,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -2597,7 +2597,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -2611,7 +2611,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -2622,7 +2622,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -2633,7 +2633,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -2644,7 +2644,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -2655,7 +2655,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -2669,7 +2669,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -2680,7 +2680,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -2691,7 +2691,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -2702,7 +2702,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -2713,7 +2713,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -2727,7 +2727,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "multi")
@@ -2741,7 +2741,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "multi")
@@ -2752,7 +2752,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "multi")
@@ -2763,7 +2763,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "multi")
@@ -2774,7 +2774,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "multi")
@@ -2785,7 +2785,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "multi")
@@ -2796,7 +2796,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "multi")
@@ -2807,7 +2807,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "multi")
@@ -2818,7 +2818,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "multi")
@@ -2829,7 +2829,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "multi")
@@ -2840,7 +2840,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types", t, "multi")
@@ -2851,7 +2851,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "object_types__n", t, "multi")
@@ -2871,7 +2871,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
@@ -2882,7 +2882,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
@@ -2893,7 +2893,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
@@ -2904,7 +2904,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
@@ -2980,7 +2980,7 @@ func (a *UsersApiService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 
 type ApiUsersPermissionsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	patchedWritableObjectPermissionRequest *PatchedWritableObjectPermissionRequest
 }
@@ -3003,7 +3003,7 @@ Patch a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsPartialUpdateRequest
 */
-func (a *UsersApiService) UsersPermissionsPartialUpdate(ctx context.Context, id int32) ApiUsersPermissionsPartialUpdateRequest {
+func (a *UsersAPIService) UsersPermissionsPartialUpdate(ctx context.Context, id int32) ApiUsersPermissionsPartialUpdateRequest {
 	return ApiUsersPermissionsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3013,7 +3013,7 @@ func (a *UsersApiService) UsersPermissionsPartialUpdate(ctx context.Context, id 
 
 // Execute executes the request
 //  @return ObjectPermission
-func (a *UsersApiService) UsersPermissionsPartialUpdateExecute(r ApiUsersPermissionsPartialUpdateRequest) (*ObjectPermission, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsPartialUpdateExecute(r ApiUsersPermissionsPartialUpdateRequest) (*ObjectPermission, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3021,7 +3021,7 @@ func (a *UsersApiService) UsersPermissionsPartialUpdateExecute(r ApiUsersPermiss
 		localVarReturnValue  *ObjectPermission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3105,7 +3105,7 @@ func (a *UsersApiService) UsersPermissionsPartialUpdateExecute(r ApiUsersPermiss
 
 type ApiUsersPermissionsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -3122,7 +3122,7 @@ Get a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsRetrieveRequest
 */
-func (a *UsersApiService) UsersPermissionsRetrieve(ctx context.Context, id int32) ApiUsersPermissionsRetrieveRequest {
+func (a *UsersAPIService) UsersPermissionsRetrieve(ctx context.Context, id int32) ApiUsersPermissionsRetrieveRequest {
 	return ApiUsersPermissionsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3132,7 +3132,7 @@ func (a *UsersApiService) UsersPermissionsRetrieve(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return ObjectPermission
-func (a *UsersApiService) UsersPermissionsRetrieveExecute(r ApiUsersPermissionsRetrieveRequest) (*ObjectPermission, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsRetrieveExecute(r ApiUsersPermissionsRetrieveRequest) (*ObjectPermission, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3140,7 +3140,7 @@ func (a *UsersApiService) UsersPermissionsRetrieveExecute(r ApiUsersPermissionsR
 		localVarReturnValue  *ObjectPermission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3222,7 +3222,7 @@ func (a *UsersApiService) UsersPermissionsRetrieveExecute(r ApiUsersPermissionsR
 
 type ApiUsersPermissionsUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	writableObjectPermissionRequest *WritableObjectPermissionRequest
 }
@@ -3245,7 +3245,7 @@ Put a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsUpdateRequest
 */
-func (a *UsersApiService) UsersPermissionsUpdate(ctx context.Context, id int32) ApiUsersPermissionsUpdateRequest {
+func (a *UsersAPIService) UsersPermissionsUpdate(ctx context.Context, id int32) ApiUsersPermissionsUpdateRequest {
 	return ApiUsersPermissionsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3255,7 +3255,7 @@ func (a *UsersApiService) UsersPermissionsUpdate(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return ObjectPermission
-func (a *UsersApiService) UsersPermissionsUpdateExecute(r ApiUsersPermissionsUpdateRequest) (*ObjectPermission, *http.Response, error) {
+func (a *UsersAPIService) UsersPermissionsUpdateExecute(r ApiUsersPermissionsUpdateRequest) (*ObjectPermission, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3263,7 +3263,7 @@ func (a *UsersApiService) UsersPermissionsUpdateExecute(r ApiUsersPermissionsUpd
 		localVarReturnValue  *ObjectPermission
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersPermissionsUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3350,7 +3350,7 @@ func (a *UsersApiService) UsersPermissionsUpdateExecute(r ApiUsersPermissionsUpd
 
 type ApiUsersTokensBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	tokenRequest *[]TokenRequest
 }
 
@@ -3371,7 +3371,7 @@ Delete a list of token objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersTokensBulkDestroyRequest
 */
-func (a *UsersApiService) UsersTokensBulkDestroy(ctx context.Context) ApiUsersTokensBulkDestroyRequest {
+func (a *UsersAPIService) UsersTokensBulkDestroy(ctx context.Context) ApiUsersTokensBulkDestroyRequest {
 	return ApiUsersTokensBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3379,14 +3379,14 @@ func (a *UsersApiService) UsersTokensBulkDestroy(ctx context.Context) ApiUsersTo
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersTokensBulkDestroyExecute(r ApiUsersTokensBulkDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersTokensBulkDestroyExecute(r ApiUsersTokensBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3463,7 +3463,7 @@ func (a *UsersApiService) UsersTokensBulkDestroyExecute(r ApiUsersTokensBulkDest
 
 type ApiUsersTokensBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	tokenRequest *[]TokenRequest
 }
 
@@ -3484,7 +3484,7 @@ Patch a list of token objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersTokensBulkPartialUpdateRequest
 */
-func (a *UsersApiService) UsersTokensBulkPartialUpdate(ctx context.Context) ApiUsersTokensBulkPartialUpdateRequest {
+func (a *UsersAPIService) UsersTokensBulkPartialUpdate(ctx context.Context) ApiUsersTokensBulkPartialUpdateRequest {
 	return ApiUsersTokensBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3493,7 +3493,7 @@ func (a *UsersApiService) UsersTokensBulkPartialUpdate(ctx context.Context) ApiU
 
 // Execute executes the request
 //  @return []Token
-func (a *UsersApiService) UsersTokensBulkPartialUpdateExecute(r ApiUsersTokensBulkPartialUpdateRequest) ([]Token, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensBulkPartialUpdateExecute(r ApiUsersTokensBulkPartialUpdateRequest) ([]Token, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -3501,7 +3501,7 @@ func (a *UsersApiService) UsersTokensBulkPartialUpdateExecute(r ApiUsersTokensBu
 		localVarReturnValue  []Token
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3587,7 +3587,7 @@ func (a *UsersApiService) UsersTokensBulkPartialUpdateExecute(r ApiUsersTokensBu
 
 type ApiUsersTokensBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	tokenRequest *[]TokenRequest
 }
 
@@ -3608,7 +3608,7 @@ Put a list of token objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersTokensBulkUpdateRequest
 */
-func (a *UsersApiService) UsersTokensBulkUpdate(ctx context.Context) ApiUsersTokensBulkUpdateRequest {
+func (a *UsersAPIService) UsersTokensBulkUpdate(ctx context.Context) ApiUsersTokensBulkUpdateRequest {
 	return ApiUsersTokensBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3617,7 +3617,7 @@ func (a *UsersApiService) UsersTokensBulkUpdate(ctx context.Context) ApiUsersTok
 
 // Execute executes the request
 //  @return []Token
-func (a *UsersApiService) UsersTokensBulkUpdateExecute(r ApiUsersTokensBulkUpdateRequest) ([]Token, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensBulkUpdateExecute(r ApiUsersTokensBulkUpdateRequest) ([]Token, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3625,7 +3625,7 @@ func (a *UsersApiService) UsersTokensBulkUpdateExecute(r ApiUsersTokensBulkUpdat
 		localVarReturnValue  []Token
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3711,7 +3711,7 @@ func (a *UsersApiService) UsersTokensBulkUpdateExecute(r ApiUsersTokensBulkUpdat
 
 type ApiUsersTokensCreateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	writableTokenRequest *WritableTokenRequest
 }
 
@@ -3732,7 +3732,7 @@ Post a list of token objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersTokensCreateRequest
 */
-func (a *UsersApiService) UsersTokensCreate(ctx context.Context) ApiUsersTokensCreateRequest {
+func (a *UsersAPIService) UsersTokensCreate(ctx context.Context) ApiUsersTokensCreateRequest {
 	return ApiUsersTokensCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3741,7 +3741,7 @@ func (a *UsersApiService) UsersTokensCreate(ctx context.Context) ApiUsersTokensC
 
 // Execute executes the request
 //  @return Token
-func (a *UsersApiService) UsersTokensCreateExecute(r ApiUsersTokensCreateRequest) (*Token, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensCreateExecute(r ApiUsersTokensCreateRequest) (*Token, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3749,7 +3749,7 @@ func (a *UsersApiService) UsersTokensCreateExecute(r ApiUsersTokensCreateRequest
 		localVarReturnValue  *Token
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3835,7 +3835,7 @@ func (a *UsersApiService) UsersTokensCreateExecute(r ApiUsersTokensCreateRequest
 
 type ApiUsersTokensDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -3852,7 +3852,7 @@ Delete a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensDestroyRequest
 */
-func (a *UsersApiService) UsersTokensDestroy(ctx context.Context, id int32) ApiUsersTokensDestroyRequest {
+func (a *UsersAPIService) UsersTokensDestroy(ctx context.Context, id int32) ApiUsersTokensDestroyRequest {
 	return ApiUsersTokensDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3861,14 +3861,14 @@ func (a *UsersApiService) UsersTokensDestroy(ctx context.Context, id int32) ApiU
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersTokensDestroyExecute(r ApiUsersTokensDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersTokensDestroyExecute(r ApiUsersTokensDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3941,7 +3941,7 @@ func (a *UsersApiService) UsersTokensDestroyExecute(r ApiUsersTokensDestroyReque
 
 type ApiUsersTokensListRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	created *time.Time
 	createdGte *time.Time
 	createdLte *time.Time
@@ -4228,7 +4228,7 @@ Get a list of token objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersTokensListRequest
 */
-func (a *UsersApiService) UsersTokensList(ctx context.Context) ApiUsersTokensListRequest {
+func (a *UsersAPIService) UsersTokensList(ctx context.Context) ApiUsersTokensListRequest {
 	return ApiUsersTokensListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4237,7 +4237,7 @@ func (a *UsersApiService) UsersTokensList(ctx context.Context) ApiUsersTokensLis
 
 // Execute executes the request
 //  @return PaginatedTokenList
-func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*PaginatedTokenList, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*PaginatedTokenList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4245,7 +4245,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		localVarReturnValue  *PaginatedTokenList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4270,7 +4270,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "multi")
@@ -4284,7 +4284,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "multi")
@@ -4295,7 +4295,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "multi")
@@ -4306,7 +4306,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "multi")
@@ -4317,7 +4317,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "multi")
@@ -4328,7 +4328,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "multi")
@@ -4339,7 +4339,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "multi")
@@ -4350,7 +4350,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "multi")
@@ -4361,7 +4361,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "multi")
@@ -4372,7 +4372,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "multi")
@@ -4392,7 +4392,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -4406,7 +4406,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -4417,7 +4417,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -4428,7 +4428,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -4439,7 +4439,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -4450,7 +4450,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -4461,7 +4461,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key", t, "multi")
@@ -4475,7 +4475,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__ic", t, "multi")
@@ -4486,7 +4486,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__ie", t, "multi")
@@ -4497,7 +4497,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__iew", t, "multi")
@@ -4508,7 +4508,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__isw", t, "multi")
@@ -4519,7 +4519,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__n", t, "multi")
@@ -4530,7 +4530,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__nic", t, "multi")
@@ -4541,7 +4541,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__nie", t, "multi")
@@ -4552,7 +4552,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__niew", t, "multi")
@@ -4563,7 +4563,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "key__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "key__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "key__nisw", t, "multi")
@@ -4586,7 +4586,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user", t, "multi")
@@ -4597,7 +4597,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user__n", t, "multi")
@@ -4608,7 +4608,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", t, "multi")
@@ -4619,7 +4619,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "user_id__n", t, "multi")
@@ -4698,7 +4698,7 @@ func (a *UsersApiService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 
 type ApiUsersTokensPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	patchedWritableTokenRequest *PatchedWritableTokenRequest
 }
@@ -4721,7 +4721,7 @@ Patch a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensPartialUpdateRequest
 */
-func (a *UsersApiService) UsersTokensPartialUpdate(ctx context.Context, id int32) ApiUsersTokensPartialUpdateRequest {
+func (a *UsersAPIService) UsersTokensPartialUpdate(ctx context.Context, id int32) ApiUsersTokensPartialUpdateRequest {
 	return ApiUsersTokensPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4731,7 +4731,7 @@ func (a *UsersApiService) UsersTokensPartialUpdate(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return Token
-func (a *UsersApiService) UsersTokensPartialUpdateExecute(r ApiUsersTokensPartialUpdateRequest) (*Token, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensPartialUpdateExecute(r ApiUsersTokensPartialUpdateRequest) (*Token, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -4739,7 +4739,7 @@ func (a *UsersApiService) UsersTokensPartialUpdateExecute(r ApiUsersTokensPartia
 		localVarReturnValue  *Token
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4823,7 +4823,7 @@ func (a *UsersApiService) UsersTokensPartialUpdateExecute(r ApiUsersTokensPartia
 
 type ApiUsersTokensProvisionCreateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	tokenProvisionRequest *TokenProvisionRequest
 }
 
@@ -4844,7 +4844,7 @@ Non-authenticated REST API endpoint via which a user may create a Token.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersTokensProvisionCreateRequest
 */
-func (a *UsersApiService) UsersTokensProvisionCreate(ctx context.Context) ApiUsersTokensProvisionCreateRequest {
+func (a *UsersAPIService) UsersTokensProvisionCreate(ctx context.Context) ApiUsersTokensProvisionCreateRequest {
 	return ApiUsersTokensProvisionCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4853,7 +4853,7 @@ func (a *UsersApiService) UsersTokensProvisionCreate(ctx context.Context) ApiUse
 
 // Execute executes the request
 //  @return TokenProvision
-func (a *UsersApiService) UsersTokensProvisionCreateExecute(r ApiUsersTokensProvisionCreateRequest) (*TokenProvision, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensProvisionCreateExecute(r ApiUsersTokensProvisionCreateRequest) (*TokenProvision, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4861,7 +4861,7 @@ func (a *UsersApiService) UsersTokensProvisionCreateExecute(r ApiUsersTokensProv
 		localVarReturnValue  *TokenProvision
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensProvisionCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensProvisionCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4957,7 +4957,7 @@ func (a *UsersApiService) UsersTokensProvisionCreateExecute(r ApiUsersTokensProv
 
 type ApiUsersTokensRetrieveRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -4974,7 +4974,7 @@ Get a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensRetrieveRequest
 */
-func (a *UsersApiService) UsersTokensRetrieve(ctx context.Context, id int32) ApiUsersTokensRetrieveRequest {
+func (a *UsersAPIService) UsersTokensRetrieve(ctx context.Context, id int32) ApiUsersTokensRetrieveRequest {
 	return ApiUsersTokensRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4984,7 +4984,7 @@ func (a *UsersApiService) UsersTokensRetrieve(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return Token
-func (a *UsersApiService) UsersTokensRetrieveExecute(r ApiUsersTokensRetrieveRequest) (*Token, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensRetrieveExecute(r ApiUsersTokensRetrieveRequest) (*Token, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4992,7 +4992,7 @@ func (a *UsersApiService) UsersTokensRetrieveExecute(r ApiUsersTokensRetrieveReq
 		localVarReturnValue  *Token
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5074,7 +5074,7 @@ func (a *UsersApiService) UsersTokensRetrieveExecute(r ApiUsersTokensRetrieveReq
 
 type ApiUsersTokensUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	writableTokenRequest *WritableTokenRequest
 }
@@ -5097,7 +5097,7 @@ Put a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensUpdateRequest
 */
-func (a *UsersApiService) UsersTokensUpdate(ctx context.Context, id int32) ApiUsersTokensUpdateRequest {
+func (a *UsersAPIService) UsersTokensUpdate(ctx context.Context, id int32) ApiUsersTokensUpdateRequest {
 	return ApiUsersTokensUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5107,7 +5107,7 @@ func (a *UsersApiService) UsersTokensUpdate(ctx context.Context, id int32) ApiUs
 
 // Execute executes the request
 //  @return Token
-func (a *UsersApiService) UsersTokensUpdateExecute(r ApiUsersTokensUpdateRequest) (*Token, *http.Response, error) {
+func (a *UsersAPIService) UsersTokensUpdateExecute(r ApiUsersTokensUpdateRequest) (*Token, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -5115,7 +5115,7 @@ func (a *UsersApiService) UsersTokensUpdateExecute(r ApiUsersTokensUpdateRequest
 		localVarReturnValue  *Token
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersTokensUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersTokensUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5202,7 +5202,7 @@ func (a *UsersApiService) UsersTokensUpdateExecute(r ApiUsersTokensUpdateRequest
 
 type ApiUsersUsersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	userRequest *[]UserRequest
 }
 
@@ -5223,7 +5223,7 @@ Delete a list of user objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersUsersBulkDestroyRequest
 */
-func (a *UsersApiService) UsersUsersBulkDestroy(ctx context.Context) ApiUsersUsersBulkDestroyRequest {
+func (a *UsersAPIService) UsersUsersBulkDestroy(ctx context.Context) ApiUsersUsersBulkDestroyRequest {
 	return ApiUsersUsersBulkDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5231,14 +5231,14 @@ func (a *UsersApiService) UsersUsersBulkDestroy(ctx context.Context) ApiUsersUse
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersUsersBulkDestroyExecute(r ApiUsersUsersBulkDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersUsersBulkDestroyExecute(r ApiUsersUsersBulkDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersBulkDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersBulkDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5315,7 +5315,7 @@ func (a *UsersApiService) UsersUsersBulkDestroyExecute(r ApiUsersUsersBulkDestro
 
 type ApiUsersUsersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	userRequest *[]UserRequest
 }
 
@@ -5336,7 +5336,7 @@ Patch a list of user objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersUsersBulkPartialUpdateRequest
 */
-func (a *UsersApiService) UsersUsersBulkPartialUpdate(ctx context.Context) ApiUsersUsersBulkPartialUpdateRequest {
+func (a *UsersAPIService) UsersUsersBulkPartialUpdate(ctx context.Context) ApiUsersUsersBulkPartialUpdateRequest {
 	return ApiUsersUsersBulkPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5345,7 +5345,7 @@ func (a *UsersApiService) UsersUsersBulkPartialUpdate(ctx context.Context) ApiUs
 
 // Execute executes the request
 //  @return []User
-func (a *UsersApiService) UsersUsersBulkPartialUpdateExecute(r ApiUsersUsersBulkPartialUpdateRequest) ([]User, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersBulkPartialUpdateExecute(r ApiUsersUsersBulkPartialUpdateRequest) ([]User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -5353,7 +5353,7 @@ func (a *UsersApiService) UsersUsersBulkPartialUpdateExecute(r ApiUsersUsersBulk
 		localVarReturnValue  []User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersBulkPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersBulkPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5439,7 +5439,7 @@ func (a *UsersApiService) UsersUsersBulkPartialUpdateExecute(r ApiUsersUsersBulk
 
 type ApiUsersUsersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	userRequest *[]UserRequest
 }
 
@@ -5460,7 +5460,7 @@ Put a list of user objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersUsersBulkUpdateRequest
 */
-func (a *UsersApiService) UsersUsersBulkUpdate(ctx context.Context) ApiUsersUsersBulkUpdateRequest {
+func (a *UsersAPIService) UsersUsersBulkUpdate(ctx context.Context) ApiUsersUsersBulkUpdateRequest {
 	return ApiUsersUsersBulkUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5469,7 +5469,7 @@ func (a *UsersApiService) UsersUsersBulkUpdate(ctx context.Context) ApiUsersUser
 
 // Execute executes the request
 //  @return []User
-func (a *UsersApiService) UsersUsersBulkUpdateExecute(r ApiUsersUsersBulkUpdateRequest) ([]User, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersBulkUpdateExecute(r ApiUsersUsersBulkUpdateRequest) ([]User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -5477,7 +5477,7 @@ func (a *UsersApiService) UsersUsersBulkUpdateExecute(r ApiUsersUsersBulkUpdateR
 		localVarReturnValue  []User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersBulkUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersBulkUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5563,7 +5563,7 @@ func (a *UsersApiService) UsersUsersBulkUpdateExecute(r ApiUsersUsersBulkUpdateR
 
 type ApiUsersUsersCreateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	writableUserRequest *WritableUserRequest
 }
 
@@ -5584,7 +5584,7 @@ Post a list of user objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersUsersCreateRequest
 */
-func (a *UsersApiService) UsersUsersCreate(ctx context.Context) ApiUsersUsersCreateRequest {
+func (a *UsersAPIService) UsersUsersCreate(ctx context.Context) ApiUsersUsersCreateRequest {
 	return ApiUsersUsersCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5593,7 +5593,7 @@ func (a *UsersApiService) UsersUsersCreate(ctx context.Context) ApiUsersUsersCre
 
 // Execute executes the request
 //  @return User
-func (a *UsersApiService) UsersUsersCreateExecute(r ApiUsersUsersCreateRequest) (*User, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersCreateExecute(r ApiUsersUsersCreateRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5601,7 +5601,7 @@ func (a *UsersApiService) UsersUsersCreateExecute(r ApiUsersUsersCreateRequest) 
 		localVarReturnValue  *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5687,7 +5687,7 @@ func (a *UsersApiService) UsersUsersCreateExecute(r ApiUsersUsersCreateRequest) 
 
 type ApiUsersUsersDestroyRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -5704,7 +5704,7 @@ Delete a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersDestroyRequest
 */
-func (a *UsersApiService) UsersUsersDestroy(ctx context.Context, id int32) ApiUsersUsersDestroyRequest {
+func (a *UsersAPIService) UsersUsersDestroy(ctx context.Context, id int32) ApiUsersUsersDestroyRequest {
 	return ApiUsersUsersDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5713,14 +5713,14 @@ func (a *UsersApiService) UsersUsersDestroy(ctx context.Context, id int32) ApiUs
 }
 
 // Execute executes the request
-func (a *UsersApiService) UsersUsersDestroyExecute(r ApiUsersUsersDestroyRequest) (*http.Response, error) {
+func (a *UsersAPIService) UsersUsersDestroyExecute(r ApiUsersUsersDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5793,7 +5793,7 @@ func (a *UsersApiService) UsersUsersDestroyExecute(r ApiUsersUsersDestroyRequest
 
 type ApiUsersUsersListRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	email *[]string
 	emailEmpty *bool
 	emailIc *[]string
@@ -6188,7 +6188,7 @@ Get a list of user objects.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiUsersUsersListRequest
 */
-func (a *UsersApiService) UsersUsersList(ctx context.Context) ApiUsersUsersListRequest {
+func (a *UsersAPIService) UsersUsersList(ctx context.Context) ApiUsersUsersListRequest {
 	return ApiUsersUsersListRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6197,7 +6197,7 @@ func (a *UsersApiService) UsersUsersList(ctx context.Context) ApiUsersUsersListR
 
 // Execute executes the request
 //  @return PaginatedUserList
-func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*PaginatedUserList, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*PaginatedUserList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6205,7 +6205,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		localVarReturnValue  *PaginatedUserList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6221,7 +6221,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email", t, "multi")
@@ -6235,7 +6235,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__ic", t, "multi")
@@ -6246,7 +6246,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__ie", t, "multi")
@@ -6257,7 +6257,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__iew", t, "multi")
@@ -6268,7 +6268,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__isw", t, "multi")
@@ -6279,7 +6279,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__n", t, "multi")
@@ -6290,7 +6290,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__nic", t, "multi")
@@ -6301,7 +6301,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__nie", t, "multi")
@@ -6312,7 +6312,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__niew", t, "multi")
@@ -6323,7 +6323,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "email__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "email__nisw", t, "multi")
@@ -6334,7 +6334,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name", t, "multi")
@@ -6348,7 +6348,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__ic", t, "multi")
@@ -6359,7 +6359,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__ie", t, "multi")
@@ -6370,7 +6370,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__iew", t, "multi")
@@ -6381,7 +6381,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__isw", t, "multi")
@@ -6392,7 +6392,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__n", t, "multi")
@@ -6403,7 +6403,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nic", t, "multi")
@@ -6414,7 +6414,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nie", t, "multi")
@@ -6425,7 +6425,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__niew", t, "multi")
@@ -6436,7 +6436,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "first_name__nisw", t, "multi")
@@ -6447,7 +6447,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group", t, "multi")
@@ -6458,7 +6458,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group__n", t, "multi")
@@ -6469,7 +6469,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id", t, "multi")
@@ -6480,7 +6480,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "group_id__n", t, "multi")
@@ -6491,7 +6491,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "multi")
@@ -6505,7 +6505,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "multi")
@@ -6516,7 +6516,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "multi")
@@ -6527,7 +6527,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "multi")
@@ -6538,7 +6538,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "multi")
@@ -6549,7 +6549,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "multi")
@@ -6569,7 +6569,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name", t, "multi")
@@ -6583,7 +6583,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__ic", t, "multi")
@@ -6594,7 +6594,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__ie", t, "multi")
@@ -6605,7 +6605,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__iew", t, "multi")
@@ -6616,7 +6616,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__isw", t, "multi")
@@ -6627,7 +6627,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__n", t, "multi")
@@ -6638,7 +6638,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nic", t, "multi")
@@ -6649,7 +6649,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nie", t, "multi")
@@ -6660,7 +6660,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__niew", t, "multi")
@@ -6671,7 +6671,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "last_name__nisw", t, "multi")
@@ -6694,7 +6694,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username", t, "multi")
@@ -6708,7 +6708,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__ic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__ic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__ic", t, "multi")
@@ -6719,7 +6719,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__ie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__ie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__ie", t, "multi")
@@ -6730,7 +6730,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__iew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__iew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__iew", t, "multi")
@@ -6741,7 +6741,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__isw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__isw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__isw", t, "multi")
@@ -6752,7 +6752,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__n", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__n", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__n", t, "multi")
@@ -6763,7 +6763,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__nic", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__nic", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__nic", t, "multi")
@@ -6774,7 +6774,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__nie", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__nie", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__nie", t, "multi")
@@ -6785,7 +6785,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__niew", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__niew", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__niew", t, "multi")
@@ -6796,7 +6796,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "username__nisw", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "username__nisw", s.Index(i).Interface(), "multi")
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "username__nisw", t, "multi")
@@ -6872,7 +6872,7 @@ func (a *UsersApiService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 
 type ApiUsersUsersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	patchedWritableUserRequest *PatchedWritableUserRequest
 }
@@ -6895,7 +6895,7 @@ Patch a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersPartialUpdateRequest
 */
-func (a *UsersApiService) UsersUsersPartialUpdate(ctx context.Context, id int32) ApiUsersUsersPartialUpdateRequest {
+func (a *UsersAPIService) UsersUsersPartialUpdate(ctx context.Context, id int32) ApiUsersUsersPartialUpdateRequest {
 	return ApiUsersUsersPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6905,7 +6905,7 @@ func (a *UsersApiService) UsersUsersPartialUpdate(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return User
-func (a *UsersApiService) UsersUsersPartialUpdateExecute(r ApiUsersUsersPartialUpdateRequest) (*User, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersPartialUpdateExecute(r ApiUsersUsersPartialUpdateRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -6913,7 +6913,7 @@ func (a *UsersApiService) UsersUsersPartialUpdateExecute(r ApiUsersUsersPartialU
 		localVarReturnValue  *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersPartialUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersPartialUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6997,7 +6997,7 @@ func (a *UsersApiService) UsersUsersPartialUpdateExecute(r ApiUsersUsersPartialU
 
 type ApiUsersUsersRetrieveRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 }
 
@@ -7014,7 +7014,7 @@ Get a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersRetrieveRequest
 */
-func (a *UsersApiService) UsersUsersRetrieve(ctx context.Context, id int32) ApiUsersUsersRetrieveRequest {
+func (a *UsersAPIService) UsersUsersRetrieve(ctx context.Context, id int32) ApiUsersUsersRetrieveRequest {
 	return ApiUsersUsersRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7024,7 +7024,7 @@ func (a *UsersApiService) UsersUsersRetrieve(ctx context.Context, id int32) ApiU
 
 // Execute executes the request
 //  @return User
-func (a *UsersApiService) UsersUsersRetrieveExecute(r ApiUsersUsersRetrieveRequest) (*User, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersRetrieveExecute(r ApiUsersUsersRetrieveRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7032,7 +7032,7 @@ func (a *UsersApiService) UsersUsersRetrieveExecute(r ApiUsersUsersRetrieveReque
 		localVarReturnValue  *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersRetrieve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersRetrieve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7114,7 +7114,7 @@ func (a *UsersApiService) UsersUsersRetrieveExecute(r ApiUsersUsersRetrieveReque
 
 type ApiUsersUsersUpdateRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	id int32
 	writableUserRequest *WritableUserRequest
 }
@@ -7137,7 +7137,7 @@ Put a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersUpdateRequest
 */
-func (a *UsersApiService) UsersUsersUpdate(ctx context.Context, id int32) ApiUsersUsersUpdateRequest {
+func (a *UsersAPIService) UsersUsersUpdate(ctx context.Context, id int32) ApiUsersUsersUpdateRequest {
 	return ApiUsersUsersUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7147,7 +7147,7 @@ func (a *UsersApiService) UsersUsersUpdate(ctx context.Context, id int32) ApiUse
 
 // Execute executes the request
 //  @return User
-func (a *UsersApiService) UsersUsersUpdateExecute(r ApiUsersUsersUpdateRequest) (*User, *http.Response, error) {
+func (a *UsersAPIService) UsersUsersUpdateExecute(r ApiUsersUsersUpdateRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -7155,7 +7155,7 @@ func (a *UsersApiService) UsersUsersUpdateExecute(r ApiUsersUsersUpdateRequest) 
 		localVarReturnValue  *User
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.UsersUsersUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersUsersUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

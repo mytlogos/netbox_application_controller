@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedVirtualChassisRequest{}
 type NestedVirtualChassisRequest struct {
 	Name string `json:"name"`
 	Master NestedDeviceRequest `json:"master"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedVirtualChassisRequest NestedVirtualChassisRequest
 
 // NewNestedVirtualChassisRequest instantiates a new NestedVirtualChassisRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedVirtualChassisRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["master"] = o.Master
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedVirtualChassisRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedVirtualChassisRequest := _NestedVirtualChassisRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedVirtualChassisRequest); err == nil {
-		*o = NestedVirtualChassisRequest(varNestedVirtualChassisRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "master")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedVirtualChassisRequest struct {

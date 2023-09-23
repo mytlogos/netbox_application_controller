@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedDeviceTypeRequest{}
 type NestedDeviceTypeRequest struct {
 	Model string `json:"model"`
 	Slug string `json:"slug"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedDeviceTypeRequest NestedDeviceTypeRequest
 
 // NewNestedDeviceTypeRequest instantiates a new NestedDeviceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -105,30 +102,7 @@ func (o NestedDeviceTypeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["model"] = o.Model
 	toSerialize["slug"] = o.Slug
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedDeviceTypeRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedDeviceTypeRequest := _NestedDeviceTypeRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedDeviceTypeRequest); err == nil {
-		*o = NestedDeviceTypeRequest(varNestedDeviceTypeRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "model")
-		delete(additionalProperties, "slug")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedDeviceTypeRequest struct {

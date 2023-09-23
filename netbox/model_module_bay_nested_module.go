@@ -23,10 +23,7 @@ type ModuleBayNestedModule struct {
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Serial *string `json:"serial,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ModuleBayNestedModule ModuleBayNestedModule
 
 // NewModuleBayNestedModule instantiates a new ModuleBayNestedModule object
 // This constructor will assign default values to properties that have it defined,
@@ -162,38 +159,13 @@ func (o ModuleBayNestedModule) MarshalJSON() ([]byte, error) {
 
 func (o ModuleBayNestedModule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if !IsNil(o.Serial) {
 		toSerialize["serial"] = o.Serial
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ModuleBayNestedModule) UnmarshalJSON(bytes []byte) (err error) {
-	varModuleBayNestedModule := _ModuleBayNestedModule{}
-
-	if err = json.Unmarshal(bytes, &varModuleBayNestedModule); err == nil {
-		*o = ModuleBayNestedModule(varModuleBayNestedModule)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "serial")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableModuleBayNestedModule struct {

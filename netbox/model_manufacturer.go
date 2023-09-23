@@ -33,10 +33,7 @@ type Manufacturer struct {
 	DevicetypeCount int32 `json:"devicetype_count"`
 	InventoryitemCount int32 `json:"inventoryitem_count"`
 	PlatformCount int32 `json:"platform_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Manufacturer Manufacturer
 
 // NewManufacturer instantiates a new Manufacturer object
 // This constructor will assign default values to properties that have it defined,
@@ -415,9 +412,9 @@ func (o Manufacturer) MarshalJSON() ([]byte, error) {
 
 func (o Manufacturer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
@@ -431,44 +428,10 @@ func (o Manufacturer) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: devicetype_count is readOnly
-	// skip: inventoryitem_count is readOnly
-	// skip: platform_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["devicetype_count"] = o.DevicetypeCount
+	toSerialize["inventoryitem_count"] = o.InventoryitemCount
+	toSerialize["platform_count"] = o.PlatformCount
 	return toSerialize, nil
-}
-
-func (o *Manufacturer) UnmarshalJSON(bytes []byte) (err error) {
-	varManufacturer := _Manufacturer{}
-
-	if err = json.Unmarshal(bytes, &varManufacturer); err == nil {
-		*o = Manufacturer(varManufacturer)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "devicetype_count")
-		delete(additionalProperties, "inventoryitem_count")
-		delete(additionalProperties, "platform_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableManufacturer struct {

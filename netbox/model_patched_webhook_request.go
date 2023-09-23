@@ -52,10 +52,7 @@ type PatchedWebhookRequest struct {
 	CaFilePath NullableString `json:"ca_file_path,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWebhookRequest PatchedWebhookRequest
 
 // NewPatchedWebhookRequest instantiates a new PatchedWebhookRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -760,47 +757,7 @@ func (o PatchedWebhookRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWebhookRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWebhookRequest := _PatchedWebhookRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWebhookRequest); err == nil {
-		*o = PatchedWebhookRequest(varPatchedWebhookRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_types")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type_create")
-		delete(additionalProperties, "type_update")
-		delete(additionalProperties, "type_delete")
-		delete(additionalProperties, "type_job_start")
-		delete(additionalProperties, "type_job_end")
-		delete(additionalProperties, "payload_url")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "http_method")
-		delete(additionalProperties, "http_content_type")
-		delete(additionalProperties, "additional_headers")
-		delete(additionalProperties, "body_template")
-		delete(additionalProperties, "secret")
-		delete(additionalProperties, "conditions")
-		delete(additionalProperties, "ssl_verification")
-		delete(additionalProperties, "ca_file_path")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "tags")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWebhookRequest struct {

@@ -22,10 +22,7 @@ type WirelessLANAuthCipher struct {
 	// * `auto` - Auto * `tkip` - TKIP * `aes` - AES
 	Value *string `json:"value,omitempty"`
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WirelessLANAuthCipher WirelessLANAuthCipher
 
 // NewWirelessLANAuthCipher instantiates a new WirelessLANAuthCipher object
 // This constructor will assign default values to properties that have it defined,
@@ -124,30 +121,7 @@ func (o WirelessLANAuthCipher) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WirelessLANAuthCipher) UnmarshalJSON(bytes []byte) (err error) {
-	varWirelessLANAuthCipher := _WirelessLANAuthCipher{}
-
-	if err = json.Unmarshal(bytes, &varWirelessLANAuthCipher); err == nil {
-		*o = WirelessLANAuthCipher(varWirelessLANAuthCipher)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWirelessLANAuthCipher struct {

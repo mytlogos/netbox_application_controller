@@ -20,10 +20,7 @@ var _ MappedNullable = &NestedCableRequest{}
 // NestedCableRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedCableRequest struct {
 	Label *string `json:"label,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedCableRequest NestedCableRequest
 
 // NewNestedCableRequest instantiates a new NestedCableRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -87,29 +84,7 @@ func (o NestedCableRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedCableRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedCableRequest := _NestedCableRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedCableRequest); err == nil {
-		*o = NestedCableRequest(varNestedCableRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "label")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedCableRequest struct {

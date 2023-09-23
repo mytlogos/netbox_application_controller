@@ -23,10 +23,7 @@ type ApplicationGroupRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ApplicationGroupRequest ApplicationGroupRequest
 
 // NewApplicationGroupRequest instantiates a new ApplicationGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -186,32 +183,7 @@ func (o ApplicationGroupRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ApplicationGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varApplicationGroupRequest := _ApplicationGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varApplicationGroupRequest); err == nil {
-		*o = ApplicationGroupRequest(varApplicationGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableApplicationGroupRequest struct {

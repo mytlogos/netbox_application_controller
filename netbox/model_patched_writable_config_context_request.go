@@ -39,10 +39,7 @@ type PatchedWritableConfigContextRequest struct {
 	// Remote data source
 	DataSource NullableInt32 `json:"data_source,omitempty"`
 	Data map[string]interface{} `json:"data,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _PatchedWritableConfigContextRequest PatchedWritableConfigContextRequest
 
 // NewPatchedWritableConfigContextRequest instantiates a new PatchedWritableConfigContextRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -746,47 +743,7 @@ func (o PatchedWritableConfigContextRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *PatchedWritableConfigContextRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varPatchedWritableConfigContextRequest := _PatchedWritableConfigContextRequest{}
-
-	if err = json.Unmarshal(bytes, &varPatchedWritableConfigContextRequest); err == nil {
-		*o = PatchedWritableConfigContextRequest(varPatchedWritableConfigContextRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "is_active")
-		delete(additionalProperties, "regions")
-		delete(additionalProperties, "site_groups")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "locations")
-		delete(additionalProperties, "device_types")
-		delete(additionalProperties, "roles")
-		delete(additionalProperties, "platforms")
-		delete(additionalProperties, "cluster_types")
-		delete(additionalProperties, "cluster_groups")
-		delete(additionalProperties, "clusters")
-		delete(additionalProperties, "tenant_groups")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "data_source")
-		delete(additionalProperties, "data")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullablePatchedWritableConfigContextRequest struct {

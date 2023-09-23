@@ -37,10 +37,7 @@ type FHRPGroup struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	IpAddresses []NestedIPAddress `json:"ip_addresses"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _FHRPGroup FHRPGroup
 
 // NewFHRPGroup instantiates a new FHRPGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -497,12 +494,12 @@ func (o FHRPGroup) MarshalJSON() ([]byte, error) {
 
 func (o FHRPGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
+	toSerialize["id"] = o.Id
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["group_id"] = o.GroupId
 	if !IsNil(o.AuthType) {
@@ -525,44 +522,8 @@ func (o FHRPGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: ip_addresses is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["ip_addresses"] = o.IpAddresses
 	return toSerialize, nil
-}
-
-func (o *FHRPGroup) UnmarshalJSON(bytes []byte) (err error) {
-	varFHRPGroup := _FHRPGroup{}
-
-	if err = json.Unmarshal(bytes, &varFHRPGroup); err == nil {
-		*o = FHRPGroup(varFHRPGroup)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "group_id")
-		delete(additionalProperties, "auth_type")
-		delete(additionalProperties, "auth_key")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "ip_addresses")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableFHRPGroup struct {

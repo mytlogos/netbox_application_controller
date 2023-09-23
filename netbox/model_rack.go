@@ -60,10 +60,7 @@ type Rack struct {
 	LastUpdated NullableTime `json:"last_updated"`
 	DeviceCount int32 `json:"device_count"`
 	PowerfeedCount int32 `json:"powerfeed_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _Rack Rack
 
 // NewRack instantiates a new Rack object
 // This constructor will assign default values to properties that have it defined,
@@ -1187,9 +1184,9 @@ func (o Rack) MarshalJSON() ([]byte, error) {
 
 func (o Rack) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if o.FacilityId.IsSet() {
 		toSerialize["facility_id"] = o.FacilityId.Get()
@@ -1263,62 +1260,9 @@ func (o Rack) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: device_count is readOnly
-	// skip: powerfeed_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["device_count"] = o.DeviceCount
+	toSerialize["powerfeed_count"] = o.PowerfeedCount
 	return toSerialize, nil
-}
-
-func (o *Rack) UnmarshalJSON(bytes []byte) (err error) {
-	varRack := _Rack{}
-
-	if err = json.Unmarshal(bytes, &varRack); err == nil {
-		*o = Rack(varRack)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "facility_id")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "serial")
-		delete(additionalProperties, "asset_tag")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "width")
-		delete(additionalProperties, "u_height")
-		delete(additionalProperties, "starting_unit")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "max_weight")
-		delete(additionalProperties, "weight_unit")
-		delete(additionalProperties, "desc_units")
-		delete(additionalProperties, "outer_width")
-		delete(additionalProperties, "outer_depth")
-		delete(additionalProperties, "outer_unit")
-		delete(additionalProperties, "mounting_depth")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "device_count")
-		delete(additionalProperties, "powerfeed_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableRack struct {

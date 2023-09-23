@@ -26,10 +26,7 @@ type WritableProviderNetworkRequest struct {
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableProviderNetworkRequest WritableProviderNetworkRequest
 
 // NewWritableProviderNetworkRequest instantiates a new WritableProviderNetworkRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -285,35 +282,7 @@ func (o WritableProviderNetworkRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableProviderNetworkRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableProviderNetworkRequest := _WritableProviderNetworkRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableProviderNetworkRequest); err == nil {
-		*o = WritableProviderNetworkRequest(varWritableProviderNetworkRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "provider")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "service_id")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableProviderNetworkRequest struct {

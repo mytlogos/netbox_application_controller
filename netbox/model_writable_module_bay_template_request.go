@@ -27,10 +27,7 @@ type WritableModuleBayTemplateRequest struct {
 	// Identifier to reference when renaming installed components
 	Position *string `json:"position,omitempty"`
 	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _WritableModuleBayTemplateRequest WritableModuleBayTemplateRequest
 
 // NewWritableModuleBayTemplateRequest instantiates a new WritableModuleBayTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -216,33 +213,7 @@ func (o WritableModuleBayTemplateRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *WritableModuleBayTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varWritableModuleBayTemplateRequest := _WritableModuleBayTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varWritableModuleBayTemplateRequest); err == nil {
-		*o = WritableModuleBayTemplateRequest(varWritableModuleBayTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "position")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableWritableModuleBayTemplateRequest struct {

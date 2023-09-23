@@ -30,10 +30,7 @@ type VLANGroupRequest struct {
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VLANGroupRequest VLANGroupRequest
 
 // NewVLANGroupRequest instantiates a new VLANGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -379,37 +376,7 @@ func (o VLANGroupRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *VLANGroupRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varVLANGroupRequest := _VLANGroupRequest{}
-
-	if err = json.Unmarshal(bytes, &varVLANGroupRequest); err == nil {
-		*o = VLANGroupRequest(varVLANGroupRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "slug")
-		delete(additionalProperties, "scope_type")
-		delete(additionalProperties, "scope_id")
-		delete(additionalProperties, "min_vid")
-		delete(additionalProperties, "max_vid")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVLANGroupRequest struct {

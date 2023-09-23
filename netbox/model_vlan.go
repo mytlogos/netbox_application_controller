@@ -39,10 +39,7 @@ type VLAN struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	PrefixCount int32 `json:"prefix_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VLAN VLAN
 
 // NewVLAN instantiates a new VLAN object
 // This constructor will assign default values to properties that have it defined,
@@ -630,9 +627,9 @@ func (o VLAN) MarshalJSON() ([]byte, error) {
 
 func (o VLAN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.Site.IsSet() {
 		toSerialize["site"] = o.Site.Get()
 	}
@@ -665,47 +662,8 @@ func (o VLAN) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: prefix_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["prefix_count"] = o.PrefixCount
 	return toSerialize, nil
-}
-
-func (o *VLAN) UnmarshalJSON(bytes []byte) (err error) {
-	varVLAN := _VLAN{}
-
-	if err = json.Unmarshal(bytes, &varVLAN); err == nil {
-		*o = VLAN(varVLAN)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "vid")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "l2vpn_termination")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "prefix_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVLAN struct {

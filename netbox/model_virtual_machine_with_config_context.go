@@ -47,10 +47,7 @@ type VirtualMachineWithConfigContext struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	InterfaceCount int32 `json:"interface_count"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _VirtualMachineWithConfigContext VirtualMachineWithConfigContext
 
 // NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 // This constructor will assign default values to properties that have it defined,
@@ -965,9 +962,9 @@ func (o VirtualMachineWithConfigContext) MarshalJSON() ([]byte, error) {
 
 func (o VirtualMachineWithConfigContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
@@ -990,7 +987,7 @@ func (o VirtualMachineWithConfigContext) ToMap() (map[string]interface{}, error)
 	if o.Platform.IsSet() {
 		toSerialize["platform"] = o.Platform.Get()
 	}
-	// skip: primary_ip is readOnly
+	toSerialize["primary_ip"] = o.PrimaryIp
 	if o.PrimaryIp4.IsSet() {
 		toSerialize["primary_ip4"] = o.PrimaryIp4.Get()
 	}
@@ -1026,55 +1023,8 @@ func (o VirtualMachineWithConfigContext) ToMap() (map[string]interface{}, error)
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	// skip: interface_count is readOnly
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
+	toSerialize["interface_count"] = o.InterfaceCount
 	return toSerialize, nil
-}
-
-func (o *VirtualMachineWithConfigContext) UnmarshalJSON(bytes []byte) (err error) {
-	varVirtualMachineWithConfigContext := _VirtualMachineWithConfigContext{}
-
-	if err = json.Unmarshal(bytes, &varVirtualMachineWithConfigContext); err == nil {
-		*o = VirtualMachineWithConfigContext(varVirtualMachineWithConfigContext)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "cluster")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "tenant")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "primary_ip")
-		delete(additionalProperties, "primary_ip4")
-		delete(additionalProperties, "primary_ip6")
-		delete(additionalProperties, "vcpus")
-		delete(additionalProperties, "memory")
-		delete(additionalProperties, "disk")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "comments")
-		delete(additionalProperties, "local_context_data")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "custom_fields")
-		delete(additionalProperties, "config_context")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		delete(additionalProperties, "interface_count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableVirtualMachineWithConfigContext struct {

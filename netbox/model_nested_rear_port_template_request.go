@@ -21,10 +21,7 @@ var _ MappedNullable = &NestedRearPortTemplateRequest{}
 type NestedRearPortTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _NestedRearPortTemplateRequest NestedRearPortTemplateRequest
 
 // NewNestedRearPortTemplateRequest instantiates a new NestedRearPortTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -79,29 +76,7 @@ func (o NestedRearPortTemplateRequest) MarshalJSON() ([]byte, error) {
 func (o NestedRearPortTemplateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *NestedRearPortTemplateRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varNestedRearPortTemplateRequest := _NestedRearPortTemplateRequest{}
-
-	if err = json.Unmarshal(bytes, &varNestedRearPortTemplateRequest); err == nil {
-		*o = NestedRearPortTemplateRequest(varNestedRearPortTemplateRequest)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableNestedRearPortTemplateRequest struct {

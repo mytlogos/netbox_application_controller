@@ -33,10 +33,7 @@ type ConsoleServerPortTemplate struct {
 	Description *string `json:"description,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	AdditionalProperties map[string]interface{}
 }
-
-type _ConsoleServerPortTemplate ConsoleServerPortTemplate
 
 // NewConsoleServerPortTemplate instantiates a new ConsoleServerPortTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -399,9 +396,9 @@ func (o ConsoleServerPortTemplate) MarshalJSON() ([]byte, error) {
 
 func (o ConsoleServerPortTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: id is readOnly
-	// skip: url is readOnly
-	// skip: display is readOnly
+	toSerialize["id"] = o.Id
+	toSerialize["url"] = o.Url
+	toSerialize["display"] = o.Display
 	if o.DeviceType.IsSet() {
 		toSerialize["device_type"] = o.DeviceType.Get()
 	}
@@ -420,39 +417,7 @@ func (o ConsoleServerPortTemplate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
-}
-
-func (o *ConsoleServerPortTemplate) UnmarshalJSON(bytes []byte) (err error) {
-	varConsoleServerPortTemplate := _ConsoleServerPortTemplate{}
-
-	if err = json.Unmarshal(bytes, &varConsoleServerPortTemplate); err == nil {
-		*o = ConsoleServerPortTemplate(varConsoleServerPortTemplate)
-	}
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "display")
-		delete(additionalProperties, "device_type")
-		delete(additionalProperties, "module_type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "created")
-		delete(additionalProperties, "last_updated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 type NullableConsoleServerPortTemplate struct {
