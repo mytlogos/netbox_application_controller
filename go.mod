@@ -1,6 +1,6 @@
 module github.com/mytlogos/netbox_application_controller
 
-go 1.21.1
+go 1.21
 
 require (
 	github.com/Wifx/gonetworkmanager v0.5.0
