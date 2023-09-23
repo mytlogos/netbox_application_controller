@@ -1,0 +1,18 @@
+generatorName: go
+
+gitHost: github.com
+gitUserId: mytlogos
+gitRepoId: netbox_application_controller
+
+packageName: netbox
+
+globalProperty:
+  apiDocs: false
+  modelDocs: false
+  apiTests: false
+  modelTests: false
+
+additionalProperties:
+  disallowAdditionalPropertiesIfNotPresent: "false"
+  packageVersion: "3"
+
