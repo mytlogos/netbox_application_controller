@@ -10,6 +10,7 @@ import (
 	"github.com/mytlogos/netbox_application_controller/models"
 	"github.com/mytlogos/netbox_application_controller/netbox"
 	"github.com/mytlogos/netbox_application_controller/services/backend"
+	"github.com/r3labs/diff/v3"
 	"golang.org/x/exp/maps"
 )
 
@@ -303,34 +304,120 @@ func (s *Storage) makeNetworkUpdate(value *models.Host, device *netbox.DeviceWit
 	return nil
 }
 
+func (s *Storage) makeAppUpdate(value *models.Host, device *netbox.DeviceWithConfigContext) error {
+	netboxAppGroups, err := s.backend.GetApplicationGroups()
+
+	if err != nil {
+		return err
+	}
+
+	groupsToCreate := UpdateApplicationGroups(value.App, device.Id, netboxAppGroups)
+
+	for _, group := range groupsToCreate {
+		_, err = s.backend.CreateApplicationGroup(group)
+
+		if err != nil {
+			return err
+		}
+	}
+
+	netboxAppGroups, err = s.backend.GetApplicationGroups()
+
+	if err != nil {
+		return err
+	}
+
+	netboxApps, err := s.backend.GetApplications()
+
+	if err != nil {
+		return err
+	}
+
+	toUpdate, _ := UpdateApplications(value.App, device.Id, netboxAppGroups, netboxApps)
+
+	for _, app := range toUpdate {
+		if app.Id == 0 {
+			_, err := s.backend.CreateApplication(app)
+
+			if err != nil {
+				return err
+			}
+		} else {
+			_, err := s.backend.UpdateApplication(app)
+
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	netboxApps, err = s.backend.GetApplications()
+
+	if err != nil {
+		return err
+	}
+	netboxAppPorts, err := s.backend.GetApplicationPorts()
+
+	if err != nil {
+		return err
+	}
+
+	portsToUpdate, deleteIds := UpdateApplicationPorts(value.App, device.Id, netboxApps, netboxAppPorts)
+
+	for _, port := range portsToUpdate {
+		if port.Id == 0 {
+			_, err := s.backend.CreateApplicationPort(port)
+
+			if err != nil {
+				return err
+			}
+		}
+	}
+	for _, id := range deleteIds {
+		err = s.backend.DeleteApplicationPort(id)
+
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func (s *Storage) MakeUpdate(before, after *models.Host) {
-	differ := NewDiffer(DifferConfig{
-		Backend: s.backend,
-	})
-	changes, err := differ.DiffDocument(before, after)
+	differ, err := diff.NewDiffer()
+
+	if err != nil {
+		panic(err)
+	}
+
+	changes, err := differ.Diff(before, after)
 
 	if err != nil {
 		log.Println(err)
 		return
 	}
 
-	// data, err := json.MarshalIndent(changes, "", " ")
-
-	// if err != nil {
-	// 	log.Println(err)
-	// 	return
-	// }
-
+	// always make a device update to make agent data up to date in netbox
 	device, err := s.makeDeviceUpdate(after)
 
 	if err != nil {
 		panic(err)
 	}
 
-	err = s.makeNetworkUpdate(after, device)
+	if len(changes.Filter([]string{"network.*"})) > 0 {
+		err = s.makeNetworkUpdate(after, device)
 
-	if err != nil {
-		panic(err)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	if len(changes.Filter([]string{"app.*"})) > 0 {
+		err = s.makeAppUpdate(after, device)
+
+		if err != nil {
+			panic(err)
+		}
 	}
 	log.Println(changes)
 }

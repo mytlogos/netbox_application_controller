@@ -9,8 +9,8 @@ type App struct {
 	Storage *services.Storage
 }
 
-func (c *App) Post(update models.CpuUpdate) models.OkResponse {
-	c.Storage.UpdateCpu(update.Uuid, &update.Cpu)
+func (c *App) Post(update models.AppUpdate) models.OkResponse {
+	c.Storage.UpdateApp(update.Uuid, &update.App)
 	return models.OkResponse{
 		Status: "Ok",
 		Ok:     true,

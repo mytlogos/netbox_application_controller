@@ -303,16 +303,66 @@ func (b *Backend) GetApplications() ([]netbox.Application, error) {
 	return result.GetResults(), err
 }
 
-func (b *Backend) CreateApplication(group netbox.Application) (*netbox.Application, error) {
+func (b *Backend) CreateApplication(app netbox.Application) (*netbox.Application, error) {
 	ctx := b.getContext()
 	result, _, err := b.client.PluginsAPI.
 		PluginsApplicationsApplicationsCreate(ctx).
 		ApplicationRequest(netbox.ApplicationRequest{
-			Name:   group.Name,
-			Status: group.Status,
+			Name:               app.Name,
+			Status:             app.Status,
+			Device:             app.Device,
+			ApplicationManager: app.ApplicationManager,
+			CpuLimit:           app.CpuLimit,
+			RamLimit:           app.RamLimit,
+			Group:              app.Group,
 		}).
 		Execute()
 	return result, err
+}
+
+func (b *Backend) UpdateApplication(app netbox.Application) (*netbox.Application, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.PluginsAPI.
+		PluginsApplicationsApplicationsPartialUpdate(ctx, app.Id).
+		PatchedApplicationRequest(netbox.PatchedApplicationRequest{
+			Name:               &app.Name,
+			Status:             app.Status,
+			Device:             app.Device,
+			ApplicationManager: app.ApplicationManager,
+			CpuLimit:           app.CpuLimit,
+			RamLimit:           app.RamLimit,
+			Group:              app.Group,
+		}).
+		Execute()
+	return result, err
+}
+
+func (b *Backend) GetApplicationPorts() ([]netbox.ApplicationPort, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.PluginsAPI.PluginsApplicationsApplicationPortsList(ctx).Execute()
+	return result.GetResults(), err
+}
+
+func (b *Backend) CreateApplicationPort(port netbox.ApplicationPort) (*netbox.ApplicationPort, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.PluginsAPI.
+		PluginsApplicationsApplicationPortsCreate(ctx).
+		ApplicationPortRequest(netbox.ApplicationPortRequest{
+			Port:                 port.Port,
+			Application:          port.Application,
+			Ipaddresses:          port.Ipaddresses,
+			ApplicationProtocols: port.ApplicationProtocols,
+		}).
+		Execute()
+	return result, err
+}
+
+func (b *Backend) DeleteApplicationPort(portId int32) error {
+	ctx := b.getContext()
+	_, err := b.client.PluginsAPI.
+		PluginsApplicationsApplicationPortsDestroy(ctx, portId).
+		Execute()
+	return err
 }
 
 func (b *Backend) InitBackend() error {

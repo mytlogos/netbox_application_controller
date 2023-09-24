@@ -252,3 +252,117 @@ func UpdateIPAddresses(value *models.Host, interfaces []netbox.Interface, existi
 func ipv4String(ip models.IPAddress) string {
 	return fmt.Sprintf("%s/%d", ip.Address.String(), ip.MaskLen)
 }
+
+func UpdateApplicationGroups(app *models.App, deviceId int32, existingAppGroups []netbox.ApplicationGroup) []netbox.ApplicationGroup {
+	createGroups := []netbox.ApplicationGroup{}
+
+	for _, ag := range app.Applications {
+		found := false
+		for _, existing := range existingAppGroups {
+			if existing.Name == ag.Name {
+				found = true
+				break
+			}
+		}
+		if !found {
+			createGroups = append(createGroups, netbox.ApplicationGroup{
+				Name: ag.Name,
+			})
+		}
+	}
+	return createGroups
+}
+
+func UpdateApplications(app *models.App, deviceId int32, existingAppGroups []netbox.ApplicationGroup, existingApps []netbox.Application) ([]netbox.Application, []int32) {
+	result := []netbox.Application{}
+	deleteIds := []int32{}
+
+	for _, group := range app.Applications {
+		groupIndex := slices.IndexFunc(existingAppGroups, func(value netbox.ApplicationGroup) bool {
+			return value.Name == group.Name
+		})
+
+		if groupIndex < 0 {
+			log.Printf("could not find application group with name %s even though it should have been created", group.Name)
+			continue
+		}
+
+		netboxGroup := existingAppGroups[groupIndex]
+
+		for _, appModel := range group.Applications {
+			var netboxAppIndex int = -1
+
+			for i, existing := range existingApps {
+				if existing.Name == appModel.Name && existing.GetDevice() == deviceId {
+					netboxAppIndex = i
+					break
+				}
+			}
+
+			var netboxApp *netbox.Application
+
+			if netboxAppIndex < 0 {
+				netboxApp = &netbox.Application{
+					Name:   appModel.Name,
+					Device: *netbox.NewNullableInt32(&deviceId),
+				}
+			} else {
+				netboxApp = &existingApps[netboxAppIndex]
+			}
+
+			netboxApp.RamLimit = netbox.PtrFloat64(float64(appModel.MemoryLimits))
+			netboxApp.ApplicationManager = netbox.PtrString(string(appModel.AppManager))
+			netboxApp.Group = *netbox.NewNullableInt32(&netboxGroup.Id)
+			result = append(result, *netboxApp)
+		}
+	}
+	return result, deleteIds
+}
+
+func UpdateApplicationPorts(app *models.App, deviceId int32, existingApps []netbox.Application, existingAppPorts []netbox.ApplicationPort) ([]netbox.ApplicationPort, []int32) {
+	results := []netbox.ApplicationPort{}
+	deleteIds := []int32{}
+
+	for _, ag := range app.Applications {
+		for _, app := range ag.Applications {
+			portMapping := map[int][]models.ApplicationPort{}
+			for _, port := range app.Ports {
+				portMapping[port.Port] = append(portMapping[port.Port], port)
+			}
+
+			var appId int32
+
+			for _, existing := range existingApps {
+				if existing.Name == app.Name && existing.GetDevice() == deviceId {
+					appId = existing.Id
+					break
+				}
+			}
+
+			if appId == 0 {
+				log.Printf("could not find existing app with name %s and device id %d\n", app.Name, deviceId)
+				continue
+			}
+
+			for port, _ := range portMapping {
+				found := false
+				port := int32(port)
+
+				for _, existing := range existingAppPorts {
+					if existing.Port == port && existing.Application == appId {
+						found = true
+						break
+					}
+				}
+				if !found {
+					results = append(results, netbox.ApplicationPort{
+						Port:                 port,
+						Application:          appId,
+						ApplicationProtocols: []int32{},
+					})
+				}
+			}
+		}
+	}
+	return results, deleteIds
+}

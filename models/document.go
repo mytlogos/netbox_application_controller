@@ -114,19 +114,19 @@ type Disk struct {
 }
 
 type App struct {
-	Applications []ApplicationGroup
+	Applications []ApplicationGroup `diff:"applications"`
 }
 
 type ApplicationGroup struct {
-	Name           string
-	Applications   []Application
-	AdditionalInfo interface{}
+	Name           string        `diff:"name"`
+	Applications   []Application `diff:"applications"`
+	AdditionalInfo interface{}   `diff:"info"`
 }
 
 type DockerGroupInfo struct {
-	IsCompose   bool
-	ComposeFile string
-	WorkingDir  string
+	IsCompose   bool   `diff:"isCompose"`
+	ComposeFile string `diff:"composeFile"`
+	WorkingDir  string `diff:"workinDir"`
 }
 
 type ApplicationManager string
@@ -156,22 +156,22 @@ const (
 )
 
 type ApplicationPort struct {
-	Port              int
-	TransportProtocol TransportProtocol
-	InterfaceAddress  string
+	Port              int               `diff:"port"`
+	TransportProtocol TransportProtocol `diff:"transport"`
+	InterfaceAddress  string            `diff:"interface"`
 }
 
 type Application struct {
-	Name           string
-	AppManager     ApplicationManager
-	Status         ApplicationStatus
-	Ports          []ApplicationPort
-	CpuLimits      int
-	MemoryLimits   uint64
-	AdditionalInfo interface{}
+	Name           string             `diff:"name"`
+	AppManager     ApplicationManager `diff:"manager"`
+	Status         ApplicationStatus  `diff:"status"`
+	Ports          []ApplicationPort  `diff:"ports"`
+	CpuLimits      int                `diff:"cpuLimits"`
+	MemoryLimits   uint64             `diff:"memoryLimits"`
+	AdditionalInfo interface{}        `diff:"info"`
 }
 
 type DockerInfo struct {
 	ContainerId   string
-	ContainerName string
+	ContainerName string `diff:"containerName"`
 }
