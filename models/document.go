@@ -110,7 +110,58 @@ type RamSlotContent struct {
 	ClockHertz  uint64
 }
 
+type DiskType string
+
+const (
+	DiskHDD   DiskType = "hdd"
+	DiskSSD   DiskType = "ssd"
+	DiskFlash DiskType = "flash"
+	DiskOther DiskType = "other"
+)
+
+type FileSystemType string
+
+const (
+	FsExt4  FileSystemType = "ext4"
+	FsBtrfs FileSystemType = "btrfs"
+	FsFat   FileSystemType = "fat"
+	FsvFat  FileSystemType = "vfat"
+	FsNtfs  FileSystemType = "ntfs"
+	FsSwap  FileSystemType = "swap"
+	FsNone  FileSystemType = "none"
+	FsOther FileSystemType = "other"
+)
+
+type PartitionType string
+
+const (
+	PartitionGpt PartitionType = "gpt"
+	PartitionDos PartitionType = "dos"
+)
+
+type StoragePartition struct {
+	FileSystemType FileSystemType
+	LogicalName    string
+	Position       int
+	SizeBytes      uint64
+	FsTotalBytes   uint64 `json:"total"`
+	FsFreeBytes    uint64 `json:"free"`
+	FsUsedBytes    uint64 `json:"used"`
+}
+
+type StorageItem struct {
+	Manufacturer  string
+	Product       string
+	DiskType      DiskType
+	LogicalName   string
+	Serial        string
+	SizeBytes     uint64
+	PartitionType PartitionType
+	Partitions    []StoragePartition
+}
+
 type Disk struct {
+	Disks []StorageItem
 }
 
 type App struct {

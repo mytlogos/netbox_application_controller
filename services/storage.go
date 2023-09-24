@@ -179,7 +179,9 @@ func (s *Storage) UpdateDisk(uuid string, value *models.Disk) (bool, error) {
 		return false, err
 	}
 
+	var copy models.Host = *h
 	h.Disk = value
+	s.MakeUpdate(&copy, h)
 	return true, nil
 }
 
@@ -464,6 +466,60 @@ func (s *Storage) makeAppUpdate(value *models.Host, device *netbox.DeviceWithCon
 	return nil
 }
 
+func (s *Storage) makeDiskUpdate(value *models.Host, device *netbox.DeviceWithConfigContext) error {
+	roles, err := s.backend.GetInventoryItemRoles()
+
+	if err != nil {
+		return err
+	}
+
+	var role *netbox.InventoryItemRole
+	for _, existing := range roles {
+		if existing.Name == "Disk" {
+			role = &existing
+			break
+		}
+	}
+	if role == nil {
+		role, err = s.backend.CreateInventoryRole(netbox.InventoryItemRole{
+			Name: "Disk",
+			Slug: "disk",
+		})
+
+		if err != nil {
+			return err
+		}
+	}
+
+	items, err := s.backend.GetInventoryItemsByRoles(role.Id)
+
+	if err != nil {
+		return err
+	}
+
+	disks, deleteIds := UpdateDisk(*value.Disk, device.Id, role.Id, items)
+
+	for _, item := range disks {
+		if item.Id == 0 {
+			_, err = s.backend.CreateInventoryItem(item)
+
+		} else {
+			_, err = s.backend.UpdateInventoryItem(item)
+		}
+		if err != nil {
+			return err
+		}
+	}
+	for _, id := range deleteIds {
+		err = s.backend.DeleteInventoryItem(id)
+
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func (s *Storage) MakeUpdate(before, after *models.Host) {
 	differ, err := diff.NewDiffer()
 
@@ -495,6 +551,14 @@ func (s *Storage) MakeUpdate(before, after *models.Host) {
 
 	if len(changes.Filter([]string{"app.*"})) > 0 {
 		err = s.makeAppUpdate(after, device)
+
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	if len(changes.Filter([]string{"disk.*"})) > 0 {
+		err = s.makeDiskUpdate(after, device)
 
 		if err != nil {
 			panic(err)

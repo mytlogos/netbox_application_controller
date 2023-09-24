@@ -118,6 +118,7 @@ func simpleCollectAndPrint(collector collectors.Collector) {
 func cliArgs() *cli.App {
 	collectorList := []collectors.Collector{
 		&collectors.DeviceCollector{},
+		&collectors.DiskCollector{},
 		&collectors.NetworkCollector{},
 		&collectors.RamCollector{},
 		&collectors.ApplicationCollector{},

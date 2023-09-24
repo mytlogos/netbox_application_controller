@@ -2,7 +2,6 @@ package collectors
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os/exec"
 	"regexp"
@@ -33,11 +32,9 @@ func (c *DeviceCollector) getProduct(hostname string) (string, error) {
 	err = json.Unmarshal(data, &lshw)
 
 	if err != nil {
-		fmt.Println(string(data))
 		// current lshw version on raspberry pi os "02.18.85-0.7" is more or less broken
 		// for json, but the way is known for system, so try to fix it manually
 		data = regexp.MustCompile(`]\s*$`).ReplaceAll(data, []byte("}]"))
-		fmt.Println(string(data))
 		err = json.Unmarshal(data, &lshw)
 
 		if err != nil {

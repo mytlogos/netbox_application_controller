@@ -3,6 +3,7 @@ package collectors
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
 )
 
 type Collector interface {
@@ -21,4 +22,14 @@ func PrettyPrintJson(value any) error {
 	}
 	fmt.Println(string(data))
 	return nil
+}
+
+func parseUint64(value string) uint64 {
+	result, err := strconv.ParseUint(value, 10, 64)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return result
 }

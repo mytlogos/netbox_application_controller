@@ -369,6 +369,61 @@ func UpdateApplicationPorts(app *models.App, deviceId int32, existingApps []netb
 	return results, deleteIds
 }
 
+func UpdateDisk(hostDisk models.Disk, deviceId int32, roleId int32, existingDisks []netbox.InventoryItem) ([]netbox.InventoryItem, []int32) {
+	results := []netbox.InventoryItem{}
+	deleteIds := []int32{}
+
+	for _, disk := range hostDisk.Disks {
+		var netboxDisk *netbox.InventoryItem
+
+		for _, existing := range existingDisks {
+			if existing.Device.Id != deviceId || existing.GetRole().Id != roleId {
+				continue
+			}
+
+			data, ok := existing.GetCustomFields()[backend.CustomFieldAgent]
+
+			if !ok {
+				continue
+			}
+
+			item := data.(map[string]interface{})
+
+			if disk.Serial != "" && disk.Serial == item["Serial"] {
+				netboxDisk = &existing
+				break
+			}
+
+			if disk.LogicalName == netboxDisk.Name {
+				netboxDisk = &existing
+				break
+			}
+		}
+
+		if netboxDisk == nil {
+			netboxDisk = &netbox.InventoryItem{
+				Name: disk.LogicalName,
+				Device: netbox.NestedDevice{
+					Id: deviceId,
+				},
+				Role: *netbox.NewNullableNestedInventoryItemRole(&netbox.NestedInventoryItemRole{
+					Id: roleId,
+				}),
+			}
+		}
+
+		netboxDisk.Serial = &disk.Serial
+		customFields := netboxDisk.GetCustomFields()
+		if customFields == nil {
+			customFields = map[string]interface{}{}
+		}
+		customFields[backend.CustomFieldAgent] = disk
+		netboxDisk.SetCustomFields(customFields)
+		results = append(results, *netboxDisk)
+	}
+	return results, deleteIds
+}
+
 // adapted from django slugify: https://github.com/django/django/blob/574ee4023e15cfb195833edfbaed353f8021c62f/django/utils/text.py#L421
 // converts a string into a url friendly string
 func Slugify(value string) string {

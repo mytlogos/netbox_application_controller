@@ -9,10 +9,14 @@ type Disk struct {
 	Storage *services.Storage
 }
 
-func (c *Disk) Post(update models.DiskUpdate) models.OkResponse {
-	c.Storage.UpdateDisk(update.Uuid, &update.Disk)
-	return models.OkResponse{
+func (c *Disk) Post(update models.DiskUpdate) (*models.OkResponse, error) {
+	_, err := c.Storage.UpdateDisk(update.Uuid, &update.Disk)
+
+	if err != nil {
+		return nil, err
+	}
+	return &models.OkResponse{
 		Status: "Ok",
 		Ok:     true,
-	}
+	}, nil
 }

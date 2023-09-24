@@ -422,6 +422,95 @@ func (b *Backend) DeleteApplicationPort(portId int32) error {
 	return err
 }
 
+func (b *Backend) GetInventoryItemRoles() ([]netbox.InventoryItemRole, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.DcimAPI.DcimInventoryItemRolesList(ctx).Execute()
+	return result.GetResults(), err
+}
+
+func (b *Backend) CreateInventoryRole(role netbox.InventoryItemRole) (*netbox.InventoryItemRole, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.DcimAPI.DcimInventoryItemRolesCreate(ctx).
+		InventoryItemRoleRequest(netbox.InventoryItemRoleRequest{
+			Name: role.Name,
+			Slug: role.Slug,
+		}).
+		Execute()
+	return result, err
+}
+
+func (b *Backend) GetInventoryItemsByRoles(role int32) ([]netbox.InventoryItem, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.DcimAPI.DcimInventoryItemsList(ctx).
+		RoleId([]*int32{&role}).
+		Execute()
+	return result.GetResults(), err
+}
+
+func (b *Backend) CreateInventoryItem(inventoryItem netbox.InventoryItem) (*netbox.InventoryItem, error) {
+	ctx := b.getContext()
+	var role netbox.NullableInt32
+
+	if inventoryItem.Role.Get() != nil {
+		role = *netbox.NewNullableInt32(netbox.PtrInt32(inventoryItem.Role.Get().Id))
+	}
+	var manufacturer netbox.NullableInt32
+
+	if inventoryItem.Manufacturer.Get() != nil {
+		manufacturer = *netbox.NewNullableInt32(netbox.PtrInt32(inventoryItem.Manufacturer.Get().Id))
+	}
+	result, _, err := b.client.DcimAPI.
+		DcimInventoryItemsCreate(ctx).
+		WritableInventoryItemRequest(netbox.WritableInventoryItemRequest{
+			Device:       inventoryItem.Device.Id,
+			Parent:       inventoryItem.Parent,
+			Name:         inventoryItem.Name,
+			Label:        inventoryItem.Label,
+			Role:         role,
+			Manufacturer: manufacturer,
+			CustomFields: inventoryItem.CustomFields,
+			Serial:       inventoryItem.Serial,
+		}).
+		Execute()
+	return result, err
+}
+
+func (b *Backend) UpdateInventoryItem(inventoryItem netbox.InventoryItem) (*netbox.InventoryItem, error) {
+	ctx := b.getContext()
+	var role netbox.NullableInt32
+
+	if inventoryItem.Role.Get() != nil {
+		role = *netbox.NewNullableInt32(netbox.PtrInt32(inventoryItem.Role.Get().Id))
+	}
+	var manufacturer netbox.NullableInt32
+
+	if inventoryItem.Manufacturer.Get() != nil {
+		manufacturer = *netbox.NewNullableInt32(netbox.PtrInt32(inventoryItem.Manufacturer.Get().Id))
+	}
+	result, _, err := b.client.DcimAPI.
+		DcimInventoryItemsPartialUpdate(ctx, inventoryItem.Id).
+		PatchedWritableInventoryItemRequest(netbox.PatchedWritableInventoryItemRequest{
+			Device:       &inventoryItem.Device.Id,
+			Parent:       inventoryItem.Parent,
+			Name:         &inventoryItem.Name,
+			Label:        inventoryItem.Label,
+			Role:         role,
+			Manufacturer: manufacturer,
+			CustomFields: inventoryItem.CustomFields,
+			Serial:       inventoryItem.Serial,
+		}).
+		Execute()
+	return result, err
+}
+
+func (b *Backend) DeleteInventoryItem(inventoryItemId int32) error {
+	ctx := b.getContext()
+	_, err := b.client.DcimAPI.
+		DcimInventoryItemsDestroy(ctx, inventoryItemId).
+		Execute()
+	return err
+}
+
 func (b *Backend) InitBackend() error {
 	// create necessary backend custom fields
 	ctx := b.getContext()
@@ -452,7 +541,7 @@ func (b *Backend) InitBackend() error {
 
 		req = req.WritableCustomFieldRequest(netbox.WritableCustomFieldRequest{
 			Name:         CustomFieldAgent,
-			ContentTypes: []string{"dcim.device"},
+			ContentTypes: []string{"dcim.device", "dcim.inventoryitem"},
 			Description:  &description,
 			Type:         &fieldType,
 		})
