@@ -3,7 +3,9 @@ package services
 import (
 	"fmt"
 	"log"
+	"regexp"
 	"slices"
+	"strconv"
 	"strings"
 
 	"github.com/mytlogos/netbox_application_controller/models"
@@ -365,4 +367,14 @@ func UpdateApplicationPorts(app *models.App, deviceId int32, existingApps []netb
 		}
 	}
 	return results, deleteIds
+}
+
+// adapted from django slugify: https://github.com/django/django/blob/574ee4023e15cfb195833edfbaed353f8021c62f/django/utils/text.py#L421
+// converts a string into a url friendly string
+func Slugify(value string) string {
+	value = strconv.QuoteToASCII(value)
+	value = strings.ToLower(value)
+	value = regexp.MustCompile(`[^\w\s-]`).ReplaceAllString(value, "")
+	value = regexp.MustCompile(`[-\s]+`).ReplaceAllString(value, "-")
+	return strings.Trim(value, "-_")
 }

@@ -190,12 +190,21 @@ func (s *Storage) makeDeviceUpdate(value *models.Host) (*netbox.DeviceWithConfig
 		return nil, err
 	}
 
+	devType, err := s.ensureDeviceType(value)
+
+	if err != nil {
+		return nil, err
+	}
+
 	device, err := s.backend.GetDeviceByUuid(value.Uuid)
 
 	if err != nil {
 		if !errors.Is(err, ErrHostNotFound) {
 			conv := NetboxConverter{}
 			device = conv.ConvertHost(value)
+			device.DeviceType = netbox.NestedDeviceType{
+				Id: devType.Id,
+			}
 			device.Platform.Set(netbox.NewNestedPlatform(platform.Id, platform.Url, platform.Display, platform.Name, platform.Slug))
 			return s.backend.CreateDevice(device)
 		} else {
@@ -204,9 +213,81 @@ func (s *Storage) makeDeviceUpdate(value *models.Host) (*netbox.DeviceWithConfig
 	} else {
 		conv := NetboxConverter{}
 		conv.UpdateDevice(value, device)
+		device.DeviceType = netbox.NestedDeviceType{
+			Id: devType.Id,
+		}
 		device.Platform.Set(netbox.NewNestedPlatform(platform.Id, platform.Url, platform.Display, platform.Name, platform.Slug))
 		return s.backend.UpdateDevice(device.Id, device)
 	}
+}
+
+func (s *Storage) ensureDeviceType(value *models.Host) (*netbox.DeviceType, error) {
+	product := value.Device.Product
+
+	var manufacturerName string
+	var devTypeName string
+	raspberryPiManufacturer := "raspberry pi"
+
+	if strings.HasPrefix(strings.ToLower(product), raspberryPiManufacturer) {
+		manufacturerName = "Raspberry Pi"
+		devTypeName = strings.TrimSpace(product[len(raspberryPiManufacturer):])
+	} else if product != "" {
+		manufacturerName = "Unknown"
+		devTypeName = product
+	} else {
+		manufacturerName = "Unknown"
+		devTypeName = "Unknown"
+	}
+
+	manufacturers, err := s.backend.GetManufacturers()
+
+	if err != nil {
+		return nil, err
+	}
+	var manufacturer *netbox.Manufacturer
+
+	for _, item := range manufacturers {
+		if item.Name == manufacturerName {
+			manufacturer = &item
+			break
+		}
+	}
+
+	if manufacturer == nil {
+		manufacturer, err = s.backend.CreateManufacturer(netbox.Manufacturer{
+			Name: manufacturerName,
+			Slug: Slugify(manufacturerName),
+		})
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	devTypes, err := s.backend.GetDeviceTypes()
+
+	if err != nil {
+		return nil, err
+	}
+
+	var devType *netbox.DeviceType
+
+	for _, dt := range devTypes {
+		if dt.Manufacturer.Id == manufacturer.Id && dt.Model == devTypeName {
+			devType = &dt
+			break
+		}
+	}
+
+	if devType == nil {
+		devType, err = s.backend.CreateDeviceType(netbox.DeviceType{
+			Manufacturer: netbox.NestedManufacturer{
+				Id: manufacturer.Id,
+			},
+			Model: devTypeName,
+			Slug:  Slugify(devTypeName),
+		})
+	}
+	return devType, err
 }
 
 func (s *Storage) ensurePlatformExists(value *models.Host) (*netbox.Platform, error) {

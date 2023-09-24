@@ -124,6 +124,63 @@ func (b *Backend) CreatePlatform(platform netbox.Platform) (*netbox.Platform, er
 	return result, nil
 }
 
+func (b *Backend) GetManufacturers() ([]netbox.Manufacturer, error) {
+	ctx := b.getContext()
+	list, _, err := b.client.DcimAPI.DcimManufacturersList(ctx).Execute()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return list.GetResults(), nil
+}
+
+func (b *Backend) CreateManufacturer(platform netbox.Manufacturer) (*netbox.Manufacturer, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.DcimAPI.DcimManufacturersCreate(ctx).ManufacturerRequest(
+		netbox.ManufacturerRequest{
+			Name: platform.Name,
+			Slug: platform.Slug,
+		},
+	).Execute()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
+}
+
+func (b *Backend) GetDeviceTypes() ([]netbox.DeviceType, error) {
+	ctx := b.getContext()
+	list, _, err := b.client.DcimAPI.DcimDeviceTypesList(ctx).Execute()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return list.GetResults(), nil
+}
+
+func (b *Backend) CreateDeviceType(platform netbox.DeviceType) (*netbox.DeviceType, error) {
+	ctx := b.getContext()
+	result, _, err := b.client.DcimAPI.DcimDeviceTypesCreate(ctx).WritableDeviceTypeRequest(
+		netbox.WritableDeviceTypeRequest{
+			Manufacturer: platform.Manufacturer.GetId(),
+			Model:        platform.Model,
+			Slug:         platform.Slug,
+			IsFullDepth:  netbox.PtrBool(false),
+			UHeight:      netbox.PtrFloat64(1),
+		},
+	).Execute()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
+}
+
 func (b *Backend) GetDeviceByUuid(uuid string) (*netbox.DeviceWithConfigContext, error) {
 	ctx := b.getContext()
 	ctx = context.WithValue(ctx, ContextCustomFieldQueries, map[string]string{
@@ -153,8 +210,8 @@ func (b *Backend) CreateDevice(device *netbox.DeviceWithConfigContext) (*netbox.
 	}
 	req := b.client.DcimAPI.DcimDevicesCreate(ctx)
 	req = req.WritableDeviceWithConfigContextRequest(netbox.WritableDeviceWithConfigContextRequest{
-		Name: device.Name,
-		// DeviceType:   device.DeviceType.Id,
+		Name:       device.Name,
+		DeviceType: device.DeviceType.Id,
 		// Role:         device.Role.Id,
 		Platform:     platformId,
 		CustomFields: device.CustomFields,

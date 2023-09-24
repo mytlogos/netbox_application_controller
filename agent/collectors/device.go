@@ -2,8 +2,10 @@ package collectors
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"os/exec"
+	"regexp"
 	"strings"
 
 	"github.com/mytlogos/netbox_application_controller/models"
@@ -22,7 +24,7 @@ func (c *DeviceCollector) GetEndpoint() string {
 }
 
 func (c *DeviceCollector) getProduct(hostname string) (string, error) {
-	cmd := exec.Command("lshw", "-c", "network", "-json")
+	cmd := exec.Command("lshw", "-c", "system", "-json")
 	data, err := cmd.Output()
 	if err != nil {
 		return "", err
@@ -31,7 +33,16 @@ func (c *DeviceCollector) getProduct(hostname string) (string, error) {
 	err = json.Unmarshal(data, &lshw)
 
 	if err != nil {
-		return "", err
+		fmt.Println(string(data))
+		// current lshw version on raspberry pi os "02.18.85-0.7" is more or less broken
+		// for json, but the way is known for system, so try to fix it manually
+		data = regexp.MustCompile(`]\s*$`).ReplaceAll(data, []byte("}]"))
+		fmt.Println(string(data))
+		err = json.Unmarshal(data, &lshw)
+
+		if err != nil {
+			return "", err
+		}
 	}
 
 	// try to get the product if available on an item with hostname as id
