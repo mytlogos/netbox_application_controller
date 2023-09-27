@@ -44,6 +44,9 @@ type Application struct {
 	Group NullableInt32 `json:"group,omitempty"`
 	// Version of the Application
 	Version *string `json:"version,omitempty"`
+	VersionManagerName *string `json:"version_manager_name,omitempty"`
+	LatestVersion *string `json:"latest_version,omitempty"`
+	ChangelogUrl *string `json:"changelog_url,omitempty"`
 	LastVersionUpgrade NullableTime `json:"last_version_upgrade,omitempty"`
 }
 
@@ -585,6 +588,69 @@ func (o *Application) HasVersion() bool {
 	return false
 }
 
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *Application) GetVersionManagerName() string {
+	if o == nil || IsNil(o.VersionManagerName) {
+		var ret string
+		return ret
+	}
+	return *o.VersionManagerName
+}
+
+// GetVersionManagerNameOk returns a tuple with the VersionManagerName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Application) GetVersionManagerNameOk() (*string, bool) {
+	if o == nil || IsNil(o.VersionManagerName) {
+		return nil, false
+	}
+	return o.VersionManagerName, true
+}
+
+// HasVersionManagerName returns a boolean if a field has been set.
+func (o *Application) HasVersionManagerName() bool {
+	if o != nil && !IsNil(o.VersionManagerName) {
+		return true
+	}
+
+	return false
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *Application) GetLatestVersion() string {
+	if o == nil || IsNil(o.LatestVersion) {
+		var ret string
+		return ret
+	}
+	return *o.LatestVersion
+}
+
+// HasLatestVersion returns a boolean if a field has been set.
+func (o *Application) HasLatestVersion() bool {
+	if o != nil && !IsNil(o.LatestVersion) {
+		return true
+	}
+
+	return false
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *Application) GetChangelogUrl() string {
+	if o == nil || IsNil(o.ChangelogUrl) {
+		var ret string
+		return ret
+	}
+	return *o.ChangelogUrl
+}
+
+// HasChangelogUrl returns a boolean if a field has been set.
+func (o *Application) HasChangelogUrl() bool {
+	if o != nil && !IsNil(o.ChangelogUrl) {
+		return true
+	}
+
+	return false
+}
+
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *Application) SetVersion(v string) {
 	o.Version = &v
@@ -680,6 +746,15 @@ func (o Application) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Version) {
 		toSerialize["version"] = o.Version
+	}
+	if !IsNil(o.VersionManagerName) {
+		toSerialize["version_manager_name"] = o.VersionManagerName
+	}
+	if !IsNil(o.LatestVersion) {
+		toSerialize["latest_version"] = o.LatestVersion
+	}
+	if !IsNil(o.ChangelogUrl) {
+		toSerialize["changelog_url"] = o.ChangelogUrl
 	}
 	if o.LastVersionUpgrade.IsSet() {
 		toSerialize["last_version_upgrade"] = o.LastVersionUpgrade.Get()

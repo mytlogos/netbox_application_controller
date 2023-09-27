@@ -39,6 +39,9 @@ type PatchedApplicationRequest struct {
 	Group NullableInt32 `json:"group,omitempty"`
 	// Version of the Application
 	Version *string `json:"version,omitempty"`
+	VersionManagerName *string `json:"version_manager_name,omitempty"`
+	LatestVersion *string `json:"latest_version,omitempty"`
+	ChangelogUrl *string `json:"changelog_url,omitempty"`
 	LastVersionUpgrade NullableTime `json:"last_version_upgrade,omitempty"`
 }
 
@@ -550,6 +553,15 @@ func (o PatchedApplicationRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Version) {
 		toSerialize["version"] = o.Version
+	}
+	if !IsNil(o.VersionManagerName) {
+		toSerialize["version_manager_name"] = o.VersionManagerName
+	}
+	if !IsNil(o.LatestVersion) {
+		toSerialize["latest_version"] = o.LatestVersion
+	}
+	if !IsNil(o.ChangelogUrl) {
+		toSerialize["changelog_url"] = o.ChangelogUrl
 	}
 	if o.LastVersionUpgrade.IsSet() {
 		toSerialize["last_version_upgrade"] = o.LastVersionUpgrade.Get()

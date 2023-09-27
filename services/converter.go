@@ -27,8 +27,8 @@ func (nc *NetboxConverter) UpdateDevice(value *models.Host, device *netbox.Devic
 	device.SetName(value.Device.Name)
 
 	customFields := device.GetCustomFields()
-	customFields[backend.CustomFieldAgent] = value
-	customFields[backend.CustomFieldUuid] = value.Uuid
+	customFields[backend.CustomFieldAgent.GetKey()] = value
+	customFields[backend.CustomFieldUuid.GetKey()] = value.Uuid
 	device.SetCustomFields(customFields)
 
 	device.SetPlatform(netbox.NestedPlatform{
@@ -381,7 +381,7 @@ func UpdateDisk(hostDisk models.Disk, deviceId int32, roleId int32, existingDisk
 				continue
 			}
 
-			data, ok := existing.GetCustomFields()[backend.CustomFieldAgent]
+			data, ok := existing.GetCustomFields()[backend.CustomFieldAgent.GetKey()]
 
 			if !ok {
 				continue
@@ -417,7 +417,7 @@ func UpdateDisk(hostDisk models.Disk, deviceId int32, roleId int32, existingDisk
 		if customFields == nil {
 			customFields = map[string]interface{}{}
 		}
-		customFields[backend.CustomFieldAgent] = disk
+		customFields[backend.CustomFieldAgent.GetKey()] = disk
 		netboxDisk.SetCustomFields(customFields)
 		results = append(results, *netboxDisk)
 	}

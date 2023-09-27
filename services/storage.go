@@ -40,7 +40,7 @@ func (s *Storage) Init() error {
 		return err
 	}
 	for _, device := range devices {
-		hostMap, ok := device.CustomFields[backend.CustomFieldAgent]
+		hostMap, ok := device.CustomFields[backend.CustomFieldAgent.GetKey()]
 
 		if !ok {
 			continue

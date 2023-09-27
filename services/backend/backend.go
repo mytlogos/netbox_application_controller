@@ -16,8 +16,6 @@ import (
 type contextType string
 
 var (
-	CustomFieldAgent          = "agent"
-	CustomFieldUuid           = "agentuuid"
 	ContextCustomFieldQueries = contextType("netbox-customfield-query")
 	ErrValueNotFound          = fmt.Errorf("netbox error: value not found")
 )
@@ -184,7 +182,7 @@ func (b *Backend) CreateDeviceType(platform netbox.DeviceType) (*netbox.DeviceTy
 func (b *Backend) GetDeviceByUuid(uuid string) (*netbox.DeviceWithConfigContext, error) {
 	ctx := b.getContext()
 	ctx = context.WithValue(ctx, ContextCustomFieldQueries, map[string]string{
-		CustomFieldUuid: uuid,
+		CustomFieldUuid.GetKey(): uuid,
 	})
 	list, _, err := b.client.DcimAPI.DcimDevicesList(ctx).Execute()
 
@@ -389,6 +387,10 @@ func (b *Backend) UpdateApplication(app netbox.Application) (*netbox.Application
 			CpuLimit:           app.CpuLimit,
 			RamLimit:           app.RamLimit,
 			Group:              app.Group,
+			Version:            app.Version,
+			LastVersionUpgrade: app.LastVersionUpgrade,
+			LatestVersion:      app.LatestVersion,
+			ChangelogUrl:       app.ChangelogUrl,
 		}).
 		Execute()
 	return result, err
@@ -521,59 +523,82 @@ func (b *Backend) InitBackend() error {
 	}
 	results := list.GetResults()
 
-	agentFieldExists := false
-	agentUuidFieldExists := false
+	nameSet := map[string]bool{}
 
 	for _, customField := range results {
-		if customField.Name == CustomFieldAgent {
-			agentFieldExists = true
-		}
-		if customField.Name == CustomFieldUuid {
-			agentUuidFieldExists = true
-		}
+		nameSet[customField.Name] = true
 	}
 
-	if !agentFieldExists {
-		slog.Info("custom field for agent missing on device, recreating")
-		req := b.client.ExtrasAPI.ExtrasCustomFieldsCreate(ctx)
-		description := "Agent Storage"
-		fieldType := "json"
-
-		req = req.WritableCustomFieldRequest(netbox.WritableCustomFieldRequest{
-			Name:         CustomFieldAgent,
-			ContentTypes: []string{"dcim.device", "dcim.inventoryitem"},
-			Description:  &description,
-			Type:         &fieldType,
-		})
-		_, resp, err := req.Execute()
-
-		if err != nil {
-			data, _ := io.ReadAll(resp.Body)
-			log.Println(string(data))
-			return err
-		}
+	customFields := []CustomField{
+		CustomFieldAgent,
+		CustomFieldUuid,
 	}
 
-	if !agentUuidFieldExists {
-		slog.Info("custom field for agent uuid missing on device, recreating")
-		req := b.client.ExtrasAPI.ExtrasCustomFieldsCreate(ctx)
-		description := "Custom Field for querying device by agent uuid"
-		fieldType := "text"
+	for _, cf := range customFields {
+		if !nameSet[cf.GetKey()] {
+			slog.Info("custom field missing, recreating", "field", cf.GetKey())
 
-		req = req.WritableCustomFieldRequest(netbox.WritableCustomFieldRequest{
-			Name:         CustomFieldUuid,
-			ContentTypes: []string{"dcim.device"},
-			Description:  &description,
-			Type:         &fieldType,
-		})
-		_, resp, err := req.Execute()
+			_, resp, err := b.client.ExtrasAPI.
+				ExtrasCustomFieldsCreate(ctx).
+				WritableCustomFieldRequest(cf.CreateCustomFieldRequest()).
+				Execute()
 
-		if err != nil {
-			data, _ := io.ReadAll(resp.Body)
-			log.Println(string(data))
-			return err
+			if err != nil {
+				data, _ := io.ReadAll(resp.Body)
+				log.Println(string(data))
+				return err
+			}
+
 		}
 	}
 
 	return nil
+}
+
+var (
+	CustomFieldAgent CustomField = customFieldAgent{}
+	CustomFieldUuid  CustomField = customFieldUuid{}
+)
+
+type CustomField interface {
+	GetKey() string
+	CreateCustomFieldRequest() netbox.WritableCustomFieldRequest
+}
+
+type customFieldAgent struct {
+}
+
+func (cf customFieldAgent) GetKey() string {
+	return "agent"
+}
+
+func (cf customFieldAgent) CreateCustomFieldRequest() netbox.WritableCustomFieldRequest {
+	description := "Agent Storage"
+	fieldType := "json"
+
+	return netbox.WritableCustomFieldRequest{
+		Name:         cf.GetKey(),
+		ContentTypes: []string{"dcim.device", "dcim.inventoryitem"},
+		Description:  &description,
+		Type:         &fieldType,
+	}
+}
+
+type customFieldUuid struct {
+}
+
+func (cf customFieldUuid) GetKey() string {
+	return "agentuuid"
+}
+
+func (cf customFieldUuid) CreateCustomFieldRequest() netbox.WritableCustomFieldRequest {
+	description := "Custom Field for querying device by agent uuid"
+	fieldType := "text"
+
+	return netbox.WritableCustomFieldRequest{
+		Name:         cf.GetKey(),
+		ContentTypes: []string{"dcim.device"},
+		Description:  &description,
+		Type:         &fieldType,
+	}
 }

@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
+	"log/slog"
+	"time"
 
 	v1 "github.com/mytlogos/netbox_application_controller/api/v1"
 	"github.com/mytlogos/netbox_application_controller/services"
@@ -25,6 +27,23 @@ type Config struct {
 	Backend struct {
 		Server string
 		Apikey string
+	}
+	VersionSearcher *struct {
+		Server string
+	}
+}
+
+func runVersionSearcher(config services.VersionSearcherConfig) {
+	versionSearch := services.NewSearcher(config)
+
+	ticker := time.NewTicker(1 * time.Minute)
+
+	for range ticker.C {
+		err := versionSearch.Search()
+
+		if err != nil {
+			slog.Error("version searcher had an error", "error", err)
+		}
 	}
 }
 
@@ -58,6 +77,19 @@ func main() {
 
 	storage := services.NewStorage(be)
 	storage.Init()
+
+	if myConfig.VersionSearcher != nil {
+		if myConfig.VersionSearcher.Server == "" {
+			log.Fatalln("config has VersionSearcher specified but not its server")
+		}
+		slog.Info("version searcher configured - starting")
+		go runVersionSearcher(services.VersionSearcherConfig{
+			Backend: be,
+			Argus: &services.ArgusConfig{
+				Server: myConfig.VersionSearcher.Server,
+			},
+		})
+	}
 
 	run(myConfig, storage)
 }
